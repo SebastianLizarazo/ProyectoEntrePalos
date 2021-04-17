@@ -1,8 +1,8 @@
 {
   "name": "sebastianlizarazo/proyectoentrepalos",
-  "description": "Proyecto de ejemplo de PHP",
+  "description": "Proyecto de grado para el restaurante Entre Palos",
   "type": "project",
-  "keywords": ["system", "tool", "example"],
+  "keywords": ["system", "tool", "project"],
   "homepage": "https://github.com/SebastianLizarazo/ProyectoEntrePalos",
   "time": "2021-04-15",
   "license": "MIT",
@@ -14,8 +14,8 @@
       "role": "Developer"
     },
     {
-      "name": "Kevin",
-      "email": "daom89@gmail.com",
+      "name": "Kevin Jhonnier Molano Duran",
+      "email": "kjmolano1@misena.edu.co",
       "homepage": "http://www.sena.edu.co",
       "role": "Developer"
     },
@@ -32,13 +32,13 @@
       "role": "Developer"
     },
     {
-      "name": "Santiago",
+      "name": "Willian Santiago Hernández Cristancho",
       "email": "wshernandezc@misena.edu.co",
       "homepage": "http://www.sena.edu.co",
       "role": "Developer"
     },
     {
-      "name": "Didier",
+      "name": "Didier Dario Acero Diaz",
       "email": "ddacero6@misena.edu.co",
       "homepage": "http://www.sena.edu.co",
       "role": "Developer"

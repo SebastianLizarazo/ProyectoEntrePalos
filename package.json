@@ -1,7 +1,7 @@
 {
-  "name": "weber",
+  "name": "ProyectoEntrePalos",
   "version": "1.0.0",
-  "description": "Ejemplo MVC POO",
+  "description": "Software para el restaurante Entre Palos",
   "main": "index.js",
   "scripts": {
     "buildcss": "node-sass --output-style compressed -r resources/scss/ -o views/public/css/",
@@ -25,12 +25,7 @@
     {
       "name": "Sebastian David Lizarazo Duarte",
       "email": "sdlizarazo9@misena.edu.co",
-      "url": "https://github.com/"
-    },
-    {
-      "name": "Kevin Molano",
-      "email": "sad",
-      "url": "https://github.com/"
+      "url": "https://github.com/SebastianLizarazo"
     },
     {
       "name": "David Felipe Diaz Vargas",
@@ -43,19 +38,19 @@
       "url": "https://github.com/BladimirE"
     },
     {
-      "name": "Kevin Molano",
-      "email": "sad",
-      "url": "https://github.com/"
+      "name": "Kevin Jhonnier Molano Duran",
+      "email": "kjmolano1@misena.edu.co",
+      "url": "https://github.com/K20022021"
     },
     {
-      "name": "Santiago",
+      "name": "Willian Santiago Hernández Cristancho",
       "email": "wshernandezc@misena.edu.co",
-      "url": "https://github.com/"
+      "url": "https://github.com/SantiagoH7"
     },
     {
-      "name": "Didier",
+      "name": "Didier Dario Acero Diaz",
       "email": "ddacero6@misena.edu.co",
-      "url": "https://github.com/"
+      "url": "https://github.com/Didier-qw"
     }
   ],
   "license": "ISC",

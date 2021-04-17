@@ -1,8 +1,9 @@
-WebER by @daom89
-Sistema de Control de Inventarios.
+Entre Palos by @davidfelipe12, @BladimirE, @SebastianLizarazo, @K20022021, @Didier-qw, @SantiagoH7
+Sistema de Control de Inventarios y administración de ventas.
 
 Descripción
-Este repositorio es un punto de partida para los aprendices del Programa de ADSI del SENA. La intención del proyecto es servir de guía para desarrollar aplicaciones en PHP usando técnicas actuales de desarrollo bajo una estructura MVC.
+Este sistema se encargara de registrar y administrar las ventas, la nomina de los trabajadores y control de inventario 
+del restaurante Entre Palos.
 
 Requisitos
 Para su correcto funcionamiento se requiere tener instaladas las siguientes herramientas:
