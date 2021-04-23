@@ -13,6 +13,11 @@ use Monolog\Logger;
 use NumberFormatter;
 use Verot\Upload\Upload;
 
+
+/**
+ * Una clase final no tiene herencia ni instancias
+ * solo sirve para tener funciones estaticas
+ */
 final class GeneralFunctions
 {
 
