@@ -3,8 +3,19 @@
 
 namespace App\Models;
 
+require ("AbstractDBConnection.php");
+require (__DIR__."\..\Interfaces\Model.php");
+require(__DIR__ .'/../../vendor/autoload.php');
 
-class Mesas extends AbstractDBConnection
+use App\Interfaces\Model;
+use App\Models\AbstractDBConnection;
+
+
+/**
+ *La clase mesa es hija de AbstractDBConnection e implementa la
+ * interfaz Model
+ */
+class Mesas extends AbstractDBConnection implements Model
 {
     private ?int $id;//el id es opcional porque el usuario no lo tiene que ingresar
     private int $Numero;
@@ -21,7 +32,7 @@ class Mesas extends AbstractDBConnection
     public function __construct(array $mesa=[])
     {
         parent::__construct();//llamamos al constructor de la clase AbstractDBConnection
-        $this->setId($mesa['id']?? null) ;
+        $this->setId($mesa['id']?? null);
         $this->setNumero($mesa['Numero']?? 0);//Si en el array mesa hay un contenido en el indice Numero asignelo de lo contrario ponga
         //un cero
         $this->setUbicacion($mesa['Ubicacion']??'');
@@ -153,6 +164,8 @@ class Mesas extends AbstractDBConnection
 
     /**
      * @return bool|null
+     * El update actualiza todos los datos del registro
+     * no solo un dato(tener cuiado con ese detalle)
      */
     public function update(): ?bool
     {
@@ -162,4 +175,33 @@ class Mesas extends AbstractDBConnection
         return $this->save($query);
     }
 
+
+    /**
+     * Los metodos deleted, search, searchForId, getAll, jsonSerialize
+     * son metodos de la interfaz Model que es obligatorio incluirlos
+     */
+    function deleted()
+    {
+
+    }
+
+    static function search($query): ?array
+    {
+        // TODO: Implement search() method.
+    }
+
+    static function searchForId(int $id): ?object
+    {
+        // TODO: Implement searchForId() method.
+    }
+
+    static function getAll(): ?array
+    {
+        // TODO: Implement getAll() method.
+    }
+
+    public function jsonSerialize()
+    {
+        // TODO: Implement jsonSerialize() method.
+    }
 }

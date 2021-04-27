@@ -1,0 +1,219 @@
+[2021-04-27T13:22:41.455751+00:00] General.ERROR: Exception  
+[2021-04-27T13:22:41.457373+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-27T13:22:41.457485+00:00] General.ERROR: Line: 128  
+[2021-04-27T13:22:41.457564+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.mesas' doesn't exist  
+[2021-04-27T13:22:41.458048+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 151
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesas VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 1
+                            [:Ubicacion] => Ventana 1
+                            [:Capacidad] => 5
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 162
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesas VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\Test\testMesa.php
+            [line] => 14
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-04-27T13:27:25.675568+00:00] General.ERROR: Exception  
+[2021-04-27T13:27:25.676062+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-27T13:27:25.676142+00:00] General.ERROR: Line: 128  
+[2021-04-27T13:27:25.676209+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.mesas' doesn't exist  
+[2021-04-27T13:27:25.676282+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 151
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesas VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Numero] => 1
+                            [:Ubicacion] => Ventana 1
+                            [:Capacidad] => 5
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 162
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesas VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\Test\testMesa.php
+            [line] => 15
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-04-27T13:30:02.353573+00:00] General.ERROR: Exception  
+[2021-04-27T13:30:02.354037+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-27T13:30:02.354113+00:00] General.ERROR: Line: 128  
+[2021-04-27T13:30:02.354177+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.mesas' doesn't exist  
+[2021-04-27T13:30:02.354251+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 151
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesas VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 1
+                            [:Ubicacion] => Ventana 1
+                            [:Capacidad] => 5
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 162
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesas VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\Test\testMesa.php
+            [line] => 14
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
