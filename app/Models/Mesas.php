@@ -4,7 +4,7 @@
 namespace App\Models;
 
 
-class Mesas
+class Mesas extends AbstractDBConnection
 {
     private ?int $id;//el id es opcional porque el usuario no lo tiene que ingresar
     private int $Numero;
@@ -14,25 +14,26 @@ class Mesas
 
     /**
      * Mesas constructor.
-     * @param int|null $id
-     * @param int $Numero
-     * @param string $Ubicacion
-     * @param int $Capacidad
-     * @param string $Ocupacion
+     * @param array $mesa
+     * El constructor recibe como parametro un array cuando se estan solicitando parametros de una tabla grande
+     * y ese array va a guardar todos los parametros
      */
-    public function __construct(?int $id, int $Numero, string $Ubicacion, int $Capacidad, string $Ocupacion)
+    public function __construct(array $mesa=[])
     {
-        $this->setId() = $id;
-        $this->setNumero() = $Numero;
-        $this->setUbicacion() = $Ubicacion;
-        $this->setCapacidad() = $Capacidad;
-        $this->setOcupacion() = $Ocupacion;
+        parent::__construct();//llamamos al constructor de la clase AbstractDBConnection
+        $this->setId($mesa['id']?? null) ;
+        $this->setNumero($mesa['Numero']?? 0);//Si en el array mesa hay un contenido en el indice Numero asignelo de lo contrario ponga
+        //un cero
+        $this->setUbicacion($mesa['Ubicacion']??'');
+        $this->setCapacidad($mesa['Capacidad']??0) ;
+        $this->setOcupacion($mesa['Ocupacion']??'disponible' );
     }
 
     public function __destruct()
     {
-        if ($this->isConnected()){
-            $this->Disconnect();
+        //isConnected y Disconnect son metodos de la clase AbstractDBConnection
+        if ($this->isConnected()){//pregunta si la base de datos esta conectada
+            $this->Disconnect();//destruye la coneccion
         }
     }
 
@@ -117,6 +118,48 @@ class Mesas
         $this->Ocupacion = $Ocupacion;
     }
 
+    /**
+     * @param string $query
+     * @return bool|null
+     * Este metodo es heredado obligatoriamente de la clase AbstractDBConnection
+     * con la unica especificacion de que como parametro debe recibir un query,
+     * Este metodo nos protege de inyecciones de datos maliciosos.
+     * El query que recibe puede ser el query del insert o update o delete y los organiza
+     * para prepararlos para enviarlos al insertRow.
+     */
+    protected function save(string $query): ?bool
+    {
+        $arrData = [
+            ':id' =>    $this->getId(),
+            ':Numero' =>   $this->getNumero(),
+            ':Ubicacion' =>   $this->getUbicacion(),
+            ':Capacidad' =>   $this->getCapacidad(),
+            ':Ocupacion' =>   $this->getOcupacion(),
+        ];
+        $this->Connect();
+        $result = $this->insertRow($query, $arrData);//insertRow es el que inserta los datos que organiza el save
+        $this->Disconnect();
+        return $result;
+    }
+    /**
+     * @return bool|null
+     */
+    public function insert(): ?bool
+    {
+        $query = "INSERT INTO Mesas VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)";
+        return $this->save($query);
+    }
 
+    /**
+     * @return bool|null
+     */
+    public function update(): ?bool
+    {
+        $query = "UPDATE Mesas SET 
+            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad
+            Ocupacion = :Ocupacion WHERE id = :id";
+        return $this->save($query);
+    }
 
 }
