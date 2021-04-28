@@ -173,7 +173,7 @@ class Mesas extends AbstractDBConnection implements Model
     public function update(): ?bool
     {
         $query = "UPDATE Mesa SET 
-            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad
+            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad,
             Ocupacion = :Ocupacion WHERE id = :id";
         return $this->save($query);
     }

@@ -588,3 +588,301 @@
 
 )
   
+[2021-04-28T12:25:33.514345+00:00] General.ERROR: Exception  
+[2021-04-28T12:25:33.515293+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-28T12:25:33.515400+00:00] General.ERROR: Line: 128  
+[2021-04-28T12:25:33.515483+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Ocupacion = 'disponible' WHERE id = '1'' at line 3  
+[2021-04-28T12:25:33.515573+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 151
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Mesa SET 
+            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad
+            Ocupacion = :Ocupacion WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Numero] => 4
+                            [:Ubicacion] => Balcon
+                            [:Capacidad] => 5
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 178
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Mesa SET 
+            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad
+            Ocupacion = :Ocupacion WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMesa.php
+            [line] => 24
+            [function] => update
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-04-28T12:30:15.199440+00:00] General.ERROR: Exception  
+[2021-04-28T12:30:15.199898+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-28T12:30:15.199977+00:00] General.ERROR: Line: 128  
+[2021-04-28T12:30:15.200042+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'TblMesaNumero_UNIQUE'  
+[2021-04-28T12:30:15.200117+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 152
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 1
+                            [:Ubicacion] => Ventana 1
+                            [:Capacidad] => 5
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 166
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMesa.php
+            [line] => 17
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-04-28T12:30:15.220210+00:00] General.ERROR: Exception  
+[2021-04-28T12:30:15.220527+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-28T12:30:15.220628+00:00] General.ERROR: Line: 128  
+[2021-04-28T12:30:15.220703+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Ocupacion = 'disponible' WHERE id = '1'' at line 3  
+[2021-04-28T12:30:15.220780+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 152
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Mesa SET 
+            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad
+            Ocupacion = :Ocupacion WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Numero] => 4
+                            [:Ubicacion] => Balcon
+                            [:Capacidad] => 5
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 179
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Mesa SET 
+            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad
+            Ocupacion = :Ocupacion WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMesa.php
+            [line] => 24
+            [function] => update
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-04-28T12:31:07.849024+00:00] General.ERROR: Exception  
+[2021-04-28T12:31:07.849458+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-28T12:31:07.849536+00:00] General.ERROR: Line: 128  
+[2021-04-28T12:31:07.849601+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Ocupacion = 'disponible' WHERE id = '1'' at line 3  
+[2021-04-28T12:31:07.849675+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 152
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Mesa SET 
+            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad
+            Ocupacion = :Ocupacion WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Numero] => 4
+                            [:Ubicacion] => Balcon
+                            [:Capacidad] => 5
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 179
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Mesa SET 
+            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad
+            Ocupacion = :Ocupacion WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMesa.php
+            [line] => 24
+            [function] => update
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
