@@ -162,7 +162,14 @@ class Mesas extends AbstractDBConnection implements Model
     {
         $query = "INSERT INTO Mesa VALUES (
             :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)";
-        return $this->save($query);
+        //return $this->save($query);
+        if ($this->save($query)) {
+            $idMesa = $this->getLastId('mesa');
+            $this->setId($idMesa);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla mesa
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -196,7 +203,27 @@ class Mesas extends AbstractDBConnection implements Model
 
     static function search($query): ?array
     {
-        // TODO: Implement search() method.
+        try {
+            $arrMesas = array();
+            $tmp = new Mesas();
+
+            $tmp->Connect();
+            $getrows = $tmp->getRows($query);
+            $tmp->Disconnect();
+
+            if (!empty($getrows)) {
+                foreach ($getrows as $valor) {
+                    $Mesa = new Mesas($valor);
+                    array_push($arrMesas, $Mesa);//aca meter el contenido del segundo parametro dentro del primero
+                    unset($Mesa); //Borrar el contenido del objeto
+                }
+                return $arrMesas;
+            }
+            return null;
+        } catch (Exception $e) {
+            GeneralFunctions::logFile('Exception', $e);
+        }
+        return null;
     }
 
     static function searchForId(int $id): ?object
