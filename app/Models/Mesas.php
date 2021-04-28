@@ -3,9 +3,9 @@
 
 namespace App\Models;
 
-require ("AbstractDBConnection.php");
-require (__DIR__."\..\Interfaces\Model.php");
-require(__DIR__ .'/../../vendor/autoload.php');
+require ("AbstractDBConnection.php");//Importamos la clase padre
+require (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
+require(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
 
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
@@ -154,22 +154,25 @@ class Mesas extends AbstractDBConnection implements Model
     }
     /**
      * @return bool|null
+     * Convierte el array del constructor en un query
+     * La palabra Mesa del query debe estar escrita igual que el nombre de la TABLA mesa de la DB
+     * NO igual que el nombre de la clase(ojo con ese detalle).
      */
     public function insert(): ?bool
     {
-        $query = "INSERT INTO Mesas VALUES (
+        $query = "INSERT INTO Mesa VALUES (
             :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)";
         return $this->save($query);
     }
 
     /**
      * @return bool|null
-     * El update actualiza todos los datos del registro
+     * El update actualiza todos los datos del registro cuando el registro tenga el id especificado
      * no solo un dato(tener cuiado con ese detalle)
      */
     public function update(): ?bool
     {
-        $query = "UPDATE Mesas SET 
+        $query = "UPDATE Mesa SET 
             Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad
             Ocupacion = :Ocupacion WHERE id = :id";
         return $this->save($query);
@@ -179,6 +182,12 @@ class Mesas extends AbstractDBConnection implements Model
     /**
      * Los metodos deleted, search, searchForId, getAll, jsonSerialize
      * son metodos de la interfaz Model que es obligatorio incluirlos
+     */
+
+    /**
+     * El metodo delete se implementa cuando la clase tiene como atributo un estado
+     * que se puede pasar de activo a inactivo de resto no se aconseja utilizar
+     * el delete o hay que pensar muy bien como utilizarlo
      */
     function deleted()
     {
