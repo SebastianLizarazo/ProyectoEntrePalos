@@ -226,18 +226,44 @@ class Mesas extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function searchForId(int $id): ?object
+    /**
+     * @param int $id
+     * @return Mesas|null
+     * Aca tenemos que especificar que el objeto que nos va a devolver va a ser
+     * en este caso un objeto Mesas porque es la clase que le corresponde a este searchForId
+     */
+    static function searchForId(int $id): ?Mesas
     {
-        // TODO: Implement searchForId() method.
+        try {
+            if ($id > 0) {
+                $tmpMesa = new Mesas();
+                $tmpMesa->Connect();
+                $getrow = $tmpMesa->getRow("SELECT * FROM mesa WHERE id = ?", array($id) );
+
+                $tmpMesa->Disconnect();
+                return ($getrow) ? new Mesas($getrow) : null;
+            } else {
+                throw new Exception('Id de usuario Invalido');
+            }
+        } catch (Exception $e) {
+            GeneralFunctions::logFile('Exception', $e);
+        }
+        return null;
     }
 
     static function getAll(): ?array
     {
-        // TODO: Implement getAll() method.
+        return Mesas::search("SELECT * FROM mesa");
     }
 
     public function jsonSerialize()
     {
-        // TODO: Implement jsonSerialize() method.
+        return [
+        'id' => $this->getId(),
+        'Numero' =>$this->getNumero(),
+        'Ubicacion' =>$this->getUbicacion(),
+        'Capacidad' =>$this->getCapacidad(),
+        'Ocupacion' =>$this->getOcupacion(),
+         ];
     }
 }

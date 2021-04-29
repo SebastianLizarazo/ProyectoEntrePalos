@@ -1032,3 +1032,441 @@
 
 )
   
+[2021-04-29T12:43:06.030788+00:00] General.ERROR: Exception  
+[2021-04-29T12:43:06.034195+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-29T12:43:06.034505+00:00] General.ERROR: Line: 128  
+[2021-04-29T12:43:06.034796+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2' for key 'TblMesaNumero_UNIQUE'  
+[2021-04-29T12:43:06.035518+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 151
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 2
+                            [:Ubicacion] => Puerta
+                            [:Capacidad] => 8
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 166
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMesa.php
+            [line] => 35
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-04-29T15:05:35.415189+00:00] General.ERROR: Exception  
+[2021-04-29T15:05:35.416278+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-29T15:05:35.416364+00:00] General.ERROR: Line: 128  
+[2021-04-29T15:05:35.416432+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2' for key 'TblMesaNumero_UNIQUE'  
+[2021-04-29T15:05:35.416505+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 151
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 2
+                            [:Ubicacion] => Puerta
+                            [:Capacidad] => 8
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 166
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMesa.php
+            [line] => 35
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-04-29T15:06:38.042887+00:00] General.ERROR: Exception  
+[2021-04-29T15:06:38.043322+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-29T15:06:38.043399+00:00] General.ERROR: Line: 128  
+[2021-04-29T15:06:38.043464+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'TblMesaNumero_UNIQUE'  
+[2021-04-29T15:06:38.043540+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 151
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 1
+                            [:Ubicacion] => Ventana 1
+                            [:Capacidad] => 5
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 166
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMesa.php
+            [line] => 26
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-04-29T15:06:38.049161+00:00] General.ERROR: Exception  
+[2021-04-29T15:06:38.049464+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-29T15:06:38.049551+00:00] General.ERROR: Line: 128  
+[2021-04-29T15:06:38.049624+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2' for key 'TblMesaNumero_UNIQUE'  
+[2021-04-29T15:06:38.049707+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 151
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 2
+                            [:Ubicacion] => Puerta
+                            [:Capacidad] => 8
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 166
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMesa.php
+            [line] => 35
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-04-29T15:08:07.875007+00:00] General.ERROR: Exception  
+[2021-04-29T15:08:07.875441+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-29T15:08:07.875522+00:00] General.ERROR: Line: 128  
+[2021-04-29T15:08:07.875626+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'TblMesaNumero_UNIQUE'  
+[2021-04-29T15:08:07.875704+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 151
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 1
+                            [:Ubicacion] => Ventana 1
+                            [:Capacidad] => 5
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 166
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMesa.php
+            [line] => 26
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-04-29T15:08:07.914307+00:00] General.ERROR: Exception  
+[2021-04-29T15:08:07.914646+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-04-29T15:08:07.914776+00:00] General.ERROR: Line: 128  
+[2021-04-29T15:08:07.914850+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2' for key 'TblMesaNumero_UNIQUE'  
+[2021-04-29T15:08:07.914930+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 151
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 2
+                            [:Ubicacion] => Puerta
+                            [:Capacidad] => 8
+                            [:Ocupacion] => disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 166
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMesa.php
+            [line] => 35
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
