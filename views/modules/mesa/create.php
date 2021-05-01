@@ -68,8 +68,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                             <div class="card-body">
                             <!-- form start -->
                                 <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
-                                      name="frmCreate<?= $nameModel ?>" action="#">
-                                    <!--action="../../../app/Controllers/MainController.php?controller=--><?= ""//= $pluralModel ?><!--&action=create">-->
+                                      name="frmCreate<?= $nameModel ?>"
+                                      action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>!&action=create">
 
 
                                       <div class="row">

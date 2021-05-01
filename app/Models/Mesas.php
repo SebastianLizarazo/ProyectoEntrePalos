@@ -40,6 +40,12 @@ class Mesas extends AbstractDBConnection implements Model
         $this->setOcupacion($mesa['Ocupacion']??'disponible' );
     }
 
+    public static function mesaRegistrada(mixed $Numero, mixed $Capacidad): bool
+    {
+        $msaTmp = Mesas::search("SELECT * FROM mesa WHERE Numero = '$Numero' and Capacidad = '$Capacidad'");
+        return (!empty($msaTmp)) ? true : false;
+    }
+
     public function __destruct()
     {
         //isConnected y Disconnect son metodos de la clase AbstractDBConnection
