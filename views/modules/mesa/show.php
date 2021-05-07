@@ -82,7 +82,7 @@ $pluralModel = $nameModel . 's';
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-book mr-1"></i>Numero</strong>
+                                                    <strong><i class="fas fa-list-ol mr-1"></i>Numero</strong>
                                                         <p class="text-muted"><?= $DataMesa->getNumero() ?></p>
                                                 <hr>
                                                     <strong><i class="fas fa-phone mr-1"></i>Ubicacion</strong>

@@ -92,12 +92,14 @@ $pluralModel = $nameModel.'s';
                                                 <th>Numero</th>
                                                 <th>Ubicacion</th>
                                                 <th>Capacidad</th>
+                                                <th>Ocupación</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
                                             $arrMesas = MesasController::getAll();
+                                            if (!empty($arrMesas))
                                             /* @var $arrMesas Mesas */
                                             foreach ($arrMesas as $mesa) {
                                                 ?>
@@ -126,6 +128,7 @@ $pluralModel = $nameModel.'s';
                                                 <th>Numero</th>
                                                 <th>Ubicacion</th>
                                                 <th>Capacidad</th>
+                                                <th>Ocupación</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </tfoot>
