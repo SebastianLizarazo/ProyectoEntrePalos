@@ -230,7 +230,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bdentrepalos`.`Oferta`
+-- Table `bdentrepalos`.`Ofertas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bdentrepalos`.`Oferta` (
   `id` INT NOT NULL AUTO_INCREMENT,
