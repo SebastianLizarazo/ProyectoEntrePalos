@@ -133,26 +133,66 @@ class SubCategorias extends AbstractDBConnection implements Model
 
     function deleted()
     {
-        // TODO: Implement deleted() method.
+        $this->setEstado("Inactivo"); //Cambia el estado del Usuario
+        return $this->update();                    //Guarda los cambios..
     }
+
 
     static function search($query): ?array
     {
-        // TODO: Implement search() method.
-    }
+        try {
+            $arrSubCategorias = array();
+            $tmp = new SubCategorias();
 
-    static function searchForId(int $id): ?object
+            $tmp->Connect();
+            $getrows = $tmp->getRows($query);
+            $tmp->Disconnect();
+
+            if (!empty($getrows)) {
+                foreach ($getrows as $valor) {
+                    $subcategoria = new SubCategorias($valor);
+                    array_push($arrSubCategorias, $subcategoria);
+                    unset($subcategoria);
+                }
+                return $arrSubCategorias;
+            }
+            return null;
+        } catch (Exception $e) {
+            GeneralFunctions::logFile('Exception', $e);
+        }
+        return null;
+    }
+    static function searchForId(int $id): ?SubCategorias
     {
-        // TODO: Implement searchForId() method.
+        try {
+            if ($id > 0) {
+                $tmpsubcategoria = new SubCategorias();
+                $tmpsubcategoria->Connect();
+                $getrow = $tmpsubcategoria->getRow("SELECT * FROM subcategoria WHERE id = ?", array($id) );
+
+                $tmpsubcategoria->Disconnect();
+                return ($getrow) ? new SubCategorias($getrow) : null;
+            } else {
+                throw new Exception('Id de usuario Invalido');
+            }
+        } catch (Exception $e) {
+            GeneralFunctions::logFile('Exception', $e);
+        }
+        return null;
     }
 
     static function getAll(): ?array
-    {
-        // TODO: Implement getAll() method.
-    }
+{
+    return SubCategorias::search("SELECT * FROM subcategoria");
+}
 
     public function jsonSerialize()
     {
-        // TODO: Implement jsonSerialize() method.
+        return [
+            'id' => $this->getId(),
+            'Nombre' =>$this->getNombre(),
+            'CategoriaProducto' =>$this->getCategoriaProducto(),
+            'Estado' =>$this->getEstado(),
+        ];
     }
 }
