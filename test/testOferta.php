@@ -1,35 +1,35 @@
 <?php
-//Este archivo es para hacer pruebas unitarias de la clase Mesa
-require ("..\app\Models\Mesas.php");//Importamos la clase Mesas
-use App\Models\Mesas;
+//Este archivo es para hacer pruebas unitarias de la clase Oferta
+require ("..\app\Models\Ofertas.php");//Importamos la clase Ofertas
+use App\Models\Ofertas;
 
-$arrMesa1=[//creamos un array ficticio
-    'Numero'=> 1,
-    'Ubicacion'=> 'Ventana 1',
-    'Capacidad'=> 5,
-    'Ocupacion'=> 'disponible'
+$arrOferta1=[   //creamos un array ficticio
+    'Nombre'=> 'Jo',
+    'Descripcion'=> 'Kjkjakajkjakjckjck',
+    'PrecioUnidadVentaOferta'=> 52000,
+    'Estado'=> 'disponible'
 ];
 
-$arrMesa2=[//creamos un array ficticio
-    'Numero'=> 2,
-    'Ubicacion'=> 'Puerta',
-    'Capacidad'=> 8,
-    'Ocupacion'=> 'disponible'
+$arrOferta2=[   //creamos un array ficticio
+    'Nombre'=> 'Yu',
+    'Descripcion'=> 'Asfgajhkhsjs',
+    'PrecioUnidadVentaOferta'=> 20000,
+    'Estado'=> 'disponible'
 ];
 
 /**
  * Primero creo el objeto y luego lo inserto en la BD
  */
-$objectMesa1 = new Mesas($arrMesa1);//Creamos un objeto Mesa.. pero no e echo nada con el
+$arrOferta1 = new Mesas($arrOferta1);   //Creamos un objeto Oferta.. pero no e echo nada con el
 
 //var_dump($objectMesa1);
-$objectMesa1->insert();//Aca registramos el objeto en la bd
+$arrOferta1->insert();//Aca registramos el objeto en la bd
 
-$objectMesa1->setUbicacion('Balcon');//Cambiamos la ubicacion del objetoMesa1
-$objectMesa1->setNumero(4);//Cambiamos el numero de mesa
+$arrOferta1->setDescripcion('Balcon');//Cambiamos la ubicacion del objetoOferta1
+$arrOferta1->setPrecioUnidadVentaOferta(4);//Cambiamos el numero de mesa
 
 //var_dump($objectMesa1);
-$objectMesa1->update();//para poder actualizar un registro se debe tener claro el Id de ese registro
+$arrOferta1->update();//para poder actualizar un registro se debe tener claro el Id de ese registro
 
 $objectMesa2= new Mesas($arrMesa2);//Creamos un nuevo objeto mesa
 $objectMesa2->insert();

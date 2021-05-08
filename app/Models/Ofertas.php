@@ -160,14 +160,16 @@ class Ofertas extends AbstractDBConnection implements Model
     function update(): ?bool
     {
         $query = "UPDATE Oferta SET 
-            Nombre = :Nombre, Descripcion = :Descripcion, PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
             Estado = :Estado WHERE id = :id";
         return $this->save($query);
     }
 
     function deleted()
     {
-        // TODO: Implement deleted() method.
+        $this->setEstado("Inactivo"); //Cambia el estado del Usuario
+        return $this->update();                    //Guarda los cambios..
     }
 
     static function search($query): ?array
@@ -201,12 +203,12 @@ class Ofertas extends AbstractDBConnection implements Model
             if ($id > 0) {
                 $tmpOferta = new Ofertas();
                 $tmpOferta->Connect();
-                $getrow = $tmpOferta->getRow("SELECT * FROM Oferta WHERE id = ?", array($id) );
+                $getrow = $tmpOferta->getRow("SELECT * FROM ofertas WHERE id = ?", array($id) );
 
                 $tmpOferta->Disconnect();
                 return ($getrow) ? new Ofertas($getrow) : null;
             } else {
-                throw new Exception('Id de usuario Invalido');
+                throw new Exception('Id de oferta Invalido');
             }
         } catch (Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
@@ -216,11 +218,17 @@ class Ofertas extends AbstractDBConnection implements Model
 
     static function getAll(): ?array
     {
-        // TODO: Implement getAll() method.
+        return Ofertas::search("SELECT * FROM ofertas");
     }
 
     public function jsonSerialize()
     {
-        // TODO: Implement jsonSerialize() method.
+        return [
+            'id' => $this->getId(),
+            'Nombre' =>$this->getNombre(),
+            'Descripcion' =>$this->getDescripcion(),
+            'PrecioUnidadVentaOferta' =>$this->getPrecioUnidadVentaOferta(),
+            'Estado' =>$this->getEstado(),
+        ];
     }
 }

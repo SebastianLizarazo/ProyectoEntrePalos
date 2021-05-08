@@ -1,7 +1,7 @@
 <?php
 require("../../partials/routes.php");
 //require_once("../../partials/check_login.php");
-require("../../../app/Controllers/MesasController.php");
+require("../../../app/Controllers/OfertasController.php");
 
 
 use App\Controllers\MesasController;
@@ -9,7 +9,7 @@ use App\Models\GeneralFunctions;
 use App\Models\Mesas;
 
 
-$nameModel = "Mesa";
+$nameModel = "Oferta";
 $pluralModel = $nameModel.'s';
 //$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
@@ -75,49 +75,49 @@ $pluralModel = $nameModel.'s';
                                 <p>
                                 <?php
 
-                                $DataMesa = MesasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataMesa Mesas */
-                                if (!empty($DataMesa)) {
+                                $DataOferta =OfertasController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataOferta Ofertas */
+                                if (!empty($DataOferta)) {
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
-                                            <input id="id" name="id" value="<?= $DataMesa->getId(); ?>" hidden
+                                            <input id="id" name="id" value="<?= $DataOferta->getId(); ?>" hidden
                                                    required="required" type="text">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero</label>
+                                                        <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Numero"
-                                                                   name="Numero" value="<?= $DataMesa->getNumero(); ?>"
-                                                                   placeholder="Ingrese el numero de la mesa">
+                                                            <input required type="text" class="form-control" id="Nombre"
+                                                                   name="Nombre" value="<?= $DataOferta->getNombre(); ?>"
+                                                                   placeholder="Ingrese el nombre de la oferta">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Ubicacion" class="col-sm-2 col-form-label">Ubicacion</label>
+                                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Ubicacion"
-                                                                   name="Ubicacion" value="<?= $DataMesa->getUbicacion(); ?>"
-                                                                   placeholder="Ingrese la ubicacion de la mesa">
+                                                            <input required type="text" class="form-control" id="Descripcion"
+                                                                   name="Descripcion" value="<?= $DataOferta->getDescripcion(); ?>"
+                                                                   placeholder="Ingrese la descripcion de la oferta">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Capacidad" class="col-sm-2 col-form-label">Capacidad</label>
+                                                        <label for="PrecioUnidadVentaOferta" class="col-sm-2 col-form-label">Precio Unidad Venta Oferta</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Capacidad"
-                                                                   name="Capacidad" value="<?= $DataMesa->getCapacidad(); ?>"
-                                                                   placeholder="Ingrese la capacidad de la mesa">
+                                                            <input required type="text" class="form-control" id="PrecioUnidadVentaOferta"
+                                                                   name="PrecioUnidadVentaOferta" value="<?= $DataOferta->getPrecioUnidadVentaOferta(); ?>"
+                                                                   placeholder="Ingrese el precio unidad venta oferta">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Ocupacion" class="col-sm-2 col-form-label">Ocupación</label>
+                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="Ocupacion" name="Ocupacion" class="custom-select">
-                                                                <option <?= ($DataMesa->getOcupacion() == "disponible") ? "selected" : ""; ?> value="disponible">disponible</option>
-                                                                <option <?= ($DataMesa->getOcupacion() == "ocupada") ? "selected" : ""; ?> value="ocupada">ocupada</option>
+                                                            <select required id="Estado" name="Estado" class="custom-select">
+                                                                <option <?= ($DataOferta->getEstado() == "disponible") ? "selected" : ""; ?> value="disponible">Disponible</option>
+                                                                <option <?= ($DataOferta->getEstado() == "ocupada") ? "selected" : ""; ?> value="ocupada">Ocupada</option>
                                                             </select>
                                                         </div>
                                                     </div>
