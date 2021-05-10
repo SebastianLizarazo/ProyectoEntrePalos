@@ -3,15 +3,15 @@
 
 namespace App\Models;
 
-require ("AbstractDBConnection.php");//Importamos la clase padre
-require (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
-require(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
+require_once ("AbstractDBConnection.php");//Importamos la clase padre
+require_once (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
+require_once (__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
 
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
 use PhpParser\Node\Expr\Cast\Int_;
 
-class Empresa
+class Empresas extends AbstractDBConnection implements Model
 {
     private ?int $id;//el id es opcional porque el usuario no lo tiene que ingresar
     private string $Nombre;
@@ -19,7 +19,7 @@ class Empresa
     private int $Telefono;
     private string $Direccion;
     private string $Estado;
-    private int $Municipio_id;
+    private ?int $Municipio_id;
 
     /**
      * Empresa constructor.
@@ -31,8 +31,9 @@ class Empresa
      * @param string $Estado
      * @param int $Municipio_id
      */
-    public function __construct(?int $id, string $Nombre, string $NIT, int $Telefono, string $Direccion, string $Estado, int $Municipio_id)
+    public function __construct(array $Empresa=[])
     {
+        parent::__construct();
         $this->setId($Empresa['Id'] ?? 0);
         $this->setNombre($Empresa['Nombre'] ?? '');
         $this->setNIT($Empresa['NIT'] ?? '');
@@ -40,6 +41,11 @@ class Empresa
         $this->setDireccion($Empresa['Direccion'] ?? '');
         $this->setEstado($Empresa['Estado'] ?? '');
         $this->setMunicipioid($Empresa['Municipio_id'] ?? 0);
+    }
+    public static function empresaRegistrada(mixed $id, mixed $NIT): bool
+    {
+        $empresatmp = Empresas::search("SELECT * FROM empresa WHERE id = '$id' and NIT = '$NIT'");
+        return (!empty($empresatmp)) ? true : false;
     }
 
     /**
@@ -163,7 +169,7 @@ class Empresa
             ':Telefono' => $this->getTelefono(),
             ':Direccion' => $this->getDireccion(),
             ':Estado' => $this->getEstado(),
-            'Municipio_id:' => $this->getMunicipioid(),
+            ':Municipio_id' => $this->getMunicipioid(),
         ];
         $this->Connect();
         $result = $this->insertRow($query, $arrData);//insertRow es el que inserta los datos que organiza el save

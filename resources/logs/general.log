@@ -2005,6 +2005,306 @@
 
 )
   
+[2021-05-10T15:03:11.643248+00:00] General.ERROR: Exception  
+[2021-05-10T15:03:11.643737+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T15:03:11.643802+00:00] General.ERROR: Line: 128  
+[2021-05-10T15:03:11.643856+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-10T15:03:11.643916+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Inactivo
+                            [Municipio_id:] => 6
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-10T15:12:40.044666+00:00] General.ERROR: Exception  
+[2021-05-10T15:12:40.045089+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T15:12:40.045159+00:00] General.ERROR: Line: 128  
+[2021-05-10T15:12:40.045219+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-10T15:12:40.045287+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Inactivo
+                            [:Municipio_id] => 6
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-10T15:14:59.176643+00:00] General.ERROR: Exception  
+[2021-05-10T15:14:59.177216+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T15:14:59.177296+00:00] General.ERROR: Line: 128  
+[2021-05-10T15:14:59.177350+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-10T15:14:59.177410+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Inactivo
+                            [:Municipio_id] => 6
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-10T15:34:23.294236+00:00] General.ERROR: Exception  
+[2021-05-10T15:34:23.294703+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T15:34:23.294765+00:00] General.ERROR: Line: 128  
+[2021-05-10T15:34:23.294818+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-10T15:34:23.294877+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Inactivo
+                            [:Municipio_id] => 6
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
 [2021-05-08T17:13:03.560530+00:00] General.ERROR: Exception  
 [2021-05-08T17:13:03.565494+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
 [2021-05-08T17:13:03.565918+00:00] General.ERROR: Line: 128  
@@ -2082,6 +2382,156 @@
             [line] => 29
             [function] => create
             [class] => App\Controllers\MesasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-10T22:36:12.615513+00:00] General.ERROR: Exception  
+[2021-05-10T22:36:12.616507+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T22:36:12.616635+00:00] General.ERROR: Line: 128  
+[2021-05-10T22:36:12.616744+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-10T22:36:12.616864+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Inactivo
+                            [:Municipio_id] => 8799
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-10T22:38:24.725746+00:00] General.ERROR: Exception  
+[2021-05-10T22:38:24.726412+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T22:38:24.726524+00:00] General.ERROR: Line: 128  
+[2021-05-10T22:38:24.726623+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-10T22:38:24.726740+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8799
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
             [type] => ->
             [args] => Array
                 (
