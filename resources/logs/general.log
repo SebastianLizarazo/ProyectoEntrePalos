@@ -2005,3 +2005,16 @@
 
 )
   
+[2021-05-10T16:02:24.598136+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:02:41.265608+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:04:02.108982+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:05:15.635894+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:09:34.946876+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:10:39.203610+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:10:49.223033+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:11:02.102115+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:23:11.495749+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:38:26.157260+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:42:05.749933+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:43:33.230354+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
+[2021-05-10T16:44:42.234314+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriasController no fue encontrada "} 

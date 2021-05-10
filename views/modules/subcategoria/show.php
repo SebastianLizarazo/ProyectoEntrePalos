@@ -1,9 +1,9 @@
 <?php
 require("../../partials/routes.php");
 //require_once("../../partials/check_login.php");
-require("../../../app/Controllers/SubCategoriaController.php");
+require("../../../app/Controllers/SubCategoriasController.php");
 
-use App\Controllers\SubCategoriaController;
+use App\Controllers\SubCategoriasController;
 use App\Models\GeneralFunctions;
 use App\Models\SubCategorias;
 
@@ -57,7 +57,7 @@ $pluralModel = $nameModel . 's';
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $Datasubcategoria = SubCategoriaController::searchForID(["id" => $_GET["id"]]);
+                                $Datasubcategoria = SubCategoriasController::searchForID(["id" => $_GET["id"]]);
                                 /* @var $Datasubcategoria SubCategorias */
                                 if (!empty($Datasubcategoria)) {
                                     ?>
@@ -85,7 +85,7 @@ $pluralModel = $nameModel . 's';
                                                     <strong><i class="fas fa-list-ol mr-1"></i>Nombre</strong>
                                                         <p class="text-muted"><?= $Datasubcategoria->getNombre() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>CategoriaProducto</strong>
+                                                    <strong><i class="fas fa-phone mr-1"></i>Categoria del producto</strong>
                                                         <p class="text-muted"><?= $Datasubcategoria->getCategoriaProducto() ?></p>
                                                 <hr>
                                                     <strong><i class="fas fa-phone mr-1"></i> Estado</strong>

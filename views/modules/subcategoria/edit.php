@@ -1,10 +1,10 @@
 <?php
 require("../../partials/routes.php");
 //require_once("../../partials/check_login.php");
-require("../../../app/Controllers/SubCategoriaController.php");
+require("../../../app/Controllers/SubCategoriasController.php");
 
 
-use App\Controllers\SubCategoriaController;
+use App\Controllers\SubCategoriasController;
 use App\Models\GeneralFunctions;
 use App\Models\subcategorias;
 
@@ -75,7 +75,7 @@ $pluralModel = $nameModel.'s';
                                 <p>
                                 <?php
 
-                                $DataMesa = SubCategoriaController::searchForID(["id" => $_GET["id"]]);
+                                $Datasubcategoria = SubCategoriasController::searchForID(["id" => $_GET["id"]]);
                                 /* @var $Datasubcategoria subcategorias */
                                 if (!empty($Datasubcategoria)) {
                                     ?>
@@ -92,7 +92,7 @@ $pluralModel = $nameModel.'s';
                                                         <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                         <div class="col-sm-10">
                                                             <input required type="text" class="form-control" id="Nombre"
-                                                                   name="Nombre" value="<?= $DataMesa->getNombre(); ?>"
+                                                                   name="Nombre" value="<?= $Datasubcategoria->getNombre(); ?>"
                                                                    placeholder="Ingrese el Nombre de la subcategoria">
                                                         </div>
                                                     </div>
@@ -100,9 +100,9 @@ $pluralModel = $nameModel.'s';
                                                         <label for="CategoriaProducto" class="col-sm-2 col-form-label">CategoriaProducto</label>
                                                         <div class="col-sm-10">
                                                             <select required id="CategoriaProducto" name="CategoriaProducto" class="custom-select">
-                                                                <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
-                                                                <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
-                                                                <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
+                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
+                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
+                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
                                                             </select>
                                                         </div>
                                                     </div>

@@ -3,11 +3,9 @@
 
 namespace App\Controllers;
 use App\Models\GeneralFunctions;
-use App\Models\Mesas;
 use App\Models\SubCategorias;
-use App\Models\Usuarios;
 
-class SubCategoriaController
+class SubCategoriasController
 {
 
     private array $datasubcategoria;
@@ -68,7 +66,7 @@ static public function activate(int $id)
     public function edit()
     {
         try {
-            $sbc = new subcategoria ($this->datasubcategoria);
+            $sbc = new SubCategorias ($this->datasubcategoria);
             if($sbc->update()){
                 //unset($_SESSION['frmUsuarios']);
             }

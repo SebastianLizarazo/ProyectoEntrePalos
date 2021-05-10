@@ -5,7 +5,7 @@ require("../../partials/routes.php");
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
-$nameModel = "SubCategorias"; //Nombre del Modelo
+$nameModel = "SubCategoria"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>

@@ -1,9 +1,9 @@
 <?php
-require_once("../../../app/Controllers/SubCategoriaController.php");
+require_once("../../../app/Controllers/SubCategoriasController.php");
 require_once("../../partials/routes.php");
 //require_once("../../partials/check_login.php");
 
-use App\Controllers\SubCategoriaController;
+use App\Controllers\SubCategoriasController;
 use App\Models\GeneralFunctions;
 use App\Models\SubCategorias;
 
@@ -96,7 +96,7 @@ $pluralModel = $nameModel.'s';
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrMesas = SubCategoriaController::getAll();
+                                            $arrSubCategoria = SubCategoriasController::getAll();
                                             if (!empty($arrSubCategoria))
                                             /* @var $arrSubCategoria SubCategorias */
                                             foreach ($arrSubCategoria as $subcategoria) {
@@ -104,7 +104,7 @@ $pluralModel = $nameModel.'s';
                                                 <tr>
                                                     <td><?= $subcategoria->getId(); ?></td>
                                                     <td><?= $subcategoria->getNombre(); ?></td>
-                                                    <td><?= $subcategoria->getCapacidadProducto(); ?></td>
+                                                    <td><?= $subcategoria->getCategoriaProducto(); ?></td>
                                                     <td><?= $subcategoria->getEstado(); ?></td>
                                                     <td>
                                                         <a href="edit.php?id=<?= $subcategoria->getId(); ?>"
@@ -115,6 +115,18 @@ $pluralModel = $nameModel.'s';
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
+                                                        <?php if ($subcategoria->getEstado() != "Activo") { ?>
+                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $subcategoria->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Activar"
+                                                               class="btn docs-tooltip btn-success btn-xs"><i
+                                                                        class="fa fa-check-square"></i></a>
+                                                        <?php } else { ?>
+                                                            <a type="button"
+                                                               href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $subcategoria->getId(); ?>"
+                                                               data-toggle="tooltip" title="Inactivar"
+                                                               class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                        class="fa fa-times-circle"></i></a>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
