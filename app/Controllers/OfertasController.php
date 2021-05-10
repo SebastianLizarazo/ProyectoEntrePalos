@@ -26,7 +26,7 @@ class OfertasController
     public function create()
     {
         try {
-            if (!empty($this->dataOferta['Nombre']) && !empty($this->dataOferta['Descripcion']) && !Oferta::ofertaRegistrada($this->dataOferta['Nombre'], $this->dataOferta['Descripcion'])) {
+            if (!empty($this->dataOferta['nombre']) && !empty($this->dataOferta['descripcion']) && !Oferta::ofertaRegistrada($this->dataOferta['nombre'], $this->dataOferta['descripcion'])) {
                 $Oferta = new Ofertas($this->dataOferta);
                 if ($Oferta->insert()) {
                     //unset($_SESSION['frmUsuarios']);

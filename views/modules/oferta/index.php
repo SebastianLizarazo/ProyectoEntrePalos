@@ -100,7 +100,7 @@ $pluralModel = $nameModel.'s';
                                             <?php
                                             $arrOfertas = OfertasController::getAll();
                                             if (!empty($arrOfertas))
-                                            /* @var $arrOfertas Ofertas */
+                                            /* @var $arrOfertas \App\Models\Ofertas */
                                             foreach ($arrOfertas as $oferta) {
                                                 ?>
                                                 <tr>

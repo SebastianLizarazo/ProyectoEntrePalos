@@ -58,7 +58,7 @@ $pluralModel = $nameModel . 's';
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
                                 $DataOferta = OfertasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataOferta Ofertas */
+                                /* @var $DataOferta \App\Models\Ofertas */
                                 if (!empty($DataOferta)) {
                                     ?>
                                     <div class="card-header">

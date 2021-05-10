@@ -2005,3 +2005,371 @@
 
 )
   
+[2021-05-10T17:14:42.726027+00:00] General.ERROR: Exception  
+[2021-05-10T17:14:42.740698+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T17:14:42.740993+00:00] General.ERROR: Line: 80  
+[2021-05-10T17:14:42.741187+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-10T17:14:42.741372+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 206
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM ofertas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 51
+            [function] => searchForId
+            [class] => App\Models\Ofertas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-10T17:14:43.340005+00:00] General.ERROR: Exception  
+[2021-05-10T17:14:43.340628+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T17:14:43.340814+00:00] General.ERROR: Line: 102  
+[2021-05-10T17:14:43.340980+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-10T17:14:43.341151+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 182
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 221
+            [function] => search
+            [class] => App\Models\Ofertas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 57
+            [function] => getAll
+            [class] => App\Models\Ofertas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-10T17:14:43.347632+00:00] General.ERROR: Exception  
+[2021-05-10T17:14:43.348246+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T17:14:43.348464+00:00] General.ERROR: Line: 80  
+[2021-05-10T17:14:43.348632+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-10T17:14:43.348808+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 206
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM ofertas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 66
+            [function] => searchForId
+            [class] => App\Models\Ofertas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-10T17:36:40.129824+00:00] General.ERROR: Exception  
+[2021-05-10T17:36:40.216079+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T17:36:40.216477+00:00] General.ERROR: Line: 80  
+[2021-05-10T17:36:40.217179+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-10T17:36:40.255763+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 206
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM ofertas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 51
+            [function] => searchForId
+            [class] => App\Models\Ofertas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-10T17:36:40.301844+00:00] General.ERROR: Exception  
+[2021-05-10T17:36:40.303675+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T17:36:40.304562+00:00] General.ERROR: Line: 102  
+[2021-05-10T17:36:40.305171+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-10T17:36:40.305740+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 182
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 221
+            [function] => search
+            [class] => App\Models\Ofertas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 57
+            [function] => getAll
+            [class] => App\Models\Ofertas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-10T17:36:40.444111+00:00] General.ERROR: Exception  
+[2021-05-10T17:36:40.445253+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-10T17:36:40.445583+00:00] General.ERROR: Line: 80  
+[2021-05-10T17:36:40.445862+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-10T17:36:40.446157+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 206
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM ofertas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 66
+            [function] => searchForId
+            [class] => App\Models\Ofertas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
