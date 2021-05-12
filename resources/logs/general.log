@@ -2018,3 +2018,368 @@
 [2021-05-10T16:42:05.749933+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
 [2021-05-10T16:43:33.230354+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriassController no fue encontrada "} 
 [2021-05-10T16:44:42.234314+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\SubCategoriasController no fue encontrada "} 
+[2021-05-12T15:29:12.016009+00:00] General.ERROR: Exception  
+[2021-05-12T15:29:12.017583+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T15:29:12.017749+00:00] General.ERROR: Line: 128  
+[2021-05-12T15:29:12.018034+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`marca`, CONSTRAINT `fk_Marca_Usuario1` FOREIGN KEY (`Proveedor_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T15:29:12.018649+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 131
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => panzote
+                            [:Descripcion] => Pan
+                            [:Proveedor_id] => 0
+                            [:Estado] => Inactiva
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 140
+            [function] => save
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMarca.php
+            [line] => 21
+            [function] => insert
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T15:29:12.029728+00:00] General.ERROR: Exception  
+[2021-05-12T15:29:12.030124+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T15:29:12.030205+00:00] General.ERROR: Line: 128  
+[2021-05-12T15:29:12.030270+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`marca`, CONSTRAINT `fk_Marca_Usuario1` FOREIGN KEY (`Proveedor_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T15:29:12.030338+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 131
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => panzote
+                            [:Descripcion] => Pan
+                            [:Proveedor_id] => 0
+                            [:Estado] => Inactiva
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 140
+            [function] => save
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMarca.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T15:29:31.648209+00:00] General.ERROR: Exception  
+[2021-05-12T15:29:31.648956+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T15:29:31.649043+00:00] General.ERROR: Line: 128  
+[2021-05-12T15:29:31.649103+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`marca`, CONSTRAINT `fk_Marca_Usuario1` FOREIGN KEY (`Proveedor_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T15:29:31.649200+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 131
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => panzote
+                            [:Descripcion] => Pan
+                            [:Proveedor_id] => 0
+                            [:Estado] => Inactiva
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 140
+            [function] => save
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMarca.php
+            [line] => 21
+            [function] => insert
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T15:29:31.659205+00:00] General.ERROR: Exception  
+[2021-05-12T15:29:31.659493+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T15:29:31.659569+00:00] General.ERROR: Line: 128  
+[2021-05-12T15:29:31.659635+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`marca`, CONSTRAINT `fk_Marca_Usuario1` FOREIGN KEY (`Proveedor_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T15:29:31.659702+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 131
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => panzote
+                            [:Descripcion] => Pan
+                            [:Proveedor_id] => 0
+                            [:Estado] => Inactiva
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 140
+            [function] => save
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMarca.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T15:33:36.661374+00:00] General.ERROR: Exception  
+[2021-05-12T15:33:36.662747+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T15:33:36.662844+00:00] General.ERROR: Line: 128  
+[2021-05-12T15:33:36.662905+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`marca`, CONSTRAINT `fk_Marca_Usuario1` FOREIGN KEY (`Proveedor_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T15:33:36.663180+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 131
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => panzote
+                            [:Descripcion] => Pan
+                            [:Proveedor_id] => 0
+                            [:Estado] => Inactiva
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 140
+            [function] => save
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMarca.php
+            [line] => 22
+            [function] => insert
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

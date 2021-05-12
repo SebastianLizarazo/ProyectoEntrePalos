@@ -25,7 +25,7 @@ class Marcas extends AbstractDBConnection implements Model
         $this->setId($marca['id']?? null);
         $this->setNombre($marca['Nombre']?? '');
         $this->setDescripcion($marca['Descripcion']??'');
-        $this->setProveedor_id($marca['Proveedor_id']??0);
+        $this->setProveedorid($marca['Proveedor_id']??0);
         $this->setEstado($marca['Estado']??'Activa' );
     }
     public static function marcaRegistrada (mixed $Nombre, mixed $id): bool
