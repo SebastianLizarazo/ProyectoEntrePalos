@@ -36,9 +36,9 @@ class SubCategoriasController
 static public function activate(int $id)
 {
     try {
-        $ObjUsuario = SubCategorias::searchForId($id);
-        $ObjUsuario->setEstado("Activo");
-        if ($ObjUsuario->update()) {
+        $Objsubcategoria = SubCategorias::searchForId($id);
+        $Objsubcategoria->setEstado("Activo");
+        if ($Objsubcategoria->update()) {
             header("Location: ../../views/modules/subcategoria/index.php");
         } else {
             header("Location: ../../views/modules/subcategoria/index.php?respuesta=error&mensaje=Error al guardar");
@@ -51,9 +51,9 @@ static public function activate(int $id)
     static public function inactivate(int $id)
     {
         try {
-            $ObjUsuario = SubCategorias::searchForId($id);
-            $ObjUsuario->setEstado("Inactivo");
-            if ($ObjUsuario->update()) {
+            $Objsubcategoria = SubCategorias::searchForId($id);
+            $Objsubcategoria->setEstado("Inactivo");
+            if ($Objsubcategoria->update()) {
                 header("Location: ../../views/modules/subcategoria/index.php");
             } else {
                 header("Location: ../../views/modules/subcategoria/index.php?respuesta=error&mensaje=Error al guardar");

@@ -15,7 +15,7 @@ class SubCategorias extends AbstractDBConnection implements Model
     private ?int $id;
     private string $Nombre;
     private string $CategoriaProducto;
-    private string $Estado ;
+    private string $Estado;
 
     public function __construct(array $SubCategoria=[])
     {
