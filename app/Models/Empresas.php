@@ -179,7 +179,7 @@ class Empresas extends AbstractDBConnection implements Model
 
     public function insert(): ?bool
     {
-        $query = "INSERT INTO Empresa VALUES (
+        $query = "INSERT INTO empresa VALUES (
             :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)";
         //return $this->save($query);
         if ($this->save($query)) {
@@ -193,8 +193,8 @@ class Empresas extends AbstractDBConnection implements Model
 
     public function update(): ?bool
     {
-        $query = "UPDATE Empresa SET 
-            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+        $query = "UPDATE empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = :Direccion, Estado = :Estado,
             Municipio_id = :Municipio_id WHERE id = :id";
         return $this->save($query);
 
@@ -210,7 +210,7 @@ class Empresas extends AbstractDBConnection implements Model
     {
         try {
             $arrEmpresa = array();
-            $tmp = new Empresa();
+            $tmp = new Empresas();
 
             $tmp->Connect();
             $getrows = $tmp->getRows($query);
@@ -237,10 +237,10 @@ class Empresas extends AbstractDBConnection implements Model
             if ($id > 0) {
                 $tmpEmpresa = new Empresas();
                 $tmpEmpresa->Connect();
-                $getrow = $tmpEmpresa->getRow("SELECT * FROM Empresas WHERE id = ?", array($id) );
+                $getrow = $tmpEmpresa->getRow("SELECT * FROM empresa WHERE id = ?", array($id) );
 
                 $tmpEmpresa->Disconnect();
-                return ($getrow) ? new Empresa($getrow) : null;
+                return ($getrow) ? new Empresas($getrow) : null;
             } else {
                 throw new Exception('Id de usuario Invalido');
             }
@@ -252,7 +252,7 @@ class Empresas extends AbstractDBConnection implements Model
 
     static function getAll(): ?array
     {
-        return Empresa::search("SELECT * FROM Empresa");
+        return Empresas::search("SELECT * FROM empresa");
     }
 
     public function jsonSerialize()

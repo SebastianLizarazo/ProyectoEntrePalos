@@ -2541,3 +2541,2985 @@
 
 )
   
+[2021-05-12T13:29:19.515989+00:00] General.ERROR: Exception  
+[2021-05-12T13:29:19.517240+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:29:19.517314+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:29:19.517386+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'miscro' for key 'Nombre_UNIQUE'  
+[2021-05-12T13:29:19.517462+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8849
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:29:19.520379+00:00] General.ERROR: Exception  
+[2021-05-12T13:29:19.520632+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:29:19.520710+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:29:19.520777+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-12T13:29:19.520848+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Kivens
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av mosca 33-88
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8849
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 199
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 35
+            [function] => update
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:31:13.212509+00:00] General.ERROR: Exception  
+[2021-05-12T13:31:13.212883+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:31:13.212947+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:31:13.213000+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'miscro' for key 'Nombre_UNIQUE'  
+[2021-05-12T13:31:13.213096+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8849
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:31:13.234502+00:00] General.ERROR: Exception  
+[2021-05-12T13:31:13.234814+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:31:13.234883+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:31:13.234956+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-12T13:31:13.235031+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Kivens
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av mosca 33-88
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8849
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 199
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 35
+            [function] => update
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:35:47.504062+00:00] General.ERROR: Exception  
+[2021-05-12T13:35:47.504440+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:35:47.504501+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:35:47.504554+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'miscro' for key 'Nombre_UNIQUE'  
+[2021-05-12T13:35:47.504612+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8849
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:35:47.523210+00:00] General.ERROR: Exception  
+[2021-05-12T13:35:47.523518+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:35:47.523611+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:35:47.523680+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-12T13:35:47.523754+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Kivens
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av mosca 33-88
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8849
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 199
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 35
+            [function] => update
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:35:47.531460+00:00] General.ERROR: Exception  
+[2021-05-12T13:35:47.531714+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:35:47.531788+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:35:47.531852+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T13:35:47.531920+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => kivens
+                            [:NIT] => mm8765567
+                            [:Telefono] => 3207651298
+                            [:Direccion] => Av el dorado 89-33
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5770
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:40:47.955016+00:00] General.ERROR: Exception  
+[2021-05-12T13:40:47.955439+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:40:47.955509+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:40:47.955569+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'miscro' for key 'Nombre_UNIQUE'  
+[2021-05-12T13:40:47.955636+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8849
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:40:47.980316+00:00] General.ERROR: Exception  
+[2021-05-12T13:40:47.980669+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:40:47.980739+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:40:47.980821+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-12T13:40:47.980895+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Kivens
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av mosca 33-88
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8849
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 199
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 35
+            [function] => update
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:40:47.985609+00:00] General.ERROR: Exception  
+[2021-05-12T13:40:47.985909+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:40:47.985990+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:40:47.986048+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T13:40:47.986109+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => kivens
+                            [:NIT] => mm8765567
+                            [:Telefono] => 3207651298
+                            [:Direccion] => Av el dorado 89-33
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5770
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:42:16.820844+00:00] General.ERROR: Exception  
+[2021-05-12T13:42:16.821280+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:42:16.821351+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:42:16.821411+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'miscro' for key 'Nombre_UNIQUE'  
+[2021-05-12T13:42:16.821478+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => miscro
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8849
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:42:16.824782+00:00] General.ERROR: Exception  
+[2021-05-12T13:42:16.825047+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:42:16.825120+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:42:16.825186+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-12T13:42:16.825259+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Kivens
+                            [:NIT] => nt88983456
+                            [:Telefono] => 3119873128
+                            [:Direccion] => Av mosca 33-88
+                            [:Estado] => Activo
+                            [:Municipio_id] => 8849
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 199
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 35
+            [function] => update
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:44:32.257677+00:00] General.ERROR: Exception  
+[2021-05-12T13:44:32.258050+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:44:32.258112+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:44:32.258165+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-12T13:44:32.258223+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 11
+                            [:Nombre] => Kivens
+                            [:NIT] => nt88763456
+                            [:Telefono] => 3119843128
+                            [:Direccion] => Av mosca 33-88
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5031
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 199
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 35
+            [function] => update
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:44:32.282227+00:00] General.ERROR: Exception  
+[2021-05-12T13:44:32.282475+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:44:32.282554+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:44:32.282611+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T13:44:32.282672+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => kivens
+                            [:NIT] => mm8765567
+                            [:Telefono] => 3207651298
+                            [:Direccion] => Av el dorado 89-33
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5770
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:45:46.946721+00:00] General.ERROR: Exception  
+[2021-05-12T13:45:46.947349+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:45:46.947431+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:45:46.947505+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-12T13:45:46.947571+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 13
+                            [:Nombre] => Kivens
+                            [:NIT] => nt887639876
+                            [:Telefono] => 3119856728
+                            [:Direccion] => Av mosca 33-88
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5031
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 199
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 35
+            [function] => update
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:45:46.953393+00:00] General.ERROR: Exception  
+[2021-05-12T13:45:46.953907+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:45:46.954041+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:45:46.954151+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T13:45:46.954255+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => kivens
+                            [:NIT] => mm8765567
+                            [:Telefono] => 3207651298
+                            [:Direccion] => Av el dorado 89-33
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5770
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:50:50.260850+00:00] General.ERROR: Exception  
+[2021-05-12T13:50:50.261277+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:50:50.261347+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:50:50.261407+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-12T13:50:50.261472+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Kivens
+                            [:NIT] => nt887639876
+                            [:Telefono] => 3119856728
+                            [:Direccion] => Av mosca 33-88
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5031
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 199
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado
+            Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 35
+            [function] => update
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:52:41.336115+00:00] General.ERROR: Exception  
+[2021-05-12T13:52:41.337099+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:52:41.337259+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:52:41.337398+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-12T13:52:41.337547+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado,
+            Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Kivens
+                            [:NIT] => nt887639876
+                            [:Telefono] => 3119856728
+                            [:Direccion] => Av mosca 33-88
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5031
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 199
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Empresa SET 
+            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = : Direccion, Estado = :Estado,
+            Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 35
+            [function] => update
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T13:56:51.206213+00:00] General.ERROR: Exception  
+[2021-05-12T13:56:51.206607+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T13:56:51.206669+00:00] General.ERROR: Line: 128  
+[2021-05-12T13:56:51.206722+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Bladi' for key 'Nombre_UNIQUE'  
+[2021-05-12T13:56:51.206822+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Bladi
+                            [:NIT] => nt887639876
+                            [:Telefono] => 3119856728
+                            [:Direccion] => Av coyote 12-56
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5031
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:03:32.873401+00:00] General.ERROR: Exception  
+[2021-05-12T14:03:32.873786+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:03:32.873883+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:03:32.873972+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'kivens' for key 'Nombre_UNIQUE'  
+[2021-05-12T14:03:32.874032+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => kivens
+                            [:NIT] => mm8765567
+                            [:Telefono] => 3207651298
+                            [:Direccion] => Av el dorado 89-33
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5770
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:03:47.591868+00:00] General.ERROR: Exception  
+[2021-05-12T14:03:47.592291+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:03:47.592354+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:03:47.592406+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T14:03:47.592466+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => pool
+                            [:NIT] => mm8765567
+                            [:Telefono] => 3207651298
+                            [:Direccion] => Av el dorado 89-33
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5770
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:04:55.926118+00:00] General.ERROR: Exception  
+[2021-05-12T14:04:55.927196+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:04:55.927383+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:04:55.927539+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`empresa`, CONSTRAINT `fk_Empresa_Municipio1` FOREIGN KEY (`Municipio_id`) REFERENCES `municipio` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-12T14:04:55.927709+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => pool
+                            [:NIT] => mm8765567
+                            [:Telefono] => 3207651298
+                            [:Direccion] => Av el dorado 89-33
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5770
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:14:15.684249+00:00] General.ERROR: Exception  
+[2021-05-12T14:14:15.684630+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:14:15.684691+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:14:15.684744+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:14:15.684804+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:14:36.154254+00:00] General.ERROR: Exception  
+[2021-05-12T14:14:36.154640+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:14:36.154702+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:14:36.154754+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:14:36.154813+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:14:53.908681+00:00] General.ERROR: Exception  
+[2021-05-12T14:14:53.909057+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:14:53.909119+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:14:53.909171+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:14:53.909231+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:15:30.683556+00:00] General.ERROR: Exception  
+[2021-05-12T14:15:30.684175+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:15:30.684236+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:15:30.684289+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:15:30.684348+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:16:12.026112+00:00] General.ERROR: Exception  
+[2021-05-12T14:16:12.026490+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:16:12.026552+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:16:12.026605+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:16:12.026664+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:18:05.268459+00:00] General.ERROR: Exception  
+[2021-05-12T14:18:05.268840+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:18:05.268902+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:18:05.268955+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:18:05.269016+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:18:49.121710+00:00] General.ERROR: Exception  
+[2021-05-12T14:18:49.122701+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:18:49.122973+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:18:49.123130+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:18:49.123290+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:19:40.122910+00:00] General.ERROR: Exception  
+[2021-05-12T14:19:40.123329+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:19:40.123399+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:19:40.123458+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'pool' for key 'Nombre_UNIQUE'  
+[2021-05-12T14:19:40.123525+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 175
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => pool
+                            [:NIT] => mm8765567
+                            [:Telefono] => 3207651298
+                            [:Direccion] => Av el dorado 89-33
+                            [:Estado] => Activo
+                            [:Municipio_id] => 5031
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 185
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:20:28.397586+00:00] General.ERROR: Exception  
+[2021-05-12T14:20:28.398097+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:20:28.398170+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:20:28.398226+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:20:28.398288+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:20:52.759786+00:00] General.ERROR: Exception  
+[2021-05-12T14:20:52.760520+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:20:52.760622+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:20:52.760690+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:20:52.760752+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:20:58.858743+00:00] General.ERROR: Exception  
+[2021-05-12T14:20:58.859112+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:20:58.859173+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:20:58.859225+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:20:58.859284+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:24:49.254896+00:00] General.ERROR: Exception  
+[2021-05-12T14:24:49.255279+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:24:49.255341+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:24:49.255394+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:24:49.255453+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:25:23.876800+00:00] General.ERROR: Exception  
+[2021-05-12T14:25:23.877253+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:25:23.877324+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:25:23.877384+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:25:23.877453+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:25:48.552910+00:00] General.ERROR: Exception  
+[2021-05-12T14:25:48.553366+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:25:48.553428+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:25:48.553481+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:25:48.553541+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:26:15.651067+00:00] General.ERROR: Exception  
+[2021-05-12T14:26:15.651603+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:26:15.651665+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:26:15.651718+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:26:15.651778+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:27:00.941965+00:00] General.ERROR: Exception  
+[2021-05-12T14:27:00.942383+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:27:00.942478+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:27:00.942532+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:27:00.942592+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:27:40.767627+00:00] General.ERROR: Exception  
+[2021-05-12T14:27:40.768012+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:27:40.768074+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:27:40.768127+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:27:40.768187+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:28:20.130519+00:00] General.ERROR: Exception  
+[2021-05-12T14:28:20.130916+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:28:20.130979+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:28:20.131032+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:28:20.131091+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:29:04.432371+00:00] General.ERROR: Exception  
+[2021-05-12T14:29:04.432886+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:29:04.432950+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:29:04.433068+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:29:04.433149+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:29:34.004706+00:00] General.ERROR: Exception  
+[2021-05-12T14:29:34.005074+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:29:34.005136+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:29:34.005188+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:29:34.005245+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:30:16.418670+00:00] General.ERROR: Exception  
+[2021-05-12T14:30:16.419356+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:30:16.419429+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:30:16.419490+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:30:16.419556+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:33:34.910574+00:00] General.ERROR: Exception  
+[2021-05-12T14:33:34.910952+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:33:34.911013+00:00] General.ERROR: Line: 80  
+[2021-05-12T14:33:34.911066+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.empresas' doesn't exist  
+[2021-05-12T14:33:34.911124+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 80
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 240
+            [function] => getRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM Empresas WHERE id = ?
+                    [1] => Array
+                        (
+                            [0] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testEmpresa.php
+            [line] => 53
+            [function] => searchForId
+            [class] => App\Models\Empresas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
