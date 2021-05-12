@@ -1,14 +1,13 @@
 <?php
-require_once("../../../app/Controllers/OfertasController.php");
+require_once("../../../app/Controllers/MesasController.php");
 require_once("../../partials/routes.php");
 //require_once("../../partials/check_login.php");
 
 use App\Controllers\MesasController;
-use App\Controllers\OfertasController;
 use App\Models\GeneralFunctions;
 use App\Models\Mesas;
 
-$nameModel = "Oferta";
+$nameModel = "Mesa";
 $pluralModel = $nameModel.'s';
 //$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
@@ -90,47 +89,35 @@ $pluralModel = $nameModel.'s';
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Nombre</th>
-                                                <th>Descripcion</th>
-                                                <th>PrecioUnidadVenaOferta</th>
-                                                <th>Estado</th>
+                                                <th>Numero</th>
+                                                <th>Ubicacion</th>
+                                                <th>Capacidad</th>
+                                                <th>Ocupación</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrOfertas = OfertasController::getAll();
-                                            if (!empty($arrOfertas))
-                                            /* @var $arrOfertas \App\Models\Ofertas */
-                                            foreach ($arrOfertas as $oferta) {
+                                            $arrMesas = MesasController::getAll();
+                                            if (!empty($arrMesas))
+                                            /* @var $arrMesas Mesas */
+                                            foreach ($arrMesas as $mesa) {
                                                 ?>
                                                 <tr>
-                                                    <td><?= $oferta->getId(); ?></td>
-                                                    <td><?= $oferta->getNumero(); ?></td>
-                                                    <td><?= $oferta->getUbicacion(); ?></td>
-                                                    <td><?= $oferta->getCapacidad(); ?></td>
-                                                    <td><?= $oferta->getOcupacion(); ?></td>
+                                                    <td><?= $mesa->getId(); ?></td>
+                                                    <td><?= $mesa->getNumero(); ?></td>
+                                                    <td><?= $mesa->getUbicacion(); ?></td>
+                                                    <td><?= $mesa->getCapacidad(); ?></td>
+                                                    <td><?= $mesa->getOcupacion(); ?></td>
                                                     <td>
-                                                        <a href="edit.php?id=<?= $oferta->getId(); ?>"
+                                                        <a href="edit.php?id=<?= $mesa->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
                                                            class="btn docs-tooltip btn-primary btn-xs"><i
                                                                     class="fa fa-edit"></i></a>
-                                                        <a href="show.php?id=<?= $oferta->getId(); ?>"
+                                                        <a href="show.php?id=<?= $mesa->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                        <?php if ($oferta->getEstado() != "Disponibilidad") { ?>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $oferta->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Disponible"
-                                                               class="btn docs-tooltip btn-success btn-xs"><i
-                                                                        class="fa fa-check-square"></i></a>
-                                                        <?php } else { ?>
-                                                        <a type="button"
-                                                           href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $oferta->getId(); ?>"
-                                                           data-toggle="tooltip" title="No disponible"
-                                                           class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                    class="fa fa-times-circle"></i></a>
-                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -138,10 +125,10 @@ $pluralModel = $nameModel.'s';
                                             <tfoot>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Nombre</th>
-                                                <th>Descripcion</th>
-                                                <th>PrecioUnidadVentaOferta</th>
-                                                <th>Estado</th>
+                                                <th>Numero</th>
+                                                <th>Ubicacion</th>
+                                                <th>Capacidad</th>
+                                                <th>Ocupación</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </tfoot>

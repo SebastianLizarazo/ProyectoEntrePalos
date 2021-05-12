@@ -26,7 +26,7 @@ class OfertasController
     public function create()
     {
         try {
-            if (!empty($this->dataOferta['nombre']) && !empty($this->dataOferta['descripcion']) && !Oferta::ofertaRegistrada($this->dataOferta['nombre'], $this->dataOferta['descripcion'])) {
+            if (!empty($this->dataOferta['Nombre']) && !empty($this->dataOferta['Descripcion']) && !Ofertas::ofertaRegistrada($this->dataOferta['Nombre'], $this->dataOferta['Descripcion'])) {
                 $Oferta = new Ofertas($this->dataOferta);
                 if ($Oferta->insert()) {
                     //unset($_SESSION['frmUsuarios']);
@@ -68,7 +68,7 @@ class OfertasController
     static public function getAll (array $data = null)
     {
         try {
-            $result = Mesas::getAll();
+            $result = Ofertas::getAll();
             if (!empty($data['request']) and $data['request'] === 'ajax') {
                 header('Content-type: application/json; charset=utf-8');
                 $result = json_encode($result);

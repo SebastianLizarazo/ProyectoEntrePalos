@@ -1,21 +1,20 @@
 <?php
 require("../../partials/routes.php");
 //require_once("../../partials/check_login.php");
-require("../../../app/Controllers/OfertasController.php");
+require("../../../app/Controllers/MesasController.php");
 
 use App\Controllers\MesasController;
-use App\Controllers\OfertasController;
 use App\Models\GeneralFunctions;
 use App\Models\Mesas;
 
-$nameModel = "Oferta";
+$nameModel = "Mesa";
 $pluralModel = $nameModel . 's';
 //$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos de la <?= $nameModel ?></title>
+    <title><?= $_ENV['TITLE_SITE'] ?> | Datos del <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -58,13 +57,13 @@ $pluralModel = $nameModel . 's';
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $DataOferta = OfertasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataOferta \App\Models\Ofertas */
-                                if (!empty($DataOferta)) {
+                                $DataMesa = MesasController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataMesa Mesas */
+                                if (!empty($DataMesa)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de <?= $DataOferta->getNombre() ?></h3>
+                                            de la mesa numero <?= $DataMesa->getNumero() ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
                                                     data-source="show.php" data-source-selector="#card-refresh-content"
@@ -83,17 +82,17 @@ $pluralModel = $nameModel . 's';
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Nombre</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getNombre() ?></p>
+                                                    <strong><i class="fas fa-list-ol mr-1"></i>Numero</strong>
+                                                        <p class="text-muted"><?= $DataMesa->getNumero() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>Descripcion</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getDescripcion() ?></p>
+                                                    <strong><i class="fas fa-phone mr-1"></i>Ubicacion</strong>
+                                                        <p class="text-muted"><?= $DataMesa->getUbicacion() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i> PrecioUnidadVentaOferta</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getPrecioUnidadVentaOferta() ?></p>
+                                                    <strong><i class="fas fa-phone mr-1"></i> Capacidad</strong>
+                                                        <p class="text-muted"><?= $DataMesa->getCapacidad() ?></p>
                                                 <hr>
-                                                    <strong><i class="far fa-file-alt mr-1"></i>Estado</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getEstado() ?></p>
+                                                    <strong><i class="far fa-file-alt mr-1"></i>Ocupacion</strong>
+                                                        <p class="text-muted"><?= $DataMesa->getOcupacion() ?></p>
                                                 </p>
                                             </div>
                                         </div>
@@ -107,7 +106,7 @@ $pluralModel = $nameModel . 's';
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $DataOferta->getId(); ?>"
+                                                <a role="button" href="edit.php?id=<?= $DataMesa->getId(); ?>"
                                                    class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>

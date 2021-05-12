@@ -27,8 +27,14 @@ class Ofertas extends AbstractDBConnection implements Model
         $this->setNombre($oferta['Nombre']??'');
         $this->setDescripcion($oferta['Descripcion']??'');
         $this->setPrecioUnidadVentaOferta($oferta['PrecioUnidadVentaOferta']??0) ;
-        $this->setEstado($oferta['Estado']??'disponible' );
+        $this->setEstado($oferta['Estado']?? '');
 
+    }
+
+    public static function ofertaRegistrada(mixed $Nombre, mixed $Descripcion)
+    {
+            $oftTmp = Ofertas::search("SELECT * FROM oferta WHERE Nombre = '$Nombre' and Descripcion = '$Descripcion'");
+            return (!empty($oftTmp)) ? true : false;
     }
 
     public function __destruct()
@@ -149,7 +155,7 @@ class Ofertas extends AbstractDBConnection implements Model
             :id,:Nombre,:Descripcion,:PrecioUnidadVentaOferta,:Estado)";
         //return $this->save($query);
         if ($this->save($query)) {
-            $idOferta = $this->getLastId('oferta');
+            $idOferta = $this->getLastId('ofertas');
             $this->setId($idOferta);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla oferta
             return true;
         }else{
