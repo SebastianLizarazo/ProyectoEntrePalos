@@ -7,7 +7,7 @@ $arrOferta1=[   //creamos un array ficticio
 'Nombre'=> 'Jo',
 'Descripcion'=> 'Kjkjakajkjakjckjck',
 'PrecioUnidadVentaOferta'=> 52000,
-'Estado'=> 'disponible'
+'Estado'=> 'No disponible'
 ];
 
 $arrOferta2=[   //creamos un array ficticio
@@ -22,11 +22,11 @@ $arrOferta2=[   //creamos un array ficticio
 */
 $arrOferta1 = new Ofertas($arrOferta1);   //Creamos un objeto Oferta
 
-//var_dump($objectMesa1);
+//var_dump($objectOferta1);
 $arrOferta1->insert();//Aca registramos el objeto en la bd
 
-$arrOferta1->setNombre('AAAA');
-$arrOferta1->setDescripcion('Mmanmsmanmnmsna');
+$arrOferta1->setNombre('Brr');
+$arrOferta1->setDescripcion('Klk');
 
 //var_dump($objectMesa1);
 $arrOferta1->update();//para poder actualizar un registro se debe tener claro el Id de ese registro
@@ -35,7 +35,7 @@ $arrOferta2= new Ofertas($arrOferta2);//Creamos un nuevo objeto oferta
 $arrOferta2->insert();
 
 
-$arrResult = Ofertas::search("SELECT * FROM oferta WHERE Descripcion = 'yUYUAYUYAU' AND PrecioUnidadVentaOferta = 1000");
+$arrResult = Ofertas::search("SELECT * FROM oferta WHERE Nombre = 'Brr' AND Descripcion = 'Klk'");
 //var_dump($arrResult);
 
 if (!empty($arrResult)) {//Este if comprueba si el search devuelve un resultado o devuelve un null
@@ -46,7 +46,6 @@ echo 'Oferta: ' . $Oferta->getNombre() .' PrecioUnidadVentaOferta: '.$Oferta->ge
 
 }
 }
-
 
 $arrOferta2= Ofertas::searchForId(2);
 if (!empty($arrOferta2)){

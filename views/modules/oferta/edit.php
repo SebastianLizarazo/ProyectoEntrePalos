@@ -118,8 +118,8 @@ $pluralModel = $nameModel.'s';
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Estado" name="Estado" class="custom-select">
-                                                                <option <?= ($DataOferta->getEstado() == "disponible") ? "selected" : ""; ?> value="disponible">Disponible</option>
-                                                                <option <?= ($DataOferta->getEstado() == "ocupada") ? "selected" : ""; ?> value="ocupada">Ocupada</option>
+                                                                <option <?= ($DataOferta->getEstado() == "Disponible") ? "selected" : ""; ?> value="Disponible">Disponible</option>
+                                                                <option <?= ($DataOferta->getEstado() == "No disponible") ? "selected" : ""; ?> value="No disponible">No Disponible</option>
                                                             </select>
                                                         </div>
                                                     </div>

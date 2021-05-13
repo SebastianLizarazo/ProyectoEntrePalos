@@ -3458,3 +3458,2303 @@
 
 )
   
+[2021-05-12T14:06:45.281274+00:00] General.ERROR: Exception  
+[2021-05-12T14:06:45.282842+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:06:45.283098+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:06:45.283281+00:00] General.ERROR: Mensaje: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'Capacidad' at row 1  
+[2021-05-12T14:06:45.283568+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 157
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 12
+                            [:Ubicacion] => ASF
+                            [:Capacidad] => 323
+                            [:Ocupacion] => Disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 29
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\MesasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:07:22.316859+00:00] General.ERROR: Exception  
+[2021-05-12T14:07:22.317945+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:07:22.318157+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:07:22.318326+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '12' for key 'TblMesaNumero_UNIQUE'  
+[2021-05-12T14:07:22.318506+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 157
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 12
+                            [:Ubicacion] => SDV
+                            [:Capacidad] => 12
+                            [:Ocupacion] => Disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO Mesa VALUES (
+            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 29
+            [function] => insert
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\MesasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:08:04.476570+00:00] General.ERROR: Exception  
+[2021-05-12T14:08:04.477861+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:08:04.478203+00:00] General.ERROR: Line: 200  
+[2021-05-12T14:08:04.478495+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-12T14:08:04.478822+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 31
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\OfertasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:09:47.595818+00:00] General.ERROR: Exception  
+[2021-05-12T14:09:47.597680+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:09:47.598172+00:00] General.ERROR: Line: 200  
+[2021-05-12T14:09:47.598457+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-12T14:09:47.598734+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 31
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\OfertasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:10:23.557043+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion activate no fue encontrada en el controlador App\\Controllers\\OfertasController"} 
+[2021-05-12T14:10:28.897047+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion activate no fue encontrada en el controlador App\\Controllers\\OfertasController"} 
+[2021-05-12T14:11:56.132032+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion activate no fue encontrada en el controlador App\\Controllers\\OfertasController"} 
+[2021-05-12T14:15:56.044443+00:00] General.ERROR: Exception  
+[2021-05-12T14:15:56.046879+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:15:56.047342+00:00] General.ERROR: Line: 200  
+[2021-05-12T14:15:56.047663+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-12T14:15:56.048131+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 32
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\OfertasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:17:13.962197+00:00] General.ERROR: Exception  
+[2021-05-12T14:17:13.963605+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:17:13.964030+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:17:13.964235+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-12T14:17:13.964409+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Mega Combo
+                            [:Descripcion] => La oferta consta...
+                            [:PrecioUnidadVentaOferta] => 32323
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:17:54.360490+00:00] General.ERROR: Exception  
+[2021-05-12T14:17:54.363305+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:17:54.363801+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:17:54.364102+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-12T14:17:54.364394+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Mega Combo
+                            [:Descripcion] => La oferta consta...
+                            [:PrecioUnidadVentaOferta] => 32323
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:20:33.976812+00:00] General.ERROR: Exception  
+[2021-05-12T14:20:33.977709+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:20:33.978336+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:20:33.978557+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-12T14:20:33.978728+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Mega Combo
+                            [:Descripcion] => La oferta consta...
+                            [:PrecioUnidadVentaOferta] => 32323
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:30:04.097659+00:00] General.ERROR: Exception  
+[2021-05-12T14:30:04.169936+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:30:04.170126+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:30:04.170254+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-12T14:30:04.170409+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Mega Combo
+                            [:Descripcion] => La oferta consta...
+                            [:PrecioUnidadVentaOferta] => 32323
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:30:07.645489+00:00] General.ERROR: Exception  
+[2021-05-12T14:30:07.646103+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:30:07.646278+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:30:07.646389+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-12T14:30:07.646505+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Mega Combo
+                            [:Descripcion] => La oferta consta...
+                            [:PrecioUnidadVentaOferta] => 32323
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:34:02.641056+00:00] General.ERROR: Exception  
+[2021-05-12T14:34:02.641901+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:34:02.642024+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:34:02.642115+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-12T14:34:02.642217+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Mega Combo
+                            [:Descripcion] => La oferta consta...
+                            [:PrecioUnidadVentaOferta] => 32323
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:37:13.179070+00:00] General.ERROR: Exception  
+[2021-05-12T14:37:13.180722+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:37:13.180865+00:00] General.ERROR: Line: 200  
+[2021-05-12T14:37:13.180966+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-12T14:37:13.193748+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 26
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:37:13.656411+00:00] General.ERROR: Exception  
+[2021-05-12T14:37:13.656871+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:37:13.657001+00:00] General.ERROR: Line: 200  
+[2021-05-12T14:37:13.657116+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-12T14:37:13.657246+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 35
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:37:50.238129+00:00] General.ERROR: Exception  
+[2021-05-12T14:37:50.238785+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:37:50.238890+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:37:50.238976+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-12T14:37:50.239085+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Mega Combo
+                            [:Descripcion] => La oferta consta...
+                            [:PrecioUnidadVentaOferta] => 32323
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:37:54.332660+00:00] General.ERROR: Exception  
+[2021-05-12T14:37:54.333361+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:37:54.333801+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:37:54.333997+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-12T14:37:54.334234+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 2
+                            [:Nombre] => Jo
+                            [:Descripcion] => IIIHII
+                            [:PrecioUnidadVentaOferta] => 52000
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:42:08.727129+00:00] General.ERROR: Exception  
+[2021-05-12T14:42:08.728887+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:42:08.729144+00:00] General.ERROR: Line: 200  
+[2021-05-12T14:42:08.729343+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-12T14:42:08.729640+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 26
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:42:09.175853+00:00] General.ERROR: Exception  
+[2021-05-12T14:42:09.176468+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:42:09.176639+00:00] General.ERROR: Line: 200  
+[2021-05-12T14:42:09.176866+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-12T14:42:09.177034+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 35
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:43:49.921066+00:00] General.ERROR: Exception  
+[2021-05-12T14:43:49.922141+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:43:49.922534+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:43:49.922778+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-12T14:43:49.923053+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 3
+                            [:Nombre] => Yu
+                            [:Descripcion] => Asfgajhkhsjs
+                            [:PrecioUnidadVentaOferta] => 20000
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 3
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:45:19.093752+00:00] General.ERROR: Exception  
+[2021-05-12T14:45:19.094436+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:45:19.094551+00:00] General.ERROR: Line: 102  
+[2021-05-12T14:45:19.094643+00:00] General.ERROR: Mensaje: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Descrpcion' in 'where clause'  
+[2021-05-12T14:45:19.094744+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 188
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM oferta WHERE Nombre = 'Brr' AND Descrpcion = 'Klk'
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 38
+            [function] => search
+            [class] => App\Models\Ofertas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM oferta WHERE Nombre = 'Brr' AND Descrpcion = 'Klk'
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:47:14.594520+00:00] General.ERROR: Exception  
+[2021-05-12T14:47:14.597449+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:47:14.597719+00:00] General.ERROR: Line: 200  
+[2021-05-12T14:47:14.597917+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-12T14:47:14.598050+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 26
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-12T14:50:57.271025+00:00] General.ERROR: Exception  
+[2021-05-12T14:50:57.271681+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-12T14:50:57.271843+00:00] General.ERROR: Line: 128  
+[2021-05-12T14:50:57.271933+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-12T14:50:57.272027+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 3
+                            [:Nombre] => Yu
+                            [:Descripcion] => Asfgajhkhsjs
+                            [:PrecioUnidadVentaOferta] => 20000
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 3
+                )
+
+        )
+
+)
+  
+[2021-05-13T13:54:49.312409+00:00] General.ERROR: Exception  
+[2021-05-13T13:54:49.377699+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T13:54:49.378097+00:00] General.ERROR: Line: 200  
+[2021-05-13T13:54:49.378686+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-13T13:54:49.379748+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 32
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\OfertasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-13T13:55:28.296072+00:00] General.ERROR: Exception  
+[2021-05-13T13:55:28.297536+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T13:55:28.297725+00:00] General.ERROR: Line: 128  
+[2021-05-13T13:55:28.297863+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-13T13:55:28.298011+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Mega Combo
+                            [:Descripcion] => La oferta consta...
+                            [:PrecioUnidadVentaOferta] => 0
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-13T14:03:41.467334+00:00] General.ERROR: Exception  
+[2021-05-13T14:03:41.483967+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T14:03:41.484249+00:00] General.ERROR: Line: 128  
+[2021-05-13T14:03:41.484448+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-13T14:03:41.484742+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Mega Combo
+                            [:Descripcion] => La oferta consta...
+                            [:PrecioUnidadVentaOferta] => 0
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-13T14:04:14.346091+00:00] General.ERROR: Exception  
+[2021-05-13T14:04:14.346538+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T14:04:14.346655+00:00] General.ERROR: Line: 128  
+[2021-05-13T14:04:14.346738+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-13T14:04:14.346830+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Nombre] => Mega Combo
+                            [:Descripcion] => La oferta consta...
+                            [:PrecioUnidadVentaOferta] => 0
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 88
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 21
+            [function] => activate
+            [class] => App\Controllers\OfertasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-13T14:15:00.605223+00:00] General.ERROR: Exception  
+[2021-05-13T14:15:00.621934+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T14:15:00.622105+00:00] General.ERROR: Line: 128  
+[2021-05-13T14:15:00.622251+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-13T14:15:00.622368+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 2
+                            [:Nombre] => Klk
+                            [:Descripcion] => La oferta es...
+                            [:PrecioUnidadVentaOferta] => 1234
+                            [:Estado] => ocupada
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 47
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => edit
+            [class] => App\Controllers\OfertasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-13T14:16:19.822171+00:00] General.ERROR: Exception  
+[2021-05-13T14:16:19.823274+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T14:16:19.823565+00:00] General.ERROR: Line: 128  
+[2021-05-13T14:16:19.823804+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-13T14:16:19.824034+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 3
+                            [:Nombre] => Muy amable 
+                            [:Descripcion] => Oeeeee
+                            [:PrecioUnidadVentaOferta] => 567
+                            [:Estado] => ocupada
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 47
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => edit
+            [class] => App\Controllers\OfertasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-13T14:17:23.124404+00:00] General.ERROR: Exception  
+[2021-05-13T14:17:23.125326+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T14:17:23.125435+00:00] General.ERROR: Line: 128  
+[2021-05-13T14:17:23.125580+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-05-13T14:17:23.125735+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 147
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 7
+                            [:Nombre] => oEEEE
+                            [:Descripcion] => jJAHJHadjhjdaa
+                            [:PrecioUnidadVentaOferta] => 56789
+                            [:Estado] => ocupada
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 172
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 47
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => edit
+            [class] => App\Controllers\OfertasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

@@ -6,6 +6,7 @@ namespace App\Controllers;
 use App\Models\GeneralFunctions;
 use App\Models\Mesas;
 use App\Models\Ofertas;
+use App\Models\Usuarios;
 
 class OfertasController
 {
@@ -79,6 +80,35 @@ class OfertasController
         }
         return null;
     }
+    static public function activate(int $id)
+    {
+        try {
+            $ObjOferta = Ofertas::searchForId($id);
+            $ObjOferta->setEstado("Disponible");
+            if ($ObjOferta->update()) {
+                header("Location: ../../views/modules/oferta/index.php");
+            } else {
+                header("Location: ../../views/modules/oferta/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+    static public function inactivate(int $id)
+    {
+        try {
+            $ObjOferta = Ofertas::searchForId($id);
+            $ObjOferta->setEstado("No disponible");
+            if ($ObjOferta->update()) {
+                header("Location: ../../views/modules/oferta/index.php");
+            } else {
+                header("Location: ../../views/modules/oferta/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+
     static public function selectOferta(array $params = []) {
 
         //Parametros de Configuracion

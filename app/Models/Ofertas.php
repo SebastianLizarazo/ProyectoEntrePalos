@@ -209,7 +209,7 @@ class Ofertas extends AbstractDBConnection implements Model
             if ($id > 0) {
                 $tmpOferta = new Ofertas();
                 $tmpOferta->Connect();
-                $getrow = $tmpOferta->getRow("SELECT * FROM ofertas WHERE id = ?", array($id) );
+                $getrow = $tmpOferta->getRow("SELECT * FROM oferta WHERE id = ?", array($id) );
 
                 $tmpOferta->Disconnect();
                 return ($getrow) ? new Ofertas($getrow) : null;
@@ -224,7 +224,7 @@ class Ofertas extends AbstractDBConnection implements Model
 
     static function getAll(): ?array
     {
-        return Ofertas::search("SELECT * FROM ofertas");
+        return Ofertas::search("SELECT * FROM oferta");
     }
 
     public function jsonSerialize()

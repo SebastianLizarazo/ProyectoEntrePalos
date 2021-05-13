@@ -106,10 +106,10 @@ $pluralModel = $nameModel.'s';
                                                 ?>
                                                 <tr>
                                                     <td><?= $oferta->getId(); ?></td>
-                                                    <td><?= $oferta->getNumero(); ?></td>
-                                                    <td><?= $oferta->getUbicacion(); ?></td>
-                                                    <td><?= $oferta->getCapacidad(); ?></td>
-                                                    <td><?= $oferta->getOcupacion(); ?></td>
+                                                    <td><?= $oferta->getNombre(); ?></td>
+                                                    <td><?= $oferta->getDescripcion(); ?></td>
+                                                    <td><?= $oferta->getPrecioUnidadVentaOferta(); ?></td>
+                                                        <td><?= $oferta->getEstado(); ?></td>
                                                     <td>
                                                         <a href="edit.php?id=<?= $oferta->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
@@ -119,7 +119,7 @@ $pluralModel = $nameModel.'s';
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                        <?php if ($oferta->getEstado() != "Disponibilidad") { ?>
+                                                        <?php if ($oferta->getEstado() != "Disponible") { ?>
                                                             <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $oferta->getId(); ?>"
                                                                type="button" data-toggle="tooltip" title="Disponible"
                                                                class="btn docs-tooltip btn-success btn-xs"><i
