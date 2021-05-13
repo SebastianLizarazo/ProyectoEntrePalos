@@ -47,6 +47,13 @@ class Empresas extends AbstractDBConnection implements Model
         $empresatmp = Empresas::search("SELECT * FROM empresa WHERE id = '$id' and NIT = '$NIT'");
         return (!empty($empresatmp)) ? true : false;
     }
+    public function __destruct()
+    {
+        //isConnected y Disconnect son metodos de la clase AbstractDBConnection
+        if ($this->isConnected()){//pregunta si la base de datos esta conectada
+            $this->Disconnect();//destruye la coneccion
+        }
+    }
 
     /**
      * @return int|null
