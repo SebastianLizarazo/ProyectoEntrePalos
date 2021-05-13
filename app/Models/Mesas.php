@@ -265,11 +265,11 @@ class Mesas extends AbstractDBConnection implements Model
     public function jsonSerialize()
     {
         return [
-        'id' => $this->getId(),
-        'Numero' =>$this->getNumero(),
-        'Ubicacion' =>$this->getUbicacion(),
-        'Capacidad' =>$this->getCapacidad(),
-        'Ocupacion' =>$this->getOcupacion(),
-         ];
+            'id' => $this->getId(),
+            'Numero' =>$this->getNumero(),
+            'Ubicacion' =>$this->getUbicacion(),
+            'Capacidad' =>$this->getCapacidad(),
+            'Ocupacion' =>$this->getOcupacion(),
+        ];
     }
 }
