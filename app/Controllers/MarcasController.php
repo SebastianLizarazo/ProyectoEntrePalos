@@ -29,10 +29,10 @@ class MarcasController
                 $Marca = new Mesas($this->dataMarca);
                 if ($Marca->insert()) {
                     //unset($_SESSION['frmUsuarios']);
-                    header("Location: ../../views/modules/marca/index.php?respuesta=success&mensaje=Mesa Registrada");
+                    header("Location: ../../views/modules/marca/index.php?respuesta=success&mensaje=Marca Registrada");
                 }
             } else {
-                header("Location: ../../views/modules/marca/create.php?respuesta=error&mensaje=Mesa ya registrada");
+                header("Location: ../../views/modules/marca/create.php?respuesta=error&mensaje=Marca ya registrada");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
@@ -74,7 +74,7 @@ class MarcasController
             if ($mca->update()) {
                 //unset($_SESSION['frmUsuarios']);
             }
-            header("Location: ../../views/modules/marca/show.php?id=" . $mca->getId() . "&respuesta=success&mensaje=Mesa Actualizada");
+            header("Location: ../../views/modules/marca/show.php?id=" . $mca->getId() . "&respuesta=success&mensaje=Marca Actualizada");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
         }

@@ -62,7 +62,6 @@ static public function activate(int $id)
             GeneralFunctions::logFile('Exception',$e, 'error');
         }
     }
-
     public function edit()
     {
         try {

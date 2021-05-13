@@ -15,7 +15,7 @@ use Carbon\Traits\Creator;
 class Pagos extends AbstractDBConnection implements Model
 {
     private ?int $id;
-    private ?int $Trabajador_id;
+    private int $Trabajador_id;
     private Carbon $Fecha;
     private string $Estado;
 
