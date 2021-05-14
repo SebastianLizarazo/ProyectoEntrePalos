@@ -316,7 +316,12 @@ class Productos extends AbstractDBConnection implements Model
 
     function update()
     {
-        // TODO: Implement update() method.
+        $query = "UPDATE producto SET
+            Nombre = :Nombre, Tamano = :Tamano, ReferenciaTamano = :ReferenciaTamano, Referencia = :Referencia, PrecioBase = :PrecioBase, 
+            PrecioUnidadTrabajador = :PrecioUnidadTrabajador, PrecioUnidadVenta = :PrecioUnidadVenta, PresentacionProducto = :PresentacionProducto,
+            Marca_id = :Marca_id, CantidadProducto = :CantidadProducto, Subcategoria_id = :SubCategoria_id,
+            Estado = :Estado WHERE id = :id";
+        return $this->save($query);
     }
 
     function deleted()
