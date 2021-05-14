@@ -5523,3 +5523,2847 @@
 
 )
   
+[2021-05-13T15:04:45.392747+00:00] General.ERROR: Exception  
+[2021-05-13T15:04:45.393751+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T15:04:45.393839+00:00] General.ERROR: Line: 128  
+[2021-05-13T15:04:45.393895+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-13T15:04:45.393960+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 266
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => 
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contraseña] => jehova12
+                            [:Rol] => Administrador
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 276
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-13T15:04:45.414648+00:00] General.ERROR: Exception  
+[2021-05-13T15:04:45.414995+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T15:04:45.415063+00:00] General.ERROR: Line: 128  
+[2021-05-13T15:04:45.415132+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-13T15:04:45.415192+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 266
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => 
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contraseña] => jehov232
+                            [:Rol] => Provedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 276
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-13T15:04:45.419325+00:00] General.ERROR: Exception  
+[2021-05-13T15:04:45.419557+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T15:04:45.419626+00:00] General.ERROR: Line: 128  
+[2021-05-13T15:04:45.419684+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-13T15:04:45.419747+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 266
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => 
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contraseña] => jehoo373
+                            [:Rol] => Cliente
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 276
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-13T15:10:10.931033+00:00] General.ERROR: Exception  
+[2021-05-13T15:10:10.931476+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T15:10:10.931551+00:00] General.ERROR: Line: 128  
+[2021-05-13T15:10:10.931618+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-13T15:10:10.931700+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 266
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => 
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contraseña] => jehova12
+                            [:Rol] => Administrador
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 276
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-13T15:10:10.935409+00:00] General.ERROR: Exception  
+[2021-05-13T15:10:10.935738+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T15:10:10.935812+00:00] General.ERROR: Line: 128  
+[2021-05-13T15:10:10.935912+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-13T15:10:10.935998+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 266
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => 
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contraseña] => jehov232
+                            [:Rol] => Provedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 276
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-13T15:10:10.939624+00:00] General.ERROR: Exception  
+[2021-05-13T15:10:10.939980+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-13T15:10:10.940061+00:00] General.ERROR: Line: 128  
+[2021-05-13T15:10:10.940179+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-13T15:10:10.940307+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 266
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => 
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contraseña] => jehoo373
+                            [:Rol] => Cliente
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 276
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T14:11:47.851518+00:00] General.ERROR: Exception  
+[2021-05-14T14:11:47.852649+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T14:11:47.852799+00:00] General.ERROR: Line: 128  
+[2021-05-14T14:11:47.852873+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T14:11:47.852940+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => 
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contraseña] => jehova12
+                            [:Rol] => Administrador
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T14:11:47.876780+00:00] General.ERROR: Exception  
+[2021-05-14T14:11:47.877194+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T14:11:47.877273+00:00] General.ERROR: Line: 128  
+[2021-05-14T14:11:47.877333+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T14:11:47.877452+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => 
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contraseña] => jehov232
+                            [:Rol] => Provedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T14:11:47.881394+00:00] General.ERROR: Exception  
+[2021-05-14T14:11:47.881723+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T14:11:47.881829+00:00] General.ERROR: Line: 128  
+[2021-05-14T14:11:47.881935+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T14:11:47.882060+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => 
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contraseña] => jehoo373
+                            [:Rol] => Cliente
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T14:20:29.808255+00:00] General.ERROR: Exception  
+[2021-05-14T14:20:29.808846+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T14:20:29.808960+00:00] General.ERROR: Line: 128  
+[2021-05-14T14:20:29.809024+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T14:20:29.809093+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => 
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contraseña] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T14:20:29.814641+00:00] General.ERROR: Exception  
+[2021-05-14T14:20:29.814920+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T14:20:29.814998+00:00] General.ERROR: Line: 128  
+[2021-05-14T14:20:29.815051+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T14:20:29.815137+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => 
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contraseña] => jehov232
+                            [:Rol] => Provedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T14:20:29.838578+00:00] General.ERROR: Exception  
+[2021-05-14T14:20:29.839188+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T14:20:29.839341+00:00] General.ERROR: Line: 128  
+[2021-05-14T14:20:29.839454+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T14:20:29.839574+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => 
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contraseña] => jehoo373
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T14:37:12.616962+00:00] General.ERROR: Exception  
+[2021-05-14T14:37:12.617440+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T14:37:12.617502+00:00] General.ERROR: Line: 128  
+[2021-05-14T14:37:12.617555+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T14:37:12.617653+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contraseña] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T14:37:12.622538+00:00] General.ERROR: Exception  
+[2021-05-14T14:37:12.622814+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T14:37:12.622875+00:00] General.ERROR: Line: 128  
+[2021-05-14T14:37:12.622927+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T14:37:12.622983+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => Molano Diaz
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contraseña] => jehov232
+                            [:Rol] => Provedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T14:37:12.640335+00:00] General.ERROR: Exception  
+[2021-05-14T14:37:12.640754+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T14:37:12.640840+00:00] General.ERROR: Line: 128  
+[2021-05-14T14:37:12.640901+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T14:37:12.640969+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => Rojas Pinilla
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contraseña] => jehoo373
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:38:07.423338+00:00] General.ERROR: Exception  
+[2021-05-14T15:38:07.423914+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:38:07.423976+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:38:07.424029+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:38:07.424119+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contraseña] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:38:07.447072+00:00] General.ERROR: Exception  
+[2021-05-14T15:38:07.447435+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:38:07.447515+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:38:07.447572+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:38:07.447632+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => Molano Diaz
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contraseña] => jehov232
+                            [:Rol] => Provedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:38:07.453162+00:00] General.ERROR: Exception  
+[2021-05-14T15:38:07.453412+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:38:07.453491+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:38:07.453548+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:38:07.453608+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => Rojas Pinilla
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contraseña] => jehoo373
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:38:14.534452+00:00] General.ERROR: Exception  
+[2021-05-14T15:38:14.534896+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:38:14.534967+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:38:14.535026+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:38:14.535096+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contraseña] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:38:14.538478+00:00] General.ERROR: Exception  
+[2021-05-14T15:38:14.538733+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:38:14.538806+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:38:14.538872+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:38:14.538943+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => Molano Diaz
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contraseña] => jehov232
+                            [:Rol] => Provedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:38:14.566725+00:00] General.ERROR: Exception  
+[2021-05-14T15:38:14.567026+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:38:14.567112+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:38:14.567220+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:38:14.567367+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => Rojas Pinilla
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contraseña] => jehoo373
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:40:08.843712+00:00] General.ERROR: Exception  
+[2021-05-14T15:40:08.844326+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:40:08.844398+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:40:08.844455+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:40:08.844861+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contraseña] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:40:08.864083+00:00] General.ERROR: Exception  
+[2021-05-14T15:40:08.864437+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:40:08.864558+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:40:08.864664+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:40:08.864780+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => Molano Diaz
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contraseña] => jehov232
+                            [:Rol] => Provedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:40:08.867957+00:00] General.ERROR: Exception  
+[2021-05-14T15:40:08.868187+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:40:08.868260+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:40:08.868324+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:40:08.868393+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 267
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => Rojas Pinilla
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contraseña] => jehoo373
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 277
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:48:30.971181+00:00] General.ERROR: Exception  
+[2021-05-14T15:48:30.971670+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:48:30.971734+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:48:30.971787+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:48:30.971846+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 269
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contraseña] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 279
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:48:30.996997+00:00] General.ERROR: Exception  
+[2021-05-14T15:48:30.997279+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:48:30.997357+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:48:30.997422+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:48:30.997491+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 269
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => Molano Diaz
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contraseña] => jehov232
+                            [:Rol] => Provedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 279
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:48:31.000262+00:00] General.ERROR: Exception  
+[2021-05-14T15:48:31.000658+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:48:31.000880+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:48:31.001021+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-14T15:48:31.001114+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 269
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => Rojas Pinilla
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contraseña] => jehoo373
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 279
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contraseña,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:57:47.667631+00:00] General.ERROR: Exception  
+[2021-05-14T15:57:47.668513+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:57:47.668661+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:57:47.668799+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Rol' at row 1  
+[2021-05-14T15:57:47.668940+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 269
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => Molano Diaz
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contrasena] => jehov232
+                            [:Rol] => Provedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 279
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:59:59.373748+00:00] General.ERROR: Exception  
+[2021-05-14T15:59:59.374299+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:59:59.374372+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:59:59.374432+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3132307498' for key 'TblAdministradorTelefono_UNIQUE'  
+[2021-05-14T15:59:59.374500+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 269
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 279
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T15:59:59.402670+00:00] General.ERROR: Exception  
+[2021-05-14T15:59:59.402926+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T15:59:59.403006+00:00] General.ERROR: Line: 128  
+[2021-05-14T15:59:59.403077+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3197807498' for key 'TblAdministradorTelefono_UNIQUE'  
+[2021-05-14T15:59:59.403153+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 269
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => Rojas Pinilla
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contrasena] => jehoo373
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 279
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:00:06.822722+00:00] General.ERROR: Exception  
+[2021-05-14T16:00:06.823136+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:00:06.823208+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:00:06.823268+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3132307498' for key 'TblAdministradorTelefono_UNIQUE'  
+[2021-05-14T16:00:06.823333+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 269
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 279
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:00:06.851657+00:00] General.ERROR: Exception  
+[2021-05-14T16:00:06.851905+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:00:06.851970+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:00:06.852028+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3136307498' for key 'TblAdministradorTelefono_UNIQUE'  
+[2021-05-14T16:00:06.852091+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 269
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => Molano Diaz
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contrasena] => jehov232
+                            [:Rol] => Proveedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 279
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:00:06.857141+00:00] General.ERROR: Exception  
+[2021-05-14T16:00:06.857517+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:00:06.857624+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:00:06.857723+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3197807498' for key 'TblAdministradorTelefono_UNIQUE'  
+[2021-05-14T16:00:06.857829+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 269
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => Rojas Pinilla
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contrasena] => jehoo373
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 279
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:01:23.569347+00:00] General.ERROR: Exception  
+[2021-05-14T16:01:23.569861+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:01:23.569925+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:01:23.569978+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3132307498' for key 'TblAdministradorTelefono_UNIQUE'  
+[2021-05-14T16:01:23.570040+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 278
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:01:23.594971+00:00] General.ERROR: Exception  
+[2021-05-14T16:01:23.595200+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:01:23.595264+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:01:23.595321+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3136307498' for key 'TblAdministradorTelefono_UNIQUE'  
+[2021-05-14T16:01:23.595382+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1198648983
+                            [:Nombres] => Sebastian Eduardo
+                            [:Apellidos] => Molano Diaz
+                            [:Telefono] => 3136307498
+                            [:Direccion] => Av currucui 12-56
+                            [:Email] => entrepalosproso@gmail.com
+                            [:Contrasena] => jehov232
+                            [:Rol] => Proveedor
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 278
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:01:23.601624+00:00] General.ERROR: Exception  
+[2021-05-14T16:01:23.601848+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:01:23.601913+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:01:23.601971+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3197807498' for key 'TblAdministradorTelefono_UNIQUE'  
+[2021-05-14T16:01:23.602033+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193094783
+                            [:Nombres] => Bladimir Alejandro
+                            [:Apellidos] => Rojas Pinilla
+                            [:Telefono] => 3197807498
+                            [:Direccion] => calle 72-56
+                            [:Email] => listopalospoderoso@gmail.com
+                            [:Contrasena] => jehoo373
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 278
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

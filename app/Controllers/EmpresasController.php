@@ -69,7 +69,7 @@ class EmpresasController
     static public function getAll(array $data = null)
     {
         try {
-            $result = Mesas::getAll();
+            $result = Empresas::getAll();
             if (!empty($data['request']) and $data['request'] === 'ajax') {
                 header('Content-type: application/json; charset=utf-8');
                 $result = json_encode($result);

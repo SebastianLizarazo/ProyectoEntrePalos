@@ -9,22 +9,22 @@ require_once (__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clas
 
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
+use phpDocumentor\Reflection\Types\Array_;
 use PhpParser\Node\Expr\Cast\Int_;
 
 class Usuarios extends AbstractDBConnection implements Model
 {
-    private ?int $id;//el id es opcional porque el usuario no lo tiene que ingresar
+    private ?int $id;
     private int $Cedula;
     private string $Nombres;
     private string $Apellidos;
     private int $Telefono;
     private string $Direccion;
     private string $Email;
-    private string $Contraseña;
+    private string $Contrasena;
     private string $Rol;
     private string $Estado;
     private int $Empresa_id;
-
     /**
      * Usuarios constructor.
      * @param int|null $id
@@ -34,35 +34,39 @@ class Usuarios extends AbstractDBConnection implements Model
      * @param int $Telefono
      * @param string $Direccion
      * @param string $Email
-     * @param string $Contraseña
+     * @param string $Contrasena
      * @param string $Rol
      * @param string $Estado
      * @param int $Empresa_id
      */
-    public function __construct(array $Usuario=[])
+
+
+    public function __construct(array $Usuario =[])
     {
-        $this->setId($Usuario['id']?? 0);
-        $this->setCedula($Usuario['Cedula']?? 0);
-        $this->setNombres($Usuario['Nombres']?? '');
-        $this->setApellidos($Usuario['Apeliidos']?? '');
-        $this->setTelefono($Usuario['Telefono']?? 0);
-        $this->setDireccion($Usuario['Direccion']?? '');
-        $this->setEmail($Usuario['Email']?? '');
-        $this->setContraseña($Usuario['Contraseña']?? '');
-        $this->setRol($Usuario['Rol']?? '');
-        $this->setEstado($Usuario['Estado']?? '');
-        $this->setEmpresaId($Usuario['Empresa_id']?? 0);
+        $this->setId($Usuario['id'] ?? 0);
+        $this->setCedula($Usuario['Cedula'] ?? 0);
+        $this->setNombres($Usuario['Nombres'] ?? '');
+        $this->setApellidos($Usuario['Apellidos'] ?? '');
+        $this->setTelefono($Usuario['Telefono'] ?? 0);
+        $this->setDireccion($Usuario['Direccion'] ?? '');
+        $this->setEmail($Usuario['Email'] ?? '');
+        $this->setContrasena($Usuario['Contrasena'] ?? '');
+        $this->setRol($Usuario['Rol'] ?? '');
+        $this->setEstado($Usuario['Estado'] ?? '');
+        $this->setEmpresaId($Usuario['Empresa_id'] ?? 1);
     }
 
-    public static function usuarioRegistrado (mixed $Cedula, mixed $Nombre): bool
+
+    public static function usuarioRegistrado(mixed $Cedula, mixed $Nombres): bool
     {
-        $usuTmp = Usuarios::search("SELECT * FROM usuario WHERE Cedula = '$Cedula' and Capacidad = '$Nombre'");
+        $usuTmp = Usuarios::search("SELECT * FROM usuario WHERE Cedula = '$Cedula' and Nombres = '$Nombres'");
         return (!empty($usuTmp)) ? true : false;
     }
+
     public function __destruct()
     {
         //isConnected y Disconnect son metodos de la clase AbstractDBConnection
-        if ($this->isConnected()){//pregunta si la base de datos esta conectada
+        if ($this->isConnected()) {//pregunta si la base de datos esta conectada
             $this->Disconnect();//destruye la coneccion
         }
     }
@@ -182,17 +186,17 @@ class Usuarios extends AbstractDBConnection implements Model
     /**
      * @return string
      */
-    public function getContraseña(): string
+    public function getContrasena(): string
     {
-        return $this->Contraseña;
+        return $this->Contrasena;
     }
 
     /**
-     * @param string $Contraseña
+     * @param string $Contrasena
      */
-    public function setContraseña(string $Contraseña): void
+    public function setContrasena(string $Contrasena): void
     {
-        $this->Contraseña = $Contraseña;
+        $this->Contrasena = $Contrasena;
     }
 
     /**
@@ -244,9 +248,6 @@ class Usuarios extends AbstractDBConnection implements Model
     }
 
 
-
-
-
     protected function save(string $query): ?bool
     {
         $arrData = [
@@ -257,11 +258,12 @@ class Usuarios extends AbstractDBConnection implements Model
             ':Telefono' => $this->getTelefono(),
             ':Direccion' => $this->getDireccion(),
             ':Email' => $this->getEmail(),
-            ':Contraseña' => $this->getContraseña(),
+            ':Contrasena' => $this->getContrasena(),
             ':Rol' => $this->getRol(),
             ':Estado' => $this->getEstado(),
             ':Empresa_id' => $this->getEmpresaId(),
         ];
+
         $this->Connect();
         $result = $this->insertRow($query, $arrData);//insertRow es el que inserta los datos que organiza el save
         $this->Disconnect();
@@ -271,11 +273,11 @@ class Usuarios extends AbstractDBConnection implements Model
     public function insert(): ?bool
     {
         $query = "INSERT INTO usuario VALUES (
-            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,Email,:Contraseña,:Rol,:Estado,:Empresa_id)";
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)";
         //return $this->save($query);
         if ($this->save($query)) {
             $idUsuario = $this->getLastId('Usuario');
-            $this->setId($idUsuario);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla mesa
+            $this->setId($idUsuario);
             return true;
         } else {
             return false;
@@ -285,11 +287,12 @@ class Usuarios extends AbstractDBConnection implements Model
     public function update(): ?bool
     {
         $query = "UPDATE usuario SET 
-            Nombres = :Nombres, Apellidos= :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
-            Contraseña = :Contraseña, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id";
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id";
         return $this->save($query);
 
     }
+
     function deleted()
     {
         $this->setEstado("Activo");
@@ -328,7 +331,7 @@ class Usuarios extends AbstractDBConnection implements Model
             if ($id > 0) {
                 $tmpUsuario = new Usuarios();
                 $tmpUsuario->Connect();
-                $getrow = $tmpUsuario->getRow("SELECT * FROM usuario WHERE id = ?", array($id) );
+                $getrow = $tmpUsuario->getRow("SELECT * FROM usuario WHERE id = ?", array($id));
 
                 $tmpUsuario->Disconnect();
                 return ($getrow) ? new Usuarios($getrow) : null;
@@ -350,16 +353,16 @@ class Usuarios extends AbstractDBConnection implements Model
     {
         return [
             'id' => $this->getId(),
-            'Cedula' =>$this->getCedula(),
-            'Nombres' =>$this->getNombres(),
-            'Apellidos' =>$this->getApellidos(),
-            'Telefono' =>$this->getTelefono(),
-            'Direccion' =>$this->getDireccion(),
-            'Email' =>$this->getEmail(),
-            'Contraseña' =>$this->getContraseña(),
-            'Rol' =>$this->getRol(),
-            'Estado' =>$this->getEstado(),
-            'Empresa_id' =>$this->getEmpresaId()
+            'Cedula' => $this->getCedula(),
+            'Nombres' => $this->getNombres(),
+            'Apellidos' => $this->getApellidos(),
+            'Telefono' => $this->getTelefono(),
+            'Direccion' => $this->getDireccion(),
+            'Email' => $this->getEmail(),
+            'Contrasena' => $this->getContrasena(),
+            'Rol' => $this->getRol(),
+            'Estado' => $this->getEstado(),
+            'Empresa_id' => $this->getEmpresaId()
         ];
     }
 

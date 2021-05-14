@@ -4,7 +4,7 @@ require ("..\app\Models\Empresas.php");
 use App\Models\Empresas;
 
 $arrEmpresa1=[
-    'Nombre' => 'Bladi',
+    'Nombre' => 'Entre Palos',
     'NIT' => 'nt887639876',
     'Telefono' => 3119856728,
     'Direccion' => 'Av coyote 12-56',
