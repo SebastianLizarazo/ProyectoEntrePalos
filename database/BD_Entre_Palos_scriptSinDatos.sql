@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `bdentrepalos`.`Usuario` (
   `Telefono` BIGINT UNSIGNED NOT NULL,
   `Direccion` VARCHAR(60) NULL,
   `Email` VARCHAR(60) NULL,
-  `Contraseña` VARCHAR(20) NULL,
+  `Contrasena` VARCHAR(20) NULL,
   `Rol` ENUM('Administrador', 'Proveedor', 'Cliente', 'Mesero', 'Cocinero', 'Domiciliario') NOT NULL,
   `Estado` ENUM('Activo', 'Inactivo') NOT NULL,
   `Empresa_id` SMALLINT NULL,
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `bdentrepalos`.`Usuario` (
   UNIQUE INDEX `idTblAdministrador_UNIQUE` (`id` ASC),
   UNIQUE INDEX `TblAdministradorCedula_UNIQUE` (`Cedula` ASC),
   UNIQUE INDEX `TblAdministradorTelefono_UNIQUE` (`Telefono` ASC),
-  UNIQUE INDEX `TblAdministradorContraseña_UNIQUE` (`Contraseña` ASC),
+  UNIQUE INDEX `TblAdministradorContrasena_UNIQUE` (`Contrasena` ASC),
   UNIQUE INDEX `TblAdministradorEmail_UNIQUE` (`Email` ASC),
   INDEX `fk_Usuario_Empresa1_idx` (`Empresa_id` ASC),
   CONSTRAINT `fk_Usuario_Empresa1`
@@ -211,8 +211,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `bdentrepalos`.`Producto` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(80) NOT NULL,
-  `Tamaño` SMALLINT UNSIGNED NOT NULL,
-  `ReferenciaTamaño` ENUM('ml', 'Lt', 'Kg', 'gr', 'Oz', 'Lb') NOT NULL,
+  `Tamano` SMALLINT UNSIGNED NOT NULL,
+  `ReferenciaTamano` ENUM('ml', 'Lt', 'Kg', 'gr', 'Oz', 'Lb') NOT NULL,
   `Referencia` VARCHAR(25) NOT NULL,
   `PrecioBase` MEDIUMINT UNSIGNED NOT NULL,
   `PrecioUnidadTrabajador` MEDIUMINT UNSIGNED NOT NULL,
@@ -241,7 +241,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `bdentrepalos`.`Oferta`
+-- Table `bdentrepalos`.`Ofertas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bdentrepalos`.`Oferta` (
   `id` INT NOT NULL AUTO_INCREMENT,
