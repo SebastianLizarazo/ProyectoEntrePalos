@@ -14,8 +14,8 @@ class Productos extends AbstractDBConnection implements Model
 {
     private ?int  $id;
     private  string $Nombre;
-    private  int $Tamaño;
-    private  string $ReferenciaTamaño;
+    private  int $Tamano;
+    private  string $ReferenciaTamano;
     private  string $Referencia;
     private  int $PrecioBase;
     private  int $PrecioUnidadTrabajador;
@@ -30,8 +30,8 @@ class Productos extends AbstractDBConnection implements Model
      * Productos constructor.
      * @param int|null $id
      * @param string $Nombre
-     * @param int $Tamaño
-     * @param string $ReferenciaTamaño
+     * @param int $Tamano
+     * @param string $ReferenciaTamano
      * @param string $Referencia
      * @param int $PrecioBase
      * @param int $PrecioUnidadTrabajador
@@ -46,8 +46,8 @@ class Productos extends AbstractDBConnection implements Model
     {
         $this->setid( $producto['id']?? null);
         $this->setNombre( $producto['Nombre']?? '');
-        $this->setTamaño( $producto['Tamaño']?? 0);
-        $this->setReferenciaTamaño( $producto['ReferenciaTamaño']?? '');
+        $this->setTamano( $producto['Tamano']?? 0);
+        $this->setReferenciaTamano( $producto['ReferenciaTamano']?? '');
         $this->setReferencia( $producto['Referencia']?? '');
         $this->setPrecioBase( $producto['PrecioBase']?? 0);
         $this->setPrecioUnidadTrabajador( $producto['PrecioUnidadTrabajador']?? 0);
@@ -101,33 +101,33 @@ class Productos extends AbstractDBConnection implements Model
     /**
      * @return int
      */
-    public function getTamaño(): int
+    public function getTamano(): int
     {
-        return $this->Tamaño;
+        return $this->Tamano;
     }
 
     /**
-     * @param int $Tamaño
+     * @param int $Tamano
      */
-    public function setTamaño(int $Tamaño): void
+    public function setTamano(int $Tamano): void
     {
-        $this->Tamaño = $Tamaño;
+        $this->Tamano = $Tamano;
     }
 
     /**
      * @return string
      */
-    public function getReferenciaTamaño(): string
+    public function getReferenciaTamano(): string
     {
-        return $this->ReferenciaTamaño;
+        return $this->ReferenciaTamano;
     }
 
     /**
-     * @param string $ReferenciaTamaño
+     * @param string $ReferenciaTamano
      */
-    public function setReferenciaTamaño(string $ReferenciaTamaño): void
+    public function setReferenciaTamano(string $ReferenciaTamano): void
     {
-        $this->ReferenciaTamaño = $ReferenciaTamaño;
+        $this->ReferenciaTamano = $ReferenciaTamano;
     }
 
     /**
@@ -280,8 +280,8 @@ class Productos extends AbstractDBConnection implements Model
         $arrData = [
             ':id',
             ':Nombre' => $this->getNombre(),
-            ':Tamaño' => $this->getTamaño(),
-            ':ReferenciaTamaño' => $this->getReferenciaTamaño(),
+            ':Tamano' => $this->getTamano(),
+            ':ReferenciaTamano' => $this->getReferenciaTamano(),
             ':Referencia' => $this->getReferencia(),
             ':PrecioBase' => $this->getPrecioBase(),
             ':PrecioUnidadTrabajador' => $this->getPrecioUnidadTrabajador(),
@@ -301,7 +301,7 @@ class Productos extends AbstractDBConnection implements Model
     function insert()
     {
         $query = "INSERT INTO producto VALUES (
-            :id, :Nombre, :Tamaño, :ReferenciaTamaño, :Referencia, :PrecioBase, 
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
             :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
             :CantidadProducto, :SubCategoria_id, :Estado )";
         //return $this->save($query);
