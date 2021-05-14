@@ -287,8 +287,8 @@ class Usuarios extends AbstractDBConnection implements Model
     public function update(): ?bool
     {
         $query = "UPDATE usuario SET 
-            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
-            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id";
+            Cedula =:Cedula, Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id";
         return $this->save($query);
 
     }
