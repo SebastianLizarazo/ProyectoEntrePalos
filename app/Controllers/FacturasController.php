@@ -26,6 +26,7 @@ class FacturasController
         $this->dataFactura['TipoPedido'] = $_FORM['TipoPedido'] ?? Null;
     }
 
+
     public function create(){
         try {
             if (!empty($this->dataFactura['id']) && !empty($this->dataFactura['Numero']) && !Facturas::facturaRegistrada($this->dataFactura['id'], $this->dataFactura['Numero'])) {
@@ -67,4 +68,109 @@ class FacturasController
         }
         return null;
     }
+    static public function getAll(array $data = null)
+    {
+        try {
+            $result = Facturas::getAll();
+            if (!empty($data['request']) and $data['request'] === 'ajax') {
+                header('Content-type: application/json; charset=utf-8');
+                $result = json_encode($result);
+            }
+            return $result;
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+        return null;
+    }
+
+    static public function statusPendiene(int $id)
+    {
+        try {
+            $ObjFactura = Facturas::searchForId($id);
+            $ObjFactura->setEstado("Pendiente");
+            if ($ObjFactura->update()){
+                header("Location: ../../views/modules/factura/index.php");
+            }else{
+                header("Location: ../../views/modules/factura/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        }catch (\Exception $e){
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+    static public function statusPaga(int $id)
+    {
+        try {
+            $ObjFactura = Facturas::searchForId($id);
+            $ObjFactura->setEstado("Paga");
+            if ($ObjFactura->update()){
+                header("Location: ../../views/modules/factura/index.php");
+            }else{
+                header("Location: ../../views/modules/factura/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        }catch (\Exception $e){
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+    static public function statusCancelada(int $id)
+    {
+        try {
+            $ObjFactura = Facturas::searchForId($id);
+            $ObjFactura->setEstado("Cancelada");
+            if ($ObjFactura->update()){
+                header("Location: ../../views/modules/factura/index.php");
+            }else{
+                header("Location: ../../views/modules/factura/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        }catch (\Exception $e){
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+    static public function selectFactura(array $params = []) {
+
+        //Parametros de Configuracion
+        $params['isMultiple'] = $params['isMultiple'] ?? false;
+        $params['isRequired'] = $params['isRequired'] ?? true;
+        $params['id'] = $params['id'] ?? "factura_id";
+        $params['name'] = $params['name'] ?? "factura_id";
+        $params['defaultValue'] = $params['defaultValue'] ?? "";
+        $params['class'] = $params['class'] ?? "form-control";
+        $params['where'] = $params['where'] ?? "";
+        $params['arrExcluir'] = $params['arrExcluir'] ?? array(); //[Bebidas, Frutas]
+        $params['request'] = $params['request'] ?? 'html';
+
+        $arrFacturas = array();
+        if ($params['where'] != "") {
+            $base = "SELECT * FROM factura WHERE ";
+            $arrFacturas = Facturas::search($base . ' ' . $params['where']);
+        } else {
+            $arrFacturas = Facturas::getAll();
+        }
+
+        $htmlSelect = "<select " . (($params['isMultiple']) ? "multiple" : "") . " " . (($params['isRequired']) ? "required" : "") . " id= '" . $params['id'] . "' name='" . $params['name'] . "' class='" . $params['class'] . "' style='width: 100%;'>";
+        $htmlSelect .= "<option value='' >Seleccione</option>";
+        if (is_array($arrFacturas) && count($arrFacturas) > 0) {
+            /* @var $arrFacturas Facturas[] */
+            foreach ($arrFacturas as $factura)
+                if (!FacturasController::facturaIsInArray($factura->getId(), $params['arrExcluir']))
+                    $htmlSelect .= "<option " . (($factura != "") ? (($params['defaultValue'] == $factura->getId()) ? "selected" : "") : "") . " value='" . $factura->getId() . "'>".
+                                                "La factura numero: " . $factura->getNumero() .
+                                                " de " . $factura->getFecha() .
+                                                " Está ".$factura->getEstado().
+                                    "</option>";
+        }
+        $htmlSelect .= "</select>";
+        return $htmlSelect;
+    }
+    private static function facturaIsInArray(?int $idFactura, mixed $ArrFacturas): ?bool
+    {
+        if (count($ArrFacturas) > 0) {
+            foreach ($ArrFacturas as $Factura) {
+                if ($Factura->getId() == $idFactura) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }
