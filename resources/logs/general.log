@@ -8367,3 +8367,1538 @@
 
 )
   
+[2021-05-14T16:35:55.798961+00:00] General.ERROR: Exception  
+[2021-05-14T16:35:55.799443+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:35:55.799506+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:35:55.799560+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:35:55.799647+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Inactivo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:37:47.805172+00:00] General.ERROR: Exception  
+[2021-05-14T16:37:47.805635+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:37:47.805709+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:37:47.805801+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:37:47.805874+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Inactivo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:39:10.422300+00:00] General.ERROR: Exception  
+[2021-05-14T16:39:10.422702+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:39:10.422764+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:39:10.422817+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:39:10.422877+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:39:15.232483+00:00] General.ERROR: Exception  
+[2021-05-14T16:39:15.232953+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:39:15.233017+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:39:15.233071+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:39:15.233132+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Municipio_id = :Municipio_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:40:26.044634+00:00] General.ERROR: Exception  
+[2021-05-14T16:40:26.045031+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:40:26.045093+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:40:26.045147+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:40:26.045205+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:40:32.091223+00:00] General.ERROR: Exception  
+[2021-05-14T16:40:32.091653+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:40:32.091724+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:40:32.091784+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:40:32.091849+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:41:00.366436+00:00] General.ERROR: Exception  
+[2021-05-14T16:41:00.366945+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:41:00.367022+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:41:00.367074+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:41:00.367135+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:41:12.543704+00:00] General.ERROR: Exception  
+[2021-05-14T16:41:12.544097+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:41:12.544184+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:41:12.544241+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:41:12.544305+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:44:21.811305+00:00] General.ERROR: Exception  
+[2021-05-14T16:44:21.811725+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:44:21.811796+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:44:21.811856+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3132307498' for key 'TblAdministradorTelefono_UNIQUE'  
+[2021-05-14T16:44:21.811922+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 278
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:44:21.814390+00:00] General.ERROR: Exception  
+[2021-05-14T16:44:21.814648+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:44:21.814722+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:44:21.814788+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:44:21.814859+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:45:09.378931+00:00] General.ERROR: Exception  
+[2021-05-14T16:45:09.379354+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:45:09.379416+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:45:09.379470+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:45:09.379560+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval Pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:45:17.236328+00:00] General.ERROR: Exception  
+[2021-05-14T16:45:17.236796+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:45:17.236871+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:45:17.236931+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3132307498' for key 'TblAdministradorTelefono_UNIQUE'  
+[2021-05-14T16:45:17.236997+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 278
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 47
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:45:17.239542+00:00] General.ERROR: Exception  
+[2021-05-14T16:45:17.239804+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:45:17.239872+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:45:17.239931+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:45:17.239994+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval Pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:48:56.548437+00:00] General.ERROR: Exception  
+[2021-05-14T16:48:56.548867+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:48:56.548942+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:48:56.548995+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:48:56.549057+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval Pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T16:53:31.854446+00:00] General.ERROR: Exception  
+[2021-05-14T16:53:31.854893+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T16:53:31.854963+00:00] General.ERROR: Line: 128  
+[2021-05-14T16:53:31.855022+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T16:53:31.855118+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval Pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T17:06:11.234441+00:00] General.ERROR: Exception  
+[2021-05-14T17:06:11.234899+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T17:06:11.234970+00:00] General.ERROR: Line: 128  
+[2021-05-14T17:06:11.235030+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T17:06:11.235100+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval Pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T17:06:20.546178+00:00] General.ERROR: Exception  
+[2021-05-14T17:06:20.546603+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T17:06:20.546681+00:00] General.ERROR: Line: 128  
+[2021-05-14T17:06:20.546736+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T17:06:20.546796+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval Pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T17:06:47.648737+00:00] General.ERROR: Exception  
+[2021-05-14T17:06:47.649167+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T17:06:47.649238+00:00] General.ERROR: Line: 128  
+[2021-05-14T17:06:47.649302+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T17:06:47.649371+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-14T17:13:00.576070+00:00] General.ERROR: Exception  
+[2021-05-14T17:13:00.576476+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-14T17:13:00.576552+00:00] General.ERROR: Line: 128  
+[2021-05-14T17:13:00.576604+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens  
+[2021-05-14T17:13:00.576665+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 268
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 1193099653
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Sandoval Pirri
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => jehova12
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 292
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 52
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
