@@ -54,7 +54,6 @@ class Mesas extends AbstractDBConnection implements Model
         }
     }
 
-
     /**
      * @return int|null
      */

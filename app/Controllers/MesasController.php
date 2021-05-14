@@ -18,9 +18,6 @@ class MesasController
         $this->dataMesa['Capacidad'] = $_FORM['Capacidad'] ?? NULL;
         $this->dataMesa['Ocupacion'] = $_FORM['Ocupacion'] ?? 'disponible';
     }
-
-
-
     public function create()
     {
         try {

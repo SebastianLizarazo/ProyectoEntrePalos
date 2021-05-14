@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2021-04-27T13:22:41.455751+00:00] General.ERROR: Exception  
 [2021-04-27T13:22:41.457373+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
 [2021-04-27T13:22:41.457485+00:00] General.ERROR: Line: 128  
@@ -9902,3 +9903,5 @@
 
 )
   
+=======
+>>>>>>> origin/David
