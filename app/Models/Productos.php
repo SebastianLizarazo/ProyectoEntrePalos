@@ -44,6 +44,7 @@ class Productos extends AbstractDBConnection implements Model
      */
     public function __construct(array $producto=[])
     {
+        parent::__construct();
         $this->setid( $producto['id']?? null);
         $this->setNombre( $producto['Nombre']?? '');
         $this->setTamano( $producto['Tamano']?? 0);
@@ -278,7 +279,7 @@ class Productos extends AbstractDBConnection implements Model
     protected function save(string $query): ?bool
     {
         $arrData = [
-            ':id',
+            ':id' => $this->getId(),
             ':Nombre' => $this->getNombre(),
             ':Tamano' => $this->getTamano(),
             ':ReferenciaTamano' => $this->getReferenciaTamano(),
@@ -316,31 +317,85 @@ class Productos extends AbstractDBConnection implements Model
 
     function update()
     {
-        // TODO: Implement update() method.
+        $query = "UPDATE producto SET
+            Nombre = :Nombre, Tamano = :Tamano, ReferenciaTamano = :ReferenciaTamano, Referencia = :Referencia, PrecioBase = :PrecioBase, 
+            PrecioUnidadTrabajador = :PrecioUnidadTrabajador, PrecioUnidadVenta = :PrecioUnidadVenta, PresentacionProducto = :PresentacionProducto,
+            Marca_id = :Marca_id, CantidadProducto = :CantidadProducto, Subcategoria_id = :SubCategoria_id,
+            Estado = :Estado WHERE id = :id";
+        return $this->save($query);
     }
 
     function deleted()
     {
-        // TODO: Implement deleted() method.
+        $this->setEstado("Inactivo");
+        return $this->update();
     }
 
     static function search($query): ?array
     {
-        // TODO: Implement search() method.
+        try {
+            $arrProductos = array();
+            $tmp = new Productos();
+
+            $tmp->Connect();
+            $getrows = $tmp->getRows($query);
+            $tmp->Disconnect();
+
+            if (!empty($getrows)) {
+                foreach ($getrows as $valor) {
+                    $Producto = new Productos($valor);
+                    array_push($arrProductos, $Producto);//ingresa el contenido del segundo parametro en el primero
+                    unset($Producto); //Borrar el contenido del objeto
+                }
+                return $arrProductos;
+            }
+            return null;
+        } catch (Exception $e) {
+            GeneralFunctions::logFile('Exception', $e);
+        }
+        return null;
     }
 
-    static function searchForId(int $id): ?object
+    static function searchForId(int $id): ?Productos
     {
-        // TODO: Implement searchForId() method.
+        try {
+            if ($id > 0) {
+                $tmpProducto = new Productos();
+                $tmpProducto->Connect();
+                $getrow = $tmpProducto->getRow("SELECT * FROM producto WHERE id = ?", array($id) );
+
+                $tmpProducto->Disconnect();
+                return ($getrow) ? new Productos($getrow) : null;
+            } else {
+                throw new Exception('Id de producto Invalido');
+            }
+        } catch (Exception $e) {
+            GeneralFunctions::logFile('Exception', $e);
+        }
+        return null;
     }
 
     static function getAll(): ?array
     {
-        // TODO: Implement getAll() method.
+        return Productos::search("SELECT * FROM producto");
     }
 
     public function jsonSerialize()
     {
-        // TODO: Implement jsonSerialize() method.
+        return [
+            'id' => $this->getId(),
+            'Nombre' => $this->getNombre(),
+            'Tamano' => $this->getTamano(),
+            'ReferenciaTamano' => $this->getReferenciaTamano(),
+            'Referencia' => $this->getReferencia(),
+            'PrecioBase' => $this->getPrecioBase(),
+            'PrecioUnidadTrabajador' => $this->getPrecioUnidadTrabajador(),
+            'PrecioUnidadVenta' => $this->getPrecioUnidadVenta(),
+            'PresentacionProducto' => $this->getPresentacionProducto(),
+            'Marca_id' => $this->getMarcaId(),
+            'CantidadProducto' => $this->getCantidadProducto(),
+            'SubCategoria_id' => $this->getSubCategoriaId(),
+            'Estado' => $this->getEstado(),
+        ];
     }
 }

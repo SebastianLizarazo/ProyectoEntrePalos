@@ -36,7 +36,7 @@ class Facturas extends AbstractDBConnection implements Model
      */
     public function __construct(array $factura=[])
     {
-
+        parent::__construct();
         $this->setId( $factura['id']?? null);
         $this->setNumero( $factura['Numero']?? 0);
         $this->setFecha(!empty($factura['Fecha'])? Carbon::parse($factura['Fecha']): new Carbon());
@@ -262,7 +262,7 @@ class Facturas extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function searchForId(int $id): ?object
+    static function searchForId(int $id): ?Facturas
     {
         try {
             if ($id > 0) {
@@ -291,7 +291,7 @@ class Facturas extends AbstractDBConnection implements Model
         return [
             'id' => $this->getId(),
             'Numero' => $this->getNumero(),
-            'Fecha' => $this->getFecha(),
+            'Fecha' => $this->getFecha()->toDateString(),
             'IVA' => $this->getIVA(),
             'MedioPago' => $this->getMedioPago(),
             'Mesero_Id' => $this->getMeseroId(),
