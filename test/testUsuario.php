@@ -44,7 +44,7 @@ $arrUsuario3=[
 
 $objectUsuario1= new Usuarios($arrUsuario1);
 //var_dump($objectUsuario1);
-//$objectUsuario1->insert();
+$objectUsuario1->insert();
 
 //$objectUsuario1->setCedula(1193099653);
 //$objectUsuario1->setApellidos('Sandoval Pirri');
@@ -53,10 +53,10 @@ $objectUsuario1= new Usuarios($arrUsuario1);
 
 $objectUsuario2= new Usuarios($arrUsuario2);
 //var_dump($objectUsuario2);
-//$objectUsuario2->insert();
+$objectUsuario2->insert();
 $objectUsuario2->setEstado('Inactivo');
 $objectUsuario2->update();
 
-//$objectUsuario3= new Usuarios($arrUsuario3);
+$objectUsuario3= new Usuarios($arrUsuario3);
 //var_dump($objectUsuario3);
-//$objectUsuario3->insert();
+$objectUsuario3->insert();
