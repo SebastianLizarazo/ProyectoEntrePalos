@@ -54,7 +54,6 @@ class Mesas extends AbstractDBConnection implements Model
         }
     }
 
-
     /**
      * @return int|null
      */
@@ -249,7 +248,7 @@ class Mesas extends AbstractDBConnection implements Model
                 $tmpMesa->Disconnect();
                 return ($getrow) ? new Mesas($getrow) : null;
             } else {
-                throw new Exception('Id de usuario Invalido');
+                throw new Exception('Id de mesa Invalido');
             }
         } catch (Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
