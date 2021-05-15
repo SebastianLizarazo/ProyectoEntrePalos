@@ -1,0 +1,289 @@
+[2021-05-15T15:28:13.441597+00:00] General.ERROR: Exception  
+[2021-05-15T15:28:13.442961+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-15T15:28:13.443054+00:00] General.ERROR: Line: 128  
+[2021-05-15T15:28:13.443125+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`marca`, CONSTRAINT `fk_Marca_Usuario1` FOREIGN KEY (`Proveedor_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-15T15:28:13.443369+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 131
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => panzote
+                            [:Descripcion] => Pan
+                            [:Proveedor_id] => 0
+                            [:Estado] => Inactiva
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Marcas.php
+            [line] => 140
+            [function] => save
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO marca VALUES (
+            :id,:Nombre,:Descripcion,:Proveedor_id,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testMarca.php
+            [line] => 22
+            [function] => insert
+            [class] => App\Models\Marcas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-15T15:38:15.150898+00:00] General.ERROR: Exception  
+[2021-05-15T15:38:15.152642+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-15T15:38:15.152737+00:00] General.ERROR: Line: 128  
+[2021-05-15T15:38:15.152798+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-15T15:38:15.153035+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Pagos.php
+            [line] => 115
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO pago VALUES (
+            :id,:Trabajador_id,:Fecha,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:TrabajadorId] => 0
+                            [:Fecha] => 2021-05-15
+                            [:Estado] => Saldado
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Pagos.php
+            [line] => 123
+            [function] => save
+            [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO pago VALUES (
+            :id,:Trabajador_id,:Fecha,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testPago.php
+            [line] => 20
+            [function] => insert
+            [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-15T15:39:56.273811+00:00] General.ERROR: Exception  
+[2021-05-15T15:39:56.275905+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-15T15:39:56.276111+00:00] General.ERROR: Line: 128  
+[2021-05-15T15:39:56.276359+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-15T15:39:56.276683+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Pagos.php
+            [line] => 115
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO pago VALUES (
+            :id,:Trabajador_id,:Fecha,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Trabajador_Id] => 0
+                            [:Fecha] => 2021-05-15
+                            [:Estado] => Saldado
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Pagos.php
+            [line] => 123
+            [function] => save
+            [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO pago VALUES (
+            :id,:Trabajador_id,:Fecha,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testPago.php
+            [line] => 20
+            [function] => insert
+            [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-15T15:40:54.481939+00:00] General.ERROR: Exception  
+[2021-05-15T15:40:54.482296+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-15T15:40:54.482359+00:00] General.ERROR: Line: 128  
+[2021-05-15T15:40:54.482413+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-15T15:40:54.482470+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Pagos.php
+            [line] => 115
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO pago VALUES (
+            :id,:Trabajador_id,:Fecha,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Trabajador_Id] => 3
+                            [:Fecha] => 2021-05-15
+                            [:Estado] => Saldado
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Pagos.php
+            [line] => 123
+            [function] => save
+            [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO pago VALUES (
+            :id,:Trabajador_id,:Fecha,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testPago.php
+            [line] => 20
+            [function] => insert
+            [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
