@@ -4,9 +4,9 @@
 
 namespace App\Models;
 
-require ("AbstractDBConnection.php");
-require (__DIR__."\..\Interfaces\Model.php");
-require (__DIR__.'/../../vendor/autoload.php');
+require_once ("AbstractDBConnection.php");
+require_once (__DIR__."\..\Interfaces\Model.php");
+require_once (__DIR__.'/../../vendor/autoload.php');
 
 use Carbon\Carbon;
 use App\Interfaces\Model;
@@ -208,7 +208,7 @@ class Facturas extends AbstractDBConnection implements Model
         return $result;
     }
 
-    function insert()
+    public function insert(): ?bool
     {
         $query = "INSERT INTO factura VALUES (
             :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)";
@@ -221,10 +221,10 @@ class Facturas extends AbstractDBConnection implements Model
         }
     }
 
-    function update()
+    public function update(): ?bool
     {
         $query = "UPDATE factura SET
-                Numero = :Numero,Fecha =:Fecha, IVA = :IVA, MedioPago = :MedioPago,
+                Numero = :Numero, Fecha = :Fecha, IVA = :IVA, MedioPago = :MedioPago,
                 Mesero_id = :Mesero_id, Estado = :Estado, TipoPedido = :TipoPedido WHERE id = :id";
         return $this->save($query);
     }

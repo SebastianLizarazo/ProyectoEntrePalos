@@ -1,0 +1,454 @@
+[2021-05-16T02:38:46.740448+00:00] General.ERROR: Exception  
+[2021-05-16T02:38:46.741911+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-16T02:38:46.742130+00:00] General.ERROR: Line: 128  
+[2021-05-16T02:38:46.742317+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`factura`, CONSTRAINT `fk_Factura_Usuario1` FOREIGN KEY (`Mesero_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-16T02:38:46.742552+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 206
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 1
+                            [:Fecha] => Carbon\Carbon Object
+                                (
+                                    [constructedObjectId:protected] => 0000000067d2ede1000000004d42c454
+                                    [localMonthsOverflow:protected] => 
+                                    [localYearsOverflow:protected] => 
+                                    [localStrictModeEnabled:protected] => 
+                                    [localHumanDiffOptions:protected] => 
+                                    [localToStringFormat:protected] => 
+                                    [localSerializer:protected] => 
+                                    [localMacros:protected] => 
+                                    [localGenericMacros:protected] => 
+                                    [localFormatFunction:protected] => 
+                                    [localTranslator:protected] => 
+                                    [dumpProperties:protected] => Array
+                                        (
+                                            [0] => date
+                                            [1] => timezone_type
+                                            [2] => timezone
+                                        )
+
+                                    [dumpLocale:protected] => 
+                                    [date] => 2021-05-12 00:00:00.000000
+                                    [timezone_type] => 3
+                                    [timezone] => UTC
+                                )
+
+                            [:IVA] => 0.19
+                            [:MedioPago] => Efectivo
+                            [:Mesero_id] => 1
+                            [:Estado] => Pendiente
+                            [:TipoPedido] => Mesa
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 215
+            [function] => save
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 19
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-16T02:41:23.920280+00:00] General.ERROR: Exception  
+[2021-05-16T02:41:23.921257+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-16T02:41:23.921443+00:00] General.ERROR: Line: 128  
+[2021-05-16T02:41:23.921599+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`factura`, CONSTRAINT `fk_Factura_Usuario1` FOREIGN KEY (`Mesero_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-16T02:41:23.921794+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 206
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 7
+                            [:Fecha] => Carbon\Carbon Object
+                                (
+                                    [constructedObjectId:protected] => 000000005456fd7f0000000026b04806
+                                    [localMonthsOverflow:protected] => 
+                                    [localYearsOverflow:protected] => 
+                                    [localStrictModeEnabled:protected] => 
+                                    [localHumanDiffOptions:protected] => 
+                                    [localToStringFormat:protected] => 
+                                    [localSerializer:protected] => 
+                                    [localMacros:protected] => 
+                                    [localGenericMacros:protected] => 
+                                    [localFormatFunction:protected] => 
+                                    [localTranslator:protected] => 
+                                    [dumpProperties:protected] => Array
+                                        (
+                                            [0] => date
+                                            [1] => timezone_type
+                                            [2] => timezone
+                                        )
+
+                                    [dumpLocale:protected] => 
+                                    [date] => 2021-05-12 00:00:00.000000
+                                    [timezone_type] => 3
+                                    [timezone] => UTC
+                                )
+
+                            [:IVA] => 0.19
+                            [:MedioPago] => Efectivo
+                            [:Mesero_id] => 1
+                            [:Estado] => Pendiente
+                            [:TipoPedido] => Mesa
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 215
+            [function] => save
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 19
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-16T04:36:25.715921+00:00] General.ERROR: Exception  
+[2021-05-16T04:36:25.717562+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-16T04:36:25.717755+00:00] General.ERROR: Line: 200  
+[2021-05-16T04:36:25.717917+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.facturas' doesn't exist  
+[2021-05-16T04:36:25.718090+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM facturas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => facturas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 216
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => facturas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 52
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-16T04:36:25.763050+00:00] General.ERROR: Exception  
+[2021-05-16T04:36:25.763682+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-16T04:36:25.763898+00:00] General.ERROR: Line: 200  
+[2021-05-16T04:36:25.764087+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.facturas' doesn't exist  
+[2021-05-16T04:36:25.764286+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM facturas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => facturas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 216
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => facturas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 59
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-16T04:36:25.805171+00:00] General.ERROR: Exception  
+[2021-05-16T04:36:25.805798+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-16T04:36:25.806015+00:00] General.ERROR: Line: 200  
+[2021-05-16T04:36:25.806242+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.facturas' doesn't exist  
+[2021-05-16T04:36:25.806511+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM facturas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => facturas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 216
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => facturas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 63
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-16T04:36:25.841560+00:00] General.ERROR: Exception  
+[2021-05-16T04:36:25.842211+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-16T04:36:25.842412+00:00] General.ERROR: Line: 200  
+[2021-05-16T04:36:25.842586+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.facturas' doesn't exist  
+[2021-05-16T04:36:25.842763+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM facturas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => facturas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 216
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => facturas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 67
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
