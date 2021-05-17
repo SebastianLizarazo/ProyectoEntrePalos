@@ -225,7 +225,7 @@ class Mesas extends AbstractDBConnection implements Model
                 return $arrMesas;
             }
             return null;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
