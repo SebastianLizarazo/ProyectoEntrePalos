@@ -49,7 +49,7 @@ class Facturas extends AbstractDBConnection implements Model
 
     public static function facturaRegistrada(mixed $id, mixed $Numero)
     {
-        $ftaTmp = Facturas::search("SELECT * FROM factura WHERE id = '$id' and Numero = '$Numero'");
+        $ftaTmp = Facturas::search("SELECT * FROM Factura WHERE id = '$id' and Numero = '$Numero'");
         return (!empty($ftaTmp))? true :false;
     }
 
@@ -249,14 +249,14 @@ class Facturas extends AbstractDBConnection implements Model
 
             if (!empty($getrows)) {
                 foreach ($getrows as $valor) {
-                    $Factura = new Mesas($valor);
+                    $Factura = new Facturas($valor);
                     array_push($arrFacturas, $Factura);//aca meter el contenido del segundo parametro dentro del primero
                     unset($Factura); //Borrar el contenido del objeto
                 }
                 return $arrFacturas;
             }
             return null;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -273,9 +273,9 @@ class Facturas extends AbstractDBConnection implements Model
                 $tmpFactura->Disconnect();
                 return ($getrow) ? new Facturas($getrow) : null;
             } else {
-                throw new Exception('Id de factura Invalido');
+                throw new \Exception('Id de factura Invalido');
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -283,7 +283,7 @@ class Facturas extends AbstractDBConnection implements Model
 
     static function getAll(): ?array
     {
-        return Facturas::search("SELECT * FORM factura");
+        return Facturas::search("SELECT * FROM factura");
     }
 
     public function jsonSerialize()

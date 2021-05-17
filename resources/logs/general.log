@@ -452,3 +452,267 @@
 
 )
   
+[2021-05-17T14:05:19.176765+00:00] General.ERROR: Exception  
+[2021-05-17T14:05:19.180602+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-17T14:05:19.180810+00:00] General.ERROR: Line: 102  
+[2021-05-17T14:05:19.180975+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FORM factura' at line 1  
+[2021-05-17T14:05:19.181158+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 247
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FORM factura
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 286
+            [function] => search
+            [class] => App\Models\Facturas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FORM factura
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 81
+            [function] => getAll
+            [class] => App\Models\Facturas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-17T14:06:21.060993+00:00] General.ERROR: Exception  
+[2021-05-17T14:06:21.061870+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-17T14:06:21.062035+00:00] General.ERROR: Line: 102  
+[2021-05-17T14:06:21.062174+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FORM factura' at line 1  
+[2021-05-17T14:06:21.062328+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 247
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FORM factura
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 286
+            [function] => search
+            [class] => App\Models\Facturas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FORM factura
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 81
+            [function] => getAll
+            [class] => App\Models\Facturas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-17T14:09:50.714203+00:00] General.ERROR: Exception  
+[2021-05-17T14:09:50.715214+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-17T14:09:50.715397+00:00] General.ERROR: Line: 102  
+[2021-05-17T14:09:50.715558+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FORM factura' at line 1  
+[2021-05-17T14:09:50.715732+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 247
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FORM factura
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 286
+            [function] => search
+            [class] => App\Models\Facturas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FORM factura
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 81
+            [function] => getAll
+            [class] => App\Models\Facturas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-17T14:11:54.941812+00:00] General.ERROR: Exception  
+[2021-05-17T14:11:54.942793+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-17T14:11:54.942977+00:00] General.ERROR: Line: 102  
+[2021-05-17T14:11:54.943157+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FORM factura' at line 1  
+[2021-05-17T14:11:54.943334+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 247
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FORM factura
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 286
+            [function] => search
+            [class] => App\Models\Facturas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FORM factura
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 81
+            [function] => getAll
+            [class] => App\Models\Facturas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

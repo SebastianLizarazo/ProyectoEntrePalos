@@ -48,21 +48,44 @@ $arrFactura4 = [
 
 ];
 
-$objFactura1= new Facturas($arrFactura1);
-$objFactura1->insert();
+//$objFactura1= new Facturas($arrFactura1);
+//$objFactura1->insert();
 //var_dump($objFactura1);
 //$objFactura1->setMedioPago('Nequi');
 //$objFactura1->setTipoPedido('Mesa');
 //$objFactura1->update();
 
-$objFactura2= new Facturas($arrFactura2);
-$objFactura2->insert();
+//$objFactura2= new Facturas($arrFactura2);
+//$objFactura2->insert();
 //var_dump($objFactura1);
 
-$objFactura3 = new Facturas($arrFactura3);
-$objFactura3->insert();
+//$objFactura3 = new Facturas($arrFactura3);
+//$objFactura3->insert();
 //var_dump($objFactura3);
 
-$objFactura4= new Facturas($arrFactura4);
-$objFactura4->insert();
+//$objFactura4= new Facturas($arrFactura4);
+//$objFactura4->insert();
 //var_dump($objFactura4);
+
+//$pruebFacRegist= Facturas::facturaRegistrada(2,2);// Comprobamos que ya exista un fatura con esas caracteristicas
+//var_dump($pruebFacRegist);
+
+
+//$pruebSearch1Fac= Facturas::search("SELECT * FROM factura WHERE Estado = 'Paga'");// Prueba metodo search
+///* @var $pruebSearch1Fac App\Models\Facturas[] */
+//foreach ($pruebSearch1Fac as $factura)
+//{
+//    print_r($factura->jsonSerialize());
+//}
+
+//$pruebSearch2Fac= Facturas::searchForId(3);// Prueba metodo searchForId
+//var_dump($pruebSearch2Fac);
+//print_r($pruebSearch2Fac->jsonSerialize());
+
+//$facturaGetAll= Facturas::getAll();// Prueba metodo getAll
+//var_dump($facturaGetAll);
+//* @var $facturaGetAll App\Models\Facturas[] */
+//foreach ($facturaGetAll as $factura)
+//{
+//   print_r($factura->jsonSerialize());
+//}
