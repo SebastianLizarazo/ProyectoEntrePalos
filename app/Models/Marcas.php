@@ -154,7 +154,7 @@ class Marcas extends AbstractDBConnection implements Model
     }
     function deleted()
 {
-    $this->setEstado("Inactivo");
+    $this->setEstado("Inactiva");
     return $this->update();
 }
     static function search($query): ?array

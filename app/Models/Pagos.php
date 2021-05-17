@@ -23,10 +23,10 @@ class Pagos extends AbstractDBConnection implements Model
     {
         parent::__construct();
         $this->setId($Pago['id']?? null);
-        $this->setTrabajadorid($Pago['Trabajador_id']?? 0);
+        $this->setTrabajadorId($Pago['Trabajador_id']?? 0);
         $this->setFecha(!empty($pago['Fecha']) ?
             Carbon::parse($pago['Fecha']) : new Carbon());
-        $this->setEstado($Pago['Pendiente']?? 'Saldado') ;
+        $this->setEstado($Pago['Estado']?? 'Pendiente') ;
     }
     public static function pagoRegistrado(mixed $Trabajador_id, mixed $id): bool
     {
@@ -107,7 +107,7 @@ class Pagos extends AbstractDBConnection implements Model
     {
         $arrData = [
             ':id' =>    $this->getId(),
-            ':Trabajador_Id' =>   $this->getTrabajadorId(),
+            ':Trabajador_id' =>   $this->getTrabajadorId(),
             ':Fecha' =>   $this->getFecha()->toDateString(),
             ':Estado' =>   $this->getEstado(),
         ];
@@ -161,7 +161,7 @@ class Pagos extends AbstractDBConnection implements Model
                 return $arrPagos;
             }
             return null;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -177,9 +177,9 @@ class Pagos extends AbstractDBConnection implements Model
                 $tmppgo->Disconnect();
                 return ($getrow) ? new Pagos($getrow) : null;
             } else {
-                throw new Exception('Id de usuario Invalido');
+                throw new \Exception('Id de Pago Invalido');
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
