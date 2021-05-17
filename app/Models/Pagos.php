@@ -23,7 +23,7 @@ class Pagos extends AbstractDBConnection implements Model
     {
         parent::__construct();
         $this->setId($Pago['id']?? null);
-        $this->setTrabajadorid($Pago['Trabajadorid']??'');
+        $this->setTrabajadorid($Pago['Trabajador_id']?? 0);
         $this->setFecha(!empty($pago['Fecha']) ?
             Carbon::parse($pago['Fecha']) : new Carbon());
         $this->setEstado($Pago['Pendiente']?? 'Saldado') ;
@@ -107,7 +107,7 @@ class Pagos extends AbstractDBConnection implements Model
     {
         $arrData = [
             ':id' =>    $this->getId(),
-            ':TrabajadorId' =>   $this->getTrabajadorId(),
+            ':Trabajador_Id' =>   $this->getTrabajadorId(),
             ':Fecha' =>   $this->getFecha()->toDateString(),
             ':Estado' =>   $this->getEstado(),
         ];
