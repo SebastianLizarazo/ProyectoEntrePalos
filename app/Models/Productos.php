@@ -60,9 +60,9 @@ class Productos extends AbstractDBConnection implements Model
         $this->setEstado($producto['Estado']?? '');
     }
 
-    public static function productoRegistrado(mixed $Nombre, mixed $Referencia): bool
+    public static function productoRegistrado(int $id, mixed $Referencia): bool
     {
-        $prdTmp= Productos::search("SELECT * FROM producto WHERE Nombre = '$Nombre' and Referencia = '$Referencia'");
+        $prdTmp= Productos::search("SELECT * FROM producto WHERE id = '$id' and Referencia = '$Referencia'");
         return (!empty($prdTmp))? true : false;
     }
 
@@ -305,7 +305,7 @@ class Productos extends AbstractDBConnection implements Model
         return $result;
     }
 
-    function insert()
+    public function insert()
     {
         $query = "INSERT INTO producto VALUES (
             :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
@@ -321,7 +321,7 @@ class Productos extends AbstractDBConnection implements Model
         }
     }
 
-    function update()
+    public function update()
     {
         $query = "UPDATE producto SET
             Nombre = :Nombre, Tamano = :Tamano, ReferenciaTamano = :ReferenciaTamano, Referencia = :Referencia, PrecioBase = :PrecioBase, 
