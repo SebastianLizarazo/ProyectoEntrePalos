@@ -51,9 +51,6 @@ $arrFactura4 = [
 //$objFactura1= new Facturas($arrFactura1);
 //$objFactura1->insert();
 //var_dump($objFactura1);
-//$objFactura1->setMedioPago('Nequi');
-//$objFactura1->setTipoPedido('Mesa');
-//$objFactura1->update();
 
 //$objFactura2= new Facturas($arrFactura2);
 //$objFactura2->insert();
@@ -66,6 +63,12 @@ $arrFactura4 = [
 //$objFactura4= new Facturas($arrFactura4);
 //$objFactura4->insert();
 //var_dump($objFactura4);
+
+//Prueba update
+//$pruebaUpdate = Facturas::searchForId(1);//Buscamos la factura que queremos modificar
+//$pruebaUpdate->setMedioPago('Nequi');
+//$pruebaUpdate->setTipoPedido('Domicilio');
+//$pruebaUpdate->update();
 
 //$pruebFacRegist= Facturas::facturaRegistrada(2,2);// Comprobamos que ya exista un fatura con esas caracteristicas
 //var_dump($pruebFacRegist);

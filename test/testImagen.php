@@ -9,8 +9,8 @@ $arrImage1 = [
     'Descripcion' => 'Foto simple del producto hamburguesa doble',
     'Ruta' => 'c:proyecto\imagenes\imagen1.png',
     'Estado' => 'Activo',
-    'Producto_id' => ,
-    'Oferta_id' => ,
+    'Producto_id' => 0,
+    'Oferta_id' => 0,
 
 ];$arrImage1 = [
 
@@ -18,8 +18,8 @@ $arrImage1 = [
     'Descripcion' => 'Foto simple del producto hamburguesa triple',
     'Ruta' => 'c:proyecto\imagenes\imagen2.png',
     'Estado' => 'Activo',
-    'Producto_id' => ,
-    'Oferta_id' => ,
+    'Producto_id' => 0,
+    'Oferta_id' => 0,
 
 ];$arrImage1 = [
 
@@ -27,17 +27,17 @@ $arrImage1 = [
     'Descripcion' => 'Foto simple del producto alitas BBQ medianas',
     'Ruta' => 'c:proyecto\imagenes\imagen3.png',
     'Estado' => 'Activo',
-    'Producto_id' => ,
-    'Oferta_id' => ,
+    'Producto_id' => 0,
+    'Oferta_id' => 0,
 
 ];$arrImage1 = [
 
     'Nombre' => 'Imagen Gaseosa Coca Cola',
     'Descripcion' => 'Foto de la gaseosa Coca Cola en baso de vidrio',
-    'Ruta' => 'c:proyecto\imagenes\imagen1.png',
-    'Estado' => 'Activo',
-    'Producto_id' => ,
-    'Oferta_id' => ,
+    'Ruta' => 'c:proyecto\imagenes\imagen4.png',
+    'Estado' => 'Inactivo',
+    'Producto_id' => 0,
+    'Oferta_id' => 0,
 
 ];
 

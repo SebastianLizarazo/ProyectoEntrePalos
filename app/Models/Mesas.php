@@ -40,9 +40,9 @@ class Mesas extends AbstractDBConnection implements Model
         $this->setOcupacion($mesa['Ocupacion']??'disponible' );
     }
 
-    public static function mesaRegistrada(mixed $Numero, mixed $Capacidad): bool
+    public static function mesaRegistrada(mixed $id, mixed $Numero): bool
     {
-        $msaTmp = Mesas::search("SELECT * FROM mesa WHERE Numero = '$Numero' and Capacidad = '$Capacidad'");
+        $msaTmp = Mesas::search("SELECT * FROM mesa WHERE id = '$id' and Numero = '$Numero'");
         return (!empty($msaTmp)) ? true : false;
     }
 
