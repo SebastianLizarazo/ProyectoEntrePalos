@@ -24,8 +24,8 @@ class Pagos extends AbstractDBConnection implements Model
         parent::__construct();
         $this->setId($Pago['id']?? null);
         $this->setTrabajadorId($Pago['Trabajador_id']?? 0);
-        $this->setFecha(!empty($pago['Fecha']) ?
-            Carbon::parse($pago['Fecha']) : new Carbon());
+        $this->setFecha(!empty($Pago['Fecha']) ?
+            Carbon::parse($Pago['Fecha']) : new Carbon());
         $this->setEstado($Pago['Estado']?? 'Pendiente') ;
     }
     public static function pagoRegistrado(mixed $Trabajador_id, mixed $id): bool
@@ -135,7 +135,7 @@ class Pagos extends AbstractDBConnection implements Model
             WHERE id = :id";
         return $this->save($query);
     }
-    function deleted()
+    public function deleted()
     {
         $this->setEstado("Pendiente");
         return $this->update();

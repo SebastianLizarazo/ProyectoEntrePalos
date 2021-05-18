@@ -135,7 +135,7 @@ class SubCategorias extends AbstractDBConnection implements Model
         return $this->save($query);
     }
 
-    function deleted()
+    public function deleted()
     {
         $this->setEstado("Inactivo");
         return $this->update();

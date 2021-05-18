@@ -19,7 +19,7 @@ $arrPago2 = [
 
 $arrPago3 = [
     'Trabajador_id' => 3,
-    'Fecha' => '2021-19-05',
+    'Fecha' => '2021-12-05',
     'Estado' => 'Pendiente',
 ];
 //$objPago = new Pagos($arrPago); // Creamos un usuario... Pero no echo nada con el.
@@ -60,7 +60,7 @@ $arrPago3 = [
 
 //$objPago3= new Pagos( $arrPago3);
 //var_dump($objPago3);
-///$objPago3->insert();
+//$objPago3->insert();
 
 //$pruebaPagoRegis= Pagos::pagoRegistrado('1',1);// Comprobamos que ya exista una marca con esas caracteristicas
 //var_dump($pruebaPagoRegis);
