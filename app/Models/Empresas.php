@@ -34,7 +34,7 @@ class Empresas extends AbstractDBConnection implements Model
     public function __construct(array $Empresa=[])
     {
         parent::__construct();
-        $this->setId($Empresa['Id'] ?? 0);
+        $this->setId($Empresa['id'] ?? 0);
         $this->setNombre($Empresa['Nombre'] ?? '');
         $this->setNIT($Empresa['NIT'] ?? '');
         $this->setTelefono($Empresa['Telefono'] ?? 0);
@@ -190,7 +190,7 @@ class Empresas extends AbstractDBConnection implements Model
             :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)";
         //return $this->save($query);
         if ($this->save($query)) {
-            $idEmpresa = $this->getLastId('Empresa');
+            $idEmpresa = $this->getLastId('empresa');
             $this->setId($idEmpresa);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla mesa
             return true;
         } else {
@@ -201,14 +201,14 @@ class Empresas extends AbstractDBConnection implements Model
     public function update(): ?bool
     {
         $query = "UPDATE empresa SET 
-            Nombre = :Nombre, NIT= :NIT, Telefono = :Telefono, Direccion = :Direccion, Estado = :Estado,
+            Nombre = :Nombre, NIT = :NIT, Telefono = :Telefono, Direccion = :Direccion, Estado = :Estado,
             Municipio_id = :Municipio_id WHERE id = :id";
         return $this->save($query);
 
     }
     function deleted()
     {
-        $this->setEstado("Activo");
+        $this->setEstado("Inactivo");
         return $this->update();
     }
 
@@ -249,9 +249,9 @@ class Empresas extends AbstractDBConnection implements Model
                 $tmpEmpresa->Disconnect();
                 return ($getrow) ? new Empresas($getrow) : null;
             } else {
-                throw new Exception('Id de usuario Invalido');
+                throw new \Exception('Id de empresa Invalido');
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;

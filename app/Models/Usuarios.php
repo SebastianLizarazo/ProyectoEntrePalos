@@ -43,6 +43,7 @@ class Usuarios extends AbstractDBConnection implements Model
 
     public function __construct(array $Usuario =[])
     {
+        parent::__construct();
         $this->setId($Usuario['id'] ?? 0);
         $this->setCedula($Usuario['Cedula'] ?? 0);
         $this->setNombres($Usuario['Nombres'] ?? '');
@@ -295,7 +296,7 @@ class Usuarios extends AbstractDBConnection implements Model
 
     function deleted()
     {
-        $this->setEstado("Activo");
+        $this->setEstado("inactivo");
         return $this->update();
     }
 
