@@ -192,7 +192,7 @@ class Marcas extends AbstractDBConnection implements Model
                 $tmpMarca->Disconnect();
                 return ($getrow) ? new Marcas ($getrow) : null;
             } else {
-                throw new Exception('Id de usuario Invalido');
+                throw new Exception('Id de marca Invalido');
             }
         } catch (Exception $e) {
             GeneralFunctions::logFile('Exception', $e);

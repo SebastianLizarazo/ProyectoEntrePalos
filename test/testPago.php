@@ -6,20 +6,20 @@ use App\Models\Pagos;
 
 $arrPago = [
 
-    'Trabajador_id' => 2,
+    'Trabajador_id' => 3,
     'Fecha' => '2021-03-02',
     'Estado' => 'Pendiente',
 ];
 
 $arrPago2 = [
-    'Trabajador_id' => 5,
+    'Trabajador_id' => 1,
     'Fecha' => '2021-01-05',
     'Estado' => 'Saldado',
 ];
 $objPago = new Pagos($arrPago); // Creamos un usuario... Pero no echo nada con el.
 $objPago->insert(); //Registramos el objeto en la base de datos
 
-$objPago->setTrabajadorId(4); //Cambio Valores
+$objPago->setTrabajadorId(3); //Cambio Valores
 $objPago->setFecha("2021-01-10"); //Cambio Valores
 $objPago->update();
 
@@ -28,7 +28,7 @@ $objPago->deleted();
 $arrPago2 = new Pagos($arrPago2);
 $arrPago2->insert();
 
-$arrResult = Pagos::search("SELECT * FROM pago WHERE Trabajador_id = 4 ");
+$arrResult = Pagos::search("SELECT * FROM pago WHERE Trabajador_id = 3 ");
 if (!empty($arrResult)) {
     /* @var $arrResult Pagos[] */
     foreach ($arrResult as $pagos) {
