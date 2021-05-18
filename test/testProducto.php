@@ -13,9 +13,9 @@ $arrProducto1= [
     'PrecioUnidadTrabajador'=> 1900,
     'PrecioUnidadVenta'=> 2200,
     'PresentacionProducto'=> 'Botella vidrio',
-    'Marca_id'=> 0,
+    'Marca_id'=> 3,
     'CantidadProducto'=> 88,
-    'Subcategoria_id'=> 2,
+    'Subcategoria_id' => 2,
     'Estado'=> 'Activo',
 ];
 $arrProducto2= [
@@ -28,7 +28,7 @@ $arrProducto2= [
     'PrecioUnidadTrabajador'=> 15000,
     'PrecioUnidadVenta'=> 17000,
     'PresentacionProducto'=> 'Predeterminado',
-    'Marca_id'=> 0,
+    'Marca_id'=> 2,
     'CantidadProducto'=> 13,
     'Subcategoria_id'=> 1,
     'Estado'=> 'Activo',
@@ -43,53 +43,55 @@ $arrProducto2= [
     'PrecioUnidadTrabajador'=> 21000,
     'PrecioUnidadVenta'=> 23000,
     'PresentacionProducto'=> 'Predeterminado',
-    'Marca_id'=> 0,
+    'Marca_id'=> 1,
     'CantidadProducto'=> 32,
     'Subcategoria_id'=> 1,
     'Estado'=> 'Activo',
 ];
 
-$producto1= new Productos($arrProducto1);
-var_dump($producto1);
-$producto1->insert();
+//$producto1= new Productos($arrProducto1);
+//var_dump($producto1);
+//$producto1->insert();
 
-$producto2= new Productos($arrProducto2);
-var_dump($producto2);
-$producto2->insert();
+//$producto2= new Productos($arrProducto2);
+//var_dump($producto2);
+//$producto2->insert();
 
-$producto3= new Productos($arrProducto3);
-var_dump($producto3);
-$producto3->insert();
+//$producto3= new Productos($arrProducto3);
+//var_dump($producto3);
+//$producto3->insert();
 
 // Prueba update
-$producto2->setPrecioUnidadVenta(19000);
-$producto2->setTamano(600);
-$producto2->update();
+//$pruebaUpdate = Productos::searchForId(2);
+//$pruebaUpdate->setPrecioUnidadVenta(19000);
+//$pruebaUpdate->setTamano(1784);
+//$pruebaUpdate->update();
 
 // Prueba producto registrado
-$pruebProdRegis=Productos::productoRegistrado('1','001-Dk');
-var_dump($pruebProdRegis);
+//$pruebProdRegis=Productos::productoRegistrado('1','001-Dk');
+//var_dump($pruebProdRegis);
 
 // Prueba delete
-$producto3->deleted();
-print_r($producto3->jsonSerialize());
+//$pruebDelete= Productos::searchForId(3);
+//$pruebDelete->deleted();
+//print_r($pruebDelete->jsonSerialize());
 
 // Prueba search
-$pruebSearch = Productos::search("SELECT Nombre,Tamano FROM producto WHERE PrecioUnidadVenta > 20000");
-/* @var $pruebSearch App\Models\Productos[] */
-foreach($pruebSearch as $producto)
-{
-    print_r($producto->jsonSerialize());
-}
+//$pruebSearch = Productos::search("SELECT Nombre,Tamano FROM producto WHERE PrecioUnidadVenta > 20000");
+///* @var $pruebSearch App\Models\Productos[] */
+//foreach($pruebSearch as $producto)
+//{
+//    print_r($producto->jsonSerialize());
+//}
 
 // Prueba searchForId
-$pruebSearchFoId = Productos::searchForId(2);
-print_r($pruebSearchFoId->jsonSerialize());
+//$pruebSearchFoId = Productos::searchForId(2);
+//print_r($pruebSearchFoId->jsonSerialize());
 
 // Prueba getAll
-$pruebGetAll = Productos::getAll();
-/* @var $pruebGetAll App\Models\Productos[] */
-foreach($pruebGetAll as $producto)
-{
-    print_r($producto->jsonSerialize());
-}
+//$pruebGetAll = Productos::getAll();
+///* @var $pruebGetAll App\Models\Productos[] */
+//foreach($pruebGetAll as $producto)
+//{
+//    print_r($producto->jsonSerialize());
+//}
