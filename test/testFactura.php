@@ -48,8 +48,8 @@ $arrFactura4 = [
 
 ];
 
-//$objFactura1= new Facturas($arrFactura1);
-//$objFactura1->insert();
+$objFactura1= new Facturas($arrFactura1);
+$objFactura1->insert();
 //var_dump($objFactura1);
 
 //$objFactura2= new Facturas($arrFactura2);
@@ -87,7 +87,7 @@ $arrFactura4 = [
 
 //$facturaGetAll= Facturas::getAll();// Prueba metodo getAll
 //var_dump($facturaGetAll);
-//* @var $facturaGetAll App\Models\Facturas[] */
+///* @var $facturaGetAll App\Models\Facturas[] */
 //foreach ($facturaGetAll as $factura)
 //{
 //   print_r($factura->jsonSerialize());
