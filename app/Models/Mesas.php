@@ -201,7 +201,7 @@ class Mesas extends AbstractDBConnection implements Model
      * que se puede pasar de activo a inactivo de resto no se aconseja utilizar
      * el delete o hay que pensar muy bien como utilizarlo
      */
-    function deleted()
+     function deleted()
     {
 
     }
@@ -248,9 +248,9 @@ class Mesas extends AbstractDBConnection implements Model
                 $tmpMesa->Disconnect();
                 return ($getrow) ? new Mesas($getrow) : null;
             } else {
-                throw new Exception('Id de mesa Invalido');
+                throw new \Exception('Id de mesa Invalido');
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
