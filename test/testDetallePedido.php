@@ -5,40 +5,40 @@ use App\Models\DetallePedidos;
 
 $arrDetallePedidos1= [
 
-        'Factura_id' => ,
-        'Producto_id' => ,
-        'Ofertas_id' => ,
-        'CantidadProducto' => ,
-        'CantidadOferta' => ,
-        'Mesa_id' => ,
+        'Factura_id' => 0,
+        'Producto_id' => 0,
+        'Ofertas_id' => 0,
+        'CantidadProducto' => 0,
+        'CantidadOferta' => 0,
+        'Mesa_id' => 0,
 ];
 $arrDetallePedidos2= [
 
-        'Factura_id' => ,
-        'Producto_id' => ,
-        'Ofertas_id' => ,
-        'CantidadProducto' => ,
-        'CantidadOferta' => ,
-        'Mesa_id' => ,
+        'Factura_id' => 0,
+        'Producto_id' => 0,
+        'Ofertas_id' => 0,
+        'CantidadProducto' => 0,
+        'CantidadOferta' => 0,
+        'Mesa_id' => 0,
 ];
 $arrDetallePedidos3= [
 
-        'Factura_id' => ,
-        'Producto_id' => ,
-        'Ofertas_id' => ,
-        'CantidadProducto' => ,
-        'CantidadOferta' => ,
-        'Mesa_id' => ,
+        'Factura_id' => 0,
+        'Producto_id' => 0,
+        'Ofertas_id' => 0,
+        'CantidadProducto' => 0,
+        'CantidadOferta' => 0,
+        'Mesa_id' => 0,
 ];
 
 $arrDetallePedidos4= [
 
-        'Factura_id' => ,
-        'Producto_id' => ,
-        'Ofertas_id' => ,
-        'CantidadProducto' => ,
-        'CantidadOferta' => ,
-        'Mesa_id' => ,
+        'Factura_id' => 0,
+        'Producto_id' => 0,
+        'Ofertas_id' => 0,
+        'CantidadProducto' => 0,
+        'CantidadOferta' => 0,
+        'Mesa_id' => 0,
 ];
 
 // Prueba insert

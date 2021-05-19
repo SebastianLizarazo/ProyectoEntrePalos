@@ -239,7 +239,7 @@ class DetallePedidos extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function searchForId(int $id): ?object
+    static function searchForId(int $id): ?DetallePedidos
     {
         try {
             if ($id > 0) {

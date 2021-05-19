@@ -42,30 +42,31 @@ $arrImage1 = [
 ];
 
 // Prueba insert
-$imagen1= new Imagenes($arrImage1);
+//$imagen1= new Imagenes($arrImage1);
 //var_dump($imagen1);
-$imagen1->insert();
+//$imagen1->insert();
 
-$imagen2= new Imagenes($arrImage2);
+//$imagen2= new Imagenes($arrImage2);
 //var_dump($imagen2);
-$imagen2->insert();
+//$imagen2->insert();
 
-$imagen3= new Imagenes($arrImage3);
+//$imagen3= new Imagenes($arrImage3);
 //var_dump($imagen3);
-$imagen3->insert();
+//$imagen3->insert();
 
-$imagen4= new Imagenes($arrImage4);
+//$imagen4= new Imagenes($arrImage4);
 //var_dump($imagen1);
-$imagen4->insert();
+//$imagen4->insert();
 
 // Prueba update
 //$pruebaUpdate = Imagenes::searchForId(2);
-//$pruebaUpdate->setNombre('BBQ extreme');
+//$pruebaUpdate->setNombre('BBQ');
 //$pruebaUpdate->setEstado('Inactivo');
+//$pruebaUpdate->update();
 
 // Prueba imagen registrada
-//$pruebImagenRegis = Imagenes::imagenRegistrada(3,'c:proyecto\imagenes\imagen3.png');
-//var_dump($pruebImagenRegis);
+$pruebImagenRegis = Imagenes::imagenRegistrada(3,'c:proyecto\imagenes\imagen3.png');
+var_dump($pruebImagenRegis);
 
 //Prueba delete
 //$pruebaDelete = Imagenes::searchForId(3);
@@ -73,7 +74,7 @@ $imagen4->insert();
 //print_r($pruebaDelete->jsonSerialize());
 
 // Prueba search
-//$pruebaSearch = Imagenes::search("SELECT id,Nombre,Ruta FROM imagen WHERE Ruta = 'c:proyecto\imagenes\imagen1.png'");
+//$pruebaSearch = Imagenes::search("SELECT * FROM imagen WHERE id = 1");
 ///* @var $pruebaSearch App\Models\Imagenes[] */
 //foreach ($pruebaSearch as $Imagen)
 //{

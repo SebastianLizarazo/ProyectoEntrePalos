@@ -148,6 +148,78 @@
 
 )
   
+[2021-05-19T14:34:12.625982+00:00] General.ERROR: Exception  
+[2021-05-19T14:34:12.628896+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-19T14:34:12.629246+00:00] General.ERROR: Line: 128  
+[2021-05-19T14:34:12.629542+00:00] General.ERROR: Mensaje: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined  
+[2021-05-19T14:34:12.629880+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Pagos.php
+            [line] => 115
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO pago VALUES (
+            :id,:Trabajador_id,:Fecha,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Trabajador_Id] => 3
+                            [:Fecha] => 2021-05-19
+                            [:Estado] => Saldado
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Pagos.php
+            [line] => 123
+            [function] => save
+            [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO pago VALUES (
+            :id,:Trabajador_id,:Fecha,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testPago.php
+            [line] => 20
+            [function] => insert
+            [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
 [2021-05-18T15:28:36.711994+00:00] General.ERROR: Exception  
 [2021-05-18T15:28:36.713605+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
 [2021-05-18T15:28:36.713788+00:00] General.ERROR: Line: 200  
@@ -6539,6 +6611,195 @@
 
 )
   
+[2021-05-19T14:41:30.229424+00:00] General.ERROR: Exception  
+[2021-05-19T14:41:30.230331+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-19T14:41:30.230593+00:00] General.ERROR: Line: 200  
+[2021-05-19T14:41:30.230814+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-19T14:41:30.231195+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 26
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-19T14:41:30.250135+00:00] General.ERROR: Exception  
+[2021-05-19T14:41:30.250807+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-19T14:41:30.251100+00:00] General.ERROR: Line: 200  
+[2021-05-19T14:41:30.251365+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-19T14:41:30.251611+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 30
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-19T14:41:30.291816+00:00] General.ERROR: Exception  
+[2021-05-19T14:41:30.292653+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-19T14:41:30.292842+00:00] General.ERROR: Line: 200  
+[2021-05-19T14:41:30.293016+00:00] General.ERROR: Mensaje: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdentrepalos.ofertas' doesn't exist  
+[2021-05-19T14:41:30.293193+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 200
+            [function] => query
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT COUNT(*) FROM ofertas
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 171
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 158
+            [function] => getLastId
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => ofertas
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testOferta.php
+            [line] => 34
+            [function] => insert
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
 [2021-05-19T14:32:23.830339+00:00] General.ERROR: Exception  
 [2021-05-19T14:32:23.848250+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
 [2021-05-19T14:32:23.848407+00:00] General.ERROR: Line: 128  
@@ -6962,6 +7223,175 @@
             [line] => 31
             [function] => insert
             [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-19T14:59:12.692938+00:00] General.ERROR: Exception  
+[2021-05-19T14:59:12.695555+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-19T14:59:12.695746+00:00] General.ERROR: Line: 102  
+[2021-05-19T14:59:12.695897+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM imagen WHERE id = '3' and Ruta = 'c:proyecto\imagenes\imagen3.png'' at line 1  
+[2021-05-19T14:59:12.696411+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 226
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT + FROM imagen WHERE id = '3' and Ruta = 'c:proyecto\imagenes\imagen3.png'
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 47
+            [function] => search
+            [class] => App\Models\Imagenes
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT + FROM imagen WHERE id = '3' and Ruta = 'c:proyecto\imagenes\imagen3.png'
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testImagen.php
+            [line] => 68
+            [function] => imagenRegistrada
+            [class] => App\Models\Imagenes
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 3
+                    [1] => c:proyecto\imagenes\imagen3.png
+                )
+
+        )
+
+)
+  
+[2021-05-19T15:18:53.618007+00:00] General.ERROR: Exception  
+[2021-05-19T15:18:53.618487+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-19T15:18:53.618562+00:00] General.ERROR: Line: 128  
+[2021-05-19T15:18:53.618636+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'Numero_UNIQUE'  
+[2021-05-19T15:18:53.618750+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 206
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 1
+                            [:Fecha] => Carbon\Carbon Object
+                                (
+                                    [constructedObjectId:protected] => 00000000307fcde80000000065ac52d8
+                                    [localMonthsOverflow:protected] => 
+                                    [localYearsOverflow:protected] => 
+                                    [localStrictModeEnabled:protected] => 
+                                    [localHumanDiffOptions:protected] => 
+                                    [localToStringFormat:protected] => 
+                                    [localSerializer:protected] => 
+                                    [localMacros:protected] => 
+                                    [localGenericMacros:protected] => 
+                                    [localFormatFunction:protected] => 
+                                    [localTranslator:protected] => 
+                                    [dumpProperties:protected] => Array
+                                        (
+                                            [0] => date
+                                            [1] => timezone_type
+                                            [2] => timezone
+                                        )
+
+                                    [dumpLocale:protected] => 
+                                    [date] => 2021-05-12 00:00:00.000000
+                                    [timezone_type] => 3
+                                    [timezone] => UTC
+                                )
+
+                            [:IVA] => 0.19
+                            [:MedioPago] => Efectivo
+                            [:Mesero_id] => 1
+                            [:Estado] => Pendiente
+                            [:TipoPedido] => Mesa
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 215
+            [function] => save
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testFactura.php
+            [line] => 52
+            [function] => insert
+            [class] => App\Models\Facturas
             [type] => ->
             [args] => Array
                 (
