@@ -21,10 +21,10 @@ $arrMesa2 = [//creamos un array ficticio
 /**
  * Primero creo el objeto y luego lo inserto en la BD
  */
-//$objectMesa1 = new Mesas($arrMesa1);//Creamos un objeto Mesa.. pero no e echo nada con el
+$objectMesa1 = new Mesas($arrMesa1);//Creamos un objeto Mesa.. pero no e echo nada con el
 
 //var_dump($objectMesa1);
-//$objectMesa1->insert();//Aca registramos el objeto en la bd
+$objectMesa1->insert();//Aca registramos el objeto en la bd
 
 //Prueba update
 //$pruebaUpdate= Mesas::searchForId(1);//Buscamos la mesa que queremos acturalizar
@@ -37,8 +37,8 @@ $arrMesa2 = [//creamos un array ficticio
 //var_dump($pruebMesaRegis);
 
 
-//$objectMesa2 = new Mesas($arrMesa2);//Creamos un nuevo objeto mesa
-//$objectMesa2->insert();
+$objectMesa2 = new Mesas($arrMesa2);//Creamos un nuevo objeto mesa
+$objectMesa2->insert();
 
 
 //$arrResult = Mesas::search("SELECT * FROM mesa WHERE Ubicacion = 'Balcon' AND Capacidad = 5");

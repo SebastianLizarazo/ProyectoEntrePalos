@@ -49,17 +49,18 @@ $arrProducto2= [
     'Estado'=> 'Activo',
 ];
 
-//$producto1= new Productos($arrProducto1);
+$producto1= new Productos($arrProducto1);
 //var_dump($producto1);
-//$producto1->insert();
+$producto1->insert();
 
-//$producto2= new Productos($arrProducto2);
+$producto2= new Productos($arrProducto2);
 //var_dump($producto2);
-//$producto2->insert();
+$producto2->insert();
 
-//$producto3= new Productos($arrProducto3);
+
+$producto3= new Productos($arrProducto3);
 //var_dump($producto3);
-//$producto3->insert();
+$producto3->insert();
 
 // Prueba update
 //$pruebaUpdate = Productos::searchForId(2);
