@@ -155,7 +155,7 @@ class Ofertas extends AbstractDBConnection implements Model
             :id,:Nombre,:Descripcion,:PrecioUnidadVentaOferta,:Estado)";
         //return $this->save($query);
         if ($this->save($query)) {
-            $idOferta = $this->getLastId('ofertas');
+            $idOferta = $this->getLastId('oferta');
             $this->setId($idOferta);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla oferta
             return true;
         }else{
