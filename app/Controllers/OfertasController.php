@@ -6,7 +6,6 @@ namespace App\Controllers;
 use App\Models\GeneralFunctions;
 use App\Models\Mesas;
 use App\Models\Ofertas;
-use App\Models\Usuarios;
 
 class OfertasController
 {
