@@ -44,8 +44,8 @@ class DetallePedidos extends AbstractDBConnection implements Model
 
     public static function detallePedidoRegistrado(mixed $id, mixed $Factura_id)
     {
-        $dteTmp = DetallePedidos::search("SELECT * FROM detallepedido WHERE id ='$id' and Factura_id ='$Factura_id'");
-        return (!empty($dteTmp))? true : false;
+        $dtoTmp = DetallePedidos::search("SELECT * FROM detallepedido WHERE id ='$id' and Factura_id ='$Factura_id'");
+        return (!empty($dtoTmp))? true : false;
     }
 
     public function __destruct()

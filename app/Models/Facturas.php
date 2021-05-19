@@ -234,7 +234,8 @@ class Facturas extends AbstractDBConnection implements Model
      */
     function deleted()
     {
-
+        $this->setEstado('Cancelada');
+        return $this->update();
     }
 
     static function search($query): ?array
