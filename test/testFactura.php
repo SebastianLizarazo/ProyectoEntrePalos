@@ -48,8 +48,8 @@ $arrFactura4 = [
 
 ];
 
-$objFactura1= new Facturas($arrFactura1);
-$objFactura1->insert();
+//$objFactura1= new Facturas($arrFactura1);
+//$objFactura1->insert();
 //var_dump($objFactura1);
 
 //$objFactura2= new Facturas($arrFactura2);
