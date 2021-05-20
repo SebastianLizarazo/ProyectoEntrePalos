@@ -21,7 +21,7 @@ class MesasController
     public function create()
     {
         try {
-            if (!empty($this->dataMesa['Numero']) && !empty($this->dataMesa['Capacidad']) && !Mesas::mesaRegistrada($this->dataMesa['Numero'], $this->dataMesa['Capacidad'])) {
+            if (!empty($this->dataMesa['id']) && !empty($this->dataMesa['Numero']) && !Mesas::mesaRegistrada($this->dataMesa['id'], $this->dataMesa['Numero'])) {
                 $Mesa = new Mesas($this->dataMesa);
                 if ($Mesa->insert()) {
                     //unset($_SESSION['frmUsuarios']);

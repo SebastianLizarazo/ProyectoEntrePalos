@@ -54,9 +54,9 @@ class Productos extends AbstractDBConnection implements Model
         $this->setPrecioUnidadTrabajador( $producto['PrecioUnidadTrabajador']?? 0);
         $this->setPrecioUnidadVenta( $producto['PrecioUnidadVenta']?? 0);
         $this->setPresentacionProducto( $producto['PresentacionProducto']?? '');
-        $this->setMarcaid( $producto['Marca_id']?? null);
+        $this->setMarcaId( $producto['Marca_id']?? 0);
         $this->setCantidadProducto( $producto['CantidadProducto']?? 0);
-        $this->setSubCategoriaid( $producto['']?? null);
+        $this->setSubcategoriaId( $producto['Subcategoria_id']?? 0);
         $this->setEstado($producto['Estado']?? '');
     }
 

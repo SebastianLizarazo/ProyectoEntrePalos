@@ -54,8 +54,8 @@ $objectUsuario1->insert();
 $objectUsuario2= new Usuarios($arrUsuario2);
 //var_dump($objectUsuario2);
 $objectUsuario2->insert();
-$objectUsuario2->setEstado('Inactivo');
-$objectUsuario2->update();
+//$objectUsuario2->setEstado('Inactivo');
+//$objectUsuario2->update();
 
 $objectUsuario3= new Usuarios($arrUsuario3);
 //var_dump($objectUsuario3);

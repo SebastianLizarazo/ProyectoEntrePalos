@@ -1,69 +1,65 @@
 <?php
-//Este archivo es para hacer pruebas unitarias de la clase Oferta
-require ("..\app\Models\Ofertas.php");//Importamos la clase Ofertas
+
+require ("..\app\Models\Ofertas.php");
 use App\Models\Ofertas;
 
-$arrOferta1=[   //creamos un array ficticio
-'Nombre'=> 'Jo',
-'Descripcion'=> 'Kjkjakajkjakjckjck',
-'PrecioUnidadVentaOferta'=> 52000,
-'Estado'=> 'No disponible'
+$arrOferta1 = [
+    'Nombre'=> 'Mega combo',
+    'Descripcion'=> 'Llego para ser uno de las mejores combos',
+    'PrecioUnidadVentaOferta'=> 50000,
+    'Estado'=> 'No disponible'
+];
+$arrOferta2 = [
+    'Nombre'=> 'Combo EntreHamburg',
+    'Descripcion'=> 'La especialidad de la casa, en este combo',
+    'PrecioUnidadVentaOferta'=> 35000,
+    'Estado'=> 'Disponible'
+];
+$arrOferta3 = [
+    'Nombre'=> 'Six Pack',
+    'Descripcion'=> 'Suave',
+    'PrecioUnidadVentaOferta'=> 20000,
+    'Estado'=> 'Disponible'
 ];
 
-$arrOferta2=[   //creamos un array ficticio
-'Nombre'=> 'Yu',
-'Descripcion'=> 'Asfgajhkhsjs',
-'PrecioUnidadVentaOferta'=> 20000,
-'Estado'=> 'disponible'
-];
+$objOferta1= new Ofertas($arrOferta1);
+$objOferta1->insert();
+//var_dump($objOferta1);
 
-/**
-* Primero creo el objeto y luego lo inserto en la BD
-*/
-$arrOferta1 = new Ofertas($arrOferta1);   //Creamos un objeto Oferta
+$objOferta2= new Ofertas($arrOferta2);
+$objOferta2->insert();
+//var_dump($objOferta2);
 
-//var_dump($objectOferta1);
-$arrOferta1->insert();//Aca registramos el objeto en la bd
+$objOferta3= new Ofertas($arrOferta3);
+$objOferta3->insert();
+//var_dump($objOferta3);
 
-$arrOferta1->setNombre('Brr');
-$arrOferta1->setDescripcion('Klk');
+//Prueba update
+//$pruebaUpdate = Ofertas::searchForId(1);//Buscamos la oferta que queremos modificar
+//$pruebaUpdate->setPrecioUnidadVentaOferta(55000);
+//$pruebaUpdate->setEstado('Disponible');
+//$pruebaUpdate->update();
 
-//var_dump($objectMesa1);
-$arrOferta1->update();//para poder actualizar un registro se debe tener claro el Id de ese registro
-
-$arrOferta2= new Ofertas($arrOferta2);//Creamos un nuevo objeto oferta
-$arrOferta2->insert();
+//$pruebaOfertaRegist= Ofertas::ofertaRegistrada('Mega combo','Llego para ser uno de las mejores combos');// Comprobamos que ya exista una oferta con esas caracteristicas
+//var_dump($pruebaOfertaRegist);
 
 
-$arrResult = Ofertas::search("SELECT * FROM oferta WHERE Nombre = 'Brr' AND Descripcion = 'Klk'");
-//var_dump($arrResult);
+//$pruebaSearch1Ofert= Ofertas::search("SELECT * FROM oferta WHERE Estado = 'Disponible'");// Prueba metodo search
+///* @var $pruebaSearch1Ofert App\Models\Ofertas[] */
+//foreach ($pruebaSearch1Ofert as $oferta)
+//{
+ //   print_r($oferta->jsonSerialize());
+//}
 
-if (!empty($arrResult)) {//Este if comprueba si el search devuelve un resultado o devuelve un null
-/* @var $arrResult Ofertas[] */ //Esto hace que phpStorm sepa que estamos trabajando con un array de mesas
-foreach ($arrResult as $Oferta) {
-echo 'Oferta: ' . $Oferta->getNombre() .' PrecioUnidadVentaOferta: '.$Oferta->getPrecioUnidadVentaOferta(). "\n";
+//$pruebaSearch2Ofert= Ofertas::searchForId(3);// Prueba metodo searchForId
+//var_dump($pruebaSearch2Ofert);
+//print_r($pruebaSearch2Ofert->jsonSerialize());
 
-
-}
-}
-
-$arrOferta2= Ofertas::searchForId(2);
-if (!empty($arrOferta2)){
-$arrOferta2->setDescripcion('IIIHII');
-$arrOferta2->update();
-}
-
-$arrOfertas = Ofertas::getAll();
-if (!empty($arrOfertas)){
-/* @var $arrOfertas Ofertas[] */
-foreach ($arrOfertas as $Oferta){
-echo "Nombre: ".$Oferta->getNombre()." Descripcion: ".$Oferta->getDescripcion()."\n";
-}
-
-}
-
-$JsonOferta2 = Ofertas::searchForId(2);
-echo json_encode($JsonOferta2);
-
-
+//$ofertaGetAll= Ofertas::getAll();// Prueba metodo getAll
+//var_dump($ofertaGetAll);
+//* @var $ofertaGetAll App\Models\Ofertas[] */
+//foreach ($ofertaGetAll as $oferta)
+//{
+//   print_r($oferta->jsonSerialize());
+//}
 

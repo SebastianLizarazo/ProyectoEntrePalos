@@ -17,6 +17,7 @@ $arrPago2 = [
     'Estado' => 'Saldado',
 ];
 
+
 $arrPago3 = [
     'Trabajador_id' => 3,
     'Fecha' => '2021-12-05',
@@ -30,6 +31,7 @@ $arrPago3 = [
 //$objPago->update();
 
 //$objPago->deleted();
+
 
 //$objPago2 = new Pagos($arrPago2);
 //$objPago2->insert();
@@ -45,11 +47,12 @@ $arrPago3 = [
 //if (!empty($arrPago2)) {
   //  $arrPago2->setEstado('Saldado');
     //$arrPago2->update();
-//}
+
 
 //$arrPgs = Pagos::getAll();
 //$arrPgs = Pagos::getAll();
 //if (!empty($arrPgs)) {
+
   //  /* @var $arrPgs Pagos[] */
     //foreach ($arrPgs as $pagos) {
       //  echo "id: " . $pagos->getId() . "Numero del Trabajador: " . $pagos->getTrabajadorId() . ", Fecha: " . $pagos->getFecha() . ", Estado: " . $pagos->getEstado() . "\n";
