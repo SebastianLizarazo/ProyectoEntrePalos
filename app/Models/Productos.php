@@ -331,13 +331,13 @@ class Productos extends AbstractDBConnection implements Model
         return $this->save($query);
     }
 
-    function deleted()
+    public function deleted()
     {
         $this->setEstado("Inactivo");
         return $this->update();
     }
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrProductos = array();
@@ -362,7 +362,7 @@ class Productos extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function searchForId(int $id): ?Productos
+    public static function searchForId(int $id): ?Productos
     {
         try {
             if ($id > 0) {
@@ -381,7 +381,7 @@ class Productos extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function getAll(): ?array
+    public static function getAll(): ?array
     {
         return Productos::search("SELECT * FROM producto");
     }

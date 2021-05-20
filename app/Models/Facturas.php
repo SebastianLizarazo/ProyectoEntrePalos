@@ -232,13 +232,13 @@ class Facturas extends AbstractDBConnection implements Model
     /**
      * Preguntar al ingeniero como implementar el metodo delete en estos casos
      */
-    function deleted()
+    public function deleted()
     {
         $this->setEstado('Cancelada');
         return $this->update();
     }
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrFacturas = array();
@@ -263,7 +263,7 @@ class Facturas extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function searchForId(int $id): ?Facturas
+    public static function searchForId(int $id): ?Facturas
     {
         try {
             if ($id > 0) {
@@ -282,7 +282,7 @@ class Facturas extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function getAll(): ?array
+    public static function getAll(): ?array
     {
         return Facturas::search("SELECT * FROM factura");
     }

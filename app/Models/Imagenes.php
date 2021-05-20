@@ -210,13 +210,13 @@ class Imagenes extends AbstractDBConnection implements Model
         return $this->save($query);
     }
 
-    function deleted()
+    public function deleted()
     {
         $this->setEstado('Inactivo');
         return $this->update();
     }
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrImagenes = array();
@@ -241,7 +241,7 @@ class Imagenes extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function searchForId(int $id): ?Imagenes
+    public static function searchForId(int $id): ?Imagenes
     {
         try {
             if ($id > 0) {
@@ -260,7 +260,7 @@ class Imagenes extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function getAll(): ?array
+    public static function getAll(): ?array
     {
         return Imagenes::search("SELECT * FROM imagen");
     }
