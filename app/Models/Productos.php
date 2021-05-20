@@ -23,7 +23,7 @@ class Productos extends AbstractDBConnection implements Model
     private  string $PresentacionProducto;
     private  int $Marca_id;
     private  int $CantidadProducto;
-    private  int $Subcategoria_id;
+    private  int $SubCategoria_id;
     private  string $Estado;
 
     /**
@@ -39,13 +39,13 @@ class Productos extends AbstractDBConnection implements Model
      * @param string $PresentacionProducto
      * @param int $Marca_id
      * @param int $CantidadProducto
-     * @param int $Subcategoria_id
+     * @param int $SubCategoria_id
      * @param string $Estado
      */
     public function __construct(array $producto=[])
     {
         parent::__construct();
-        $this->setId( $producto['id']?? null);
+        $this->setid( $producto['id']?? null);
         $this->setNombre( $producto['Nombre']?? '');
         $this->setTamano( $producto['Tamano']?? 0);
         $this->setReferenciaTamano( $producto['ReferenciaTamano']?? '');
@@ -58,12 +58,6 @@ class Productos extends AbstractDBConnection implements Model
         $this->setCantidadProducto( $producto['CantidadProducto']?? 0);
         $this->setSubcategoriaId( $producto['Subcategoria_id']?? 0);
         $this->setEstado($producto['Estado']?? '');
-    }
-
-    public static function productoRegistrado(int $id, mixed $Referencia): bool
-    {
-        $prdTmp= Productos::search("SELECT * FROM producto WHERE id = '$id' and Referencia = '$Referencia'");
-        return (!empty($prdTmp))? true : false;
     }
 
     public function __destruct()
@@ -252,17 +246,17 @@ class Productos extends AbstractDBConnection implements Model
     /**
      * @return int
      */
-    public function getSubcategoriaId(): int
+    public function getSubCategoriaId(): int
     {
-        return $this->Subcategoria_id;
+        return $this->SubCategoria_id;
     }
 
     /**
-     * @param int $Subcategoria_id
+     * @param int $SubCategoria_id
      */
-    public function setSubcategoriaId(int $Subcategoria_id): void
+    public function setSubCategoriaId(int $SubCategoria_id): void
     {
-        $this->Subcategoria_id = $Subcategoria_id;
+        $this->SubCategoria_id = $SubCategoria_id;
     }
 
     /**
@@ -296,7 +290,7 @@ class Productos extends AbstractDBConnection implements Model
             ':PresentacionProducto' => $this->getPresentacionProducto(),
             ':Marca_id' => $this->getMarcaId(),
             ':CantidadProducto' => $this->getCantidadProducto(),
-            ':Subcategoria_id' => $this->getSubcategoriaId(),
+            ':SubCategoria_id' => $this->getSubCategoriaId(),
             ':Estado' => $this->getEstado(),
         ];
         $this->Connect();
@@ -305,12 +299,12 @@ class Productos extends AbstractDBConnection implements Model
         return $result;
     }
 
-    public function insert()
+    function insert()
     {
         $query = "INSERT INTO producto VALUES (
             :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
             :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
-            :CantidadProducto, :Subcategoria_id, :Estado )";
+            :CantidadProducto, :SubCategoria_id, :Estado )";
         //return $this->save($query);
         if ($this->save($query)) {
             $idProducto = $this->getLastId('producto');
@@ -321,12 +315,12 @@ class Productos extends AbstractDBConnection implements Model
         }
     }
 
-    public function update()
+    function update()
     {
         $query = "UPDATE producto SET
             Nombre = :Nombre, Tamano = :Tamano, ReferenciaTamano = :ReferenciaTamano, Referencia = :Referencia, PrecioBase = :PrecioBase, 
             PrecioUnidadTrabajador = :PrecioUnidadTrabajador, PrecioUnidadVenta = :PrecioUnidadVenta, PresentacionProducto = :PresentacionProducto,
-            Marca_id = :Marca_id, CantidadProducto = :CantidadProducto, Subcategoria_id = :Subcategoria_id,
+            Marca_id = :Marca_id, CantidadProducto = :CantidadProducto, Subcategoria_id = :SubCategoria_id,
             Estado = :Estado WHERE id = :id";
         return $this->save($query);
     }
@@ -356,7 +350,7 @@ class Productos extends AbstractDBConnection implements Model
                 return $arrProductos;
             }
             return null;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -373,9 +367,9 @@ class Productos extends AbstractDBConnection implements Model
                 $tmpProducto->Disconnect();
                 return ($getrow) ? new Productos($getrow) : null;
             } else {
-                throw new \Exception('Id de producto Invalido');
+                throw new Exception('Id de producto Invalido');
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -400,7 +394,7 @@ class Productos extends AbstractDBConnection implements Model
             'PresentacionProducto' => $this->getPresentacionProducto(),
             'Marca_id' => $this->getMarcaId(),
             'CantidadProducto' => $this->getCantidadProducto(),
-            'Subcategoria_id' => $this->getSubcategoriaId(),
+            'SubCategoria_id' => $this->getSubCategoriaId(),
             'Estado' => $this->getEstado(),
         ];
     }

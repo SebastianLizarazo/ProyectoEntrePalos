@@ -41,33 +41,33 @@ $objectMesa2 = new Mesas($arrMesa2);//Creamos un nuevo objeto mesa
 $objectMesa2->insert();
 
 
-//$arrResult = Mesas::search("SELECT * FROM mesa WHERE Ubicacion = 'Balcon' AND Capacidad = 5");
+$arrResult = Mesas::search("SELECT * FROM mesa WHERE Ubicacion = 'Balcon' AND Capacidad = 5");
 //var_dump($arrResult);
 
-//if (!empty($arrResult)) {//Este if comprueba si el search devuelve un resultado o devuelve un null
-//    /* @var $arrResult Mesas[] */ //Esto hace que phpStorm sepa que estamos trabajando con un array de mesas
-//    foreach ($arrResult as $Mesa) {
-//        echo 'Mesa: ' . $Mesa->getNumero() . ' Ocupacion: ' . $Mesa->getOcupacion() . "\n";
+if (!empty($arrResult)) {//Este if comprueba si el search devuelve un resultado o devuelve un null
+    /* @var $arrResult Mesas[] */ //Esto hace que phpStorm sepa que estamos trabajando con un array de mesas
+    foreach ($arrResult as $Mesa) {
+        echo 'Mesa: ' . $Mesa->getNumero() . ' Ocupacion: ' . $Mesa->getOcupacion() . "\n";
 
 
-//    }
-//}
+    }
+}
 
 
-//$objMesa2 = Mesas::searchForId(2);
-//if (!empty($objMesa2)) {
-//    $objMesa2->setUbicacion('Primer piso');
-//    $objMesa2->update();
-//}
+$objMesa2 = Mesas::searchForId(2);
+if (!empty($objMesa2)) {
+    $objMesa2->setUbicacion('Primer piso');
+    $objMesa2->update();
+}
 
-//$arrMesas = Mesas::getAll();
-//if (!empty($arrMesas)) {
- //   /* @var $arrMesas Mesas[] */
-//    foreach ($arrMesas as $Mesa) {
-//        echo "Ubicacion: " . $Mesa->getUbicacion() . " Ocupacion: " . $Mesa->getOcupacion() . "\n";
-//    }
+$arrMesas = Mesas::getAll();
+if (!empty($arrMesas)) {
+    /* @var $arrMesas Mesas[] */
+    foreach ($arrMesas as $Mesa) {
+        echo "Ubicacion: " . $Mesa->getUbicacion() . " Ocupacion: " . $Mesa->getOcupacion() . "\n";
+    }
 
-//}
+}
 
-//$JsonMesa2 = Mesas::searchForId(2);
-//echo json_encode($JsonMesa2);
+$JsonMesa2 = Mesas::searchForId(2);
+echo json_encode($JsonMesa2);
