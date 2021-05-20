@@ -10,40 +10,35 @@ require(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de 
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
 
-
 /**
  *La clase mesa es hija de AbstractDBConnection e implementa la
  * interfaz Model
  */
-class Mesas extends AbstractDBConnection implements Model
+
+class ConsumoTrabajadores extends AbstractDBConnection implements Model
 {
     private ?int $id;//el id es opcional porque el usuario no lo tiene que ingresar
-    private int $Numero;
-    private string $Ubicacion;
-    private int $Capacidad;
-    private string $Ocupacion;
+    private int $Pago_id;
+    private int $Producto_id;
+    private int $CantidadProducto;
+    private string $Descripcion;
 
     /**
-     * Mesas constructor.
-     * @param array $mesa
-     * El constructor recibe como parametro un array cuando se estan solicitando parametros de una tabla grande
-     * y ese array va a guardar todos los parametros
+     * ConsumoTrabajadores constructor.
      */
-    public function __construct(array $mesa=[])
+    public function __construct()
     {
         parent::__construct();//llamamos al constructor de la clase AbstractDBConnection
-        $this->setId($mesa['id']?? null);
-        $this->setNumero($mesa['Numero']?? 0);//Si en el array mesa hay un contenido en el indice Numero asignelo de lo contrario ponga
-        //un cero
-        $this->setUbicacion($mesa['Ubicacion']??'');
-        $this->setCapacidad($mesa['Capacidad']??0) ;
-        $this->setOcupacion($mesa['Ocupacion']??'disponible' );
+        $this->setId($consumoTrabajador['id']?? null);
+        $this->setPagoId($consumoTrabajador['Pago_id']?? 0);
+        $this->setProductoId($consumoTrabajador['Producto_id']??0);
+        $this->setCantidadProducto($consumoTrabajador['CantidadProducto']??0) ;
+        $this->setDescripcion($consumoTrabajador['Descripcion']??0);
     }
-
-    public static function mesaRegistrada(mixed $id, mixed $Numero): bool
+    public static function consumoTrabajadorRegistrada(mixed $CantidadProducto, mixed $Descripcion): bool
     {
-        $msaTmp = Mesas::search("SELECT * FROM mesa WHERE id = '$id' and Numero = '$Numero'");
-        return (!empty($msaTmp)) ? true : false;
+        $consumotbjTmp = ConsumoTrabajadores::search("SELECT * FROM consumotrabajador WHERE CantidadProducto = '$CantidadProducto' and Descripcion = '$Descripcion'");
+        return (!empty($consumotbjTmp)) ? true : false;
     }
 
     public function __destruct()
@@ -73,67 +68,66 @@ class Mesas extends AbstractDBConnection implements Model
     /**
      * @return int
      */
-    public function getNumero(): int
+    public function getPagoId(): int
     {
-        return $this->Numero;
+        return $this->Pago_id;
     }
 
     /**
-     * @param int $Numero
+     * @param int $Pago_id
      */
-    public function setNumero(int $Numero): void
+    public function setPagoId(int $Pago_id): void
     {
-        $this->Numero = $Numero;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUbicacion(): string
-    {
-        return $this->Ubicacion;
-    }
-
-    /**
-     * @param string $Ubicacion
-     */
-    public function setUbicacion(string $Ubicacion): void
-    {
-        $this->Ubicacion = $Ubicacion;
+        $this->Pago_id = $Pago_id;
     }
 
     /**
      * @return int
      */
-    public function getCapacidad(): int
+    public function getProductoId(): int
     {
-        return $this->Capacidad;
+        return $this->Producto_id;
     }
 
     /**
-     * @param int $Capacidad
+     * @param int $Producto_id
      */
-    public function setCapacidad(int $Capacidad): void
+    public function setProductoId(int $Producto_id): void
     {
-        $this->Capacidad = $Capacidad;
+        $this->Producto_id = $Producto_id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCantidadProducto(): int
+    {
+        return $this->CantidadProducto;
+    }
+
+    /**
+     * @param int $CantidadProducto
+     */
+    public function setCantidadProducto(int $CantidadProducto): void
+    {
+        $this->CantidadProducto = $CantidadProducto;
     }
 
     /**
      * @return string
      */
-    public function getOcupacion(): string
+    public function getDescripcion(): string
     {
-        return $this->Ocupacion;
+        return $this->Descripcion;
     }
 
     /**
-     * @param string $Ocupacion
+     * @param string $Descripcion
      */
-    public function setOcupacion(string $Ocupacion): void
+    public function setDescripcion(string $Descripcion): void
     {
-        $this->Ocupacion = $Ocupacion;
+        $this->Descripcion = $Descripcion;
     }
-
     /**
      * @param string $query
      * @return bool|null
@@ -147,10 +141,10 @@ class Mesas extends AbstractDBConnection implements Model
     {
         $arrData = [
             ':id' =>    $this->getId(),
-            ':Numero' =>   $this->getNumero(),
-            ':Ubicacion' =>   $this->getUbicacion(),
-            ':Capacidad' =>   $this->getCapacidad(),
-            ':Ocupacion' =>   $this->getOcupacion(),
+            ':Pago_id' =>   $this->getPagoId(),
+            ':Producto_id' =>   $this->getProductoId(),
+            ':CantidadProducto' =>   $this->getCantidadProducto(),
+            ':Descripcion' =>   $this->getDescripcion(),
         ];
         $this->Connect();
         $result = $this->insertRow($query, $arrData);//insertRow es el que inserta los datos que organiza el save
@@ -165,12 +159,12 @@ class Mesas extends AbstractDBConnection implements Model
      */
     public function insert(): ?bool
     {
-        $query = "INSERT INTO Mesa VALUES (
-            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)";
+        $query = "INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)";
         //return $this->save($query);
         if ($this->save($query)) {
-            $idMesa = $this->getLastId('mesa');
-            $this->setId($idMesa);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla mesa
+            $idConsumoTrabajador = $this->getLastId('consumotrabajador');
+            $this->setId($idConsumoTrabajador);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla mesa
             return true;
         }else{
             return false;
@@ -184,9 +178,9 @@ class Mesas extends AbstractDBConnection implements Model
      */
     public function update(): ?bool
     {
-        $query = "UPDATE Mesa SET 
-            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad,
-            Ocupacion = :Ocupacion WHERE id = :id";
+        $query = "UPDATE consumotrabajador SET 
+            Pago_id = :Pago_id, Producto_id = :Producto_id, CantidadProducto = :CantidadProducto,
+            Descripcion = :Descripcion WHERE id = :id";
         return $this->save($query);
     }
 
@@ -201,16 +195,16 @@ class Mesas extends AbstractDBConnection implements Model
      * que se puede pasar de activo a inactivo de resto no se aconseja utilizar
      * el delete o hay que pensar muy bien como utilizarlo
      */
-    function deleted()
+    public function deleted()
     {
 
     }
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
-            $arrMesas = array();
-            $tmp = new Mesas();
+            $arrConsumoTrabajadores = array();
+            $tmp = new ConsumoTrabajadores();
 
             $tmp->Connect();
             $getrows = $tmp->getRows($query);
@@ -218,11 +212,11 @@ class Mesas extends AbstractDBConnection implements Model
 
             if (!empty($getrows)) {
                 foreach ($getrows as $valor) {
-                    $Mesa = new Mesas($valor);
-                    array_push($arrMesas, $Mesa);//aca meter el contenido del segundo parametro dentro del primero
+                    $ConsumoTrabajador = new ConsumoTrabajadores($valor);
+                    array_push($arrConsumoTrabajadores, $ConsumoTrabajador);//aca meter el contenido del segundo parametro dentro del primero
                     unset($Mesa); //Borrar el contenido del objeto
                 }
-                return $arrMesas;
+                return $arrConsumoTrabajadores;
             }
             return null;
         } catch (Exception $e) {
@@ -237,18 +231,18 @@ class Mesas extends AbstractDBConnection implements Model
      * Aca tenemos que especificar que el objeto que nos va a devolver va a ser
      * en este caso un objeto Mesas porque es la clase que le corresponde a este searchForId
      */
-    static function searchForId(int $id): ?Mesas
+    static function searchForId(int $id): ?ConsumoTrabajadores
     {
         try {
             if ($id > 0) {
-                $tmpMesa = new Mesas();
-                $tmpMesa->Connect();
-                $getrow = $tmpMesa->getRow("SELECT * FROM mesa WHERE id = ?", array($id) );
+                $tmpConsumoTrabajador = new ConsumoTrabajadores();
+                $tmpConsumoTrabajador->Connect();
+                $getrow = $tmpConsumoTrabajador->getRow("SELECT * FROM consumotrabajador WHERE id = ?", array($id) );
 
-                $tmpMesa->Disconnect();
-                return ($getrow) ? new Mesas($getrow) : null;
+                $tmpConsumoTrabajador->Disconnect();
+                return ($getrow) ? new ConsumoTrabajadores($getrow) : null;
             } else {
-                throw new Exception('Id de mesa Invalido');
+                throw new Exception('Id de consumo trabajador Invalido');
             }
         } catch (Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
@@ -258,17 +252,17 @@ class Mesas extends AbstractDBConnection implements Model
 
     static function getAll(): ?array
     {
-        return Mesas::search("SELECT * FROM mesa");
+        return ConsumoTrabajadores::search("SELECT * FROM consumotrabajador");
     }
 
     public function jsonSerialize()
     {
         return [
             'id' => $this->getId(),
-            'Numero' =>$this->getNumero(),
-            'Ubicacion' =>$this->getUbicacion(),
-            'Capacidad' =>$this->getCapacidad(),
-            'Ocupacion' =>$this->getOcupacion(),
+            'Pago_id' =>$this->getPagoId(),
+            'Producto_id' =>$this->getProductoId(),
+            'CantidadProducto' =>$this->getCantidadProducto(),
+            'Descripcion' =>$this->getDescripcion(),
         ];
     }
 }

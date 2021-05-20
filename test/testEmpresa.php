@@ -21,22 +21,42 @@ $arrEmpresa2=[
     'Municipio_id' => 5031
 ];
 
+$arrEmpresa3=[
+    'Nombre' => 'HepicGeims',
+    'NIT' => 'mm8765957',
+    'Telefono' => 3207654898,
+    'Direccion' => 'Av el Jhony 89-33',
+    'Estado' => 'Activo',
+    'Municipio_id' => 15759
+];
+
+
 /**
 * Primero creo el objeto y luego lo inserto en la BD
 */
 
-$objectEmpresa1= new Empresas($arrEmpresa1);
+//$objectEmpresa1= new Empresas($arrEmpresa1);
 //var_dump($objectEmpresa1);
-$objectEmpresa1->insert();
+//$objectEmpresa1->insert();
 
-//$objectEmpresa1->setNombre('Kivens');
-//$objectEmpresa1->setDireccion('Av mosca 33-88');
+$arrEmpresa1 = Empresas::searchForId(3);
+//var_dump($arrEmpresa1);
+if (!empty($arrEmpresa1)) {
+    $arrEmpresa1->setMunicipioid(5837);
+    $arrEmpresa1->update();
+}
+
+//$arrEmpresa1 = Empresas::searchForId(1);//Llamamos al usuario que queremos modificar
+//var_dump($arrEmpresa1);
+//$arrEmpresa1->setEstado('Inactivo');
+//$arrEmpresa1->update();
 //var_dump($objectEmpresa1);
-//$objectEmpresa1->update();
 
-$objectEmpresa2= new Empresas($arrEmpresa2);//Creamos un nuevo objeto mesa
-$objectEmpresa2->insert();
+//$objectEmpresa2= new Empresas($arrEmpresa2);//Creamos un nuevo objeto mesa
+//$objectEmpresa2->insert();
 
+//$objectEmpresa3= new Empresas($arrEmpresa3);
+//$objectEmpresa3->insert();
 
 //$arrResult = Empresas::search("SELECT * FROM empresa WHERE Nombre = 'pool' AND Telefono = 3207651298");
 //var_dump($arrResult);
@@ -68,4 +88,10 @@ $objectEmpresa2->insert();
 //$JsonEmpresa2 = Empresas::searchForId(1);
 //echo json_encode($JsonEmpresa2);
 
-
+//$empresaGetALL = Empresas::getAll();
+//var_dump($empresaGetALL);
+//* @var $empresaGetALL app\Models\Empresas[] */
+//foreach ($empresaGetALL as $empresa)
+//{
+//    print_r($empresa->jsonSerialize());
+//}
