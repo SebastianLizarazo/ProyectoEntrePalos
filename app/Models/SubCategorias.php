@@ -142,7 +142,7 @@ class SubCategorias extends AbstractDBConnection implements Model
     }
 
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrSubCategorias = array();
@@ -166,7 +166,7 @@ class SubCategorias extends AbstractDBConnection implements Model
         }
         return null;
     }
-    static function searchForId(int $id): ?SubCategorias
+    public static function searchForId(int $id): ?SubCategorias
     {
         try {
             if ($id > 0) {
@@ -185,7 +185,7 @@ class SubCategorias extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function getAll(): ?array
+    public static function getAll(): ?array
 {
     return SubCategorias::search("SELECT * FROM subcategoria");
 }

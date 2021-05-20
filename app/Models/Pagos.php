@@ -142,7 +142,7 @@ class Pagos extends AbstractDBConnection implements Model
     }
 
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrPagos = array();
@@ -166,7 +166,7 @@ class Pagos extends AbstractDBConnection implements Model
         }
         return null;
     }
-    static function searchForId(int $id): ?Pagos
+    public static function searchForId(int $id): ?Pagos
     {
         try {
             if ($id > 0) {
@@ -185,7 +185,7 @@ class Pagos extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function getAll(): ?array
+    public static function getAll(): ?array
     {
         return Pagos::search("SELECT * FROM pago");
     }
