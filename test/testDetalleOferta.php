@@ -20,16 +20,16 @@ $arrDetOferta3 = [
 
 ];
 
-$objDetOferta1= new DetalleOfertas($arrDetOferta1);
-$objDetOferta1->insert();
+//$objDetOferta1= new DetalleOfertas($arrDetOferta1);
+//$objDetOferta1->insert();
 //var_dump($objDetOferta1);
 
-$objDetOferta2= new DetalleOfertas($arrDetOferta2);
-$objDetOferta2->insert();
+//$objDetOferta2= new DetalleOfertas($arrDetOferta2);
+//$objDetOferta2->insert();
 //var_dump($objDetOferta2);
 
-$objDetOferta3= new DetalleOfertas($arrDetOferta3);
-$objDetOferta3->insert();
+//$objDetOferta3= new DetalleOfertas($arrDetOferta3);
+//$objDetOferta3->insert();
 //var_dump($objDetOferta3);
 
 //Prueba update

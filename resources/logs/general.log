@@ -6971,3 +6971,77 @@
 
 )
   
+[2021-05-20T13:19:07.016156+00:00] General.ERROR: Exception  
+[2021-05-20T13:19:07.046405+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T13:19:07.046787+00:00] General.ERROR: Line: 128  
+[2021-05-20T13:19:07.047097+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE id = '1'' at line 3  
+[2021-05-20T13:19:07.047412+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetalleOfertas.php
+            [line] => 129
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE detalleoferta SET 
+            Producto_id = :Producto_id, Oferta_id = :Oferta_id, 
+            CantidadProducto = :CantidadProducto,WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Producto_id] => 3
+                            [:Oferta_id] => 2
+                            [:CantidadProducto] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetalleOfertas.php
+            [line] => 164
+            [function] => save
+            [class] => App\Models\DetalleOfertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE detalleoferta SET 
+            Producto_id = :Producto_id, Oferta_id = :Oferta_id, 
+            CantidadProducto = :CantidadProducto,WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testDetalleOferta.php
+            [line] => 40
+            [function] => update
+            [class] => App\Models\DetalleOfertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
