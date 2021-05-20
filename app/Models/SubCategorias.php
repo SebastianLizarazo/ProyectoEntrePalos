@@ -28,7 +28,7 @@ class SubCategorias extends AbstractDBConnection implements Model
     public static function subCategoriaRegistrada (mixed $Nombre, mixed $id): bool
     {
         $sbcTmp = SubCategorias::search("SELECT * FROM subcategoria WHERE Nombre = '$Nombre' and id = '$id'");
-        return (!empty($sbcTmp)) ? true : false;
+        return (!empty($sbcTmp) ? true : false);
     }
     public function __destruct()
     {
