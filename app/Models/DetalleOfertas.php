@@ -2,7 +2,6 @@
 
 
 namespace App\Models;
-
 require ("AbstractDBConnection.php");//Importamos la clase padre
 require (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
 require(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
@@ -10,39 +9,31 @@ require(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de 
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
 
-
-/**
- *La clase mesa es hija de AbstractDBConnection e implementa la
- * interfaz Model
- */
-class Mesas extends AbstractDBConnection implements Model
+class DetalleOfertas extends AbstractDBConnection implements Model
 {
     private ?int $id;//el id es opcional porque el usuario no lo tiene que ingresar
-    private int $Numero;
-    private string $Ubicacion;
-    private int $Capacidad;
-    private string $Ocupacion;
+    private int $Producto_id;
+    private int $Oferta_id;
+    private int $CantidadProducto;
 
     /**
-     * Mesas constructor.
-     * @param array $mesa
+     * DetalleOfertas constructor.
+     * @param array $detalleOferta
      * El constructor recibe como parametro un array cuando se estan solicitando parametros de una tabla grande
      * y ese array va a guardar todos los parametros
      */
-    public function __construct(array $mesa=[])
+    public function __construct(array $detalleOferta=[])
     {
-        parent::__construct();//llamamos al constructor de la clase AbstractDBConnection
-        $this->setId($mesa['id']?? null);
-        $this->setNumero($mesa['Numero']?? 0);//Si en el array mesa hay un contenido en el indice Numero asignelo de lo contrario ponga
-        //un cero
-        $this->setUbicacion($mesa['Ubicacion']??'');
-        $this->setCapacidad($mesa['Capacidad']??0) ;
-        $this->setOcupacion($mesa['Ocupacion']??'disponible' );
+        parent::__construct();
+        $this->setId($detalleOferta['id']?? null);
+        $this->setProductoId($detalleOferta['Producto_id']?? 0);
+        $this->setOfertaId($detalleOferta['Oferta_id']?? 0);
+        $this->setCantidadProducto($detalleOferta['CantidadProducto']??0) ;
     }
 
-    public static function mesaRegistrada(mixed $id, mixed $Numero): bool
+    public static function detalleOfertaRegistrada(mixed $Producto_id, mixed $Oferta_id): bool
     {
-        $msaTmp = Mesas::search("SELECT * FROM mesa WHERE id = '$id' and Numero = '$Numero'");
+        $msaTmp = DetalleOfertas::search("SELECT * FROM detalleoferta WHERE Producto id = '$Producto_id' and Oferta id = '$Oferta_id'");
         return (!empty($msaTmp)) ? true : false;
     }
 
@@ -71,69 +62,52 @@ class Mesas extends AbstractDBConnection implements Model
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getNumero(): int
+    public function getProductoId(): string
     {
-        return $this->Numero;
+        return $this->Producto_id;
     }
 
     /**
-     * @param int $Numero
+     * @param string $Producto_id
      */
-    public function setNumero(int $Numero): void
+    public function setProductoId(string $Producto_id): void
     {
-        $this->Numero = $Numero;
+        $this->Producto_id = $Producto_id;
     }
 
     /**
      * @return string
      */
-    public function getUbicacion(): string
+    public function getOfertaId(): string
     {
-        return $this->Ubicacion;
+        return $this->Oferta_id;
     }
 
     /**
-     * @param string $Ubicacion
+     * @param string $Oferta_id
      */
-    public function setUbicacion(string $Ubicacion): void
+    public function setOfertaId(string $Oferta_id): void
     {
-        $this->Ubicacion = $Ubicacion;
+        $this->Oferta_id = $Oferta_id;
     }
 
     /**
      * @return int
      */
-    public function getCapacidad(): int
+    public function getCantidadProducto(): int
     {
-        return $this->Capacidad;
+        return $this->CantidadProducto;
     }
 
     /**
-     * @param int $Capacidad
+     * @param int $CantidadProducto
      */
-    public function setCapacidad(int $Capacidad): void
+    public function setCantidadProducto(int $CantidadProducto): void
     {
-        $this->Capacidad = $Capacidad;
+        $this->CantidadProducto = $CantidadProducto;
     }
-
-    /**
-     * @return string
-     */
-    public function getOcupacion(): string
-    {
-        return $this->Ocupacion;
-    }
-
-    /**
-     * @param string $Ocupacion
-     */
-    public function setOcupacion(string $Ocupacion): void
-    {
-        $this->Ocupacion = $Ocupacion;
-    }
-
     /**
      * @param string $query
      * @return bool|null
@@ -147,16 +121,16 @@ class Mesas extends AbstractDBConnection implements Model
     {
         $arrData = [
             ':id' =>    $this->getId(),
-            ':Numero' =>   $this->getNumero(),
-            ':Ubicacion' =>   $this->getUbicacion(),
-            ':Capacidad' =>   $this->getCapacidad(),
-            ':Ocupacion' =>   $this->getOcupacion(),
+            ':Producto_id' =>   $this->getProductoId(),
+            ':Oferta_id' =>   $this->getOfertaId(),
+            ':CantidadProducto' =>   $this->getCantidadProducto(),
         ];
         $this->Connect();
         $result = $this->insertRow($query, $arrData);//insertRow es el que inserta los datos que organiza el save
         $this->Disconnect();
         return $result;
     }
+
     /**
      * @return bool|null
      * Convierte el array del constructor en un query
@@ -165,12 +139,12 @@ class Mesas extends AbstractDBConnection implements Model
      */
     public function insert(): ?bool
     {
-        $query = "INSERT INTO Mesa VALUES (
-            :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)";
+        $query = "INSERT INTO detalleoferta VALUES (
+            :id,:Producto_id,:Oferta_id,:CantidadProducto)";
         //return $this->save($query);
         if ($this->save($query)) {
-            $idMesa = $this->getLastId('mesa');
-            $this->setId($idMesa);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla mesa
+            $idDetalleOferta = $this->getLastId('detalleoferta');
+            $this->setId($idDetalleOferta);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla detalle oferta
             return true;
         }else{
             return false;
@@ -184,9 +158,9 @@ class Mesas extends AbstractDBConnection implements Model
      */
     public function update(): ?bool
     {
-        $query = "UPDATE Mesa SET 
-            Numero = :Numero, Ubicacion = :Ubicacion, Capacidad = :Capacidad,
-            Ocupacion = :Ocupacion WHERE id = :id";
+        $query = "UPDATE detalleoferta SET 
+            Producto_id = :Producto_id, Oferta_id = :Oferta_id, 
+            CantidadProducto = :CantidadProducto,WHERE id = :id";
         return $this->save($query);
     }
 
@@ -201,16 +175,16 @@ class Mesas extends AbstractDBConnection implements Model
      * que se puede pasar de activo a inactivo de resto no se aconseja utilizar
      * el delete o hay que pensar muy bien como utilizarlo
      */
-    function deleted()
+    public function deleted()
     {
 
     }
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
-            $arrMesas = array();
-            $tmp = new Mesas();
+            $arrDetalleOferta = array();
+            $tmp = new DetalleOfertas();
 
             $tmp->Connect();
             $getrows = $tmp->getRows($query);
@@ -218,11 +192,11 @@ class Mesas extends AbstractDBConnection implements Model
 
             if (!empty($getrows)) {
                 foreach ($getrows as $valor) {
-                    $Mesa = new Mesas($valor);
-                    array_push($arrMesas, $Mesa);//aca meter el contenido del segundo parametro dentro del primero
-                    unset($Mesa); //Borrar el contenido del objeto
+                    $DetalleOferta = new DetalleOfertas($valor);
+                    array_push($arrDetalleOferta, $DetalleOferta);//aca meter el contenido del segundo parametro dentro del primero
+                    unset($DetalleOferta); //Borrar el contenido del objeto
                 }
-                return $arrMesas;
+                return $arrDetalleOferta;
             }
             return null;
         } catch (Exception $e) {
@@ -237,18 +211,18 @@ class Mesas extends AbstractDBConnection implements Model
      * Aca tenemos que especificar que el objeto que nos va a devolver va a ser
      * en este caso un objeto Mesas porque es la clase que le corresponde a este searchForId
      */
-    static function searchForId(int $id): ?Mesas
+    static function searchForId(int $id): ?DetalleOfertas
     {
         try {
             if ($id > 0) {
-                $tmpMesa = new Mesas();
-                $tmpMesa->Connect();
-                $getrow = $tmpMesa->getRow("SELECT * FROM mesa WHERE id = ?", array($id) );
+                $tmpDetalleOferta = new DetalleOfertas();
+                $tmpDetalleOferta->Connect();
+                $getrow = $tmpDetalleOferta->getRow("SELECT * FROM detalleoferta WHERE id = ?", array($id) );
 
-                $tmpMesa->Disconnect();
-                return ($getrow) ? new Mesas($getrow) : null;
+                $tmpDetalleOferta->Disconnect();
+                return ($getrow) ? new DetalleOfertas($getrow) : null;
             } else {
-                throw new Exception('Id de mesa Invalido');
+                throw new Exception('Id de detalle oferta Invalido');
             }
         } catch (Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
@@ -258,17 +232,18 @@ class Mesas extends AbstractDBConnection implements Model
 
     static function getAll(): ?array
     {
-        return Mesas::search("SELECT * FROM mesa");
+        return DetalleOfertas::search("SELECT * FROM detalleoferta");
     }
 
     public function jsonSerialize()
     {
         return [
             'id' => $this->getId(),
-            'Numero' =>$this->getNumero(),
-            'Ubicacion' =>$this->getUbicacion(),
-            'Capacidad' =>$this->getCapacidad(),
-            'Ocupacion' =>$this->getOcupacion(),
+            'Producto_id' =>$this->getProductoId(),
+            'Oferta_id' =>$this->getOfertaId(),
+            'CantidadProducto' =>$this->getCantidadProducto(),
         ];
     }
 }
+
+

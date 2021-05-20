@@ -44,7 +44,7 @@ $arrUsuario3=[
 
 //$objectUsuario1= new Usuarios($arrUsuario1);
 //var_dump($objectUsuario1);
-//$objectUsuario1->insert();
+$objectUsuario1->insert();
 
 //$objectUsuario1->setCedula(1193099653);
 //$objectUsuario1->setApellidos('Sandoval Pirri');
@@ -53,6 +53,7 @@ $arrUsuario3=[
 
 //$objectUsuario2= new Usuarios($arrUsuario2);
 //var_dump($objectUsuario2);
+
 //$objectUsuario2->insert();
 
 //$PruebaUpdate=Usuarios::searchForId(2);//Llamamos al usuario que queremos modificar
@@ -60,8 +61,10 @@ $arrUsuario3=[
 //$PruebaUpdate->update();
 //var_dump($arrUsuario2);
 
-//$objectUsuario3= new Usuarios($arrUsuario3);
+
+$objectUsuario3= new Usuarios($arrUsuario3);
 //var_dump($objectUsuario3);
+
 //$objectUsuario3->insert();
 
 //$arrResult = Usuarios::search("SELECT * FROM usuario WHERE Nombres = 'David Felipe' AND Telefono = 3132307498");
@@ -102,3 +105,4 @@ foreach ($usuarioGetALL as $Usuario)
 {
     print_r($Usuario->jsonSerialize());
 }
+

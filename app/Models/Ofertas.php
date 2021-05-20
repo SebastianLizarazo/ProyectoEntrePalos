@@ -149,13 +149,13 @@ class Ofertas extends AbstractDBConnection implements Model
         return $result;
     }
 
-    function insert(): ?bool
+    public function insert(): ?bool
     {
         $query = "INSERT INTO Oferta VALUES (
             :id,:Nombre,:Descripcion,:PrecioUnidadVentaOferta,:Estado)";
         //return $this->save($query);
         if ($this->save($query)) {
-            $idOferta = $this->getLastId('ofertas');
+            $idOferta = $this->getLastId('oferta');
             $this->setId($idOferta);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla oferta
             return true;
         }else{
@@ -172,13 +172,13 @@ class Ofertas extends AbstractDBConnection implements Model
         return $this->save($query);
     }
 
-    function deleted()
+    public function deleted()
     {
         $this->setEstado("Inactivo"); //Cambia el estado del Usuario
         return $this->update();                    //Guarda los cambios..
     }
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrOfertas = array();
