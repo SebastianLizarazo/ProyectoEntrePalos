@@ -206,14 +206,13 @@ class Empresas extends AbstractDBConnection implements Model
         return $this->save($query);
 
     }
-    function deleted()
+    public function deleted()
     {
-        $this->setEstado("Inactivo");
-        return $this->update();
+
     }
 
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrEmpresa = array();
@@ -238,7 +237,7 @@ class Empresas extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function searchForId(int $id): ?Empresas
+    public static function searchForId(int $id): ?Empresas
     {
         try {
             if ($id > 0) {
@@ -257,7 +256,7 @@ class Empresas extends AbstractDBConnection implements Model
         return null;
     }
 
-    static function getAll(): ?array
+    public static function getAll(): ?array
     {
         return Empresas::search("SELECT * FROM empresa");
     }
