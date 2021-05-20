@@ -3,67 +3,63 @@
 require ("..\app\Models\Ofertas.php");//Importamos la clase Ofertas
 use App\Models\Ofertas;
 
-$arrOferta1=[   //creamos un array ficticio
-'Nombre'=> 'Jo',
-'Descripcion'=> 'Kjkjakajkjakjckjck',
-'PrecioUnidadVentaOferta'=> 52000,
-'Estado'=> 'No disponible'
+$arrConsumoTb1=[   //creamos un array ficticio
+'Pago_id'=> 1,
+'Producto_id'=> 3,
+'CantidadProducto'=> 5,
+'Descripcion'=> 'El trabajador consumio una botella de agua'
 ];
 
-$arrOferta2=[   //creamos un array ficticio
-'Nombre'=> 'Yu',
-'Descripcion'=> 'Asfgajhkhsjs',
-'PrecioUnidadVentaOferta'=> 20000,
-'Estado'=> 'disponible'
+$arrConsumoTb2=[   //creamos un array ficticio
+    'Pago_id'=> 2,
+    'Producto_id'=> 2,
+    'CantidadProducto'=> 2,
+    'Descripcion'=> 'El trabajador consumio fritos y jugos'
 ];
 
-/**
-* Primero creo el objeto y luego lo inserto en la BD
-*/
-$arrOferta1 = new Ofertas($arrOferta1);   //Creamos un objeto Oferta
+$arrConsumoTb3=[   //creamos un array ficticio
+    'Pago_id'=> 3,
+    'Producto_id'=> 1,
+    'CantidadProducto'=> 7,
+    'Descripcion'=> 'El trabajador consumio un gaseosa 350 ml'
+];
 
-//var_dump($objectOferta1);
-$arrOferta1->insert();//Aca registramos el objeto en la bd
+$objConsumoTb1= new \App\Models\ConsumoTrabajadores($arrConsumoTb1);
+$objConsumoTb1->insert();
+//var_dump($objConsumoTb1);
 
-$arrOferta1->setNombre('Brr');
-$arrOferta1->setDescripcion('Klk');
+$objConsumoTb2= new \App\Models\ConsumoTrabajadores($arrConsumoTb2);
+$objConsumoTb2->insert();
+//var_dump($objConsumoTb2);
 
-//var_dump($objectMesa1);
-$arrOferta1->update();//para poder actualizar un registro se debe tener claro el Id de ese registro
+$objConsumoTb3= new \App\Models\ConsumoTrabajadores($arrConsumoTb3);
+$objConsumoTb3->insert();
+//var_dump($objConsumoTb3);
 
-$arrOferta2= new Ofertas($arrOferta2);//Creamos un nuevo objeto oferta
-$arrOferta2->insert();
+//Prueba update
+//$pruebaUpdate = \App\Models\ConsumoTrabajadores::searchForId(1);//Buscamos la oferta que queremos modificar
+//$pruebaUpdate->setPagoId(55000);
+//$pruebaUpdate->setProductoId('Disponible');
+//$pruebaUpdate->update();
 
+//$pruebaOfertaRegist= \App\Models\ConsumoTrabajadores::consumotrabajadorRegistrada(7, 'El trabajador consumio un gaseosa 350 ml');// Comprobamos que ya exista una oferta con esas caracteristicas
+//var_dump($pruebaOfertaRegist);
 
-$arrResult = Ofertas::search("SELECT * FROM oferta WHERE Nombre = 'Brr' AND Descripcion = 'Klk'");
-//var_dump($arrResult);
+//$pruebaSearch1Consum= Ofertas::search("SELECT * FROM consumotrabajador WHERE Descripcion = 'El trabajador consumio'");// Prueba metodo search
+///* @var $pruebaSearch1Consum \App\Models\ConsumoTrabajadores[] */
+//foreach ($pruebaSearch1Consum as $consumotb)
+//{
+//   print_r($consumotb->jsonSerialize());
+//}
 
-if (!empty($arrResult)) {//Este if comprueba si el search devuelve un resultado o devuelve un null
-/* @var $arrResult Ofertas[] */ //Esto hace que phpStorm sepa que estamos trabajando con un array de mesas
-foreach ($arrResult as $Oferta) {
-echo 'Oferta: ' . $Oferta->getNombre() .' PrecioUnidadVentaOferta: '.$Oferta->getPrecioUnidadVentaOferta(). "\n";
+//$pruebaSearch2Consum= \App\Models\ConsumoTrabajadores::searchForId(3);// Prueba metodo searchForId
+//var_dump($pruebaSearch2Consum);
+//print_r($pruebaSearch2Consum->jsonSerialize());
 
-
-}
-}
-
-$arrOferta2= Ofertas::searchForId(2);
-if (!empty($arrOferta2)){
-$arrOferta2->setDescripcion('IIIHII');
-$arrOferta2->update();
-}
-
-$arrOfertas = Ofertas::getAll();
-if (!empty($arrOfertas)){
-/* @var $arrOfertas Ofertas[] */
-foreach ($arrOfertas as $Oferta){
-echo "Nombre: ".$Oferta->getNombre()." Descripcion: ".$Oferta->getDescripcion()."\n";
-}
-
-}
-
-$JsonOferta2 = Ofertas::searchForId(2);
-echo json_encode($JsonOferta2);
-
-
-
+//$consumotbGetAll= \App\Models\ConsumoTrabajadores::getAll();// Prueba metodo getAll
+//var_dump($consumotbGetAll);
+// /* @var $consumotbGetAll \App\Models\ConsumoTrabajadores::[] */
+//foreach ($consumotbGetAll as $consumotb)
+//{
+//   print_r($consumotb->jsonSerialize());
+//}

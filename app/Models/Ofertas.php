@@ -149,7 +149,7 @@ class Ofertas extends AbstractDBConnection implements Model
         return $result;
     }
 
-    function insert(): ?bool
+    public function insert(): ?bool
     {
         $query = "INSERT INTO Oferta VALUES (
             :id,:Nombre,:Descripcion,:PrecioUnidadVentaOferta,:Estado)";
@@ -172,13 +172,13 @@ class Ofertas extends AbstractDBConnection implements Model
         return $this->save($query);
     }
 
-    function deleted()
+    public function deleted()
     {
         $this->setEstado("Inactivo"); //Cambia el estado del Usuario
         return $this->update();                    //Guarda los cambios..
     }
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrOfertas = array();

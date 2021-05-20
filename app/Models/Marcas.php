@@ -152,12 +152,12 @@ class Marcas extends AbstractDBConnection implements Model
             Estado = :Estado WHERE id = :id";
         return $this->save($query);
     }
-    function deleted()
+    public function deleted()
 {
-    $this->setEstado("Inactivo");
+    $this->setEstado("Inactiva");
     return $this->update();
 }
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrMarcas = array();
@@ -181,7 +181,7 @@ class Marcas extends AbstractDBConnection implements Model
         }
         return null;
     }
-    static function searchForId(int $id): ?Marcas
+    public static function searchForId(int $id): ?Marcas
     {
         try {
             if ($id > 0) {
@@ -199,7 +199,7 @@ class Marcas extends AbstractDBConnection implements Model
         }
         return null;
     }
-    static function getAll(): ?array
+    public static function getAll(): ?array
     {
         return Marcas::search("SELECT * FROM marca");
     }

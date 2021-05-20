@@ -4,7 +4,6 @@ require ("..\app\Models\Usuarios.php");
 use App\Models\Usuarios;
 
 $arrUsuario1=[
-
     'Cedula' => '1193088983',
     'Nombres' => 'David Felipe',
     'Apellidos' => 'Diaz Vargas',
@@ -18,7 +17,6 @@ $arrUsuario1=[
 ];
 
 $arrUsuario2=[
-
     'Cedula' => '1198648983',
     'Nombres' => 'Sebastian Eduardo',
     'Apellidos' => 'Molano Diaz',

@@ -4,9 +4,9 @@
 
 namespace App\Models;
 
-require_once ("AbstractDBConnection.php");
-require_once (__DIR__."\..\Interfaces\Model.php");
-require_once (__DIR__.'/../../vendor/autoload.php');
+require ("AbstractDBConnection.php");
+require (__DIR__."\..\Interfaces\Model.php");
+require (__DIR__.'/../../vendor/autoload.php');
 
 use Carbon\Carbon;
 use App\Interfaces\Model;
@@ -49,7 +49,7 @@ class Facturas extends AbstractDBConnection implements Model
 
     public static function facturaRegistrada(mixed $id, mixed $Numero)
     {
-        $ftaTmp = Facturas::search("SELECT * FROM Factura WHERE id = '$id' and Numero = '$Numero'");
+        $ftaTmp = Facturas::search("SELECT * FROM factura WHERE id = '$id' and Numero = '$Numero'");
         return (!empty($ftaTmp))? true :false;
     }
 
@@ -208,7 +208,7 @@ class Facturas extends AbstractDBConnection implements Model
         return $result;
     }
 
-    public function insert(): ?bool
+    function insert()
     {
         $query = "INSERT INTO factura VALUES (
             :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)";
@@ -221,10 +221,10 @@ class Facturas extends AbstractDBConnection implements Model
         }
     }
 
-    public function update(): ?bool
+    function update()
     {
         $query = "UPDATE factura SET
-                Numero = :Numero, Fecha = :Fecha, IVA = :IVA, MedioPago = :MedioPago,
+                Numero = :Numero,Fecha =:Fecha, IVA = :IVA, MedioPago = :MedioPago,
                 Mesero_id = :Mesero_id, Estado = :Estado, TipoPedido = :TipoPedido WHERE id = :id";
         return $this->save($query);
     }
@@ -250,14 +250,14 @@ class Facturas extends AbstractDBConnection implements Model
 
             if (!empty($getrows)) {
                 foreach ($getrows as $valor) {
-                    $Factura = new Facturas($valor);
+                    $Factura = new Mesas($valor);
                     array_push($arrFacturas, $Factura);//aca meter el contenido del segundo parametro dentro del primero
                     unset($Factura); //Borrar el contenido del objeto
                 }
                 return $arrFacturas;
             }
             return null;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -274,9 +274,9 @@ class Facturas extends AbstractDBConnection implements Model
                 $tmpFactura->Disconnect();
                 return ($getrow) ? new Facturas($getrow) : null;
             } else {
-                throw new \Exception('Id de factura Invalido');
+                throw new Exception('Id de factura Invalido');
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -284,7 +284,7 @@ class Facturas extends AbstractDBConnection implements Model
 
     public static function getAll(): ?array
     {
-        return Facturas::search("SELECT * FROM factura");
+        return Facturas::search("SELECT * FORM factura");
     }
 
     public function jsonSerialize()
