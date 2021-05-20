@@ -23,10 +23,10 @@ class Pagos extends AbstractDBConnection implements Model
     {
         parent::__construct();
         $this->setId($Pago['id']?? null);
-        $this->setTrabajadorid($Pago['Trabajadorid']??'');
-        $this->setFecha(!empty($pago['Fecha']) ?
-            Carbon::parse($pago['Fecha']) : new Carbon());
-        $this->setEstado($Pago['Pendiente']?? 'Saldado') ;
+        $this->setTrabajadorId($Pago['Trabajador_id']?? 0);
+        $this->setFecha(!empty($Pago['Fecha']) ?
+            Carbon::parse($Pago['Fecha']) : new Carbon());
+        $this->setEstado($Pago['Estado']?? 'Pendiente') ;
     }
     public static function pagoRegistrado(mixed $Trabajador_id, mixed $id): bool
     {
@@ -107,7 +107,7 @@ class Pagos extends AbstractDBConnection implements Model
     {
         $arrData = [
             ':id' =>    $this->getId(),
-            ':TrabajadorId' =>   $this->getTrabajadorId(),
+            ':Trabajador_id' =>   $this->getTrabajadorId(),
             ':Fecha' =>   $this->getFecha()->toDateString(),
             ':Estado' =>   $this->getEstado(),
         ];
@@ -135,14 +135,14 @@ class Pagos extends AbstractDBConnection implements Model
             WHERE id = :id";
         return $this->save($query);
     }
-    function deleted()
+    public function deleted()
     {
         $this->setEstado("Pendiente");
         return $this->update();
     }
 
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrPagos = array();
@@ -161,12 +161,12 @@ class Pagos extends AbstractDBConnection implements Model
                 return $arrPagos;
             }
             return null;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
     }
-    static function searchForId(int $id): ?Pagos
+    public static function searchForId(int $id): ?Pagos
     {
         try {
             if ($id > 0) {
@@ -177,15 +177,15 @@ class Pagos extends AbstractDBConnection implements Model
                 $tmppgo->Disconnect();
                 return ($getrow) ? new Pagos($getrow) : null;
             } else {
-                throw new Exception('Id de usuario Invalido');
+                throw new \Exception('Id de Pago Invalido');
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
     }
 
-    static function getAll(): ?array
+    public static function getAll(): ?array
     {
         return Pagos::search("SELECT * FROM pago");
     }
