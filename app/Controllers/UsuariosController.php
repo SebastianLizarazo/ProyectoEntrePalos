@@ -31,7 +31,7 @@ class UsuariosController
     public function create()
     {
         try {
-            if (!empty($this->dataUsuario['Id']) && !empty($this->dataUsuario['Cedula']) && !Usuarios::empresaRegistrada($this->dataUsuario['Id'], $this->dataEmpresa['Cedula'])) {
+            if (!empty($this->dataUsuario['Cedula']) && !empty($this->dataUsuario['Nombres']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'], $this->dataUsuario['Nombres'])) {
                 $Usuario = new Usuarios($this->dataUsuario);
                 if ($Usuario->insert()) {
                     //unset($_SESSION['frmUsuarios']);
