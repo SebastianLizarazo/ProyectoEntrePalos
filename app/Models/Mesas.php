@@ -43,7 +43,7 @@ class Mesas extends AbstractDBConnection implements Model
     public static function mesaRegistrada(mixed $id, mixed $Numero): bool
     {
         $msaTmp = Mesas::search("SELECT * FROM mesa WHERE id = '$id' and Numero = '$Numero'");
-        return (!empty($msaTmp)) ? true : false;
+        return (!empty($msaTmp) ? true : false);
     }
 
     public function __destruct()

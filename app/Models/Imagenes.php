@@ -44,8 +44,8 @@ class Imagenes extends AbstractDBConnection implements Model
 
     public static function imagenRegistrada(int $id, string $Ruta): bool
     {
-        $imgTmp = Imagenes::search("SELECT * FROM imagen WHERE id = '$id' and Estado = '$Ruta'");
-        return (!empty($imgTmp))? true : false;
+        $imgTmp = Imagenes::search("SELECT * FROM imagen WHERE id = $id and Ruta = '$Ruta'");
+        return (!empty($imgTmp)? true : false);
     }
 
     public function __destruct()
