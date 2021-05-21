@@ -43,7 +43,7 @@ class Mesas extends AbstractDBConnection implements Model
     public static function mesaRegistrada(mixed $id, mixed $Numero): bool
     {
         $msaTmp = Mesas::search("SELECT * FROM mesa WHERE id = '$id' and Numero = '$Numero'");
-        return (!empty($msaTmp)) ? true : false;
+        return (!empty($msaTmp) ? true : false);
     }
 
     public function __destruct()
@@ -201,12 +201,12 @@ class Mesas extends AbstractDBConnection implements Model
      * que se puede pasar de activo a inactivo de resto no se aconseja utilizar
      * el delete o hay que pensar muy bien como utilizarlo
      */
-    function deleted()
+    public function deleted()
     {
 
     }
 
-    static function search($query): ?array
+    public static function search($query): ?array
     {
         try {
             $arrMesas = array();
@@ -237,7 +237,7 @@ class Mesas extends AbstractDBConnection implements Model
      * Aca tenemos que especificar que el objeto que nos va a devolver va a ser
      * en este caso un objeto Mesas porque es la clase que le corresponde a este searchForId
      */
-    static function searchForId(int $id): ?Mesas
+    public static function searchForId(int $id): ?Mesas
     {
         try {
             if ($id > 0) {
@@ -248,15 +248,15 @@ class Mesas extends AbstractDBConnection implements Model
                 $tmpMesa->Disconnect();
                 return ($getrow) ? new Mesas($getrow) : null;
             } else {
-                throw new Exception('Id de mesa Invalido');
+                throw new \Exception('Id de mesa Invalido');
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
     }
 
-    static function getAll(): ?array
+    public static function getAll(): ?array
     {
         return Mesas::search("SELECT * FROM mesa");
     }
