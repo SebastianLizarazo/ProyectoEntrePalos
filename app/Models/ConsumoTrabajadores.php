@@ -26,14 +26,14 @@ class ConsumoTrabajadores extends AbstractDBConnection implements Model
     /**
      * ConsumoTrabajadores constructor.
      */
-    public function __construct()
+    public function __construct(array $consumoTrabajador=[])
     {
         parent::__construct();//llamamos al constructor de la clase AbstractDBConnection
         $this->setId($consumoTrabajador['id']?? null);
         $this->setPagoId($consumoTrabajador['Pago_id']?? 0);
         $this->setProductoId($consumoTrabajador['Producto_id']??0);
         $this->setCantidadProducto($consumoTrabajador['CantidadProducto']??0) ;
-        $this->setDescripcion($consumoTrabajador['Descripcion']??0);
+        $this->setDescripcion($consumoTrabajador['Descripcion']??'');
     }
     public static function consumoTrabajadorRegistrada(mixed $CantidadProducto, mixed $Descripcion): bool
     {
@@ -214,7 +214,7 @@ class ConsumoTrabajadores extends AbstractDBConnection implements Model
                 foreach ($getrows as $valor) {
                     $ConsumoTrabajador = new ConsumoTrabajadores($valor);
                     array_push($arrConsumoTrabajadores, $ConsumoTrabajador);//aca meter el contenido del segundo parametro dentro del primero
-                    unset($Mesa); //Borrar el contenido del objeto
+                    unset($ConsumoTrabajador); //Borrar el contenido del objeto
                 }
                 return $arrConsumoTrabajadores;
             }

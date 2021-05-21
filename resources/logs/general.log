@@ -7088,6 +7088,1320 @@
 
 )
   
+[2021-05-20T14:56:44.394771+00:00] General.ERROR: Exception  
+[2021-05-20T14:56:44.416504+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T14:56:44.416886+00:00] General.ERROR: Line: 128  
+[2021-05-20T14:56:44.417190+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T14:56:44.417542+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 0
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 28
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T14:56:44.664605+00:00] General.ERROR: Exception  
+[2021-05-20T14:56:44.665339+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T14:56:44.665586+00:00] General.ERROR: Line: 128  
+[2021-05-20T14:56:44.665804+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T14:56:44.666034+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 0
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 32
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T14:56:44.779301+00:00] General.ERROR: Exception  
+[2021-05-20T14:56:44.779762+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T14:56:44.779886+00:00] General.ERROR: Line: 128  
+[2021-05-20T14:56:44.779991+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T14:56:44.780103+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 0
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 36
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:02:12.409502+00:00] General.ERROR: Exception  
+[2021-05-20T15:02:12.411355+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:02:12.411685+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:02:12.411967+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:02:12.412276+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 28
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:02:13.001299+00:00] General.ERROR: Exception  
+[2021-05-20T15:02:13.002500+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:02:13.002819+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:02:13.003098+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:02:13.003532+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 32
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:02:13.255604+00:00] General.ERROR: Exception  
+[2021-05-20T15:02:13.256679+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:02:13.256997+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:02:13.257274+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:02:13.257567+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 36
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:02:15.269103+00:00] General.ERROR: Exception  
+[2021-05-20T15:02:15.270922+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:02:15.271259+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:02:15.271543+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:02:15.271848+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 28
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:02:15.469193+00:00] General.ERROR: Exception  
+[2021-05-20T15:02:15.470285+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:02:15.470611+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:02:15.470891+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:02:15.471184+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 32
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:02:15.657969+00:00] General.ERROR: Exception  
+[2021-05-20T15:02:15.659077+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:02:15.659470+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:02:15.659638+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:02:15.659809+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 36
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:09:02.014417+00:00] General.ERROR: Exception  
+[2021-05-20T15:09:02.058258+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:09:02.058652+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:09:02.058980+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:09:02.059350+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 28
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:09:02.276842+00:00] General.ERROR: Exception  
+[2021-05-20T15:09:02.277806+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:09:02.278145+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:09:02.278434+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:09:02.278709+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 32
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:09:02.405127+00:00] General.ERROR: Exception  
+[2021-05-20T15:09:02.406641+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:09:02.407183+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:09:02.407483+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:09:02.408875+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 36
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:19:05.604756+00:00] General.ERROR: Exception  
+[2021-05-20T15:19:05.608451+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:19:05.609097+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:19:05.609667+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:19:05.610775+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 28
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:19:05.696766+00:00] General.ERROR: Exception  
+[2021-05-20T15:19:05.697687+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:19:05.697953+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:19:05.698260+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:19:05.698526+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 32
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:19:05.762991+00:00] General.ERROR: Exception  
+[2021-05-20T15:19:05.763732+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:19:05.763940+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:19:05.764110+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:19:05.764290+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 36
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:19:09.034730+00:00] General.ERROR: Exception  
+[2021-05-20T15:19:09.036557+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:19:09.036890+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:19:09.037386+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:19:09.037950+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 28
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:19:09.157558+00:00] General.ERROR: Exception  
+[2021-05-20T15:19:09.158602+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:19:09.158954+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:19:09.159768+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:19:09.160207+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 32
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-20T15:19:09.308064+00:00] General.ERROR: Exception  
+[2021-05-20T15:19:09.308861+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-20T15:19:09.309131+00:00] General.ERROR: Line: 128  
+[2021-05-20T15:19:09.309486+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`consumotrabajador`, CONSTRAINT `fk_Pago_has_Producto_Pago1` FOREIGN KEY (`Pago_id`) REFERENCES `pago` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-05-20T15:19:09.309782+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 150
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Pago_id] => 0
+                            [:Producto_id] => 0
+                            [:CantidadProducto] => 0
+                            [:Descripcion] => 
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\ConsumoTrabajadores.php
+            [line] => 165
+            [function] => save
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO consumotrabajador VALUES (
+            :id,:Pago_id,:Producto_id,:CantidadProducto,:Descripcion)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testConsumoTrabajador.php
+            [line] => 36
+            [function] => insert
+            [class] => App\Models\ConsumoTrabajadores
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
 [2021-05-19T14:38:38.002774+00:00] General.ERROR: Exception  
 [2021-05-19T14:38:38.003775+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
 [2021-05-19T14:38:38.003912+00:00] General.ERROR: Line: 128  
