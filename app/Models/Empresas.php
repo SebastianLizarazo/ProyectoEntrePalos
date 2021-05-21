@@ -45,7 +45,7 @@ class Empresas extends AbstractDBConnection implements Model
     public static function empresaRegistrada(mixed $id, mixed $NIT): bool
     {
         $empresatmp = Empresas::search("SELECT * FROM empresa WHERE id = '$id' and NIT = '$NIT'");
-        return (!empty($empresatmp)) ? true : false;
+        return (!empty($empresatmp) ? true : false);
     }
     public function __destruct()
     {
