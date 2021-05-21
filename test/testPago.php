@@ -23,8 +23,8 @@ $arrPago3 = [
     'Fecha' => '2021-12-05',
     'Estado' => 'Pendiente',
 ];
-//$objPago = new Pagos($arrPago); // Creamos un usuario... Pero no echo nada con el.
-//$objPago->insert(); //Registramos el objeto en la base de datos
+$objPago = new Pagos($arrPago); // Creamos un usuario... Pero no echo nada con el.
+$objPago->insert(); //Registramos el objeto en la base de datos
 
 //$objPago->setTrabajadorId(3); //Cambio Valores
 //$objPago->setFecha("2021-01-10"); //Cambio Valores
@@ -33,8 +33,8 @@ $arrPago3 = [
 //$objPago->deleted();
 
 
-//$objPago2 = new Pagos($arrPago2);
-//$objPago2->insert();
+$objPago2 = new Pagos($arrPago2);
+$objPago2->insert();
 
 //$arrResult = Pagos::search("SELECT * FROM pago WHERE Trabajador_id = 3 ");
 //if (!empty($arrResult)) {
@@ -61,9 +61,9 @@ $arrPago3 = [
 //$arrPago2 = Pagos::searchForId(5);
 //echo json_encode($arrPago2);
 
-//$objPago3= new Pagos( $arrPago3);
+$objPago3= new Pagos( $arrPago3);
 //var_dump($objPago3);
-//$objPago3->insert();
+$objPago3->insert();
 
 //$pruebaPagoRegis= Pagos::pagoRegistrado('1',1);// Comprobamos que ya exista una marca con esas caracteristicas
 //var_dump($pruebaPagoRegis);

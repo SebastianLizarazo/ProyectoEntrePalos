@@ -1,19 +1,19 @@
 <?php
 //Este archivo es para hacer pruebas unitarias de la clase Oferta
-require ("..\app\Models\Ofertas.php");//Importamos la clase Ofertas
-use App\Models\Ofertas;
+require ("..\app\Models\ConsumoTrabajadores.php");//Importamos la clase Ofertas
+use App\Models\ConsumoTrabajadores;
 
 $arrConsumoTb1=[   //creamos un array ficticio
-'Pago_id'=> 1,
-'Producto_id'=> 3,
-'CantidadProducto'=> 5,
-'Descripcion'=> 'El trabajador consumio una botella de agua'
+    'Pago_id'=> 1,
+    'Producto_id'=> 3,
+    'CantidadProducto'=> 5,
+    'Descripcion'=> 'El trabajador consumio una botella de agua'
 ];
 
 $arrConsumoTb2=[   //creamos un array ficticio
     'Pago_id'=> 2,
     'Producto_id'=> 2,
-    'CantidadProducto'=> 2,
+    'CantidadProducto'=> 20,
     'Descripcion'=> 'El trabajador consumio fritos y jugos'
 ];
 
@@ -21,11 +21,11 @@ $arrConsumoTb3=[   //creamos un array ficticio
     'Pago_id'=> 3,
     'Producto_id'=> 1,
     'CantidadProducto'=> 7,
-    'Descripcion'=> 'El trabajador consumio un gaseosa 350 ml'
+    'Descripcion'=> 'El trabajador consumio un hamburguesa extra grande'
 ];
 
-$objConsumoTb1= new \App\Models\ConsumoTrabajadores($arrConsumoTb1);
-$objConsumoTb1->insert();
+//$objConsumoTb1= new \App\Models\ConsumoTrabajadores($arrConsumoTb1);
+//$objConsumoTb1->insert();
 //var_dump($objConsumoTb1);
 
 $objConsumoTb2= new \App\Models\ConsumoTrabajadores($arrConsumoTb2);
