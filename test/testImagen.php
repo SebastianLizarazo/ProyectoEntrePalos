@@ -65,8 +65,8 @@ $arrImage1 = [
 //$pruebaUpdate->update();
 
 // Prueba imagen registrada
-//$pruebImagenRegis = Imagenes::imagenRegistrada(4,'c:proyecto/imagenes/imagen4.png');
-//var_dump($pruebImagenRegis);
+$pruebImagenRegis = Imagenes::imagenRegistrada(4,'c:proyecto/imagenes/imagen4.png');
+var_dump($pruebImagenRegis);
 
 //Prueba delete
 //$pruebaDelete = Imagenes::searchForId(3);

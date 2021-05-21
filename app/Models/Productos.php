@@ -63,7 +63,7 @@ class Productos extends AbstractDBConnection implements Model
     public static function productoRegistrado(int $id, mixed $Referencia): bool
     {
         $prdTmp= Productos::search("SELECT * FROM producto WHERE id = '$id' and Referencia = '$Referencia'");
-        return (!empty($prdTmp))? true : false;
+        return (!empty($prdTmp)? true : false);
     }
 
     public function __destruct()
