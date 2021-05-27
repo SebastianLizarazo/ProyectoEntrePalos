@@ -248,6 +248,13 @@ class Usuarios extends AbstractDBConnection implements Model
         $this->Empresa_id = $Empresa_id;
     }
 
+    public function getEmpresas(): ?Empresas
+    {
+        if (!empty($this->Empresa_id)) {
+            return Empresas::searchForId($this->Empresa_id) ?? new Empresas();
+        }
+        return null;
+    }
 
     protected function save(string $query): ?bool
     {
