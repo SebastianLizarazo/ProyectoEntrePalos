@@ -26,6 +26,8 @@ class Productos extends AbstractDBConnection implements Model
     private  int $Subcategoria_id;
     private  string $Estado;
 
+
+
     /**
      * Productos constructor.
      * @param int|null $id
@@ -280,7 +282,16 @@ class Productos extends AbstractDBConnection implements Model
     {
         $this->Estado = $Estado;
     }
-
+    public function getSubCategoria(): ?array
+    {
+        //if (!empty($this-> ProductoSubCategoria)) {
+        $this->ProductoSubCategoria = Productos::search(
+            "SELECT * FROM producto WHERE Subcategoria_id = ".$this->getId()
+        );
+        return ($this->ProductoSubCategoria)?? null;
+        //}
+        //return null;
+    }
 
     protected function save(string $query): ?bool
     {
