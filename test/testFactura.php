@@ -48,20 +48,20 @@ $arrFactura4 = [
 
 ];
 
-//$objFactura1= new Facturas($arrFactura1);
-//$objFactura1->insert();
+$objFactura1= new Facturas($arrFactura1);
+$objFactura1->insert();
 //var_dump($objFactura1);
 
-//$objFactura2= new Facturas($arrFactura2);
-//$objFactura2->insert();
+$objFactura2= new Facturas($arrFactura2);
+$objFactura2->insert();
 //var_dump($objFactura1);
 
-//$objFactura3 = new Facturas($arrFactura3);
-//$objFactura3->insert();
+$objFactura3 = new Facturas($arrFactura3);
+$objFactura3->insert();
 //var_dump($objFactura3);
 
-//$objFactura4= new Facturas($arrFactura4);
-//$objFactura4->insert();
+$objFactura4= new Facturas($arrFactura4);
+$objFactura4->insert();
 //var_dump($objFactura4);
 
 //Prueba update
@@ -70,8 +70,8 @@ $arrFactura4 = [
 //$pruebaUpdate->setTipoPedido('Domicilio');
 //$pruebaUpdate->update();
 
-$pruebFacRegist= Facturas::facturaRegistrada(2,2);// Comprobamos que ya exista un fatura con esas caracteristicas
-var_dump($pruebFacRegist);
+//$pruebFacRegist= Facturas::facturaRegistrada(2,2);// Comprobamos que ya exista un fatura con esas caracteristicas
+//var_dump($pruebFacRegist);
 
 
 //$pruebSearch1Fac= Facturas::search("SELECT * FROM factura WHERE Estado = 'Paga'");// Prueba metodo search

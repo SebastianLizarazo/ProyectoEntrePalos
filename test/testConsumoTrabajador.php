@@ -24,8 +24,8 @@ $arrConsumoTb3=[   //creamos un array ficticio
     'Descripcion'=> 'El trabajador consumio un hamburguesa extra grande'
 ];
 
-//$objConsumoTb1= new \App\Models\ConsumoTrabajadores($arrConsumoTb1);
-//$objConsumoTb1->insert();
+$objConsumoTb1= new \App\Models\ConsumoTrabajadores($arrConsumoTb1);
+$objConsumoTb1->insert();
 //var_dump($objConsumoTb1);
 
 $objConsumoTb2= new \App\Models\ConsumoTrabajadores($arrConsumoTb2);

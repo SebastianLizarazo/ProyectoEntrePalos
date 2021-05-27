@@ -50,7 +50,7 @@ class Facturas extends AbstractDBConnection implements Model
     public static function facturaRegistrada(mixed $id, mixed $Numero)
     {
         $ftaTmp = Facturas::search("SELECT * FROM Factura WHERE id = '$id' and Numero = '$Numero'");
-        return (!empty($ftaTmp))? true :false;
+        return (!empty($ftaTmp)? true :false);
     }
 
     public function __destruct()

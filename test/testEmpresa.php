@@ -35,16 +35,16 @@ $arrEmpresa3=[
 * Primero creo el objeto y luego lo inserto en la BD
 */
 
-//$objectEmpresa1= new Empresas($arrEmpresa1);
+$objectEmpresa1= new Empresas($arrEmpresa1);
 //var_dump($objectEmpresa1);
-//$objectEmpresa1->insert();
+$objectEmpresa1->insert();
 
-$arrEmpresa1 = Empresas::searchForId(3);
+//$arrEmpresa1 = Empresas::searchForId(3);
 //var_dump($arrEmpresa1);
-if (!empty($arrEmpresa1)) {
-    $arrEmpresa1->setMunicipioid(5837);
-    $arrEmpresa1->update();
-}
+//if (!empty($arrEmpresa1)) {
+//    $arrEmpresa1->setMunicipioid(5837);
+//    $arrEmpresa1->update();
+//}
 
 //$arrEmpresa1 = Empresas::searchForId(1);//Llamamos al usuario que queremos modificar
 //var_dump($arrEmpresa1);
@@ -52,11 +52,11 @@ if (!empty($arrEmpresa1)) {
 //$arrEmpresa1->update();
 //var_dump($objectEmpresa1);
 
-//$objectEmpresa2= new Empresas($arrEmpresa2);//Creamos un nuevo objeto mesa
-//$objectEmpresa2->insert();
+$objectEmpresa2= new Empresas($arrEmpresa2);//Creamos un nuevo objeto mesa
+$objectEmpresa2->insert();
 
-//$objectEmpresa3= new Empresas($arrEmpresa3);
-//$objectEmpresa3->insert();
+$objectEmpresa3= new Empresas($arrEmpresa3);
+$objectEmpresa3->insert();
 
 //$arrResult = Empresas::search("SELECT * FROM empresa WHERE Nombre = 'pool' AND Telefono = 3207651298");
 //var_dump($arrResult);

@@ -34,7 +34,7 @@ class DetallePedidos extends AbstractDBConnection implements Model
     {
         parent::__construct();
         $this->setId($detallePedido['id']?? null);
-        $this->setFacturaId($detallePedido['Factura_id']?? null);
+        $this->setFacturaId($detallePedido['Factura_id']?? 0);
         $this->setProductoId($detallePedido['Producto_id']?? null);
         $this->setOfertasId($detallePedido['Ofertas_id']?? null);
         $this->setCantidadProducto($detallePedido['CantidadProducto']?? null);
@@ -45,7 +45,7 @@ class DetallePedidos extends AbstractDBConnection implements Model
     public static function detallePedidoRegistrado(mixed $id, mixed $Factura_id)
     {
         $dtoTmp = DetallePedidos::search("SELECT * FROM detallepedido WHERE id ='$id' and Factura_id ='$Factura_id'");
-        return (!empty($dtoTmp))? true : false;
+        return (!empty($dtoTmp)? true : false);
     }
 
     public function __destruct()
