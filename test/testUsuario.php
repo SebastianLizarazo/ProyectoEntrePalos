@@ -42,7 +42,7 @@ $arrUsuario3=[
     'Empresa_id' => 1
 ];
 
-//$objectUsuario1= new Usuarios($arrUsuario1);
+$objectUsuario1= new Usuarios($arrUsuario1);
 //var_dump($objectUsuario1);
 $objectUsuario1->insert();
 
@@ -51,10 +51,10 @@ $objectUsuario1->insert();
 //var_dump($objectUsuario1);
 //$objectUsuario1->update();
 
-//$objectUsuario2= new Usuarios($arrUsuario2);
+$objectUsuario2= new Usuarios($arrUsuario2);
 //var_dump($objectUsuario2);
 
-//$objectUsuario2->insert();
+$objectUsuario2->insert();
 
 //$PruebaUpdate=Usuarios::searchForId(2);//Llamamos al usuario que queremos modificar
 //$PruebaUpdate->setEstado('Inactivo');
@@ -65,7 +65,7 @@ $objectUsuario1->insert();
 $objectUsuario3= new Usuarios($arrUsuario3);
 //var_dump($objectUsuario3);
 
-//$objectUsuario3->insert();
+$objectUsuario3->insert();
 
 //$arrResult = Usuarios::search("SELECT * FROM usuario WHERE Nombres = 'David Felipe' AND Telefono = 3132307498");
 //var_dump($arrResult);

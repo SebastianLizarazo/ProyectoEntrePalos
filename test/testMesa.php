@@ -41,17 +41,17 @@ $objectMesa2 = new Mesas($arrMesa2);//Creamos un nuevo objeto mesa
 $objectMesa2->insert();
 
 
-$arrResult = Mesas::search("SELECT * FROM mesa WHERE Ubicacion = 'Balcon' AND Capacidad = 5");
+//$arrResult = Mesas::search("SELECT * FROM mesa WHERE Ubicacion = 'Balcon' AND Capacidad = 5");
 //var_dump($arrResult);
 
-if (!empty($arrResult)) {//Este if comprueba si el search devuelve un resultado o devuelve un null
-    /* @var $arrResult Mesas[] */ //Esto hace que phpStorm sepa que estamos trabajando con un array de mesas
-    foreach ($arrResult as $Mesa) {
-        echo 'Mesa: ' . $Mesa->getNumero() . ' Ocupacion: ' . $Mesa->getOcupacion() . "\n";
+//if (!empty($arrResult)) {//Este if comprueba si el search devuelve un resultado o devuelve un null
+//    /* @var $arrResult Mesas[] */ //Esto hace que phpStorm sepa que estamos trabajando con un array de mesas
+//    foreach ($arrResult as $Mesa) {
+//        echo 'Mesa: ' . $Mesa->getNumero() . ' Ocupacion: ' . $Mesa->getOcupacion() . "\n";
 
 
-    }
-}
+//    }
+//}
 
 
 $objMesa2 = Mesas::searchForId(2);

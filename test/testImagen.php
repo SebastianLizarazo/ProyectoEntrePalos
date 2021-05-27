@@ -7,7 +7,7 @@ $arrImage1 = [
 
     'Nombre' => 'Imagen Hamburguesa 1',
     'Descripcion' => 'Foto simple del producto hamburguesa doble',
-    'Ruta' => 'c:proyecto\imagenes\imagen1.png',
+    'Ruta' => 'c:proyecto/imagenes/imagen1.png',
     'Estado' => 'Activo',
     'Producto_id' => 1,
     'Oferta_id' => 2,
@@ -16,7 +16,7 @@ $arrImage1 = [
 
     'Nombre' => 'Imagen Hamburguesa 2',
     'Descripcion' => 'Foto simple del producto hamburguesa triple',
-    'Ruta' => 'c:proyecto\imagenes\imagen2.png',
+    'Ruta' => 'c:proyecto/imagenes/imagen2.png',
     'Estado' => 'Activo',
     'Producto_id' => 3,
     'Oferta_id' => 1,
@@ -25,7 +25,7 @@ $arrImage1 = [
 
     'Nombre' => 'Imagen Alitas BBQ 1',
     'Descripcion' => 'Foto simple del producto alitas BBQ medianas',
-    'Ruta' => 'c:proyecto\imagenes\imagen3.png',
+    'Ruta' => 'c:proyecto/imagenes/imagen3.png',
     'Estado' => 'Activo',
     'Producto_id' => 2,
     'Oferta_id' => 1,
@@ -34,7 +34,7 @@ $arrImage1 = [
 
     'Nombre' => 'Imagen Gaseosa Coca Cola',
     'Descripcion' => 'Foto de la gaseosa Coca Cola en baso de vidrio',
-    'Ruta' => 'c:proyecto\imagenes\imagen4.png',
+    'Ruta' => 'c:proyecto/imagenes/imagen4.png',
     'Estado' => 'Inactivo',
     'Producto_id' => 2,
     'Oferta_id' => 2,
@@ -60,11 +60,12 @@ $imagen4->insert();
 
 // Prueba update
 //$pruebaUpdate = Imagenes::searchForId(2);
-//$pruebaUpdate->setNombre('BBQ extreme');
+//$pruebaUpdate->setNombre('BBQ');
 //$pruebaUpdate->setEstado('Inactivo');
+//$pruebaUpdate->update();
 
 // Prueba imagen registrada
-//$pruebImagenRegis = Imagenes::imagenRegistrada(3,'c:proyecto\imagenes\imagen3.png');
+//$pruebImagenRegis = Imagenes::imagenRegistrada(4,'c:proyecto/imagenes/imagen4.png');
 //var_dump($pruebImagenRegis);
 
 //Prueba delete
@@ -73,7 +74,7 @@ $imagen4->insert();
 //print_r($pruebaDelete->jsonSerialize());
 
 // Prueba search
-//$pruebaSearch = Imagenes::search("SELECT id,Nombre,Ruta FROM imagen WHERE Ruta = 'c:proyecto\imagenes\imagen1.png'");
+//$pruebaSearch = Imagenes::search("SELECT * FROM imagen WHERE id = 1");
 ///* @var $pruebaSearch App\Models\Imagenes[] */
 //foreach ($pruebaSearch as $Imagen)
 //{
