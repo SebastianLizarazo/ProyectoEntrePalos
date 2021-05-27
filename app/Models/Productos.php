@@ -282,15 +282,13 @@ class Productos extends AbstractDBConnection implements Model
     {
         $this->Estado = $Estado;
     }
-    public function getSubCategoria(): ?array
+    public function getSubcategoria():?SubCategorias
     {
-        //if (!empty($this-> ProductoSubCategoria)) {
-        $this->ProductoSubCategoria = Productos::search(
-            "SELECT * FROM producto WHERE Subcategoria_id = ".$this->getId()
-        );
-        return ($this->ProductoSubCategoria)?? null;
-        //}
-        //return null;
+        if (!empty($this->Subcategoria_id))
+        {
+            return SubCategorias::searchForId($this->Subcategoria_id)?? new SubCategorias();
+        }
+        return null;
     }
 
     protected function save(string $query): ?bool
