@@ -169,6 +169,14 @@ class Imagenes extends AbstractDBConnection implements Model
         $this->Oferta_id = $Oferta_id;
     }
 
+    public function getOferta():?Ofertas
+    {
+        if (!empty($this->Oferta_id))
+        {
+            return Ofertas::searchForId($this->Oferta_id)?? new Ofertas();
+        }
+        return null;
+    }
 
     protected function save(string $query): ?bool
     {
