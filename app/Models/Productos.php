@@ -44,6 +44,11 @@ class Productos extends AbstractDBConnection implements Model
      * @param int $Subcategoria_id
      * @param string $Estado
      */
+
+    private ?array $ImagenProductos;
+    private ?array $DetalleOfertaProductos;
+    private ?array $DetallePedidoProductos;
+
     public function __construct(array $producto=[])
     {
         parent::__construct();
@@ -290,7 +295,36 @@ class Productos extends AbstractDBConnection implements Model
         }
         return null;
     }
-
+    public function getImagenProductos(): ?array
+    {
+        //if (!empty($this->ImagenProductos)) {
+        $this->ImagenProductos = Imagenes::search(
+            "SELECT * FROM imagen WHERE Producto_id = ".$this->getId()
+        );
+        return ($this->ImagenProductos)?? null;
+        //}
+        //return null;
+    }
+    public function getDetalleOfertaProductos(): ?array
+    {
+        //if (!empty($this->DetalleOfertaProductos)) {
+        $this->DetalleOfertaProductos = DetalleOfertas::search(
+            "SELECT * FROM detalleoferta WHERE Producto_id = ".$this->getId()
+        );
+        return ($this->DetalleOfertaProductos)?? null;
+        //}
+        //return null;
+    }
+    public function getDetallePedidoProductos(): ?array
+    {
+        //if (!empty($this->DetallePedidoProductos)) {
+        $this->DetallePedidoProductos = DetallePedidos::search(
+            "SELECT * FROM detallepedido WHERE Producto_id = ".$this->getId()
+        );
+        return ($this->DetallePedidoProductos)?? null;
+        //}
+        //return null;
+    }
     protected function save(string $query): ?bool
     {
         $arrData = [

@@ -184,7 +184,14 @@ class DetallePedidos extends AbstractDBConnection implements Model
         }
         return null;
     }
-
+    public function getProducto():?Productos
+    {
+        if (!empty($this->Producto_id))
+        {
+            return Productos::searchForId($this->Producto_id)?? new Productos();
+        }
+        return null;
+    }
     protected function save(string $query): ?bool
     {
         $arrData = [
