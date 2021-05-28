@@ -136,6 +136,14 @@ class ConsumoTrabajadores extends AbstractDBConnection implements Model
         }
         return null;
     }
+    public function getProductos():?Productos
+    {
+        if (!empty($this->Producto_id))
+        {
+            return Productos::searchForId($this->Producto_id)?? new Productos();
+        }
+        return null;
+    }
 
 
 
