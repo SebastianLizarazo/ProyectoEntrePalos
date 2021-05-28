@@ -103,6 +103,14 @@ class Pagos extends AbstractDBConnection implements Model
     {
         $this->Estado = $Estado;
     }
+
+    public function getTrabajador(): ?Usuarios
+    {
+        if (!empty($this->Trabajador_id)){
+            return Usuarios::searchForId($this->Trabajador_id)?? new Usuarios();
+        }
+        return null;
+    }
     protected function save(string $query): ?bool
     {
         $arrData = [

@@ -25,6 +25,12 @@ class Usuarios extends AbstractDBConnection implements Model
     private string $Rol;
     private string $Estado;
     private int $Empresa_id;
+
+    /*Relaciones*/
+    private ?array $FacturasMesero;
+    private ?array $MarcasProveedor;
+    private ?array $PagosTrabajador;
+
     /**
      * Usuarios constructor.
      * @param int|null $id
@@ -255,7 +261,38 @@ class Usuarios extends AbstractDBConnection implements Model
         }
         return null;
     }
+    public function getFacturasMesero(): ?array
+    {
+        //if (!empty($this->FacturasMesero)){
+            $this->FacturasMesero = Facturas::search(
+                "SELECT * FROM factura WHERE Mesero_id =".$this->getId()
+            );
+            return ($this->FacturasMesero)?? null;
+        //}
+        //return null;
+    }
 
+    public function getMarcasProveedor(): ?array
+    {
+        //if (!empty($this->MarcasProveedor)){
+            $this->MarcasProveedor = Marcas::search(
+              "SELECT * FROM marca WHERE Proveedor_id =".$this->getId()
+            );
+            return ($this->MarcasProveedor)?? null;
+        //}
+        //return null;
+    }
+
+    public function getPagosTrabajador(): ?array
+    {
+        //if (!empty($this->MarcasProveedor)){
+            $this->PagosTrabajador = Pagos::search(
+                "SELECT * FROM pago WHERE Trabajador_id =".$this->getId()
+            );
+            return ($this->PagosTrabajador)?? null;
+        //}
+        //return null;
+    }
     protected function save(string $query): ?bool
     {
         $arrData = [

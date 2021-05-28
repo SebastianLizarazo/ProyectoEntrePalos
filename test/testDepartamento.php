@@ -2,6 +2,7 @@
 
 require ("..\app\Models\Departamentos.php");
 use App\Models\Departamentos;
+use App\Models\Municipios;
 
 $depBoyaca= Departamentos::searchForId(15);
 //print_r($depBoyaca->jsonSerialize());
@@ -18,7 +19,7 @@ $depBoyaca= Departamentos::searchForId(15);
 //    echo $Mun->getNombre()."\n";
 //}
 
-$pruebaMun= \App\Models\Municipios::searchForId(15759);
+$pruebaMun = Municipios::searchForId(15759);
 
 echo "El municipio ". $pruebaMun->getNombre() ." Estado ". $pruebaMun->getEstado() ." Pertenece al departamento ". $pruebaMun->getDepartamento() ."\n";
 print_r($pruebaMun->getDepartamento()->getMunicipiosDepartamento());//Los municipios hermanos de sogamoso

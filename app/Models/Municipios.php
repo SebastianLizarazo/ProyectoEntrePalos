@@ -15,7 +15,7 @@ final class Municipios extends AbstractDBConnection implements Model
 {
     private ?int $id;
     private string $nombre;
-    private int $departamento_id;
+    private int $departamento_id;//Reprecenta la relacion con departamento
     private string $acortado;
     private string $estado;
     private Carbon $created_at;
