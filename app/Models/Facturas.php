@@ -23,6 +23,9 @@ class Facturas extends AbstractDBConnection implements Model
     private  string $Estado;
     private  string $TipoPedido;
 
+    /* Relaciones*/
+    private ?array $DetallePedidoFactura;
+
     /**
      * Facturas constructor.
      * @param int|null $id
@@ -196,6 +199,19 @@ class Facturas extends AbstractDBConnection implements Model
         }
         return null;
     }
+
+    public function getDetallePedidoFactura(): ?array
+    {
+        //if (!empty($this-> DetallePedidoFactura)) {
+        $this-> DetallePedidoFactura = DetallePedidos::search(
+            "SELECT * FROM detallepedido WHERE factura_id = ".$this->getId()
+        );
+        return ($this->DetallePedidoFactura)?? null;
+        //}
+        //return null;
+    }
+
+
 
     protected function save(string $query): ?bool
     {

@@ -185,6 +185,15 @@ class DetallePedidos extends AbstractDBConnection implements Model
         return null;
     }
 
+    public function getFactura():?Facturas
+    {
+        if (!empty($this->Factura_id))
+        {
+            return Facturas::searchForId($this->Factura_id)?? new Facturas();
+        }
+        return null;
+    }
+
     protected function save(string $query): ?bool
     {
         $arrData = [
