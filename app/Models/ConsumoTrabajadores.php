@@ -137,6 +137,15 @@ class ConsumoTrabajadores extends AbstractDBConnection implements Model
      * El query que recibe puede ser el query del insert o update o delete y los organiza
      * para prepararlos para enviarlos al insertRow.
      */
+
+    public function getPagos(): ?Pagos
+    {
+        if (!empty($this->Pago_id)) {
+            return Pagos::searchForId($this->Pago_id) ?? new Pagos();
+        }
+        return null;
+    }
+
     protected function save(string $query): ?bool
     {
         $arrData = [
