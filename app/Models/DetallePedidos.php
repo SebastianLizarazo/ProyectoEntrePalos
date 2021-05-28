@@ -167,6 +167,14 @@ class DetallePedidos extends AbstractDBConnection implements Model
         $this->Mesa_id = $Mesa_id;
     }
 
+    public function getMesa():?Mesas
+    {
+        if (!empty($this->Mesa_id))
+        {
+            return Mesas::searchForId($this->Mesa_id)?? new Mesas();
+        }
+        return null;
+    }
 
     protected function save(string $query): ?bool
     {

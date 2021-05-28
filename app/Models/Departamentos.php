@@ -167,8 +167,8 @@ final class Departamentos extends AbstractDBConnection implements Model
      */
     public function getMunicipiosDepartamento(): ?array
     {
-        //if (!empty($this-> MunicipiosDepartamento)) {
-            $this-> MunicipiosDepartamento = Municipios::search(
+        //if (!empty($this-> MunicipiosDepartamento)) {//Este if se usa cuando trabajamos con la interfaz grafica
+            $this->MunicipiosDepartamento = Municipios::search(
                 "SELECT * FROM municipio WHERE departamento_id = ".$this->id
             );
             return ($this->MunicipiosDepartamento)?? null;

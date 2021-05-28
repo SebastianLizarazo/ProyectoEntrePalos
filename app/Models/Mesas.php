@@ -23,6 +23,9 @@ class Mesas extends AbstractDBConnection implements Model
     private int $Capacidad;
     private string $Ocupacion;
 
+    /* Relaciones*/
+    private ?array $DetallesPedidoMesa;
+
     /**
      * Mesas constructor.
      * @param array $mesa
@@ -132,6 +135,17 @@ class Mesas extends AbstractDBConnection implements Model
     public function setOcupacion(string $Ocupacion): void
     {
         $this->Ocupacion = $Ocupacion;
+    }
+
+    public function getDetallesPedidoMesa(): ?array
+    {
+        //if (!empty($this->DetallesPedidoMesa)) {
+        $this->DetallesPedidoMesa = DetallePedidos::search(
+            "SELECT * FROM detallepedido WHERE Mesa_id =".$this->getId()//preguntar si esta bien el uso del getIdfv
+        );
+        return ($this->DetallesPedidoMesa)?? null;
+        //}
+        //return null;
     }
 
     /**
