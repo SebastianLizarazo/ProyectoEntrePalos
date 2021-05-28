@@ -93,7 +93,7 @@ class DetalleOfertas extends AbstractDBConnection implements Model
         $this->Oferta_id = $Oferta_id;
     }
 
-    /**
+        /**
      * @return int
      */
     public function getCantidadProducto(): int
@@ -117,6 +117,16 @@ class DetalleOfertas extends AbstractDBConnection implements Model
      * El query que recibe puede ser el query del insert o update o delete y los organiza
      * para prepararlos para enviarlos al insertRow.
      */
+
+    public function getOferta():?Ofertas
+    {
+        if (!empty($this->Oferta_id))
+        {
+            return Ofertas::searchForId($this->Oferta_id)?? new Ofertas();
+        }
+        return null;
+    }
+
     protected function save(string $query): ?bool
     {
         $arrData = [
