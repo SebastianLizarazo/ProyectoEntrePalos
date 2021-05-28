@@ -3,8 +3,8 @@
 
 namespace App\Models;
 require ("AbstractDBConnection.php");//Importamos la clase padre
-require (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
-require(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
+require (_DIR_."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
+require(_DIR_ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
 
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
@@ -18,6 +18,10 @@ class Pagos extends AbstractDBConnection implements Model
     private int $Trabajador_id;
     private Carbon $Fecha;
     private string $Estado;
+
+    /* Relaciones */
+    private ?array $ConsumoTrabajadoresPago;
+
 
     public function __construct(array $Pago=[])
     {
@@ -103,6 +107,25 @@ class Pagos extends AbstractDBConnection implements Model
     {
         $this->Estado = $Estado;
     }
+
+    public function getTrabajador(): ?Usuarios
+    {
+        if (!empty($this->Trabajador_id)){
+            return Usuarios::searchForId($this->Trabajador_id)?? new Usuarios();
+        }
+        return null;
+    }
+    public function getConsumoTrabajadoresPago(): ?array
+    {
+        //if (!empty($this-> ConsumoTrabajadoresPago)) {
+        $this-> ConsumoTrabajadoresPago = ConsumoTrabajadores::search(
+            "SELECT * FROM consumotrabajador WHERE Pago_id = ".$this->getId()
+        );
+        return ($this->ConsumoTrabajadoresPago)?? null;
+        //}
+        //return null;
+    }
+
     protected function save(string $query): ?bool
     {
         $arrData = [

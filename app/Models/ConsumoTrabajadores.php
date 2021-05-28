@@ -145,6 +145,7 @@ class ConsumoTrabajadores extends AbstractDBConnection implements Model
         }
         return null;
     }
+
     protected function save(string $query): ?bool
     {
         $arrData = [
