@@ -21,6 +21,9 @@ class Empresas extends AbstractDBConnection implements Model
     private string $Estado;
     private ?int $Municipio_id;
 
+    /* Relaciones */
+    private ?array $UsuariosEmpresa;
+
     /**
      * Empresa constructor.
      * @param int|null $id
@@ -31,6 +34,8 @@ class Empresas extends AbstractDBConnection implements Model
      * @param string $Estado
      * @param int $Municipio_id
      */
+
+
     public function __construct(array $Empresa=[])
     {
         parent::__construct();
@@ -165,6 +170,25 @@ class Empresas extends AbstractDBConnection implements Model
     public function setMunicipioid(int $Municipio_id): void
     {
         $this->Municipio_id = $Municipio_id;
+    }
+
+    public function getMunicipio(): ?Municipios
+    {
+        if (!empty($this->Municipio_id)) {
+            return Municipios::searchForId($this->Municipio_id) ?? new Municipios();
+        }
+        return null;
+    }
+
+    public function getUsuariosEmpresa(): ?array
+    {
+        //if (!empty($this-> UsuariosEmpresa)) {
+        $this-> UsuariosEmpresa = Usuarios::search(
+            "SELECT * FROM usuario WHERE Empresa_id = ".$this->getId()
+        );
+        return ($this->UsuariosEmpresa)?? null;
+        //}
+        //return null;
     }
 
     protected function save(string $query): ?bool
