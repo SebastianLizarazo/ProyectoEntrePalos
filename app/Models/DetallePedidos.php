@@ -176,6 +176,33 @@ class DetallePedidos extends AbstractDBConnection implements Model
         return null;
     }
 
+    public function getOferta():?Ofertas
+    {
+        if (!empty($this->Ofertas_id))
+        {
+            return Ofertas::searchForId($this->Ofertas_id)?? new Ofertas();
+        }
+        return null;
+    }
+
+    public function getProducto():?Productos
+    {
+        if (!empty($this->Producto_id))
+        {
+            return Productos::searchForId($this->Producto_id)?? new Productos();
+        }
+        return null;
+    }
+
+    public function getFactura():?Facturas
+    {
+        if (!empty($this->Factura_id))
+        {
+            return Facturas::searchForId($this->Factura_id)?? new Facturas();
+        }
+        return null;
+    }
+
     protected function save(string $query): ?bool
     {
         $arrData = [

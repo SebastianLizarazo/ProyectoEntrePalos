@@ -128,6 +128,25 @@ class ConsumoTrabajadores extends AbstractDBConnection implements Model
     {
         $this->Descripcion = $Descripcion;
     }
+    public function getProducto():?Productos
+    {
+        if (!empty($this->Producto_id))
+        {
+            return Productos::searchForId($this->Producto_id)?? new Productos();
+        }
+        return null;
+    }
+    public function getProductos():?Productos
+    {
+        if (!empty($this->Producto_id))
+        {
+            return Productos::searchForId($this->Producto_id)?? new Productos();
+        }
+        return null;
+    }
+
+
+
     /**
      * @param string $query
      * @return bool|null
@@ -137,6 +156,15 @@ class ConsumoTrabajadores extends AbstractDBConnection implements Model
      * El query que recibe puede ser el query del insert o update o delete y los organiza
      * para prepararlos para enviarlos al insertRow.
      */
+
+    public function getPagos(): ?Pagos
+    {
+        if (!empty($this->Pago_id)) {
+            return Pagos::searchForId($this->Pago_id) ?? new Pagos();
+        }
+        return null;
+    }
+
     protected function save(string $query): ?bool
     {
         $arrData = [
