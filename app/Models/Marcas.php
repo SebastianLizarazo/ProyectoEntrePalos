@@ -31,7 +31,7 @@ class Marcas extends AbstractDBConnection implements Model
     public static function marcaRegistrada (mixed $Nombre, mixed $id): bool
     {
         $marTmp = Marcas::search("SELECT * FROM marca WHERE Nombre = '$Nombre' and id = '$id'");
-        return (!empty($marTmp)) ? true : false;
+        return (!empty($marTmp) ? true : false);
     }
 
     public function __destruct()

@@ -17,6 +17,8 @@ class SubCategorias extends AbstractDBConnection implements Model
     private string $CategoriaProducto;
     private string $Estado;
 
+    private ?array $ProductoSubCategoria;
+
     public function __construct(array $SubCategoria=[])
     {
         parent::__construct();
@@ -28,7 +30,7 @@ class SubCategorias extends AbstractDBConnection implements Model
     public static function subCategoriaRegistrada (mixed $Nombre, mixed $id): bool
     {
         $sbcTmp = SubCategorias::search("SELECT * FROM subcategoria WHERE Nombre = '$Nombre' and id = '$id'");
-        return (!empty($sbcTmp)) ? true : false;
+        return (!empty($sbcTmp) ? true : false);
     }
     public function __destruct()
     {
@@ -140,7 +142,16 @@ class SubCategorias extends AbstractDBConnection implements Model
         $this->setEstado("Inactivo");
         return $this->update();
     }
-
+    public function getProductoSubCategoria(): ?array
+    {
+        //if (!empty($this-> ProductoSubCategoria)) {
+        $this->ProductoSubCategoria = Productos::search(
+            "SELECT * FROM producto WHERE Subcategoria_id = ".$this->getId()
+        );
+        return ($this->ProductoSubCategoria)?? null;
+        //}
+        //return null;
+    }
 
     public static function search($query): ?array
     {

@@ -35,7 +35,7 @@ class Pagos extends AbstractDBConnection implements Model
     public static function pagoRegistrado(mixed $Trabajador_id, mixed $id): bool
     {
         $pgoTmp = Pagos::search("SELECT * FROM pago WHERE Trabajador_id = '$Trabajador_id' and id = '$id'");
-        return (!empty($pgoTmp)) ? true : false;
+        return (!empty($pgoTmp) ? true : false);
     }
     public function __destruct()
     {

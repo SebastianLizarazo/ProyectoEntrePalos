@@ -33,7 +33,7 @@ class DetalleOfertas extends AbstractDBConnection implements Model
 
     public static function detalleOfertaRegistrada(mixed $Producto_id, mixed $Oferta_id): bool
     {
-        $msaTmp = DetalleOfertas::search("SELECT * FROM detalleoferta WHERE Producto id = '$Producto_id' and Oferta id = '$Oferta_id'");
+        $msaTmp = DetalleOfertas::search("SELECT * FROM detalleoferta WHERE Producto_id= '$Producto_id' and Oferta_id= '$Oferta_id'");
         return (!empty($msaTmp)) ? true : false;
     }
 
@@ -93,7 +93,7 @@ class DetalleOfertas extends AbstractDBConnection implements Model
         $this->Oferta_id = $Oferta_id;
     }
 
-    /**
+        /**
      * @return int
      */
     public function getCantidadProducto(): int
@@ -117,6 +117,23 @@ class DetalleOfertas extends AbstractDBConnection implements Model
      * El query que recibe puede ser el query del insert o update o delete y los organiza
      * para prepararlos para enviarlos al insertRow.
      */
+
+    public function getOferta():?Ofertas
+    {
+        if (!empty($this->Oferta_id))
+        {
+            return Ofertas::searchForId($this->Oferta_id)?? new Ofertas();
+        }
+        return null;
+    }
+    public function getProducto():?Productos
+    {
+        if (!empty($this->Producto_id))
+        {
+            return Productos::searchForId($this->Producto_id)?? new Productos();
+        }
+        return null;
+    }
     protected function save(string $query): ?bool
     {
         $arrData = [
@@ -160,7 +177,7 @@ class DetalleOfertas extends AbstractDBConnection implements Model
     {
         $query = "UPDATE detalleoferta SET 
             Producto_id = :Producto_id, Oferta_id = :Oferta_id, 
-            CantidadProducto = :CantidadProducto,WHERE id = :id";
+            CantidadProducto = :CantidadProducto WHERE id =:id";
         return $this->save($query);
     }
 
