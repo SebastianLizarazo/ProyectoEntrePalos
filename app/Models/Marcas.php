@@ -19,6 +19,8 @@ class Marcas extends AbstractDBConnection implements Model
     private int $Proveedor_id;
     private string $Estado;
 
+    private ?array $ProductosMarca;
+
     public function __construct(array $marca=[])
     {
         parent::__construct();
@@ -125,7 +127,16 @@ class Marcas extends AbstractDBConnection implements Model
         }
         return null;
     }
-
+    public function getProductosMarca(): ?array
+    {
+        //if (!empty($this->ProductosMarca)) {
+        $this->ProductosMarca = Productos::search(
+            "SELECT * FROM producto WHERE Marca_id = ".$this->id
+        );
+        return ($this->ProductosMarca)?? null;
+        //}
+        //return null;
+    }
     protected function save(string $query): ?bool
     {
         $arrData = [
