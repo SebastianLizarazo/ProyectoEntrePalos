@@ -48,6 +48,7 @@ class Productos extends AbstractDBConnection implements Model
     private ?array $ImagenProductos;
     private ?array $DetalleOfertaProductos;
     private ?array $DetallePedidoProductos;
+    private ?array $ConsumoTrabajadorProductos;
 
     public function __construct(array $producto=[])
     {
@@ -295,6 +296,14 @@ class Productos extends AbstractDBConnection implements Model
         }
         return null;
     }
+    public function getMarca():?Marcas
+    {
+        if (!empty($this->Marca_id))
+        {
+            return Marcas::searchForId($this->Marca_id)?? new Marcas();
+        }
+        return null;
+    }
     public function getImagenProductos(): ?array
     {
         //if (!empty($this->ImagenProductos)) {
@@ -322,6 +331,16 @@ class Productos extends AbstractDBConnection implements Model
             "SELECT * FROM detallepedido WHERE Producto_id = ".$this->getId()
         );
         return ($this->DetallePedidoProductos)?? null;
+        //}
+        //return null;
+    }
+    public function getConsumoTrabajadorProductos(): ?array
+    {
+        //if (!empty($this->ConsumoTrabajadorProductos)) {
+        $this->ConsumoTrabajadorProductos = ConsumoTrabajadores::search(
+            "SELECT * FROM consumotrabajador WHERE Producto_id = ".$this->getId()
+        );
+        return ($this->ConsumoTrabajadorProductos)?? null;
         //}
         //return null;
     }
