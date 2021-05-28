@@ -22,6 +22,9 @@ final class Municipios extends AbstractDBConnection implements Model
     private Carbon $updated_at;
     private Carbon $deleted_at;
 
+    /* Relaciones */
+    private ?array $EmpresasMunicipio;
+
     /**
      * Municipios constructor. Recibe un array asociativo
      * @param array $municipio
@@ -188,6 +191,24 @@ final class Municipios extends AbstractDBConnection implements Model
     {
         if (!empty($this->departamento_id)) {
             return Departamentos::searchForId($this->departamento_id) ?? new Departamentos();
+        }
+        return null;
+    }
+    public function getEmpresasMunicipio(): ?array
+    {
+        //if (!empty($this-> EmpresasMunicipio)) {
+        $this-> EmpresasMunicipio = Empresas::search(
+            "SELECT * FROM empresa WHERE Municipio_id = ".$this->getId()
+        );
+        return ($this->EmpresasMunicipio)?? null;
+        //}
+        //return null;
+    }
+
+    public function getUsuario(): ?Usuarios
+    {
+        if (!empty($this->Empresa_id)) {
+            return Usuarios::searchForId($this->Empresa_id) ?? new Usuarios();
         }
         return null;
     }

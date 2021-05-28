@@ -141,7 +141,7 @@ class Mesas extends AbstractDBConnection implements Model
     {
         //if (!empty($this->DetallesPedidoMesa)) {
         $this->DetallesPedidoMesa = DetallePedidos::search(
-            "SELECT * FROM detallepedido WHERE Mesa_id =".$this->getId()
+            "SELECT * FROM detallepedido WHERE Mesa_id =".$this->getId()//preguntar si esta bien el uso del getIdfv
         );
         return ($this->DetallesPedidoMesa)?? null;
         //}

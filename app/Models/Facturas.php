@@ -189,6 +189,13 @@ class Facturas extends AbstractDBConnection implements Model
         $this->TipoPedido = $TipoPedido;
     }
 
+    public function getMesero(): ?Usuarios
+    {
+        if (!empty($this->Mesero_id)){
+            return Usuarios::searchForId($this->Mesero_id)?? new Usuarios();
+        }
+        return null;
+    }
 
     protected function save(string $query): ?bool
     {

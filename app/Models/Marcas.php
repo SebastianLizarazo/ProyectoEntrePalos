@@ -118,6 +118,14 @@ class Marcas extends AbstractDBConnection implements Model
         $this->Estado = $Estado;
     }
 
+    public function getProveedor(): ?Usuarios
+    {
+        if (!empty($this->Proveedor_id)){
+            return Usuarios::searchForId($this->Proveedor_id)?? new Usuarios();
+        }
+        return null;
+    }
+
     protected function save(string $query): ?bool
     {
         $arrData = [
@@ -176,7 +184,7 @@ class Marcas extends AbstractDBConnection implements Model
                 return $arrMarcas;
             }
             return null;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -192,9 +200,9 @@ class Marcas extends AbstractDBConnection implements Model
                 $tmpMarca->Disconnect();
                 return ($getrow) ? new Marcas ($getrow) : null;
             } else {
-                throw new Exception('Id de marca Invalido');
+                throw new \Exception('Id de marca Invalido');
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
