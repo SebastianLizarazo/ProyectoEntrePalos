@@ -19,6 +19,9 @@ class Pagos extends AbstractDBConnection implements Model
     private Carbon $Fecha;
     private string $Estado;
 
+    /* Relaciones */
+    private ?array $ConsumoTrabajadoresPago;
+
     public function __construct(array $Pago=[])
     {
         parent::__construct();
@@ -102,6 +105,17 @@ class Pagos extends AbstractDBConnection implements Model
     public function setEstado(string $Estado): void
     {
         $this->Estado = $Estado;
+    }
+
+    public function getConsumoTrabajadoresPago(): ?array
+    {
+        //if (!empty($this-> ConsumoTrabajadoresPago)) {
+        $this-> ConsumoTrabajadoresPago = ConsumoTrabajadores::search(
+            "SELECT * FROM consumotrabajador WHERE Pago_id = ".$this->getId()
+        );
+        return ($this->ConsumoTrabajadoresPago)?? null;
+        //}
+        //return null;
     }
     protected function save(string $query): ?bool
     {
