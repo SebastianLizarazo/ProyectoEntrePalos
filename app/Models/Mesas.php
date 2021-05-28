@@ -23,9 +23,6 @@ class Mesas extends AbstractDBConnection implements Model
     private int $Capacidad;
     private string $Ocupacion;
 
-    /* Relaciones*/
-    private ?array $DetallesPedidoMesa;
-
     /**
      * Mesas constructor.
      * @param array $mesa
@@ -43,10 +40,10 @@ class Mesas extends AbstractDBConnection implements Model
         $this->setOcupacion($mesa['Ocupacion']??'disponible' );
     }
 
-    public static function mesaRegistrada(mixed $id, mixed $Numero): bool
+    public static function mesaRegistrada(mixed $Numero, mixed $Capacidad): bool
     {
-        $msaTmp = Mesas::search("SELECT * FROM mesa WHERE id = '$id' and Numero = '$Numero'");
-        return (!empty($msaTmp) ? true : false);
+        $msaTmp = Mesas::search("SELECT * FROM mesa WHERE Numero = '$Numero' and Capacidad = '$Capacidad'");
+        return (!empty($msaTmp)) ? true : false;
     }
 
     public function __destruct()
@@ -56,6 +53,7 @@ class Mesas extends AbstractDBConnection implements Model
             $this->Disconnect();//destruye la coneccion
         }
     }
+
 
     /**
      * @return int|null
@@ -137,17 +135,6 @@ class Mesas extends AbstractDBConnection implements Model
         $this->Ocupacion = $Ocupacion;
     }
 
-    public function getDetallesPedidoMesa(): ?array
-    {
-        //if (!empty($this->DetallesPedidoMesa)) {
-        $this->DetallesPedidoMesa = DetallePedidos::search(
-            "SELECT * FROM detallepedido WHERE Mesa_id =".$this->getId()//preguntar si esta bien el uso del getIdfv
-        );
-        return ($this->DetallesPedidoMesa)?? null;
-        //}
-        //return null;
-    }
-
     /**
      * @param string $query
      * @return bool|null
@@ -215,12 +202,12 @@ class Mesas extends AbstractDBConnection implements Model
      * que se puede pasar de activo a inactivo de resto no se aconseja utilizar
      * el delete o hay que pensar muy bien como utilizarlo
      */
-    public function deleted()
+    function deleted()
     {
 
     }
 
-    public static function search($query): ?array
+    static function search($query): ?array
     {
         try {
             $arrMesas = array();
@@ -251,7 +238,7 @@ class Mesas extends AbstractDBConnection implements Model
      * Aca tenemos que especificar que el objeto que nos va a devolver va a ser
      * en este caso un objeto Mesas porque es la clase que le corresponde a este searchForId
      */
-    public static function searchForId(int $id): ?Mesas
+    static function searchForId(int $id): ?Mesas
     {
         try {
             if ($id > 0) {
@@ -262,15 +249,15 @@ class Mesas extends AbstractDBConnection implements Model
                 $tmpMesa->Disconnect();
                 return ($getrow) ? new Mesas($getrow) : null;
             } else {
-                throw new \Exception('Id de mesa Invalido');
+                throw new Exception('Id de usuario Invalido');
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
     }
 
-    public static function getAll(): ?array
+    static function getAll(): ?array
     {
         return Mesas::search("SELECT * FROM mesa");
     }
@@ -278,11 +265,11 @@ class Mesas extends AbstractDBConnection implements Model
     public function jsonSerialize()
     {
         return [
-            'id' => $this->getId(),
-            'Numero' =>$this->getNumero(),
-            'Ubicacion' =>$this->getUbicacion(),
-            'Capacidad' =>$this->getCapacidad(),
-            'Ocupacion' =>$this->getOcupacion(),
-        ];
+        'id' => $this->getId(),
+        'Numero' =>$this->getNumero(),
+        'Ubicacion' =>$this->getUbicacion(),
+        'Capacidad' =>$this->getCapacidad(),
+        'Ocupacion' =>$this->getOcupacion(),
+         ];
     }
 }
