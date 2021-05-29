@@ -8869,3 +8869,69 @@
 
 )
   
+[2021-05-29T16:17:49.295585+00:00] General.ERROR: Exception  
+[2021-05-29T16:17:49.296840+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-29T16:17:49.296928+00:00] General.ERROR: Line: 102  
+[2021-05-29T16:17:49.297000+00:00] General.ERROR: Mensaje: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'oferta_id' in 'where clause'  
+[2021-05-29T16:17:49.297080+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 259
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM detallepedido WHERE oferta_id = 3
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 148
+            [function] => search
+            [class] => App\Models\DetallePedidos
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM detallepedido WHERE oferta_id = 3
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testDetallePedido.php
+            [line] => 100
+            [function] => getDetallePedidoOferta
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

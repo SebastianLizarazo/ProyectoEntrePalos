@@ -19,6 +19,7 @@ $depBoyaca= Departamentos::searchForId(15);
 //    echo $Mun->getNombre()."\n";
 //}
 
+// Prueba relaciones
 $pruebaMun = Municipios::searchForId(15759);
 
 echo "El municipio ". $pruebaMun->getNombre() ." Estado ". $pruebaMun->getEstado() ." Pertenece al departamento ". $pruebaMun->getDepartamento() ."\n";
