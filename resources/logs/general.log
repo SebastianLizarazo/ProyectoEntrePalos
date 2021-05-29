@@ -8869,3 +8869,171 @@
 
 )
   
+[2021-05-29T15:06:04.000111+00:00] General.ERROR: Exception  
+[2021-05-29T15:06:04.003434+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-29T15:06:04.003560+00:00] General.ERROR: Line: 44  
+[2021-05-29T15:06:04.003633+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión  
+[2021-05-29T15:06:04.004137+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 432
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testSubCategoria.php
+            [line] => 69
+            [function] => searchForId
+            [class] => App\Models\Productos
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 2
+                )
+
+        )
+
+)
+  
+[2021-05-29T15:11:45.544747+00:00] General.ERROR: Exception  
+[2021-05-29T15:11:45.546419+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-29T15:11:45.546564+00:00] General.ERROR: Line: 44  
+[2021-05-29T15:11:45.546670+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión  
+[2021-05-29T15:11:45.547118+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 432
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testSubCategoria.php
+            [line] => 69
+            [function] => searchForId
+            [class] => App\Models\Productos
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
+[2021-05-29T15:13:35.358086+00:00] General.ERROR: Exception  
+[2021-05-29T15:13:35.359034+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-29T15:13:35.359225+00:00] General.ERROR: Line: 44  
+[2021-05-29T15:13:35.359387+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión  
+[2021-05-29T15:13:35.359568+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 432
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testSubCategoria.php
+            [line] => 69
+            [function] => searchForId
+            [class] => App\Models\Productos
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => 1
+                )
+
+        )
+
+)
+  
