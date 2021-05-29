@@ -2,6 +2,8 @@
 
 require ("..\app\Models\Empresas.php");
 use App\Models\Empresas;
+use App\Models\Municipios;
+use App\Models\Usuarios;
 
 $arrEmpresa1=[
     'Nombre' => 'Entre Palos',
@@ -35,9 +37,9 @@ $arrEmpresa3=[
 * Primero creo el objeto y luego lo inserto en la BD
 */
 
-$objectEmpresa1= new Empresas($arrEmpresa1);
+//$objectEmpresa1= new Empresas($arrEmpresa1);
 //var_dump($objectEmpresa1);
-$objectEmpresa1->insert();
+//$objectEmpresa1->insert();
 
 //$arrEmpresa1 = Empresas::searchForId(3);
 //var_dump($arrEmpresa1);
@@ -52,11 +54,11 @@ $objectEmpresa1->insert();
 //$arrEmpresa1->update();
 //var_dump($objectEmpresa1);
 
-$objectEmpresa2= new Empresas($arrEmpresa2);//Creamos un nuevo objeto mesa
-$objectEmpresa2->insert();
+//$objectEmpresa2= new Empresas($arrEmpresa2);//Creamos un nuevo objeto mesa
+//$objectEmpresa2->insert();
 
-$objectEmpresa3= new Empresas($arrEmpresa3);
-$objectEmpresa3->insert();
+//$objectEmpresa3= new Empresas($arrEmpresa3);
+//$objectEmpresa3->insert();
 
 //$arrResult = Empresas::search("SELECT * FROM empresa WHERE Nombre = 'pool' AND Telefono = 3207651298");
 //var_dump($arrResult);
@@ -95,3 +97,19 @@ $objectEmpresa3->insert();
 //{
 //    print_r($empresa->jsonSerialize());
 //}
+
+
+//$pruebaEm = Municipios::searchForId(15759);
+
+//echo "En el municipio ". $pruebaEm->getNombre() ." Estado ". $pruebaEm->getEstado() ." esta la empresa ". $pruebaEm->getNombre() ."\n";
+//print_r($pruebaEm->getEmpresasMunicipio());//Los municipios hermanos de sogamoso
+
+
+//$pruebaEm = Empresas::searchForId(1);
+//print_r($pruebaEm->getMunicipio());
+
+//$pruebaUsu = Empresas::searchForId(1);
+//print_r($pruebaUsu->getUsuariosEmpresa());
+
+//$pruebaUsu = (Usuarios::searchForId(1));
+//print_r($pruebaUsu->getEmpresas());
