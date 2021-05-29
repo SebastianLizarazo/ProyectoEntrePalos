@@ -129,7 +129,8 @@ class Ofertas extends AbstractDBConnection implements Model
     {
         $this->Estado = $Estado;
     }
-    public function DetalleOfertasOferta(): ?array
+
+    public function getDetalleOfertasOferta(): ?array
     {
         //if (!empty($this-> DetalleOfertasOferta)) {
         $this-> DetalleOfertasOferta = DetalleOfertas::search(
