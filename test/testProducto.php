@@ -4,6 +4,9 @@ require ('../app/Models/Productos.php');
 use App\Models\Productos;
 use App\Models\Marcas;
 use App\Models\ConsumoTrabajadores;
+use App\Models\SubCategorias;
+use App\Models\Imagenes;
+use App\Models\DetalleOfertas;
 
 $arrProducto1= [
 
@@ -114,3 +117,26 @@ $arrProducto2= [
 
 //$pruebProdConsTrab = Productos::searchForId(3);
 //print_r($pruebProdConsTrab->getConsumoTrabajadorProductos());
+
+//Prueba subCategoria producto
+//$pruebSubCat = SubCategorias::searchForId(2);
+//print_r($pruebSubCat->getProductoSubCategoria());
+
+//$pruebProdSubCat = Productos::searchForId( 3);
+//print_r($pruebProdSubCat->getSubcategoria());
+
+//Prueba imagen producto
+//$pruebImg = Imagenes::searchForId(3);
+//print_r($pruebImg->getProducto());
+
+//$pruebProdImg = Productos::searchForId(1);
+//print_r($pruebProdImg->getImagenProductos());
+
+//Prueba detalle oferta producto
+//$pruebDetOfer = DetalleOfertas::searchForId(2);
+//print_r($pruebDetOfer->getProducto());
+
+//$pruebProdDetOfer = Productos::searchForId(3);
+//print_r($pruebProdDetOfer->getDetalleOfertaProductos());
+
+
