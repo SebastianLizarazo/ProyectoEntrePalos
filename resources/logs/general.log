@@ -8935,3 +8935,513 @@
 
 )
   
+[2021-05-30T03:10:15.523455+00:00] General.ERROR: Exception  
+[2021-05-30T03:10:15.525595+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-30T03:10:15.525686+00:00] General.ERROR: Line: 128  
+[2021-05-30T03:10:15.525759+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '001-Dk' for key 'TblProductoReferencia_UNIQUE'  
+[2021-05-30T03:10:15.525839+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 365
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => Coca cola cero
+                            [:Tamano] => 750
+                            [:ReferenciaTamano] => ml
+                            [:Referencia] => 001-Dk
+                            [:PrecioBase] => 1700
+                            [:PrecioUnidadTrabajador] => 1900
+                            [:PrecioUnidadVenta] => 2200
+                            [:PresentacionProducto] => Botella vidrio
+                            [:Marca_id] => 3
+                            [:CantidadProducto] => 88
+                            [:Subcategoria_id] => 2
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 377
+            [function] => save
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testProducto.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-30T03:10:15.532251+00:00] General.ERROR: Exception  
+[2021-05-30T03:10:15.532564+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-30T03:10:15.532646+00:00] General.ERROR: Line: 128  
+[2021-05-30T03:10:15.532713+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '023-DN' for key 'TblProductoReferencia_UNIQUE'  
+[2021-05-30T03:10:15.532789+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 365
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => Hamburguesa doble
+                            [:Tamano] => 400
+                            [:ReferenciaTamano] => gr
+                            [:Referencia] => 023-DN
+                            [:PrecioBase] => 13000
+                            [:PrecioUnidadTrabajador] => 15000
+                            [:PrecioUnidadVenta] => 17000
+                            [:PresentacionProducto] => Predeterminado
+                            [:Marca_id] => 2
+                            [:CantidadProducto] => 13
+                            [:Subcategoria_id] => 1
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 377
+            [function] => save
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testProducto.php
+            [line] => 59
+            [function] => insert
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-30T03:10:15.539130+00:00] General.ERROR: Exception  
+[2021-05-30T03:10:15.539432+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-30T03:10:15.539539+00:00] General.ERROR: Line: 128  
+[2021-05-30T03:10:15.539617+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '033-DN' for key 'TblProductoReferencia_UNIQUE'  
+[2021-05-30T03:10:15.539698+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 365
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => Hamburguesa triple
+                            [:Tamano] => 900
+                            [:ReferenciaTamano] => gr
+                            [:Referencia] => 033-DN
+                            [:PrecioBase] => 19000
+                            [:PrecioUnidadTrabajador] => 21000
+                            [:PrecioUnidadVenta] => 23000
+                            [:PresentacionProducto] => Predeterminado
+                            [:Marca_id] => 1
+                            [:CantidadProducto] => 32
+                            [:Subcategoria_id] => 1
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 377
+            [function] => save
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testProducto.php
+            [line] => 64
+            [function] => insert
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-30T03:11:00.237237+00:00] General.ERROR: Exception  
+[2021-05-30T03:11:00.237878+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-30T03:11:00.237961+00:00] General.ERROR: Line: 128  
+[2021-05-30T03:11:00.238033+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '001-Dk' for key 'TblProductoReferencia_UNIQUE'  
+[2021-05-30T03:11:00.238113+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 365
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => Coca cola cero
+                            [:Tamano] => 750
+                            [:ReferenciaTamano] => ml
+                            [:Referencia] => 001-Dk
+                            [:PrecioBase] => 1700
+                            [:PrecioUnidadTrabajador] => 1900
+                            [:PrecioUnidadVenta] => 2200
+                            [:PresentacionProducto] => Botella vidrio
+                            [:Marca_id] => 3
+                            [:CantidadProducto] => 88
+                            [:Subcategoria_id] => 2
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 377
+            [function] => save
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testProducto.php
+            [line] => 55
+            [function] => insert
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-30T03:11:00.242057+00:00] General.ERROR: Exception  
+[2021-05-30T03:11:00.242381+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-30T03:11:00.242468+00:00] General.ERROR: Line: 128  
+[2021-05-30T03:11:00.242537+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '023-DN' for key 'TblProductoReferencia_UNIQUE'  
+[2021-05-30T03:11:00.242614+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 365
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => Hamburguesa doble
+                            [:Tamano] => 400
+                            [:ReferenciaTamano] => gr
+                            [:Referencia] => 023-DN
+                            [:PrecioBase] => 13000
+                            [:PrecioUnidadTrabajador] => 15000
+                            [:PrecioUnidadVenta] => 17000
+                            [:PresentacionProducto] => Predeterminado
+                            [:Marca_id] => 2
+                            [:CantidadProducto] => 13
+                            [:Subcategoria_id] => 1
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 377
+            [function] => save
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testProducto.php
+            [line] => 59
+            [function] => insert
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-05-30T03:11:00.246555+00:00] General.ERROR: Exception  
+[2021-05-30T03:11:00.246848+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-05-30T03:11:00.246948+00:00] General.ERROR: Line: 128  
+[2021-05-30T03:11:00.247027+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '033-DN' for key 'TblProductoReferencia_UNIQUE'  
+[2021-05-30T03:11:00.247110+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 365
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => Hamburguesa triple
+                            [:Tamano] => 900
+                            [:ReferenciaTamano] => gr
+                            [:Referencia] => 033-DN
+                            [:PrecioBase] => 19000
+                            [:PrecioUnidadTrabajador] => 21000
+                            [:PrecioUnidadVenta] => 23000
+                            [:PresentacionProducto] => Predeterminado
+                            [:Marca_id] => 1
+                            [:CantidadProducto] => 32
+                            [:Subcategoria_id] => 1
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 377
+            [function] => save
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO producto VALUES (
+            :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
+            :PrecioUnidadTrabajador, :PrecioUnidadVenta, :PresentacionProducto, :Marca_id, 
+            :CantidadProducto, :Subcategoria_id, :Estado )
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testProducto.php
+            [line] => 64
+            [function] => insert
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

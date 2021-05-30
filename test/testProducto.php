@@ -2,6 +2,8 @@
 
 require ('../app/Models/Productos.php');
 use App\Models\Productos;
+use App\Models\Marcas;
+use App\Models\ConsumoTrabajadores;
 
 $arrProducto1= [
 
@@ -49,18 +51,18 @@ $arrProducto2= [
     'Estado'=> 'Activo',
 ];
 
-$producto1= new Productos($arrProducto1);
+//$producto1= new Productos($arrProducto1);
 //var_dump($producto1);
-$producto1->insert();
+//$producto1->insert();
 
-$producto2= new Productos($arrProducto2);
+//$producto2= new Productos($arrProducto2);
 //var_dump($producto2);
-$producto2->insert();
+//$producto2->insert();
 
 
-$producto3= new Productos($arrProducto3);
+//$producto3= new Productos($arrProducto3);
 //var_dump($producto3);
-$producto3->insert();
+//$producto3->insert();
 
 // Prueba update
 //$pruebaUpdate = Productos::searchForId(2);
@@ -96,3 +98,19 @@ $producto3->insert();
 //{
 //    print_r($producto->jsonSerialize());
 //}
+
+// Prueba relaciones de producto
+
+// Prueba producto marca
+//$pruebMarca = Marcas::searchForId(2);
+//print_r($pruebMarca->getProductosMarca());
+
+//$pruebProdMarca = Productos::searchForId(1);
+//print_r($pruebProdMarca->getMarca());
+
+//Prueba consumo trabajador producto
+//$pruebConsTrab = ConsumoTrabajadores::searchForId(3);
+//print_r($pruebConsTrab->getProducto());
+
+//$pruebProdConsTrab = Productos::searchForId(3);
+//print_r($pruebProdConsTrab->getConsumoTrabajadorProductos());

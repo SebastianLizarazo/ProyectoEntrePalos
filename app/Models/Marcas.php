@@ -3,9 +3,9 @@
 
 namespace App\Models;
 
-require ("AbstractDBConnection.php");
-require (__DIR__."\..\Interfaces\Model.php");
-require(__DIR__ .'/../../vendor/autoload.php');
+require_once ("AbstractDBConnection.php");
+require_once (__DIR__."\..\Interfaces\Model.php");
+require_once(__DIR__ .'/../../vendor/autoload.php');
 
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
@@ -131,7 +131,7 @@ class Marcas extends AbstractDBConnection implements Model
     {
         //if (!empty($this->ProductosMarca)) {
         $this->ProductosMarca = Productos::search(
-            "SELECT * FROM producto WHERE Marca_id = ".$this->id
+            "SELECT * FROM producto WHERE Marca_id = ".$this->getId()
         );
         return ($this->ProductosMarca)?? null;
         //}
