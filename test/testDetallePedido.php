@@ -86,7 +86,7 @@ $arrDetallePedidos4= [
 //    print_r($detallePedido->jsonSerialize());
 //}
 
-//Prueba test Detalle Pedido
+//Prueba relaciones Detalle Pedido
 
 // Prueba relacion detalle pedido con mesas
 //$pruebMesa = Mesas::searchForId(1);
@@ -102,3 +102,17 @@ $arrDetallePedidos4= [
 //$pruebDetPedOf = DetallePedidos::searchForId(4);
 //echo "El detalle pedido numero ".$pruebDetPedOf->getId()." contiene la oferta ".$pruebDetPedOf->getOferta();
 //print_r($pruebDetPedOf->getOferta());
+
+//Prueba relacion entre detalle pedido y producto
+//$pruebProd = Productos::searchForId(3);
+//print_r($pruebProd->getDetallePedidoProductos());
+
+//$pruebDetPedProd = DetallePedidos::searchForId(2);
+//print_r($pruebDetPedProd->getProducto());
+
+//Prueba relacion entre detalle pedido y factura
+//$pruebFac = Facturas::searchForId(1);
+//print_r($pruebFac->getDetallePedidoFactura());
+
+//$pruebDetPedFac = DetallePedidos::searchForId(3);
+//print_r($pruebDetPedFac->getFactura());
