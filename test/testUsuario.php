@@ -2,6 +2,8 @@
 
 require ("..\app\Models\Usuarios.php");
 use App\Models\Usuarios;
+use App\Models\Pagos;
+use App\Models\Marcas;
 
 $arrUsuario1=[
     'Cedula' => '1193088983',
@@ -42,19 +44,19 @@ $arrUsuario3=[
     'Empresa_id' => 1
 ];
 
-$objectUsuario1= new Usuarios($arrUsuario1);
+//$objectUsuario1= new Usuarios($arrUsuario1);
 //var_dump($objectUsuario1);
-$objectUsuario1->insert();
+//$objectUsuario1->insert();
 
 //$objectUsuario1->setCedula(1193099653);
 //$objectUsuario1->setApellidos('Sandoval Pirri');
 //var_dump($objectUsuario1);
 //$objectUsuario1->update();
 
-$objectUsuario2= new Usuarios($arrUsuario2);
+//$objectUsuario2= new Usuarios($arrUsuario2);
 //var_dump($objectUsuario2);
 
-$objectUsuario2->insert();
+//$objectUsuario2->insert();
 
 //$PruebaUpdate=Usuarios::searchForId(2);//Llamamos al usuario que queremos modificar
 //$PruebaUpdate->setEstado('Inactivo');
@@ -62,10 +64,10 @@ $objectUsuario2->insert();
 //var_dump($arrUsuario2);
 
 
-$objectUsuario3= new Usuarios($arrUsuario3);
+//$objectUsuario3= new Usuarios($arrUsuario3);
 //var_dump($objectUsuario3);
 
-$objectUsuario3->insert();
+//$objectUsuario3->insert();
 
 //$arrResult = Usuarios::search("SELECT * FROM usuario WHERE Nombres = 'David Felipe' AND Telefono = 3132307498");
 //var_dump($arrResult);
@@ -98,11 +100,23 @@ $objectUsuario3->insert();
 //$PURegistrado=Usuarios::usuarioRegistrado(1193099653, 'David Felipe');
 //var_dump($PURegistrado);
 
-$usuarioGetALL = Usuarios::getAll();
+//$usuarioGetALL = Usuarios::getAll();
 //var_dump($empresaGetALL);
-/* @var $usuarioGetALL app\Models\Usuarios[] */
-foreach ($usuarioGetALL as $Usuario)
-{
-    print_r($Usuario->jsonSerialize());
-}
+//* @var $usuarioGetALL app\Models\Usuarios[] */
+//foreach ($usuarioGetALL as $Usuario)
+//{
+//    print_r($Usuario->jsonSerialize());
+//}
+
+//$pruebaUsupag = Usuarios::searchForId(2);
+//print_r($pruebaUsupag->getPagosTrabajador());
+
+//$pruebaUsupag = Pagos::searchForId(1);
+//print_r($pruebaUsupag->getTrabajador());
+
+//$pruebaUsu = Usuarios::searchForId(1);
+//print_r($pruebaUsu->getMarcasProveedor());
+
+//$pruebaUsu = Marcas::searchForId(1);
+//print_r($pruebaUsu->getProveedor());
 
