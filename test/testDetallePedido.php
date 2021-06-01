@@ -99,8 +99,8 @@ $arrDetallePedidos4= [
 //$pruebOfer = Ofertas::searchForId(1);
 //print_r($pruebOfer->getDetallePedidoOferta());
 
-//$pruebDetPedOf = DetallePedidos::searchForId(4);
-//echo "El detalle pedido numero ".$pruebDetPedOf->getId()." contiene la oferta ".$pruebDetPedOf->getOferta();
+$pruebDetPedOf = DetallePedidos::searchForId(4);
+echo "El detalle pedido numero ".$pruebDetPedOf->getId()." contiene la oferta ".$pruebDetPedOf->getOferta()->getNombre();
 //print_r($pruebDetPedOf->getOferta());
 
 //Prueba relacion entre detalle pedido y producto
