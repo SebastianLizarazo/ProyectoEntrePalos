@@ -69,5 +69,10 @@ $arrPago3 = [
 //var_dump($pruebaPagoRegis);
 $pruebausua= Usuarios::searchForId(1);
 
-//echo "El trabajador ". $pruebausua->getNombre() ." Estado ". $pruebausua->getEstado() ." Pertenece al pago ". $pruebausua->getPagosTrabajador() ."\n";
-print_r($pruebausua->getPagosTrabajador());//Los municipios hermanos de sogamoso
+//echo "El trabajador ". $pruebausua->getNombres() ." Estado ". $pruebausua->getEstado() ." Pertenece al pago ". $pruebausua->getPagosTrabajador() ."\n";
+print_r($pruebausua->getPagosTrabajador());
+
+$pruebapag= Pagos::searchForId(1);
+
+//echo "El trabajador ". $pruebausua->getNombres() ." Estado ". $pruebausua->getEstado() ." Pertenece al pago ". $pruebausua->getPagosTrabajador() ."\n";
+print_r($pruebapag->getTrabajador());

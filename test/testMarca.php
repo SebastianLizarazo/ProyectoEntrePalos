@@ -64,7 +64,12 @@ $arrMarca3 = [
 
 //$pruebaMarcaRegist= Marcas::marcaRegistrada('panzote',1);// Comprobamos que ya exista una marca con esas caracteristicas
 //var_dump($pruebaMarcaRegist);
-$pruebaUsua = \App\Models\Usuarios::searchForId(1);
+//$pruebaUsua = \App\Models\Usuarios::searchForId(2);
 
-//echo "El usuario ". $pruebaUsua->getNombres() ." Estado ". $pruebaUsua->getEstado() ." Pertenece a la marca ". $pruebaUsua->getMarcasProveedor() ."\n";
-print_r($pruebaUsua->getMarcasProveedor());
+//echo "El usuario ". $pruebaUsua->getNombres() ." Estado ". $pruebaUsua->getEstado() ." Pertenece a la marca ". $pruebaUsua->getMarcasProveedor()."\n";
+//print_r($pruebaUsua->getMarcasProveedor());
+
+$pruebamar = \App\Models\Marcas::searchForId(2);
+
+//echo "El usuario ". $pruebaUsua->getNombres() ." Estado ". $pruebaUsua->getEstado() ." Pertenece a la marca ". $pruebaUsua->getMarcasProveedor()."\n";
+print_r($pruebamar->getProveedor());

@@ -66,7 +66,12 @@ $arrSubCategoria3 = [
 
 //$pruebaSubCRegis= SubCategorias::subCategoriaRegistrada('pepsi',1);
 //var_dump($pruebaSubCRegis);
-$pruebaProd = Productos::searchForId(1);
+//$pruebaProd = Productos::searchForId(1);
 
-//echo "El producto: ". $pruebaProd->getNombre() ." Estado ". $pruebaProd->getEstado() ." Pertenece a la subcategoria". $pruebaProd->getSubcategoria() ."\n";
-print_r($pruebaProd->getSubcategoria()->getProductoSubCategoria());
+//echo "El producto: ". $pruebaProd->getNombre() ." Estado ". $pruebaProd->getEstado() ." Pertenece a la subcategoria". $pruebaProd->getSubcategoria()->getNombre() ."\n";
+//print_r($pruebaProd->getSubcategoria()->getProductoSubCategoria());
+
+$pruebaSub = SubCategorias::searchForId(1);
+
+//echo "El producto: ". $pruebaProd->getNombre() ." Estado ". $pruebaProd->getEstado() ." Pertenece a la subcategoria". $pruebaProd->getSubcategoria()->getNombre() ."\n";
+print_r($pruebaSub->getCategoriaProducto());
