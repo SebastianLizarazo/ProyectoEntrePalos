@@ -96,3 +96,4 @@ $producto3->insert();
 //{
 //    print_r($producto->jsonSerialize());
 //}
+
