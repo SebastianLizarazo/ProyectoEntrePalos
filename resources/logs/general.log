@@ -9445,3 +9445,85 @@
 
 )
   
+[2021-06-02T13:56:08.613694+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion cerrarSession no fue encontrada en el controlador App\\Controllers\\UsuariosController"} 
+[2021-06-02T14:51:55.687402+00:00] General.ERROR: Exception  
+[2021-06-02T14:51:55.688638+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-02T14:51:55.689138+00:00] General.ERROR: Line: 128  
+[2021-06-02T14:51:55.689231+00:00] General.ERROR: Mensaje: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'Contrasena' at row 1  
+[2021-06-02T14:51:55.689324+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 318
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Cedula =:Cedula, Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => $2y$10$sNCAS./meEnex./9nxINduVRtNiO0.1AB79rA1tHR2/M/vQQZcvBS
+                            [:Rol] => Mesero
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 342
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Cedula =:Cedula, Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 112
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

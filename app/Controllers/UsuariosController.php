@@ -34,7 +34,7 @@ class UsuariosController
             if (!empty($this->dataUsuario['Cedula']) && !empty($this->dataUsuario['Nombres']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'], $this->dataUsuario['Nombres'])) {
                 $Usuario = new Usuarios($this->dataUsuario);
                 if ($Usuario->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmUsuarios']);
                     header("Location: ../../views/modules/usuario/index.php?respuesta=success&mensaje=Usuario Registrado");
                 }
             } else {
@@ -49,7 +49,7 @@ class UsuariosController
         try {
             $Usuario = new Usuario($this->dataUsuario);
             if($Usuario->update()){
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmUsuarios']);
             }
             header("Location: ../../views/modules/usuario/show.php?id=" . $Usuario->getId() . "&respuesta=success&mensaje=usuario Actualizado");
         } catch (\Exception $e) {
@@ -127,5 +127,30 @@ class UsuariosController
           }
       }
        return false;
+    }
+
+    public static function login (){
+        try {
+            if(!empty($_POST['Email']) && !empty($_POST['Contasena'])){
+                $tmpUser = new Usuarios();
+                $respuesta = $tmpUser->login($_POST['Email'], $_POST['Contasena']);
+                if (is_a($respuesta,"App\Models\Usuarios")) {
+                    $_SESSION['UserInSession'] = $respuesta->jsonSerialize();
+                    header("Location: ../../views/index.php");
+                }else{
+                    header("Location: ../../views/modules/site/login.php?respuesta=error&mensaje=".$respuesta);
+                }
+            }else{
+                header("Location: ../../views/modules/site/login.php?respuesta=error&mensaje=Datos Vacíos");
+            }
+        } catch (\Exception $e) {
+            header("Location: ../../views/modules/site/login.php?respuesta=error".$e->getMessage());
+        }
+    }
+
+    public static function cerrarSession (){
+        session_unset();
+        session_destroy();
+        header("Location: ../../views/modules/site/login.php");
     }
 }
