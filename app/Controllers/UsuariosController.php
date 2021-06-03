@@ -131,9 +131,9 @@ class UsuariosController
 
     public static function login (){
         try {
-            if(!empty($_POST['Email']) && !empty($_POST['Contasena'])){
+            if(!empty($_POST['Email']) && !empty($_POST['Contrasena'])){
                 $tmpUser = new Usuarios();
-                $respuesta = $tmpUser->login($_POST['Email'], $_POST['Contasena']);
+                $respuesta = $tmpUser->login($_POST['Email'], $_POST['Contrasena']);
                 if (is_a($respuesta,"App\Models\Usuarios")) {
                     $_SESSION['UserInSession'] = $respuesta->jsonSerialize();
                     header("Location: ../../views/index.php");
