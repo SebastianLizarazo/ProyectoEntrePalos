@@ -145,7 +145,7 @@ class Ofertas extends AbstractDBConnection implements Model
     {
         //if (!empty($this-> DetallePedidoOferta)) {
         $this-> DetallePedidoOferta = DetallePedidos::search(
-            "SELECT * FROM detallepedido WHERE ofertas_id = ".$this->getId()
+            "SELECT * FROM detallepedido WHERE Ofertas_id = ".$this->getId()
         );
         return ($this->DetallePedidoOferta)?? null;
         //}
