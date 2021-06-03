@@ -1,6 +1,6 @@
 <?php
 
-require("..\app\Models\Pagos.php");
+require_once("..\app\Models\Pagos.php");
 
 use App\Models\Pagos;
 use App\Models\Usuarios;

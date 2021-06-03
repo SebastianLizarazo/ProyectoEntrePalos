@@ -3,9 +3,9 @@
 
 namespace App\Models;
 
-require ("AbstractDBConnection.php");//Importamos la clase padre
-require (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
-require(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
+require_once ("AbstractDBConnection.php");//Importamos la clase padre
+require_once (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
+require_once (__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
 
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
@@ -139,13 +139,13 @@ class Mesas extends AbstractDBConnection implements Model
 
     public function getDetallesPedidoMesa(): ?array
     {
-        //if (!empty($this->DetallesPedidoMesa)) {
+        if (!empty($this->DetallesPedidoMesa)) {
         $this->DetallesPedidoMesa = DetallePedidos::search(
             "SELECT * FROM detallepedido WHERE Mesa_id =".$this->getId()//preguntar si esta bien el uso del getIdfv
         );
         return ($this->DetallesPedidoMesa)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
 
     /**
@@ -181,7 +181,6 @@ class Mesas extends AbstractDBConnection implements Model
     {
         $query = "INSERT INTO Mesa VALUES (
             :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)";
-        //return $this->save($query);
         if ($this->save($query)) {
             $idMesa = $this->getLastId('mesa');
             $this->setId($idMesa);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla mesa
@@ -239,7 +238,7 @@ class Mesas extends AbstractDBConnection implements Model
                 return $arrMesas;
             }
             return null;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;

@@ -20,8 +20,8 @@ class Usuarios extends AbstractDBConnection implements Model
     private string $Apellidos;
     private int $Telefono;
     private string $Direccion;
-    private string $Email;
-    private string $Contrasena;
+    private ?string $Email;
+    private ?string $Contrasena;
     private string $Rol;
     private string $Estado;
     private int $Empresa_id;
@@ -31,6 +31,9 @@ class Usuarios extends AbstractDBConnection implements Model
     private ?array $MarcasProveedor;
     private ?array $PagosTrabajador;
 
+    /* Seguridad de contraseña*/
+    const HASH = PASSWORD_DEFAULT;
+    const COST = 10;
     /**
      * Usuarios constructor.
      * @param int|null $id
@@ -263,38 +266,40 @@ class Usuarios extends AbstractDBConnection implements Model
     }
     public function getFacturasMesero(): ?array
     {
-        //if (!empty($this->FacturasMesero)){
+        if (!empty($this->FacturasMesero)){
             $this->FacturasMesero = Facturas::search(
                 "SELECT * FROM factura WHERE Mesero_id =".$this->getId()
             );
             return ($this->FacturasMesero)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
 
     public function getMarcasProveedor(): ?array
     {
-        //if (!empty($this->MarcasProveedor)){
+        if (!empty($this->MarcasProveedor)){
             $this->MarcasProveedor = Marcas::search(
               "SELECT * FROM marca WHERE Proveedor_id =".$this->getId()
             );
             return ($this->MarcasProveedor)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
 
     public function getPagosTrabajador(): ?array
     {
-        //if (!empty($this->MarcasProveedor)){
+        if (!empty($this->PagosProveedor)){
             $this->PagosTrabajador = Pagos::search(
                 "SELECT * FROM pago WHERE Trabajador_id =".$this->getId()
             );
             return ($this->PagosTrabajador)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
     protected function save(string $query): ?bool
     {
+        $hashPassword = password_hash($this->Contrasena, self::HASH, ['cost' =>self::COST]);//Encripta la contraseña del ususario
+
         $arrData = [
             ':id' => $this->getId(),
             ':Cedula' => $this->getCedula(),
@@ -303,7 +308,7 @@ class Usuarios extends AbstractDBConnection implements Model
             ':Telefono' => $this->getTelefono(),
             ':Direccion' => $this->getDireccion(),
             ':Email' => $this->getEmail(),
-            ':Contrasena' => $this->getContrasena(),
+            ':Contrasena' => $hashPassword,//Asigna la contraseña encriptada
             ':Rol' => $this->getRol(),
             ':Estado' => $this->getEstado(),
             ':Empresa_id' => $this->getEmpresaId(),
@@ -319,7 +324,6 @@ class Usuarios extends AbstractDBConnection implements Model
     {
         $query = "INSERT INTO usuario VALUES (
             :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)";
-        //return $this->save($query);
         if ($this->save($query)) {
             $idUsuario = $this->getLastId('Usuario');
             $this->setId($idUsuario);
@@ -338,9 +342,10 @@ class Usuarios extends AbstractDBConnection implements Model
 
     }
 
-    public function deleted()
+    public function deleted(): ?bool
     {
-
+        $this->setEstado('Inactivo');
+        return $this->update();
     }
 
 
@@ -349,7 +354,6 @@ class Usuarios extends AbstractDBConnection implements Model
         try {
             $arrUsuario = array();
             $tmp = new Usuarios();
-
             $tmp->Connect();
             $getrows = $tmp->getRows($query);
             $tmp->Disconnect();
@@ -363,7 +367,7 @@ class Usuarios extends AbstractDBConnection implements Model
                 return $arrUsuario;
             }
             return null;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -380,9 +384,9 @@ class Usuarios extends AbstractDBConnection implements Model
                 $tmpUsuario->Disconnect();
                 return ($getrow) ? new Usuarios($getrow) : null;
             } else {
-                throw new Exception('Id de usuario Invalido');
+                throw new \Exception('Id de usuario Invalido');
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -391,6 +395,30 @@ class Usuarios extends AbstractDBConnection implements Model
     public static function getAll(): ?array
     {
         return Usuarios::search("SELECT * FROM usuario");
+    }
+
+    public function login($Email, $Constrasena): Usuarios|String|null//si no retorna un objeto usuario retornara un string
+    {
+        try {
+            $resultUsuarios = Usuarios::search("SELECT * FROM usuario WHERE Email = '$Email'");
+            /* @var $resultUsuarios Usuarios[] */
+            if (!empty($resultUsuarios) && count($resultUsuarios) >= 1) {
+                if (password_verify($Constrasena, $resultUsuarios[0]->getContrasena())) {
+                    if ($resultUsuarios[0]->getEstado() == 'Activo') {
+                        return $resultUsuarios[0];
+                    } else {
+                        return "Usuario Inactivo";
+                    }
+                } else {
+                    return "Contraseña Incorrecta";
+                }
+            } else {
+                return "Usuario Incorrecto";
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception', $e);
+            return "Error en Servidor";
+        }
     }
 
     public function jsonSerialize()

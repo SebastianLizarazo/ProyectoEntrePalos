@@ -1,7 +1,8 @@
 <?php
 require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 
+use App\Controllers\MesasController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 

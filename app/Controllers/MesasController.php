@@ -24,7 +24,7 @@ class MesasController
             if (!empty($this->dataMesa['id']) && !empty($this->dataMesa['Numero']) && !Mesas::mesaRegistrada($this->dataMesa['id'], $this->dataMesa['Numero'])) {
                 $Mesa = new Mesas($this->dataMesa);
                 if ($Mesa->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmUsuarios']);
                     header("Location: ../../views/modules/mesa/index.php?respuesta=success&mensaje=Mesa Registrada");
                 }
             } else {
@@ -39,7 +39,7 @@ class MesasController
         try {
             $msa = new Mesas($this->dataMesa);
             if($msa->update()){
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmUsuarios']);
             }
             header("Location: ../../views/modules/mesa/show.php?id=" . $msa->getId() . "&respuesta=success&mensaje=Mesa Actualizada");
         } catch (\Exception $e) {

@@ -2,6 +2,11 @@
 
 require ("..\app\Models\DetallePedidos.php");
 use App\Models\DetallePedidos;
+use App\Models\Mesas;
+use App\Models\Ofertas;
+use App\Models\Productos;
+use App\Models\Facturas;
+
 
 $arrDetallePedidos1= [
 
@@ -42,17 +47,17 @@ $arrDetallePedidos4= [
 ];
 
 // Prueba insert
-$DetallePedido1 = new DetallePedidos($arrDetallePedidos1);
-$DetallePedido1->insert();
+//$DetallePedido1 = new DetallePedidos($arrDetallePedidos1);
+//$DetallePedido1->insert();
 
-$DetallePedido2 = new DetallePedidos($arrDetallePedidos2);
-$DetallePedido2->insert();
+//$DetallePedido2 = new DetallePedidos($arrDetallePedidos2);
+//$DetallePedido2->insert();
 
-$DetallePedido3 = new DetallePedidos($arrDetallePedidos3);
-$DetallePedido3->insert();
+//$DetallePedido3 = new DetallePedidos($arrDetallePedidos3);
+//$DetallePedido3->insert();
 
-$DetallePedido4 = new DetallePedidos($arrDetallePedidos4);
-$DetallePedido4->insert();
+//$DetallePedido4 = new DetallePedidos($arrDetallePedidos4);
+//$DetallePedido4->insert();
 
 // Prueba update
 //$pruebaUpdate = DetallePedidos::searchForId(4);
@@ -81,4 +86,33 @@ $DetallePedido4->insert();
 //    print_r($detallePedido->jsonSerialize());
 //}
 
+//Prueba relaciones Detalle Pedido
 
+// Prueba relacion detalle pedido con mesas
+//$pruebMesa = Mesas::searchForId(1);
+//print_r($pruebMesa->getDetallesPedidoMesa());
+
+//$pruebDetPed = DetallePedidos::searchForId(2);
+//print_r($pruebDetPed->getMesa());
+
+// Prueba relacion detalle pedido oferta
+//$pruebOfer = Ofertas::searchForId(1);
+//print_r($pruebOfer->getDetallePedidoOferta());
+
+$pruebDetPedOf = DetallePedidos::searchForId(4);
+echo "El detalle pedido numero ".$pruebDetPedOf->getId()." contiene la oferta ".$pruebDetPedOf->getOferta()->getNombre();
+//print_r($pruebDetPedOf->getOferta());
+
+//Prueba relacion entre detalle pedido y producto
+//$pruebProd = Productos::searchForId(3);
+//print_r($pruebProd->getDetallePedidoProductos());
+
+//$pruebDetPedProd = DetallePedidos::searchForId(2);
+//print_r($pruebDetPedProd->getProducto());
+
+//Prueba relacion entre detalle pedido y factura
+//$pruebFac = Facturas::searchForId(1);
+//print_r($pruebFac->getDetallePedidoFactura());
+
+//$pruebDetPedFac = DetallePedidos::searchForId(3);
+//print_r($pruebDetPedFac->getFactura());
