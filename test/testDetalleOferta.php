@@ -1,7 +1,8 @@
 <?php
 
-require ("..\app\Models\DetalleOfertas.php");
+require_once ("..\app\Models\DetalleOfertas.php");
 use App\Models\DetalleOfertas;
+use App\Models\Productos;
 
 $arrDetOferta1 = [
     'Producto_id'=> 1,
@@ -20,16 +21,16 @@ $arrDetOferta3 = [
 
 ];
 
-$objDetOferta1= new DetalleOfertas($arrDetOferta1);
-$objDetOferta1->insert();
+//$objDetOferta1= new DetalleOfertas($arrDetOferta1);
+//$objDetOferta1->insert();
 //var_dump($objDetOferta1);
 
-$objDetOferta2= new DetalleOfertas($arrDetOferta2);
-$objDetOferta2->insert();
+//$objDetOferta2= new DetalleOfertas($arrDetOferta2);
+//$objDetOferta2->insert();
 //var_dump($objDetOferta2);
 
-$objDetOferta3= new DetalleOfertas($arrDetOferta3);
-$objDetOferta3->insert();
+//$objDetOferta3= new DetalleOfertas($arrDetOferta3);
+//$objDetOferta3->insert();
 //var_dump($objDetOferta3);
 
 //Prueba update
@@ -60,4 +61,11 @@ $objDetOferta3->insert();
 //{
 //  print_r($detalloferta->jsonSerialize());
 //}
+
+//Prueba Detalle oferta - Producto
+$pruebDetalleOft = DetalleOfertas::searchForId(1);
+print_r($pruebDetalleOft->getProducto());
+
+$pruebProdDetalleOft = Productos::searchForId(2);
+print_r($pruebProdDetalleOft->getDetalleOfertasProducto());
 

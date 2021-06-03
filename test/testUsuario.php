@@ -102,11 +102,26 @@ $arrUsuario3=[
 
 //$usuarioGetALL = Usuarios::getAll();
 //var_dump($empresaGetALL);
+
 //* @var $usuarioGetALL app\Models\Usuarios[] */
 //foreach ($usuarioGetALL as $Usuario)
 //{
 //    print_r($Usuario->jsonSerialize());
 //}
+
+
+// Cambio de contraseñas
+//$Usr1 = Usuarios::searchForId(1);
+//$Usr1->setContrasena('123456789');
+//$Usr1->update();
+
+$Usr2 = Usuarios::searchForId(2);
+$Usr2->setContrasena('12345');
+$Usr2->update();
+
+$Usr3 = Usuarios::searchForId(3);
+$Usr3->setContrasena('00000');
+$Usr3->update();
 
 //$pruebaUsupag = Usuarios::searchForId(2);
 //print_r($pruebaUsupag->getPagosTrabajador());
@@ -119,4 +134,5 @@ $arrUsuario3=[
 
 //$pruebaUsu = Marcas::searchForId(1);
 //print_r($pruebaUsu->getProveedor());
+
 

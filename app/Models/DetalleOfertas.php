@@ -2,9 +2,10 @@
 
 
 namespace App\Models;
-require ("AbstractDBConnection.php");//Importamos la clase padre
-require (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
-require(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
+require_once ("AbstractDBConnection.php");//Importamos la clase padre
+require_once (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
+require_once(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
+
 
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
@@ -15,6 +16,9 @@ class DetalleOfertas extends AbstractDBConnection implements Model
     private int $Producto_id;
     private int $Oferta_id;
     private int $CantidadProducto;
+
+    /* Relaciones*/
+    private ?array $DetalleOfertasProducto;
 
     /**
      * DetalleOfertas constructor.
@@ -107,6 +111,15 @@ class DetalleOfertas extends AbstractDBConnection implements Model
     public function setCantidadProducto(int $CantidadProducto): void
     {
         $this->CantidadProducto = $CantidadProducto;
+    }
+
+    public function getProducto():?Productos
+    {
+        if (!empty($this->Producto_id))
+        {
+            return Productos::searchForId($this->Producto_id)?? new Productos();
+        }
+        return null;
     }
     /**
      * @param string $query

@@ -1,6 +1,6 @@
 <?php
 require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 require("../../../app/Controllers/MesasController.php");
 
 
@@ -11,7 +11,7 @@ use App\Models\Mesas;
 
 $nameModel = "Mesa";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
