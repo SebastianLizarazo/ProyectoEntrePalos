@@ -2,7 +2,7 @@
 require("..\app\Models\Marcas.php");
 
 use App\Models\Marcas;
-
+use App\Models\Productos;
 $arrMarca1 = [
     'Nombre' => 'panzote',
     'Descripcion' => 'Pan',
@@ -21,9 +21,9 @@ $arrMarca3 = [
     'Proveedor_id' => '1',
     'Estado' => 'Activa',
 ];
-$objMarca1 = new Marcas($arrMarca1);
+//$objMarca1 = new Marcas($arrMarca1);
 //var_dump($objMarca1);
-$objMarca1->insert();
+//$objMarca1->insert();
 
 //$objMarca1->setNombre("Zafran"); //Cambio Valores
 //$objMarca1->setDescripcion("Guacamole"); //Cambio Valores
@@ -31,8 +31,8 @@ $objMarca1->insert();
 
 //$objMarca1->deleted();
 
-$objMarca2 = new Marcas($arrMarca2);
-$objMarca2->insert();
+//$objMarca2 = new Marcas($arrMarca2);
+//$objMarca2->insert();
 
 //$arrResult = Marcas::search("SELECT * FROM marca WHERE Nombre = 'Panzote'");
 //if (!empty($arrResult)) {
@@ -58,9 +58,18 @@ $objMarca2->insert();
 //$arrMarca2 = Marcas::searchForId(5);
 //echo json_encode($arrMarca2);
 
-$objectMarca3= new Marcas( $arrMarca3);
+//$objectMarca3= new Marcas( $arrMarca3);
 //var_dump($objectMarca3);
-$objectMarca3->insert();
+//$objectMarca3->insert();
 
 //$pruebaMarcaRegist= Marcas::marcaRegistrada('panzote',1);// Comprobamos que ya exista una marca con esas caracteristicas
 //var_dump($pruebaMarcaRegist);
+//$pruebaUsua = \App\Models\Usuarios::searchForId(2);
+
+//echo "El usuario ". $pruebaUsua->getNombres() ." Estado ". $pruebaUsua->getEstado() ." Pertenece a la marca ". $pruebaUsua->getMarcasProveedor()."\n";
+//print_r($pruebaUsua->getMarcasProveedor());
+
+$pruebamar = \App\Models\Marcas::searchForId(2);
+
+//echo "El usuario ". $pruebaUsua->getNombres() ." Estado ". $pruebaUsua->getEstado() ." Pertenece a la marca ". $pruebaUsua->getMarcasProveedor()."\n";
+print_r($pruebamar->getProveedor());

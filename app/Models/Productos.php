@@ -9,7 +9,7 @@ require_once(__DIR__ .'/../../vendor/autoload.php');
 
 
 use App\Interfaces\Model;
-use App\Models\AbstractDBConnection;
+
 
 class Productos extends AbstractDBConnection implements Model
 {
