@@ -7,6 +7,7 @@ require_once ("AbstractDBConnection.php");
 require_once (__DIR__."\..\Interfaces\Model.php");
 require_once(__DIR__ .'/../../vendor/autoload.php');
 
+
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
 
@@ -314,13 +315,13 @@ class Productos extends AbstractDBConnection implements Model
         //}
         //return null;
     }
-    public function getDetalleOfertaProductos(): ?array
+    public function getDetalleOfertasProducto(): ?array
     {
-        //if (!empty($this->DetalleOfertaProductos)) {
-        $this->DetalleOfertaProductos = DetalleOfertas::search(
+        //if (!empty($this-> getDetalleOfertasProducto)) {
+        $this-> DetalleOfertasProducto = Productos::search(
             "SELECT * FROM detalleoferta WHERE Producto_id = ".$this->getId()
         );
-        return ($this->DetalleOfertaProductos)?? null;
+        return ($this->DetalleOfertasProducto)?? null;
         //}
         //return null;
     }
@@ -344,6 +345,7 @@ class Productos extends AbstractDBConnection implements Model
         //}
         //return null;
     }
+
     protected function save(string $query): ?bool
     {
         $arrData = [
