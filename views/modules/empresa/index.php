@@ -1,7 +1,7 @@
 <?php
 require_once("../../../app/Controllers/EmpresasController.php");
 require_once("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 
 use App\Controllers\EmpresasController;
 use App\Models\GeneralFunctions;
@@ -9,7 +9,7 @@ use App\Models\Empresas;
 
 $nameModel = "Empresa";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,17 +60,11 @@ $pluralModel = $nameModel.'s';
                             <div class="card-header">
                                 <h3 class="card-title"><i class="fas fa-user"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="index.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                             data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                            data-toggle="tooltip" title="Remove">
-                                        <i class="fas fa-times"></i></button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -111,7 +105,7 @@ $pluralModel = $nameModel.'s';
                                                         <td><?= $empresa->getTelefono(); ?></td>
                                                         <td><?= $empresa->getDireccion(); ?></td>
                                                         <td><?= $empresa->getEstado(); ?></td>
-                                                        <td><?= $empresa->getMunicipio_id(); ?></td>
+                                                        <td><?= $empresa->getMunicipioid(); ?></td>
                                                         <td>
                                                             <a href="edit.php?id=<?= $empresa->getId(); ?>"
                                                                type="button" data-toggle="tooltip" title="Actualizar"

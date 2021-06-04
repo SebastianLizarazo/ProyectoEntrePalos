@@ -1,7 +1,9 @@
 <?php
-require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../../app/Controllers/EmpresasController.php");
+require_once("../../partials/routes.php");
+require_once("../../partials/check_login.php");
 
+use  App\Controllers\EmpresasController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
