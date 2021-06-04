@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Models;
 require_once ("AbstractDBConnection.php");//Importamos la clase padre
 require_once (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
