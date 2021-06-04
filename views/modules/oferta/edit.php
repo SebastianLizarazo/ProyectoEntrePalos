@@ -1,13 +1,12 @@
 <?php
 require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 require("../../../app/Controllers/OfertasController.php");
 
 
-use App\Controllers\MesasController;
+
 use App\Controllers\OfertasController;
 use App\Models\GeneralFunctions;
-use App\Models\Mesas;
 use App\Models\Ofertas;
 
 

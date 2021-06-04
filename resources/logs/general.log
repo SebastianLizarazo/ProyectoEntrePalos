@@ -9527,3 +9527,93 @@
 
 )
   
+[2021-06-04T15:31:57.099151+00:00] General.ERROR: Exception  
+[2021-06-04T15:31:57.102785+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-04T15:31:57.103024+00:00] General.ERROR: Line: 128  
+[2021-06-04T15:31:57.103749+00:00] General.ERROR: Mensaje: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'Nombre' at row 1  
+[2021-06-04T15:31:57.104279+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 186
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 2
+                            [:Nombre] => combo solitario por dos manolin
+                            [:Descripcion] => unas burgers
+                            [:PrecioUnidadVentaOferta] => 2500
+                            [:Estado] => No disponible
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Ofertas.php
+            [line] => 211
+            [function] => save
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE Oferta SET 
+            Nombre = :Nombre, Descripcion = :Descripcion, 
+            PrecioUnidadVentaOferta = :PrecioUnidadVentaOferta,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\OfertasController.php
+            [line] => 46
+            [function] => update
+            [class] => App\Models\Ofertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => edit
+            [class] => App\Controllers\OfertasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
