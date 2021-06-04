@@ -198,7 +198,7 @@ class DetalleOfertas extends AbstractDBConnection implements Model
      * que se puede pasar de activo a inactivo de resto no se aconseja utilizar
      * el delete o hay que pensar muy bien como utilizarlo
      */
-    public function deleted()
+    public function deleted(): ?bool
     {
 
     }

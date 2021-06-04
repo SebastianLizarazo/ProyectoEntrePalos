@@ -113,13 +113,59 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= $baseURL ?>/views/modules/usuarios/index.php" class="nav-link">
+                            <a href="<?= $baseURL ?>/views/modules/usuario/index.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Gestionar</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= $baseURL ?>/views/modules/usuarios/create.php" class="nav-link">
+                            <a href="<?= $baseURL ?>/views/modules/usuario/create.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Registrar</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'detalle oferta') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'detalle oferta') ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-info-circle"></i>
+                        <p>
+                            Detalle oferta
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/detalle_oferta/index.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gestionar</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/detalle_oferta/create.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Registrar</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'consumo trabajador') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'consumo trabajador') ? 'active' : '' ?>">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <p>
+                          Consumo trabajador
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/consumo_trabajador/index.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gestionar</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/consumo_trabajador/create.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Registrar</p>
                             </a>
