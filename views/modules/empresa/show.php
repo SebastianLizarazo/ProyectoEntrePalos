@@ -1,6 +1,6 @@
 <?php
 require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 require("../../../app/Controllers/EmpresasController.php");
 
 use App\Controllers\EmpresasController;
@@ -9,7 +9,7 @@ use App\Models\Empresas;
 
 $nameModel = "Empresa";
 $pluralModel = $nameModel . 's';
-//$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
+$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,7 +63,7 @@ $pluralModel = $nameModel . 's';
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la mesa numero <?= $DataEmpresa->getNumero() ?></h3>
+                                            de la mesa numero <?= $DataEmpresa->getNombre() ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
                                                     data-source="show.php" data-source-selector="#card-refresh-content"
@@ -98,7 +98,7 @@ $pluralModel = $nameModel . 's';
                                                 <p class="text-muted"><?= $DataEmpresa->getEstado() ?></p>
                                                 <hr>
                                                 <strong><i class="fas fa-phone mr-1"></i>Municipio_id</strong>
-                                                <p class="text-muted"><?= $DataEmpresa->getMunicipio_id() ?></p>
+                                                <p class="text-muted"><?= $DataEmpresa->getMunicipioid() ?></p>
                                                 </p>
                                             </div>
                                         </div>

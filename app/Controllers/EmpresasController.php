@@ -30,7 +30,7 @@ class EmpresasController
             if (!empty($this->dataEmpresa['Id']) && !empty($this->dataEmpresa['NIT']) && !Empresas::empresaRegistrada($this->dataEmpresa['Id'], $this->dataEmpresa['NIT'])) {
                 $Empresa = new Empresas($this->dataEmpresa);
                 if ($Empresa->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmUsuarios']);
                     header("Location: ../../views/modules/empresa/index.php?respuesta=success&mensaje=Empresa Registrada");
                 }
             } else {
@@ -43,9 +43,9 @@ class EmpresasController
     public function edit()
     {
         try {
-            $Empresa = new Empresa($this->dataEmpresa);
+            $Empresa = new Empresas($this->dataEmpresa);
             if($Empresa->update()){
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmUsuarios']);
             }
             header("Location: ../../views/modules/empresa/show.php?id=" . $Empresa->getId() . "&respuesta=success&mensaje=empresa Actualizada");
         } catch (\Exception $e) {
