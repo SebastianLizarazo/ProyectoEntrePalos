@@ -1,7 +1,10 @@
 <?php
-//Este archivo es para hacer pruebas unitarias de la clase Oferta
-require ("..\app\Models\ConsumoTrabajadores.php");//Importamos la clase Ofertas
+
+require_once ("..\app\Models\ConsumoTrabajadores.php");//Importamos la clase Ofertas
+
 use App\Models\ConsumoTrabajadores;
+use App\Models\Pagos;
+use App\Models\Productos;
 
 $arrConsumoTb1=[   //creamos un array ficticio
     'Pago_id'=> 1,
@@ -24,16 +27,16 @@ $arrConsumoTb3=[   //creamos un array ficticio
     'Descripcion'=> 'El trabajador consumio un hamburguesa extra grande'
 ];
 
-$objConsumoTb1= new \App\Models\ConsumoTrabajadores($arrConsumoTb1);
-$objConsumoTb1->insert();
+//$objConsumoTb1= new \App\Models\ConsumoTrabajadores($arrConsumoTb1);
+//$objConsumoTb1->insert();
 //var_dump($objConsumoTb1);
 
-$objConsumoTb2= new \App\Models\ConsumoTrabajadores($arrConsumoTb2);
-$objConsumoTb2->insert();
+//$objConsumoTb2= new \App\Models\ConsumoTrabajadores($arrConsumoTb2);
+//$objConsumoTb2->insert();
 //var_dump($objConsumoTb2);
 
-$objConsumoTb3= new \App\Models\ConsumoTrabajadores($arrConsumoTb3);
-$objConsumoTb3->insert();
+//$objConsumoTb3= new \App\Models\ConsumoTrabajadores($arrConsumoTb3);
+//$objConsumoTb3->insert();
 //var_dump($objConsumoTb3);
 
 //Prueba update
@@ -63,3 +66,17 @@ $objConsumoTb3->insert();
 //{
 //   print_r($consumotb->jsonSerialize());
 //}
+
+    //Prueba consumotrabajador- pago
+    $pruebPagoConsumoTbj = Pagos::searchForId(2);
+    print_r($pruebPagoConsumoTbj->getConsumoTrabajadoresPago());
+
+    $pruebConsumoTbj = ConsumoTrabajadores::searchForId(3);
+    print_r($pruebConsumoTbj->getPagos());
+
+    //Prueba consumotrabajador- producto
+    $pruebProductoConsumoTbj = Productos::searchForId(2);
+    print_r($pruebProductoConsumoTbj->getConsumoTrabajadorProductos());
+
+    $pruebConsumoTbj = ConsumoTrabajadores::searchForId(3);
+    print_r($pruebConsumoTbj->getProducto());

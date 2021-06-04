@@ -102,6 +102,7 @@ $arrProducto2= [
 //    print_r($producto->jsonSerialize());
 //}
 
+
 // Prueba relaciones de producto
 
 // Prueba producto marca
@@ -138,5 +139,6 @@ $arrProducto2= [
 
 //$pruebProdDetOfer = Productos::searchForId(3);
 //print_r($pruebProdDetOfer->getDetalleOfertaProductos());
+
 
 

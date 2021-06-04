@@ -6,6 +6,7 @@ require_once ("AbstractDBConnection.php");//Importamos la clase padre
 require_once (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
 require_once(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
 
+
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
 
@@ -15,6 +16,9 @@ class DetalleOfertas extends AbstractDBConnection implements Model
     private int $Producto_id;
     private int $Oferta_id;
     private int $CantidadProducto;
+
+    /* Relaciones*/
+    private ?array $DetalleOfertasProducto;
 
     /**
      * DetalleOfertas constructor.
@@ -34,7 +38,7 @@ class DetalleOfertas extends AbstractDBConnection implements Model
     public static function detalleOfertaRegistrada(mixed $Producto_id, mixed $Oferta_id): bool
     {
         $msaTmp = DetalleOfertas::search("SELECT * FROM detalleoferta WHERE Producto_id = '$Producto_id' and Oferta_id = '$Oferta_id'");
-        return (!empty($msaTmp)) ? true : false;
+        return (!empty($msaTmp) ? true : false);
     }
 
     public function __destruct()
@@ -108,6 +112,15 @@ class DetalleOfertas extends AbstractDBConnection implements Model
     {
         $this->CantidadProducto = $CantidadProducto;
     }
+
+    public function getProducto():?Productos
+    {
+        if (!empty($this->Producto_id))
+        {
+            return Productos::searchForId($this->Producto_id)?? new Productos();
+        }
+        return null;
+    }
     /**
      * @param string $query
      * @return bool|null
@@ -123,15 +136,6 @@ class DetalleOfertas extends AbstractDBConnection implements Model
         if (!empty($this->Oferta_id))
         {
             return Ofertas::searchForId($this->Oferta_id)?? new Ofertas();
-        }
-        return null;
-    }
-
-    public function getProducto():?Productos
-    {
-        if (!empty($this->Producto_id))
-        {
-            return Productos::searchForId($this->Producto_id)?? new Productos();
         }
         return null;
     }

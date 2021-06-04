@@ -7,6 +7,7 @@ require_once ("AbstractDBConnection.php");//Importamos la clase padre
 require_once (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
 require_once(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
 
+
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
 

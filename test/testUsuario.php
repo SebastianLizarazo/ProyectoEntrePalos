@@ -2,6 +2,8 @@
 
 require ("..\app\Models\Usuarios.php");
 use App\Models\Usuarios;
+use App\Models\Pagos;
+use App\Models\Marcas;
 
 $arrUsuario1=[
     'Cedula' => '1193088983',
@@ -100,11 +102,13 @@ $arrUsuario3=[
 
 //$usuarioGetALL = Usuarios::getAll();
 //var_dump($empresaGetALL);
-///* @var $usuarioGetALL app\Models\Usuarios[] */
+
+//* @var $usuarioGetALL app\Models\Usuarios[] */
 //foreach ($usuarioGetALL as $Usuario)
 //{
 //    print_r($Usuario->jsonSerialize());
 //}
+
 
 // Cambio de contraseñas
 //$Usr1 = Usuarios::searchForId(1);
@@ -118,4 +122,17 @@ $Usr2->update();
 $Usr3 = Usuarios::searchForId(3);
 $Usr3->setContrasena('00000');
 $Usr3->update();
+
+//$pruebaUsupag = Usuarios::searchForId(2);
+//print_r($pruebaUsupag->getPagosTrabajador());
+
+//$pruebaUsupag = Pagos::searchForId(1);
+//print_r($pruebaUsupag->getTrabajador());
+
+//$pruebaUsu = Usuarios::searchForId(1);
+//print_r($pruebaUsu->getMarcasProveedor());
+
+//$pruebaUsu = Marcas::searchForId(1);
+//print_r($pruebaUsu->getProveedor());
+
 
