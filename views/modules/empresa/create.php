@@ -3,6 +3,8 @@ require_once("../../../app/Controllers/EmpresasController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
+use App\Controllers\DepartamentosController;
+use App\Controllers\MunicipiosController;
 use  App\Controllers\EmpresasController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
@@ -114,10 +116,29 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="Municipio_id" class="col-sm-2 col-form-label">Municipio_id</label>
-                                                <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="Municipio_id" name="Municipio_id"
-                                                           placeholder="Ingrese el id del municipio" value="<?= $frmSession['Municipio_id'] ?? '' ?>">
+                                                <label for="municipio_id" class="col-sm-2 col-form-label">Municipio</label>
+                                                <div class="col-sm-5">
+                                                    <?= DepartamentosController::selectDepartamentos(
+                                                        array(
+                                                            'id' => 'departamento_id',
+                                                            'name' => 'departamento_id',
+                                                            'defaultValue' => '15', //Boyacá
+                                                            'class' => 'form-control select2bs4 select2-info',
+                                                            'where' => "estado = 'Activo'"
+                                                        )
+                                                    )
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="col-sm-5 ">
+                                                    <?= MunicipiosController::selectMunicipios(array (
+                                                        'id' => 'municipio_id',
+                                                        'name' => 'municipio_id',
+                                                        'defaultValue' => (!empty($frmSession['municipio_id'])) ? $frmSession['municipio_id'] : '',
+                                                        'class' => 'form-control select2bs4 select2-info',
+                                                        'where' => "departamento_id = ".$dep->g." and estado = 'Activo'"))
+                                                    ?>
                                                 </div>
                                             </div>
                                         </div>

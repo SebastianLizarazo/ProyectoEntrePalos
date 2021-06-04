@@ -112,6 +112,17 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
+                                                        <?php if ($mesa->getOcupacion() != "disponible") { ?>
+                                                            <a href="index.php?id=<?= $mesa->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Liberar"
+                                                               class="btn docs-tooltip btn-warning btn-xs"><i
+                                                                        class="fa fa-times-circle"></i></a>
+                                                        <?php } else { ?>
+                                                            <a href="index.php?id=<?= $mesa->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Ocupar"
+                                                               class="btn docs-tooltip btn-warning btn-xs"><i
+                                                                        class="fa fa-times-circle"></i></a>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>

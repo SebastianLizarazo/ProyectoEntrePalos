@@ -291,17 +291,17 @@ final class Municipios extends AbstractDBConnection implements Model
         return null;
     }
 
-    public function insert()
+    public function insert(): ?bool
     {
         return null;
     }
 
-    public function update()
+    public function update(): ?bool
     {
         return null;
     }
 
-    public function deleted()
+    public function deleted(): ?bool
     {
         return null;
     }
