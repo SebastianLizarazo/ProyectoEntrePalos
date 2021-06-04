@@ -1,7 +1,7 @@
 <?php
-require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
-require("../../../app/Controllers/EmpresasController.php");
+require_once("../../partials/routes.php");
+require_once("../../partials/check_login.php");
+require_once("../../../app/Controllers/EmpresasController.php");
 
 
 use App\Controllers\EmpresasController;
@@ -11,7 +11,7 @@ use App\Models\Empresas;
 
 $nameModel = "Empresa";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -124,8 +124,8 @@ $pluralModel = $nameModel.'s';
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Estado" name="Estado" class="custom-select">
-                                                                <option <?= ($DataEmpresa->getEstado() == "Activa") ? "selected" : ""; ?> value="Activa">Activa</option>
-                                                                <option <?= ($DataEmpresa->getEstado() == "Inactiva") ? "selected" : ""; ?> value="Inactiva">Inactiva</option>
+                                                                <option <?= ($DataEmpresa->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
+                                                                <option <?= ($DataEmpresa->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -133,7 +133,7 @@ $pluralModel = $nameModel.'s';
                                                         <label for="Municipio_id" class="col-sm-2 col-form-label">Municipio_id</label>
                                                         <div class="col-sm-10">
                                                             <input required type="number" class="form-control" id="Municipio_id"
-                                                                   name="Municipio_id" value="<?= $DataEmpresa->getMunicipio_id(); ?>"
+                                                                   name="Municipio_id" value="<?= $DataEmpresa->getMunicipioid(); ?>"
                                                                    placeholder="Ingrese el id del municipio">
                                                         </div>
                                                     </div>
