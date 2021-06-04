@@ -1,17 +1,17 @@
 <?php
-require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
-require("../../../app/Controllers/SubCategoriasController.php");
+require_once("../../partials/routes.php");
+require_once("../../partials/check_login.php");
+require_once("../../../app/Controllers/MarcasController.php");
 
 
-use App\Controllers\SubCategoriasController;
+use App\Controllers\MarcasController;
 use App\Models\GeneralFunctions;
-use App\Models\subcategorias;
+use App\Models\Marcas;
 
 
-$nameModel = "SubCategoria";
+$nameModel = "Marca";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -61,9 +61,7 @@ $pluralModel = $nameModel.'s';
                             <div class="card-header">
                                 <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
+
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -75,16 +73,16 @@ $pluralModel = $nameModel.'s';
                                 <p>
                                 <?php
 
-                                $Datasubcategoria = SubCategoriasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $Datasubcategoria subcategorias */
-                                if (!empty($Datasubcategoria)) {
+                                $DataMarca = MarcasController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataMarca */
+                                if (!empty($DataMarca)) {
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
-                                            <input id="id" name="id" value="<?= $Datasubcategoria->getId(); ?>" hidden
+                                            <input id="id" name="id" value="<?= $DataMarca->getId(); ?>" hidden
                                                    required="required" type="text">
                                             <div class="row">
                                                 <div class="col-sm-12">
@@ -92,29 +90,33 @@ $pluralModel = $nameModel.'s';
                                                         <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                         <div class="col-sm-10">
                                                             <input required type="text" class="form-control" id="Nombre"
-                                                                   name="Nombre" value="<?= $Datasubcategoria->getNombre(); ?>"
-                                                                   placeholder="Ingrese el Nombre de la subcategoria">
+                                                                   name="Nombre" value="<?= $DataMarca->getNombre(); ?>"
+                                                                   placeholder="Ingrese el Nombre de la marca">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="CategoriaProducto" class="col-sm-2 col-form-label">CategoriaProducto</label>
+                                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="CategoriaProducto" name="CategoriaProducto" class="custom-select">
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
-                                                            </select>
+                                                            <input required type="text" class="form-control" id="Descripcion"
+                                                                   name="Descripcion" value="<?= $DataMarca->getDescripcion(); ?>"
+                                                                   placeholder="Ingrese la descripcion de la marca">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row">
+                                                        <!-- /.Proveedor_id -->
+
+                                                   <div class="col-sm-12">
+                                                     <div class="form-group row">
                                                         <label for="estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="estado" name="estado" class="custom-select">
-                                                                <option <?= ($Datasubcategoria->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
-                                                                <option <?= ($Datasubcategoria->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
+                                                                <option <?= ($DataMarca->getEstado() == "Activa") ? "selected" : ""; ?> value="Activa">Activa</option>
+                                                                <option <?= ($DataMarca->getEstado() == "Inactiva") ? "selected" : ""; ?> value="Inactiva">Inactiva</option>
                                                             </select>
                                                         </div>
-                                                    </div>
+                                                     </div>
+                                                   </div>
+
+
                                                 </div>
                                             </div>
                                             <hr>

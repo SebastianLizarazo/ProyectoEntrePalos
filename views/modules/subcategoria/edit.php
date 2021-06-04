@@ -1,7 +1,7 @@
 <?php
-require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
-require("../../../app/Controllers/SubCategoriasController.php");
+require_once("../../partials/routes.php");
+require_once("../../partials/check_login.php");
+require_once("../../../app/Controllers/SubCategoriasController.php");
 
 
 use App\Controllers\SubCategoriasController;
@@ -11,7 +11,7 @@ use App\Models\subcategorias;
 
 $nameModel = "SubCategoria";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
