@@ -1,15 +1,15 @@
 <?php
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require_once("../../../app/Controllers/SubCategoriasController.php");
+require_once("../../../app/Controllers/DetallePedidosController.php");
 
 
-use App\Controllers\SubCategoriasController;
+use App\Controllers\DetallePedidosController;
 use App\Models\GeneralFunctions;
-use App\Models\Subcategorias;
+use App\Models\DetallePedidos;
 
 
-$nameModel = "Subcategoria";
+$nameModel = "Detalle Pedidos";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
@@ -61,13 +61,11 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                             <div class="card-header">
                                 <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
+
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                                                class="fas fa-expand"></i></button>
+                                            class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                                class="fas fa-minus"></i></button>
+                                            class="fas fa-minus"></i></button>
                                 </div>
                             </div>
                             <!-- /.card-header -->
@@ -75,49 +73,68 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                 <p>
                                 <?php
 
-                                $DataSubcategoria = SubCategoriasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataSubcategoria Subcategorias */
-                                if (!empty($DataSubcategoria)) {
+                                $DataDetallepedido = DetallePedidosController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataDetallepedido DetallePedidos */
+                                if (!empty($DataDetallepedido)) {
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
-                                            <input id="id" name="id" value="<?= $DataSubcategoria->getId(); ?>" hidden
+                                            <input id="id" name="id" value="<?= $DataDetallepedido->getId(); ?>" hidden
                                                    required="required" type="text">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
+                                                        <label for="Factura_id" class="col-sm-2 col-form-label">Factura_id</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Nombre"
-                                                                   name="Nombre" value="<?= $DataSubcategoria->getNombre(); ?>"
-                                                                   placeholder="Ingrese el nombre de la subcategoria">
+                                                            <input required type="number" class="form-control" id="Factura_id"
+                                                                   name="Nombre" value="<?= $DataDetallepedido->getFacturaId(); ?>"
+                                                                   placeholder="Ingrese el ID de la factura">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="CategoriaProducto" class="col-sm-2 col-form-label">CategoriaProducto</label>
+                                                        <label for="Producto_id" class="col-sm-2 col-form-label">Producto_id</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="CategoriaProducto" name="CategoriaProducto" class="custom-select">
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
-                                                            </select>
+                                                            <input required type="number" class="form-control" id="Producto_id"
+                                                                   name="Producto_id" value="<?= $DataDetallepedido->getProductoid(); ?>"
+                                                                   placeholder="Ingrese el ID del producto">
                                                         </div>
                                                     </div>
-
+                                                    <div class="form-group row">
+                                                        <label for="Ofertas_id" class="col-sm-2 col-form-label">Ofertas_id</label>
+                                                        <div class="col-sm-10">
+                                                            <input required type="number" class="form-control" id="Ofertas_id"
+                                                                   name="Ofertas_id" value="<?= $DataDetallepedido->getOfertasid(); ?>"
+                                                                   placeholder="Ingrese el ID de las ofertas">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad Producto</label>
+                                                        <div class="col-sm-10">
+                                                            <input required type="text" class="form-control" id="CantidadProducto"
+                                                                   name="CantidadProducto" value="<?= $DataDetallepedido->getCantidadProducto(); ?>"
+                                                                   placeholder="Ingrese la cantidad del producto">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="CantidadOferta" class="col-sm-2 col-form-label">Cantidad Oferta</label>
+                                                        <div class="col-sm-10">
+                                                            <input required type="number" class="form-control" id="CantidadOferta"
+                                                                   name="CantidadOferta" value="<?= $DataDetallepedido->getCantidadProducto(); ?>"
+                                                                   placeholder="Ingrese la cantidad de oferta">
+                                                        </div>
+                                                    </div>
 
                                                     <div class="form-group row">
-                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
+                                                        <label for="Mesa_id" class="col-sm-2 col-form-label">Mesa_id</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="Estado" name="Estado" class="custom-select">
-                                                                <option <?= ($DataSubcategoria->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
-                                                                <option <?= ($DataSubcategoria->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
-                                                            </select>
+                                                            <input required type="number" class="form-control" id="Mesa_id"
+                                                                   name="Mesa_id" value="<?= $DataDetallepedido->getMesaid(); ?>"
+                                                                   placeholder="Ingrese el ID de la mesa">
                                                         </div>
                                                     </div>
-
                                                 </div>
                                             </div>
                                             <hr>
@@ -156,3 +173,4 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 </body>
 </html>
+

@@ -255,7 +255,7 @@ class Facturas extends AbstractDBConnection implements Model
     /**
      * Preguntar al ingeniero como implementar el metodo delete en estos casos
      */
-    public function deleted()
+    public function deleted(): ?bool
     {
         $this->setEstado('Cancelada');
         return $this->update();

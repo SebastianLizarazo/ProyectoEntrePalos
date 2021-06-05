@@ -1,13 +1,13 @@
 <?php
-require_once("../../../app/Controllers/SubCategoriasController.php");
+require_once("../../../app/Controllers/DetallePedidosController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
-use App\Controllers\SubCategoriasController;
+use App\Controllers\DetallePedidosController;
 use App\Models\GeneralFunctions;
-use App\Models\SubCategorias;
+use App\Models\DetallePedidos;
 
-$nameModel = "Subcategoria";
+$nameModel = "Detalle Pedidos";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
@@ -61,7 +61,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 <h3 class="card-title"><i class="fas fa-user"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                                                class="fas fa-expand"></i></button>
+                                            class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                             data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
@@ -83,34 +83,38 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Nombre</th>
-                                                <th>Categoria Producto</th>
-                                                <th>Estado</th>
-
+                                                <th>Factura id</th>
+                                                <th>Producto id</th>
+                                                <th>ofertas id</th>
+                                                <th>Cantidad Producto</th>
+                                                <th>Cantidad Oferta</th>
+                                                <th>Mesa id</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrSubcategorias = SubCategoriasController::getAll();
-                                            if (!empty($arrSubcategorias))
-                                                /* @var $arrSubcategorias SubCategorias */
-                                                foreach ($arrSubcategorias as $subcategoria) {
+                                            $arrDetallepedidos = DetallePedidosController::getAll();
+                                            if (!empty($arrDetallepedidos))
+                                                /* @var $arrDetallepedidos DetallePedidos */
+                                                foreach ($arrDetallepedidos as $detallepedido) {
                                                     ?>
                                                     <tr>
-                                                        <td><?= $subcategoria->getId(); ?></td>
-                                                        <td><?= $subcategoria->getNombre(); ?></td>
-                                                        <td><?= $subcategoria->getCategoriaProducto(); ?></td>
-                                                        <td><?= $subcategoria->getEstado(); ?></td>
-
+                                                        <td><?= $detallepedido->getId(); ?></td>
+                                                        <td><?= $detallepedido->getFacturaid(); ?></td>
+                                                        <td><?= $detallepedido->getProductoid(); ?></td>
+                                                        <td><?= $detallepedido->getofertasid(); ?></td>
+                                                        <td><?= $detallepedido->getCantidadProducto(); ?></td>
+                                                        <td><?= $detallepedido->getCantidadOferta(); ?></td>
+                                                        <td><?= $detallepedido->getMesaid(); ?></td>
                                                         <td>
-                                                            <a href="edit.php?id=<?= $subcategoria->getId(); ?>"
+                                                            <a href="edit.php?id=<?= $detallepedido->getId(); ?>"
                                                                type="button" data-toggle="tooltip" title="Actualizar"
                                                                class="btn docs-tooltip btn-primary btn-xs"><i
-                                                                        class="fa fa-edit"></i></a>
-                                                            <a href="show.php?id=<?= $subcategoria->getId(); ?>"
+                                                                    class="fa fa-edit"></i></a>
+                                                            <a href="show.php?id=<?= $detallepedido->getId(); ?>"
                                                                type="button" data-toggle="tooltip" title="Ver"
                                                                class="btn docs-tooltip btn-warning btn-xs"><i
-                                                                        class="fa fa-eye"></i></a>
+                                                                    class="fa fa-eye"></i></a>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
@@ -118,10 +122,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tfoot>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Nombre</th>
-                                                <th>Categoria Producto</th>
-                                                <th>Estado</th>
-
+                                                <th>Factura id</th>
+                                                <th>Producto id</th>
+                                                <th>ofertas id</th>
+                                                <th>Cantidad Producto</th>
+                                                <th>Cantidad Oferta</th>
+                                                <th>Mesa id</th>
 
                                             </tr>
                                             </tfoot>
@@ -153,3 +159,4 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 
 </body>
 </html>
+

@@ -1,13 +1,13 @@
 <?php
-require_once("../../partials/routes.php");
+require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require_once("../../../app/Controllers/MarcasController.php");
+require("../../../app/Controllers/DetallePedidosController.php");
 
-use App\Controllers\MarcasController;
+use App\Controllers\DetallePedidosController;
 use App\Models\GeneralFunctions;
-use App\Models\Marcas;
+use App\Models\DetallePedidos;
 
-$nameModel = "Marca";
+$nameModel = "Detalle Pedidos";
 $pluralModel = $nameModel . 's';
 $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
@@ -37,7 +37,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a
-                                        href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
+                                    href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
                             <li class="breadcrumb-item"><a href="index.php"><?= $pluralModel ?></a></li>
                             <li class="breadcrumb-item active">Ver</li>
                         </ol>
@@ -57,38 +57,45 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $Datamarca = MarcasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $Datamarca Marcas */
-                                if (!empty($Datamarca)) {
+                                $DataDetallepedido = DetallePedidosController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataDetallepedido DetallePedidos */
+                                if (!empty($DataDetallepedido)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la marca llamada: <?= $Datamarca->getNombre() ?></h3>
+                                            de la mesa numero <?= $DataDetallepedido->getFacturaId() ?></h3>
                                         <div class="card-tools">
 
-                                            <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                                                        class="fas fa-expand"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                                     data-toggle="tooltip" title="Collapse">
                                                 <i class="fas fa-minus"></i></button>
-
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove"
+                                                    data-toggle="tooltip" title="Remove">
+                                                <i class="fas fa-times"></i></button>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Nombre</strong>
-                                                        <p class="text-muted"><?= $Datamarca->getNombre() ?></p>
+                                                    <strong><i class="fas fa-list-ol mr-1"></i>Factura_id</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getFacturaId() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-solid fa-bars"></i>Categoria del producto</strong>
-                                                        <p class="text-muted"><?= $Datamarca->getDescripcion() ?></p>
+                                                <strong><i class="fas fa-phone mr-1"></i>Producto_id</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getProductoId() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-solid fa-truck-moving"></i> Proveedor</strong>
-                                                        <p class="text-muted"><?= $Datamarca->getProveedorid() ?></p>
+                                                <strong><i class="fas fa-phone mr-1"></i>Ofertas_id</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getOfertasId() ?></p>
                                                 <hr>
-                                                <strong><i class="fas fa-solid fa-check"></i> Estado</strong>
-                                                        <p class="text-muted"><?= $Datamarca->getEstado() ?></p>
+                                                <strong><i class="far fa-file-alt mr-1"></i>CantidadProducto</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getCantidadProducto() ?></p>
+                                                <hr>
+                                                <strong><i class="fas fa-phone mr-1"></i>CantidadOferta</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getCantidadOferta() ?></p>
+                                                <hr>
+                                                <strong><i class="fas fa-phone mr-1"></i>Mesa_id</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getMesaId() ?></p>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +108,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $Datamarca->getId(); ?>"
+                                                <a role="button" href="edit.php?id=<?= $DataDetallepedido->getId(); ?>"
                                                    class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>
@@ -136,3 +143,4 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 <?php require('../../partials/scripts.php'); ?>
 </body>
 </html>
+

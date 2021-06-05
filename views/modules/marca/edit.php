@@ -74,7 +74,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                 <?php
 
                                 $DataMarca = MarcasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataMarca */
+                                /* @var $DataMarca Marcas */
                                 if (!empty($DataMarca)) {
                                     ?>
                                     <!-- form start -->
@@ -91,7 +91,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <div class="col-sm-10">
                                                             <input required type="text" class="form-control" id="Nombre"
                                                                    name="Nombre" value="<?= $DataMarca->getNombre(); ?>"
-                                                                   placeholder="Ingrese el Nombre de la marca">
+                                                                   placeholder="Ingrese el nombre de la marca">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -102,21 +102,24 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                                    placeholder="Ingrese la descripcion de la marca">
                                                         </div>
                                                     </div>
-                                                        <!-- /.Proveedor_id -->
-
-                                                   <div class="col-sm-12">
-                                                     <div class="form-group row">
-                                                        <label for="estado" class="col-sm-2 col-form-label">Estado</label>
+                                                    <div class="form-group row">
+                                                        <label for="Proveedor_id" class="col-sm-2 col-form-label">Proveedor_id</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="estado" name="estado" class="custom-select">
+                                                            <input required type="number" class="form-control" id="Proveedor_id"
+                                                                   name="Proveedor_id" value="<?= $DataMarca->getProveedorId(); ?>"
+                                                                   placeholder="Ingrese el id del proveedor">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
+                                                        <div class="col-sm-10">
+                                                            <select required id="Estado" name="Estado" class="custom-select">
                                                                 <option <?= ($DataMarca->getEstado() == "Activa") ? "selected" : ""; ?> value="Activa">Activa</option>
                                                                 <option <?= ($DataMarca->getEstado() == "Inactiva") ? "selected" : ""; ?> value="Inactiva">Inactiva</option>
                                                             </select>
                                                         </div>
-                                                     </div>
-                                                   </div>
-
-
+                                                    </div>
                                                 </div>
                                             </div>
                                             <hr>

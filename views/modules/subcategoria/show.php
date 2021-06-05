@@ -65,17 +65,13 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
                                             de la subcategoria llamada: <?= $Datasubcategoria->getNombre() ?></h3>
                                         <div class="card-tools">
-                                            <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                                    data-source="show.php" data-source-selector="#card-refresh-content"
-                                                    data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
+
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                         class="fas fa-expand"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                                     data-toggle="tooltip" title="Collapse">
                                                 <i class="fas fa-minus"></i></button>
-                                            <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                                    data-toggle="tooltip" title="Remove">
-                                                <i class="fas fa-times"></i></button>
+
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -85,10 +81,10 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                     <strong><i class="fas fa-list-ol mr-1"></i>Nombre</strong>
                                                         <p class="text-muted"><?= $Datasubcategoria->getNombre() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>Categoria del producto</strong>
+                                                    <strong><i class="fas fa-solid fa-network-wired"></i>Categoria del producto</strong>
                                                         <p class="text-muted"><?= $Datasubcategoria->getCategoriaProducto() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i> Estado</strong>
+                                                    <strong><i class="fas fa-solid fa-check"></i> Estado</strong>
                                                         <p class="text-muted"><?= $Datasubcategoria->getEstado() ?></p>
                                             </div>
                                         </div>
