@@ -19,7 +19,7 @@ class FacturasController
         $this->dataFactura['id'] = $_FORM['id'] ?? NULL;
         $this->dataFactura['Numero'] = $_FORM['Numero'] ?? NULL;
         $this->dataFactura['Fecha'] = !empty($_FORM['Fecha']) ? Carbon::parse($_FORM['Fecha']) : new Carbon() ;
-        $this->dataFactura['IVA'] = $_FORM['IVA'] ?? NULL;
+        $this->dataFactura['IVA'] = $_FORM['IVA'] ?? 0.19;
         $this->dataFactura['MedioPago'] = $_FORM['MedioPago'] ?? NULL;
         $this->dataFactura['Mesero_id'] = $_FORM['Mesero_id'] ?? NULL;
         $this->dataFactura['Estado'] = $_FORM['Estado'] ?? NULL;
@@ -32,7 +32,7 @@ class FacturasController
             if (!empty($this->dataFactura['id']) && !empty($this->dataFactura['Numero']) && !Facturas::facturaRegistrada($this->dataFactura['id'], $this->dataFactura['Numero'])) {
                 $Factura = new Facturas($this->dataFactura);
                 if ($Factura->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmUsuarios']);
                     header("Location: ../../views/modules/factura/index.php?respuesta=success&mensaje=Factura Registrada");
                 }
             } else {
@@ -47,7 +47,7 @@ class FacturasController
         try {
             $fta = new Facturas($this->dataFactura);
             if($fta->update()){
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmUsuarios']);
             }
             header("Location: ../../views/modules/factura/show.php?id=" . $fta->getId() . "&respuesta=success&mensaje=Factura Actualizada");
         } catch (\Exception $e) {
@@ -83,7 +83,7 @@ class FacturasController
         return null;
     }
 
-    static public function statusPendiene(int $id)
+    static public function statusPendiente(int $id)
     {
         try {
             $ObjFactura = Facturas::searchForId($id);
@@ -125,6 +125,22 @@ class FacturasController
             GeneralFunctions::logFile('Exception',$e, 'error');
         }
     }
+
+    static public function statusRestaurar(int $id)//Restaura una factura ques esta en la papelera
+    {
+        try {
+            $ObjFactura = Facturas::searchForId($id);
+            $ObjFactura->setEstado("Pendiente");
+            if ($ObjFactura->update()){
+                header("Location: ../../views/modules/factura/restore.php");
+            }else{
+                header("Location: ../../views/modules/factura/restore.php?respuesta=error&mensaje=Error al guardar");
+            }
+        }catch (\Exception $e){
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+
     static public function selectFactura(array $params = []) {
 
         //Parametros de Configuracion

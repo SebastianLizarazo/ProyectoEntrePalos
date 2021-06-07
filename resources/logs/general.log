@@ -9773,3 +9773,4 @@
 
 )
   
+[2021-06-07T15:01:28.728332+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion statusPendiente no fue encontrada en el controlador App\\Controllers\\FacturasController"} 
