@@ -76,16 +76,16 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Numero</strong>
+                                                    <strong><i class="fas fa-list-ol mr-1"></i>&nbsp;Numero</strong>
                                                         <p class="text-muted"><?= $DataMesa->getNumero() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>Ubicacion</strong>
+                                                    <strong><i class="fas fa-map-marked-alt"></i>&nbsp;Ubicacion</strong>
                                                         <p class="text-muted"><?= $DataMesa->getUbicacion() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i> Capacidad</strong>
+                                                    <strong><i class="fas fa-chair"></i>&nbsp;Capacidad</strong>
                                                         <p class="text-muted"><?= $DataMesa->getCapacidad() ?></p>
                                                 <hr>
-                                                    <strong><i class="far fa-file-alt mr-1"></i>Ocupacion</strong>
+                                                    <strong><i class="fas fa-thumbs-up"></i>&nbsp;Ocupacion</strong>
                                                         <p class="text-muted"><?= $DataMesa->getOcupacion() ?></p>
                                                 </p>
                                             </div>
