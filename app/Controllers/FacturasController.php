@@ -134,7 +134,7 @@ class FacturasController
             if ($ObjFactura->update()){
                 header("Location: ../../views/modules/factura/restore.php");
             }else{
-                header("Location: ../../views/modules/factura/restore.php?respuesta=error&mensaje=Error al guardar");
+                header("Location: ../../views/modules/factura/restore.php.php?respuesta=error&mensaje=Error al guardar");
             }
         }catch (\Exception $e){
             GeneralFunctions::logFile('Exception',$e, 'error');

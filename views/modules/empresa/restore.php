@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gestión de <?= $pluralModel ?></title>
+    <title>Papelera de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -36,7 +36,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Pagina Principal</h1>
+                        <h1>Papelera</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -58,7 +58,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                         <!-- Default box -->
                         <div class="card card-dark">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-trash-restore"></i> &nbsp; Restaurar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -71,9 +71,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 <div class="row">
                                     <div class="col-auto mr-auto"></div>
                                     <div class="col-auto">
-                                        <a role="button" href="create.php" class="btn btn-primary float-right"
+                                        <a role="button" href="index.php" class="btn btn-primary float-right"
                                            style="margin-right: 5px;">
-                                            <i class="fas fa-plus"></i> Crear <?= $nameModel ?>
+                                            <i class="fas fa-backward"></i> Volver
                                         </a>
                                     </div>
                                 </div>
@@ -88,8 +88,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Telefono</th>
                                                 <th>Direccion</th>
                                                 <th>Estado</th>
-                                                <th>Municipio_id</th>
-                                                <th>Acciones</th>
+                                                <th>Municipio id</th>
+                                                <th>Activar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -98,7 +98,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             if (!empty($arrEmpresas))
                                                 /* @var $arrEmpresas Empresas */
                                                 foreach ($arrEmpresas as $empresa) {
-                                                    if ($empresa->getEstado() == 'Activo'){
+                                                    if ($empresa->getEstado() == 'Inactivo'){
                                                         ?>
                                                         <tr>
                                                             <td><?= $empresa->getId(); ?></td>
@@ -109,22 +109,17 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             <td><?= $empresa->getEstado(); ?></td>
                                                             <td><?= $empresa->getMunicipioid(); ?></td>
                                                             <td>
-                                                                <a href="edit.php?id=<?= $empresa->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Actualizar"
-                                                                   class="btn docs-tooltip btn-primary btn-xs"><i
-                                                                        class="fa fa-edit"></i></a>
-                                                                <a href="show.php?id=<?= $empresa->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Ver"
-                                                                   class="btn docs-tooltip btn-warning btn-xs"><i
-                                                                        class="fa fa-eye"></i></a>
-                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $empresa->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Inactivar"
-                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                            class="far fa-trash-alt"></i></a>
+                                                                <div class="">
+                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $empresa->getId(); ?>"
+                                                                           type="button" data-toggle="tooltip" title="Restaurar"
+                                                                           class="btn docs-tooltip btn-success btn-xs"><i
+                                                                                class="fas fa-undo-alt"></i></a>
+                                                                    <?php } ?>
+                                                                </div>
                                                             </td>
                                                         </tr>
-                                                <?php }
-                                                    } ?>
+                                                        <?php
+                                                } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
@@ -134,8 +129,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Telefono</th>
                                                 <th>Direccion</th>
                                                 <th>Estado</th>
-                                                <th>Municipio_id</th>
-                                                <th>Acciones</th>
+                                                <th>Municipio id</th>
+                                                <th>Activar</th>
                                             </tr>
                                             </tfoot>
                                         </table>
@@ -144,13 +139,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <div class="col-auto mr-auto"></div>
-                                <div class="col-auto">
-                                    <a role="button" href="restore.php" class="btn btn-primary float-left"
-                                       style="margin-right: 5px;">
-                                        <i class="fas fa-undo-alt"></i>&nbsp;Restaurar <?= $pluralModel ?>
-                                    </a>
-                                </div>
+                                Pie de Página.
                             </div>
                             <!-- /.card-footer-->
                         </div>

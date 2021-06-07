@@ -80,6 +80,36 @@ class EmpresasController
         }
         return null;
     }
+    static public function inactivate(int $id)
+    {
+        try {
+            $ObjEmpresa = Empresas::searchForId($id);
+            $ObjEmpresa->setEstado("Inactivo");
+            if ($ObjEmpresa->update()) {
+                header("Location: ../../views/modules/empresa/index.php");
+            } else {
+                header("Location: ../../views/modules/empresa/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception', $e, 'error');
+        }
+    }
+
+    static public function restaurar(int $id)
+    {
+        try {
+            $ObjEmpresa = Empresas::searchForId($id);
+            $ObjEmpresa->setEstado("Activo");
+            if ($ObjEmpresa->update()) {
+                header("Location: ../../views/modules/empresa/restore.php");
+            } else {
+                header("Location: ../../views/modules/empresa/restore.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+
     static public function selectEmpresa(array $params = []) {
 
         //Parametros de Configuracion
