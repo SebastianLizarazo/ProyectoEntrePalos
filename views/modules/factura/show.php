@@ -1,13 +1,13 @@
 <?php
 require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require("../../../app/Controllers/MesasController.php");
+require("../../../app/Controllers/FacturasController.php");
 
-use App\Controllers\MesasController;
+use App\Controllers\FacturasController;
 use App\Models\GeneralFunctions;
-use App\Models\Mesas;
+use App\Models\Facturas;
 
-$nameModel = "Mesa";
+$nameModel = "Factura";
 $pluralModel = $nameModel . 's';
 $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
@@ -57,13 +57,13 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $DataMesa = MesasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataMesa Mesas */
-                                if (!empty($DataMesa)) {
+                                $DataFactura = FacturasController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataFactura Facturas */
+                                if (!empty($DataFactura)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la mesa numero <?= $DataMesa->getNumero() ?></h3>
+                                            de la factura numero <?= $DataFactura->getNumero() ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                         class="fas fa-expand"></i></button>
@@ -76,17 +76,26 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Numero</strong>
-                                                        <p class="text-muted"><?= $DataMesa->getNumero() ?></p>
+                                                    <strong><i class="fas fa-list-ol mr-1"></i>&nbsp;Numero</strong>
+                                                        <p class="text-muted"><?= $DataFactura->getNumero() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>Ubicacion</strong>
-                                                        <p class="text-muted"><?= $DataMesa->getUbicacion() ?></p>
+                                                    <strong><i class="far fa-calendar-alt"></i>&nbsp;Fecha</strong>
+                                                        <p class="text-muted"><?= $DataFactura->getFecha() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i> Capacidad</strong>
-                                                        <p class="text-muted"><?= $DataMesa->getCapacidad() ?></p>
+                                                    <strong><i class="fas fa-percentage"></i>&nbsp;IVA</strong>
+                                                        <p class="text-muted"><?= $DataFactura->getIVA() ?></p>
                                                 <hr>
-                                                    <strong><i class="far fa-file-alt mr-1"></i>Ocupacion</strong>
-                                                        <p class="text-muted"><?= $DataMesa->getOcupacion() ?></p>
+                                                    <strong><i class="far fa-credit-card"></i>&nbsp;Medio de pago</strong>
+                                                        <p class="text-muted"><?= $DataFactura->getMedioPago() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-male"></i>&nbsp;Mesero</strong>
+                                                        <p class="text-muted"><?= $DataFactura->getMeseroId() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-check"></i>&nbsp;Estado</strong>
+                                                        <p class="text-muted"><?= $DataFactura->getEstado() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-utensils"></i>&nbsp;Tipo pedido</strong>
+                                                        <p class="text-muted"><?= $DataFactura->getTipoPedido() ?></p>
                                                 </p>
                                             </div>
                                         </div>
@@ -100,7 +109,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $DataMesa->getId(); ?>"
+                                                <a role="button" href="edit.php?id=<?= $DataFactura->getId(); ?>"
                                                    class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>

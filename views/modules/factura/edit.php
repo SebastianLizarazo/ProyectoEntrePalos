@@ -1,15 +1,16 @@
 <?php
 require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require("../../../app/Controllers/MesasController.php");
+require("../../../app/Controllers/FacturasController.php");
 
 
-use App\Controllers\MesasController;
+use App\Controllers\FacturasController;
 use App\Models\GeneralFunctions;
-use App\Models\Mesas;
+use App\Models\Facturas;
+use Carbon\Carbon;
 
 
-$nameModel = "Mesa";
+$nameModel = "Factura";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
@@ -72,49 +73,76 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                 <p>
                                 <?php
 
-                                $DataMesa = MesasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataMesa Mesas */
-                                if (!empty($DataMesa)) {
+                                $DataFactura = FacturasController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataFactura Facturas */
+                                if (!empty($DataFactura)) {
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
-                                            <input id="id" name="id" value="<?= $DataMesa->getId(); ?>" hidden
-                                                   required="required" type="text">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
                                                         <label for="Numero" class="col-sm-2 col-form-label">Numero</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Numero"
-                                                                   name="Numero" value="<?= $DataMesa->getNumero(); ?>"
-                                                                   placeholder="Ingrese el numero de la mesa">
+                                                            <input required type="number" class="form-control" id="Numero" name="Numero"
+                                                                   placeholder="Ingrese el numero de la factura" value="<?= $DataFactura->getNumero() ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Ubicacion" class="col-sm-2 col-form-label">Ubicacion</label>
+                                                        <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Ubicacion"
-                                                                   name="Ubicacion" value="<?= $DataMesa->getUbicacion(); ?>"
-                                                                   placeholder="Ingrese la ubicacion de la mesa">
+                                                            <input required type="date" max="<?= Carbon::now()->format('Y-m-d')?>" class="col-sm-3 form-control" id="Fecha" name="Fecha"
+                                                                   value="<?= $DataFactura->getFecha()->toDateString()?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Capacidad" class="col-sm-2 col-form-label">Capacidad</label>
+                                                        <label for="IVA" class="col-sm-2 col-form-label">IVA</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Capacidad"
-                                                                   name="Capacidad" value="<?= $DataMesa->getCapacidad(); ?>"
-                                                                   placeholder="Ingrese la capacidad de la mesa">
+                                                            <input type="number" step="0.01" class="form-control" id="IVA" name="IVA"
+                                                                   placeholder="IVA" value="<?= $DataFactura->getIVA() ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Ocupacion" class="col-sm-2 col-form-label">Ocupación</label>
+                                                        <label for="MedioPago" class="col-sm-2 col-form-label">Medio de pago</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="Ocupacion" name="Ocupacion" class="custom-select">
-                                                                <option <?= ($DataMesa->getOcupacion() == "disponible") ? "selected" : ""; ?> value="disponible">disponible</option>
-                                                                <option <?= ($DataMesa->getOcupacion() == "ocupada") ? "selected" : ""; ?> value="ocupada">ocupada</option>
+                                                            <select required id="MedioPago" name="MedioPago" class="custom-select">
+                                                                <option value="">Seleccione</option>
+                                                                <option <?= ( $DataFactura->getMedioPago() == "Datafono") ? "selected" : ""; ?> value="Datafono">Datafono</option>
+                                                                <option <?= ( $DataFactura->getMedioPago() == "Efectivo") ? "selected" : ""; ?> value="Efectivo">Efectivo</option>
+                                                                <option <?= ( $DataFactura->getMedioPago() == "Nequi") ? "selected" : ""; ?> value="Nequi">Nequi</option>
+                                                                <option <?= ( $DataFactura->getMedioPago() == "Ahorro a la mano") ? "selected" : ""; ?> value="Ahorro a la mano">Ahorro a la mano</option>
+                                                                <option <?= ( $DataFactura->getMedioPago() == "Daviplata") ? "selected" : ""; ?> value="Daviplata">Daviplata</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="Mesero_id" class="col-sm-2 col-form-label">Mesero id</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="number" step="0.01" class="form-control" id="Mesero_id" name="Mesero_id"
+                                                                   placeholder="Ingrese el id del mesero" value="<?= $DataFactura->getMeseroId() ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
+                                                        <div class="col-sm-10">
+                                                            <select required name="Estado" id="Estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
+                                                                <option <?= ( $DataFactura->getEstado() == "Pendiente") ? "selected" : ""; ?> value="Pendiente" >Pendiente</option>
+                                                                <option <?= ( $DataFactura->getEstado() == "Paga") ? "selected" : ""; ?> value="Paga" >Paga</option>
+                                                                <option <?= ( $DataFactura->getEstado() == "Cancelada") ? "selected" : ""; ?> value="Cancelada" >Cancelada</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="TipoPedido" class="col-sm-2 col-form-label">Tipo de pedido</label>
+                                                        <div class="col-sm-10">
+                                                            <select required name="TipoPedido" id="TipoPedido" class="custom-select">
+                                                                <option value="">Seleccione</option>
+                                                                <option <?= ( $DataFactura->getTipoPedido() == "Mesa") ? "selected" : ""; ?> value="Mesa" >Mesa</option>
+                                                                <option <?= ( $DataFactura->getTipoPedido() == "Domicilio") ? "selected" : ""; ?> value="Domicilio" >Domicilio</option>
                                                             </select>
                                                         </div>
                                                     </div>

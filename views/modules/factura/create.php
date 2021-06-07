@@ -123,16 +123,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                         </select>
                                                     </div>
                                                 </div>
-                                              <div class="form-group row">
-                                                  <label for="TipoPedido" class="col-sm-2 col-form-label">Tipo de pedido</label>
-                                                  <div class="col-sm-10">
-                                                      <select required name="TipoPedido" id="TipoPedido" class="custom-select">
-                                                          <option value="">Seleccione</option>
-                                                          <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Mesa") ? "selected" : ""; ?>value="Mesa">Mesa</option>
-                                                          <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Domicilio") ? "selected" : ""; ?>value="Domicilio">Domicilio</option>
-                                                      </select>
-                                                  </div>
-                                              </div>
+                                                <div class="form-group row">
+                                                    <label for="TipoPedido" class="col-sm-2 col-form-label">Tipo de pedido</label>
+                                                    <div class="col-sm-10">
+                                                        <select required name="TipoPedido" id="TipoPedido" class="custom-select">
+                                                            <option value="">Seleccione</option>
+                                                            <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Mesa") ? "selected" : ""; ?>value="Mesa">Mesa</option>
+                                                            <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Domicilio") ? "selected" : ""; ?>value="Domicilio">Domicilio</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                           </div>
                                       </div>
                                     <hr>
