@@ -18,6 +18,7 @@
             </div>
             <div class="info">
                 <a href="#" class="d-block"> <?= $_SESSION['UserInSession']['Nombres'] ?? "Invitado" ?> </a>
+                <a href="#" class="d-block"> <?= $_SESSION['UserInSession']['rol'] ?? "Invitado" ?> </a>
             </div>
         </div>
 
