@@ -172,7 +172,7 @@ class Marcas extends AbstractDBConnection implements Model
             Estado = :Estado WHERE id = :id";
         return $this->save($query);
     }
-    public function deleted()
+    public function deleted(): ?bool
 {
     $this->setEstado("Inactiva");
     return $this->update();

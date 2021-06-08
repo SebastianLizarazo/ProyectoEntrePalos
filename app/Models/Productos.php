@@ -369,7 +369,7 @@ class Productos extends AbstractDBConnection implements Model
         return $result;
     }
 
-    public function insert()
+    public function insert(): ?bool
     {
         $query = "INSERT INTO producto VALUES (
             :id, :Nombre, :Tamano, :ReferenciaTamano, :Referencia, :PrecioBase, 
@@ -385,7 +385,7 @@ class Productos extends AbstractDBConnection implements Model
         }
     }
 
-    public function update()
+    public function update(): ?bool
     {
         $query = "UPDATE producto SET
             Nombre = :Nombre, Tamano = :Tamano, ReferenciaTamano = :ReferenciaTamano, Referencia = :Referencia, PrecioBase = :PrecioBase, 
