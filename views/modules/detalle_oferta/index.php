@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Gestión de <?= $pluralModel ?></title>
+    <title>Gestión de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -58,7 +58,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                         <!-- Default box -->
                         <div class="card card-dark">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
@@ -79,8 +79,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
-                                            <thead>
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
+                                               style="width:100%;">
                                             <tr>
                                                 <th>#</th>
                                                 <th>Producto_id</th>
