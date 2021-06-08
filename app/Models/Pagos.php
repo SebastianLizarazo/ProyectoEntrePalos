@@ -157,7 +157,7 @@ class Pagos extends AbstractDBConnection implements Model
             WHERE id = :id";
         return $this->save($query);
     }
-    public function deleted()
+    public function deleted(): ?bool
     {
         $this->setEstado("Pendiente");
         return $this->update();

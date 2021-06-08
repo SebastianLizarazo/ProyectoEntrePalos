@@ -1,15 +1,15 @@
 <?php
-require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
-require("../../../app/Controllers/PagosController.php");
+//require("../../partials/routes.php");
+require_once("../../partials/check_login.php");
+require("../../../app/Controllers/UsuariosController.php");
 
-use App\Controllers\PagosController;
+use App\Controllers\UsuariosController;
 use App\Models\GeneralFunctions;
-use App\Models\Pagos;
+use App\Models\Usuarios;
 
-$nameModel = "Pago";
+$nameModel = "Usuario";
 $pluralModel = $nameModel . 's';
-//$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
+$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +37,7 @@ $pluralModel = $nameModel . 's';
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a
-                                        href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
+                                    href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
                             <li class="breadcrumb-item"><a href="index.php"><?= $pluralModel ?></a></li>
                             <li class="breadcrumb-item active">Ver</li>
                         </ol>
@@ -57,16 +57,19 @@ $pluralModel = $nameModel . 's';
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $Datapago = PagosController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $Datapago Pagos */
-                                if (!empty($Datapago)) {
+                                $DataEmpresa = \App\Controllers\UsuariosController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataEmpresa \App\Models\Usuarios */
+                                if (!empty($DataEmpresa)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            del pago id: <?= $Datapago->getId() ?></h3>
+                                            del usuario id <?= $DataEmpresa->getId() ?></h3>
                                         <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
+                                                    data-source="show.php" data-source-selector="#card-refresh-content"
+                                                    data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                                                        class="fas fa-expand"></i></button>
+                                                    class="fas fa-expand"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                                     data-toggle="tooltip" title="Collapse">
                                                 <i class="fas fa-minus"></i></button>
@@ -79,14 +82,33 @@ $pluralModel = $nameModel . 's';
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Trabajador id</strong>
-                                                        <p class="text-muted"><?= $Datapago->getTrabajadorId() ?></p>
+                                                    <strong><i class="fas fa-list-ol mr-1"></i>Cedula</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getCedula() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>Fecha</strong>
-                                                        <p class="text-muted"><?= $Datapago->getFecha() ?></p>
+                                                <strong><i class="fas fa-phone mr-1"></i>Nombres</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getNombres() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i> Estado</strong>
-                                                        <p class="text-muted"><?= $Datapago->getEstado() ?></p>
+                                                <strong><i class="fas fa-phone mr-1"></i>Apellidos</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getApellidos() ?></p>
+                                                <hr>
+                                                <strong><i class="far fa-file-alt mr-1"></i>Telefono</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getTelefono() ?></p>
+                                                <hr>
+                                                <strong><i class="far fa-file-alt mr-1"></i>Direccion</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getDireccion() ?></p>
+                                                <hr>
+                                                <strong><i class="far fa-file-alt mr-1"></i>Email</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getEmail() ?></p>
+                                                <hr>
+                                                <strong><i class="far fa-file-alt mr-1"></i>Contraseña</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getContrasena() ?></p>
+                                                <hr>
+                                                <strong><i class="fas fa-phone mr-1"></i>Estado</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getEstado() ?></p>
+                                                <hr>
+                                                <strong><i class="fas fa-phone mr-1"></i>Empresa_id</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getEmpresaId() ?></p>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -99,7 +121,7 @@ $pluralModel = $nameModel . 's';
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $Datapago->getId(); ?>"
+                                                <a role="button" href="edit.php?id=<?= $DataEmpresa->getId(); ?>"
                                                    class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>
