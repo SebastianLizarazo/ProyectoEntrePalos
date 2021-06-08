@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Gestión de <?= $pluralModel ?></title>
+    <title>Gestión de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -84,7 +84,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tr>
                                                 <th>#</th>
                                                 <th>Numero</th>
-                                                <th>Ubicacion</th>
+                                                <th>Ubicación</th>
                                                 <th>Capacidad</th>
                                                 <th>Ocupación</th>
                                                 <th>Acciones</th>
@@ -104,25 +104,27 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     <td><?= $mesa->getCapacidad(); ?></td>
                                                     <td><?= $mesa->getOcupacion(); ?></td>
                                                     <td>
-                                                        <a href="edit.php?id=<?= $mesa->getId(); ?>"
-                                                           type="button" data-toggle="tooltip" title="Actualizar"
-                                                           class="btn docs-tooltip btn-primary btn-xs"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                        <a href="show.php?id=<?= $mesa->getId(); ?>"
-                                                           type="button" data-toggle="tooltip" title="Ver"
-                                                           class="btn docs-tooltip btn-warning btn-xs"><i
-                                                                    class="fa fa-eye"></i></a>
-                                                        <?php if ($mesa->getOcupacion() != "disponible") { ?>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=liberar&id=<?= $mesa->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Liberar"
-                                                               class="btn docs-tooltip btn-success btn-xs"><i
-                                                                        class="fa fa-times-circle"></i></a>
-                                                        <?php } else { ?>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=ocupar&id=<?= $mesa->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Ocupar"
-                                                               class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                        class="fa fa-times-circle"></i></a>
-                                                        <?php } ?>
+                                                        <div style="text-align: center;">
+                                                            <a href="edit.php?id=<?= $mesa->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Actualizar"
+                                                               class="btn docs-tooltip btn-primary btn-xs"><i
+                                                                        class="fa fa-edit"></i></a>
+                                                            <a href="show.php?id=<?= $mesa->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Ver"
+                                                               class="btn docs-tooltip btn-warning btn-xs"><i
+                                                                        class="fa fa-eye"></i></a>
+                                                            <?php if ($mesa->getOcupacion() != "disponible") { ?>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=liberar&id=<?= $mesa->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Liberar"
+                                                                   class="btn docs-tooltip btn-success btn-xs"><i
+                                                                            class="fas fa-lock-open"></i></a>
+                                                            <?php } else { ?>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=ocupar&id=<?= $mesa->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Ocupar"
+                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                            class="fas fa-lock"></i></a>
+                                                            <?php } ?>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -131,7 +133,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tr>
                                                 <th>#</th>
                                                 <th>Numero</th>
-                                                <th>Ubicacion</th>
+                                                <th>Ubicación</th>
                                                 <th>Capacidad</th>
                                                 <th>Ocupación</th>
                                                 <th>Acciones</th>

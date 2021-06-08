@@ -123,18 +123,20 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <td><?= $producto->getSubcategoria()->getNombre(); ?></td>
                                                         <td><?= $producto->getEstado(); ?></td>
                                                         <td>
-                                                            <a href="edit.php?id=<?= $producto->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Actualizar"
-                                                               class="btn docs-tooltip btn-primary btn-xs"><i
-                                                                        class="fa fa-edit"></i></a>
-                                                            <a href="show.php?id=<?= $producto->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Ver"
-                                                               class="btn docs-tooltip btn-warning btn-xs"><i
-                                                                        class="fa fa-eye"></i></a>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $producto->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Inactivar"
-                                                               class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                        class="far fa-trash-alt"></i></a>
+                                                            <div  style="text-align: center;">
+                                                                <a href="edit.php?id=<?= $producto->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Actualizar"
+                                                                   class="btn docs-tooltip btn-primary btn-xs"><i
+                                                                            class="fa fa-edit"></i></a>
+                                                                <a href="show.php?id=<?= $producto->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Ver"
+                                                                   class="btn docs-tooltip btn-warning btn-xs"><i
+                                                                            class="fa fa-eye"></i></a>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $producto->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Inactivar"
+                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                            class="far fa-trash-alt"></i></a>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                             <?php

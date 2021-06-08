@@ -109,7 +109,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             <td><?= $empresa->getEstado(); ?></td>
                                                             <td><?= $empresa->getMunicipioid(); ?></td>
                                                             <td>
-                                                                <div class="">
+                                                                <div style="text-align: center;">
                                                                         <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $empresa->getId(); ?>"
                                                                            type="button" data-toggle="tooltip" title="Restaurar"
                                                                            class="btn docs-tooltip btn-success btn-xs"><i

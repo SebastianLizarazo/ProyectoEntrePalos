@@ -13,7 +13,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title>Crear | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -54,7 +54,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -78,23 +78,24 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="Ubicacion" class="col-sm-2 col-form-label">Ubicacion Mesa</label>
+                                                    <label for="Ubicacion" class="col-sm-2 col-form-label">Ubicación</label>
                                                     <div class="col-sm-10">
                                                         <input required type="text" class="form-control" id="Ubicacion" name="Ubicacion"
-                                                               placeholder="Ingrese la ubicacion de la mesa" value="<?= $frmSession['Ubicacion'] ?? '' ?>">
+                                                               placeholder="Ingrese la ubicación de la mesa" value="<?= $frmSession['Ubicacion'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="Capacidad" class="col-sm-2 col-form-label">Capacidad de mesa</label>
+                                                    <label for="Capacidad" class="col-sm-2 col-form-label">Capacidad</label>
                                                     <div class="col-sm-10">
                                                         <input required type="number" class="form-control" id="Capacidad" name="Capacidad"
                                                                placeholder="Ingrese el la capacidad de la mesa" value="<?= $frmSession['Capacidad'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="Ocupacion" class="col-sm-2 col-form-label">Ocupacion</label>
+                                                    <label for="Ocupacion" class="col-sm-2 col-form-label">Ocupación</label>
                                                     <div class="col-sm-10">
                                                         <select required id="Ocupacion" name="Ocupacion" class="custom-select">
+                                                            <option value="">Seleccione</option>
                                                             <option <?= ( !empty($frmSession['Ocupacion']) && $frmSession['Ocupacion'] == "Disponible") ? "selected" : ""; ?> value="Disponible">Disponible</option>
                                                             <option <?= ( !empty($frmSession['Ocupacion']) && $frmSession['Ocupacion'] == "Ocupada") ? "selected" : ""; ?> value="Ocupada">Ocupada</option>
                                                         </select>

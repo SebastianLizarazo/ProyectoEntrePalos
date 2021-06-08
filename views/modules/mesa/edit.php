@@ -17,7 +17,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title>Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -59,7 +59,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
@@ -86,25 +86,25 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero</label>
+                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero de mesa</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Numero"
+                                                            <input required type="number" class="form-control" id="Numero"
                                                                    name="Numero" value="<?= $DataMesa->getNumero(); ?>"
                                                                    placeholder="Ingrese el numero de la mesa">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Ubicacion" class="col-sm-2 col-form-label">Ubicacion</label>
+                                                        <label for="Ubicacion" class="col-sm-2 col-form-label">Ubicación</label>
                                                         <div class="col-sm-10">
                                                             <input required type="text" class="form-control" id="Ubicacion"
                                                                    name="Ubicacion" value="<?= $DataMesa->getUbicacion(); ?>"
-                                                                   placeholder="Ingrese la ubicacion de la mesa">
+                                                                   placeholder="Ingrese la ubicación de la mesa">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="Capacidad" class="col-sm-2 col-form-label">Capacidad</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Capacidad"
+                                                            <input required type="number" class="form-control" id="Capacidad"
                                                                    name="Capacidad" value="<?= $DataMesa->getCapacidad(); ?>"
                                                                    placeholder="Ingrese la capacidad de la mesa">
                                                         </div>
