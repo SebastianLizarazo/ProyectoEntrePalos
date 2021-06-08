@@ -6,7 +6,7 @@ require_once("../../partials/check_login.php");
 use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use App\Models\Productos;
-use App\Models\Marcas;
+
 
 $nameModel = "Producto";
 $pluralModel = $nameModel.'s';
@@ -105,7 +105,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             if (!empty($arrProductos))
                                             /* @var $arrProductos Productos */
                                             foreach ($arrProductos as $producto) {
-                                                if ($producto->getEstado() != 'Inactivo'){/*No va a mostrar los productos que esten inactivos */
+                                                if ($producto->getEstado() == 'Activo'){/*No va a mostrar los productos que esten inactivos */
                                                     ?>
                                                     <tr>
                                                         <td><?= $producto->getId(); ?></td>

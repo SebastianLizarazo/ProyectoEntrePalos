@@ -1,13 +1,13 @@
 <?php
-require_once("../../../app/Controllers/FacturasController.php");
+require_once("../../../app/Controllers/ProductosController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
-use App\Controllers\FacturasController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
-use App\Models\Facturas;
+use App\Models\Productos;
 
-$nameModel = "Factura";
+$nameModel = "Producto";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
@@ -83,41 +83,49 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Numero</th>
-                                                <th>Fecha de creación</th>
-                                                <th>IVA</th>
-                                                <th>Medio de pago</th>
-                                                <th>Mesero</th>
+                                                <th>Nombre</th>
+                                                <th>Tamaño</th>
+                                                <th>Referencia tamaño</th>
+                                                <th>Referencia</th>
+                                                <th>Precio base</th>
+                                                <th>Precio unidad trabajador</th>
+                                                <th>Precio unidad venta</th>
+                                                <th>Presentación</th>
+                                                <th>Marca id</th>
+                                                <th>Cantidad</th>
+                                                <th>Sub categoria</th>
                                                 <th>Estado</th>
-                                                <th>Tipo de pedido</th>
-                                                <th>Cambiar estado</th>
+                                                <th>Restaurar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrFacturas = FacturasController::getAll();
-                                            if (!empty($arrFacturas))
-                                                /* @var $arrFacturas Facturas */
-                                                foreach ($arrFacturas as $factura) {
-                                                    if ($factura->getEstado() == 'Cancelada'){/*No va a mostrar las facuras que esten canceladas */
+                                            $arrProductos = ProductosController::getAll();
+                                            if (!empty($arrProductos))
+                                                /* @var $arrProductos Productos */
+                                                foreach ($arrProductos as $producto) {
+                                                    if ($producto->getEstado() == 'Inactivo'){
                                                         ?>
                                                         <tr>
-                                                            <td><?= $factura->getId(); ?></td>
-                                                            <td><?= $factura->getNumero(); ?></td>
-                                                            <td><?= $factura->getFecha(); ?></td>
-                                                            <td><?= $factura->getIVA(); ?></td>
-                                                            <td><?= $factura->getMedioPago(); ?></td>
-                                                            <td><?= $factura->getMeseroId(); ?></td>
-                                                            <td><?= $factura->getEstado(); ?></td>
-                                                            <td><?= $factura->getTipoPedido(); ?></td>
+                                                            <td><?= $producto->getId(); ?></td>
+                                                            <td><?= $producto->getNombre(); ?></td>
+                                                            <td><?= $producto->getTamano(); ?></td>
+                                                            <td><?= $producto->getReferenciaTamano(); ?></td>
+                                                            <td><?= $producto->getReferencia(); ?></td>
+                                                            <td><?= $producto->getPrecioBase(); ?></td>
+                                                            <td><?= $producto->getPrecioUnidadTrabajador(); ?></td>
+                                                            <td><?= $producto->getPrecioUnidadVenta(); ?></td>
+                                                            <td><?= $producto->getPresentacionProducto(); ?></td>
+                                                            <td><?= $producto->getMarca()->getNombre(); ?></td>
+                                                            <td><?= $producto->getCantidadProducto(); ?></td>
+                                                            <td><?= $producto->getSubcategoria()->getNombre(); ?></td>
+                                                            <td><?= $producto->getEstado(); ?></td>
                                                             <td>
                                                                 <div class="">
-                                                                    <?php if ($factura->getEstado() == "Cancelada") { ?>
-                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusRestaurar&id=<?= $factura->getId(); ?>"
+                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $producto->getId(); ?>"
                                                                         type="button" data-toggle="tooltip" title="Restaurar"
                                                                         class="btn docs-tooltip btn-success btn-xs"><i
                                                                                 class="fas fa-undo-alt"></i></a>
-                                                                    <?php } ?>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -128,14 +136,19 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tfoot>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Numero</th>
-                                                <th>Fecha de creación</th>
-                                                <th>IVA</th>
-                                                <th>Medio de pago</th>
-                                                <th>Mesero</th>
+                                                <th>Nombre</th>
+                                                <th>Tamaño</th>
+                                                <th>Referencia tamaño</th>
+                                                <th>Referencia</th>
+                                                <th>Precio base</th>
+                                                <th>Precio unidad trabajador</th>
+                                                <th>Precio unidad venta</th>
+                                                <th>Presentación</th>
+                                                <th>Marca id</th>
+                                                <th>Cantidad</th>
+                                                <th>Sub categoria</th>
                                                 <th>Estado</th>
-                                                <th>Tipo de pedido</th>
-                                                <th>Cambiar estado</th>
+                                                <th>Restaurar</th>
                                             </tr>
                                             </tfoot>
                                         </table>

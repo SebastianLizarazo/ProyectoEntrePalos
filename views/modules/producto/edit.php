@@ -1,16 +1,15 @@
 <?php
 require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require("../../../app/Controllers/FacturasController.php");
+require("../../../app/Controllers/ProductosController.php");
 
 
-use App\Controllers\FacturasController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
-use App\Models\Facturas;
-use Carbon\Carbon;
+use App\Models\Productos;
 
 
-$nameModel = "Factura";
+$nameModel = "Producto";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
@@ -18,7 +17,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title>Editar |<?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -60,7 +59,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
@@ -73,9 +72,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                 <p>
                                 <?php
 
-                                $DataFactura = FacturasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataFactura Facturas */
-                                if (!empty($DataFactura)) {
+                                $DataProducto = ProductosController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataProducto Productos */
+                                if (!empty($DataProducto)) {
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
@@ -85,44 +84,97 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero</label>
+                                                        <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Numero" name="Numero"
-                                                                   placeholder="Ingrese el numero de la factura" value="<?= $DataFactura->getNumero() ?>">
+                                                            <input required type="text" class="form-control" id="Nombre" name="Nombre"
+                                                                   placeholder="Ingrese el nombre del producto" value="<?= $DataProducto->getNombre() ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label>
+                                                        <label for="Tamano" class="col-sm-2 col-form-label">Tamaño</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="date" max="<?= Carbon::now()->format('Y-m-d')?>" class="col-sm-3 form-control" id="Fecha" name="Fecha"
-                                                                   value="<?= $DataFactura->getFecha()->toDateString()?>">
+                                                            <input required type="number" class="form-control" id="Tamano" name="Tamano"
+                                                                   placeholder="Ingrese el tamaño del producto" value="<?= $DataProducto->getTamano() ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="IVA" class="col-sm-2 col-form-label">IVA</label>
+                                                        <label for="ReferenciaTamano" class="col-sm-2 col-form-label">Referencia tamaño</label>
                                                         <div class="col-sm-10">
-                                                            <input type="number" step="0.01" class="form-control" id="IVA" name="IVA"
-                                                                   placeholder="IVA" value="<?= $DataFactura->getIVA() ?>">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="MedioPago" class="col-sm-2 col-form-label">Medio de pago</label>
-                                                        <div class="col-sm-10">
-                                                            <select required id="MedioPago" name="MedioPago" class="custom-select">
+                                                            <select required name="ReferenciaTamano" id="ReferenciaTamano" class="custom-select">
                                                                 <option value="">Seleccione</option>
-                                                                <option <?= ( $DataFactura->getMedioPago() == "Datafono") ? "selected" : ""; ?> value="Datafono">Datafono</option>
-                                                                <option <?= ( $DataFactura->getMedioPago() == "Efectivo") ? "selected" : ""; ?> value="Efectivo">Efectivo</option>
-                                                                <option <?= ( $DataFactura->getMedioPago() == "Nequi") ? "selected" : ""; ?> value="Nequi">Nequi</option>
-                                                                <option <?= ( $DataFactura->getMedioPago() == "Ahorro a la mano") ? "selected" : ""; ?> value="Ahorro a la mano">Ahorro a la mano</option>
-                                                                <option <?= ( $DataFactura->getMedioPago() == "Daviplata") ? "selected" : ""; ?> value="Daviplata">Daviplata</option>
+                                                                <option <?= ( $DataProducto->getReferenciaTamano() == "ml") ? "selected" : ""; ?> value="ml">ml</option>
+                                                                <option <?= ( $DataProducto->getReferenciaTamano() == "Lt") ? "selected" : ""; ?> value="Lt">Lt</option>
+                                                                <option <?= ( $DataProducto->getReferenciaTamano() == "Kg") ? "selected" : ""; ?> value="Kg">Kg</option>
+                                                                <option <?= ( $DataProducto->getReferenciaTamano() == "gr") ? "selected" : ""; ?> value="gr">gr</option>
+                                                                <option <?= ( $DataProducto->getReferenciaTamano() == "Oz") ? "selected" : ""; ?> value="Oz">Oz</option>
+                                                                <option <?= ( $DataProducto->getReferenciaTamano() == "Lb") ? "selected" : ""; ?> value="Lb">Lb</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Mesero_id" class="col-sm-2 col-form-label">Mesero id</label>
+                                                        <label for="Referencia" class="col-sm-2 col-form-label">Referencia</label>
                                                         <div class="col-sm-10">
-                                                            <input type="number" step="0.01" class="form-control" id="Mesero_id" name="Mesero_id"
-                                                                   placeholder="Ingrese el id del mesero" value="<?= $DataFactura->getMeseroId() ?>">
+                                                            <input required type="text" class="form-control" id="Referencia" name="Referencia"
+                                                                   placeholder="Ingrese la referencia del producto" value="<?= $DataProducto->getReferencia() ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="PrecioBase" class="col-sm-2 col-form-label">Precio base</label>
+                                                        <div class="col-sm-10">
+                                                            <input required type="number" step="0.01" class="form-control" id="PrecioBase" name="PrecioBase"
+                                                                   placeholder="Ingrese el precio base del producto" value="<?= $DataProducto->getPrecioBase() ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="PrecioUnidadTrabajador" class="col-sm-2 col-form-label">Precio unidad trabajador</label>
+                                                        <div class="col-sm-10">
+                                                            <input  required type="number" step="0.01" class="form-control" id="PrecioUnidadTrabajador" name="PrecioUnidadTrabajador"
+                                                                    placeholder="Ingrese el precio unidad trabajador" value="<?= $DataProducto->getPrecioUnidadTrabajador() ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="PrecioUnidadVenta" class="col-sm-2 col-form-label">Precio unidad venta</label>
+                                                        <div class="col-sm-10">
+                                                            <input  required type="number" step="0.01" class="form-control" id="PrecioUnidadVenta" name="PrecioUnidadVenta"
+                                                                    placeholder="Ingrese el precio de venta" value="<?= $DataProducto->getPrecioUnidadVenta() ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="PresentacionProducto" class="col-sm-2 col-form-label">Presentación producto</label>
+                                                        <div class="col-sm-10">
+                                                            <select required id="PresentacionProducto" name="PresentacionProducto" class="custom-select">
+                                                                <option value="">Seleccione</option>
+                                                                <option <?= ( $DataProducto->getPresentacionProducto() == "Lata") ? "selected" : ""; ?> value="Lata">Lata</option>
+                                                                <option <?= ( $DataProducto->getPresentacionProducto() == "Botella vidrio") ? "selected" : ""; ?> value="Botella vidrio">Botella vidrio</option>
+                                                                <option <?= ( $DataProducto->getPresentacionProducto() == "Botella plastico") ? "selected" : ""; ?> value="Botella plastico">Botella plastico</option>
+                                                                <option <?= ( $DataProducto->getPresentacionProducto() == "Tetrapack") ? "selected" : ""; ?> value="Tetrapack">Tetrapack</option>
+                                                                <option <?= ( $DataProducto->getPresentacionProducto() == "Predeterminado") ? "selected" : ""; ?> value="Predeterminado">Predeterminado</option>
+                                                                <option <?= ( $DataProducto->getPresentacionProducto() == "Icopor") ? "selected" : ""; ?> value="Icopor">Icopor</option>
+                                                                <option <?= ( $DataProducto->getPresentacionProducto() == "Vaso vidrio") ? "selected" : ""; ?> value="Vaso vidrio">Vaso vidrio</option>
+                                                                <option <?= ( $DataProducto->getPresentacionProducto() == "Vaso plastico") ? "selected" : ""; ?> value="Vaso plastico">Vaso plastico</option>
+                                                                <option <?= ( $DataProducto->getPresentacionProducto() == "Tasa") ? "selected" : ""; ?> value="Tasa">Tasa</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="Marca_id" class="col-sm-2 col-form-label">Marca id</label>
+                                                        <div class="col-sm-10">
+                                                            <input  required type="number"  class="form-control" id="Marca_id" name="Marca_id"
+                                                                    placeholder="Ingrese el id de la marca" value="<?= $DataProducto->getMarcaId() ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad producto</label>
+                                                        <div class="col-sm-10">
+                                                            <input  required type="number" class="form-control" id="CantidadProducto" name="CantidadProducto"
+                                                                    placeholder="Ingrese la cantidad del producto" value="<?= $DataProducto->getCantidadProducto() ?>" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="Subcategoria_id" class="col-sm-2 col-form-label">SubCategoria id</label>
+                                                        <div class="col-sm-10">
+                                                            <input  required type="number"  class="form-control" id="Subcategoria_id" name="Subcategoria_id"
+                                                                    placeholder="Ingrese la subcategoria" value="<?= $DataProducto->getSubcategoriaId() ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -130,19 +182,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <div class="col-sm-10">
                                                             <select required name="Estado" id="Estado" class="custom-select">
                                                                 <option value="">Seleccione</option>
-                                                                <option <?= ( $DataFactura->getEstado() == "Pendiente") ? "selected" : ""; ?> value="Pendiente" >Pendiente</option>
-                                                                <option <?= ( $DataFactura->getEstado() == "Paga") ? "selected" : ""; ?> value="Paga" >Paga</option>
-                                                                <option <?= ( $DataFactura->getEstado() == "Cancelada") ? "selected" : ""; ?> value="Cancelada" >Cancelada</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="TipoPedido" class="col-sm-2 col-form-label">Tipo de pedido</label>
-                                                        <div class="col-sm-10">
-                                                            <select required name="TipoPedido" id="TipoPedido" class="custom-select">
-                                                                <option value="">Seleccione</option>
-                                                                <option <?= ( $DataFactura->getTipoPedido() == "Mesa") ? "selected" : ""; ?> value="Mesa" >Mesa</option>
-                                                                <option <?= ( $DataFactura->getTipoPedido() == "Domicilio") ? "selected" : ""; ?> value="Domicilio" >Domicilio</option>
+                                                                <option <?= ( $DataProducto->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
+                                                                <option <?= ( $DataProducto->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                             </select>
                                                         </div>
                                                     </div>

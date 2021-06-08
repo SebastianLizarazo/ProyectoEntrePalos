@@ -1,20 +1,20 @@
 <?php
 require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require("../../../app/Controllers/FacturasController.php");
+require("../../../app/Controllers/ProductosController.php");
 
-use App\Controllers\FacturasController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
-use App\Models\Facturas;
+use App\Models\Productos;
 
-$nameModel = "Factura";
+$nameModel = "Producto";
 $pluralModel = $nameModel . 's';
 $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos del <?= $nameModel ?></title>
+    <title>Datos del | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -57,13 +57,13 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $DataFactura = FacturasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataFactura Facturas */
-                                if (!empty($DataFactura)) {
+                                $DataProducto = ProductosController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataProducto Productos */
+                                if (!empty($DataProducto)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la factura numero <?= $DataFactura->getNumero() ?></h3>
+                                            del producto <?= $DataProducto->getNombre() ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                         class="fas fa-expand"></i></button>
@@ -76,26 +76,41 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>&nbsp;Numero</strong>
-                                                        <p class="text-muted"><?= $DataFactura->getNumero() ?></p>
+                                                    <strong><i class="fas fa-signature"></i>&nbsp;Nombre</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getNombre() ?></p>
                                                 <hr>
-                                                    <strong><i class="far fa-calendar-alt"></i>&nbsp;Fecha</strong>
-                                                        <p class="text-muted"><?= $DataFactura->getFecha() ?></p>
+                                                    <strong><i class="fas fa-search-plus"></i>&nbsp;Tamaño</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getTamano() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-percentage"></i>&nbsp;IVA</strong>
-                                                        <p class="text-muted"><?= $DataFactura->getIVA() ?></p>
+                                                    <strong><i class="fas fa-weight-hanging"></i>&nbsp;Referencia tamaño</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getReferenciaTamano() ?></p>
                                                 <hr>
-                                                    <strong><i class="far fa-credit-card"></i>&nbsp;Medio de pago</strong>
-                                                        <p class="text-muted"><?= $DataFactura->getMedioPago() ?></p>
+                                                    <strong><i class="fas fa-file-csv"></i>&nbsp;Referencia</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getReferencia() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-male"></i>&nbsp;Mesero</strong>
-                                                        <p class="text-muted"><?= $DataFactura->getMeseroId() ?></p>
+                                                    <strong><i class="fas fa-dollar-sign"></i>&nbsp;Precio base</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getPrecioBase() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-dollar-sign"></i>&nbsp;Precio unidad trabajador</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getPrecioUnidadTrabajador() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-dollar-sign"></i>&nbsp;Precio unidad venta</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getPrecioUnidadVenta() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-gifts"></i>&nbsp;Presentación producto</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getPresentacionProducto() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-registered"></i>&nbsp;Marca</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getMarca()->getNombre() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-sort-amount-up"></i>&nbsp;Cantidad</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getCantidadProducto() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-cubes"></i>&nbsp;Sub categoria</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getSubcategoria()->getNombre() ?></p>
                                                 <hr>
                                                     <strong><i class="fas fa-check"></i>&nbsp;Estado</strong>
-                                                        <p class="text-muted"><?= $DataFactura->getEstado() ?></p>
-                                                <hr>
-                                                    <strong><i class="fas fa-utensils"></i>&nbsp;Tipo pedido</strong>
-                                                        <p class="text-muted"><?= $DataFactura->getTipoPedido() ?></p>
+                                                        <p class="text-muted"><?= $DataProducto->getEstado() ?></p>
                                                 </p>
                                             </div>
                                         </div>
@@ -109,7 +124,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $DataFactura->getId(); ?>"
+                                                <a role="button" href="edit.php?id=<?= $DataProducto->getId(); ?>"
                                                    class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>
