@@ -113,7 +113,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="municipio_id" class="col-sm-2 col-form-label">Municipio</label>
+                                                <label for="departamento_id" class="col-sm-2 col-form-label">Departamentos</label>
                                                 <div class="col-sm-5">
                                                     <?= DepartamentosController::selectDepartamentos(
                                                         array(
@@ -127,14 +127,15 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     ?>
                                                 </div>
                                             </div>
-                                            <div>
+                                            <div class="form-group row">
+                                                <label for="Municipio_id" class="col-sm-2 col-form-label">Municipios</label>
                                                 <div class="col-sm-5 ">
                                                     <?= MunicipiosController::selectMunicipios(array (
-                                                        'id' => 'municipio_id',
-                                                        'name' => 'municipio_id',
+                                                        'id' => 'Municipio_id',
+                                                        'name' => 'Municipio_id',
                                                         'defaultValue' => (!empty($frmSession['municipio_id'])) ? $frmSession['municipio_id'] : '',
                                                         'class' => 'form-control select2bs4 select2-info',
-                                                        'where' => "departamento_id = ".$dep->g." and estado = 'Activo'"))
+                                                        'where' => "departamento_id = 15 and estado = 'Activo'"))
                                                     ?>
                                                 </div>
                                             </div>
@@ -161,6 +162,27 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 </div>
 <!-- ./wrapper -->
 <?php require('../../partials/scripts.php'); ?>
+<script>
+    $(function() {
+        $('#departamento_id').on('change', function() {
+            $.post("../../../app/Controllers/MainController.php?controller=Municipios&action=selectMunicipios", {
+                isMultiple: false,
+                isRequired: true,
+                id: "Municipio_id",
+                nombre: "Municipio_id",
+                defaultValue: "",
+                class: "form-control select2bs4 select2-info",
+                where: "departamento_id = "+$('#departamento_id').val()+" and estado = 'Activo'",
+                request: 'ajax'
+            }, function(e) {
+                if (e)
+                    console.log(e);
+                $("#Municipio_id").html(e).select2({ height: '100px'});
+            });
+        });
+        $('.btn-file span').html('Seleccionar');
+    });
+</script>
 </body>
 </html>
 

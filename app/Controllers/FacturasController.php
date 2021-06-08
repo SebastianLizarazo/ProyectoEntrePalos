@@ -117,7 +117,7 @@ class FacturasController
             $ObjFactura = Facturas::searchForId($id);
             $ObjFactura->setEstado("Cancelada");
             if ($ObjFactura->update()){
-                header("Location: ../../views/modules/factura/index.php");
+                header("Location: ../../views/modules/factura/index.php?respuesta=success&mensaje=Factura cancelada");
             }else{
                 header("Location: ../../views/modules/factura/index.php?respuesta=error&mensaje=Error al guardar");
             }
@@ -132,9 +132,9 @@ class FacturasController
             $ObjFactura = Facturas::searchForId($id);
             $ObjFactura->setEstado("Pendiente");
             if ($ObjFactura->update()){
-                header("Location: ../../views/modules/factura/restore.php");
+                header("Location: ../../views/modules/factura/restore.php?respuesta=success&mensaje=Factura restaurada");
             }else{
-                header("Location: ../../views/modules/factura/restore.php.php?respuesta=error&mensaje=Error al guardar");
+                header("Location: ../../views/modules/factura/restore.php?respuesta=error&mensaje=Error al guardar");
             }
         }catch (\Exception $e){
             GeneralFunctions::logFile('Exception',$e, 'error');

@@ -79,7 +79,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
+                                               style="width:100%;">
                                             <thead>
                                             <tr>
                                                 <th>#</th>
@@ -111,7 +112,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             <td><?= $factura->getEstado(); ?></td>
                                                             <td><?= $factura->getTipoPedido(); ?></td>
                                                             <td>
-                                                                <div class="">
+                                                                <div style="text-align: center;">
                                                                     <?php if ($factura->getEstado() == "Cancelada") { ?>
                                                                         <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusRestaurar&id=<?= $factura->getId(); ?>"
                                                                         type="button" data-toggle="tooltip" title="Restaurar"

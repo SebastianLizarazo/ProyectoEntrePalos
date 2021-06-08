@@ -10267,3 +10267,167 @@
 )
   
 [2021-06-08T03:03:28.665741+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion statusRestaurar no fue encontrada en el controlador App\\Controllers\\ProductosController"} 
+[2021-06-08T13:13:22.361744+00:00] General.ERROR: Exception  
+[2021-06-08T13:13:22.363709+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-08T13:13:22.363821+00:00] General.ERROR: Line: 102  
+[2021-06-08T13:13:22.363911+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and estado = 'Activo'' at line 1  
+[2021-06-08T13:13:22.364238+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Municipios.php
+            [line] => 222
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM municipio WHERE departamento_id =  and estado = 'Activo'
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MunicipiosController.php
+            [line] => 59
+            [function] => search
+            [class] => App\Models\Municipios
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM municipio WHERE departamento_id =  and estado = 'Activo'
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\empresa\create.php
+            [line] => 137
+            [function] => selectMunicipios
+            [class] => App\Controllers\MunicipiosController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => municipio_id
+                            [name] => municipio_id
+                            [defaultValue] => 
+                            [class] => form-control select2bs4 select2-info
+                            [where] => departamento_id =  and estado = 'Activo'
+                            [isMultiple] => 
+                            [isRequired] => 1
+                            [arrExcluir] => Array
+                                (
+                                )
+
+                            [request] => html
+                        )
+
+                )
+
+        )
+
+)
+  
+[2021-06-08T13:15:41.528550+00:00] General.ERROR: Exception  
+[2021-06-08T13:15:41.529367+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-08T13:15:41.529575+00:00] General.ERROR: Line: 102  
+[2021-06-08T13:15:41.529705+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and estado = 'Activo'' at line 1  
+[2021-06-08T13:15:41.529836+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Municipios.php
+            [line] => 222
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM municipio WHERE departamento_id =  and estado = 'Activo'
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MunicipiosController.php
+            [line] => 59
+            [function] => search
+            [class] => App\Models\Municipios
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM municipio WHERE departamento_id =  and estado = 'Activo'
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\empresa\create.php
+            [line] => 137
+            [function] => selectMunicipios
+            [class] => App\Controllers\MunicipiosController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => municipio_id
+                            [name] => municipio_id
+                            [defaultValue] => 
+                            [class] => form-control select2bs4 select2-info
+                            [where] => departamento_id =  and estado = 'Activo'
+                            [isMultiple] => 
+                            [isRequired] => 1
+                            [arrExcluir] => Array
+                                (
+                                )
+
+                            [request] => html
+                        )
+
+                )
+
+        )
+
+)
+  

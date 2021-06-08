@@ -89,7 +89,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     <label for="IVA" class="col-sm-2 col-form-label">IVA</label>
                                                     <div class="col-sm-10">
                                                         <input type="number" step="0.01" class="form-control" id="IVA" name="IVA"
-                                                               placeholder="IVA" value="<?= $frmSession['IVA'] ?? '' ?>">
+                                                               placeholder="IVA" value="<?= $frmSession['IVA'] ?? '0.19' ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
