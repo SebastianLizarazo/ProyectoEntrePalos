@@ -91,7 +91,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Precio unidad trabajador</th>
                                                 <th>Precio unidad venta</th>
                                                 <th>Presentación</th>
-                                                <th>Marca id</th>
+                                                <th>Marca</th>
                                                 <th>Cantidad</th>
                                                 <th>Sub categoria</th>
                                                 <th>Estado</th>
@@ -121,7 +121,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             <td><?= $producto->getSubcategoria()->getNombre(); ?></td>
                                                             <td><?= $producto->getEstado(); ?></td>
                                                             <td>
-                                                                <div class="">
+                                                                <div style="text-align: center;">
                                                                         <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $producto->getId(); ?>"
                                                                         type="button" data-toggle="tooltip" title="Restaurar"
                                                                         class="btn docs-tooltip btn-success btn-xs"><i
@@ -144,7 +144,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Precio unidad trabajador</th>
                                                 <th>Precio unidad venta</th>
                                                 <th>Presentación</th>
-                                                <th>Marca id</th>
+                                                <th>Marca</th>
                                                 <th>Cantidad</th>
                                                 <th>Sub categoria</th>
                                                 <th>Estado</th>

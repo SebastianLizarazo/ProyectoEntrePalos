@@ -84,7 +84,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>Tamaño</th>
                                                 <th>Referencia tamaño</th>
@@ -93,7 +93,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Precio unidad trabajador</th>
                                                 <th>Precio unidad venta</th>
                                                 <th>Presentación</th>
-                                                <th>Marca id</th>
+                                                <th>Marca</th>
                                                 <th>Cantidad</th>
                                                 <th>Sub categoria</th>
                                                 <th>Estado</th>
@@ -145,7 +145,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>Tamaño</th>
                                                 <th>Referencia tamaño</th>
@@ -154,7 +154,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Precio unidad trabajador</th>
                                                 <th>Precio unidad venta</th>
                                                 <th>Presentación</th>
-                                                <th>Marca id</th>
+                                                <th>Marca</th>
                                                 <th>Cantidad</th>
                                                 <th>Sub categoria</th>
                                                 <th>Estado</th>

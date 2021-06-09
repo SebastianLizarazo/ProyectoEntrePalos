@@ -79,16 +79,17 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
+                                               style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>NIT</th>
-                                                <th>Telefono</th>
-                                                <th>Direccion</th>
+                                                <th>Teléfono</th>
+                                                <th>Dirección</th>
                                                 <th>Estado</th>
-                                                <th>Municipio_id</th>
+                                                <th>Municipio</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </thead>
@@ -107,7 +108,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             <td><?= $empresa->getTelefono(); ?></td>
                                                             <td><?= $empresa->getDireccion(); ?></td>
                                                             <td><?= $empresa->getEstado(); ?></td>
-                                                            <td><?= $empresa->getMunicipioid(); ?></td>
+                                                            <td><?= $empresa->getMunicipio()->getNombre(); ?></td>
                                                             <td>
                                                                 <div  style="text-align: center;">
                                                                     <a href="edit.php?id=<?= $empresa->getId(); ?>"
@@ -130,13 +131,13 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>NIT</th>
-                                                <th>Telefono</th>
-                                                <th>Direccion</th>
+                                                <th>Teléfono</th>
+                                                <th>Dirección</th>
                                                 <th>Estado</th>
-                                                <th>Municipio_id</th>
+                                                <th>Municipio</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </tfoot>

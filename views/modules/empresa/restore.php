@@ -88,7 +88,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Telefono</th>
                                                 <th>Direccion</th>
                                                 <th>Estado</th>
-                                                <th>Municipio id</th>
+                                                <th>Municipio</th>
                                                 <th>Activar</th>
                                             </tr>
                                             </thead>
@@ -107,7 +107,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             <td><?= $empresa->getTelefono(); ?></td>
                                                             <td><?= $empresa->getDireccion(); ?></td>
                                                             <td><?= $empresa->getEstado(); ?></td>
-                                                            <td><?= $empresa->getMunicipioid(); ?></td>
+                                                            <td><?= $empresa->getMunicipio()->getNombre(); ?></td>
                                                             <td>
                                                                 <div style="text-align: center;">
                                                                         <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $empresa->getId(); ?>"
@@ -129,7 +129,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Telefono</th>
                                                 <th>Direccion</th>
                                                 <th>Estado</th>
-                                                <th>Municipio id</th>
+                                                <th>Municipio</th>
                                                 <th>Activar</th>
                                             </tr>
                                             </tfoot>

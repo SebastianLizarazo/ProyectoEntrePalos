@@ -82,7 +82,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                         <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Numero</th>
                                                 <th>Fecha</th>
                                                 <th>IVA</th>
@@ -108,40 +108,44 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <td><?= $factura->getFecha(); ?></td>
                                                         <td><?= $factura->getIVA(); ?></td>
                                                         <td><?= $factura->getMedioPago(); ?></td>
-                                                        <td><?= $factura->getMeseroId(); ?></td>
+                                                        <td><?= $factura->getMesero()->getNombres() ?></td>
                                                         <td><?= $factura->getEstado(); ?></td>
                                                         <td><?= $factura->getTipoPedido(); ?></td>
                                                         <td>
-                                                            <?php if ($factura->getEstado() == "Pendiente") { ?>
-                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusPaga&id=<?= $factura->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Pagada"
-                                                                   class="btn docs-tooltip btn-success btn-xs"><i
-                                                                            class="far fa-check-circle"></i></a>
-                                                            <?php } elseif($factura->getEstado() == "Paga") { ?>
-                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusPendiente&id=<?= $factura->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Pendiente"
-                                                                   class="btn docs-tooltip btn-primary btn-xs"><i
-                                                                            class="fa fa-times-circle"></i></a>
-                                                            <?php }else{ ?>
-                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusPendiente&id=<?= $factura->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Restaurar"
-                                                                   class="btn docs-tooltip btn-success btn-xs"><i
-                                                                            class="fas fa-undo-alt"></i></a>
-                                                            <?php } ?>
+                                                            <div  style="text-align: center;">
+                                                                <?php if ($factura->getEstado() == "Pendiente") { ?>
+                                                                    <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusPaga&id=<?= $factura->getId(); ?>"
+                                                                       type="button" data-toggle="tooltip" title="Pagada"
+                                                                       class="btn docs-tooltip btn-success btn-xs"><i
+                                                                                class="far fa-check-circle"></i></a>
+                                                                <?php } elseif($factura->getEstado() == "Paga") { ?>
+                                                                    <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusPendiente&id=<?= $factura->getId(); ?>"
+                                                                       type="button" data-toggle="tooltip" title="Pendiente"
+                                                                       class="btn docs-tooltip btn-primary btn-xs"><i
+                                                                                class="fa fa-times-circle"></i></a>
+                                                                <?php }else{ ?>
+                                                                    <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusPendiente&id=<?= $factura->getId(); ?>"
+                                                                       type="button" data-toggle="tooltip" title="Restaurar"
+                                                                       class="btn docs-tooltip btn-success btn-xs"><i
+                                                                                class="fas fa-undo-alt"></i></a>
+                                                                <?php } ?>
+                                                            </div>
                                                         </td>
                                                         <td>
-                                                            <a href="edit.php?id=<?= $factura->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Actualizar"
-                                                               class="btn docs-tooltip btn-primary btn-xs"><i
-                                                                        class="fa fa-edit"></i></a>
-                                                            <a href="show.php?id=<?= $factura->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Ver"
-                                                               class="btn docs-tooltip btn-warning btn-xs"><i
-                                                                        class="fa fa-eye"></i></a>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusCancelada&id=<?= $factura->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Cancelar factura"
-                                                               class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                        class="far fa-trash-alt"></i></a>
+                                                            <div  style="text-align: center;">
+                                                                <a href="edit.php?id=<?= $factura->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Actualizar"
+                                                                   class="btn docs-tooltip btn-primary btn-xs"><i
+                                                                            class="fa fa-edit"></i></a>
+                                                                <a href="show.php?id=<?= $factura->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Ver"
+                                                                   class="btn docs-tooltip btn-warning btn-xs"><i
+                                                                            class="fa fa-eye"></i></a>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusCancelada&id=<?= $factura->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Cancelar factura"
+                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                            class="far fa-trash-alt"></i></a>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                             <?php
@@ -150,7 +154,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Numero</th>
                                                 <th>Fecha</th>
                                                 <th>IVA</th>

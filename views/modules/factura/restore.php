@@ -108,7 +108,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             <td><?= $factura->getFecha(); ?></td>
                                                             <td><?= $factura->getIVA(); ?></td>
                                                             <td><?= $factura->getMedioPago(); ?></td>
-                                                            <td><?= $factura->getMeseroId(); ?></td>
+                                                            <td><?= $factura->getMesero()->getNombres(); ?></td>
                                                             <td><?= $factura->getEstado(); ?></td>
                                                             <td><?= $factura->getTipoPedido(); ?></td>
                                                             <td>

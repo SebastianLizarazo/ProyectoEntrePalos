@@ -82,7 +82,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                         <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Numero</th>
                                                 <th>Ubicación</th>
                                                 <th>Capacidad</th>
@@ -102,7 +102,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     <td><?= $mesa->getNumero(); ?></td>
                                                     <td><?= $mesa->getUbicacion(); ?></td>
                                                     <td><?= $mesa->getCapacidad(); ?></td>
-                                                    <td><?= $mesa->getOcupacion(); ?></td>
+                                                    <td><span class="badge badge-<?= $mesa->getOcupacion() == "ocupada" ?  "danger" : "success"?>">
+                                                            <?= $mesa->getOcupacion() ?>
+                                                        </span>
+                                                    </td>
                                                     <td>
                                                         <div style="text-align: center;">
                                                             <a href="edit.php?id=<?= $mesa->getId(); ?>"
@@ -131,7 +134,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Numero</th>
                                                 <th>Ubicación</th>
                                                 <th>Capacidad</th>
@@ -145,7 +148,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+
                             </div>
                             <!-- /.card-footer-->
                         </div>

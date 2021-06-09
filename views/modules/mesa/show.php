@@ -32,7 +32,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Informacion de la <?= $nameModel ?></h1>
+                        <h1>Información de la <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -79,13 +79,13 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                     <strong><i class="fas fa-list-ol mr-1"></i>&nbsp;Numero</strong>
                                                         <p class="text-muted"><?= $DataMesa->getNumero() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-map-marked-alt"></i>&nbsp;Ubicacion</strong>
+                                                    <strong><i class="fas fa-map-marked-alt"></i>&nbsp;Ubicación</strong>
                                                         <p class="text-muted"><?= $DataMesa->getUbicacion() ?></p>
                                                 <hr>
                                                     <strong><i class="fas fa-chair"></i>&nbsp;Capacidad</strong>
                                                         <p class="text-muted"><?= $DataMesa->getCapacidad() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-thumbs-up"></i>&nbsp;Ocupacion</strong>
+                                                    <strong><i class="fas fa-thumbs-up"></i>&nbsp;Ocupación</strong>
                                                         <p class="text-muted"><?= $DataMesa->getOcupacion() ?></p>
                                                 </p>
                                             </div>

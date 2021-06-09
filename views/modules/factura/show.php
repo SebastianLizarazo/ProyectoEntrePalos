@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos del <?= $nameModel ?></title>
+    <title>Datos de la | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -32,7 +32,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Informacion del <?= $nameModel ?></h1>
+                        <h1>Información de la <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -89,7 +89,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                         <p class="text-muted"><?= $DataFactura->getMedioPago() ?></p>
                                                 <hr>
                                                     <strong><i class="fas fa-male"></i>&nbsp;Mesero</strong>
-                                                        <p class="text-muted"><?= $DataFactura->getMeseroId() ?></p>
+                                                        <p class="text-muted"><?= $DataFactura->getMesero()->getNombres() ?></p>
                                                 <hr>
                                                     <strong><i class="fas fa-check"></i>&nbsp;Estado</strong>
                                                         <p class="text-muted"><?= $DataFactura->getEstado() ?></p>
