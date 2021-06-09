@@ -37,15 +37,15 @@ class MarcasController
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
-    static public function activate(int $id)
+    static public function restaurar(int $id)
     {
         try {
             $ObjMarca = Marcas::searchForId($id);
             $ObjMarca->setEstado("Activa");
             if ($ObjMarca->update()) {
-                header("Location: ../../views/modules/marca/index.php");
+                header("Location: ../../views/modules/marca/restore.php?respuesta=success&mensaje=Marca restaurada");
             } else {
-                header("Location: ../../views/modules/marca/index.php?respuesta=error&mensaje=Error al guardar");
+                header("Location: ../../views/modules/marca/restore.php?respuesta=error&mensaje=Error al guardar");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
@@ -58,7 +58,7 @@ class MarcasController
             $ObjMarca = Marcas::searchForId($id);
             $ObjMarca->setEstado("Inactiva");
             if ($ObjMarca->update()) {
-                header("Location: ../../views/modules/marca/index.php");
+                header("Location: ../../views/modules/marca/index.php?respuesta=success&mensaje=Marca inactivada");
             } else {
                 header("Location: ../../views/modules/marca/index.php?respuesta=error&mensaje=Error al guardar");
             }

@@ -85,6 +85,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     <label for="CategoriaProducto" class="col-sm-2 col-form-label">CategoriaProducto</label>
                                                     <div class="col-sm-10">
                                                         <select required id="CategoriaProducto" name="CategoriaProducto" class="custom-select">
+                                                            <option value="">Seleccione</option>
                                                             <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
                                                             <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
                                                             <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
@@ -95,6 +96,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="estado" name="estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
                                                                 <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                             </select>

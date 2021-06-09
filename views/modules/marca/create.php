@@ -113,6 +113,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                              <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                              <div class="col-sm-10">
                                                             <select required id="estado" name="estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Activa") ? "selected" : ""; ?> value="Activa">Activa</option>
                                                                 <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Inactiva") ? "selected" : ""; ?> value="Inactiva">Inactiva</option>
                                                             </select>

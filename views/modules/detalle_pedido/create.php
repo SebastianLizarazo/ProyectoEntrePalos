@@ -7,8 +7,8 @@ use  App\Controllers\DetallePedidosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
-$nameModel = "Detalle Pedidos"; //Nombre del Modelo
-$pluralModel = $nameModel.''; //Nombre del modelo en plural
+$nameModel = "Detalle Pedido"; //Nombre del Modelo
+$pluralModel = $nameModel.'s'; //Nombre del modelo en plural
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>

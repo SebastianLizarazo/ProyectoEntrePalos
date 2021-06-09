@@ -7,8 +7,8 @@ use App\Controllers\DetallePedidosController;
 use App\Models\GeneralFunctions;
 use App\Models\DetallePedidos;
 
-$nameModel = "Detalle Pedidos";
-$pluralModel = $nameModel.'';
+$nameModel = "Detalle Pedido";
+$pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
@@ -83,7 +83,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>Numero</th>
+                                                <th>N°</th>
                                                 <th>Numero de Factura</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
@@ -126,7 +126,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>Numero</th>
+                                                <th>N°</th>
                                                 <th>Numero de Factura</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>

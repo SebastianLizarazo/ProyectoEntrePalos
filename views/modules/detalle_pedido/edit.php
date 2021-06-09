@@ -9,8 +9,8 @@ use App\Models\GeneralFunctions;
 use App\Models\DetallePedidos;
 
 
-$nameModel = "Detalle Pedidos";
-$pluralModel = $nameModel.'';
+$nameModel = "Detalle Pedido";
+$pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 ?>

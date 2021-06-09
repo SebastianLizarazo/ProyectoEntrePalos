@@ -115,6 +115,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Estado" name="Estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ($DataMarca->getEstado() == "Activa") ? "selected" : ""; ?> value="Activa">Activa</option>
                                                                 <option <?= ($DataMarca->getEstado() == "Inactiva") ? "selected" : ""; ?> value="Inactiva">Inactiva</option>
                                                             </select>

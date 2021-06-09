@@ -7,7 +7,7 @@ use App\Controllers\SubCategoriasController;
 use App\Models\GeneralFunctions;
 use App\Models\SubCategorias;
 
-$nameModel = "Subcategoria";
+$nameModel = "SubCategoria";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
@@ -64,7 +64,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                             data-toggle="tooltip" title="Collapse">
-                                        <i class="fas fa-minus"></i></button>
+                                              <i class="fas fa-minus"></i></button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -83,13 +83,11 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>Numero</th>
+                                                <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>Categoria Producto</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
-
-
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -98,13 +96,13 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             if (!empty($arrSubcategorias))
                                                 /* @var $arrSubcategorias SubCategorias */
                                                 foreach ($arrSubcategorias as $subcategoria) {
-                                                    ?>
+                                                if ($subcategoria->getEstado() == 'Activo'){
+                                                 ?>
                                                     <tr>
                                                         <td><?= $subcategoria->getId(); ?></td>
                                                         <td><?= $subcategoria->getNombre(); ?></td>
                                                         <td><?= $subcategoria->getCategoriaProducto(); ?></td>
                                                         <td><?= $subcategoria->getEstado(); ?></td>
-
                                                         <td>
                                                             <div  style="text-align: center;">
                                                             <a href="edit.php?id=<?= $subcategoria->getId(); ?>"
@@ -122,11 +120,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                <?php } ?>
+                                                <?php }
+                                                } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>Numero</th>
+                                                <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>Categoria Producto</th>
                                                 <th>Estado</th>
@@ -141,7 +140,13 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto">
+                                    <a role="button" href="restore.php" class="btn btn-primary float-left"
+                                       style="margin-right: 5px;">
+                                        <i class="fas fa-undo-alt"></i>&nbsp;Restaurar <?= $pluralModel ?>
+                                    </a>
+                                </div>
                             </div>
                             <!-- /.card-footer-->
                         </div>

@@ -33,15 +33,15 @@ class SubCategoriasController
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
-static public function activate(int $id)
+static public function restaurar(int $id)
 {
     try {
         $Objsubcategoria = SubCategorias::searchForId($id);
         $Objsubcategoria->setEstado("Activo");
         if ($Objsubcategoria->update()) {
-            header("Location: ../../views/modules/subcategoria/index.php");
+            header("Location: ../../views/modules/subcategoria/restore.php?respuesta=success&mensaje=Subcategoria restaurada");
         } else {
-            header("Location: ../../views/modules/subcategoria/index.php?respuesta=error&mensaje=Error al guardar");
+            header("Location: ../../views/modules/subcategoria/restore.php?respuesta=error&mensaje=Error al guardar");
         }
     } catch (\Exception $e) {
         GeneralFunctions::logFile('Exception',$e, 'error');
@@ -54,7 +54,7 @@ static public function activate(int $id)
             $Objsubcategoria = SubCategorias::searchForId($id);
             $Objsubcategoria->setEstado("Inactivo");
             if ($Objsubcategoria->update()) {
-                header("Location: ../../views/modules/subcategoria/index.php");
+                header("Location: ../../views/modules/subcategoria/index.php?respuesta=success&mensaje=Subcategoria inactivada");
             } else {
                 header("Location: ../../views/modules/subcategoria/index.php?respuesta=error&mensaje=Error al guardar");
             }
