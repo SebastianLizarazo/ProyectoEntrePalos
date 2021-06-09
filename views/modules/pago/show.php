@@ -1,20 +1,20 @@
 <?php
 require("../../partials/routes.php");
 //require_once("../../partials/check_login.php");
-require("../../../app/Controllers/SubCategoriasController.php");
+require("../../../app/Controllers/PagosController.php");
 
-use App\Controllers\SubCategoriasController;
+use App\Controllers\PagosController;
 use App\Models\GeneralFunctions;
-use App\Models\SubCategorias;
+use App\Models\Pagos;
 
-$nameModel = "SubCategoria";
+$nameModel = "Pago";
 $pluralModel = $nameModel . 's';
 //$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos del <?= $nameModel ?></title>
+    <title>Datos de | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -32,7 +32,7 @@ $pluralModel = $nameModel . 's';
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Informacion del <?= $nameModel ?></h1>
+                        <h1>Información del <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -57,39 +57,33 @@ $pluralModel = $nameModel . 's';
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $Datasubcategoria = SubCategoriasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $Datasubcategoria SubCategorias */
-                                if (!empty($Datasubcategoria)) {
+                                $Datapago = PagosController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $Datapago Pagos */
+                                if (!empty($Datapago)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la subcategoria llamada: <?= $Datasubcategoria->getNombre() ?></h3>
+                                            del pago numero <?= $Datapago->getId() ?></h3>
                                         <div class="card-tools">
-                                            <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                                    data-source="show.php" data-source-selector="#card-refresh-content"
-                                                    data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                         class="fas fa-expand"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                                     data-toggle="tooltip" title="Collapse">
                                                 <i class="fas fa-minus"></i></button>
-                                            <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                                    data-toggle="tooltip" title="Remove">
-                                                <i class="fas fa-times"></i></button>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Nombre</strong>
-                                                        <p class="text-muted"><?= $Datasubcategoria->getNombre() ?></p>
+                                                    <strong><i class="fas fa-user-alt"></i>&nbsp; Trabajador</strong>
+                                                        <p class="text-muted"><?= $Datapago->getTrabajador()->getNombres() ?> <?= $Datapago->getTrabajador()->getApellidos() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>Categoria del producto</strong>
-                                                        <p class="text-muted"><?= $Datasubcategoria->getCategoriaProducto() ?></p>
+                                                    <strong><i class="fas fa-calendar-day"></i>&nbsp; Fecha</strong>
+                                                        <p class="text-muted"><?= $Datapago->getFecha() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i> Estado</strong>
-                                                        <p class="text-muted"><?= $Datasubcategoria->getEstado() ?></p>
+                                                    <strong><i class="fas fa-check"></i></i>&nbsp; Estado</strong>
+                                                        <p class="text-muted"><?= $Datapago->getEstado() ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -102,7 +96,7 @@ $pluralModel = $nameModel . 's';
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $Datasubcategoria->getId(); ?>"
+                                                <a role="button" href="edit.php?id=<?= $Datapago->getId(); ?>"
                                                    class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>

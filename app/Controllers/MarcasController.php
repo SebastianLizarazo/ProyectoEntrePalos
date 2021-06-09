@@ -5,7 +5,6 @@ namespace App\Controllers;
 
 use App\Models\GeneralFunctions;
 use App\Models\Marcas;
-use App\Models\Mesas;
 use App\Models\SubCategorias;
 
 class MarcasController
@@ -26,7 +25,7 @@ class MarcasController
     {
         try {
             if (!empty($this->dataMarca['Nombre']) && !empty($this->dataMarca['Descripcion']) && !Marcas::marcaRegistrada($this->dataMarca['Nombre'], $this->dataMarca['Descripcion'])) {
-                $Marca = new Mesas($this->dataMarca);
+                $Marca = new Marcas($this->dataMarca);
                 if ($Marca->insert()) {
                     //unset($_SESSION['frmUsuarios']);
                     header("Location: ../../views/modules/marca/index.php?respuesta=success&mensaje=Marca Registrada");
@@ -41,8 +40,8 @@ class MarcasController
     static public function activate(int $id)
     {
         try {
-            $ObjMarca = SubCategorias::searchForId($id);
-            $ObjMarca->setEstado("Activo");
+            $ObjMarca = Marcas::searchForId($id);
+            $ObjMarca->setEstado("Activa");
             if ($ObjMarca->update()) {
                 header("Location: ../../views/modules/marca/index.php");
             } else {
@@ -56,8 +55,8 @@ class MarcasController
     static public function inactivate(int $id)
     {
         try {
-            $ObjMarca = SubCategorias::searchForId($id);
-            $ObjMarca->setEstado("Inactivo");
+            $ObjMarca = Marcas::searchForId($id);
+            $ObjMarca->setEstado("Inactiva");
             if ($ObjMarca->update()) {
                 header("Location: ../../views/modules/marca/index.php");
             } else {

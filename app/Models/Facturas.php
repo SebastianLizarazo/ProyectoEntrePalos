@@ -43,7 +43,7 @@ class Facturas extends AbstractDBConnection implements Model
         $this->setId( $factura['id']?? null);
         $this->setNumero( $factura['Numero']?? 0);
         $this->setFecha(!empty($factura['Fecha'])? Carbon::parse($factura['Fecha']): new Carbon());
-        $this->setIVA($factura['IVA']?? 0.0);
+        $this->setIVA($factura['IVA']?? 0.19);
         $this->setMedioPago( $factura['MedioPago']?? '');
         $this->setMeseroId($factura['Mesero_id']?? 0);
         $this->setEstado( $factura['Estado']?? '');
@@ -255,7 +255,7 @@ class Facturas extends AbstractDBConnection implements Model
     /**
      * Preguntar al ingeniero como implementar el metodo delete en estos casos
      */
-    public function deleted()
+    public function deleted(): ?bool
     {
         $this->setEstado('Cancelada');
         return $this->update();

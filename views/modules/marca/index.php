@@ -1,20 +1,20 @@
 <?php
-require_once("../../../app/Controllers/SubCategoriasController.php");
+require_once("../../../app/Controllers/MarcasController.php");
 require_once("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 
-use App\Controllers\SubCategoriasController;
+use App\Controllers\MarcasController;
 use App\Models\GeneralFunctions;
-use App\Models\SubCategorias;
+use App\Models\Marcas;
 
-$nameModel = "SubCategoria";
+$nameModel = "Marca";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Gestión de <?= $pluralModel ?></title>
+    <title> Gestión de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -58,19 +58,15 @@ $pluralModel = $nameModel.'s';
                         <!-- Default box -->
                         <div class="card card-dark">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="index.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
+
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                             data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                            data-toggle="tooltip" title="Remove">
-                                        <i class="fas fa-times"></i></button>
+
                                 </div>
                             </div>
                             <div class="card-body">
@@ -85,58 +81,60 @@ $pluralModel = $nameModel.'s';
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
+                                               style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Numero</th>
                                                 <th>Nombre</th>
-                                                <th>CategoriaProducto</th>
+                                                <th>Descripción</th>
+                                                <th>Proveedor</th>
                                                 <th>Estado</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrSubCategoria = SubCategoriasController::getAll();
-                                            if (!empty($arrSubCategoria))
-                                            /* @var $arrSubCategoria SubCategorias */
-                                            foreach ($arrSubCategoria as $subcategoria) {
+                                            $arrMarca = MarcasController::getAll();
+                                            if (!empty($arrMarca))
+                                            /* @var $arrMarca Marcas */
+                                            foreach ($arrMarca as $Marca) {
                                                 ?>
                                                 <tr>
-                                                    <td><?= $subcategoria->getId(); ?></td>
-                                                    <td><?= $subcategoria->getNombre(); ?></td>
-                                                    <td><?= $subcategoria->getCategoriaProducto(); ?></td>
-                                                    <td><?= $subcategoria->getEstado(); ?></td>
+                                                    <td><?= $Marca->getId(); ?></td>
+                                                    <td><?= $Marca->getNombre(); ?></td>
+                                                    <td><?= $Marca->getDescripcion(); ?></td>
+                                                    <td><?= $Marca->getProveedorid(); ?></td>
+                                                    <td><?= $Marca->getEstado(); ?></td>
                                                     <td>
-                                                        <a href="edit.php?id=<?= $subcategoria->getId(); ?>"
+                                                        <div  style="text-align: center;">
+                                                        <a href="edit.php?id=<?= $Marca->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
                                                            class="btn docs-tooltip btn-primary btn-xs"><i
                                                                     class="fa fa-edit"></i></a>
-                                                        <a href="show.php?id=<?= $subcategoria->getId(); ?>"
+                                                        <a href="show.php?id=<?= $Marca->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                        <?php if ($subcategoria->getEstado() != "Activo") { ?>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $subcategoria->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Activar"
-                                                               class="btn docs-tooltip btn-success btn-xs"><i
-                                                                        class="fa fa-check-square"></i></a>
-                                                        <?php } else { ?>
-                                                            <a type="button"
-                                                               href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $subcategoria->getId(); ?>"
-                                                               data-toggle="tooltip" title="Inactivar"
-                                                               class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                        class="fa fa-times-circle"></i></a>
-                                                        <?php } ?>
+                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $Marca->getId(); ?>"
+                                                           type="button" data-toggle="tooltip" title="Inactivar"
+                                                           class="btn docs-tooltip btn-danger btn-xs">
+                                                            <i class="fas fa-trash-alt"></i></a>
+
+                                                        </div>
+
                                                     </td>
                                                 </tr>
                                             <?php } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Numero</th>
                                                 <th>Nombre</th>
-                                                <th>CategoriaProducto</th>
+                                                <th>Descripción</th>
+                                                <th>Proveedor</th>
                                                 <th>Estado</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </tfoot>
                                         </table>

@@ -109,6 +109,7 @@ $arrUsuario3=[
 //    print_r($Usuario->jsonSerialize());
 //}
 
+
  //Cambio de contraseñas
 $Usr1 = Usuarios::searchForId(1);
 $Usr1->setContrasena('123456789');

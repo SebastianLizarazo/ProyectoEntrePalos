@@ -21,7 +21,7 @@ class MesasController
     public function create()
     {
         try {
-            if (!empty($this->dataMesa['id']) && !empty($this->dataMesa['Numero']) && !Mesas::mesaRegistrada($this->dataMesa['id'], $this->dataMesa['Numero'])) {
+            if (!empty($this->dataMesa['Numero']) && !Mesas::mesaRegistrada($this->dataMesa['Numero'])) {
                 $Mesa = new Mesas($this->dataMesa);
                 if ($Mesa->insert()) {
                     unset($_SESSION['frmUsuarios']);
@@ -74,6 +74,37 @@ class MesasController
         }
         return null;
     }
+
+    static public function ocupar(int $id)
+    {
+        try {
+            $ObjMesa = Mesas::searchForId($id);
+            $ObjMesa->setOcupacion("ocupada");
+            if ($ObjMesa->update()) {
+                header("Location: ../../views/modules/mesa/index.php");
+            } else {
+                header("Location: ../../views/modules/mesa/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+
+    static public function liberar(int $id)
+    {
+        try {
+            $ObjMesa = Mesas::searchForId($id);
+            $ObjMesa->setOcupacion("Disponible");
+            if ($ObjMesa->update()) {
+                header("Location: ../../views/modules/mesa/index.php");
+            } else {
+                header("Location: ../../views/modules/mesa/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+
     static public function selectMesa(array $params = []) {
 
         //Parametros de Configuracion

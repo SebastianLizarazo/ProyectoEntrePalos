@@ -3,6 +3,8 @@ require_once("../../../app/Controllers/EmpresasController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
+use App\Controllers\DepartamentosController;
+use App\Controllers\MunicipiosController;
 use  App\Controllers\EmpresasController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
@@ -14,7 +16,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title>Crear | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -57,9 +59,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                             <div class="card-header">
                                 <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -77,28 +76,28 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group row">
-                                                <label for="Nombre" class="col-sm-2 col-form-label">Nombre de empresa</label>
+                                                <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                 <div class="col-sm-10">
                                                     <input required type="text" class="form-control" id="Nombre" name="Nombre"
                                                            placeholder="Ingrese el nombre de la empresa" value="<?= $frmSession['Nombre'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="NIT" class="col-sm-2 col-form-label">NIT de la empresa</label>
+                                                <label for="NIT" class="col-sm-2 col-form-label">NIT</label>
                                                 <div class="col-sm-10">
                                                     <input required type="text" class="form-control" id="NIT" name="NIT"
                                                            placeholder="Ingrese el NIT de la empresa" value="<?= $frmSession['NIT'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="Telefono" class="col-sm-2 col-form-label">Telefono de la empresa</label>
+                                                <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                 <div class="col-sm-10">
                                                     <input required type="number" class="form-control" id="Telefono" name="Telefono"
                                                            placeholder="Ingrese el telefono de la empresa" value="<?= $frmSession['Telefono'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="Direccion" class="col-sm-2 col-form-label">Direccion de la empresa</label>
+                                                <label for="Direccion" class="col-sm-2 col-form-label">Direccion</label>
                                                 <div class="col-sm-10">
                                                     <input required type="text" class="form-control" id="Direccion" name="Direccion"
                                                            placeholder="Ingrese la direccion de la empresa" value="<?= $frmSession['Direccion'] ?? '' ?>">
@@ -108,16 +107,36 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                 <div class="col-sm-10">
                                                     <select required id="Estado" name="Estado" class="custom-select">
-                                                        <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Activa") ? "selected" : ""; ?> value="Avtiva">Activa</option>
-                                                        <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Inactiva") ? "selected" : ""; ?> value="Inactiva">Inactiva</option>
+                                                        <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Activo") ? "selected" : ""; ?> value="Avtivo">Activo</option>
+                                                        <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="Municipio_id" class="col-sm-2 col-form-label">Municipio_id</label>
-                                                <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="Municipio_id" name="Municipio_id"
-                                                           placeholder="Ingrese el id del municipio" value="<?= $frmSession['Municipio_id'] ?? '' ?>">
+                                                <label for="departamento_id" class="col-sm-2 col-form-label">Departamentos</label>
+                                                <div class="col-sm-5">
+                                                    <?= DepartamentosController::selectDepartamentos(
+                                                        array(
+                                                            'id' => 'departamento_id',
+                                                            'name' => 'departamento_id',
+                                                            'defaultValue' => '15', //Boyacá
+                                                            'class' => 'form-control select2bs4 select2-info',
+                                                            'where' => "estado = 'Activo'"
+                                                        )
+                                                    )
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="Municipio_id" class="col-sm-2 col-form-label">Municipios</label>
+                                                <div class="col-sm-5 ">
+                                                    <?= MunicipiosController::selectMunicipios(array (
+                                                        'id' => 'Municipio_id',
+                                                        'name' => 'Municipio_id',
+                                                        'defaultValue' => (!empty($frmSession['municipio_id'])) ? $frmSession['municipio_id'] : '',
+                                                        'class' => 'form-control select2bs4 select2-info',
+                                                        'where' => "departamento_id = 15 and estado = 'Activo'"))
+                                                    ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -143,6 +162,27 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 </div>
 <!-- ./wrapper -->
 <?php require('../../partials/scripts.php'); ?>
+<script>
+    $(function() {
+        $('#departamento_id').on('change', function() {
+            $.post("../../../app/Controllers/MainController.php?controller=Municipios&action=selectMunicipios", {
+                isMultiple: false,
+                isRequired: true,
+                id: "Municipio_id",
+                nombre: "Municipio_id",
+                defaultValue: "",
+                class: "form-control select2bs4 select2-info",
+                where: "departamento_id = "+$('#departamento_id').val()+" and estado = 'Activo'",
+                request: 'ajax'
+            }, function(e) {
+                if (e)
+                    console.log(e);
+                $("#Municipio_id").html(e).select2({ height: '100px'});
+            });
+        });
+        $('.btn-file span').html('Seleccionar');
+    });
+</script>
 </body>
 </html>
 

@@ -1,6 +1,6 @@
 <?php
-require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/routes.php");
+require_once("../../partials/check_login.php");
 
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
@@ -12,7 +12,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title><?= $_ENV['TITLE_SITE'] ?> Crear | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">

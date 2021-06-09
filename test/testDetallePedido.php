@@ -47,17 +47,17 @@ $arrDetallePedidos4= [
 ];
 
 // Prueba insert
-//$DetallePedido1 = new DetallePedidos($arrDetallePedidos1);
-//$DetallePedido1->insert();
+$DetallePedido1 = new DetallePedidos($arrDetallePedidos1);
+$DetallePedido1->insert();
 
-//$DetallePedido2 = new DetallePedidos($arrDetallePedidos2);
-//$DetallePedido2->insert();
+$DetallePedido2 = new DetallePedidos($arrDetallePedidos2);
+$DetallePedido2->insert();
 
-//$DetallePedido3 = new DetallePedidos($arrDetallePedidos3);
-//$DetallePedido3->insert();
+$DetallePedido3 = new DetallePedidos($arrDetallePedidos3);
+$DetallePedido3->insert();
 
-//$DetallePedido4 = new DetallePedidos($arrDetallePedidos4);
-//$DetallePedido4->insert();
+$DetallePedido4 = new DetallePedidos($arrDetallePedidos4);
+$DetallePedido4->insert();
 
 // Prueba update
 //$pruebaUpdate = DetallePedidos::searchForId(4);
@@ -99,8 +99,8 @@ $arrDetallePedidos4= [
 //$pruebOfer = Ofertas::searchForId(1);
 //print_r($pruebOfer->getDetallePedidoOferta());
 
-$pruebDetPedOf = DetallePedidos::searchForId(4);
-echo "El detalle pedido numero ".$pruebDetPedOf->getId()." contiene la oferta ".$pruebDetPedOf->getOferta()->getNombre();
+//$pruebDetPedOf = DetallePedidos::searchForId(4);
+//echo "El detalle pedido numero ".$pruebDetPedOf->getId()." contiene la oferta ".$pruebDetPedOf->getOferta()->getNombre();
 //print_r($pruebDetPedOf->getOferta());
 
 //Prueba relacion entre detalle pedido y producto
