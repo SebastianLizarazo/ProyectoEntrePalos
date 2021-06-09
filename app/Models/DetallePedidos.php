@@ -221,7 +221,7 @@ class DetallePedidos extends AbstractDBConnection implements Model
         return $result;
     }
 
-    public function insert()
+    public function insert(): ?bool
     {
         $query = "INSERT INTO detallepedido VALUES (
               :id, :Factura_id, :Producto_id, :Ofertas_id, :CantidadProducto,
@@ -236,7 +236,7 @@ class DetallePedidos extends AbstractDBConnection implements Model
         }
     }
 
-    public function update()
+    public function update(): ?bool
     {
         $query = "UPDATE detallepedido SET
             Factura_id = :Factura_id, Producto_id = :Producto_id, Ofertas_id = :Ofertas_id,
@@ -245,7 +245,7 @@ class DetallePedidos extends AbstractDBConnection implements Model
         return $this->save($query);
     }
 
-    public function deleted()
+    public function deleted(): ?bool
     {
 
     }

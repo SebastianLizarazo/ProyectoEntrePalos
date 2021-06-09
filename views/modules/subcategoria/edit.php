@@ -1,23 +1,23 @@
 <?php
-require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
-require("../../../app/Controllers/SubCategoriasController.php");
+require_once("../../partials/routes.php");
+require_once("../../partials/check_login.php");
+require_once("../../../app/Controllers/SubCategoriasController.php");
 
 
 use App\Controllers\SubCategoriasController;
 use App\Models\GeneralFunctions;
-use App\Models\subcategorias;
+use App\Models\Subcategorias;
 
 
-$nameModel = "SubCategoria";
+$nameModel = "Subcategoria";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title><?= $_ENV['TITLE_SITE']  ?> Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -75,16 +75,16 @@ $pluralModel = $nameModel.'s';
                                 <p>
                                 <?php
 
-                                $Datasubcategoria = SubCategoriasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $Datasubcategoria subcategorias */
-                                if (!empty($Datasubcategoria)) {
+                                $DataSubcategoria = SubCategoriasController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataSubcategoria Subcategorias */
+                                if (!empty($DataSubcategoria)) {
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
-                                            <input id="id" name="id" value="<?= $Datasubcategoria->getId(); ?>" hidden
+                                            <input id="id" name="id" value="<?= $DataSubcategoria->getId(); ?>" hidden
                                                    required="required" type="text">
                                             <div class="row">
                                                 <div class="col-sm-12">
@@ -92,8 +92,8 @@ $pluralModel = $nameModel.'s';
                                                         <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                         <div class="col-sm-10">
                                                             <input required type="text" class="form-control" id="Nombre"
-                                                                   name="Nombre" value="<?= $Datasubcategoria->getNombre(); ?>"
-                                                                   placeholder="Ingrese el Nombre de la subcategoria">
+                                                                   name="Nombre" value="<?= $DataSubcategoria->getNombre(); ?>"
+                                                                   placeholder="Ingrese el nombre de la subcategoria">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -106,15 +106,18 @@ $pluralModel = $nameModel.'s';
                                                             </select>
                                                         </div>
                                                     </div>
+
+
                                                     <div class="form-group row">
-                                                        <label for="estado" class="col-sm-2 col-form-label">Estado</label>
+                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="estado" name="estado" class="custom-select">
-                                                                <option <?= ($Datasubcategoria->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
-                                                                <option <?= ($Datasubcategoria->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
+                                                            <select required id="Estado" name="Estado" class="custom-select">
+                                                                <option <?= ($DataSubcategoria->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
+                                                                <option <?= ($DataSubcategoria->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                             </select>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </div>
                                             <hr>

@@ -86,15 +86,15 @@ class ProductosController
         }
         return null;
     }
-    static public function activate(int $id)
+    static public function restaurar(int $id)
     {
         try {
             $ObjProducto = Productos::searchForId($id);
             $ObjProducto->setEstado("Activo");
             if ($ObjProducto->update()) {
-                header("Location: ../../views/modules/producto/index.php");
+                header("Location: ../../views/modules/producto/restore.php");
             } else {
-                header("Location: ../../views/modules/producto/index.php?respuesta=error&mensaje=Error al guardar");
+                header("Location: ../../views/modules/producto/restore.php?respuesta=error&mensaje=Error al guardar");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');

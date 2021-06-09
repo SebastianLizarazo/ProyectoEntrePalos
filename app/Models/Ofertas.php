@@ -211,7 +211,7 @@ class Ofertas extends AbstractDBConnection implements Model
         return $this->save($query);
     }
 
-    public function deleted()
+    public function deleted(): ?bool
     {
         $this->setEstado("Inactivo"); //Cambia el estado del Usuario
         return $this->update();                    //Guarda los cambios..
