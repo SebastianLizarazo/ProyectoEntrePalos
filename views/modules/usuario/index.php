@@ -1,20 +1,20 @@
 <?php
-require_once("../../../app/Controllers/PagosController.php");
+require_once("../../../app/Controllers/UsuariosController.php");
 require_once("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 
-use App\Controllers\PagosController;
+use App\Controllers\UsuariosController;
 use App\Models\GeneralFunctions;
-use App\Models\Pagos;
+use App\Models\Usuarios;
 
-$nameModel = "Pago";
+$nameModel = "Usuario";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gestión de |  <?= $pluralModel ?></title>
+    <title>Gestionar | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -84,51 +84,69 @@ $pluralModel = $nameModel.'s';
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Trabajador</th>
-                                                <th>Fecha</th>
+                                                <th>Cedula</th>
+                                                <th>Nombres</th>
+                                                <th>Apellidos</th>
+                                                <th>Telefono</th>
+                                                <th>Dirección</th>
+                                                <th>Email</th>
+                                                <th>Rol</th>
                                                 <th>Estado</th>
+                                                <th>Empresa</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrPago = \App\Controllers\PagosController::getAll();
-                                            if (!empty($arrPago))
-                                            /* @var $arrPago Pagos */
-                                            foreach ($arrPago as $pago) {
-                                                ?>
-                                                <tr>
-                                                    <td><?= $pago->getId(); ?></td>
-                                                    <td><?= $pago->getTrabajador()->getNombres(); ?> <?= $pago->getTrabajador()->getApellidos(); ?> </td>
-                                                    <td><?= $pago->getFecha(); ?></td>
-                                                    <td><?= $pago->getEstado(); ?></td>
-                                                    <td>
-                                                        <div  style="text-align: center;">
-                                                        <a href="edit.php?id=<?= $pago->getId(); ?>"
-                                                           type="button" data-toggle="tooltip" title="Actualizar"
-                                                           class="btn docs-tooltip btn-primary btn-xs"><i
+                                            $arrUsuarios = UsuariosController::getAll();
+                                            if (!empty($arrUsuarios))
+                                                /* @var $arrUsuarios Usuarios */
+                                                foreach ($arrUsuarios as $usuario) {
+                                                    ?>
+                                                    <tr>
+                                                        <td><?= $usuario->getId(); ?></td>
+                                                        <td><?= $usuario->getCedula(); ?></td>
+                                                        <td><?= $usuario->getNombres(); ?></td>
+                                                        <td><?= $usuario->getApellidos(); ?></td>
+                                                        <td><?= $usuario->getTelefono(); ?></td>
+                                                        <td><?= $usuario->getDireccion(); ?></td>
+                                                        <td><?= $usuario->getEmail(); ?></td>
+                                                        <td><?= $usuario->getRol(); ?></td>
+                                                        <td><?= $usuario->getEstado(); ?></td>
+                                                        <td><?= $usuario->getEmpresas()->getNombre(); ?></td>
+                                                        <td>
+                                                            <div  style="text-align: center;">
+                                                            <a href="edit.php?id=<?= $usuario->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Actualizar"
+                                                               class="btn docs-tooltip btn-primary btn-xs"><i
                                                                     class="fa fa-edit"></i></a>
-                                                        <a href="show.php?id=<?= $pago->getId(); ?>"
-                                                           type="button" data-toggle="tooltip" title="Ver"
-                                                           class="btn docs-tooltip btn-warning btn-xs"><i
+                                                            <a href="show.php?id=<?= $usuario->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Ver"
+                                                               class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                        <?php ($pago->getEstado() != "Pendiente")  ?>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $pago->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Pendiente"
-                                                               class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                        class="far fa-trash-alt"></i></a>
-
+                                                            <?php ($usuario->getEstado() != "Inactivar")  ?>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $usuario->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Inactivar"
+                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                            class="far fa-trash-alt"></i></a>
                                                         </div>
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php ?>
+                                                <?php } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Trabajador </th>
-                                                <th>Fecha</th>
+                                                <th>Cedula</th>
+                                                <th>Nombres</th>
+                                                <th>Apellidos</th>
+                                                <th>Telefono</th>
+                                                <th>Dirección</th>
+                                                <th>Email</th>
+                                                <th>Rol</th>
                                                 <th>Estado</th>
+                                                <th>Empresa</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </tfoot>
