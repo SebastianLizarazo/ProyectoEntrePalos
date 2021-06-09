@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Gestión de <?= $pluralModel ?></title>
+    <title> Gestión de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -85,11 +85,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Numero</th>
                                                 <th>Nombre</th>
-                                                <th>Descripcion</th>
+                                                <th>Descripción</th>
                                                 <th>Proveedor</th>
                                                 <th>Estado</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -106,6 +107,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     <td><?= $Marca->getProveedorid(); ?></td>
                                                     <td><?= $Marca->getEstado(); ?></td>
                                                     <td>
+                                                        <div  style="text-align: center;">
                                                         <a href="edit.php?id=<?= $Marca->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
                                                            class="btn docs-tooltip btn-primary btn-xs"><i
@@ -114,29 +116,25 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                        <?php if ($Marca->getEstado() != "Activo") { ?>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $Marca->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Activar"
-                                                               class="btn docs-tooltip btn-success btn-xs"><i
-                                                                        class="fa fa-check-square"></i></a>
-                                                        <?php } else { ?>
-                                                            <a type="button"
-                                                               href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $Marca->getId(); ?>"
-                                                               data-toggle="tooltip" title="Inactivar"
-                                                               class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                        class="fa fa-times-circle"></i></a>
-                                                        <?php } ?>
+                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $Marca->getId(); ?>"
+                                                           type="button" data-toggle="tooltip" title="Inactivar"
+                                                           class="btn docs-tooltip btn-danger btn-xs">
+                                                            <i class="fas fa-trash-alt"></i></a>
+
+                                                        </div>
+
                                                     </td>
                                                 </tr>
                                             <?php } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Numero</th>
                                                 <th>Nombre</th>
-                                                <th>Descripcion</th>
+                                                <th>Descripción</th>
                                                 <th>Proveedor</th>
                                                 <th>Estado</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </tfoot>
                                         </table>

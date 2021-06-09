@@ -17,7 +17,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title> Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -95,15 +95,15 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
+                                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
                                                         <div class="col-sm-10">
                                                             <input required type="text" class="form-control" id="Descripcion"
                                                                    name="Descripcion" value="<?= $DataMarca->getDescripcion(); ?>"
-                                                                   placeholder="Ingrese la descripcion de la marca">
+                                                                   placeholder="Ingrese la descripción de la marca">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Proveedor_id" class="col-sm-2 col-form-label">Proveedor_id</label>
+                                                        <label for="Proveedor_id" class="col-sm-2 col-form-label">Proveedor</label>
                                                         <div class="col-sm-10">
                                                             <input required type="number" class="form-control" id="Proveedor_id"
                                                                    name="Proveedor_id" value="<?= $DataMarca->getProveedorId(); ?>"

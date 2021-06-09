@@ -8,13 +8,13 @@ use App\Models\GeneralFunctions;
 use App\Models\DetallePedidos;
 
 $nameModel = "Detalle Pedidos";
-$pluralModel = $nameModel . 's';
+$pluralModel = $nameModel . '';
 $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos del <?= $nameModel ?></title>
+    <title> Datos del | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -78,23 +78,23 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Factura_id</strong>
-                                                <p class="text-muted"><?= $DataDetallepedido->getFacturaId() ?></p>
+                                                    <strong><i class="fas fa-file-invoice-dollar"></i> &nbsp;Numero de factura</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getFactura()->getNumero() ?></p>
                                                 <hr>
-                                                <strong><i class="fas fa-phone mr-1"></i>Producto_id</strong>
-                                                <p class="text-muted"><?= $DataDetallepedido->getProductoId() ?></p>
+                                                <strong><i class="fas fa-hamburger"></i> &nbsp;Producto</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getProducto()->getNombre() ?></p>
                                                 <hr>
-                                                <strong><i class="fas fa-phone mr-1"></i>Ofertas_id</strong>
-                                                <p class="text-muted"><?= $DataDetallepedido->getOfertasId() ?></p>
+                                                <strong><i class="fas fa-piggy-bank"></i> &nbsp;Oferta</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getOferta()->getNombre() ?></p>
                                                 <hr>
-                                                <strong><i class="far fa-file-alt mr-1"></i>CantidadProducto</strong>
+                                                <strong><i class="fas fa-sort-amount-up-alt"></i> &nbsp;Cantidad Producto</strong>
                                                 <p class="text-muted"><?= $DataDetallepedido->getCantidadProducto() ?></p>
                                                 <hr>
-                                                <strong><i class="fas fa-phone mr-1"></i>CantidadOferta</strong>
+                                                <strong><i class="fas fa-piggy-bank"></i>&nbsp;Cantidad Oferta</strong>
                                                 <p class="text-muted"><?= $DataDetallepedido->getCantidadOferta() ?></p>
                                                 <hr>
-                                                <strong><i class="fas fa-phone mr-1"></i>Mesa_id</strong>
-                                                <p class="text-muted"><?= $DataDetallepedido->getMesaId() ?></p>
+                                                <strong><i class="fas fa-chair"></i> &nbsp;Numero de mesa</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getMesa()->getNumero() ?></p>
                                                 </p>
                                             </div>
                                         </div>

@@ -8,7 +8,7 @@ use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
 $nameModel = "Detalle Pedidos"; //Nombre del Modelo
-$pluralModel = $nameModel.'s'; //Nombre del modelo en plural
+$pluralModel = $nameModel.''; //Nombre del modelo en plural
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
@@ -75,21 +75,21 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group row">
-                                                <label for="Factura_id" class="col-sm-2 col-form-label">Factura_id</label>
+                                                <label for="Factura_id" class="col-sm-2 col-form-label">Numero de Factura</label>
                                                 <div class="col-sm-10">
                                                     <input required type="number" class="form-control" id="Factura_id" name="Factura_id"
                                                            placeholder="Ingrese el ID de factura" value="<?= $frmSession['Factura_id'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="Producto_id" class="col-sm-2 col-form-label">Producto_id</label>
+                                                <label for="Producto_id" class="col-sm-2 col-form-label">Producto</label>
                                                 <div class="col-sm-10">
                                                     <input required type="number" class="form-control" id="Producto_id" name="Producto_id"
                                                            placeholder="Ingrese el ID del producto" value="<?= $frmSession['Producto_id'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="Ofertas_id" class="col-sm-2 col-form-label">Ofertas_id</label>
+                                                <label for="Ofertas_id" class="col-sm-2 col-form-label">Oferta</label>
                                                 <div class="col-sm-10">
                                                     <input required type="number" class="form-control" id="Ofertas_id" name="Ofertas_id"
                                                            placeholder="Ingrese el ID de las ofertas" value="<?= $frmSession['Ofertas_id'] ?? '' ?>">
@@ -110,7 +110,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="Mesa_id" class="col-sm-2 col-form-label">Mesa_id</label>
+                                                <label for="Mesa_id" class="col-sm-2 col-form-label">Numero de mesa</label>
                                                 <div class="col-sm-10">
                                                     <input required type="number" class="form-control" id="Mesa_id" name="Mesa_id"
                                                            placeholder="Ingrese el ID de la mesa" value="<?= $frmSession['Mesa_id'] ?? '' ?>">

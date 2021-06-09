@@ -10,7 +10,7 @@ use App\Models\DetallePedidos;
 
 
 $nameModel = "Detalle Pedidos";
-$pluralModel = $nameModel.'s';
+$pluralModel = $nameModel.'';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 ?>
@@ -87,7 +87,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Factura_id" class="col-sm-2 col-form-label">Factura_id</label>
+                                                        <label for="Factura_id" class="col-sm-2 col-form-label">Numero de factura</label>
                                                         <div class="col-sm-10">
                                                             <input required type="number" class="form-control" id="Factura_id"
                                                                    name="Nombre" value="<?= $DataDetallepedido->getFacturaId(); ?>"
@@ -95,7 +95,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Producto_id" class="col-sm-2 col-form-label">Producto_id</label>
+                                                        <label for="Producto_id" class="col-sm-2 col-form-label">Producto</label>
                                                         <div class="col-sm-10">
                                                             <input required type="number" class="form-control" id="Producto_id"
                                                                    name="Producto_id" value="<?= $DataDetallepedido->getProductoid(); ?>"
@@ -103,7 +103,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Ofertas_id" class="col-sm-2 col-form-label">Ofertas_id</label>
+                                                        <label for="Ofertas_id" class="col-sm-2 col-form-label">Oferta</label>
                                                         <div class="col-sm-10">
                                                             <input required type="number" class="form-control" id="Ofertas_id"
                                                                    name="Ofertas_id" value="<?= $DataDetallepedido->getOfertasid(); ?>"
@@ -128,7 +128,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     </div>
 
                                                     <div class="form-group row">
-                                                        <label for="Mesa_id" class="col-sm-2 col-form-label">Mesa_id</label>
+                                                        <label for="Mesa_id" class="col-sm-2 col-form-label">Numero de mesa</label>
                                                         <div class="col-sm-10">
                                                             <input required type="number" class="form-control" id="Mesa_id"
                                                                    name="Mesa_id" value="<?= $DataDetallepedido->getMesaid(); ?>"

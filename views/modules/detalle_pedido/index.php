@@ -83,13 +83,13 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Factura id</th>
-                                                <th>Producto id</th>
-                                                <th>ofertas id</th>
+                                                <th>Numero</th>
+                                                <th>Numero de Factura</th>
+                                                <th>Producto</th>
+                                                <th>Oferta</th>
                                                 <th>Cantidad Producto</th>
                                                 <th>Cantidad Oferta</th>
-                                                <th>Mesa id</th>
+                                                <th>Numero de mesa</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </thead>
@@ -109,6 +109,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <td><?= $detallepedido->getCantidadOferta(); ?></td>
                                                         <td><?= $detallepedido->getMesaid(); ?></td>
                                                         <td>
+                                                            <div  style="text-align: center;">
                                                             <a href="edit.php?id=<?= $detallepedido->getId(); ?>"
                                                                type="button" data-toggle="tooltip" title="Actualizar"
                                                                class="btn docs-tooltip btn-primary btn-xs"><i
@@ -117,19 +118,21 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                type="button" data-toggle="tooltip" title="Ver"
                                                                class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
+
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Factura id</th>
-                                                <th>Producto id</th>
-                                                <th>ofertas id</th>
+                                                <th>Numero</th>
+                                                <th>Numero de Factura</th>
+                                                <th>Producto</th>
+                                                <th>Oferta</th>
                                                 <th>Cantidad Producto</th>
                                                 <th>Cantidad Oferta</th>
-                                                <th>Mesa id</th>
+                                                <th>Numero de mesa</th>
                                                 <th>Acciones</th>
 
                                             </tr>

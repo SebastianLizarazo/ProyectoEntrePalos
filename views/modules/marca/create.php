@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title> Registrar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -77,16 +77,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                     <div class="col-sm-10">
                                                         <input required type="text" class="form-control" id="Nombre" name="Nombre"
-                                                               placeholder="Ingrese el nombre de la Marca" value="<?= $frmSession['Nombre'] ?? '' ?>">
+                                                               placeholder="Ingrese el nombre de la marca" value="<?= $frmSession['Nombre'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                               <div class="row">
                                                   <div class="col-sm-12">
                                                       <div class="form-group row">
-                                                          <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
+                                                          <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
                                                           <div class="col-sm-10">
                                                               <input required type="text" class="form-control" id="Descripcion" name="Descripcion"
-                                                                     placeholder="Ingrese la descripcion de la marca" value="<?= $frmSession['Descripcion'] ?? '' ?>">
+                                                                     placeholder="Ingrese la descripción de la marca" value="<?= $frmSession['Descripcion'] ?? '' ?>">
                                                           </div>
                                                       </div>
                                                   </div>

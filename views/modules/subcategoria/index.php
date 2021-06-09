@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Gestión de <?= $pluralModel ?></title>
+    <title> Gestión de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -83,10 +83,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Numero</th>
                                                 <th>Nombre</th>
                                                 <th>Categoria Producto</th>
                                                 <th>Estado</th>
+                                                <th>Acciones</th>
+
 
                                             </tr>
                                             </thead>
@@ -104,6 +106,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <td><?= $subcategoria->getEstado(); ?></td>
 
                                                         <td>
+                                                            <div  style="text-align: center;">
                                                             <a href="edit.php?id=<?= $subcategoria->getId(); ?>"
                                                                type="button" data-toggle="tooltip" title="Actualizar"
                                                                class="btn docs-tooltip btn-primary btn-xs"><i
@@ -112,16 +115,22 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                type="button" data-toggle="tooltip" title="Ver"
                                                                class="btn docs-tooltip btn-warning btn-xs"><i
                                                                         class="fa fa-eye"></i></a>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $subcategoria->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Inactivo"
+                                                                   class="btn docs-tooltip btn-danger btn-xs">
+                                                                    <i class="fas fa-trash-alt"></i></a>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Numero</th>
                                                 <th>Nombre</th>
                                                 <th>Categoria Producto</th>
                                                 <th>Estado</th>
+                                                <th>Acciones</th>
 
 
                                             </tr>

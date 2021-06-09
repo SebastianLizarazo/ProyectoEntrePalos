@@ -40,8 +40,8 @@ class MarcasController
     static public function activate(int $id)
     {
         try {
-            $ObjMarca = SubCategorias::searchForId($id);
-            $ObjMarca->setEstado("Activo");
+            $ObjMarca = Marcas::searchForId($id);
+            $ObjMarca->setEstado("Activa");
             if ($ObjMarca->update()) {
                 header("Location: ../../views/modules/marca/index.php");
             } else {
@@ -55,8 +55,8 @@ class MarcasController
     static public function inactivate(int $id)
     {
         try {
-            $ObjMarca = SubCategorias::searchForId($id);
-            $ObjMarca->setEstado("Inactivo");
+            $ObjMarca = Marcas::searchForId($id);
+            $ObjMarca->setEstado("Inactiva");
             if ($ObjMarca->update()) {
                 header("Location: ../../views/modules/marca/index.php");
             } else {

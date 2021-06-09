@@ -17,7 +17,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title><?= $_ENV['TITLE_SITE']  ?> Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
