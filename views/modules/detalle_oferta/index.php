@@ -1,14 +1,13 @@
 <?php
-require_once("../../../app/Controllers/OfertasController.php");
+require_once("../../../app/Controllers/DetalleOfertasController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
-
-use App\Controllers\OfertasController;
+use App\Controllers\DetalleOfertasController;
 use App\Models\GeneralFunctions;
+use App\Models\DetalleOfertas;
 
-
-$nameModel = "Oferta";
+$nameModel = "Detalle oferta";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
@@ -84,54 +83,47 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                style="width:100%;">
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Nombre</th>
-                                                <th>Descripcion</th>
-                                                <th>Precio de unidad venta oferta</th>
-                                                <th>Estado</th>
+                                                <th>Numero de producto</th>
+                                                <th>Oferta</th>
+                                                <th>Cantidad de producto</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrOfertas = OfertasController::getAll();
-                                            if (!empty($arrOfertas))
-                                            /* @var $arrOfertas \App\Models\Ofertas */
-                                            foreach ($arrOfertas as $oferta) {
+                                            $arrDetalleO = DetalleOfertasController::getAll();
+                                            if (!empty($arrDetalleO))
+                                            /* @var $arrDetalleO DetalleOfertas */
+                                            foreach ($arrDetalleO as $DetalleO) {
+                                                if ($DetalleO->getOferta()->getEstado()=="Disponible"){
                                                 ?>
                                                 <tr>
 
-                                                    <td><?= $oferta->getId(); ?></td>
-                                                    <td><?= $oferta->getNombre(); ?></td>
-                                                    <td><?= $oferta->getDescripcion(); ?></td>
-                                                    <td><?= $oferta->getPrecioUnidadVentaOferta(); ?></td>
-                                                        <td><?= $oferta->getEstado(); ?></td>
+                                                    <td><?= $DetalleO->getId(); ?></td>
+                                                    <td><?= $DetalleO->getProductoId(); ?></td>
+                                                    <td><?= $DetalleO->getOfertaId(); ?></td>
+                                                    <td><?= $DetalleO->getCantidadProducto(); ?></td>
                                                     <td>
                                                         <div  style="text-align: center;">
-                                                        <a href="edit.php?id=<?= $oferta->getId(); ?>"
+                                                        <a href="edit.php?id=<?= $DetalleO->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
                                                            class="btn docs-tooltip btn-primary btn-xs"><i
                                                                     class="fa fa-edit"></i></a>
-                                                        <a href="show.php?id=<?= $oferta->getId(); ?>"
+                                                        <a href="show.php?id=<?= $DetalleO->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $oferta->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Deshabilitar"
-                                                               class="btn docs-tooltip btn-danger btn-xs">
-                                                                <i class="fas fa-trash-alt"></i></a>
-                                                         </div>
-                                                     </td>
+                                                    </div>
+                                                    </td>
                                                 </tr>
-                                            <?php } ?>
+                                            <?php }} ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Nombre</th>
-                                                <th>Descripcion</th>
-                                                <th>Precio de unidad venta oferta</th>
-                                                <th>Estado</th>
+                                                <th>Numero de producto</th>
+                                                <th>Oferta</th>
+                                                <th>Cantidad de producto</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </tfoot>

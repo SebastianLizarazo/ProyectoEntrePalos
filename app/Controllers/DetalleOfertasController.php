@@ -89,7 +89,7 @@ class DetalleOfertasController
 
         $arrDetalleOferta = array();
         if ($params['where'] != "") {
-            $base = "SELECT * FROM detalle_oferta WHERE ";
+            $base = "SELECT * FROM detalleoferta WHERE ";
             $arrDetalleOferta = DetalleOfertas::search($base . ' ' . $params['where']);
         } else {
             $arrDetalleOferta = DetalleOfertas::getAll();

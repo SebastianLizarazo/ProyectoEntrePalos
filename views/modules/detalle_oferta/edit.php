@@ -1,18 +1,17 @@
 <?php
 require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require("../../../app/Controllers/OfertasController.php");
+require("../../../app/Controllers/DetalleOfertasController.php");
 
 
-
-use App\Controllers\OfertasController;
+use App\Controllers\DetalleOfertasController;
 use App\Models\GeneralFunctions;
-use App\Models\Ofertas;
+use App\Models\DetalleOfertas;
 
 
-$nameModel = "Oferta";
+$nameModel = "Detalle oferta";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -76,50 +75,41 @@ $pluralModel = $nameModel.'s';
                                 <p>
                                 <?php
 
-                                $DataOferta =OfertasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataOferta Ofertas */
-                                if (!empty($DataOferta)) {
+                                $DataDetalleO = DetalleOfertasController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataDetalleO DetalleOfertas */
+                                if (!empty($DataDetalleO)) {
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
-                                            <input id="id" name="id" value="<?= $DataOferta->getId(); ?>" hidden
+                                            <input id="id" name="id" value="<?= $DataDetalleO->getId(); ?>" hidden
                                                    required="required" type="text">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
+                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero del producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Nombre"
-                                                                   name="Nombre" value="<?= $DataOferta->getNombre(); ?>"
-                                                                   placeholder="Ingrese el nombre de la oferta">
+                                                            <input required type="number" class="form-control" id="Numero"
+                                                                   name="Numero" value="<?= $DataDetalleO->getProductoId(); ?>"
+                                                                   placeholder="Ingrese el numero del producto">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
+                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero de la oferta</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Descripcion"
-                                                                   name="Descripcion" value="<?= $DataOferta->getDescripcion(); ?>"
-                                                                   placeholder="Ingrese la descripcion de la oferta">
+                                                            <input required type="number" class="form-control" id="Numero"
+                                                                   name="Numero" value="<?= $DataDetalleO->getOfertaId(); ?>"
+                                                                   placeholder="Ingrese el numero de la oferta">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="PrecioUnidadVentaOferta" class="col-sm-2 col-form-label">Precio Unidad Venta Oferta</label>
+                                                        <label for="Cantidad" class="col-sm-2 col-form-label">Cantidad de producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="PrecioUnidadVentaOferta"
-                                                                   name="PrecioUnidadVentaOferta" value="<?= $DataOferta->getPrecioUnidadVentaOferta(); ?>"
-                                                                   placeholder="Ingrese el precio unidad venta oferta">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
-                                                        <div class="col-sm-10">
-                                                            <select required id="Estado" name="Estado" class="custom-select">
-                                                                <option <?= ($DataOferta->getEstado() == "Disponible") ? "selected" : ""; ?> value="Disponible">Disponible</option>
-                                                                <option <?= ($DataOferta->getEstado() == "No disponible") ? "selected" : ""; ?> value="No disponible">No Disponible</option>
-                                                            </select>
+                                                            <input required type="text" class="form-control" id="Cantidad"
+                                                                   name="Cantidad" value="<?= $DataDetalleO->getCantidadProducto(); ?>"
+                                                                   placeholder="Ingrese la cantidad de producto">
                                                         </div>
                                                     </div>
                                                 </div>

@@ -1,14 +1,14 @@
 <?php
     require("../../partials/routes.php");
-    //require_once("../../partials/check_login.php");
+    require_once("../../partials/check_login.php");
 
-    use App\Models\GeneralFunctions;
+use App\Controllers\OfertasController;
+use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
     $nameModel = "Oferta"; //Nombre del Modelo
-    $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
-
-    $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
+    $pluralModel = $nameModel.'s';
+    $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 
 ?>
 <!DOCTYPE html>
