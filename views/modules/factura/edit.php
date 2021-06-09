@@ -1,15 +1,16 @@
 <?php
-require_once("../../partials/routes.php");
+require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require_once("../../../app/Controllers/EmpresasController.php");
+require("../../../app/Controllers/FacturasController.php");
 
 
-use App\Controllers\EmpresasController;
+use App\Controllers\FacturasController;
 use App\Models\GeneralFunctions;
-use App\Models\Empresas;
+use App\Models\Facturas;
+use Carbon\Carbon;
 
 
-$nameModel = "Empresa";
+$nameModel = "Factura";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
@@ -17,7 +18,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar | <?= $nameModel ?></title>
+    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -59,12 +60,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                                            class="fas fa-expand"></i></button>
+                                                class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                            class="fas fa-minus"></i></button>
+                                                class="fas fa-minus"></i></button>
                                 </div>
                             </div>
                             <!-- /.card-header -->
@@ -72,66 +73,77 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                 <p>
                                 <?php
 
-                                $DataEmpresa = EmpresasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataEmpresa Empresas */
-                                if (!empty($DataEmpresa)) {
+                                $DataFactura = FacturasController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataFactura Facturas */
+                                if (!empty($DataFactura)) {
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
-                                            <input id="id" name="id" value="<?= $DataEmpresa->getId(); ?>" hidden
-                                                   required="required" type="text">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
+                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Nombre"
-                                                                   name="Nombre" value="<?= $DataEmpresa->getNombre(); ?>"
-                                                                   placeholder="Ingrese el nombre de la empresa">
+                                                            <input required type="number" class="form-control" id="Numero" name="Numero"
+                                                                   placeholder="Ingrese el numero de la factura" value="<?= $DataFactura->getNumero() ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="NIT" class="col-sm-2 col-form-label">NIT</label>
+                                                        <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="NIT"
-                                                                   name="NIT" value="<?= $DataEmpresa->getNIT(); ?>"
-                                                                   placeholder="Ingrese el NIT de la empresa">
+                                                            <input required type="date" max="<?= Carbon::now()->format('Y-m-d')?>" class="col-sm-3 form-control" id="Fecha" name="Fecha"
+                                                                   value="<?= $DataFactura->getFecha()->toDateString()?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
+                                                        <label for="IVA" class="col-sm-2 col-form-label">IVA</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Telefono"
-                                                                   name="Telefono" value="<?= $DataEmpresa->getTelefono(); ?>"
-                                                                   placeholder="Ingrese el telefono de la empresa">
+                                                            <input type="number" step="0.01" class="form-control" id="IVA" name="IVA"
+                                                                   placeholder="IVA" value="<?= $DataFactura->getIVA() ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Direccion" class="col-sm-2 col-form-label">Direccion</label>
+                                                        <label for="MedioPago" class="col-sm-2 col-form-label">Medio de pago</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Direccion"
-                                                                   name="Direccion" value="<?= $DataEmpresa->getDireccion(); ?>"
-                                                                   placeholder="Ingrese la direcciopn de la empresa">
+                                                            <select required id="MedioPago" name="MedioPago" class="custom-select">
+                                                                <option value="">Seleccione</option>
+                                                                <option <?= ( $DataFactura->getMedioPago() == "Datafono") ? "selected" : ""; ?> value="Datafono">Datafono</option>
+                                                                <option <?= ( $DataFactura->getMedioPago() == "Efectivo") ? "selected" : ""; ?> value="Efectivo">Efectivo</option>
+                                                                <option <?= ( $DataFactura->getMedioPago() == "Nequi") ? "selected" : ""; ?> value="Nequi">Nequi</option>
+                                                                <option <?= ( $DataFactura->getMedioPago() == "Ahorro a la mano") ? "selected" : ""; ?> value="Ahorro a la mano">Ahorro a la mano</option>
+                                                                <option <?= ( $DataFactura->getMedioPago() == "Daviplata") ? "selected" : ""; ?> value="Daviplata">Daviplata</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="Mesero_id" class="col-sm-2 col-form-label">Mesero id</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="number" step="0.01" class="form-control" id="Mesero_id" name="Mesero_id"
+                                                                   placeholder="Ingrese el id del mesero" value="<?= $DataFactura->getMeseroId() ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="Estado" name="Estado" class="custom-select">
-                                                                <option <?= ($DataEmpresa->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
-                                                                <option <?= ($DataEmpresa->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
+                                                            <select required name="Estado" id="Estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
+                                                                <option <?= ( $DataFactura->getEstado() == "Pendiente") ? "selected" : ""; ?> value="Pendiente" >Pendiente</option>
+                                                                <option <?= ( $DataFactura->getEstado() == "Paga") ? "selected" : ""; ?> value="Paga" >Paga</option>
+                                                                <option <?= ( $DataFactura->getEstado() == "Cancelada") ? "selected" : ""; ?> value="Cancelada" >Cancelada</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Municipio_id" class="col-sm-2 col-form-label">Municipio_id</label>
+                                                        <label for="TipoPedido" class="col-sm-2 col-form-label">Tipo de pedido</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Municipio_id"
-                                                                   name="Municipio_id" value="<?= $DataEmpresa->getMunicipioid(); ?>"
-                                                                   placeholder="Ingrese el id del municipio">
+                                                            <select required name="TipoPedido" id="TipoPedido" class="custom-select">
+                                                                <option value="">Seleccione</option>
+                                                                <option <?= ( $DataFactura->getTipoPedido() == "Mesa") ? "selected" : ""; ?> value="Mesa" >Mesa</option>
+                                                                <option <?= ( $DataFactura->getTipoPedido() == "Domicilio") ? "selected" : ""; ?> value="Domicilio" >Domicilio</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>

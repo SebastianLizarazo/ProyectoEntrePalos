@@ -53,7 +53,7 @@ class PagosController
         static public function inactivate(int $id)
     {
         try {
-            $Objpago = SubCategorias::searchForId($id);
+            $Objpago = Pagos::searchForId($id);
             $Objpago->setEstado("Saldado");
             if ($Objpago->update()) {
                 header("Location: ../../views/modules/pago/index.php");

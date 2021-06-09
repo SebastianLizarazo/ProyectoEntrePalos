@@ -1,20 +1,20 @@
 <?php
 require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require("../../../app/Controllers/MesasController.php");
+require("../../../app/Controllers/ProductosController.php");
 
-use App\Controllers\MesasController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
-use App\Models\Mesas;
+use App\Models\Productos;
 
-$nameModel = "Mesa";
+$nameModel = "Producto";
 $pluralModel = $nameModel . 's';
 $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Datos de la | <?= $nameModel ?></title>
+    <title>Datos del | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -32,7 +32,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Información de la <?= $nameModel ?></h1>
+                        <h1>Información del <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -57,13 +57,13 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $DataMesa = MesasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataMesa Mesas */
-                                if (!empty($DataMesa)) {
+                                $DataProducto = ProductosController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataProducto Productos */
+                                if (!empty($DataProducto)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la mesa numero <?= $DataMesa->getNumero() ?></h3>
+                                            del producto <?= $DataProducto->getNombre() ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                         class="fas fa-expand"></i></button>
@@ -76,17 +76,41 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>&nbsp;Numero</strong>
-                                                        <p class="text-muted"><?= $DataMesa->getNumero() ?></p>
+                                                    <strong><i class="fas fa-signature"></i>&nbsp;Nombre</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getNombre() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-map-marked-alt"></i>&nbsp;Ubicación</strong>
-                                                        <p class="text-muted"><?= $DataMesa->getUbicacion() ?></p>
+                                                    <strong><i class="fas fa-search-plus"></i>&nbsp;Tamaño</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getTamano() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-chair"></i>&nbsp;Capacidad</strong>
-                                                        <p class="text-muted"><?= $DataMesa->getCapacidad() ?></p>
+                                                    <strong><i class="fas fa-weight-hanging"></i>&nbsp;Referencia tamaño</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getReferenciaTamano() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-thumbs-up"></i>&nbsp;Ocupación</strong>
-                                                        <p class="text-muted"><?= $DataMesa->getOcupacion() ?></p>
+                                                    <strong><i class="fas fa-file-csv"></i>&nbsp;Referencia</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getReferencia() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-dollar-sign"></i>&nbsp;Precio base</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getPrecioBase() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-dollar-sign"></i>&nbsp;Precio unidad trabajador</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getPrecioUnidadTrabajador() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-dollar-sign"></i>&nbsp;Precio unidad venta</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getPrecioUnidadVenta() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-gifts"></i>&nbsp;Presentación producto</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getPresentacionProducto() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-registered"></i>&nbsp;Marca</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getMarca()->getNombre() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-sort-amount-up"></i>&nbsp;Cantidad</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getCantidadProducto() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-cubes"></i>&nbsp;Sub categoria</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getSubcategoria()->getNombre() ?></p>
+                                                <hr>
+                                                    <strong><i class="fas fa-check"></i>&nbsp;Estado</strong>
+                                                        <p class="text-muted"><?= $DataProducto->getEstado() ?></p>
                                                 </p>
                                             </div>
                                         </div>
@@ -100,7 +124,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $DataMesa->getId(); ?>"
+                                                <a role="button" href="edit.php?id=<?= $DataProducto->getId(); ?>"
                                                    class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>

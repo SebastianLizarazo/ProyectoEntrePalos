@@ -1,20 +1,20 @@
 <?php
-require_once("../../../app/Controllers/EmpresasController.php");
+require_once("../../../app/Controllers/FacturasController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
-use App\Controllers\EmpresasController;
+use App\Controllers\FacturasController;
 use App\Models\GeneralFunctions;
-use App\Models\Empresas;
+use App\Models\Facturas;
 
-$nameModel = "Empresa";
+$nameModel = "Factura";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gestión de <?= $pluralModel ?></title>
+    <title>Papelera de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -36,7 +36,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Pagina Principal</h1>
+                        <h1>Papelera</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -58,7 +58,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                         <!-- Default box -->
                         <div class="card card-dark">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-trash-restore"></i> &nbsp; Restaurar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -71,9 +71,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 <div class="row">
                                     <div class="col-auto mr-auto"></div>
                                     <div class="col-auto">
-                                        <a role="button" href="create.php" class="btn btn-primary float-right"
+                                        <a role="button" href="index.php" class="btn btn-primary float-right"
                                            style="margin-right: 5px;">
-                                            <i class="fas fa-plus"></i> Crear <?= $nameModel ?>
+                                            <i class="fas fa-backward"></i> Volver
                                         </a>
                                     </div>
                                 </div>
@@ -83,62 +83,60 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>N°</th>
-                                                <th>Nombre</th>
-                                                <th>NIT</th>
-                                                <th>Teléfono</th>
-                                                <th>Dirección</th>
+                                                <th>#</th>
+                                                <th>Numero</th>
+                                                <th>Fecha de creación</th>
+                                                <th>IVA</th>
+                                                <th>Medio de pago</th>
+                                                <th>Mesero</th>
                                                 <th>Estado</th>
-                                                <th>Municipio</th>
-                                                <th>Acciones</th>
+                                                <th>Tipo de pedido</th>
+                                                <th>Cambiar estado</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrEmpresas = EmpresasController::getAll();
-                                            if (!empty($arrEmpresas))
-                                                /* @var $arrEmpresas Empresas */
-                                                foreach ($arrEmpresas as $empresa) {
-                                                    if ($empresa->getEstado() == 'Activo'){
+                                            $arrFacturas = FacturasController::getAll();
+                                            if (!empty($arrFacturas))
+                                                /* @var $arrFacturas Facturas */
+                                                foreach ($arrFacturas as $factura) {
+                                                    if ($factura->getEstado() == 'Cancelada'){/*No va a mostrar las facuras que esten canceladas */
                                                         ?>
                                                         <tr>
-                                                            <td><?= $empresa->getId(); ?></td>
-                                                            <td><?= $empresa->getNombre(); ?></td>
-                                                            <td><?= $empresa->getNIT(); ?></td>
-                                                            <td><?= $empresa->getTelefono(); ?></td>
-                                                            <td><?= $empresa->getDireccion(); ?></td>
-                                                            <td><?= $empresa->getEstado(); ?></td>
-                                                            <td><?= $empresa->getMunicipio()->getNombre(); ?></td>
+                                                            <td><?= $factura->getId(); ?></td>
+                                                            <td><?= $factura->getNumero(); ?></td>
+                                                            <td><?= $factura->getFecha(); ?></td>
+                                                            <td><?= $factura->getIVA(); ?></td>
+                                                            <td><?= $factura->getMedioPago(); ?></td>
+                                                            <td><?= $factura->getMesero()->getNombres(); ?></td>
+                                                            <td><?= $factura->getEstado(); ?></td>
+                                                            <td><?= $factura->getTipoPedido(); ?></td>
                                                             <td>
-                                                                <div  style="text-align: center;">
-                                                                    <a href="edit.php?id=<?= $empresa->getId(); ?>"
-                                                                       type="button" data-toggle="tooltip" title="Actualizar"
-                                                                       class="btn docs-tooltip btn-primary btn-xs"><i
-                                                                            class="fa fa-edit"></i></a>
-                                                                    <a href="show.php?id=<?= $empresa->getId(); ?>"
-                                                                       type="button" data-toggle="tooltip" title="Ver"
-                                                                       class="btn docs-tooltip btn-warning btn-xs"><i
-                                                                            class="fa fa-eye"></i></a>
-                                                                    <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $empresa->getId(); ?>"
-                                                                       type="button" data-toggle="tooltip" title="Inactivar"
-                                                                       class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                                class="far fa-trash-alt"></i></a>
+                                                                <div style="text-align: center;">
+                                                                    <?php if ($factura->getEstado() == "Cancelada") { ?>
+                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusRestaurar&id=<?= $factura->getId(); ?>"
+                                                                        type="button" data-toggle="tooltip" title="Restaurar"
+                                                                        class="btn docs-tooltip btn-success btn-xs"><i
+                                                                                class="fas fa-undo-alt"></i></a>
+                                                                    <?php } ?>
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                <?php }
-                                                    } ?>
+                                                        <?php
+                                                    }
+                                                } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>N°</th>
-                                                <th>Nombre</th>
-                                                <th>NIT</th>
-                                                <th>Teléfono</th>
-                                                <th>Dirección</th>
+                                                <th>#</th>
+                                                <th>Numero</th>
+                                                <th>Fecha de creación</th>
+                                                <th>IVA</th>
+                                                <th>Medio de pago</th>
+                                                <th>Mesero</th>
                                                 <th>Estado</th>
-                                                <th>Municipio</th>
-                                                <th>Acciones</th>
+                                                <th>Tipo de pedido</th>
+                                                <th>Cambiar estado</th>
                                             </tr>
                                             </tfoot>
                                         </table>
@@ -147,13 +145,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <div class="col-auto mr-auto"></div>
-                                <div class="col-auto">
-                                    <a role="button" href="restore.php" class="btn btn-primary float-left"
-                                       style="margin-right: 5px;">
-                                        <i class="fas fa-undo-alt"></i>&nbsp;Restaurar <?= $pluralModel ?>
-                                    </a>
-                                </div>
+                                Pie de Página.
                             </div>
                             <!-- /.card-footer-->
                         </div>

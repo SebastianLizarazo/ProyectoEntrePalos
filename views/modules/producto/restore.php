@@ -1,20 +1,20 @@
 <?php
-require_once("../../../app/Controllers/EmpresasController.php");
+require_once("../../../app/Controllers/ProductosController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
-use App\Controllers\EmpresasController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
-use App\Models\Empresas;
+use App\Models\Productos;
 
-$nameModel = "Empresa";
+$nameModel = "Producto";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gestión de <?= $pluralModel ?></title>
+    <title>Papelera de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -36,7 +36,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Pagina Principal</h1>
+                        <h1>Papelera</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -58,7 +58,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                         <!-- Default box -->
                         <div class="card card-dark">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-trash-restore"></i> &nbsp; Restaurar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -71,74 +71,84 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 <div class="row">
                                     <div class="col-auto mr-auto"></div>
                                     <div class="col-auto">
-                                        <a role="button" href="create.php" class="btn btn-primary float-right"
+                                        <a role="button" href="index.php" class="btn btn-primary float-right"
                                            style="margin-right: 5px;">
-                                            <i class="fas fa-plus"></i> Crear <?= $nameModel ?>
+                                            <i class="fas fa-backward"></i> Volver
                                         </a>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
-                                               style="width:100%;">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
                                             <thead>
                                             <tr>
-                                                <th>N°</th>
+                                                <th>#</th>
                                                 <th>Nombre</th>
-                                                <th>NIT</th>
-                                                <th>Teléfono</th>
-                                                <th>Dirección</th>
+                                                <th>Tamaño</th>
+                                                <th>Referencia tamaño</th>
+                                                <th>Referencia</th>
+                                                <th>Precio base</th>
+                                                <th>Precio unidad trabajador</th>
+                                                <th>Precio unidad venta</th>
+                                                <th>Presentación</th>
+                                                <th>Marca</th>
+                                                <th>Cantidad</th>
+                                                <th>Sub categoria</th>
                                                 <th>Estado</th>
-                                                <th>Municipio</th>
-                                                <th>Acciones</th>
+                                                <th>Restaurar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrEmpresas = EmpresasController::getAll();
-                                            if (!empty($arrEmpresas))
-                                                /* @var $arrEmpresas Empresas */
-                                                foreach ($arrEmpresas as $empresa) {
-                                                    if ($empresa->getEstado() == 'Activo'){
+                                            $arrProductos = ProductosController::getAll();
+                                            if (!empty($arrProductos))
+                                                /* @var $arrProductos Productos */
+                                                foreach ($arrProductos as $producto) {
+                                                    if ($producto->getEstado() == 'Inactivo'){
                                                         ?>
                                                         <tr>
-                                                            <td><?= $empresa->getId(); ?></td>
-                                                            <td><?= $empresa->getNombre(); ?></td>
-                                                            <td><?= $empresa->getNIT(); ?></td>
-                                                            <td><?= $empresa->getTelefono(); ?></td>
-                                                            <td><?= $empresa->getDireccion(); ?></td>
-                                                            <td><?= $empresa->getEstado(); ?></td>
-                                                            <td><?= $empresa->getMunicipio()->getNombre(); ?></td>
+                                                            <td><?= $producto->getId(); ?></td>
+                                                            <td><?= $producto->getNombre(); ?></td>
+                                                            <td><?= $producto->getTamano(); ?></td>
+                                                            <td><?= $producto->getReferenciaTamano(); ?></td>
+                                                            <td><?= $producto->getReferencia(); ?></td>
+                                                            <td><?= $producto->getPrecioBase(); ?></td>
+                                                            <td><?= $producto->getPrecioUnidadTrabajador(); ?></td>
+                                                            <td><?= $producto->getPrecioUnidadVenta(); ?></td>
+                                                            <td><?= $producto->getPresentacionProducto(); ?></td>
+                                                            <td><?= $producto->getMarca()->getNombre(); ?></td>
+                                                            <td><?= $producto->getCantidadProducto(); ?></td>
+                                                            <td><?= $producto->getSubcategoria()->getNombre(); ?></td>
+                                                            <td><?= $producto->getEstado(); ?></td>
                                                             <td>
-                                                                <div  style="text-align: center;">
-                                                                    <a href="edit.php?id=<?= $empresa->getId(); ?>"
-                                                                       type="button" data-toggle="tooltip" title="Actualizar"
-                                                                       class="btn docs-tooltip btn-primary btn-xs"><i
-                                                                            class="fa fa-edit"></i></a>
-                                                                    <a href="show.php?id=<?= $empresa->getId(); ?>"
-                                                                       type="button" data-toggle="tooltip" title="Ver"
-                                                                       class="btn docs-tooltip btn-warning btn-xs"><i
-                                                                            class="fa fa-eye"></i></a>
-                                                                    <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $empresa->getId(); ?>"
-                                                                       type="button" data-toggle="tooltip" title="Inactivar"
-                                                                       class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                                class="far fa-trash-alt"></i></a>
+                                                                <div style="text-align: center;">
+                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $producto->getId(); ?>"
+                                                                        type="button" data-toggle="tooltip" title="Restaurar"
+                                                                        class="btn docs-tooltip btn-success btn-xs"><i
+                                                                                class="fas fa-undo-alt"></i></a>
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                <?php }
-                                                    } ?>
+                                                        <?php
+                                                    }
+                                                } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>N°</th>
+                                                <th>#</th>
                                                 <th>Nombre</th>
-                                                <th>NIT</th>
-                                                <th>Teléfono</th>
-                                                <th>Dirección</th>
+                                                <th>Tamaño</th>
+                                                <th>Referencia tamaño</th>
+                                                <th>Referencia</th>
+                                                <th>Precio base</th>
+                                                <th>Precio unidad trabajador</th>
+                                                <th>Precio unidad venta</th>
+                                                <th>Presentación</th>
+                                                <th>Marca</th>
+                                                <th>Cantidad</th>
+                                                <th>Sub categoria</th>
                                                 <th>Estado</th>
-                                                <th>Municipio</th>
-                                                <th>Acciones</th>
+                                                <th>Restaurar</th>
                                             </tr>
                                             </tfoot>
                                         </table>
@@ -147,13 +157,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <div class="col-auto mr-auto"></div>
-                                <div class="col-auto">
-                                    <a role="button" href="restore.php" class="btn btn-primary float-left"
-                                       style="margin-right: 5px;">
-                                        <i class="fas fa-undo-alt"></i>&nbsp;Restaurar <?= $pluralModel ?>
-                                    </a>
-                                </div>
+                                Pie de Página.
                             </div>
                             <!-- /.card-footer-->
                         </div>

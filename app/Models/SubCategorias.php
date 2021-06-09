@@ -172,7 +172,7 @@ class SubCategorias extends AbstractDBConnection implements Model
                 return $arrSubCategorias;
             }
             return null;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
@@ -188,9 +188,9 @@ class SubCategorias extends AbstractDBConnection implements Model
                 $tmpsubcategoria->Disconnect();
                 return ($getrow) ? new SubCategorias($getrow) : null;
             } else {
-                throw new Exception('Id de SubCategoria Invalido');
+                throw new \Exception('Id de SubCategoria Invalido');
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
