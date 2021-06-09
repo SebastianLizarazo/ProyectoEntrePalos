@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos del <?= $nameModel ?></title>
+    <title>Datos del | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -32,7 +32,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Informacion del <?= $nameModel ?></h1>
+                        <h1>Información del <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -82,16 +82,16 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Pago_id</strong>
+                                                    <strong><i class="nav-icon fas fa-dollar-sign"></i>&nbsp; Numero de pago</strong>
                                                         <p class="text-muted"><?= $DataConsumoT->getPagoId() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>Producto_id</strong>
-                                                        <p class="text-muted"><?= $DataConsumoT->getProductoId() ?></p>
+                                                    <strong><i class="fas fa-hamburger"></i>&nbsp;Nombre del producto</strong>
+                                                        <p class="text-muted"><?= $DataConsumoT->getProducto()->getNombre() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i> CantidadProducto</strong>
+                                                    <strong><i class="fas fa-hamburger"></i>&nbsp;Cantidad Producto</strong>
                                                         <p class="text-muted"><?= $DataConsumoT->getCantidadProducto() ?></p>
                                                 <hr>
-                                                    <strong><i class="far fa-file-alt mr-1"></i>Descripcion</strong>
+                                                    <strong><i class="fas fa-file-alt"></i>&nbsp;Descripcion</strong>
                                                         <p class="text-muted"><?= $DataConsumoT->getDescripcion() ?></p>
                                                 </p>
                                             </div>

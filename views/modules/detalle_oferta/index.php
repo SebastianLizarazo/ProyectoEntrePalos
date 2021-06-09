@@ -82,10 +82,11 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                         <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
                                                style="width:100%;">
                                             <tr>
-                                                <th>#</th>
-                                                <th>Producto_id</th>
-                                                <th>Oferta_id</th>
+                                                <th>N°</th>
+                                                <th>Numero de producto</th>
+                                                <th>Oferta</th>
                                                 <th>Cantidad de producto</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -94,13 +95,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             if (!empty($arrDetalleO))
                                             /* @var $arrDetalleO DetalleOfertas */
                                             foreach ($arrDetalleO as $DetalleO) {
+                                                if ($DetalleO->getOferta()->getEstado()=="Disponible"){
                                                 ?>
                                                 <tr>
+
                                                     <td><?= $DetalleO->getId(); ?></td>
                                                     <td><?= $DetalleO->getProductoId(); ?></td>
                                                     <td><?= $DetalleO->getOfertaId(); ?></td>
                                                     <td><?= $DetalleO->getCantidadProducto(); ?></td>
                                                     <td>
+                                                        <div  style="text-align: center;">
                                                         <a href="edit.php?id=<?= $DetalleO->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
                                                            class="btn docs-tooltip btn-primary btn-xs"><i
@@ -109,16 +113,18 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
+                                                    </div>
                                                     </td>
                                                 </tr>
-                                            <?php } ?>
+                                            <?php }} ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Producto</th>
+                                                <th>N°</th>
+                                                <th>Numero de producto</th>
                                                 <th>Oferta</th>
                                                 <th>Cantidad de producto</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </tfoot>
                                         </table>

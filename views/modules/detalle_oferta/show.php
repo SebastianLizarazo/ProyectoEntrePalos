@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos del <?= $nameModel ?></title>
+    <title>Datos del | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -32,7 +32,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Informacion del <?= $nameModel ?></h1>
+                        <h1>Información del <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -82,13 +82,13 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Producto</strong>
-                                                        <p class="text-muted"><?= $DataDetalleO->getProductoId() ?></p>
+                                                    <strong><i class="fas fa-hamburger"></i>&nbsp;Nombre de producto</strong>
+                                                        <p class="text-muted"><?= $DataDetalleO->getProducto()->getNombre()?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>Oferta</strong>
-                                                        <p class="text-muted"><?= $DataDetalleO->getOfertaId() ?></p>
+                                                    <strong><i class="fas fa-piggy-bank"></i>&nbsp;Oferta</strong>
+                                                        <p class="text-muted"><?= $DataDetalleO->getOferta()->getNombre() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i> Cantidad producto</strong>
+                                                    <strong><i class="fas fa-sort-numeric-up-alt"></i>&nbsp;Cantidad producto</strong>
                                                         <p class="text-muted"><?= $DataDetalleO->getCantidadProducto() ?></p>
                                                 </p>
                                             </div>

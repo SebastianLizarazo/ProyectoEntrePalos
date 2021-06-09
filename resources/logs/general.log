@@ -9649,3 +9649,148 @@
 [2021-06-04T18:19:54.079555+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
 [2021-06-04T18:20:17.895158+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
 [2021-06-04T18:21:37.673238+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle de ofertasController no fue encontrada "} 
+[2021-06-09T13:58:12.537887+00:00] General.ERROR: Exception  
+[2021-06-09T13:58:12.541374+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-09T13:58:12.541529+00:00] General.ERROR: Line: 128  
+[2021-06-09T13:58:12.541624+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`detalleoferta`, CONSTRAINT `fk_Producto_has_Ofertas_Ofertas1` FOREIGN KEY (`Oferta_id`) REFERENCES `oferta` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-09T13:58:12.541773+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetalleOfertas.php
+            [line] => 152
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO detalleoferta VALUES (
+            :id,:Producto_id,:Oferta_id,:CantidadProducto)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Producto_id] => 1
+                            [:Oferta_id] => 3
+                            [:CantidadProducto] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetalleOfertas.php
+            [line] => 168
+            [function] => save
+            [class] => App\Models\DetalleOfertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO detalleoferta VALUES (
+            :id,:Producto_id,:Oferta_id,:CantidadProducto)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testDetalleOferta.php
+            [line] => 25
+            [function] => insert
+            [class] => App\Models\DetalleOfertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-09T13:59:33.779537+00:00] General.ERROR: Exception  
+[2021-06-09T13:59:33.779903+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-09T13:59:33.779971+00:00] General.ERROR: Line: 128  
+[2021-06-09T13:59:33.780029+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`detalleoferta`, CONSTRAINT `fk_Producto_has_Ofertas_Ofertas1` FOREIGN KEY (`Oferta_id`) REFERENCES `oferta` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-09T13:59:33.780094+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetalleOfertas.php
+            [line] => 152
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO detalleoferta VALUES (
+            :id,:Producto_id,:Oferta_id,:CantidadProducto)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Producto_id] => 1
+                            [:Oferta_id] => 3
+                            [:CantidadProducto] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetalleOfertas.php
+            [line] => 168
+            [function] => save
+            [class] => App\Models\DetalleOfertas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO detalleoferta VALUES (
+            :id,:Producto_id,:Oferta_id,:CantidadProducto)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testDetalleOferta.php
+            [line] => 25
+            [function] => insert
+            [class] => App\Models\DetalleOfertas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-09T15:03:41.984653+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 

@@ -83,10 +83,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                         <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
                                                style="width:100%;">
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>Descripcion</th>
-                                                <th>PrecioUnidadVenaOferta</th>
+                                                <th>Precio de unidad venta oferta</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -99,12 +99,14 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             foreach ($arrOfertas as $oferta) {
                                                 ?>
                                                 <tr>
+
                                                     <td><?= $oferta->getId(); ?></td>
                                                     <td><?= $oferta->getNombre(); ?></td>
                                                     <td><?= $oferta->getDescripcion(); ?></td>
                                                     <td><?= $oferta->getPrecioUnidadVentaOferta(); ?></td>
                                                         <td><?= $oferta->getEstado(); ?></td>
                                                     <td>
+                                                        <div  style="text-align: center;">
                                                         <a href="edit.php?id=<?= $oferta->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
                                                            class="btn docs-tooltip btn-primary btn-xs"><i
@@ -113,28 +115,22 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                        <?php if ($oferta->getEstado() != "Disponible") { ?>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $oferta->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Disponible"
-                                                               class="btn docs-tooltip btn-success btn-xs"><i
-                                                                        class="fa fa-check-square"></i></a>
-                                                        <?php } else { ?>
-                                                        <a type="button"
-                                                           href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $oferta->getId(); ?>"
-                                                           data-toggle="tooltip" title="No disponible"
-                                                           class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                    class="fa fa-times-circle"></i></a>
-                                                        <?php } ?>
-                                                    </td>
+
+                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $oferta->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Deshabilitar"
+                                                               class="btn docs-tooltip btn-danger btn-xs">
+                                                                <i class="fas fa-trash-alt"></i></a>
+                                                         </div>
+                                                     </td>
                                                 </tr>
                                             <?php } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>Descripcion</th>
-                                                <th>PrecioUnidadVentaOferta</th>
+                                                <th>Precio de unidad venta oferta</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>

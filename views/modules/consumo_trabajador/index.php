@@ -83,11 +83,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Pago_id</th>
-                                                <th>Producto_id</th>
-                                                <th>CantidadProducto</th>
-                                                <th>Descripcion</th>
+                                                <th>N°</th>
+                                                <th>Numero de pago</th>
+                                                <th>Producto</th>
+                                                <th>Cantidad roducto</th>
+                                                <th>Descripción</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -98,12 +99,14 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             foreach ($arrConsumoT as $consumotrabajador) {
                                                 ?>
                                                 <tr>
+
                                                     <td><?= $consumotrabajador->getId(); ?></td>
                                                     <td><?= $consumotrabajador->getPagoId(); ?></td>
-                                                    <td><?= $consumotrabajador->getProductoId(); ?></td>
+                                                    <td><?= $consumotrabajador->getProducto()->getNombre() ; ?></td>
                                                     <td><?= $consumotrabajador->getCantidadProducto(); ?></td>
                                                     <td><?= $consumotrabajador->getDescripcion(); ?></td>
                                                     <td>
+                                                        <div  style="text-align: center;">
                                                         <a href="edit.php?id=<?= $consumotrabajador->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
                                                            class="btn docs-tooltip btn-primary btn-xs"><i
@@ -112,17 +115,19 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
+                                                    </div>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Pago_id</th>
-                                                <th>Producto_id</th>
-                                                <th>CantidadProducto</th>
-                                                <th>Descripcion</th>
+                                                <th>N°</th>
+                                                <th>Numero de pago</th>
+                                                <th>Producto</th>
+                                                <th>Cantidad roducto</th>
+                                                <th>Descripción</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </tfoot>
                                         </table>
