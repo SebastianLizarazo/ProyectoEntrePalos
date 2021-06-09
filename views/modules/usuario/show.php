@@ -1,5 +1,5 @@
 <?php
-//require("../../partials/routes.php");
+require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 require("../../../app/Controllers/UsuariosController.php");
 
@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos del <?= $nameModel ?></title>
+    <title>Datos del |  <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -58,12 +58,12 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
                                 $DataEmpresa = \App\Controllers\UsuariosController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataEmpresa \App\Models\Usuarios */
+                                /* @var $DataEmpresa Usuarios */
                                 if (!empty($DataEmpresa)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            del usuario id <?= $DataEmpresa->getId() ?></h3>
+                                            del usuario numero <?= $DataEmpresa->getId() ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
                                                     data-source="show.php" data-source-selector="#card-refresh-content"
@@ -73,41 +73,35 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                                     data-toggle="tooltip" title="Collapse">
                                                 <i class="fas fa-minus"></i></button>
-                                            <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                                    data-toggle="tooltip" title="Remove">
-                                                <i class="fas fa-times"></i></button>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Cedula</strong>
+                                                    <strong><i class="fas fa-id-card"></i>&nbsp; Cedula</strong>
                                                 <p class="text-muted"><?= $DataEmpresa->getCedula() ?></p>
                                                 <hr>
-                                                <strong><i class="fas fa-phone mr-1"></i>Nombres</strong>
+                                                <strong><i class="fas fa-signature"></i>&nbsp; Nombres</strong>
                                                 <p class="text-muted"><?= $DataEmpresa->getNombres() ?></p>
                                                 <hr>
-                                                <strong><i class="fas fa-phone mr-1"></i>Apellidos</strong>
+                                                <strong><i class="fas fa-signature"></i>&nbsp; Apellidos</strong>
                                                 <p class="text-muted"><?= $DataEmpresa->getApellidos() ?></p>
                                                 <hr>
-                                                <strong><i class="far fa-file-alt mr-1"></i>Telefono</strong>
+                                                <strong><i class="fas fa-phone mr-1"></i>&nbsp; Telefono</strong>
                                                 <p class="text-muted"><?= $DataEmpresa->getTelefono() ?></p>
                                                 <hr>
-                                                <strong><i class="far fa-file-alt mr-1"></i>Direccion</strong>
+                                                <strong><i class="fas fa-directions"></i>&nbsp; Dirección</strong>
                                                 <p class="text-muted"><?= $DataEmpresa->getDireccion() ?></p>
                                                 <hr>
-                                                <strong><i class="far fa-file-alt mr-1"></i>Email</strong>
+                                                <strong><i class="fas fa-at"></i>&nbsp; Email</strong>
                                                 <p class="text-muted"><?= $DataEmpresa->getEmail() ?></p>
                                                 <hr>
-                                                <strong><i class="far fa-file-alt mr-1"></i>Contraseña</strong>
-                                                <p class="text-muted"><?= $DataEmpresa->getContrasena() ?></p>
-                                                <hr>
-                                                <strong><i class="fas fa-phone mr-1"></i>Estado</strong>
+                                                <strong><i class="fas fa-check"></i>&nbsp; Estado</strong>
                                                 <p class="text-muted"><?= $DataEmpresa->getEstado() ?></p>
                                                 <hr>
-                                                <strong><i class="fas fa-phone mr-1"></i>Empresa_id</strong>
-                                                <p class="text-muted"><?= $DataEmpresa->getEmpresaId() ?></p>
+                                                <strong><i class="fas fa-city"></i>&nbsp; Empresa</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getEmpresas()->getNombre()?></p>
                                                 </p>
                                             </div>
                                         </div>

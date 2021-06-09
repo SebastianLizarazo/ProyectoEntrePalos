@@ -83,12 +83,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Cedula</th>
                                                 <th>Nombres</th>
                                                 <th>Apellidos</th>
                                                 <th>Telefono</th>
-                                                <th>Direccion</th>
+                                                <th>Dirección</th>
                                                 <th>Email</th>
                                                 <th>Rol</th>
                                                 <th>Estado</th>
@@ -115,6 +115,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <td><?= $usuario->getEstado(); ?></td>
                                                         <td><?= $usuario->getEmpresas()->getNombre(); ?></td>
                                                         <td>
+                                                            <div  style="text-align: center;">
                                                             <a href="edit.php?id=<?= $usuario->getId(); ?>"
                                                                type="button" data-toggle="tooltip" title="Actualizar"
                                                                class="btn docs-tooltip btn-primary btn-xs"><i
@@ -123,30 +124,25 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                type="button" data-toggle="tooltip" title="Ver"
                                                                class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                            <?php if ($usuario->getEstado() != "Activar") { ?>
-                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $usuario->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Activo"
-                                                                   class="btn docs-tooltip btn-success btn-xs"><i
-                                                                            class="fa fa-check-square"></i></a>
-                                                            <?php } else { ?>
-                                                            <a type="button"
-                                                               href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $usuario->getId(); ?>"
-                                                               data-toggle="tooltip" title="Inactivo"
-                                                               class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                        class="fa fa-times-circle"></i></a>
+                                                            <?php ($usuario->getEstado() != "Inactivar")  ?>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $usuario->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Inactivar"
+                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                            class="far fa-trash-alt"></i></a>
+                                                        </div>
                                                         </td>
                                                     </tr>
-                                                <?php } ?>
+                                                <?php ?>
                                                 <?php } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Cedula</th>
                                                 <th>Nombres</th>
                                                 <th>Apellidos</th>
                                                 <th>Telefono</th>
-                                                <th>Direccion</th>
+                                                <th>Dirección</th>
                                                 <th>Email</th>
                                                 <th>Rol</th>
                                                 <th>Estado</th>

@@ -1,5 +1,5 @@
 <?php
-//require_once("../../partials/routes.php");
+require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 require_once("../../../app/Controllers/UsuariosController.php");
 
@@ -9,7 +9,7 @@ use App\Models\GeneralFunctions;
 use App\Models\Usuarios;
 
 
-$nameModel = "Usuarios";
+$nameModel = "Usuario";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
@@ -17,7 +17,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title>Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -166,11 +166,11 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Empresa_id" class="col-sm-2 col-form-label">Empresa_id</label>
+                                                        <label for="Empresa" class="col-sm-2 col-form-label">Empresa</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Empresa_id"
-                                                                   name="Empresa_id" value="<?= $DataUsuario->getEmpresaId(); ?>"
-                                                                   placeholder="Ingrese el id del municipio">
+                                                            <input required type="number" class="form-control" id="Empresa"
+                                                                   name="Empresa" value="<?= $DataUsuario->getEmpresaId(); ?>"
+                                                                   placeholder="Ingrese el id de la empres">
                                                         </div>
                                                     </div>
                                                 </div>

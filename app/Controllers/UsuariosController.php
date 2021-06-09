@@ -4,6 +4,7 @@
 namespace App\Controllers;
 
 use App\Models\GeneralFunctions;
+use App\Models\Pagos;
 use App\Models\Usuarios;
 class UsuariosController
 {
@@ -44,10 +45,38 @@ class UsuariosController
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
+    static public function activate(int $id)
+    {
+        try {
+            $Obusuarios = Usuarios::searchForId($id);
+            $Obusuarios->setEstado("Activo");
+            if ($Obusuarios->update()) {
+                header("Location: ../../views/modules/usuario/index.php");
+            } else {
+                header("Location: ../../views/modules/usuario/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception', $e, 'error');
+        }
+    }
+    static public function inactivate(int $id)
+    {
+        try {
+            $Obusuarios = Usuarios::searchForId($id);
+            $Obusuarios->setEstado("Inactivo");
+            if ($Obusuarios->update()) {
+                header("Location: ../../views/modules/usuario/index.php");
+            } else {
+                header("Location: ../../views/modules/usuario/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
     public function edit()
     {
         try {
-            $Usuario = new Usuario($this->dataUsuario);
+            $Usuario = new Usuarios($this->dataUsuario);
             if($Usuario->update()){
                 unset($_SESSION['frmUsuarios']);
             }
