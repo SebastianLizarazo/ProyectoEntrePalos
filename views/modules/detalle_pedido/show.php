@@ -1,20 +1,20 @@
 <?php
-require_once("../../partials/routes.php");
+require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require_once("../../../app/Controllers/SubCategoriasController.php");
+require("../../../app/Controllers/DetallePedidosController.php");
 
-use App\Controllers\SubCategoriasController;
+use App\Controllers\DetallePedidosController;
 use App\Models\GeneralFunctions;
-use App\Models\SubCategorias;
+use App\Models\DetallePedidos;
 
-$nameModel = "SubCategoria";
-$pluralModel = $nameModel . 's';
+$nameModel = "Detalle Pedidos";
+$pluralModel = $nameModel . '';
 $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Datos de la | <?= $nameModel ?></title>
+    <title> Datos del | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -32,12 +32,12 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Informacion de la <?= $nameModel ?></h1>
+                        <h1>Informacion del <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a
-                                        href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
+                                    href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
                             <li class="breadcrumb-item"><a href="index.php"><?= $pluralModel ?></a></li>
                             <li class="breadcrumb-item active">Ver</li>
                         </ol>
@@ -57,35 +57,45 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $Datasubcategoria = SubCategoriasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $Datasubcategoria SubCategorias */
-                                if (!empty($Datasubcategoria)) {
+                                $DataDetallepedido = DetallePedidosController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataDetallepedido DetallePedidos */
+                                if (!empty($DataDetallepedido)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la subcategoria llamada: <?= $Datasubcategoria->getNombre() ?></h3>
+                                            de la mesa numero <?= $DataDetallepedido->getFacturaId() ?></h3>
                                         <div class="card-tools">
 
-                                            <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                                                        class="fas fa-expand"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                                     data-toggle="tooltip" title="Collapse">
                                                 <i class="fas fa-minus"></i></button>
-
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove"
+                                                    data-toggle="tooltip" title="Remove">
+                                                <i class="fas fa-times"></i></button>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i> &nbsp;Nombre</strong>
-                                                        <p class="text-muted"><?= $Datasubcategoria->getNombre() ?></p>
+                                                    <strong><i class="fas fa-file-invoice-dollar"></i> &nbsp;Numero de factura</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getFactura()->getNumero() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-solid fa-network-wired"></i> &nbsp;Categoria del producto</strong>
-                                                        <p class="text-muted"><?= $Datasubcategoria->getCategoriaProducto() ?></p>
+                                                <strong><i class="fas fa-hamburger"></i> &nbsp;Producto</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getProducto()->getNombre() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-solid fa-check"></i> &nbsp;Estado</strong>
-                                                        <p class="text-muted"><?= $Datasubcategoria->getEstado() ?></p>
+                                                <strong><i class="fas fa-piggy-bank"></i> &nbsp;Oferta</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getOferta()->getNombre() ?></p>
+                                                <hr>
+                                                <strong><i class="fas fa-sort-amount-up-alt"></i> &nbsp;Cantidad Producto</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getCantidadProducto() ?></p>
+                                                <hr>
+                                                <strong><i class="fas fa-piggy-bank"></i>&nbsp;Cantidad Oferta</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getCantidadOferta() ?></p>
+                                                <hr>
+                                                <strong><i class="fas fa-chair"></i> &nbsp;Numero de mesa</strong>
+                                                <p class="text-muted"><?= $DataDetallepedido->getMesa()->getNumero() ?></p>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +108,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $Datasubcategoria->getId(); ?>"
+                                                <a role="button" href="edit.php?id=<?= $DataDetallepedido->getId(); ?>"
                                                    class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>
@@ -133,3 +143,4 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 <?php require('../../partials/scripts.php'); ?>
 </body>
 </html>
+

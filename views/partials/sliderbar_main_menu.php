@@ -85,7 +85,7 @@
                 <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Facturas') ? 'menu-open' : '' ?>">
                     <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Facturas') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
-                        <p>
+                       <p>
                             Facturas
                             <i class="fas fa-angle-left right"></i>
                         </p>
@@ -105,9 +105,9 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Productos') ? 'menu-open' : '' ?>">
+              <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Productos') ? 'menu-open' : '' ?>">
                     <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Productos') ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-hamburger"></i>
+                        <i class="nav-icon fas fa-hamburger"></i>             
                         <p>
                             Productos
                             <i class="fas fa-angle-left right"></i>
@@ -115,7 +115,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= $baseURL ?>/views/modules/producto/index.php" class="nav-link">
+                            <a href="<?= $baseURL ?>/views/modules/producto/index.php" class="nav-link">                     
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Gestionar</p>
                             </a>
@@ -127,7 +127,100 @@
                             </a>
                         </li>
                     </ul>
+                </li> 
+                <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Marcas') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Marcas') ? 'active' : '' ?>">
+                        <i class="nav-icon far fa-registered"></i>
+                        <p>
+                            Marcas
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/marca/index.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gestionar</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/marca/create.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Registrar</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+                <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Subcategorias') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Subcategorias') ? 'active' : '' ?>">
+                        <i class="nav-icon fa fa-sitemap"></i>
+                        <p>
+                            Subcategoria
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/subcategoria/index.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gestionar</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/subcategoria/create.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Registrar</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'DetallePedidos') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'DetallePedidos') ? 'active' : '' ?>">
+                        <i class="nav-icon fa fa-table"></i>
+                        <p>
+                            Detalle Pedidos
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/detalle_pedido/index.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gestionar</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/detalle_pedido/create.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Registrar</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Usuarios') ? 'menu-open' : '' ?>">
+                    <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Usuarios') ? 'active' : '' ?>">
+                        <i class="nav-icon far fa-user"></i>
+                        <p>
+                            Usuarios
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/usuarios/index.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gestionar</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= $baseURL ?>/views/modules/usuarios/create.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Registrar</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                        
             </ul>
 
         </nav>

@@ -1,18 +1,20 @@
 <?php
-require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/routes.php");
+require_once("../../partials/check_login.php");
+require_once("../../../app/Controllers/MarcasController.php");
 
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
+use App\Controllers\UsuariosController;
 
-$nameModel = "SubCategoria"; //Nombre del Modelo
+$nameModel = "Marca"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title> Registrar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -20,7 +22,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 <!-- Site wrapper -->
 <div class="wrapper">
     <?php require("../../partials/navbar_customization.php"); ?>
-
     <?php require("../../partials/sliderbar_main_menu.php"); ?>
 
     <!-- Content Wrapper. Contains page content -->
@@ -55,9 +56,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                             <div class="card-header">
                                 <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
+
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -78,29 +77,50 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                     <div class="col-sm-10">
                                                         <input required type="text" class="form-control" id="Nombre" name="Nombre"
-                                                               placeholder="Ingrese el nombre de la Subcategoria" value="<?= $frmSession['Nombre'] ?? '' ?>">
+                                                               placeholder="Ingrese el nombre de la marca" value="<?= $frmSession['Nombre'] ?? '' ?>">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="CategoriaProducto" class="col-sm-2 col-form-label">CategoriaProducto</label>
-                                                    <div class="col-sm-10">
-                                                        <select required id="CategoriaProducto" name="CategoriaProducto" class="custom-select">
-                                                            <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
-                                                            <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
-                                                            <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                    <div class="form-group row">
-                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
-                                                        <div class="col-sm-10">
+                                              <div class="row">
+                                                  <div class="col-sm-12">
+                                                      <div class="form-group row">
+                                                          <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
+                                                          <div class="col-sm-10">
+                                                              <input required type="text" class="form-control" id="Descripcion" name="Descripcion"
+                                                                     placeholder="Ingrese la descripción de la marca" value="<?= $frmSession['Descripcion'] ?? '' ?>">
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                                  <!-- /.Proveedor_id -->
+                                              <div class="row">
+                                                  <div class="col-sm-12">
+                                                      <div class="form-group row">
+                                                          <label for="Proveedor_id" class="col-sm-2 col-form-label">Proveedor</label>
+                                                          <div class="col-sm-10">
+                                                              <input required type="number" class="form-control" id="Proveedor_id" name="Proveedor_id"
+                                                                     placeholder="Ingrese el proveedor la marca" value="<?= $frmSession['Proveedor_id'] ?? '' ?>">
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+
+
+                                                  <div class="row">
+                                                      <div class="col-sm-12">
+                                                          <div class="form-group row">
+                                                             <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
+                                                             <div class="col-sm-10">
                                                             <select required id="estado" name="estado" class="custom-select">
-                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
-                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
+                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Activa") ? "selected" : ""; ?> value="Activa">Activa</option>
+                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Inactiva") ? "selected" : ""; ?> value="Inactiva">Inactiva</option>
                                                             </select>
-                                                        </div>
-                                                    </div>
-                                          </div>
+                                                            </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+
                                       </div>
                                     <hr>
                                     <button type="submit" class="btn btn-info">Enviar</button>

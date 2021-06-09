@@ -26,12 +26,12 @@ $arrOferta3 = [
     'Estado'=> 'Disponible'
 ];
 
-//$objOferta1= new Ofertas($arrOferta1);
-//$objOferta1->insert();
+$objOferta1= new Ofertas($arrOferta1);
+$objOferta1->insert();
 //var_dump($objOferta1);
 
-//$objOferta2= new Ofertas($arrOferta2);
-//$objOferta2->insert();
+$objOferta2= new Ofertas($arrOferta2);
+$objOferta2->insert();
 //var_dump($objOferta2);
 
 //$objOferta3= new Ofertas($arrOferta3);
@@ -68,22 +68,22 @@ $arrOferta3 = [
 //}
 
 // Prueba Oferta - Detalle Pedidos
-  $pruebDetPedidos = DetallePedidos::searchForId(1);
-   print_r($pruebDetPedidos->getOferta());
+//  $pruebDetPedidos = DetallePedidos::searchForId(1);
+//  print_r($pruebDetPedidos->getOferta());
 
-   $pruebOfertaDetallePed = Ofertas::searchForId(2);
-   print_r($pruebOfertaDetallePed->getDetallePedidoOferta());
+//   $pruebOfertaDetallePed = Ofertas::searchForId(2);
+//   print_r($pruebOfertaDetallePed->getDetallePedidoOferta());
 
 // Prueba Oferta - Detalle Ofertas
-    $pruebDetOfertas = DetalleOfertas::searchForId(1);
-    print_r($pruebDetOfertas->getOferta());
+//    $pruebDetOfertas = DetalleOfertas::searchForId(1);
+ //   print_r($pruebDetOfertas->getOferta());
 
-    $pruebOfertaDetalleOfta = Ofertas::searchForId(3);
-    print_r($pruebOfertaDetalleOfta->getDetalleOfertasOferta());
+//    $pruebOfertaDetalleOfta = Ofertas::searchForId(3);
+//    print_r($pruebOfertaDetalleOfta->getDetalleOfertasOferta());
 
 // Prueba Oferta - Imagen
-    $pruebImagen = \App\Models\Imagenes::searchForId(3);
-    print_r($pruebImagen->getOferta());
+//    $pruebImagen = \App\Models\Imagenes::searchForId(3);
+//    print_r($pruebImagen->getOferta());
 
-    $pruebOfertaImagen = Ofertas::searchForId(1);
-    print_r($pruebOfertaImagen->getImagenOferta());
+//    $pruebOfertaImagen = Ofertas::searchForId(1);
+//    print_r($pruebOfertaImagen->getImagenOferta());
