@@ -28,7 +28,7 @@ class ConsumoTrabajadoresController
     public function create()
     {
         try {
-            if (!empty($this->$dataConsumoTrabajador['CantidadProducto']) && !empty($this->$dataConsumoTrabajador['Descripcion']) && !ConsumoTrabajadores::consumoTrabajadorRegistrado($this->$dataConsumoTrabajador['CantidadProducto'], $this->dataConsumoTrabajador['Descripcion'])) {
+            if (!empty($this->$dataConsumoTrabajador['CantidadProducto']) && !empty($this->$dataConsumoTrabajador['Descripcion']) && !ConsumoTrabajadores::consumoTrabajadorRegistrada($this->dataConsumoTrabajador['CantidadProducto'], $this->dataConsumoTrabajador['Descripcion'])) {
                 $ConsumoTrabajador = new ConsumoTrabajadores($this->dataConsumoTrabajador);
                 if ($ConsumoTrabajador->insert()) {
                     //unset($_SESSION['frmUsuarios']);

@@ -5,3 +5,101 @@
 [2021-06-10T02:23:07.579514+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle de ofertasController no fue encontrada "} 
 [2021-06-10T02:28:30.040636+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle de ofertasController no fue encontrada "} 
 [2021-06-10T02:28:40.992450+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle de ofertasController no fue encontrada "} 
+[2021-06-10T12:59:21.812046+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T12:59:34.494486+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T13:00:47.813758+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T13:00:57.308415+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T13:01:38.595733+00:00] General.ERROR: Exception  
+[2021-06-10T13:01:38.599020+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T13:01:38.599363+00:00] General.ERROR: Line: 128  
+[2021-06-10T13:01:38.599519+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`pago`, CONSTRAINT `fk_Pago_Usuario1` FOREIGN KEY (`Trabajador_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-10T13:01:38.600375+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Pagos.php
+            [line] => 137
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO pago VALUES (
+            :id,:Trabajador_id,:Fecha,:Estado)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Trabajador_id] => 4
+                            [:Fecha] => 2021-06-10
+                            [:Estado] => Pendiente
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Pagos.php
+            [line] => 145
+            [function] => save
+            [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO pago VALUES (
+            :id,:Trabajador_id,:Fecha,:Estado)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\PagosController.php
+            [line] => 28
+            [function] => insert
+            [class] => App\Models\Pagos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\PagosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-10T13:02:44.223213+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T13:02:52.327459+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T13:02:57.651097+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T13:03:02.365719+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T13:05:46.556332+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T13:06:27.381420+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T13:06:41.092765+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
+[2021-06-10T13:24:29.362992+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle de ofertasController no fue encontrada "} 
+[2021-06-10T13:26:00.376762+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Consumo trabajadorsController no fue encontrada "} 
