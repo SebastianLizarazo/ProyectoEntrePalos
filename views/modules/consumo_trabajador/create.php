@@ -9,7 +9,7 @@ use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
-$nameModel = "Consumo trabajador"; //Nombre del Modelo
+$nameModel = "ConsumoTrabajadores"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
@@ -73,7 +73,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                             <!-- form start -->
                                 <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
                                       name="frmCreate<?= $nameModel ?>"
-                                      action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
+                                      action="../../../app/Controllers/MainController.php?controller=<?= $nameModel ?>&action=create">
 
 
                                       <div class="row">

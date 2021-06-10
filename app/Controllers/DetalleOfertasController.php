@@ -21,7 +21,7 @@ class DetalleOfertasController
     public function create()
     {
         try {
-            if (!empty($this->$datadetalleOferta['Producto_id']) && !empty($this->$datadetalleOferta['Oferta_id']) && !DetalleOfertas::DetalleOfertaRegistrada($this->datadetalleOferta['Producto_id'], $this->datadetalleOferta['Oferta_id'])) {
+            if (!empty($this->datadetalleOferta['Producto_id']) && !empty($this->datadetalleOferta['Oferta_id']) && !DetalleOfertas::DetalleOfertaRegistrada($this->datadetalleOferta['Producto_id'], $this->datadetalleOferta['Oferta_id'])) {
                 $DetalleOferta = new DetalleOfertas($this->datadetalleOferta);
                 if ($DetalleOferta->insert()) {
                     //unset($_SESSION['frmUsuarios']);
