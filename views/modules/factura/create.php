@@ -55,7 +55,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -88,7 +88,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 <div class="form-group row">
                                                     <label for="IVA" class="col-sm-2 col-form-label">IVA</label>
                                                     <div class="col-sm-10">
-                                                        <input type="number" step="0.01" class="form-control" id="IVA" name="IVA"
+                                                        <input required type="number" step="0.01" class="form-control" id="IVA" name="IVA"
                                                                placeholder="IVA" value="<?= $frmSession['IVA'] ?? '0.19' ?>">
                                                     </div>
                                                 </div>
@@ -106,9 +106,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="Mesero_id" class="col-sm-2 col-form-label">Mesero id</label>
+                                                    <label for="Mesero_id" class="col-sm-2 col-form-label">Mesero</label>
                                                     <div class="col-sm-10">
-                                                        <input type="number" step="0.01" class="form-control" id="Mesero_id" name="Mesero_id"
+                                                        <input required type="number" step="0.01" class="form-control" id="Mesero_id" name="Mesero_id"
                                                                 placeholder="Ingrese el id del mesero" value="<?= $frmSession['Mesero_id'] ?? '' ?>">
                                                     </div>
                                                 </div>

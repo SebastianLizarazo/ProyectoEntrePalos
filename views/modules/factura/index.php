@@ -79,7 +79,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
+                                               style="width:100%;">
                                             <thead>
                                             <tr>
                                                 <th>N°</th>

@@ -29,7 +29,7 @@ class FacturasController
 
     public function create(){
         try {
-            if (!empty($this->dataFactura['id']) && !empty($this->dataFactura['Numero']) && !Facturas::facturaRegistrada($this->dataFactura['id'], $this->dataFactura['Numero'])) {
+            if (!empty($this->dataFactura['Numero']) && !Facturas::facturaRegistrada($this->dataFactura['Numero'])) {
                 $Factura = new Facturas($this->dataFactura);
                 if ($Factura->insert()) {
                     unset($_SESSION['frmUsuarios']);

@@ -50,9 +50,9 @@ class Facturas extends AbstractDBConnection implements Model
         $this->setTipoPedido( $factura['TipoPedido']?? '');
     }
 
-    public static function facturaRegistrada(mixed $id, mixed $Numero)
+    public static function facturaRegistrada(mixed $Numero)
     {
-        $ftaTmp = Facturas::search("SELECT * FROM Factura WHERE id = '$id' and Numero = '$Numero'");
+        $ftaTmp = Facturas::search("SELECT * FROM Factura WHERE  Numero = '$Numero'");
         return (!empty($ftaTmp)? true :false);
     }
 

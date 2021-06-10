@@ -1,0 +1,290 @@
+[2021-06-10T01:40:14.872685+00:00] General.ERROR: Exception  
+[2021-06-10T01:40:14.877923+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T01:40:14.878439+00:00] General.ERROR: Line: 128  
+[2021-06-10T01:40:14.878827+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-06-10T01:40:14.879863+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 202
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Argos
+                            [:NIT] => 32ed32d
+                            [:Telefono] => 32233222
+                            [:Direccion] => dssasss2
+                            [:Estado] => Avtivo
+                            [:Municipio_id] => 15087
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 212
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\EmpresasController.php
+            [line] => 32
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\EmpresasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-10T01:41:39.198894+00:00] General.ERROR: Exception  
+[2021-06-10T01:41:39.201740+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T01:41:39.202101+00:00] General.ERROR: Line: 128  
+[2021-06-10T01:41:39.202675+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-06-10T01:41:39.203618+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 202
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Argos
+                            [:NIT] => 32ed32d
+                            [:Telefono] => 32233222
+                            [:Direccion] => dssasss2
+                            [:Estado] => Avtivo
+                            [:Municipio_id] => 15087
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 212
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\EmpresasController.php
+            [line] => 32
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\EmpresasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-10T02:00:37.036397+00:00] General.ERROR: Exception  
+[2021-06-10T02:00:37.037459+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T02:00:37.037553+00:00] General.ERROR: Line: 128  
+[2021-06-10T02:00:37.037632+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`factura`, CONSTRAINT `fk_Factura_Usuario1` FOREIGN KEY (`Mesero_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-10T02:00:37.037730+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 229
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 7
+                            [:Fecha] => Carbon\Carbon Object
+                                (
+                                    [constructedObjectId:protected] => 00000000130bae170000000068725eec
+                                    [localMonthsOverflow:protected] => 
+                                    [localYearsOverflow:protected] => 
+                                    [localStrictModeEnabled:protected] => 
+                                    [localHumanDiffOptions:protected] => 
+                                    [localToStringFormat:protected] => 
+                                    [localSerializer:protected] => 
+                                    [localMacros:protected] => 
+                                    [localGenericMacros:protected] => 
+                                    [localFormatFunction:protected] => 
+                                    [localTranslator:protected] => 
+                                    [dumpProperties:protected] => Array
+                                        (
+                                            [0] => date
+                                            [1] => timezone_type
+                                            [2] => timezone
+                                        )
+
+                                    [dumpLocale:protected] => 
+                                    [date] => 2021-06-01 00:00:00.000000
+                                    [timezone_type] => 3
+                                    [timezone] => UTC
+                                )
+
+                            [:IVA] => 0.19
+                            [:MedioPago] => Efectivo
+                            [:Mesero_id] => 4
+                            [:Estado] => Pendiente
+                            [:TipoPedido] => Mesa
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 238
+            [function] => save
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\FacturasController.php
+            [line] => 34
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\FacturasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

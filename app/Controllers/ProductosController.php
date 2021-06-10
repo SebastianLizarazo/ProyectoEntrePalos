@@ -92,7 +92,7 @@ class ProductosController
             $ObjProducto = Productos::searchForId($id);
             $ObjProducto->setEstado("Activo");
             if ($ObjProducto->update()) {
-                header("Location: ../../views/modules/producto/restore.php");
+                header("Location: ../../views/modules/producto/restore.php?respuesta=success&mensaje=Producto restaurado");
             } else {
                 header("Location: ../../views/modules/producto/restore.php?respuesta=error&mensaje=Error al guardar");
             }
@@ -107,7 +107,7 @@ class ProductosController
             $ObjProducto = Productos::searchForId($id);
             $ObjProducto->setEstado("Inactivo");
             if ($ObjProducto->update()) {
-                header("Location: ../../views/modules/producto/index.php");
+                header("Location: ../../views/modules/producto/index.php?respuesta=success&mensaje=Producto inhabilitado");
             } else {
                 header("Location: ../../views/modules/producto/index.php?respuesta=error&mensaje=Error al guardar");
             }
