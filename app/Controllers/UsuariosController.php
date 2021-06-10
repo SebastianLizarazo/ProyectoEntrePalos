@@ -45,32 +45,33 @@ class UsuariosController
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
-    static public function activate(int $id)
-    {
-        try {
-            $Obusuarios = Usuarios::searchForId($id);
-            $Obusuarios->setEstado("Activo");
-            if ($Obusuarios->update()) {
-                header("Location: ../../views/modules/usuario/index.php");
-            } else {
-                header("Location: ../../views/modules/usuario/index.php?respuesta=error&mensaje=Error al guardar");
-            }
-        } catch (\Exception $e) {
-            GeneralFunctions::logFile('Exception', $e, 'error');
-        }
-    }
+
     static public function inactivate(int $id)
     {
         try {
             $Obusuarios = Usuarios::searchForId($id);
             $Obusuarios->setEstado("Inactivo");
             if ($Obusuarios->update()) {
-                header("Location: ../../views/modules/usuario/index.php");
+                header("Location: ../../views/modules/usuario/index.php?respuesta=success&mensaje=Usuario deshabilitado");
             } else {
                 header("Location: ../../views/modules/usuario/index.php?respuesta=error&mensaje=Error al guardar");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+    static public function restaurar(int $id)
+    {
+        try {
+            $Obusuarios = Usuarios::searchForId($id);
+            $Obusuarios->setEstado("Activo");
+            if ($Obusuarios->update()) {
+                header("Location: ../../views/modules/usuario/restore.php?respuesta=success&mensaje=Usuario restaurado");
+            } else {
+                header("Location: ../../views/modules/usuario/restore.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
     public function edit()

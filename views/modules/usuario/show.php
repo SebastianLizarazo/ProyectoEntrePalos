@@ -97,6 +97,9 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                 <strong><i class="fas fa-at"></i>&nbsp; Email</strong>
                                                 <p class="text-muted"><?= $DataEmpresa->getEmail() ?></p>
                                                 <hr>
+                                                <strong><i class="fas fa-bolt"></i></i>&nbsp; Rol</strong>
+                                                <p class="text-muted"><?= $DataEmpresa->getRol() ?></p>
+                                                <hr>
                                                 <strong><i class="fas fa-check"></i>&nbsp; Estado</strong>
                                                 <p class="text-muted"><?= $DataEmpresa->getEstado() ?></p>
                                                 <hr>

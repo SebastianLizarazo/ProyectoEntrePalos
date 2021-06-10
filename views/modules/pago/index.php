@@ -101,7 +101,8 @@ $pluralModel = $nameModel.'s';
                                                     <td><?= $pago->getId(); ?></td>
                                                     <td><?= $pago->getTrabajador()->getNombres(); ?> <?= $pago->getTrabajador()->getApellidos(); ?> </td>
                                                     <td><?= $pago->getFecha(); ?></td>
-                                                    <td><?= $pago->getEstado(); ?></td>
+                                                    <td><span class="badge badge-<?= $pago->getEstado() == "Saldado" ? "success" : "danger" ?>">
+                                                            <?= $pago->getEstado() ?>
                                                     <td>
                                                         <div  style="text-align: center;">
                                                         <a href="edit.php?id=<?= $pago->getId(); ?>"
@@ -112,12 +113,17 @@ $pluralModel = $nameModel.'s';
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                        <?php ($pago->getEstado() != "Pendiente")  ?>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $pago->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Pendiente"
-                                                               class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                        class="far fa-trash-alt"></i></a>
-
+                                                            <?php if ($pago->getEstado() != "Saldado") { ?>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $pago->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Pagar"
+                                                                   class="btn docs-tooltip btn-success btn-xs"><i
+                                                                            class="fas fa-check-square"></i></a>
+                                                            <?php } else { ?>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $pago->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Pendiente"
+                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                            class="fas fa-question-circle"></i></a>
+                                                            <?php } ?>
                                                         </div>
                                                     </td>
                                                 </tr>

@@ -1,0 +1,6 @@
+[2021-06-10T01:16:43.024610+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion activate no fue encontrada en el controlador App\\Controllers\\PagosController"} 
+[2021-06-10T01:21:00.943621+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion inactive no fue encontrada en el controlador App\\Controllers\\PagosController"} 
+[2021-06-10T01:22:36.118512+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion inactive no fue encontrada en el controlador App\\Controllers\\PagosController"} 
+[2021-06-10T01:22:39.857881+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion inactive no fue encontrada en el controlador App\\Controllers\\PagosController"} 
+[2021-06-10T01:22:42.010504+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion inactive no fue encontrada en el controlador App\\Controllers\\PagosController"} 
+[2021-06-10T01:23:58.962884+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion inactive no fue encontrada en el controlador App\\Controllers\\PagosController"} 
