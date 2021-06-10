@@ -4,6 +4,10 @@ require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
 use  App\Controllers\DetallePedidosController;
+use App\Controllers\FacturasController;
+use App\Controllers\MesasController;
+use App\Controllers\OfertasController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
@@ -55,7 +59,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
 
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
@@ -77,22 +81,45 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                             <div class="form-group row">
                                                 <label for="Factura_id" class="col-sm-2 col-form-label">Numero de Factura</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="Factura_id" name="Factura_id"
-                                                           placeholder="Ingrese el ID de factura" value="<?= $frmSession['Factura_id'] ?? '' ?>">
+                                                    <?=FacturasController::selectFactura(
+                                                        array(
+                                                            'id' => 'Factura_id',
+                                                            'name' => 'Factura_id',
+                                                            'defaultValue' => '1',
+                                                            'class' => 'form-control select2bs4 select2-info',
+                                                        )
+                                                    )
+                                                    ?>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="Producto_id" class="col-sm-2 col-form-label">Producto</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="Producto_id" name="Producto_id"
-                                                           placeholder="Ingrese el ID del producto" value="<?= $frmSession['Producto_id'] ?? '' ?>">
+                                                    <?= ProductosController::selectProducto(
+                                                        array(
+                                                            'id' => 'Producto_id',
+                                                            'name' => 'Producto_id',
+                                                            'defaultValue' => '1',
+                                                            'class' => 'form-control select2bs4 select2-info',
+                                                            'where' => "estado = 'Activo'"
+                                                        )
+                                                    )
+                                                    ?>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="Ofertas_id" class="col-sm-2 col-form-label">Oferta</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="Ofertas_id" name="Ofertas_id"
-                                                           placeholder="Ingrese el ID de las ofertas" value="<?= $frmSession['Ofertas_id'] ?? '' ?>">
+                                                    <?= OfertasController::selectOferta(
+                                                        array(
+                                                            'id' => 'Oferta_id',
+                                                            'name' => 'Oferta_id',
+                                                            'defaultValue' => '1',
+                                                            'class' => 'form-control select2bs4 select2-info',
+                                                            'where' => "estado = 'Disponible'"
+                                                        )
+                                                    )
+                                                    ?>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -112,8 +139,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                             <div class="form-group row">
                                                 <label for="Mesa_id" class="col-sm-2 col-form-label">Numero de mesa</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="Mesa_id" name="Mesa_id"
-                                                           placeholder="Ingrese el ID de la mesa" value="<?= $frmSession['Mesa_id'] ?? '' ?>">
+                                                    <?= MesasController::selectMesa(
+                                                        array(
+                                                            'id' => 'Mesa_id',
+                                                            'name' => 'Mesa_id',
+                                                            'defaultValue' => '1',
+                                                            'class' => 'form-control select2bs4 select2-info',
+                                                            'where' => "Ocupacion = 'Disponible'"
+                                                        )
+                                                    )
+                                                    ?>
                                                 </div>
                                             </div>
                                         </div>

@@ -54,7 +54,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
 
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
@@ -98,8 +98,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                       <div class="form-group row">
                                                           <label for="Proveedor_id" class="col-sm-2 col-form-label">Proveedor</label>
                                                           <div class="col-sm-10">
-                                                              <input required type="number" class="form-control" id="Proveedor_id" name="Proveedor_id"
-                                                                     placeholder="Ingrese el proveedor la marca" value="<?= $frmSession['Proveedor_id'] ?? '' ?>">
+                                                              <?= UsuariosController::selectUsuario(
+                                                                  array(
+                                                                      'id' => 'Proveedor_id',
+                                                                      'name' => 'Proveedor_id',
+                                                                      'defaultValue' => '1',
+                                                                      'class' => 'form-control select2bs4 select2-info',
+                                                                      'where' => "estado = 'Activo' and Rol = 'Proveedor'"
+                                                                  )
+                                                              )
+                                                              ?>
                                                           </div>
                                                       </div>
                                                   </div>

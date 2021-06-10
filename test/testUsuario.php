@@ -43,6 +43,18 @@ $arrUsuario3=[
     'Estado' => 'Activo',
     'Empresa_id' => 1
 ];
+$arrUsuario4=[
+    'Cedula' => '119394783',
+    'Nombres' => 'MCLOVIN',
+    'Apellidos' => 'Liza',
+    'Telefono' => 3197807423,
+    'Direccion' => 'calle 33-56',
+    'Email' => 'listoospoderoso@gmail.com',
+    'Contrasena' => 'jehoo33',
+    'Rol' => 'Proveedor',
+    'Estado' => 'Activo',
+    'Empresa_id' => 1
+];
 
 //$objectUsuario1= new Usuarios($arrUsuario1);
 //var_dump($objectUsuario1);
@@ -57,6 +69,9 @@ $arrUsuario3=[
 //var_dump($objectUsuario2);
 
 //$objectUsuario2->insert();
+$objectUsuario4= new Usuarios($arrUsuario4);
+//var_dump($objectUsuario1);
+$objectUsuario4->insert();
 
 //$PruebaUpdate=Usuarios::searchForId(2);//Llamamos al usuario que queremos modificar
 //$PruebaUpdate->setEstado('Inactivo');
@@ -111,17 +126,17 @@ $arrUsuario3=[
 
 
 // Cambio de contraseñas
-$Usr1 = Usuarios::searchForId(1);
-$Usr1->setContrasena('123456789');
-$Usr1->update();
+//$Usr1 = Usuarios::searchForId(1);
+//$Usr1->setContrasena('123456789');
+//$Usr1->update();
 
-$Usr2 = Usuarios::searchForId(2);
-$Usr2->setContrasena('12345');
-$Usr2->update();
+//$Usr2 = Usuarios::searchForId(2);
+//$Usr2->setContrasena('12345');
+//$Usr2->update();
 
-$Usr3 = Usuarios::searchForId(3);
-$Usr3->setContrasena('00000');
-$Usr3->update();
+//$Usr3 = Usuarios::searchForId(3);
+//$Usr3->setContrasena('00000');
+//$Usr3->update();
 
 //$pruebaUsupag = Usuarios::searchForId(2);
 //print_r($pruebaUsupag->getPagosTrabajador());

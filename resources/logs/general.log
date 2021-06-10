@@ -1,1 +1,98 @@
 [2021-06-09T21:30:15.688492+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T02:30:13.708231+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T02:30:21.898177+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T02:30:24.947596+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T02:31:42.859554+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T02:31:49.508113+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T12:44:27.396811+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:04:12.306492+00:00] General.ERROR: Exception  
+[2021-06-10T16:04:12.307662+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T16:04:12.307749+00:00] General.ERROR: Line: 102  
+[2021-06-10T16:04:12.307817+00:00] General.ERROR: Mensaje: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Ocupación' in 'where clause'  
+[2021-06-10T16:04:12.308357+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 229
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa WHERE  Ocupación = 'Disponible'
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 124
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa WHERE  Ocupación = 'Disponible'
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\detalle_pedido\edit.php
+            [line] => 159
+            [function] => selectMesa
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => Mesa_id
+                            [name] => Mesa_id
+                            [defaultValue] => 1
+                            [class] => form-control select2bs4 select2-info
+                            [where] => Ocupación = 'Disponible'
+                            [isMultiple] => 
+                            [isRequired] => 1
+                            [arrExcluir] => Array
+                                (
+                                )
+
+                            [request] => html
+                        )
+
+                )
+
+        )
+
+)
+  
+[2021-06-10T16:07:19.907858+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:07:35.818496+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:28:21.118790+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:31:30.693993+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:31:36.178830+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:31:44.765374+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:34:37.420152+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:34:59.212958+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:36:06.799341+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 

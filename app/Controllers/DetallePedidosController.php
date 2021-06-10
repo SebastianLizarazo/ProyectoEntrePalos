@@ -29,7 +29,7 @@ class DetallePedidosController
     public function create()
     {
         try {
-            if (!empty($this->dataDetallePedido['id']) && !empty($this->dataDetallePedido['Factura_id']) && !DetallePedidos::detallePedidoRegistrado($this->dataDetallePedido['id'], $this->dataDetallePedido['Factura_id'])) {
+            if (!empty($this->dataDetallePedido['Mesa_id']) && !empty($this->dataDetallePedido['Factura_id']) && !DetallePedidos::detallePedidoRegistrado($this->dataDetallePedido['id'], $this->dataDetallePedido['Factura_id'])) {
                 $DetallePedido = new DetallePedidos($this->dataDetallePedido);
                 if ($DetallePedido->insert()) {
                     //unset($_SESSION['frmUsuarios']);
