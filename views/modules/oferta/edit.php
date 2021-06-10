@@ -108,7 +108,7 @@ $pluralModel = $nameModel.'s';
                                                     <div class="form-group row">
                                                         <label for="PrecioUnidadVentaOferta" class="col-sm-2 col-form-label">Precio Unidad Venta Oferta</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="PrecioUnidadVentaOferta"
+                                                            <input required type="number" class="form-control" id="PrecioUnidadVentaOferta"
                                                                    name="PrecioUnidadVentaOferta" value="<?= $DataOferta->getPrecioUnidadVentaOferta(); ?>"
                                                                    placeholder="Ingrese el precio unidad venta oferta">
                                                         </div>

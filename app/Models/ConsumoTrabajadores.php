@@ -49,7 +49,6 @@ class ConsumoTrabajadores extends AbstractDBConnection implements Model
             $this->Disconnect();//destruye la coneccion
         }
     }
-
     /**
      * @return int|null
      */

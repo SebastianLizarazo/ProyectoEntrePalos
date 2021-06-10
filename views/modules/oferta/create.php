@@ -55,7 +55,7 @@ use Carbon\Carbon;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
                                             data-source="create.php" data-source-selector="#card-refresh-content"
@@ -91,7 +91,7 @@ use Carbon\Carbon;
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="PrecioUnidadVentaOferta" class="col-sm-2 col-form-label">Precio Unidad Venta Oferta</label>
+                                                    <label for="PrecioUnidadVentaOferta" class="col-sm-2 col-form-label">Precio unidad venta en oferta</label>
                                                     <div class="col-sm-10">
                                                         <input required type="number" class="form-control" id="PrecioUnidadVentaOferta" name="PrecioUnidadVentaOferta"
                                                                placeholder="Ingrese el precio unidad venta oferta" value="<?= $frmSession['PrecioUnidadVentaOferta'] ?? '' ?>">
