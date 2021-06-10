@@ -96,6 +96,7 @@ $pluralModel = $nameModel.'s';
                                             if (!empty($arrPago))
                                             /* @var $arrPago Pagos */
                                             foreach ($arrPago as $pago) {
+                                                if ($pago->getTrabajador()->getEstado("Activo")){
                                                 ?>
                                                 <tr>
                                                     <td><?= $pago->getId(); ?></td>
@@ -123,7 +124,8 @@ $pluralModel = $nameModel.'s';
                                                                    type="button" data-toggle="tooltip" title="Pendiente"
                                                                    class="btn docs-tooltip btn-danger btn-xs"><i
                                                                             class="fas fa-question-circle"></i></a>
-                                                            <?php } ?>
+                                                            <?php }
+                                                             } ?>
                                                         </div>
                                                     </td>
                                                 </tr>

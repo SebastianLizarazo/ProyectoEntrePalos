@@ -68,6 +68,7 @@ class PagosController
     {
         try {
             $pgs = new Pagos($this->datapagos);
+            //var_dump($pgs);die();
             if($pgs->update()){
                 //unset($_SESSION['frmUsuarios']);
             }

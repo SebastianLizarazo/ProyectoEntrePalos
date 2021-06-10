@@ -32,7 +32,7 @@ class UsuariosController
     public function create()
     {
         try {
-            if (!empty($this->dataUsuario['Cedula']) && !empty($this->dataUsuario['Nombres']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'], $this->dataUsuario['Nombres'])) {
+            if (!empty($this->dataUsuario['Cedula']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'])) {
                 $Usuario = new Usuarios($this->dataUsuario);
                 if ($Usuario->insert()) {
                     unset($_SESSION['frmUsuarios']);
@@ -141,7 +141,7 @@ class UsuariosController
             /* @var $arrUsuarios Usuarios[] */
             foreach ($arrUsuarios as $usuario)
                 if (!UsuariosController::usuarioIsInArray($usuario->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($usuario != "") ? (($params['defaultValue'] == $usuario->getId()) ? "selected" : "") : "") . " value='" . $usuario->getId() . "'>" ."El usuario: ". $usuario->getNombres() . " con estado: " . $usuario->getEstado() . "</option>";
+                    $htmlSelect .= "<option " . (($usuario != "") ? (($params['defaultValue'] == $usuario->getId()) ? "selected" : "") : "") . " value='" . $usuario->getId() . "'>" . $usuario->getNombres()." - " . $usuario->getRol()."</option>";
         }
 
          $htmlSelect .= "</select>";

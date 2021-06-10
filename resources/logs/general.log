@@ -4,3 +4,453 @@
 [2021-06-10T01:22:39.857881+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion inactive no fue encontrada en el controlador App\\Controllers\\PagosController"} 
 [2021-06-10T01:22:42.010504+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion inactive no fue encontrada en el controlador App\\Controllers\\PagosController"} 
 [2021-06-10T01:23:58.962884+00:00] General.ERROR: Action no encontrada {"descripcion":"La accion inactive no fue encontrada en el controlador App\\Controllers\\PagosController"} 
+[2021-06-10T16:07:33.333835+00:00] General.ERROR: Exception  
+[2021-06-10T16:07:33.404891+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T16:07:33.405153+00:00] General.ERROR: Line: 102  
+[2021-06-10T16:07:33.405403+00:00] General.ERROR: Mensaje: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rol = 'Cocinero'' at line 1  
+[2021-06-10T16:07:33.413489+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 358
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM usuario WHERE  estado = 'Activo' and rol = 'Mesero' or rol = 'Proveedor' or rol = 'Domiciliario' rol = 'Cocinero'
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\UsuariosController.php
+            [line] => 133
+            [function] => search
+            [class] => App\Models\Usuarios
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM usuario WHERE  estado = 'Activo' and rol = 'Mesero' or rol = 'Proveedor' or rol = 'Domiciliario' rol = 'Cocinero'
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\pago\create.php
+            [line] => 78
+            [function] => selectUsuario
+            [class] => App\Controllers\UsuariosController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => Trabajador_id
+                            [name] => Trabajador_id
+                            [defaultValue] => 
+                            [class] => form-control select2bs4 select2-info
+                            [where] => estado = 'Activo' and rol = 'Mesero' or rol = 'Proveedor' or rol = 'Domiciliario' rol = 'Cocinero'
+                            [isMultiple] => 
+                            [isRequired] => 1
+                            [arrExcluir] => Array
+                                (
+                                )
+
+                            [request] => html
+                        )
+
+                )
+
+        )
+
+)
+  
+[2021-06-10T17:36:06.279145+00:00] General.ERROR: Exception  
+[2021-06-10T17:36:06.321041+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T17:36:06.321197+00:00] General.ERROR: Line: 128  
+[2021-06-10T17:36:06.321304+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '23323352' for key 'TblAdministradorCedula_UNIQUE'  
+[2021-06-10T17:36:06.321418+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 318
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 23323352
+                            [:Nombres] => Kevin Estiven
+                            [:Apellidos] => Mendoza
+                            [:Telefono] => 3125678896
+                            [:Direccion] => Calle 20 #59-96
+                            [:Email] => kevin@gmail.com
+                            [:Contrasena] => $2y$10$lVo6j7hDOdTyi9tzHq4tXOJhN/6wh8lP.OJ98BdGrAo8xpKBzVZQm
+                            [:Rol] => Administrador
+                            [:Estado] => Inactivo
+                            [:Empresa_id] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 327
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\UsuariosController.php
+            [line] => 37
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\UsuariosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-10T17:37:25.004445+00:00] General.ERROR: Exception  
+[2021-06-10T17:37:25.005116+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T17:37:25.005362+00:00] General.ERROR: Line: 128  
+[2021-06-10T17:37:25.005507+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '23323352' for key 'TblAdministradorCedula_UNIQUE'  
+[2021-06-10T17:37:25.005647+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 318
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 23323352
+                            [:Nombres] => Kevin Estiven
+                            [:Apellidos] => Mendoza
+                            [:Telefono] => 3125678896
+                            [:Direccion] => Calle 20 #59-96
+                            [:Email] => kevin@gmail.com
+                            [:Contrasena] => $2y$10$ACF6oKXoEjOx8ZxoqzNJkutvKb.KDlHdzyFpkKKko8B6x.QRrs7py
+                            [:Rol] => Administrador
+                            [:Estado] => Inactivo
+                            [:Empresa_id] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 327
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\UsuariosController.php
+            [line] => 37
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\UsuariosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-10T17:37:38.669789+00:00] General.ERROR: Exception  
+[2021-06-10T17:37:38.670629+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T17:37:38.670842+00:00] General.ERROR: Line: 128  
+[2021-06-10T17:37:38.670968+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '23323352' for key 'TblAdministradorCedula_UNIQUE'  
+[2021-06-10T17:37:38.671066+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 318
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 23323352
+                            [:Nombres] => Kevin Estiven
+                            [:Apellidos] => Mendoza
+                            [:Telefono] => 3125678896
+                            [:Direccion] => Calle 20 #59-96
+                            [:Email] => kevin@gmail.com
+                            [:Contrasena] => $2y$10$.SR6zBeFw.XkcztZA/cPRO36CLrl0Nyix2SM/iytsf9YAEoabu0Fe
+                            [:Rol] => Administrador
+                            [:Estado] => Inactivo
+                            [:Empresa_id] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 327
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\UsuariosController.php
+            [line] => 37
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\UsuariosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-10T17:37:59.509354+00:00] General.ERROR: Exception  
+[2021-06-10T17:37:59.509832+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T17:37:59.509943+00:00] General.ERROR: Line: 128  
+[2021-06-10T17:37:59.510046+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '23323352' for key 'TblAdministradorCedula_UNIQUE'  
+[2021-06-10T17:37:59.510150+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 318
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Cedula] => 23323352
+                            [:Nombres] => Kevin Estiven
+                            [:Apellidos] => Mendoza
+                            [:Telefono] => 3125678896
+                            [:Direccion] => Calle 20 #59-96
+                            [:Email] => kevin@gmail.com
+                            [:Contrasena] => $2y$10$qqzBAAQ12RKvgufq2aWwJOm/Vngct1/KzAJxEcDTqxGSf1icMisqO
+                            [:Rol] => Administrador
+                            [:Estado] => Activo
+                            [:Empresa_id] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 327
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO usuario VALUES (
+            :id,:Cedula,:Nombres,:Apellidos,:Telefono,:Direccion,:Email,:Contrasena,:Rol,:Estado,:Empresa_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\UsuariosController.php
+            [line] => 37
+            [function] => insert
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\UsuariosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

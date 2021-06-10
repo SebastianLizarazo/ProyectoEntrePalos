@@ -4,7 +4,9 @@ require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
 use App\Models\GeneralFunctions;
+use App\Controllers\EmpresasController;
 use Carbon\Carbon;
+
 
 $nameModel = "Usuario"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
@@ -142,10 +144,18 @@ D                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="Empresa_id" class="col-sm-2 col-form-label">Empresa_id</label>
+                                                <label for="Empresa_id" class="col-sm-2 col-form-label">Empresa</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" class="form-cotrol" id="Empresa_id" name="Empresa_id"
-                                                           placeholder="Ingrese el id de la empresa" value="<?= $frmSession['Empresa_id'] ?? '' ?>">
+                                                    <?= EmpresasController::selectEmpresa(
+                                                        array(
+                                                            'id' => 'Empresa_id',
+                                                            'name' => 'Empresa_id',
+                                                            'defaultValue' => '', //Boyacá
+                                                            'class' => 'form-control select2bs4 select2-info',
+                                                            'where' => "estado = 'Activo'"
+                                                        )
+                                                    )
+                                                    ?>
                                                 </div>
                                             </div>
                                         </div>
