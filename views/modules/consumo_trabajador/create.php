@@ -4,6 +4,8 @@ require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
 use App\Controllers\ConsumoTrabajadoresController;
+use App\Controllers\PagosController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
@@ -79,15 +81,31 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 <div class="form-group row">
                                                     <label for="PagoId" class="col-sm-2 col-form-label">Numero de pago</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="PagoId" name="PagoId"
-                                                               placeholder="Ingrese el numero del pago" value="<?= $frmSession['PagoId'] ?? '' ?>">
+                                                        <?= PagosController::selectPago
+                                                        (array (
+                                                                'id' => 'Pago_id',
+                                                                'name' => 'Pago_id',
+                                                                'defaultValue' => (!empty($frmSession['pago_id'])) ? $frmSession['pago_id'] : '',
+                                                                'class' => 'form-control select2bs4 select2-info',
+                                                                'where' => "estado = 'Pendiente'"
+                                                            )
+                                                        )
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="ProductoId" class="col-sm-2 col-form-label">Numero de producto</label>
+                                                    <label for="ProductoId" class="col-sm-2 col-form-label">Producto</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="ProductoId" name="ProductoId"
-                                                               placeholder="Ingrese el numero del producto" value="<?= $frmSession['ProductoId'] ?? '' ?>">
+                                                        <?= ProductosController::selectProducto
+                                                        (array (
+                                                                'id' => 'Producto_id',
+                                                                'name' => 'Producto_id',
+                                                                'defaultValue' => (!empty($frmSession['producto_id'])) ? $frmSession['producto_id'] : '',
+                                                                'class' => 'form-control select2bs4 select2-info',
+                                                                'where' => "estado = 'Activo'"
+                                                            )
+                                                        )
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">

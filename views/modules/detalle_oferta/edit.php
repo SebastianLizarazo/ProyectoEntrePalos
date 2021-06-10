@@ -5,6 +5,8 @@ require("../../../app/Controllers/DetalleOfertasController.php");
 
 
 use App\Controllers\DetalleOfertasController;
+use App\Controllers\OfertasController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use App\Models\DetalleOfertas;
 
@@ -89,19 +91,33 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero del producto</label>
+                                                        <label for="Numero" class="col-sm-2 col-form-label">Producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Numero"
-                                                                   name="Numero" value="<?= $DataDetalleO->getProductoId(); ?>"
-                                                                   placeholder="Ingrese el numero del producto">
+                                                            <?= ProductosController::selectProducto
+                                                            (array (
+                                                                    'id' => 'Producto_id',
+                                                                    'name' => 'Producto_id',
+                                                                    'defaultValue' => (!empty($frmSession['producto_id'])) ? $frmSession['producto_id'] : '',
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="Numero" class="col-sm-2 col-form-label">Numero de la oferta</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Numero"
-                                                                   name="Numero" value="<?= $DataDetalleO->getOfertaId(); ?>"
-                                                                   placeholder="Ingrese el numero de la oferta">
+                                                            <?= OfertasController::selectOferta
+                                                            (array (
+                                                                    'id' => 'Oferta_id',
+                                                                    'name' => 'Oferta_id',
+                                                                    'defaultValue' => (!empty($frmSession['oferta_id'])) ? $frmSession['oferta_id'] : '',
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Disponible'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

@@ -20,6 +20,11 @@ class PagosController
         $this->datapagos['Fecha'] = !empty($_FORM['Fecha']) ? Carbon::parse($_FORM['Fecha']) : new Carbon();
         $this->datapagos['Estado'] = $_FORM['Estado'] ?? 'Pendiente';
     }
+
+    private static function pagoIsInArray(?int $getId, mixed $arrExcluir)
+    {
+    }
+
     public function create()
     {
         try {
@@ -130,7 +135,7 @@ class PagosController
             /* @var $arrPago Pagos[] */
             foreach ($arrPago as $pago)
                 if (!Pagoscontroller::pagoIsInArray($pago->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($pago != "") ? (($params['defaultValue'] == $pago->getId()) ? "selected" : "") : "") . " value='" . $pago->getId() . "'>" ."El pago numero: ". $pago->getId() . " El id del trabajador " . $pago->getTrabajadorId() . "</option>";
+                    $htmlSelect .= "<option " . (($pago != "") ? (($params['defaultValue'] == $pago->getId()) ? "selected" : "") : "") . " value='" . $pago->getId() . "'>" ."El pago numero: ". $pago->getId() . " Del trabajador: " . $pago->getTrabajador()->getNombres() . "</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

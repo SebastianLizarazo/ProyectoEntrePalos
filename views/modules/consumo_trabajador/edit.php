@@ -4,6 +4,8 @@ require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
 use App\Controllers\ConsumoTrabajadoresController;
+use App\Controllers\PagosController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
@@ -90,17 +92,31 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Pago_id" class="col-sm-2 col-form-label">Numero de pago</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Pago_id"
-                                                                   name="Pago_id" value="<?= $DataConsumoT->getPagoId(); ?>"
-                                                                   placeholder="Ingrese el numero del pago">
+                                                            <?= PagosController::selectPago
+                                                            (array (
+                                                                    'id' => 'Pago_id',
+                                                                    'name' => 'Pago_id',
+                                                                    'defaultValue' =>  $DataConsumoT->getPagoId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Pendiente'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Producto_id" class="col-sm-2 col-form-label">Numero de producto</label>
+                                                        <label for="Producto_id" class="col-sm-2 col-form-label">Producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Producto_id"
-                                                                   name="Producto_id" value="<?= $DataConsumoT->getProductoId(); ?>"
-                                                                   placeholder="Ingrese el numero de producto">
+                                                            <?= ProductosController::selectProducto
+                                                            (array (
+                                                                    'id' => 'Producto_id',
+                                                                    'name' => 'Producto_id',
+                                                                    'defaultValue' => $DataConsumoT->getProductoId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
