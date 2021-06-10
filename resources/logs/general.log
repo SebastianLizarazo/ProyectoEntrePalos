@@ -288,3 +288,573 @@
 
 )
   
+[2021-06-10T12:45:55.266508+00:00] General.ERROR: Exception  
+[2021-06-10T12:45:55.276909+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T12:45:55.277703+00:00] General.ERROR: Line: 128  
+[2021-06-10T12:45:55.278302+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`factura`, CONSTRAINT `fk_Factura_Usuario1` FOREIGN KEY (`Mesero_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-10T12:45:55.280147+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 229
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 74
+                            [:Fecha] => Carbon\Carbon Object
+                                (
+                                    [constructedObjectId:protected] => 000000007c6f9b61000000001eb79b88
+                                    [localMonthsOverflow:protected] => 
+                                    [localYearsOverflow:protected] => 
+                                    [localStrictModeEnabled:protected] => 
+                                    [localHumanDiffOptions:protected] => 
+                                    [localToStringFormat:protected] => 
+                                    [localSerializer:protected] => 
+                                    [localMacros:protected] => 
+                                    [localGenericMacros:protected] => 
+                                    [localFormatFunction:protected] => 
+                                    [localTranslator:protected] => 
+                                    [dumpProperties:protected] => Array
+                                        (
+                                            [0] => date
+                                            [1] => timezone_type
+                                            [2] => timezone
+                                        )
+
+                                    [dumpLocale:protected] => 
+                                    [date] => 2021-06-07 00:00:00.000000
+                                    [timezone_type] => 3
+                                    [timezone] => UTC
+                                )
+
+                            [:IVA] => 0.19
+                            [:MedioPago] => Ahorro a la mano
+                            [:Mesero_id] => 0
+                            [:Estado] => Pendiente
+                            [:TipoPedido] => Mesa
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 238
+            [function] => save
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\FacturasController.php
+            [line] => 34
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\FacturasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-10T12:46:22.480967+00:00] General.ERROR: Exception  
+[2021-06-10T12:46:22.482689+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T12:46:22.483067+00:00] General.ERROR: Line: 128  
+[2021-06-10T12:46:22.483383+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`factura`, CONSTRAINT `fk_Factura_Usuario1` FOREIGN KEY (`Mesero_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-10T12:46:22.483758+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 229
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 12
+                            [:Fecha] => Carbon\Carbon Object
+                                (
+                                    [constructedObjectId:protected] => 000000001b75727c0000000064f5f8f8
+                                    [localMonthsOverflow:protected] => 
+                                    [localYearsOverflow:protected] => 
+                                    [localStrictModeEnabled:protected] => 
+                                    [localHumanDiffOptions:protected] => 
+                                    [localToStringFormat:protected] => 
+                                    [localSerializer:protected] => 
+                                    [localMacros:protected] => 
+                                    [localGenericMacros:protected] => 
+                                    [localFormatFunction:protected] => 
+                                    [localTranslator:protected] => 
+                                    [dumpProperties:protected] => Array
+                                        (
+                                            [0] => date
+                                            [1] => timezone_type
+                                            [2] => timezone
+                                        )
+
+                                    [dumpLocale:protected] => 
+                                    [date] => 2021-06-07 00:00:00.000000
+                                    [timezone_type] => 3
+                                    [timezone] => UTC
+                                )
+
+                            [:IVA] => 0.19
+                            [:MedioPago] => Ahorro a la mano
+                            [:Mesero_id] => 0
+                            [:Estado] => Pendiente
+                            [:TipoPedido] => Mesa
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 238
+            [function] => save
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\FacturasController.php
+            [line] => 34
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\FacturasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-10T12:52:44.159568+00:00] General.ERROR: Exception  
+[2021-06-10T12:52:44.160706+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T12:52:44.160885+00:00] General.ERROR: Line: 128  
+[2021-06-10T12:52:44.161040+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`factura`, CONSTRAINT `fk_Factura_Usuario1` FOREIGN KEY (`Mesero_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-10T12:52:44.161216+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 229
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 12
+                            [:Fecha] => Carbon\Carbon Object
+                                (
+                                    [constructedObjectId:protected] => 000000000593700d000000000d0bbed9
+                                    [localMonthsOverflow:protected] => 
+                                    [localYearsOverflow:protected] => 
+                                    [localStrictModeEnabled:protected] => 
+                                    [localHumanDiffOptions:protected] => 
+                                    [localToStringFormat:protected] => 
+                                    [localSerializer:protected] => 
+                                    [localMacros:protected] => 
+                                    [localGenericMacros:protected] => 
+                                    [localFormatFunction:protected] => 
+                                    [localTranslator:protected] => 
+                                    [dumpProperties:protected] => Array
+                                        (
+                                            [0] => date
+                                            [1] => timezone_type
+                                            [2] => timezone
+                                        )
+
+                                    [dumpLocale:protected] => 
+                                    [date] => 2021-06-07 00:00:00.000000
+                                    [timezone_type] => 3
+                                    [timezone] => UTC
+                                )
+
+                            [:IVA] => 0.19
+                            [:MedioPago] => Ahorro a la mano
+                            [:Mesero_id] => 0
+                            [:Estado] => Pendiente
+                            [:TipoPedido] => Mesa
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 238
+            [function] => save
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\FacturasController.php
+            [line] => 34
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\FacturasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-10T12:53:34.515513+00:00] General.ERROR: Exception  
+[2021-06-10T12:53:34.516487+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T12:53:34.516675+00:00] General.ERROR: Line: 128  
+[2021-06-10T12:53:34.516975+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`factura`, CONSTRAINT `fk_Factura_Usuario1` FOREIGN KEY (`Mesero_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-10T12:53:34.517175+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 229
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 12
+                            [:Fecha] => Carbon\Carbon Object
+                                (
+                                    [constructedObjectId:protected] => 000000004dde1bbb0000000054575447
+                                    [localMonthsOverflow:protected] => 
+                                    [localYearsOverflow:protected] => 
+                                    [localStrictModeEnabled:protected] => 
+                                    [localHumanDiffOptions:protected] => 
+                                    [localToStringFormat:protected] => 
+                                    [localSerializer:protected] => 
+                                    [localMacros:protected] => 
+                                    [localGenericMacros:protected] => 
+                                    [localFormatFunction:protected] => 
+                                    [localTranslator:protected] => 
+                                    [dumpProperties:protected] => Array
+                                        (
+                                            [0] => date
+                                            [1] => timezone_type
+                                            [2] => timezone
+                                        )
+
+                                    [dumpLocale:protected] => 
+                                    [date] => 2021-06-07 00:00:00.000000
+                                    [timezone_type] => 3
+                                    [timezone] => UTC
+                                )
+
+                            [:IVA] => 0.19
+                            [:MedioPago] => Ahorro a la mano
+                            [:Mesero_id] => 0
+                            [:Estado] => Pendiente
+                            [:TipoPedido] => Mesa
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 238
+            [function] => save
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\FacturasController.php
+            [line] => 34
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\FacturasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-10T14:17:00.857731+00:00] General.ERROR: Exception  
+[2021-06-10T14:17:00.859566+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T14:17:00.859844+00:00] General.ERROR: Line: 128  
+[2021-06-10T14:17:00.860092+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`factura`, CONSTRAINT `fk_Factura_Usuario1` FOREIGN KEY (`Mesero_id`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-10T14:17:00.860305+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 229
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Numero] => 22
+                            [:Fecha] => Carbon\Carbon Object
+                                (
+                                    [constructedObjectId:protected] => 0000000015986265000000003affaf3b
+                                    [localMonthsOverflow:protected] => 
+                                    [localYearsOverflow:protected] => 
+                                    [localStrictModeEnabled:protected] => 
+                                    [localHumanDiffOptions:protected] => 
+                                    [localToStringFormat:protected] => 
+                                    [localSerializer:protected] => 
+                                    [localMacros:protected] => 
+                                    [localGenericMacros:protected] => 
+                                    [localFormatFunction:protected] => 
+                                    [localTranslator:protected] => 
+                                    [dumpProperties:protected] => Array
+                                        (
+                                            [0] => date
+                                            [1] => timezone_type
+                                            [2] => timezone
+                                        )
+
+                                    [dumpLocale:protected] => 
+                                    [date] => 2021-06-02 00:00:00.000000
+                                    [timezone_type] => 3
+                                    [timezone] => UTC
+                                )
+
+                            [:IVA] => 0.19
+                            [:MedioPago] => Efectivo
+                            [:Mesero_id] => 0
+                            [:Estado] => Paga
+                            [:TipoPedido] => Mesa
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Facturas.php
+            [line] => 238
+            [function] => save
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO factura VALUES (
+            :id,:Numero,:Fecha,:IVA,:MedioPago,:Mesero_id,:Estado,:TipoPedido)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\FacturasController.php
+            [line] => 34
+            [function] => insert
+            [class] => App\Models\Facturas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\FacturasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title>Crear | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -108,8 +108,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 <div class="form-group row">
                                                     <label for="Mesero_id" class="col-sm-2 col-form-label">Mesero</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" step="0.01" class="form-control" id="Mesero_id" name="Mesero_id"
-                                                                placeholder="Ingrese el id del mesero" value="<?= $frmSession['Mesero_id'] ?? '' ?>">
+                                                        <?= UsuariosController::selectUsuario(
+                                                            array(
+                                                                'id' => 'Mesero_id',
+                                                                'name' => 'Mesero_id',
+                                                                'defaultValue' => (!empty($frmSession['MedioPago']))? $frmSession['MedioPago']:'',
+                                                                'class' => 'form-control select2bs4 select2-info',
+                                                                'where' => "estado = 'Activo' and rol = 'Mesero'"
+                                                            )
+                                                        )
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -156,6 +164,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 </div>
 <!-- ./wrapper -->
 <?php require('../../partials/scripts.php'); ?>
+
 </body>
 </html>
 

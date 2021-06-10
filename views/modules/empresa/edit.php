@@ -150,7 +150,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                                 <?= MunicipiosController::selectMunicipios(array (
                                                                     'id' => 'Municipio_id',
                                                                     'name' => 'Municipio_id',
-                                                                    'defaultValue' => $DataEmpresa->getMunicipio()->getNombre(),
+                                                                    'defaultValue' => (!empty($DataEmpresa)) ? $DataEmpresa->getMunicipioid(): '',
                                                                     'class' => 'form-control select2bs4 select2-info',
                                                                     'where' => "departamento_id = ".$DataEmpresa->getMunicipio()->getDepartamento()->getId().
                                                                     " and estado = 'Activo'"))

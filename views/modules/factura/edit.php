@@ -5,6 +5,7 @@ require("../../../app/Controllers/FacturasController.php");
 
 
 use App\Controllers\FacturasController;
+use App\Controllers\UsuariosController;
 use App\Models\GeneralFunctions;
 use App\Models\Facturas;
 use Carbon\Carbon;
@@ -18,7 +19,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title>Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -82,6 +83,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
+                                            <input id="id" name="id" value="<?= $DataFactura->getId(); ?>" hidden
+                                                   required="required" type="text">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
@@ -119,10 +122,18 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Mesero_id" class="col-sm-2 col-form-label">Mesero id</label>
+                                                        <label for="Mesero_id" class="col-sm-2 col-form-label">Mesero</label>
                                                         <div class="col-sm-10">
-                                                            <input type="number" step="0.01" class="form-control" id="Mesero_id" name="Mesero_id"
-                                                                   placeholder="Ingrese el id del mesero" value="<?= $DataFactura->getMeseroId() ?>">
+                                                            <?= UsuariosController::selectUsuario(
+                                                                array(
+                                                                    'id' => 'Mesero_id',
+                                                                    'name' => 'Mesero_id',
+                                                                    'defaultValue' => $DataFactura->getMeseroId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo' and rol = 'Mesero'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

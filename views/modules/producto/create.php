@@ -146,10 +146,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="Marca_id" class="col-sm-2 col-form-label">Marca id</label>
+                                                    <label for="Marca_id" class="col-sm-2 col-form-label">Marca</label>
                                                     <div class="col-sm-10">
                                                         <input  required type="number"  class="form-control" id="Marca_id" name="Marca_id"
-                                                                placeholder="Ingrese el id de la marca" value="<?= $frmSession['Marca_id'] ?? '' ?>">
+                                                                placeholder="Ingrese la marca" value="<?= $frmSession['Marca_id'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -160,7 +160,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="Subcategoria_id" class="col-sm-2 col-form-label">SubCategoria id</label>
+                                                    <label for="Subcategoria_id" class="col-sm-2 col-form-label">SubCategoria</label>
                                                     <div class="col-sm-10">
                                                         <input  required type="number"  class="form-control" id="Subcategoria_id" name="Subcategoria_id"
                                                                 placeholder="Ingrese la subcategoria" value="<?= $frmSession['Subcategoria_id'] ?? '' ?>">
