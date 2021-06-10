@@ -92,7 +92,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                             <div class="form-group row">
                                                 <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="Telefono" name="Telefono"
+                                                    <input required type="number" min="1111111111" max="9999999999" class="form-control" id="Telefono" name="Telefono"
                                                            placeholder="Ingrese el telefono de la empresa" value="<?= $frmSession['Telefono'] ?? '' ?>">
                                                 </div>
                                             </div>
@@ -120,7 +120,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                         array(
                                                             'id' => 'departamento_id',
                                                             'name' => 'departamento_id',
-                                                            'defaultValue' => '15', //Boyacá
+                                                            'defaultValue' => (!empty($frmSession['departamento_id'])) ? $frmSession['departamento_id'] : '',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Activo'"
                                                         )

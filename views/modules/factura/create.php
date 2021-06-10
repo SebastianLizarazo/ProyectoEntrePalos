@@ -125,9 +125,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     <div class="col-sm-10">
                                                         <select required name="Estado" id="Estado" class="custom-select">
                                                             <option value="">Seleccione</option>
-                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Pendiente") ? "selected" : ""; ?>value="Pendiente">Pendiente</option>
-                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Paga") ? "selected" : ""; ?>value="Paga">Paga</option>
-                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Cancelada") ? "selected" : ""; ?>value="Cancelada">Cancelada</option>
+                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Pendiente") ? "selected" : ""; ?> value="Pendiente">Pendiente</option>
+                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Paga") ? "selected" : ""; ?> value="Paga">Paga</option>
+                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Cancelada") ? "selected" : ""; ?> value="Cancelada">Cancelada</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -136,8 +136,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     <div class="col-sm-10">
                                                         <select required name="TipoPedido" id="TipoPedido" class="custom-select">
                                                             <option value="">Seleccione</option>
-                                                            <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Mesa") ? "selected" : ""; ?>value="Mesa">Mesa</option>
-                                                            <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Domicilio") ? "selected" : ""; ?>value="Domicilio">Domicilio</option>
+                                                            <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Mesa") ? "selected" : ""; ?> value="Mesa">Mesa</option>
+                                                            <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Domicilio") ? "selected" : ""; ?> value="Domicilio">Domicilio</option>
                                                         </select>
                                                     </div>
                                                 </div>

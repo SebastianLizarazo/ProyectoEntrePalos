@@ -140,7 +140,7 @@ class UsuariosController
             /* @var $arrUsuarios Usuarios[] */
             foreach ($arrUsuarios as $usuario)
                 if (!UsuariosController::usuarioIsInArray($usuario->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($usuario != "") ? (($params['defaultValue'] == $usuario->getId()) ? "selected" : "") : "") . " value='" . $usuario->getId() . "'>". $usuario->getNombres()."-".$usuario->getRol()."</option>";
+                    $htmlSelect .= "<option " . (($usuario != "") ? (($params['defaultValue'] == $usuario->getId()) ? "selected" : "") : "") . " value='" . $usuario->getId() . "'>". $usuario->getNombres()." - ".$usuario->getRol()."</option>";
         }
 
          $htmlSelect .= "</select>";

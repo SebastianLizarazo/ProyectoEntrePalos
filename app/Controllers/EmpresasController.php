@@ -22,12 +22,11 @@ class EmpresasController
 
     }
 
-
-
     public function create()
     {
         try {
-            if (!empty($this->dataEmpresa['Nombre']) && !empty($this->dataEmpresa['NIT']) && !Empresas::empresaRegistrada($this->dataEmpresa['Nombre'], $this->dataEmpresa['NIT'])) {
+            if (!empty($this->dataEmpresa['Nombre']) && !empty($this->dataEmpresa['NIT']) && !empty($this->dataEmpresa['Telefono'])
+                    && !Empresas::empresaRegistrada($this->dataEmpresa['Nombre'], $this->dataEmpresa['NIT'],$this->dataEmpresa['Telefono'])) {
                 $Empresa = new Empresas($this->dataEmpresa);
                 if ($Empresa->insert()) {
                     unset($_SESSION['frmUsuarios']);

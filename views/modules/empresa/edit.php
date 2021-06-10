@@ -62,7 +62,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -107,7 +107,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Telefono"
+                                                            <input required type="number" min="1111111111" max="9999999999" class="form-control" id="Telefono"
                                                                    name="Telefono" value="<?= $DataEmpresa->getTelefono(); ?>"
                                                                    placeholder="Ingrese el telefono de la empresa">
                                                         </div>

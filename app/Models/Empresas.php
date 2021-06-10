@@ -43,9 +43,9 @@ class Empresas extends AbstractDBConnection implements Model
         $this->setEstado($Empresa['Estado'] ?? '');
         $this->setMunicipioid($Empresa['Municipio_id'] ?? 0);
     }
-    public static function empresaRegistrada(mixed $Nombre, mixed $NIT): bool
+    public static function empresaRegistrada(mixed $Nombre, mixed $NIT,mixed $Telefono): bool
     {
-        $empresatmp = Empresas::search("SELECT * FROM empresa WHERE Nombre = '$Nombre' and NIT = '$NIT'");
+        $empresatmp = Empresas::search("SELECT * FROM empresa WHERE Nombre = '$Nombre' and NIT = '$NIT' and Telefono = '$Telefono'");
         return (!empty($empresatmp) ? true : false);
     }
     public function __destruct()

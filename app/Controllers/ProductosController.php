@@ -33,7 +33,7 @@ class ProductosController
     public function create()
     {
         try {
-            if (!empty($this->dataProducto['id']) && !empty($this->dataProducto['Referencia']) && !Productos::productoRegistrado($this->dataProducto['id'], $this->dataProducto['Referencia'])) {
+            if (!empty($this->dataProducto['Referencia']) && !Productos::productoRegistrado($this->dataProducto['Referencia'])) {
                 $Producto = new Productos($this->dataProducto);
                 if ($Producto->insert()) {
                     //unset($_SESSION['frmUsuarios']);
