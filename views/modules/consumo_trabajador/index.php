@@ -84,7 +84,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Numero de pago</th>
+                                                <th>Trabajador</th>
                                                 <th>Producto</th>
                                                 <th>Cantidad roducto</th>
                                                 <th>Descripción</th>
@@ -101,7 +101,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <tr>
 
                                                     <td><?= $consumotrabajador->getId(); ?></td>
-                                                    <td><?= $consumotrabajador->getPagoId(); ?></td>
+                                                    <td><?= $consumotrabajador->getPagos()->getTrabajador()->getNombres(); ?></td>
                                                     <td><?= $consumotrabajador->getProducto()->getNombre() ; ?></td>
                                                     <td><?= $consumotrabajador->getCantidadProducto(); ?></td>
                                                     <td><?= $consumotrabajador->getDescripcion(); ?></td>
@@ -123,7 +123,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Numero de pago</th>
+                                                <th>Trabajador</th>
                                                 <th>Producto</th>
                                                 <th>Cantidad roducto</th>
                                                 <th>Descripción</th>

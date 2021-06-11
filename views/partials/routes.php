@@ -15,4 +15,4 @@ if(GeneralFunctions::loadEnv(['ROOT_FOLDER'])){
     GeneralFunctions::logFile('Error al cargar variables del entorno');
     die();
 }
-?>;
+?>

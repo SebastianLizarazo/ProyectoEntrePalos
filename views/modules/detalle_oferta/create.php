@@ -39,7 +39,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
-                            <li class="breadcrumb-item"><a href="index.php"><?= $pluralModel ?></a></li>
+                            <li class="breadcrumb-item"><a href="index.php"><?= $nameModel ?></a></li>
                             <li class="breadcrumb-item active">Crear</li>
                         </ol>
                     </div>
@@ -59,9 +59,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                             <div class="card-header">
                                 <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i

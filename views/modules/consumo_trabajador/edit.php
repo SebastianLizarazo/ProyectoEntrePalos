@@ -10,8 +10,8 @@ use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
 
-$nameModel = "Consumo trabajador";
-$pluralModel = $nameModel.'s';
+$nameModel = "ConsumoTrabajador";
+$pluralModel = $nameModel.'es';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 ?>
@@ -62,9 +62,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                             <div class="card-header">
                                 <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i

@@ -100,8 +100,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <tr>
 
                                                     <td><?= $DetalleO->getId(); ?></td>
-                                                    <td><?= $DetalleO->getProductoId(); ?></td>
-                                                    <td><?= $DetalleO->getOfertaId(); ?></td>
+                                                    <td><?= $DetalleO->getProducto()->getNombre(); ?></td>
+                                                    <td><?= $DetalleO->getOferta()->getNombre(); ?></td>
                                                     <td><?= $DetalleO->getCantidadProducto(); ?></td>
                                                     <td>
                                                         <div  style="text-align: center;">
