@@ -112,7 +112,6 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                                                     <td><?= $imagen->getId(); ?></td>
                                                     <td><?= !empty($imagen->getNombre()) ? $imagen->getNombre() : 'Sin Nombre' ?></td>
                                                     <td><?= !empty($imagen->getDescripcion()) ? $imagen->getDescripcion() : 'Sin descripción' ?></td>
-                                                    <td><?= $imagen->getProducto()->getNombre(); ?></td>
                                                     <td>
                                                         <?php if(!empty($imagen->getRuta())){ ?>
                                                             <span class="badge badge-info" data-toggle="tooltip" data-html="true"
@@ -120,7 +119,21 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                                                             </span>
                                                         <?php } ?>
                                                     </td>
-                                                    <td><?= $imagen->getEstado(); ?></td>
+                                                    <td>
+                                                    <?php if ($imagen->getEstado() != "Activo") { ?>
+                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $imagen->getId(); ?>"
+                                                           type="button" data-toggle="tooltip" title="Activar"
+                                                           class="btn docs-tooltip btn-success btn-xs"><i
+                                                                    class="fa fa-check-square"></i></a>
+                                                    <?php } else { ?>
+                                                        <a type="button"
+                                                           href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $imagen->getId(); ?>"
+                                                           data-toggle="tooltip" title="Inactivar"
+                                                           class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                    class="fa fa-times-circle"></i></a>
+                                                    <?php } ?>
+                                                    </td>
+                                                    <td><?= $imagen->getProducto()->getNombre(); ?></td>
                                                     <td>
                                                         <a href="edit.php?id=<?= $imagen->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
@@ -130,18 +143,6 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                        <?php if ($imagen->getEstado() != "Activo") { ?>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $imagen->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Activar"
-                                                               class="btn docs-tooltip btn-success btn-xs"><i
-                                                                        class="fa fa-check-square"></i></a>
-                                                        <?php } else { ?>
-                                                            <a type="button"
-                                                               href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $imagen->getId(); ?>"
-                                                               data-toggle="tooltip" title="Inactivar"
-                                                               class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                        class="fa fa-times-circle"></i></a>
-                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>

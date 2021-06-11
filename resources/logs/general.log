@@ -1386,3 +1386,308 @@
 
 )
   
+[2021-06-11T21:48:59.689472+00:00] General.ERROR: Archivo No Subido {"descripcion":"Error en la carpeta..","0":"File error. Please try again."} 
+[2021-06-11T21:50:49.452421+00:00] General.ERROR: Archivo No Subido {"descripcion":"Error en la carpeta..","0":"File error. Please try again."} 
+[2021-06-11T21:51:12.856338+00:00] General.ERROR: Exception  
+[2021-06-11T21:51:12.857541+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-11T21:51:12.857970+00:00] General.ERROR: Line: 128  
+[2021-06-11T21:51:12.858189+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`imagen`, CONSTRAINT `fk_Imagen_Oferta1` FOREIGN KEY (`Oferta_id`) REFERENCES `oferta` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-11T21:51:12.858360+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 204
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => Prueba 1
+                            [:Descripcion] => wdwdw
+                            [:Ruta] => 21-Jun-12-batman-4k-1.jpg
+                            [:Estado] => Activo
+                            [:Producto_id] => 5
+                            [:Oferta_id] => 0
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 215
+            [function] => save
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\ImagenesController.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 27
+            [function] => create
+            [class] => App\Controllers\ImagenesController
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [Imagen] => Array
+                                (
+                                    [name] => batman-4k-1.jpg
+                                    [type] => image/jpeg
+                                    [tmp_name] => C:\Users\acer\AppData\Local\Temp\php2F3B.tmp
+                                    [error] => 0
+                                    [size] => 1212344
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+  
+[2021-06-11T21:52:00.285515+00:00] General.ERROR: Exception  
+[2021-06-11T21:52:00.286313+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-11T21:52:00.286458+00:00] General.ERROR: Line: 128  
+[2021-06-11T21:52:00.286592+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`imagen`, CONSTRAINT `fk_Imagen_Oferta1` FOREIGN KEY (`Oferta_id`) REFERENCES `oferta` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-11T21:52:00.286771+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 204
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => Prueba 1
+                            [:Descripcion] => wdwdw
+                            [:Ruta] => 21-Jun-00-batman-4k-1.jpg
+                            [:Estado] => Activo
+                            [:Producto_id] => 5
+                            [:Oferta_id] => 0
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 215
+            [function] => save
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\ImagenesController.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 27
+            [function] => create
+            [class] => App\Controllers\ImagenesController
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [Imagen] => Array
+                                (
+                                    [name] => batman-4k-1.jpg
+                                    [type] => image/jpeg
+                                    [tmp_name] => C:\Users\acer\AppData\Local\Temp\phpE899.tmp
+                                    [error] => 0
+                                    [size] => 1212344
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+  
+[2021-06-11T21:52:18.814288+00:00] General.ERROR: Exception  
+[2021-06-11T21:52:18.814965+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-11T21:52:18.815051+00:00] General.ERROR: Line: 128  
+[2021-06-11T21:52:18.815143+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`imagen`, CONSTRAINT `fk_Imagen_Oferta1` FOREIGN KEY (`Oferta_id`) REFERENCES `oferta` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-11T21:52:18.815222+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 204
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Nombre] => 
+                            [:Descripcion] => wdwdw
+                            [:Ruta] => 21-Jun-18-batman-4k-1.jpg
+                            [:Estado] => Activo
+                            [:Producto_id] => 5
+                            [:Oferta_id] => 0
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 215
+            [function] => save
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\ImagenesController.php
+            [line] => 38
+            [function] => insert
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 27
+            [function] => create
+            [class] => App\Controllers\ImagenesController
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [Imagen] => Array
+                                (
+                                    [name] => batman-4k-1.jpg
+                                    [type] => image/jpeg
+                                    [tmp_name] => C:\Users\acer\AppData\Local\Temp\php310D.tmp
+                                    [error] => 0
+                                    [size] => 1212344
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+  

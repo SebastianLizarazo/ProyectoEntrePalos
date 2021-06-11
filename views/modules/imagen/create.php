@@ -6,8 +6,8 @@ use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
-$nameModel = "Foto";
-$pluralModel = $nameModel.'s';
+$nameModel = "Imagen";
+$pluralModel = $nameModel.'es';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 
 /* @var $_SESSION['idProducto'] Fotos */
@@ -58,9 +58,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             <div class="card-header">
                                 <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -76,17 +73,17 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                     <div class="row">
                                         <div class="col-sm-10">
                                             <div class="form-group row">
-                                                <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                                                <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                                    <input type="text" class="form-control" id="Nombre" name="Nombre"
                                                            placeholder="Ingrese el nombre" value="<?= $frmSession['nombre'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="descripcion" class="col-sm-2 col-form-label">Descripción</label>
+                                                <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
                                                 <div class="col-sm-10">
-                                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="4"
-                                                      placeholder="Ingrese una descripción"><?= $frmSession['descripcion'] ?? '' ?></textarea>
+                                                    <textarea class="form-control" id="Descripcion" name="Descripcion" rows="4"
+                                                      placeholder="Ingrese una descripción"><?= $frmSession['Descripcion'] ?? '' ?></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -94,8 +91,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <div class="col-sm-10">
                                                     <?= ProductosController::selectProducto(
                                                         array (
-                                                            'id' => 'producto_id',
-                                                            'name' => 'producto_id',
+                                                            'id' => 'Producto_id',
+                                                            'name' => 'Producto_id',
                                                             'defaultValue' => !empty($_SESSION['idProducto']) ? $_SESSION['idProducto']->getId() : '',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Activo'"
@@ -115,7 +112,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <label class="btn btn-default btn-file">
                                                             <span>Seleccionar</span>
                                                             <!-- The file is stored here. -->
-                                                            <input required type="file" id="foto" name="foto">
+                                                            <input required type="file" id="Imagen" name="Imagen">
                                                         </label>
                                                         <button type="button" class="btn btn-default">Eliminar</button>
                                                     </div>

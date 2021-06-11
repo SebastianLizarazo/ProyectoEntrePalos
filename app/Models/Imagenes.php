@@ -20,8 +20,8 @@ class Imagenes extends AbstractDBConnection implements Model
     private string $Descripcion;
     private string $Ruta;
     private string $Estado;
-    private int $Producto_id;
-    private int $Oferta_id;
+    private ?int $Producto_id;
+    private ?int $Oferta_id;
 
     /**
      * Imagenes constructor.
@@ -40,13 +40,13 @@ class Imagenes extends AbstractDBConnection implements Model
         $this->setDescripcion($imagen['Descripcion']?? '');
         $this->setRuta($imagen['Ruta']??'' );
         $this->setEstado($imagen['Estado']?? '');
-        $this->setProductoId($imagen['Producto_id']?? 0);
-        $this->setOfertaId($imagen['Oferta_id']?? 0);
+        $this->setProductoId($imagen['Producto_id']?? null);
+        $this->setOfertaId($imagen['Oferta_id']?? null);
     }
 
-    public static function imagenRegistrada(int $id, string $Ruta): bool
+    public static function imagenRegistrada(string $Nombre, string $Ruta): bool
     {
-        $imgTmp = Imagenes::search("SELECT * FROM imagen WHERE id = $id and Ruta = '$Ruta'");
+        $imgTmp = Imagenes::search("SELECT * FROM imagen WHERE Nombre = '$Nombre' and Ruta = '$Ruta'");
         return (!empty($imgTmp)? true : false);
     }
 

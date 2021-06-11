@@ -25,31 +25,53 @@ class ImagenesController
         $this->dataImagen['Oferta_id'] = $_FORM['Oferta_id']?? null;
     }
 
-     public function create()
+     public function create($withFiles)
      {
          try {
-             if (!empty($this->dataImagen['id']) && !empty($this->dataImagen['Ruta']) && !Imagenes::imagenRegistrada($this->dataImagen['id'], $this->dataImagen['Ruta'])) {
-                 $Imagen = new Imagenes($this->dataImagen);
-                 if ($Imagen->insert()) {
-                     //unset($_SESSION['frmUsuarios']);
-                     header("Location: ../../views/modules/imagen/index.php?respuesta=success&mensaje=Imagen Registrada");
+             if (!empty($withFiles)) {
+                 $imagenProducto = $withFiles['Imagen'];
+                 $resultUpload = GeneralFunctions::subirArchivo($imagenProducto, "views/public/uploadFiles/photos/productos/");
+
+                 if ($resultUpload != false){
+                     $this->dataImagen['Ruta'] = $resultUpload;
+                     $Imagen = new Imagenes($this->dataImagen);
+                     if ($Imagen->insert()){
+                         unset($_SESSION['frmImagenes']);
+                         header("Location: ../../views/modules/imagen/index.php?respuesta=success&mensaje=Foto Creada Correctamente");
+                     }
                  }
-             } else {
-                 header("Location: ../../views/modules/imagen/create.php?respuesta=error&mensaje=Imagen ya registrada");
+             }else{
+                 GeneralFunctions::logFile('Error foto no encontrada');
+                 header("Location:../../views/modules/imagen/create.php?respuesta=error&mensaje=Imagen no encontrada");
              }
          } catch (\Exception $e) {
              GeneralFunctions::logFile('Exception', $e, 'error');
          }
      }
 
-     public function edit()
+     public function edit($withFiles = null)
      {
          try {
-             $img = new Imagenes($this->dataImagen);
-             if ($img->update()) {
-                 //unset($_SESSION['frmUsuarios']);
+             if (!empty($withFiles)) {
+                 $rutaImagen = $withFiles['Imagen'];
+                 if ($rutaImagen['error'] == 0) { //Si la foto se selecciono correctamente
+                     $resultUpload = GeneralFunctions::subirArchivo($rutaImagen, "views/public/uploadFiles/photos/productos/");
+                     if ($resultUpload != false) {
+                         GeneralFunctions::eliminarArchivo("views/public/uploadFiles/photos/productos/" . $this->dataImagen['Ruta']);
+                         $this->dataImagen['Ruta'] = $resultUpload;
+                     }
+                 }
              }
-             header("Location: ../../views/modules/imagen/show.php?id=" . $img->getId() . "&respuesta=success&mensaje=Imagen Actualizada");
+             if (!empty($this->dataImagen['Ruta'])) {
+                 $imagen = new Imagenes($this->dataImagen);
+                 if ($imagen->update()) {
+                     unset($_SESSION['frmImagenes']);
+                 }
+                 header("Location: ../../views/modules/imagen/show.php?id=" . $imagen->getId() . "&respuesta=success&mensaje=Imagen Actualizada");
+             } else {
+                 GeneralFunctions::logFile('Error Imagen Vaciá: ');
+             }
+
          } catch (\Exception $e) {
              GeneralFunctions::logFile('Exception', $e, 'error');
          }
