@@ -132,6 +132,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                    type="button" data-toggle="tooltip" title="Ver"
                                                                    class="btn docs-tooltip btn-warning btn-xs"><i
                                                                             class="fa fa-eye"></i></a>
+                                                                <a href="../imagen/show.php?id=<?= $producto->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Gestionar imagen"
+                                                                   class="btn docs-tooltip btn-success btn-xs"><i
+                                                                            class="far fa-images"></i></a>
                                                                 <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $producto->getId(); ?>"
                                                                    type="button" data-toggle="tooltip" title="Inactivar"
                                                                    class="btn docs-tooltip btn-danger btn-xs"><i

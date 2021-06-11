@@ -33,7 +33,7 @@ class EmpresasController
                     header("Location: ../../views/modules/empresa/index.php?respuesta=success&mensaje=Empresa Registrada");
                 }
             } else {
-                header("Location: ../../views/modules/empresa/create.php?respuesta=error&mensaje=Empresa ya registrada");
+                header("Location: ../../views/modules/empresa/create.php?respuesta=error&mensaje=Ya existe una empresa con este nombre, NIT o telefono");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');

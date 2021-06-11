@@ -35,7 +35,7 @@ class Imagenes extends AbstractDBConnection implements Model
     public function __construct(array $imagen=[])
     {
         parent::__construct();
-        $this->setid($imagen['id']?? null);
+        $this->setId($imagen['id']?? null);
         $this->setNombre($imagen['Nombre']?? '');
         $this->setDescripcion($imagen['Descripcion']?? '');
         $this->setRuta($imagen['Ruta']??'' );
@@ -229,7 +229,7 @@ class Imagenes extends AbstractDBConnection implements Model
         return $this->save($query);
     }
 
-    public function deleted()
+    public function deleted(): ?bool
     {
         $this->setEstado('Inactivo');
         return $this->update();

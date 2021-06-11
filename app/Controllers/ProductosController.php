@@ -28,15 +28,13 @@ class ProductosController
         $this->dataProducto ['Estado'] = $_FORM['Estado']?? 'Activo';
     }
 
-
-
     public function create()
     {
         try {
             if (!empty($this->dataProducto['Referencia']) && !Productos::productoRegistrado($this->dataProducto['Referencia'])) {
                 $Producto = new Productos($this->dataProducto);
                 if ($Producto->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmProducto']);
                     header("Location: ../../views/modules/producto/index.php?respuesta=success&mensaje=Producto Registrado");
                 }
             } else {

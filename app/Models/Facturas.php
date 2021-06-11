@@ -93,7 +93,13 @@ class Facturas extends AbstractDBConnection implements Model
      */
     public function setNumero(int $Numero): void
     {
-        $this->Numero = $Numero;
+        if(empty($Numero)){
+            $this->Connect();
+            $this->Numero = ($this->countRowsTable('factura')+1)?? $Numero;
+            $this->Disconnect();
+        }else{
+            $this->Numero = $Numero;
+        }
     }
 
     /**

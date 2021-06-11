@@ -72,13 +72,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                       <div class="row">
                                           <div class="col-sm-12">
                                                 <div class="form-group row">
-                                                    <label for="Numero" class="col-sm-2 col-form-label">Numero</label>
-                                                    <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="Numero" name="Numero"
-                                                               placeholder="Ingrese el numero de la factura" value="<?= $frmSession['Numero'] ?? '' ?>">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
                                                     <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label>
                                                     <div class="col-sm-10">
                                                         <input required type="date" max="<?= Carbon::now()->format('Y-m-d')?>" class="col-sm-3 form-control" id="Fecha" name="Fecha"

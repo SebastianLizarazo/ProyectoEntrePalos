@@ -88,11 +88,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Fecha</th>
                                                 <th>IVA</th>
                                                 <th>Medio de pago</th>
-                                                <th>Mesero</th>
-                                                <th>Estado</th>
-                                                <th>Tipo de pedido</th>
-                                                <th>Cambiar estado</th>
-                                                <th>Mas acciones</th>
+                                                <th data-priority="2">Mesero</th>
+                                                <th data-priority="2">Estado</th>
+                                                <th data-priority="2">Tipo de pedido</th>
+                                                <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -130,10 +129,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                        class="btn docs-tooltip btn-success btn-xs"><i
                                                                                 class="fas fa-undo-alt"></i></a>
                                                                 <?php } ?>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div  style="text-align: center;">
                                                                 <a href="edit.php?id=<?= $factura->getId(); ?>"
                                                                    type="button" data-toggle="tooltip" title="Actualizar"
                                                                    class="btn docs-tooltip btn-primary btn-xs"><i
@@ -163,8 +158,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Mesero</th>
                                                 <th>Estado</th>
                                                 <th>Tipo de pedido</th>
-                                                <th>Cambiar estado</th>
-                                                <th>Mas acciones</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </tfoot>
                                         </table>
