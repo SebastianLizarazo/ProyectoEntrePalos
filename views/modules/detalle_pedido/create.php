@@ -11,7 +11,7 @@ use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
-$nameModel = "Detalle Pedido"; //Nombre del Modelo
+$nameModel = "DetallePedidos"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
@@ -59,7 +59,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
 
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i

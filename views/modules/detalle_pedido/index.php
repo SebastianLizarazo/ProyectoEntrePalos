@@ -102,12 +102,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     ?>
                                                     <tr>
                                                         <td><?= $detallepedido->getId(); ?></td>
-                                                        <td><?= $detallepedido->getFacturaid(); ?></td>
-                                                        <td><?= $detallepedido->getProductoid(); ?></td>
-                                                        <td><?= $detallepedido->getofertasid(); ?></td>
+                                                        <td><?= $detallepedido->getFactura()->getNumero(); ?></td>
+                                                        <td><?= $detallepedido->getProducto()->getNombre(); ?></td>
+                                                        <td><?= $detallepedido->getOferta()->getNombre(); ?></td>
                                                         <td><?= $detallepedido->getCantidadProducto(); ?></td>
                                                         <td><?= $detallepedido->getCantidadOferta(); ?></td>
-                                                        <td><?= $detallepedido->getMesaid(); ?></td>
+                                                        <td><?= $detallepedido->getMesa()->getNumero(); ?></td>
                                                         <td>
                                                             <div  style="text-align: center;">
                                                             <a href="edit.php?id=<?= $detallepedido->getId(); ?>"
@@ -143,7 +143,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+
                             </div>
                             <!-- /.card-footer-->
                         </div>
