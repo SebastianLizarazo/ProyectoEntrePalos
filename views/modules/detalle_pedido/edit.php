@@ -13,7 +13,7 @@ use App\Models\GeneralFunctions;
 use App\Models\DetallePedidos;
 
 
-$nameModel = "Detalle Pedido";
+$nameModel = "DetallePedidos";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
@@ -85,7 +85,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
-                                              action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
+                                              action="../../../app/Controllers/MainController.php?controller=<?= $nameModel ?>&action=edit">
                                             <input id="id" name="id" value="<?= $DataDetallepedido->getId(); ?>" hidden
                                                    required="required" type="text">
                                             <div class="row">
@@ -109,6 +109,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <div class="col-sm-10">
                                                             <?= ProductosController::selectProducto(
                                                                 array(
+
                                                                     'id' => 'Producto_id',
                                                                     'name' => 'Producto_id',
                                                                     'defaultValue' => '1',
@@ -124,8 +125,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <div class="col-sm-10">
                                                             <?= OfertasController::selectOferta(
                                                                 array(
-                                                                    'id' => 'Oferta_id',
-                                                                    'name' => 'Oferta_id',
+                                                                    'id' => 'Ofertas_id',
+                                                                    'name' => 'Ofertas_id',
                                                                     'defaultValue' => '1',
                                                                     'class' => 'form-control select2bs4 select2-info',
                                                                     'where' => "estado = 'Disponible'"
@@ -137,7 +138,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad Producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="CantidadProducto"
+                                                            <input  type="text" max="1000" class="form-control" id="CantidadProducto"
                                                                    name="CantidadProducto" value="<?= $DataDetallepedido->getCantidadProducto(); ?>"
                                                                    placeholder="Ingrese la cantidad del producto">
                                                         </div>
@@ -145,7 +146,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="CantidadOferta" class="col-sm-2 col-form-label">Cantidad Oferta</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="CantidadOferta"
+                                                            <input  type="number" max="500" class="form-control" id="CantidadOferta"
                                                                    name="CantidadOferta" value="<?= $DataDetallepedido->getCantidadProducto(); ?>"
                                                                    placeholder="Ingrese la cantidad de oferta">
                                                         </div>

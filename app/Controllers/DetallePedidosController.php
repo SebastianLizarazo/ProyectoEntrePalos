@@ -29,17 +29,13 @@ class DetallePedidosController
     public function create()
     {
         try {
-            if (!empty($this->dataDetallePedido['Mesa_id']) && !empty($this->dataDetallePedido['Factura_id']) && !DetallePedidos::detallePedidoRegistrado($this->dataDetallePedido['id'], $this->dataDetallePedido['Factura_id'])) {
-                $DetallePedido = new DetallePedidos($this->dataDetallePedido);
-                if ($DetallePedido->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
-                    header("Location: ../../views/modules/detallePedido/index.php?respuesta=success&mensaje=Detalle pedido Registrado");
-                }
-            } else {
-                header("Location: ../../views/modules/detallePedido/create.php?respuesta=error&mensaje=Detalle pedido ya registrado");
+            $DetallePedido = new DetallePedidos($this->dataDetallePedido);
+            if ($DetallePedido->insert()) {
+                unset($_SESSION['frmDetallePedidoss']);
+                header("Location: ../../views/modules/detalle_pedido/index.php?respuesta=success&mensaje=Detalle pedido registrado");
             }
         } catch (\Exception $e) {
-            GeneralFunctions::logFile('Exception',$e, 'error');
+            GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
 
@@ -50,7 +46,7 @@ class DetallePedidosController
             if($dto->update()){
                 //unset($_SESSION['frmUsuarios']);
             }
-            header("Location: ../../views/modules/detallePedido/show.php?id=" . $dto->getId() . "&respuesta=success&mensaje=Detalle pedido Actualizado");
+            header("Location: ../../views/modules/detalle_pedido/show.php?id=" . $dto->getId() . "&respuesta=success&mensaje=Detalle pedido Actualizado");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }

@@ -73,7 +73,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                 <!-- form start -->
                                 <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
                                       name="frmCreate<?= $nameModel ?>"
-                                      action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
+                                      action="../../../app/Controllers/MainController.php?controller=<?= $nameModel ?>&action=create">
 
 
                                     <div class="row">
@@ -97,6 +97,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 <div class="col-sm-10">
                                                     <?= ProductosController::selectProducto(
                                                         array(
+                                                            'isRequired' => false,
                                                             'id' => 'Producto_id',
                                                             'name' => 'Producto_id',
                                                             'defaultValue' => '1',
@@ -112,8 +113,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 <div class="col-sm-10">
                                                     <?= OfertasController::selectOferta(
                                                         array(
-                                                            'id' => 'Oferta_id',
-                                                            'name' => 'Oferta_id',
+                                                            'isRequired' => false,
+                                                            'id' => 'Ofertas_id',
+                                                            'name' => 'Ofertas_id',
                                                             'defaultValue' => '1',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Disponible'"
@@ -125,14 +127,14 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                             <div class="form-group row">
                                                 <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad Producto</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="CantidadProducto" name="CantidadProducto"
+                                                    <input  type="number" max="1000" class="form-control" id="CantidadProducto" name="CantidadProducto"
                                                            placeholder="Ingrese la cantidad de producto" value="<?= $frmSession['CantidadProducto'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="CantidadOferta" class="col-sm-2 col-form-label">Cantidad Oferta</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="CantidadOferta" name="CantidadOferta"
+                                                    <input  type="number" max="500" class="form-control" id="CantidadOferta" name="CantidadOferta"
                                                            placeholder="Ingrese la cantidad de oferta" value="<?= $frmSession['CantidadOferta'] ?? '' ?>">
                                                 </div>
                                             </div>

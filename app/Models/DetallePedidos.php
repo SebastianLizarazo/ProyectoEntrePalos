@@ -35,7 +35,7 @@ class DetallePedidos extends AbstractDBConnection implements Model
     {
         parent::__construct();
         $this->setId($detallePedido['id']?? null);
-        $this->setFacturaId($detallePedido['Factura_id']?? 0);
+        $this->setFacturaId($detallePedido['Factura_id']?? null);
         $this->setProductoId($detallePedido['Producto_id']?? null);
         $this->setOfertasId($detallePedido['Ofertas_id']?? null);
         $this->setCantidadProducto($detallePedido['CantidadProducto']?? null);

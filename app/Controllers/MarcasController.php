@@ -27,7 +27,7 @@ class MarcasController
             if (!empty($this->dataMarca['Nombre']) && !empty($this->dataMarca['Descripcion']) && !Marcas::marcaRegistrada($this->dataMarca['Nombre'], $this->dataMarca['Descripcion'])) {
                 $Marca = new Marcas($this->dataMarca);
                 if ($Marca->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmMarca']);
                     header("Location: ../../views/modules/marca/index.php?respuesta=success&mensaje=Marca Registrada");
                 }
             } else {

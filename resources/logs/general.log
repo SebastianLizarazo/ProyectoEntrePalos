@@ -101,3 +101,190 @@
 [2021-06-11T01:20:54.099331+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidossController no fue encontrada "} 
 [2021-06-11T01:27:29.973130+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
 [2021-06-11T01:32:36.920860+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-11T13:03:42.748956+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidossController no fue encontrada "} 
+[2021-06-11T13:08:09.415338+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-11T13:08:57.458038+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidossController no fue encontrada "} 
+[2021-06-11T13:33:52.460996+00:00] General.ERROR: Exception  
+[2021-06-11T13:33:52.461541+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-11T13:33:52.461644+00:00] General.ERROR: Line: 128  
+[2021-06-11T13:33:52.461739+00:00] General.ERROR: Mensaje: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'CantidadProducto' at row 1  
+[2021-06-11T13:33:52.461840+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 219
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE detallepedido SET
+            Factura_id = :Factura_id, Producto_id = :Producto_id, Ofertas_id = :Ofertas_id,
+            CantidadProducto = :CantidadProducto, CantidadOferta = :CantidadOferta, 
+            Mesa_id = :Mesa_id WHERE id =:id 
+                    [1] => Array
+                        (
+                            [:id] => 9
+                            [:Factura_id] => 1
+                            [:Producto_id] => 1
+                            [:Ofertas_id] => 4
+                            [:CantidadProducto] => 666666
+                            [:CantidadOferta] => 66
+                            [:Mesa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 245
+            [function] => save
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE detallepedido SET
+            Factura_id = :Factura_id, Producto_id = :Producto_id, Ofertas_id = :Ofertas_id,
+            CantidadProducto = :CantidadProducto, CantidadOferta = :CantidadOferta, 
+            Mesa_id = :Mesa_id WHERE id =:id 
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\DetallePedidosController.php
+            [line] => 50
+            [function] => update
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => edit
+            [class] => App\Controllers\DetallePedidosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-11T13:34:26.061897+00:00] General.ERROR: Exception  
+[2021-06-11T13:34:26.062171+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-11T13:34:26.062233+00:00] General.ERROR: Line: 128  
+[2021-06-11T13:34:26.062287+00:00] General.ERROR: Mensaje: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'CantidadProducto' at row 1  
+[2021-06-11T13:34:26.062346+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 219
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE detallepedido SET
+            Factura_id = :Factura_id, Producto_id = :Producto_id, Ofertas_id = :Ofertas_id,
+            CantidadProducto = :CantidadProducto, CantidadOferta = :CantidadOferta, 
+            Mesa_id = :Mesa_id WHERE id =:id 
+                    [1] => Array
+                        (
+                            [:id] => 9
+                            [:Factura_id] => 1
+                            [:Producto_id] => 1
+                            [:Ofertas_id] => 2
+                            [:CantidadProducto] => 77777
+                            [:CantidadOferta] => 10
+                            [:Mesa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 245
+            [function] => save
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE detallepedido SET
+            Factura_id = :Factura_id, Producto_id = :Producto_id, Ofertas_id = :Ofertas_id,
+            CantidadProducto = :CantidadProducto, CantidadOferta = :CantidadOferta, 
+            Mesa_id = :Mesa_id WHERE id =:id 
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\DetallePedidosController.php
+            [line] => 50
+            [function] => update
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => edit
+            [class] => App\Controllers\DetallePedidosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
