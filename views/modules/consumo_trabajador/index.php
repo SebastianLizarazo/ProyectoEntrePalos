@@ -4,6 +4,7 @@ require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
 use App\Controllers\ConsumoTrabajadoresController;
+use App\Models\ConsumoTrabajadores;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
@@ -86,16 +87,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>N°</th>
                                                 <th>Trabajador</th>
                                                 <th>Producto</th>
-                                                <th>Cantidad roducto</th>
-                                                <th>Descripción</th>
-                                                <th>Acciones</th>
+                                                <th>Cantidad producto</th>
+                                                <th data-priority="2">Descripción</th>
+                                                <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
                                             $arrConsumoT = ConsumoTrabajadoresController::getAll();
                                             if (!empty($arrConsumoT))
-                                            /* @var $arrConsumoT \App\Models\ConsumoTrabajadores */
+                                            /* @var $arrConsumoT ConsumoTrabajadores */
                                             foreach ($arrConsumoT as $consumotrabajador) {
                                                 ?>
                                                 <tr>
@@ -125,7 +126,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>N°</th>
                                                 <th>Trabajador</th>
                                                 <th>Producto</th>
-                                                <th>Cantidad roducto</th>
+                                                <th>Cantidad producto</th>
                                                 <th>Descripción</th>
                                                 <th>Acciones</th>
                                             </tr>
