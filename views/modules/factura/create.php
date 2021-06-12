@@ -105,7 +105,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                             array(
                                                                 'id' => 'Mesero_id',
                                                                 'name' => 'Mesero_id',
-                                                                'defaultValue' => (!empty($frmSession['MedioPago']))? $frmSession['MedioPago']:'',
+                                                                'defaultValue' => (!empty($frmSession['Mesero_id']))? $frmSession['Mesero_id']:'',
                                                                 'class' => 'form-control select2bs4 select2-info',
                                                                 'where' => "estado = 'Activo' and rol = 'Mesero'"
                                                             )

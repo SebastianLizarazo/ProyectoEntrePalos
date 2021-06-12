@@ -109,7 +109,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <td><?= $factura->getIVA(); ?></td>
                                                         <td><?= $factura->getMedioPago(); ?></td>
                                                         <td><?= $factura->getMesero()->getNombres() ?></td>
-                                                        <td><?= $factura->getEstado(); ?></td>
+                                                        <td><span class="badge badge-<?= $factura->getEstado() == "Paga" ? "success" : "primary" ?>">
+                                                                <?= $factura->getEstado() ?>
+                                                            </span>
+                                                        </td>
                                                         <td><?= $factura->getTipoPedido(); ?></td>
                                                         <td>
                                                             <div  style="text-align: center;">
