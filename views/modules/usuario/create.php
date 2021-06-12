@@ -76,8 +76,8 @@ $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
                                             <div class="form-group row">
                                                 <label for="Cedula" class="col-sm-2 col-form-label">Cedula</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="text" class="form-control" id="Cedula" name="Cedula"
-                                                           placeholder="Ingrese el cedula del usuario" value="<?= $frmSession['Nombre'] ?? '' ?>">
+                                                    <input required type="number" min="1111111" max="9999999999" class="form-control" id="Cedula" name="Cedula"
+                                                           placeholder="Ingrese la cedula del usuario" value="<?= $frmSession['Nombre'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -97,7 +97,7 @@ $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
                                             <div class="form-group row">
                                                 <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="Telefono" name="Telefono"
+                                                    <input required type="number" min="111111111" max="9999999999" class="form-control" id="Telefono" name="Telefono"
                                                            placeholder="Ingrese el telefono del usuario" value="<?= $frmSession['Telefono'] ?? '' ?>">
                                                 </div>
                                             </div>
@@ -118,7 +118,7 @@ $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
                                             <div class="form-group row">
                                                 <label for="Direccion" class="col-sm-2 col-form-label">Contraseña</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="password" class="form-control" id="Contrasena" name="Contrasena"
+                                                    <input required type="password" minlength="8" class="form-control" id="Contrasena" name="Contrasena"
                                                            placeholder="Ingrese la Contraseña del usuario" value="<?= $frmSession['Contrasena'] ?? '' ?>">
                                                 </div>
                                             </div>

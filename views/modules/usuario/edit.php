@@ -92,7 +92,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Cedula" class="col-sm-2 col-form-label">Cedula</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Cedula"
+                                                            <input required type="number" min="1111111" max="9999999999" class="form-control" id="Cedula"
                                                                    name="Cedula" value="<?= $DataUsuario->getCedula(); ?>"
                                                                    placeholder="Ingrese la cedula del usuario">
                                                         </div>
@@ -116,7 +116,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Telefono"
+                                                            <input required type="number" min="111111111" max="9999999999" class="form-control" id="Telefono"
                                                                    name="Telefono" value="<?= $DataUsuario->getTelefono(); ?>"
                                                                    placeholder="Ingrese el telefono del usuario">
                                                         </div>
@@ -140,7 +140,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Contrasena" class="col-sm-2 col-form-label">Contraseña</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="password" class="form-control" id="Contrasena"
+                                                            <input required type="password" minlength="8" class="form-control" id="Contrasena"
                                                                    name="Contrasena"
                                                                    placeholder="Ingrese la nueva contraseña del usuario">
                                                         </div>

@@ -90,10 +90,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Telefono</th>
                                                 <th>Dirección</th>
                                                 <th>Email</th>
-                                                <th>Rol</th>
-                                                <th>Estado</th>
-                                                <th>Empresa</th>
-                                                <th>Acciones</th>
+                                                <th data-priority="2">Rol</th>
+                                                <th data-priority="2">Estado</th>
+                                                <th data-priority="2">Empresa</th>
+                                                <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
