@@ -1,21 +1,21 @@
 <?php
 require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require("../../../app/Controllers/FotosController.php");
+require("../../../app/Controllers/ImagenesController.php");
 
-use App\Controllers\FotosController;
+use App\Controllers\ImagenesController;
 use App\Controllers\ProductosController;
-use App\Models\Fotos;
+use App\Models\Imagenes;
 use App\Models\GeneralFunctions;
 
-$nameModel = "Foto";
-$pluralModel = $nameModel.'s';
+$nameModel = "Imagen";
+$pluralModel = $nameModel.'es';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos del <?= $nameModel ?></title>
+    <title>Datos del | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -57,13 +57,13 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $DataFoto = FotosController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataFoto Fotos */
-                                if (!empty($DataFoto)) {
+                                $DataImagen = ImagenesController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataImagen Imagenes */
+                                if (!empty($DataImagen)) {
                                     ?>
                                     <div class="card-header">
-                                        <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Ver Información
-                                            de <?= $DataFoto->getNombre() ?? '' ?></h3>
+                                        <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
+                                            de <?= $DataImagen->getNombre() ?? '' ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
                                                     data-source="show.php" data-source-selector="#card-refresh-content"
@@ -84,17 +84,17 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <p>
                                                     <strong><i class="fas fa-book mr-1"></i> Nombre</strong>
                                                 <p class="text-muted">
-                                                    <?= $DataFoto->getNombre() ?>
+                                                    <?= $DataImagen->getNombre() ?>
                                                 </p>
                                                 <hr>
                                                 <strong><i class="fas fa-align-justify mr-1"></i> Descripción</strong>
-                                                <p class="text-muted"><?= $DataFoto->getDescripcion() ?></p>
+                                                <p class="text-muted"><?= $DataImagen->getDescripcion() ?></p>
                                                 <hr>
                                                 <strong><i class="fas fa-archive mr-1"></i> Producto</strong>
-                                                <p class="text-muted"><?= $DataFoto->getProducto()->getNombre(); ?></p>
+                                                <p class="text-muted"><?= $DataImagen->getProducto()->getNombre(); ?></p>
                                                 <hr>
                                                 <strong><i class="far fa-file-alt mr-1"></i> Estado</strong>
-                                                <p class="text-muted"><?= $DataFoto->getEstado() ?></p>
+                                                <p class="text-muted"><?= $DataImagen->getEstado() ?></p>
                                                 </p>
                                             </div>
                                             <div class="col-sm-2">
@@ -103,8 +103,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <h4>Foto Producto</h4>
                                                     </div>
                                                     <div class="col-12">
-                                                        <?php if(!empty($DataFoto->getRuta())){ ?>
-                                                            <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/products/<?= $DataFoto->getRuta(); ?>' alt="Foto Producto">
+                                                        <?php if(!empty($DataImagen->getRuta())){ ?>
+                                                            <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/products/<?= $DataImagen->getRuta(); ?>' alt="Foto Producto">
                                                         <?php } ?>
                                                     </div>
                                                 </div>
@@ -120,7 +120,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $DataFoto->getId(); ?>" class="btn btn-primary float-right"
+                                                <a role="button" href="edit.php?id=<?= $DataImagen->getId(); ?>" class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>
                                                 </a>

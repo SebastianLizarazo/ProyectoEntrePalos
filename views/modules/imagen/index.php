@@ -63,7 +63,7 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                         <!-- Default box -->
                         <div class="card card-dark">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-boxes"></i> &nbsp; Gestionar <?= $pluralModel ?> <?= !empty($_SESSION['idProducto']) ? 'de '.$_SESSION['idProducto']->getNombre() : '' ?></h3>
+                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?> <?= !empty($_SESSION['idProducto']) ? 'de '.$_SESSION['idProducto']->getNombre() : '' ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
@@ -94,6 +94,7 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                                                 <th>Estado</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -104,7 +105,7 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                                             }else{
                                                 $arrImagenes = ImagenesController::getAll();
                                             }
-
+                                            if (!empty($arrImagenes))
                                             /* @var $arrImagenes Imagenes[] */
                                             foreach ($arrImagenes as $imagen) {
                                                 ?>
@@ -120,20 +121,10 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                                                         <?php } ?>
                                                     </td>
                                                     <td>
-                                                    <?php if ($imagen->getEstado() != "Activo") { ?>
-                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $imagen->getId(); ?>"
-                                                           type="button" data-toggle="tooltip" title="Activar"
-                                                           class="btn docs-tooltip btn-success btn-xs"><i
-                                                                    class="fa fa-check-square"></i></a>
-                                                    <?php } else { ?>
-                                                        <a type="button"
-                                                           href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $imagen->getId(); ?>"
-                                                           data-toggle="tooltip" title="Inactivar"
-                                                           class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                    class="fa fa-times-circle"></i></a>
-                                                    <?php } ?>
+                                                        <?= $imagen->getEstado() ?>
                                                     </td>
-                                                    <td><?= $imagen->getProducto()->getNombre(); ?></td>
+                                                    <td><?= !empty($imagen->getProducto()) ? $imagen->getProducto()->getNombre() : 'No hay producto' ?></td>
+                                                    <td><?= !empty($imagen->getOferta()) ? $imagen->getOferta()->getNombre() : 'No hay oferta' ?></td>
                                                     <td>
                                                         <a href="edit.php?id=<?= $imagen->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
@@ -143,6 +134,18 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
+                                                        <?php if ($imagen->getEstado() != "Activo") { ?>
+                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $imagen->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Activar"
+                                                               class="btn docs-tooltip btn-success btn-xs"><i
+                                                                        class="fa fa-check-square"></i></a>
+                                                        <?php } else { ?>
+                                                            <a type="button"
+                                                               href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $imagen->getId(); ?>"
+                                                               data-toggle="tooltip" title="Inactivar"
+                                                               class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                        class="fa fa-times-circle"></i></a>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -157,6 +160,7 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                                                 <th>Estado</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </tfoot>
                                         </table>

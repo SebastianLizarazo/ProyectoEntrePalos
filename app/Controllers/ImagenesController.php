@@ -36,7 +36,7 @@ class ImagenesController
                      $this->dataImagen['Ruta'] = $resultUpload;
                      $Imagen = new Imagenes($this->dataImagen);
                      if ($Imagen->insert()){
-                         unset($_SESSION['frmImagenes']);
+                         unset($_SESSION['frmCreateImagenes']);
                          header("Location: ../../views/modules/imagen/index.php?respuesta=success&mensaje=Foto Creada Correctamente");
                      }
                  }
@@ -65,7 +65,7 @@ class ImagenesController
              if (!empty($this->dataImagen['Ruta'])) {
                  $imagen = new Imagenes($this->dataImagen);
                  if ($imagen->update()) {
-                     unset($_SESSION['frmImagenes']);
+                     unset($_SESSION['frmEditImagenes']);
                  }
                  header("Location: ../../views/modules/imagen/show.php?id=" . $imagen->getId() . "&respuesta=success&mensaje=Imagen Actualizada");
              } else {

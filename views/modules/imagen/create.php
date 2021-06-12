@@ -2,20 +2,21 @@
 require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
+use App\Controllers\OfertasController;
 use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
 $nameModel = "Imagen";
 $pluralModel = $nameModel.'es';
-$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
 
 /* @var $_SESSION['idProducto'] Fotos */
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title>Crear | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -56,7 +57,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
@@ -76,7 +77,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="Nombre" name="Nombre"
-                                                           placeholder="Ingrese el nombre" value="<?= $frmSession['nombre'] ?? '' ?>">
+                                                           placeholder="Ingrese el nombre" value="<?= $frmSession['Nombre'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -87,7 +88,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="producto_id" class="col-sm-2 col-form-label">Producto</label>
+                                                <label for="Producto_id" class="col-sm-2 col-form-label">Producto</label>
                                                 <div class="col-sm-10">
                                                     <?= ProductosController::selectProducto(
                                                         array (
@@ -99,6 +100,35 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         )
                                                     )
                                                     ?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="Oferta_id" class="col-sm-2 col-form-label">Oferta</label>
+                                                <div class="col-sm-10">
+                                                    <?= OfertasController::selectOferta(
+                                                        array (
+                                                            'id' => 'Oferta_id',
+                                                            'name' => 'Oferta_id',
+                                                            'defaultValue' => !empty($_SESSION['idProducto']) ? $_SESSION['idProducto']->getId() : '',
+                                                            'class' => 'form-control select2bs4 select2-info',
+                                                            'where' => "estado = 'Disponible'"
+                                                        )
+                                                    )
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
+                                                <div class="col-sm-10">
+                                                    <select id="Estado" name="Estado" class="custom-select">
+                                                        <option value="">Seleccione</option>
+                                                        <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Activo") ? "selected" : ""; ?>
+                                                                 value="Activo">Activo
+                                                        </option>
+                                                        <option <?= (!empty($frmSession['Estado']) && $frmSession['Estado'] == "Inactivo") ? "selected" : ""; ?>
+                                                                 value="Inactivo">Inactivo
+                                                        </option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
