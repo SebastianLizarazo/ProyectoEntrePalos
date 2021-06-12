@@ -1,4 +1,7 @@
-<?php require("partials/routes.php"); ?>
+<?php use App\Controllers\ImagenesController;
+use App\Models\Imagenes;
+
+require("partials/routes.php"); ?>
 <?php $baseURL = $baseURL ?? ""; require("partials/check_login.php"); ?>
 
 <!DOCTYPE html>
@@ -62,11 +65,12 @@
                                         <div class="card-body">
                                             <div>
                                                 <div class="btn-group w-100 mb-2">
-                                                    <a class="btn btn-info active" href="javascript:void(0)" data-filter="all"> All items </a>
-                                                    <a class="btn btn-info" href="javascript:void(0)" data-filter="1"> Category 1 (WHITE) </a>
-                                                    <a class="btn btn-info" href="javascript:void(0)" data-filter="2"> Category 2 (BLACK) </a>
-                                                    <a class="btn btn-info" href="javascript:void(0)" data-filter="3"> Category 3 (COLORED) </a>
-                                                    <a class="btn btn-info" href="javascript:void(0)" data-filter="4"> Category 4 (COLORED, BLACK) </a>
+                                                    <a class="btn btn-info active" href="javascript:void(0)" data-filter="all"> Todas las fotos </a>
+                                                    <a class="btn btn-info" href="javascript:void(0)" data-filter="1"> Hamburguesas </a>
+                                                    <a class="btn btn-info" href="javascript:void(0)" data-filter="2"> Alitas </a>
+                                                    <a class="btn btn-info" href="javascript:void(0)" data-filter="3"> Costillitas </a>
+                                                    <a class="btn btn-info" href="javascript:void(0)" data-filter="4"> A la carta </a>
+                                                    <a class="btn btn-info" href="javascript:void(0)" data-filter="4"> Bebidas </a>
                                                 </div>
                                                 <div class="mb-2">
                                                     <a class="btn btn-secondary" href="javascript:void(0)" data-shuffle> Shuffle items </a>
@@ -82,13 +86,24 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <?php
+                                            $arrImagenes = ImagenesController::getAll();
+                                            if (!empty($arrImagenes))
+                                            /* @var $arrImagenes Imagenes[] */
+                                            foreach ($arrImagenes as $DataImagen){
+                                            ?>
                                             <div>
                                                 <div class="filter-container p-0 row">
                                                     <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
-                                                        <a href="https://via.placeholder.com/1200/FFFFFF.png?text=1" data-toggle="lightbox" data-title="sample 1 - white">
-                                                            <img src="https://via.placeholder.com/300/FFFFFF?text=1" class="img-fluid mb-2" alt="white sample"/>
+                                                        <a href="http://localhost/ProyectoEntrePalos/views/modules/imagen/show.php?id=<?= $DataImagen->getId()?>" data-toggle="lightbox" data-title="sample 1 - white">
+                                                            <?php if (!empty($DataImagen->getOferta())){?>
+                                                                <img src="../../public/uploadFiles/photos/ofertas/<?= $DataImagen->getRuta(); ?>" alt="Foto Oferta" class="img-fluid mb-2" alt="white sample"/>
+                                                            <?php }else{?>
+                                                                <img src="../../public/uploadFiles/photos/productos/<?= $DataImagen->getRuta(); ?>" alt="Foto Producto" class="img-fluid mb-2" alt="white sample"/>
+                                                            <?php }?>
                                                         </a>
                                                     </div>
+                                            <?php } ?>
                                                     <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample">
                                                         <a href="https://via.placeholder.com/1200/000000.png?text=2" data-toggle="lightbox" data-title="sample 2 - black">
                                                             <img src="https://via.placeholder.com/300/000000?text=2" class="img-fluid mb-2" alt="black sample"/>
@@ -153,7 +168,7 @@
                                 <div class="col-12">
                                     <div class="card card-primary">
                                         <div class="card-header">
-                                            <h4 class="card-title">Ekko Lightbox</h4>
+                                            <h4 class="card-title">Ofertas</h4>
                                         </div>
                                         <div class="card-body">
                                             <div class="row">

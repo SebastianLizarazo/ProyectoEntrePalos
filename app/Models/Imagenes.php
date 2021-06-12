@@ -35,13 +35,13 @@ class Imagenes extends AbstractDBConnection implements Model
     public function __construct(array $imagen=[])
     {
         parent::__construct();
-        $this->setId($imagen['id']?? null);
+        $this->setId($imagen['id']?? 0);
         $this->setNombre($imagen['Nombre']?? '');
         $this->setDescripcion($imagen['Descripcion']?? '');
         $this->setRuta($imagen['Ruta']??'' );
         $this->setEstado($imagen['Estado']?? '');
-        $this->setProductoId($imagen['Producto_id']?? null);
-        $this->setOfertaId($imagen['Oferta_id']?? null);
+        $this->setProductoId(!empty($imagen['Producto_id']) ? $imagen['Producto_id']: null);
+        $this->setOfertaId(!empty($imagen['Oferta_id']) ? $imagen['Oferta_id']: null);
     }
 
     public static function imagenRegistrada(string $Nombre, string $Ruta): bool

@@ -7,8 +7,6 @@
              class="brand-image img-circle elevation-3"
              style="opacity: .8">
         <span class="brand-text font-weight-light"><?= $_ENV['ALIASE_SITE'] ?></span>
-    </a>
-
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user (optional) -->
@@ -17,8 +15,12 @@
                 <img src="<?= $baseURL ?>/views/public/img/user.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"> <?= $_SESSION['UserInSession']['Nombres'] ?? "Invitado" ?> </a>
-                <a href="#" class="d-block"> <?= $_SESSION['UserInSession']['Rol'] ?? "Invitado" ?> </a>
+                <a href="<?= $baseURL ?>/views/modules/usuario/show.php?id=<?= $_SESSION['UserInSession']['id']?>" class="d-block">
+                    <?= $_SESSION['UserInSession']['Nombres'] ?? "Invitado" ?>
+                </a>
+                <a href="<?= $baseURL ?>/views/modules/usuario/show.php?id=<?= $_SESSION['UserInSession']['id'] ?>" class="d-block">
+                    <?= $_SESSION['UserInSession']['Rol'] ?? "Invitado" ?>
+                </a>
             </div>
         </div>
 

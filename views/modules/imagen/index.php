@@ -14,7 +14,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 $modelProducto = NULL;
 
 /* Si llega el idProducto cargar los datos del producto */
-$_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::searchForID(['id' => $_GET['idProducto']]) : NULL;
 ?>
 <!DOCTYPE html>
 <html>
@@ -100,11 +99,6 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                                             <tbody>
                                             <?php
                                             $arrImagenes = array();
-                                            if(!empty($_SESSION['idProducto'])){
-                                                $arrImagenes = $_SESSION['idProducto']->getImagenProductos();
-                                            }else{
-                                                $arrImagenes = ImagenesController::getAll();
-                                            }
                                             if (!empty($arrImagenes))
                                             /* @var $arrImagenes Imagenes[] */
                                             foreach ($arrImagenes as $imagen) {
@@ -114,10 +108,16 @@ $_SESSION['idProducto'] = !empty($_GET['idProducto']) ? ProductosController::sea
                                                     <td><?= !empty($imagen->getNombre()) ? $imagen->getNombre() : 'Sin Nombre' ?></td>
                                                     <td><?= !empty($imagen->getDescripcion()) ? $imagen->getDescripcion() : 'Sin descripción' ?></td>
                                                     <td>
-                                                        <?php if(!empty($imagen->getRuta())){ ?>
-                                                            <span class="badge badge-info" data-toggle="tooltip" data-html="true"
-                                                                  title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/products/<?= $imagen->getRuta(); ?>'>">Imagen
-                                                            </span>
+                                                        <?php if (!empty($imagen->getOferta())){?>
+                                                            <?php if(!empty($imagen->getRuta())){ ?>
+                                                                <span class="badge badge-info" data-toggle="tooltip" data-html="true"
+                                                                      title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/ofertas/<?= $imagen->getRuta(); ?>'>">Imagen
+                                                                </span>
+                                                            <?php } ?>
+                                                        <?php }else{ ?>
+                                                                <span class="badge badge-info" data-toggle="tooltip" data-html="true"
+                                                                      title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/productos/<?= $imagen->getRuta(); ?>'>">Imagen
+                                                                </span>
                                                         <?php } ?>
                                                     </td>
                                                     <td>

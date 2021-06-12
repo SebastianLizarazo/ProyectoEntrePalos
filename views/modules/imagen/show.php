@@ -65,24 +65,18 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
                                             de <?= $DataImagen->getNombre() ?? '' ?></h3>
                                         <div class="card-tools">
-                                            <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                                    data-source="show.php" data-source-selector="#card-refresh-content"
-                                                    data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                         class="fas fa-expand"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                                     data-toggle="tooltip" title="Collapse">
                                                 <i class="fas fa-minus"></i></button>
-                                            <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                                    data-toggle="tooltip" title="Remove">
-                                                <i class="fas fa-times"></i></button>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-book mr-1"></i> Nombre</strong>
+                                                <strong><i class="fas fa-signature"></i> Nombre</strong>
                                                 <p class="text-muted">
                                                     <?= $DataImagen->getNombre() ?>
                                                 </p>
@@ -90,10 +84,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <strong><i class="fas fa-align-justify mr-1"></i> Descripción</strong>
                                                 <p class="text-muted"><?= $DataImagen->getDescripcion() ?></p>
                                                 <hr>
-                                                <strong><i class="fas fa-archive mr-1"></i> Producto</strong>
+                                                <?php if (!empty($DataImagen->getOferta())) {?>
+                                                <strong><i class="fas fa-piggy-bank"></i> Oferta</strong>
+                                                    <p class="text-muted"><?= $DataImagen->getOferta()->getNombre(); ?></p>
+                                                    <hr>
+                                                <?php }else{  ?>
+                                                <strong><i class="fas fa-hamburger"></i> Producto</strong>
                                                 <p class="text-muted"><?= $DataImagen->getProducto()->getNombre(); ?></p>
                                                 <hr>
-                                                <strong><i class="far fa-file-alt mr-1"></i> Estado</strong>
+                                                <?php } ?>
+                                                <strong><i class="fas fa-check"></i> Estado</strong>
                                                 <p class="text-muted"><?= $DataImagen->getEstado() ?></p>
                                                 </p>
                                             </div>
@@ -103,9 +103,15 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <h4>Foto Producto</h4>
                                                     </div>
                                                     <div class="col-12">
-                                                        <?php if(!empty($DataImagen->getRuta())){ ?>
-                                                            <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/products/<?= $DataImagen->getRuta(); ?>' alt="Foto Producto">
-                                                        <?php } ?>
+                                                        <?php if (!empty($DataImagen->getOferta())) {?>
+                                                            <?php if(!empty($DataImagen->getRuta())){ ?>
+                                                                <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/ofertas/<?= $DataImagen->getRuta(); ?>' alt="Foto Producto">
+                                                            <?php }
+                                                        }else{?>
+                                                            <?php if(!empty($DataImagen->getRuta())){ ?>
+                                                                <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/productos/<?= $DataImagen->getRuta(); ?>' alt="Foto Producto">
+                                                            <?php }
+                                                         } ?>
                                                     </div>
                                                 </div>
                                             </div>

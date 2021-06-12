@@ -11,7 +11,7 @@ $nameModel = "Imagen";
 $pluralModel = $nameModel.'es';
 $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
 
-/* @var $_SESSION['idProducto'] Fotos */
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -92,9 +92,10 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
                                                 <div class="col-sm-10">
                                                     <?= ProductosController::selectProducto(
                                                         array (
+                                                            'isRequired' => false,
                                                             'id' => 'Producto_id',
                                                             'name' => 'Producto_id',
-                                                            'defaultValue' => !empty($_SESSION['idProducto']) ? $_SESSION['idProducto']->getId() : '',
+                                                            'defaultValue' => ,
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Activo'"
                                                         )
