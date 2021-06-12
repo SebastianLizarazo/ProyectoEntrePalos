@@ -87,17 +87,17 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>Tamaño</th>
-                                                <th>Referencia tamaño</th>
-                                                <th>Referencia</th>
+                                                <th class="none">Referencia tamaño</th>
+                                                <th class="none">Referencia</th>
                                                 <th>Precio base</th>
-                                                <th>Precio unidad trabajador</th>
-                                                <th>Precio unidad venta</th>
-                                                <th>Presentación</th>
-                                                <th>Marca</th>
+                                                <th class="none">Precio trabajador</th>
+                                                <th>Precio venta</th>
+                                                <th class="none">Presentación</th>
+                                                <th class="none">Marca</th>
                                                 <th>Cantidad</th>
-                                                <th>Sub categoria</th>
+                                                <th class="none">Sub categoria</th>
                                                 <th>Estado</th>
-                                                <th>Acciones</th>
+                                                <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
