@@ -29,7 +29,7 @@ class OfertasController
             if (!empty($this->dataOferta['Nombre']) && !empty($this->dataOferta['Descripcion']) && !Ofertas::ofertaRegistrada($this->dataOferta['Nombre'], $this->dataOferta['Descripcion'])) {
                 $Oferta = new Ofertas($this->dataOferta);
                 if ($Oferta->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmCreateOfertas']);
                     header("Location: ../../views/modules/oferta/index.php?respuesta=success&mensaje=Oferta Registrada");
                 }
             } else {
@@ -44,7 +44,7 @@ class OfertasController
         try {
             $ofta = new Ofertas($this->dataOferta);
             if($ofta->update()){
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmEditOfertas']);
             }
             header("Location: ../../views/modules/oferta/show.php?id=" . $ofta->getId() . "&respuesta=success&mensaje=Oferta Actualizada");
         } catch (\Exception $e) {

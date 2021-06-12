@@ -8,13 +8,13 @@ use Carbon\Carbon;
 
     $nameModel = "Oferta"; //Nombre del Modelo
     $pluralModel = $nameModel.'s';
-    $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+    $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title>Crear | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
