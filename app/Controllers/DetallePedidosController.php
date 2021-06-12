@@ -16,14 +16,15 @@ class DetallePedidosController
      */
     public function __construct(array $_FORM)
     {
+
         $this->dataDetallePedido = array();
-        $this->dataDetallePedido['id'] = $_FORM['id']?? null;
-        $this->dataDetallePedido['Factura_id'] = $_FORM['Factura_id']?? null;
-        $this->dataDetallePedido['Producto_id'] = $_FORM['Producto_id']?? null;
-        $this->dataDetallePedido['Ofertas_id'] = $_FORM['Ofertas_id']?? null;
-        $this->dataDetallePedido['CantidadProducto'] = $_FORM['CantidadProducto']?? null;
-        $this->dataDetallePedido['CantidadOferta'] = $_FORM['CantidadOferta']?? null;
-        $this->dataDetallePedido['Mesa_id'] = $_FORM['Mesa_id']?? null;
+        $this->dataDetallePedido['id'] = $_FORM['id'] ?? null;
+        $this->dataDetallePedido['Factura_id'] = $_FORM['Factura_id'] ?? 0;
+        $this->dataDetallePedido['Producto_id'] = $_FORM['Producto_id'] ?? 0;
+        $this->dataDetallePedido['Ofertas_id'] = $_FORM['Ofertas_id'] ?? 0;
+        $this->dataDetallePedido['CantidadProducto'] = $_FORM['CantidadProducto'] ?? 0;
+        $this->dataDetallePedido['CantidadOferta'] = $_FORM['CantidadOferta']?? 0;
+        $this->dataDetallePedido['Mesa_id'] = $_FORM['Mesa_id'] ?? 0;
     }
 
     public function create()
@@ -31,7 +32,7 @@ class DetallePedidosController
         try {
             $DetallePedido = new DetallePedidos($this->dataDetallePedido);
             if ($DetallePedido->insert()) {
-                unset($_SESSION['frmDetallePedidoss']);
+                unset($_SESSION['frmCreateDetallePedidos']);
                 header("Location: ../../views/modules/detalle_pedido/index.php?respuesta=success&mensaje=Detalle pedido registrado");
             }
         } catch (\Exception $e) {
@@ -44,7 +45,7 @@ class DetallePedidosController
         try {
             $dto = new DetallePedidos($this->dataDetallePedido);
             if($dto->update()){
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmEditDetallePedidos']);
             }
             header("Location: ../../views/modules/detalle_pedido/show.php?id=" . $dto->getId() . "&respuesta=success&mensaje=Detalle pedido Actualizado");
         } catch (\Exception $e) {

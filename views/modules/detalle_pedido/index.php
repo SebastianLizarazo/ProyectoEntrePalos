@@ -87,10 +87,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Numero de Factura</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
-                                                <th>Cantidad Producto</th>
+                                                <th class="none">Cantidad Producto</th>
                                                 <th>Cantidad Oferta</th>
                                                 <th>Numero de mesa</th>
-                                                <th>Acciones</th>
+                                                <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -102,12 +102,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     ?>
                                                     <tr>
                                                         <td><?= $detallepedido->getId(); ?></td>
-                                                        <td><?= $detallepedido->getFactura()->getNumero(); ?></td>
-                                                        <td><?= $detallepedido->getProducto()->getNombre(); ?></td>
+                                                        <td><?= $detallepedido->getFactura()->getNumero() ?></td>
+                                                        <td><?= $detallepedido->getProducto()?->getNombre() ?? 'Sin Producto'; ?></td>
                                                         <td><?= $detallepedido->getOferta()?->getNombre() ?? 'Sin oferta'; ?></td>
-                                                        <td><?= $detallepedido->getCantidadProducto(); ?></td>
-                                                        <td><?= $detallepedido->getCantidadOferta(); ?></td>
-                                                        <td><?= $detallepedido->getMesa()->getNumero(); ?></td>
+                                                        <td><?= $detallepedido->getCantidadProducto() ?? 0; ?></td>
+                                                        <td><?= $detallepedido->getCantidadOferta() ?? 0; ?></td>
+                                                        <td><?= $detallepedido->getMesa()?->getNumero() ?? 'Domicilio'; ?></td>
                                                         <td>
                                                             <div  style="text-align: center;">
                                                             <a href="edit.php?id=<?= $detallepedido->getId(); ?>"

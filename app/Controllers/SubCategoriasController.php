@@ -23,7 +23,7 @@ class SubCategoriasController
             if (!empty($this->datasubcategoria['Nombre']) && !empty($this->datasubcategoria['CategoriaProducto']) && !SubCategorias::subCategoriaRegistrada($this->datasubcategoria['Nombre'], $this->datasubcategoria['CategoriaProducto'])) {
                 $subcategoria = new SubCategorias($this->datasubcategoria);
                 if ($subcategoria->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmCreateSubCategorias']);
                     header("Location: ../../views/modules/subcategoria/index.php?respuesta=success&mensaje=subcategoria Registrada");
                 }
             } else {
@@ -67,7 +67,7 @@ static public function restaurar(int $id)
         try {
             $sbc = new SubCategorias ($this->datasubcategoria);
             if($sbc->update()){
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmEditSubCategorias']);
             }
             header("Location: ../../views/modules/subcategoria/show.php?id=" . $sbc->getId() . "&respuesta=success&mensaje=SubCategoria Actualizada");
         } catch (\Exception $e) {

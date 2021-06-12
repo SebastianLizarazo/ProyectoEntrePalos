@@ -13,9 +13,9 @@ use App\Models\GeneralFunctions;
 use App\Models\DetallePedidos;
 
 
-$nameModel = "DetallePedidos";
+$nameModel = "DetallePedido";
 $pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -109,7 +109,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <div class="col-sm-10">
                                                             <?= ProductosController::selectProducto(
                                                                 array(
-
+                                                                    'isRequired' => false,
                                                                     'id' => 'Producto_id',
                                                                     'name' => 'Producto_id',
                                                                     'defaultValue' => '1',
@@ -125,6 +125,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <div class="col-sm-10">
                                                             <?= OfertasController::selectOferta(
                                                                 array(
+                                                                    'isRequired' => false,
                                                                     'id' => 'Ofertas_id',
                                                                     'name' => 'Ofertas_id',
                                                                     'defaultValue' => '1',
@@ -147,7 +148,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <label for="CantidadOferta" class="col-sm-2 col-form-label">Cantidad Oferta</label>
                                                         <div class="col-sm-10">
                                                             <input  type="number" max="500" class="form-control" id="CantidadOferta"
-                                                                   name="CantidadOferta" value="<?= $DataDetallepedido->getCantidadProducto(); ?>"
+                                                                   name="CantidadOferta" value="<?= $DataDetallepedido->getCantidadOferta(); ?>"
                                                                    placeholder="Ingrese la cantidad de oferta">
                                                         </div>
                                                     </div>
@@ -157,6 +158,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <div class="col-sm-10">
                                                             <?= MesasController::selectMesa(
                                                                 array(
+                                                                    'isRequired' => false,
                                                                     'id' => 'Mesa_id',
                                                                     'name' => 'Mesa_id',
                                                                     'defaultValue' => '1',

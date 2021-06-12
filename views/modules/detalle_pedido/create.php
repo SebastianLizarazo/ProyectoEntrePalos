@@ -11,9 +11,9 @@ use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
-$nameModel = "DetallePedidos"; //Nombre del Modelo
+$nameModel = "DetallePedido"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
-$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
+$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>
@@ -85,7 +85,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                         array(
                                                             'id' => 'Factura_id',
                                                             'name' => 'Factura_id',
-                                                            'defaultValue' => '1',
+                                                            'defaultValue' => $frmSession['Factura_id'] ?? '',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                         )
                                                     )
@@ -100,7 +100,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                             'isRequired' => false,
                                                             'id' => 'Producto_id',
                                                             'name' => 'Producto_id',
-                                                            'defaultValue' => '1',
+                                                            'defaultValue' => $frmSession['Producto_id'] ?? '',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Activo'"
                                                         )
@@ -116,7 +116,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                             'isRequired' => false,
                                                             'id' => 'Ofertas_id',
                                                             'name' => 'Ofertas_id',
-                                                            'defaultValue' => '1',
+                                                            'defaultValue' => $frmSession['Ofertas_id'] ?? '',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Disponible'"
                                                         )
@@ -145,7 +145,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                         array(
                                                             'id' => 'Mesa_id',
                                                             'name' => 'Mesa_id',
-                                                            'defaultValue' => '1',
+                                                            'defaultValue' => $frmSession['Mesa_id'] ?? '',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "Ocupacion = 'Disponible'"
                                                         )
