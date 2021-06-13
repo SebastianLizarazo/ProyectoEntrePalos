@@ -17,7 +17,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> Editar | <?= $nameModel ?></title>
+    <title>Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -59,11 +59,8 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -97,7 +94,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="CategoriaProducto" class="col-sm-2 col-form-label">CategoriaProducto</label>
+                                                        <label for="CategoriaProducto" class="col-sm-2 col-form-label">Categoria Producto</label>
                                                         <div class="col-sm-10">
                                                             <select required id="CategoriaProducto" name="CategoriaProducto" class="custom-select">
                                                                 <option value="">Seleccione</option>

@@ -90,7 +90,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Numero" class="col-sm-2 col-form-label">Numero</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Numero" name="Numero"
+                                                            <input required type="number" max="9999" class="form-control" id="Numero" name="Numero"
                                                                    placeholder="Ingrese el numero de la factura" value="<?= $DataFactura->getNumero() ?>">
                                                         </div>
                                                     </div>
@@ -104,7 +104,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="IVA" class="col-sm-2 col-form-label">IVA</label>
                                                         <div class="col-sm-10">
-                                                            <input type="number" step="0.01" class="form-control" id="IVA" name="IVA"
+                                                            <input required type="number" step="0.01" class="form-control" id="IVA" name="IVA"
                                                                    placeholder="IVA" value="<?= $DataFactura->getIVA() ?>">
                                                         </div>
                                                     </div>

@@ -18,7 +18,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title>Crear | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -73,7 +73,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                 <!-- form start -->
                                 <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
                                       name="frmCreate<?= $nameModel ?>"
-                                      action="../../../app/Controllers/MainController.php?controller=<?= $nameModel ?>&action=create">
+                                      action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
 
 
                                     <div class="row">
@@ -143,6 +143,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                                 <div class="col-sm-10">
                                                     <?= MesasController::selectMesa(
                                                         array(
+                                                            'isRequired' => false,
                                                             'id' => 'Mesa_id',
                                                             'name' => 'Mesa_id',
                                                             'defaultValue' => $frmSession['Mesa_id'] ?? '',

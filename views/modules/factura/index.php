@@ -87,7 +87,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Numero</th>
                                                 <th>Fecha</th>
                                                 <th>IVA</th>
-                                                <th>Medio de pago</th>
+                                                <th>Medio de pago:</th>
                                                 <th data-priority="2">Mesero</th>
                                                 <th data-priority="2">Estado</th>
                                                 <th data-priority="2">Tipo de pedido</th>

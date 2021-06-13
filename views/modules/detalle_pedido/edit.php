@@ -21,7 +21,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title>Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -85,7 +85,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
-                                              action="../../../app/Controllers/MainController.php?controller=<?= $nameModel ?>&action=edit">
+                                              action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
                                             <input id="id" name="id" value="<?= $DataDetallepedido->getId(); ?>" hidden
                                                    required="required" type="text">
                                             <div class="row">
@@ -139,7 +139,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad Producto</label>
                                                         <div class="col-sm-10">
-                                                            <input  type="text" max="1000" class="form-control" id="CantidadProducto"
+                                                            <input  type="number" max="500" class="form-control" id="CantidadProducto"
                                                                    name="CantidadProducto" value="<?= $DataDetallepedido->getCantidadProducto(); ?>"
                                                                    placeholder="Ingrese la cantidad del producto">
                                                         </div>

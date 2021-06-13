@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Gestión de <?= $pluralModel ?></title>
+    <title> Gestión de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -87,9 +87,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Numero de Factura</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
-                                                <th class="none">Cantidad Producto</th>
+                                                <th>Cantidad Producto</th>
                                                 <th>Cantidad Oferta</th>
-                                                <th>Numero de mesa</th>
+                                                <th class="none">Numero de mesa:</th>
                                                 <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>

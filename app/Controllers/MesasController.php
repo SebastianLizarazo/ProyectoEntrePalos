@@ -124,6 +124,7 @@ class MesasController
 
         $htmlSelect = "<select " . (($params['isMultiple']) ? "multiple" : "") . " " . (($params['isRequired']) ? "required" : "") . " id= '" . $params['id'] . "' name='" . $params['name'] . "' class='" . $params['class'] . "' style='width: 100%;'>";
         $htmlSelect .= "<option value='' >Seleccione</option>";
+        $htmlSelect .= "<option value='' >Domicilio</option>";
         if (is_array($arrMesas) && count($arrMesas) > 0) {
             /* @var $arrMesas Mesas[] */
             foreach ($arrMesas as $mesa)

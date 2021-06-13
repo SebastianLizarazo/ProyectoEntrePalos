@@ -86,3 +86,107 @@
 
 )
   
+[2021-06-13T14:43:22.313451+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidoController no fue encontrada "} 
+[2021-06-13T14:46:26.650831+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidoController no fue encontrada "} 
+[2021-06-13T14:48:12.425987+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidoController no fue encontrada "} 
+[2021-06-13T14:48:31.859162+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidoController no fue encontrada "} 
+[2021-06-13T15:41:30.709376+00:00] General.ERROR: Exception  
+[2021-06-13T15:41:30.710851+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-13T15:41:30.710983+00:00] General.ERROR: Line: 128  
+[2021-06-13T15:41:30.711076+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '23e2ddd' for key 'TblProductoReferencia_UNIQUE'  
+[2021-06-13T15:41:30.711175+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 367
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE producto SET
+            Nombre = :Nombre, Tamano = :Tamano, ReferenciaTamano = :ReferenciaTamano, Referencia = :Referencia, PrecioBase = :PrecioBase, 
+            PrecioUnidadTrabajador = :PrecioUnidadTrabajador, PrecioUnidadVenta = :PrecioUnidadVenta, PresentacionProducto = :PresentacionProducto,
+            Marca_id = :Marca_id, CantidadProducto = :CantidadProducto, Subcategoria_id = :Subcategoria_id,
+            Estado = :Estado WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 8
+                            [:Nombre] => Cola y pola
+                            [:Tamano] => 9999
+                            [:ReferenciaTamano] => ml
+                            [:Referencia] => 23e2ddd
+                            [:PrecioBase] => 100000
+                            [:PrecioUnidadTrabajador] => 100000
+                            [:PrecioUnidadVenta] => 100000
+                            [:PresentacionProducto] => Botella vidrio
+                            [:Marca_id] => 3
+                            [:CantidadProducto] => 1000
+                            [:Subcategoria_id] => 2
+                            [:Estado] => Activo
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Productos.php
+            [line] => 395
+            [function] => save
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE producto SET
+            Nombre = :Nombre, Tamano = :Tamano, ReferenciaTamano = :ReferenciaTamano, Referencia = :Referencia, PrecioBase = :PrecioBase, 
+            PrecioUnidadTrabajador = :PrecioUnidadTrabajador, PrecioUnidadVenta = :PrecioUnidadVenta, PresentacionProducto = :PresentacionProducto,
+            Marca_id = :Marca_id, CantidadProducto = :CantidadProducto, Subcategoria_id = :Subcategoria_id,
+            Estado = :Estado WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\ProductosController.php
+            [line] => 51
+            [function] => update
+            [class] => App\Models\Productos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => edit
+            [class] => App\Controllers\ProductosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

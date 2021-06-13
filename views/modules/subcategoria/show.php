@@ -63,7 +63,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la subcategoria llamada: <?= $Datasubcategoria->getNombre() ?></h3>
+                                            de la subcategoria: <?= $Datasubcategoria->getNombre() ?></h3>
                                         <div class="card-tools">
 
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i

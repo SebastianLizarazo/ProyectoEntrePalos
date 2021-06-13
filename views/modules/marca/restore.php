@@ -79,7 +79,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
+                                               style="width:100%;">
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
@@ -87,7 +88,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Descripción</th>
                                                 <th>Proveedor</th>
                                                 <th>Estado</th>
-                                                <th>Acciones</th>
+                                                <th>Restaurar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -102,7 +103,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             <td><?= $Marca->getId(); ?></td>
                                                             <td><?= $Marca->getNombre(); ?></td>
                                                             <td><?= $Marca->getDescripcion(); ?></td>
-                                                            <td><?= $Marca->getProveedorid(); ?></td>
+                                                            <td><?=  $Marca->getProveedor()->getNombres().' '.$Marca->getProveedor()->getApellidos();  ?></td>
                                                             <td><?= $Marca->getEstado(); ?></td>
                                                             <td>
                                                                 <div style="text-align: center;">
@@ -124,7 +125,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Descripción</th>
                                                 <th>Proveedor</th>
                                                 <th>Estado</th>
-                                                <th>Acciones</th>
+                                                <th>Restaurar</th>
                                             </tr>
                                             </tfoot>
                                         </table>

@@ -87,16 +87,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Nombre</th>
                                                 <th>Tamaño</th>
                                                 <th>Referencia tamaño</th>
-                                                <th>Referencia</th>
-                                                <th>Precio base</th>
-                                                <th>Precio unidad trabajador</th>
-                                                <th>Precio unidad venta</th>
-                                                <th>Presentación</th>
-                                                <th>Marca</th>
+                                                <th class="none">Referencia:</th>
+                                                <th class="none">Precio base:</th>
+                                                <th class="none">Precio trabajador:</th>
+                                                <th>Precio venta</th>
+                                                <th class="none">Presentación:</th>
+                                                <th class="none">Marca:</th>
                                                 <th>Cantidad</th>
-                                                <th>Sub categoria</th>
+                                                <th class="none">Sub categoria:</th>
                                                 <th>Estado</th>
-                                                <th>Restaurar</th>
+                                                <th data-priority="1">Restaurar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -158,7 +158,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+
                             </div>
                             <!-- /.card-footer-->
                         </div>

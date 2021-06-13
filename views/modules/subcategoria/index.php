@@ -114,7 +114,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                class="btn docs-tooltip btn-warning btn-xs"><i
                                                                         class="fa fa-eye"></i></a>
                                                                 <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $subcategoria->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Inactivo"
+                                                                   type="button" data-toggle="tooltip" title="Inactivar"
                                                                    class="btn docs-tooltip btn-danger btn-xs">
                                                                     <i class="fas fa-trash-alt"></i></a>
                                                             </div>

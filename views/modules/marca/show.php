@@ -63,7 +63,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la marca llamada: <?= $Datamarca->getNombre() ?></h3>
+                                            de la marca: <?= $Datamarca->getNombre() ?></h3>
                                         <div class="card-tools">
 
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
@@ -85,7 +85,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                         <p class="text-muted"><?= $Datamarca->getDescripcion() ?></p>
                                                 <hr>
                                                     <strong><i class="fas fa-solid fa-truck-moving"></i> &nbsp;Proveedor</strong>
-                                                        <p class="text-muted"><?= $Datamarca->getProveedor()->getNombres() ?></p>
+                                                        <p class="text-muted"><?=  $Datamarca->getProveedor()->getNombres().' '.$Datamarca->getProveedor()->getApellidos();  ?></p>
                                                 <hr>
                                                 <strong><i class="fas fa-solid fa-check"></i> &nbsp;Estado</strong>
                                                         <p class="text-muted"><?= $Datamarca->getEstado() ?></p>

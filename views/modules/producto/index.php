@@ -88,14 +88,14 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Nombre</th>
                                                 <th>Tamaño</th>
                                                 <th>Referencia tamaño</th>
-                                                <th class="none">Referencia</th>
-                                                <th class="none">Precio base</th>
-                                                <th class="none">Precio trabajador</th>
+                                                <th class="none">Referencia:</th>
+                                                <th class="none">Precio base:</th>
+                                                <th class="none">Precio trabajador:</th>
                                                 <th>Precio venta</th>
-                                                <th class="none">Presentación</th>
-                                                <th class="none">Marca</th>
+                                                <th class="none">Presentación:</th>
+                                                <th class="none">Marca:</th>
                                                 <th>Cantidad</th>
-                                                <th class="none">Sub categoria</th>
+                                                <th class="none">Sub categoria:</th>
                                                 <th>Estado</th>
                                                 <th data-priority="1">Acciones</th>
                                             </tr>
@@ -132,10 +132,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                    type="button" data-toggle="tooltip" title="Ver"
                                                                    class="btn docs-tooltip btn-warning btn-xs"><i
                                                                             class="fa fa-eye"></i></a>
+                                                                <?php if (!empty($producto->getImagenProductos())){?>
                                                                 <a href="../imagen/show.php?id=<?= $producto->getId(); ?>"
                                                                    type="button" data-toggle="tooltip" title="Gestionar imagen"
                                                                    class="btn docs-tooltip btn-success btn-xs"><i
                                                                             class="far fa-images"></i></a>
+                                                                <?php }?>
                                                                 <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $producto->getId(); ?>"
                                                                    type="button" data-toggle="tooltip" title="Inactivar"
                                                                    class="btn docs-tooltip btn-danger btn-xs"><i

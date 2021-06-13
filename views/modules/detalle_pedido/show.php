@@ -7,7 +7,7 @@ use App\Controllers\DetallePedidosController;
 use App\Models\GeneralFunctions;
 use App\Models\DetallePedidos;
 
-$nameModel = "Detalle Pedido";
+$nameModel = "DetallePedido";
 $pluralModel = $nameModel . 's';
 $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
@@ -63,7 +63,8 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la mesa numero <?= $DataDetallepedido->getFacturaId() ?></h3>
+                                            del detalle pedido N° <?= $DataDetallepedido->getId() ?> de la factura
+                                            N° <?= $DataDetallepedido->getFactura()->getNumero() ?></h3>
                                         <div class="card-tools">
 
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
@@ -82,19 +83,22 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                 <p class="text-muted"><?= $DataDetallepedido->getFactura()->getNumero() ?></p>
                                                 <hr>
                                                 <strong><i class="fas fa-hamburger"></i> &nbsp;Producto</strong>
-                                                <p class="text-muted"><?= $DataDetallepedido->getProducto()->getNombre() ?></p>
+                                                <p class="text-muted"><?= !empty($DataDetallepedido->getProducto()) ?
+                                                        $DataDetallepedido->getProducto()->getNombre() : 'Sin producto' ?></p>
                                                 <hr>
                                                 <strong><i class="fas fa-piggy-bank"></i> &nbsp;Oferta</strong>
-                                                <p class="text-muted"><?= $DataDetallepedido->getOferta()?->getNombre() ?? 'Sin oferta' ?></p>
+                                                <p class="text-muted"><?= !empty($DataDetallepedido->getOferta()) ?
+                                                        $DataDetallepedido->getOferta()->getNombre() : 'Sin oferta' ?></p>
                                                 <hr>
                                                 <strong><i class="fas fa-sort-amount-up-alt"></i> &nbsp;Cantidad Producto</strong>
-                                                <p class="text-muted"><?= $DataDetallepedido->getCantidadProducto() ?></p>
+                                                <p class="text-muted"><?= $DataDetallepedido->getCantidadProducto()?? 0 ?></p>
                                                 <hr>
                                                 <strong><i class="fas fa-piggy-bank"></i>&nbsp;Cantidad Oferta</strong>
-                                                <p class="text-muted"><?= $DataDetallepedido->getCantidadOferta() ?></p>
+                                                <p class="text-muted"><?= $DataDetallepedido->getCantidadOferta()?? 0 ?></p>
                                                 <hr>
                                                 <strong><i class="fas fa-chair"></i> &nbsp;Numero de mesa</strong>
-                                                <p class="text-muted"><?= $DataDetallepedido->getMesa()->getNumero() ?></p>
+                                                <p class="text-muted"><?= !empty($DataDetallepedido->getMesa()) ?
+                                                        $DataDetallepedido->getMesa()->getNumero() : 'Domicilio' ?></p>
                                                 </p>
                                             </div>
                                         </div>

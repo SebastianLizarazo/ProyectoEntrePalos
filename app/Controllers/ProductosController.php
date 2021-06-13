@@ -38,7 +38,7 @@ class ProductosController
                     header("Location: ../../views/modules/producto/index.php?respuesta=success&mensaje=Producto Registrado");
                 }
             } else {
-                header("Location: ../../views/modules/producto/create.php?respuesta=error&mensaje=Producto ya registrado");
+                header("Location: ../../views/modules/producto/create.php?respuesta=error&mensaje=La referencia de este producto ya existe");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');

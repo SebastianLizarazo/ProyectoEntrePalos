@@ -40,7 +40,7 @@ class DetallePedidos extends AbstractDBConnection implements Model
         $this->setOfertasId(!empty($detallePedido['Ofertas_id' ]) ? $detallePedido['Ofertas_id' ] : NULL);
         $this->setCantidadProducto(!empty($detallePedido['CantidadProducto']) ? $detallePedido['CantidadProducto'] : NULL);
         $this->setCantidadOferta(!empty($detallePedido['CantidadOferta']) ? $detallePedido['CantidadOferta'] : NULL);
-        $this->setMesaId($detallePedido['Mesa_id']?? 0);
+        $this->setMesaId(!empty($detallePedido['Mesa_id']) ? $detallePedido['Mesa_id'] : null);
     }
 
     public static function detallePedidoRegistrado(mixed $id, mixed $Factura_id)

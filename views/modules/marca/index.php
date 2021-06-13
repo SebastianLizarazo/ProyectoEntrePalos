@@ -106,7 +106,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     <td><?= $Marca->getId(); ?></td>
                                                     <td><?= $Marca->getNombre(); ?></td>
                                                     <td><?= $Marca->getDescripcion(); ?></td>
-                                                    <td><?= $Marca->getProveedorid(); ?></td>
+                                                    <td><?= $Marca->getProveedor()->getNombres().' '.$Marca->getProveedor()->getApellidos(); ?></td>
                                                     <td><?= $Marca->getEstado(); ?></td>
                                                     <td>
                                                         <div  style="text-align: center;">

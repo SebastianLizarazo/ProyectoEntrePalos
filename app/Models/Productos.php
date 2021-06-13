@@ -307,43 +307,43 @@ class Productos extends AbstractDBConnection implements Model
     }
     public function getImagenProductos(): ?array
     {
-        //if (!empty($this->ImagenProductos)) {
+        if (!empty($this->ImagenProductos)) {
         $this->ImagenProductos = Imagenes::search(
             "SELECT * FROM imagen WHERE Producto_id = ".$this->getId()
         );
         return ($this->ImagenProductos)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
     public function getDetalleOfertasProducto(): ?array
     {
-        //if (!empty($this-> getDetalleOfertasProducto)) {
+        if (!empty($this->getDetalleOfertasProducto)) {
         $this-> DetalleOfertasProducto = Productos::search(
             "SELECT * FROM detalleoferta WHERE Producto_id = ".$this->getId()
         );
         return ($this->DetalleOfertasProducto)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
     public function getDetallePedidoProductos(): ?array
     {
-        //if (!empty($this->DetallePedidoProductos)) {
+        if (!empty($this->DetallePedidoProductos)) {
         $this->DetallePedidoProductos = DetallePedidos::search(
             "SELECT * FROM detallepedido WHERE Producto_id = ".$this->getId()
         );
         return ($this->DetallePedidoProductos)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
     public function getConsumoTrabajadorProductos(): ?array
     {
-        //if (!empty($this->ConsumoTrabajadorProductos)) {
+        if (!empty($this->ConsumoTrabajadorProductos)) {
         $this->ConsumoTrabajadorProductos = ConsumoTrabajadores::search(
             "SELECT * FROM consumotrabajador WHERE Producto_id = ".$this->getId()
         );
         return ($this->ConsumoTrabajadorProductos)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
 
     protected function save(string $query): ?bool
