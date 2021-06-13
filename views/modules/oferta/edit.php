@@ -12,13 +12,13 @@ use App\Models\Ofertas;
 
 $nameModel = "Oferta";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title>Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -60,11 +60,8 @@ $pluralModel = $nameModel.'s';
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -108,7 +105,7 @@ $pluralModel = $nameModel.'s';
                                                     <div class="form-group row">
                                                         <label for="PrecioUnidadVentaOferta" class="col-sm-2 col-form-label">Precio Unidad Venta Oferta</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="PrecioUnidadVentaOferta"
+                                                            <input required type="number" class="form-control" id="PrecioUnidadVentaOferta"
                                                                    name="PrecioUnidadVentaOferta" value="<?= $DataOferta->getPrecioUnidadVentaOferta(); ?>"
                                                                    placeholder="Ingrese el precio unidad venta oferta">
                                                         </div>

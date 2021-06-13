@@ -4,19 +4,21 @@ require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
 use App\Controllers\ConsumoTrabajadoresController;
+use App\Controllers\PagosController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
 
-$nameModel = "Consumo trabajador";
-$pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$nameModel = "ConsumoTrabajador";
+$pluralModel = $nameModel.'es';
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title>Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -58,11 +60,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -90,17 +89,31 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Pago_id" class="col-sm-2 col-form-label">Numero de pago</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Pago_id"
-                                                                   name="Pago_id" value="<?= $DataConsumoT->getPagoId(); ?>"
-                                                                   placeholder="Ingrese el numero del pago">
+                                                            <?= PagosController::selectPago
+                                                            (array (
+                                                                    'id' => 'Pago_id',
+                                                                    'name' => 'Pago_id',
+                                                                    'defaultValue' =>  $DataConsumoT->getPagoId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Pendiente'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Producto_id" class="col-sm-2 col-form-label">Numero de producto</label>
+                                                        <label for="Producto_id" class="col-sm-2 col-form-label">Producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Producto_id"
-                                                                   name="Producto_id" value="<?= $DataConsumoT->getProductoId(); ?>"
-                                                                   placeholder="Ingrese el numero de producto">
+                                                            <?= ProductosController::selectProducto
+                                                            (array (
+                                                                    'id' => 'Producto_id',
+                                                                    'name' => 'Producto_id',
+                                                                    'defaultValue' => $DataConsumoT->getProductoId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

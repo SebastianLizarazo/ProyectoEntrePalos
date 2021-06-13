@@ -4,17 +4,19 @@ require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
 use App\Controllers\DetalleOfertasController;
+use App\Controllers\OfertasController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
-$nameModel = "Detalle de oferta"; //Nombre del Modelo
+$nameModel = "DetalleOfertas"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
-$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
+$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title>Crear | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -37,7 +39,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
-                            <li class="breadcrumb-item"><a href="index.php"><?= $pluralModel ?></a></li>
+                            <li class="breadcrumb-item"><a href="index.php"><?= $nameModel ?></a></li>
                             <li class="breadcrumb-item active">Crear</li>
                         </ol>
                     </div>
@@ -55,11 +57,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información del<?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -71,7 +70,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                             <!-- form start -->
                                 <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
                                       name="frmCreate<?= $nameModel ?>"
-                                      action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
+                                      action="../../../app/Controllers/MainController.php?controller=<?= $nameModel ?>&action=create">
 
 
                                       <div class="row">
@@ -79,15 +78,31 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 <div class="form-group row">
                                                     <label for="ProductoId" class="col-sm-2 col-form-label">Producto</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="ProductoId" name="ProductoId"
-                                                               placeholder="Ingrese el numero del producto" value="<?= $frmSession['ProductoId'] ?? '' ?>">
+                                                        <?= ProductosController::selectProducto
+                                                        (array (
+                                                            'id' => 'Producto_id',
+                                                            'name' => 'Producto_id',
+                                                            'defaultValue' => (!empty($frmSession['producto_id'])) ? $frmSession['producto_id'] : '',
+                                                            'class' => 'form-control select2bs4 select2-info',
+                                                            'where' => "estado = 'Activo'"
+                                                            )
+                                                        )
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="OfertaId" class="col-sm-2 col-form-label">Oferta</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="OfertaId" name="OfertaId"
-                                                               placeholder="Ingrese el numero de la oferta" value="<?= $frmSession['OfertaId'] ?? '' ?>">
+                                                        <?= OfertasController::selectOferta
+                                                        (array (
+                                                                'id' => 'Oferta_id',
+                                                                'name' => 'Oferta_id',
+                                                                'defaultValue' => (!empty($frmSession['oferta_id'])) ? $frmSession['oferta_id'] : '',
+                                                                'class' => 'form-control select2bs4 select2-info',
+                                                                'where' => "estado = 'Disponible'"
+                                                            )
+                                                        )
+                                                        ?>
                                                     </div>
                                                 </div>
                                               <div class="form-group row">

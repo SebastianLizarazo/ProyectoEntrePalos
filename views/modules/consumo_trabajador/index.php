@@ -4,6 +4,7 @@ require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
 use App\Controllers\ConsumoTrabajadoresController;
+use App\Models\ConsumoTrabajadores;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
@@ -84,24 +85,24 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Numero de pago</th>
+                                                <th>Trabajador</th>
                                                 <th>Producto</th>
-                                                <th>Cantidad roducto</th>
-                                                <th>Descripción</th>
-                                                <th>Acciones</th>
+                                                <th>Cantidad producto</th>
+                                                <th class="none">Descripción</th>
+                                                <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
                                             $arrConsumoT = ConsumoTrabajadoresController::getAll();
                                             if (!empty($arrConsumoT))
-                                            /* @var $arrConsumoT \App\Models\ConsumoTrabajadores */
+                                            /* @var $arrConsumoT ConsumoTrabajadores */
                                             foreach ($arrConsumoT as $consumotrabajador) {
                                                 ?>
                                                 <tr>
 
                                                     <td><?= $consumotrabajador->getId(); ?></td>
-                                                    <td><?= $consumotrabajador->getPagoId(); ?></td>
+                                                    <td><?= $consumotrabajador->getPagos()->getTrabajador()->getNombres(); ?></td>
                                                     <td><?= $consumotrabajador->getProducto()->getNombre() ; ?></td>
                                                     <td><?= $consumotrabajador->getCantidadProducto(); ?></td>
                                                     <td><?= $consumotrabajador->getDescripcion(); ?></td>
@@ -123,9 +124,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Numero de pago</th>
+                                                <th>Trabajador</th>
                                                 <th>Producto</th>
-                                                <th>Cantidad roducto</th>
+                                                <th>Cantidad producto</th>
                                                 <th>Descripción</th>
                                                 <th>Acciones</th>
                                             </tr>

@@ -8,13 +8,13 @@ use Carbon\Carbon;
 
     $nameModel = "Oferta"; //Nombre del Modelo
     $pluralModel = $nameModel.'s';
-    $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+    $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title>Crear | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -55,11 +55,8 @@ use Carbon\Carbon;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -91,9 +88,9 @@ use Carbon\Carbon;
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="PrecioUnidadVentaOferta" class="col-sm-2 col-form-label">Precio Unidad Venta Oferta</label>
+                                                    <label for="PrecioUnidadVentaOferta" class="col-sm-2 col-form-label">Precio unidad venta en oferta</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="PrecioUnidadVentaOferta" name="PrecioUnidadVentaOferta"
+                                                        <input required type="number" max="9999999" min="1111111" class="form-control" id="PrecioUnidadVentaOferta" name="PrecioUnidadVentaOferta"
                                                                placeholder="Ingrese el precio unidad venta oferta" value="<?= $frmSession['PrecioUnidadVentaOferta'] ?? '' ?>">
                                                     </div>
                                                 </div>
