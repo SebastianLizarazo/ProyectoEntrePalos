@@ -137,7 +137,7 @@ class MarcasController
             /* @var $arrMarcas Marcas[] */
             foreach ($arrMarcas as $marca)
                 if (!MarcasController::marcaIsInArray($marca->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($marca != "") ? (($params['defaultValue'] == $marca->getId()) ? "selected" : "") : "") . " value='" . $marca->getId() . "'>" . "La marca numero: " . $marca->getNombre() . " Se llama: " . $marca->getDescripcion() . $marca->getProveedorId() . "El proveedor numero: " . "</option>";
+                    $htmlSelect .= "<option " . (($marca != "") ? (($params['defaultValue'] == $marca->getId()) ? "selected" : "") : "") . " value='" . $marca->getId() . "'>".$marca->getNombre()."</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

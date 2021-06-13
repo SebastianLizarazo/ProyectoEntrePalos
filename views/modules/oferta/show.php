@@ -15,7 +15,7 @@ $pluralModel = $nameModel . 's';
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos de la <?= $nameModel ?></title>
+    <title>Datos de la | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -33,7 +33,7 @@ $pluralModel = $nameModel . 's';
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Informacion del <?= $nameModel ?></h1>
+                        <h1>Información de la <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -64,7 +64,7 @@ $pluralModel = $nameModel . 's';
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de <?= $DataOferta->getNombre() ?></h3>
+                                            de la oferta numero <?= $DataOferta->getId() ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
                                                     data-source="show.php" data-source-selector="#card-refresh-content"
@@ -83,16 +83,16 @@ $pluralModel = $nameModel . 's';
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Nombre</strong>
+                                                    <strong><i class="fas fa-signature"></i>&nbsp;Nombre</strong>
                                                         <p class="text-muted"><?= $DataOferta->getNombre() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>Descripcion</strong>
+                                                    <strong><i class="fas fa-file-alt"></i>&nbsp;Descripción</strong>
                                                         <p class="text-muted"><?= $DataOferta->getDescripcion() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i> PrecioUnidadVentaOferta</strong>
+                                                    <strong><i class="fas fa-piggy-bank"></i>&nbsp;Precio por unidad venta oferta</strong>
                                                         <p class="text-muted"><?= $DataOferta->getPrecioUnidadVentaOferta() ?></p>
                                                 <hr>
-                                                    <strong><i class="far fa-file-alt mr-1"></i>Estado</strong>
+                                                    <strong><i class="fas fa-check"></i>&nbsp;Estado</strong>
                                                         <p class="text-muted"><?= $DataOferta->getEstado() ?></p>
                                                 </p>
                                             </div>

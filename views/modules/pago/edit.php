@@ -1,15 +1,16 @@
 <?php
 require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
-require("../../../app/Controllers/SubCategoriasController.php");
+require_once("../../partials/check_login.php");
+require("../../../app/Controllers/PagosController.php");
 
-
-use App\Controllers\SubCategoriasController;
+use App\Controllers\UsuariosController;
+use App\Controllers\PagosController;
 use App\Models\GeneralFunctions;
-use App\Models\subcategorias;
+use App\Models\Pagos;
+use Carbon\Carbon;
 
 
-$nameModel = "SubCategoria";
+$nameModel = "Pago";
 $pluralModel = $nameModel.'s';
 //$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
@@ -17,7 +18,7 @@ $pluralModel = $nameModel.'s';
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
+    <title>Editar | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -61,9 +62,6 @@ $pluralModel = $nameModel.'s';
                             <div class="card-header">
                                 <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -75,43 +73,47 @@ $pluralModel = $nameModel.'s';
                                 <p>
                                 <?php
 
-                                $Datasubcategoria = SubCategoriasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $Datasubcategoria subcategorias */
-                                if (!empty($Datasubcategoria)) {
+                                $Datapago = PagosController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $Datapago Pagos */
+                                if (!empty($Datapago)) {
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
-                                            <input id="id" name="id" value="<?= $Datasubcategoria->getId(); ?>" hidden
+                                            <input id="id" name="id" value="<?= $Datapago->getId(); ?>" hidden
                                                    required="required" type="text">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
+                                                        <label for="Trabajador_id" class="col-sm-2 col-form-label">Trabajador</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Nombre"
-                                                                   name="Nombre" value="<?= $Datasubcategoria->getNombre(); ?>"
-                                                                   placeholder="Ingrese el Nombre de la subcategoria">
+                                                            <?= UsuariosController::selectUsuario(
+                                                                array(
+                                                                    'id' => 'Trabajador_id',
+                                                                    'name' => 'Trabajador_id',
+                                                                    'defaultValue' =>$Datapago->getTrabajadorId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo' and rol = 'Mesero' or rol = 'Proveedor' or rol = 'Domiciliario' or rol = 'Cocinero'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="CategoriaProducto" class="col-sm-2 col-form-label">CategoriaProducto</label>
+                                                        <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="CategoriaProducto" name="CategoriaProducto" class="custom-select">
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
-                                                            </select>
+                                                            <input required type="date" max="<?= Carbon::now()->format('Y-m-d')?>" class="col-sm-3 form-control" id="Fecha" name="Fecha"
+                                                                   value="<?= $Datapago->getFecha()->toDateString()?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="estado" class="col-sm-2 col-form-label">Estado</label>
+                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="estado" name="estado" class="custom-select">
-                                                                <option <?= ($Datasubcategoria->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
-                                                                <option <?= ($Datasubcategoria->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
+                                                            <select required id="Estado" name="Estado" class="custom-select">
+                                                                <option <?= ($Datapago->getEstado() == "Pendiente") ? "selected" : ""; ?> value="Pendiente">Pendiente</option>
+                                                                <option <?= ($Datapago->getEstado() == "Saldado") ? "selected" : ""; ?> value="Saldado">Saldado</option>
                                                             </select>
                                                         </div>
                                                     </div>

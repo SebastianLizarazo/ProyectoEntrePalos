@@ -4,6 +4,7 @@
 namespace App\Controllers;
 
 use App\Models\GeneralFunctions;
+use App\Models\Pagos;
 use App\Models\Usuarios;
 class UsuariosController
 {
@@ -31,7 +32,7 @@ class UsuariosController
     public function create()
     {
         try {
-            if (!empty($this->dataUsuario['Cedula']) && !empty($this->dataUsuario['Nombres']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'], $this->dataUsuario['Nombres'])) {
+            if (!empty($this->dataUsuario['Cedula']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'])) {
                 $Usuario = new Usuarios($this->dataUsuario);
                 if ($Usuario->insert()) {
                     unset($_SESSION['frmUsuarios']);
@@ -44,10 +45,39 @@ class UsuariosController
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
+
+    static public function inactivate(int $id)
+    {
+        try {
+            $Obusuarios = Usuarios::searchForId($id);
+            $Obusuarios->setEstado("Inactivo");
+            if ($Obusuarios->update()) {
+                header("Location: ../../views/modules/usuario/index.php?respuesta=success&mensaje=Usuario deshabilitado");
+            } else {
+                header("Location: ../../views/modules/usuario/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+    static public function restaurar(int $id)
+    {
+        try {
+            $Obusuarios = Usuarios::searchForId($id);
+            $Obusuarios->setEstado("Activo");
+            if ($Obusuarios->update()) {
+                header("Location: ../../views/modules/usuario/restore.php?respuesta=success&mensaje=Usuario restaurado");
+            } else {
+                header("Location: ../../views/modules/usuario/restore.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception', $e, 'error');
+        }
+    }
     public function edit()
     {
         try {
-            $Usuario = new Usuario($this->dataUsuario);
+            $Usuario = new Usuarios($this->dataUsuario);
             if($Usuario->update()){
                 unset($_SESSION['frmUsuarios']);
             }
@@ -111,7 +141,7 @@ class UsuariosController
             /* @var $arrUsuarios Usuarios[] */
             foreach ($arrUsuarios as $usuario)
                 if (!UsuariosController::usuarioIsInArray($usuario->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($usuario != "") ? (($params['defaultValue'] == $usuario->getId()) ? "selected" : "") : "") . " value='" . $usuario->getId() . "'>" . $usuario->getNombres() ."-". $usuario->getRol()."</option>";
+                    $htmlSelect .= "<option " . (($usuario != "") ? (($params['defaultValue'] == $usuario->getId()) ? "selected" : "") : "") . " value='" . $usuario->getId() . "'>". $usuario->getNombres()." - ".$usuario->getRol()."</option>";
         }
 
          $htmlSelect .= "</select>";

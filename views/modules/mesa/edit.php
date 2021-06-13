@@ -11,7 +11,7 @@ use App\Models\Mesas;
 
 $nameModel = "Mesa";
 $pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -113,6 +113,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <label for="Ocupacion" class="col-sm-2 col-form-label">Ocupación</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Ocupacion" name="Ocupacion" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ($DataMesa->getOcupacion() == "disponible") ? "selected" : ""; ?> value="disponible">disponible</option>
                                                                 <option <?= ($DataMesa->getOcupacion() == "ocupada") ? "selected" : ""; ?> value="ocupada">ocupada</option>
                                                             </select>

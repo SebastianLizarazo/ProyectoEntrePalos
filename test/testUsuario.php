@@ -56,9 +56,9 @@ $arrUsuario4=[
     'Empresa_id' => 1
 ];
 
-//$objectUsuario1= new Usuarios($arrUsuario1);
+$objectUsuario1= new Usuarios($arrUsuario1);
 //var_dump($objectUsuario1);
-//$objectUsuario1->insert();
+$objectUsuario1->insert();
 
 //$objectUsuario1->setCedula(1193099653);
 //$objectUsuario1->setApellidos('Sandoval Pirri');
@@ -79,7 +79,7 @@ $objectUsuario4->insert();
 //var_dump($arrUsuario2);
 
 
-//$objectUsuario3= new Usuarios($arrUsuario3);
+$objectUsuario3= new Usuarios($arrUsuario3);
 //var_dump($objectUsuario3);
 
 //$objectUsuario3->insert();
@@ -123,6 +123,7 @@ $objectUsuario4->insert();
 //{
 //    print_r($Usuario->jsonSerialize());
 //}
+
 
 
 // Cambio de contraseñas

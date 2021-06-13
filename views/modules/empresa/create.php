@@ -11,7 +11,7 @@ use Carbon\Carbon;
 
 $nameModel = "Empresa"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
-$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
+$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,7 +57,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -92,7 +92,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                             <div class="form-group row">
                                                 <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" class="form-control" id="Telefono" name="Telefono"
+                                                    <input required type="number" min="1111111111" max="9999999999" class="form-control" id="Telefono" name="Telefono"
                                                            placeholder="Ingrese el telefono de la empresa" value="<?= $frmSession['Telefono'] ?? '' ?>">
                                                 </div>
                                             </div>
@@ -107,7 +107,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                 <div class="col-sm-10">
                                                     <select required id="Estado" name="Estado" class="custom-select">
-                                                        <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Activo") ? "selected" : ""; ?> value="Avtivo">Activo</option>
+                                                        <option value="">Seleccione</option>
+                                                        <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
                                                         <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                     </select>
                                                 </div>
@@ -119,7 +120,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                         array(
                                                             'id' => 'departamento_id',
                                                             'name' => 'departamento_id',
-                                                            'defaultValue' => '15', //Boyacá
+                                                            'defaultValue' => (!empty($frmSession['departamento_id'])) ? $frmSession['departamento_id'] : '',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Activo'"
                                                         )

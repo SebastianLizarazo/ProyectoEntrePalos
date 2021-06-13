@@ -1,18 +1,19 @@
 <?php
 require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
+use App\Controllers\UsuariosController;
 
-$nameModel = "SubCategoria"; //Nombre del Modelo
+$nameModel = "Pago"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title>Crear |  <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -30,7 +31,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Crear una nueva <?= $nameModel ?></h1>
+                        <h1>Crear un nuevo <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -53,11 +54,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -70,33 +68,36 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                 <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
                                       name="frmCreate<?= $nameModel ?>"
                                       action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
-
-
                                       <div class="row">
                                           <div class="col-sm-12">
                                                 <div class="form-group row">
-                                                    <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
+                                                    <label for="Trabajador_id" class="col-sm-2 col-form-label">Trabajador</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="text" class="form-control" id="Nombre" name="Nombre"
-                                                               placeholder="Ingrese el nombre de la Subcategoria" value="<?= $frmSession['Nombre'] ?? '' ?>">
+                                                        <?= UsuariosController::selectUsuario(
+                                                            array(
+                                                                'id' => 'Trabajador_id',
+                                                                'name' => 'Trabajador_id',
+                                                                'defaultValue' =>'', //Boyacá
+                                                                'class' => 'form-control select2bs4 select2-info',
+                                                                'where' => "estado = 'Activo' and rol = 'Mesero' or rol = 'Proveedor' or rol = 'Domiciliario' or rol = 'Cocinero'"
+                                                            )
+                                                        )
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="CategoriaProducto" class="col-sm-2 col-form-label">CategoriaProducto</label>
+                                                    <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label>
                                                     <div class="col-sm-10">
-                                                        <select required id="CategoriaProducto" name="CategoriaProducto" class="custom-select">
-                                                            <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
-                                                            <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
-                                                            <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
-                                                        </select>
+                                                        <input required type="date" class="form-control" id="Fecha" name="Fecha"
+                                                               placeholder="Ingrese la fecha del pago" value="<?= $frmSession['Nombre'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                                     <div class="form-group row">
-                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
+                                                        <label for="estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="estado" name="estado" class="custom-select">
-                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
-                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
+                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Pendiente") ? "selected" : ""; ?> value="Pendiente">Pendiente</option>
+                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Saldado") ? "selected" : ""; ?> value="Saldado">Saldado</option>
                                                             </select>
                                                         </div>
                                                     </div>

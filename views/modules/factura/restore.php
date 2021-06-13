@@ -83,7 +83,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Numero</th>
                                                 <th>Fecha de creación</th>
                                                 <th>IVA</th>
@@ -128,7 +128,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Numero</th>
                                                 <th>Fecha de creación</th>
                                                 <th>IVA</th>
