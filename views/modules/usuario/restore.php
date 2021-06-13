@@ -1,5 +1,5 @@
 <?php
-require_once("../../../app/Controllers/EmpresasController.php");
+require_once("../../../app/Controllers/UsuariosController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
@@ -7,7 +7,7 @@ use App\Controllers\EmpresasController;
 use App\Models\GeneralFunctions;
 use App\Models\Empresas;
 
-$nameModel = "Empresa";
+$nameModel = "Usuario";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
@@ -79,39 +79,44 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
-                                               style="width:100%;">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Nombre</th>
-                                                <th>NIT</th>
+                                                <th>Cedula</th>
+                                                <th>Nombres</th>
+                                                <th>Apellidos</th>
                                                 <th>Telefono</th>
-                                                <th>Direccion</th>
+                                                <th>Dirección</th>
+                                                <th>Email</th>
+                                                <th>Rol</th>
                                                 <th>Estado</th>
-                                                <th>Municipio</th>
+                                                <th>Empresa</th>
                                                 <th>Activar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrEmpresas = EmpresasController::getAll();
-                                            if (!empty($arrEmpresas))
-                                                /* @var $arrEmpresas Empresas */
-                                                foreach ($arrEmpresas as $empresa) {
-                                                    if ($empresa->getEstado() == 'Inactivo'){
+                                            $arrUsuarios = \App\Controllers\UsuariosController::getAll();
+                                            if (!empty($arrUsuarios))
+                                                /* @var $arrUsuarios \App\Models\Usuarios */
+                                                foreach ($arrUsuarios as $usuario) {
+                                                    if ($usuario->getEstado() == 'Inactivo'){
                                                         ?>
                                                         <tr>
-                                                            <td><?= $empresa->getId(); ?></td>
-                                                            <td><?= $empresa->getNombre(); ?></td>
-                                                            <td><?= $empresa->getNIT(); ?></td>
-                                                            <td><?= $empresa->getTelefono(); ?></td>
-                                                            <td><?= $empresa->getDireccion(); ?></td>
-                                                            <td><?= $empresa->getEstado(); ?></td>
-                                                            <td><?= $empresa->getMunicipio()->getNombre(); ?></td>
-                                                            <td>
+                                                        <td><?= $usuario->getId(); ?></td>
+                                                        <td><?= $usuario->getCedula(); ?></td>
+                                                        <td><?= $usuario->getNombres(); ?></td>
+                                                        <td><?= $usuario->getApellidos(); ?></td>
+                                                        <td><?= $usuario->getTelefono(); ?></td>
+                                                        <td><?= $usuario->getDireccion(); ?></td>
+                                                        <td><?= $usuario->getEmail(); ?></td>
+                                                        <td><?= $usuario->getRol(); ?></td>
+                                                        <td><?= $usuario->getEstado(); ?></td>
+                                                        <td><?= $usuario->getEmpresas()->getNombre(); ?></td>
+                                                        <td>
                                                                 <div style="text-align: center;">
-                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $empresa->getId(); ?>"
+                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $usuario->getId(); ?>"
                                                                            type="button" data-toggle="tooltip" title="Restaurar"
                                                                            class="btn docs-tooltip btn-success btn-xs"><i
                                                                                 class="fas fa-undo-alt"></i></a>
@@ -125,12 +130,15 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Nombre</th>
-                                                <th>NIT</th>
+                                                <th>Cedula</th>
+                                                <th>Nombres</th>
+                                                <th>Apellidos</th>
                                                 <th>Telefono</th>
-                                                <th>Direccion</th>
+                                                <th>Dirección</th>
+                                                <th>Email</th>
+                                                <th>Rol</th>
                                                 <th>Estado</th>
-                                                <th>Municipio</th>
+                                                <th>Empresa</th>
                                                 <th>Activar</th>
                                             </tr>
                                             </tfoot>
@@ -140,7 +148,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-
+                                Pie de Página.
                             </div>
                             <!-- /.card-footer-->
                         </div>

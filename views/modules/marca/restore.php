@@ -1,13 +1,13 @@
 <?php
-require_once("../../../app/Controllers/EmpresasController.php");
+require_once("../../../app/Controllers/MarcasController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
-use App\Controllers\EmpresasController;
+use App\Controllers\MarcasController;
 use App\Models\GeneralFunctions;
-use App\Models\Empresas;
+use App\Models\Marcas;
 
-$nameModel = "Empresa";
+$nameModel = "Marca";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
@@ -79,39 +79,34 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
-                                               style="width:100%;">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
                                                 <th>Nombre</th>
-                                                <th>NIT</th>
-                                                <th>Telefono</th>
-                                                <th>Direccion</th>
+                                                <th>Descripción</th>
+                                                <th>Proveedor</th>
                                                 <th>Estado</th>
-                                                <th>Municipio</th>
-                                                <th>Activar</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrEmpresas = EmpresasController::getAll();
-                                            if (!empty($arrEmpresas))
-                                                /* @var $arrEmpresas Empresas */
-                                                foreach ($arrEmpresas as $empresa) {
-                                                    if ($empresa->getEstado() == 'Inactivo'){
+                                            $arrMarcas = MarcasController::getAll();
+                                            if (!empty($arrMarcas))
+                                                /* @var $arrEmpresas Marcas */
+                                                foreach ($arrMarcas as $Marca) {
+                                                    if ($Marca->getEstado() == 'Inactiva'){
                                                         ?>
                                                         <tr>
-                                                            <td><?= $empresa->getId(); ?></td>
-                                                            <td><?= $empresa->getNombre(); ?></td>
-                                                            <td><?= $empresa->getNIT(); ?></td>
-                                                            <td><?= $empresa->getTelefono(); ?></td>
-                                                            <td><?= $empresa->getDireccion(); ?></td>
-                                                            <td><?= $empresa->getEstado(); ?></td>
-                                                            <td><?= $empresa->getMunicipio()->getNombre(); ?></td>
+                                                            <td><?= $Marca->getId(); ?></td>
+                                                            <td><?= $Marca->getNombre(); ?></td>
+                                                            <td><?= $Marca->getDescripcion(); ?></td>
+                                                            <td><?= $Marca->getProveedorid(); ?></td>
+                                                            <td><?= $Marca->getEstado(); ?></td>
                                                             <td>
                                                                 <div style="text-align: center;">
-                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $empresa->getId(); ?>"
+                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $Marca->getId(); ?>"
                                                                            type="button" data-toggle="tooltip" title="Restaurar"
                                                                            class="btn docs-tooltip btn-success btn-xs"><i
                                                                                 class="fas fa-undo-alt"></i></a>
@@ -126,12 +121,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tr>
                                                 <th>N°</th>
                                                 <th>Nombre</th>
-                                                <th>NIT</th>
-                                                <th>Telefono</th>
-                                                <th>Direccion</th>
+                                                <th>Descripción</th>
+                                                <th>Proveedor</th>
                                                 <th>Estado</th>
-                                                <th>Municipio</th>
-                                                <th>Activar</th>
+                                                <th>Acciones</th>
                                             </tr>
                                             </tfoot>
                                         </table>

@@ -4,6 +4,7 @@ require_once("../../partials/check_login.php");
 
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
+use App\Controllers\UsuariosController;
 
 $nameModel = "Pago"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
@@ -67,15 +68,21 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                 <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
                                       name="frmCreate<?= $nameModel ?>"
                                       action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
-
-
                                       <div class="row">
                                           <div class="col-sm-12">
                                                 <div class="form-group row">
-                                                    <label for="Trabajador_id" class="col-sm-2 col-form-label">Trabajador_id</label>
+                                                    <label for="Trabajador_id" class="col-sm-2 col-form-label">Trabajador</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="Trabajador_id" name="Trabajador_id"
-                                                               placeholder="Ingrese el id el trabajador" value="<?= $frmSession['Nombre'] ?? '' ?>">
+                                                        <?= UsuariosController::selectUsuario(
+                                                            array(
+                                                                'id' => 'Trabajador_id',
+                                                                'name' => 'Trabajador_id',
+                                                                'defaultValue' =>'', //Boyacá
+                                                                'class' => 'form-control select2bs4 select2-info',
+                                                                'where' => "estado = 'Activo' and rol = 'Mesero' or rol = 'Proveedor' or rol = 'Domiciliario' or rol = 'Cocinero'"
+                                                            )
+                                                        )
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">

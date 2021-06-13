@@ -8,7 +8,7 @@ use App\Models\GeneralFunctions;
 
 $nameModel = "Mesa"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
-$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
+$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>
@@ -70,13 +70,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                       action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
                                       <div class="row">
                                           <div class="col-sm-12">
-                                                <div class="form-group row">
-                                                    <label for="Numero" class="col-sm-2 col-form-label">Numero de mesa</label>
-                                                    <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="Numero" name="Numero"
-                                                               placeholder="Ingrese el numero de mesa" value="<?= $frmSession['Numero'] ?? '' ?>">
-                                                    </div>
-                                                </div>
                                                 <div class="form-group row">
                                                     <label for="Ubicacion" class="col-sm-2 col-form-label">Ubicación</label>
                                                     <div class="col-sm-10">

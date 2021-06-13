@@ -28,15 +28,13 @@ class ProductosController
         $this->dataProducto ['Estado'] = $_FORM['Estado']?? 'Activo';
     }
 
-
-
     public function create()
     {
         try {
-            if (!empty($this->dataProducto['id']) && !empty($this->dataProducto['Referencia']) && !Productos::productoRegistrado($this->dataProducto['id'], $this->dataProducto['Referencia'])) {
+            if (!empty($this->dataProducto['Referencia']) && !Productos::productoRegistrado($this->dataProducto['Referencia'])) {
                 $Producto = new Productos($this->dataProducto);
                 if ($Producto->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmCreateProductos']);
                     header("Location: ../../views/modules/producto/index.php?respuesta=success&mensaje=Producto Registrado");
                 }
             } else {
@@ -51,7 +49,7 @@ class ProductosController
         try {
             $prd = new Productos($this->dataProducto);
             if($prd->update()){
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmEditProductos']);
             }
             header("Location: ../../views/modules/producto/show.php?id=" . $prd->getId() . "&respuesta=success&mensaje=Producto Actualizado");
         } catch (\Exception $e) {
@@ -92,7 +90,7 @@ class ProductosController
             $ObjProducto = Productos::searchForId($id);
             $ObjProducto->setEstado("Activo");
             if ($ObjProducto->update()) {
-                header("Location: ../../views/modules/producto/restore.php");
+                header("Location: ../../views/modules/producto/restore.php?respuesta=success&mensaje=Producto restaurado");
             } else {
                 header("Location: ../../views/modules/producto/restore.php?respuesta=error&mensaje=Error al guardar");
             }
@@ -107,7 +105,7 @@ class ProductosController
             $ObjProducto = Productos::searchForId($id);
             $ObjProducto->setEstado("Inactivo");
             if ($ObjProducto->update()) {
-                header("Location: ../../views/modules/producto/index.php");
+                header("Location: ../../views/modules/producto/index.php?respuesta=success&mensaje=Producto inhabilitado");
             } else {
                 header("Location: ../../views/modules/producto/index.php?respuesta=error&mensaje=Error al guardar");
             }
@@ -142,7 +140,7 @@ class ProductosController
             /* @var $arrProductos Productos[] */
             foreach ($arrProductos as $producto)
                 if (!ProductosController::productoIsInArray($producto->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($producto != "") ? (($params['defaultValue'] == $producto->getId()) ? "selected" : "") : "") . " value='" . $producto->getId() . "'>" . $producto->getNombre() . "</option>";
+                    $htmlSelect .= "<option " . (($producto != "") ? (($params['defaultValue'] == $producto->getId()) ? "selected" : "") : "") . " value='" . $producto->getId() . "'>" . $producto->getNombre(). "</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

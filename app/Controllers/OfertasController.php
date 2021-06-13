@@ -135,7 +135,7 @@ class OfertasController
             /* @var $arrOfertas Ofertas[] */
             foreach ($arrOfertas as $oferta)
                 if (!OfertasController::ofertaIsInArray($oferta->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($oferta != "") ? (($params['defaultValue'] == $oferta->getId()) ? "selected" : "") : "") . " value='" . $oferta->getId() . "'>" . $oferta->getNombre() . $oferta->getDescripcion() . "</option>";
+                    $htmlSelect .= "<option " . (($oferta != "") ? (($params['defaultValue'] == $oferta->getId()) ? "selected" : "") : "") . " value='" . $oferta->getId() . "'>" . $oferta->getNombre() . "</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

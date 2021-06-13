@@ -69,9 +69,9 @@ class Productos extends AbstractDBConnection implements Model
         $this->setEstado($producto['Estado']?? '');
     }
 
-    public static function productoRegistrado(int $id, mixed $Referencia): bool
+    public static function productoRegistrado(mixed $Referencia): bool
     {
-        $prdTmp= Productos::search("SELECT * FROM producto WHERE id = '$id' and Referencia = '$Referencia'");
+        $prdTmp= Productos::search("SELECT * FROM producto WHERE Referencia = '$Referencia'");
         return (!empty($prdTmp)? true : false);
     }
 

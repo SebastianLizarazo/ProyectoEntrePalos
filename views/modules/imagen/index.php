@@ -1,20 +1,24 @@
 <?php
-require_once("../../../app/Controllers/PagosController.php");
+require_once("../../../app/Controllers/UsuariosController.php");
 require_once("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 
-use App\Controllers\PagosController;
+use App\Controllers\ImagenesController;
+use App\Controllers\ProductosController;
+use App\Models\Imagenes;
 use App\Models\GeneralFunctions;
-use App\Models\Pagos;
 
-$nameModel = "Pago";
-$pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+$nameModel = "Imagen";
+$pluralModel = $nameModel.'es';
+$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+$modelProducto = NULL;
+
+/* Si llega el idProducto cargar los datos del producto */
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gestión de |  <?= $pluralModel ?></title>
+    <title>Gestión de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -58,7 +62,7 @@ $pluralModel = $nameModel.'s';
                         <!-- Default box -->
                         <div class="card card-dark">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?> <?= !empty($_SESSION['idProducto']) ? 'de '.$_SESSION['idProducto']->getNombre() : '' ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
@@ -73,70 +77,91 @@ $pluralModel = $nameModel.'s';
                                     <div class="col-auto">
                                         <a role="button" href="create.php" class="btn btn-primary float-right"
                                            style="margin-right: 5px;">
-                                            <i class="fas fa-plus"></i> Crear <?= $nameModel ?>
+                                            <i class="fas fa-plus"></i> Agregar <?= $nameModel ?>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
-                                               style="width:100%;">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Trabajador</th>
-                                                <th>Fecha</th>
+                                                <th>Nombres</th>
+                                                <th>Descripción</th>
+                                                <th>Ruta</th>
                                                 <th>Estado</th>
+                                                <th>Producto</th>
+                                                <th>Oferta</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrPago = \App\Controllers\PagosController::getAll();
-                                            if (!empty($arrPago))
-                                            /* @var $arrPago Pagos */
-                                            foreach ($arrPago as $pago) {
-                                                if ($pago->getTrabajador()->getEstado("Activo")){
+                                            $arrImagenes = Imagenes::getAll();
+                                            if (!empty($arrImagenes))
+                                            /* @var $arrImagenes Imagenes[] */
+                                            foreach ($arrImagenes as $imagen) {
                                                 ?>
                                                 <tr>
-                                                    <td><?= $pago->getId(); ?></td>
-                                                    <td><?= $pago->getTrabajador()->getNombres(); ?> <?= $pago->getTrabajador()->getApellidos(); ?> </td>
-                                                    <td><?= $pago->getFecha(); ?></td>
-                                                    <td><span class="badge badge-<?= $pago->getEstado() == "Saldado" ? "success" : "danger" ?>">
-                                                            <?= $pago->getEstado() ?>
+                                                    <td><?= $imagen->getId(); ?></td>
+                                                    <td><?= !empty($imagen->getNombre()) ? $imagen->getNombre() : 'Sin Nombre' ?></td>
+                                                    <td><?= !empty($imagen->getDescripcion()) ? $imagen->getDescripcion() : 'Sin descripción' ?></td>
                                                     <td>
-                                                        <div  style="text-align: center;">
-                                                        <a href="edit.php?id=<?= $pago->getId(); ?>"
+                                                        <?php if (!empty($imagen->getOferta())){?>
+                                                            <?php if(!empty($imagen->getRuta())){ ?>
+                                                                <span class="badge badge-info" data-toggle="tooltip" data-html="true"
+                                                                      title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/ofertas/<?= $imagen->getRuta(); ?>'>">Imagen
+                                                                </span>
+                                                            <?php } ?>
+                                                        <?php }elseif(!empty($imagen->getProducto())){ ?>
+                                                                <span class="badge badge-info" data-toggle="tooltip" data-html="true"
+                                                                      title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/productos/<?= $imagen->getRuta(); ?>'>">Imagen
+                                                                </span>
+                                                        <?php }else{ ?>
+                                                                <span>No hay imagen disponible</span>
+                                                        <?php } ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $imagen->getEstado() ?>
+                                                    </td>
+                                                    <td><?= !empty($imagen->getProducto()) ? $imagen->getProducto()->getNombre() : 'No hay producto' ?></td>
+                                                    <td><?= !empty($imagen->getOferta()) ? $imagen->getOferta()->getNombre() : 'No hay oferta' ?></td>
+                                                    <td>
+                                                        <a href="edit.php?id=<?= $imagen->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
                                                            class="btn docs-tooltip btn-primary btn-xs"><i
                                                                     class="fa fa-edit"></i></a>
-                                                        <a href="show.php?id=<?= $pago->getId(); ?>"
+                                                        <a href="show.php?id=<?= $imagen->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                            <?php if ($pago->getEstado() != "Saldado") { ?>
-                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $pago->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Pagar"
-                                                                   class="btn docs-tooltip btn-success btn-xs"><i
-                                                                            class="fas fa-check-square"></i></a>
-                                                            <?php } else { ?>
-                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $pago->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Pendiente"
-                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                            class="fas fa-question-circle"></i></a>
-                                                            <?php }
-                                                             } ?>
-                                                        </div>
+                                                        <?php if ($imagen->getEstado() != "Activo") { ?>
+                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $imagen->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Activar"
+                                                               class="btn docs-tooltip btn-success btn-xs"><i
+                                                                        class="fa fa-check-square"></i></a>
+                                                        <?php } else { ?>
+                                                            <a type="button"
+                                                               href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $imagen->getId(); ?>"
+                                                               data-toggle="tooltip" title="Inactivar"
+                                                               class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                        class="fa fa-times-circle"></i></a>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
+
                                             </tbody>
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Trabajador </th>
-                                                <th>Fecha</th>
+                                                <th>Nombres</th>
+                                                <th>Descripción</th>
+                                                <th>Ruta</th>
                                                 <th>Estado</th>
+                                                <th>Producto</th>
+                                                <th>Oferta</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </tfoot>
@@ -165,6 +190,5 @@ $pluralModel = $nameModel.'s';
 <?php require('../../partials/scripts.php'); ?>
 <!-- Scripts requeridos para las datatables -->
 <?php require('../../partials/datatables_scripts.php'); ?>
-
 </body>
 </html>

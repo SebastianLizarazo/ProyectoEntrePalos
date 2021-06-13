@@ -45,7 +45,7 @@ class PagosController
     {
         try {
             $Objpago = Pagos::searchForId($id);
-            $Objpago->setEstado("Pendiente");
+            $Objpago->setEstado("Saldado");
             if ($Objpago->update()) {
                 header("Location: ../../views/modules/pago/index.php");
             } else {
@@ -59,7 +59,7 @@ class PagosController
     {
         try {
             $Objpago = Pagos::searchForId($id);
-            $Objpago->setEstado("Saldado");
+            $Objpago->setEstado("Pendiente");
             if ($Objpago->update()) {
                 header("Location: ../../views/modules/pago/index.php");
             } else {
@@ -73,6 +73,7 @@ class PagosController
     {
         try {
             $pgs = new Pagos($this->datapagos);
+            //var_dump($pgs);die();
             if($pgs->update()){
                 //unset($_SESSION['frmUsuarios']);
             }

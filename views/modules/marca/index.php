@@ -85,7 +85,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>Numero</th>
+                                                <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>Descripción</th>
                                                 <th>Proveedor</th>
@@ -99,7 +99,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             if (!empty($arrMarca))
                                             /* @var $arrMarca Marcas */
                                             foreach ($arrMarca as $Marca) {
-                                                ?>
+                                            if ($Marca->getEstado() == 'Activa'){
+                                                 ?>
+
                                                 <tr>
                                                     <td><?= $Marca->getId(); ?></td>
                                                     <td><?= $Marca->getNombre(); ?></td>
@@ -125,11 +127,13 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 
                                                     </td>
                                                 </tr>
-                                            <?php } ?>
+                                            <?php }
+                                            } ?>
+
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>Numero</th>
+                                                <th>N°</th>
                                                 <th>Nombre</th>
                                                 <th>Descripción</th>
                                                 <th>Proveedor</th>
@@ -143,7 +147,13 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto">
+                                    <a role="button" href="restore.php" class="btn btn-primary float-left"
+                                       style="margin-right: 5px;">
+                                        <i class="fas fa-undo-alt"></i>&nbsp;Restaurar <?= $pluralModel ?>
+                                    </a>
+                                </div>
                             </div>
                             <!-- /.card-footer-->
                         </div>

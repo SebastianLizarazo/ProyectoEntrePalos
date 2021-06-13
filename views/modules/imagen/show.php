@@ -1,20 +1,21 @@
 <?php
 require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require("../../../app/Controllers/PagosController.php");
+require("../../../app/Controllers/ImagenesController.php");
 
-use App\Controllers\PagosController;
+use App\Controllers\ImagenesController;
+use App\Controllers\ProductosController;
+use App\Models\Imagenes;
 use App\Models\GeneralFunctions;
-use App\Models\Pagos;
 
-$nameModel = "Pago";
-$pluralModel = $nameModel . 's';
-//$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
+$nameModel = "Imagen";
+$pluralModel = $nameModel.'es';
+$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Datos de | <?= $nameModel ?></title>
+    <title>Datos del | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -32,12 +33,11 @@ $pluralModel = $nameModel . 's';
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Información del <?= $nameModel ?></h1>
+                        <h1>Informacion del <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a
-                                        href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
+                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
                             <li class="breadcrumb-item"><a href="index.php"><?= $pluralModel ?></a></li>
                             <li class="breadcrumb-item active">Ver</li>
                         </ol>
@@ -57,13 +57,13 @@ $pluralModel = $nameModel . 's';
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $Datapago = PagosController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $Datapago Pagos */
-                                if (!empty($Datapago)) {
+                                $DataImagen = ImagenesController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataImagen Imagenes */
+                                if (!empty($DataImagen)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            del pago numero <?= $Datapago->getId() ?></h3>
+                                            de <?= $DataImagen->getNombre() ?? '' ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                         class="fas fa-expand"></i></button>
@@ -76,14 +76,44 @@ $pluralModel = $nameModel . 's';
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-user-alt"></i>&nbsp; Trabajador</strong>
-                                                        <p class="text-muted"><?= $Datapago->getTrabajador()->getNombres() ?> <?= $Datapago->getTrabajador()->getApellidos() ?></p>
+                                                <strong><i class="fas fa-signature"></i> Nombre</strong>
+                                                <p class="text-muted">
+                                                    <?= $DataImagen->getNombre() ?>
+                                                </p>
                                                 <hr>
-                                                    <strong><i class="fas fa-calendar-day"></i>&nbsp; Fecha</strong>
-                                                        <p class="text-muted"><?= $Datapago->getFecha() ?></p>
+                                                <strong><i class="fas fa-align-justify mr-1"></i> Descripción</strong>
+                                                <p class="text-muted"><?= $DataImagen->getDescripcion() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-check"></i></i>&nbsp; Estado</strong>
-                                                        <p class="text-muted"><?= $Datapago->getEstado() ?></p>
+                                                <?php if (!empty($DataImagen->getOferta())) {?>
+                                                <strong><i class="fas fa-piggy-bank"></i> Oferta</strong>
+                                                    <p class="text-muted"><?= $DataImagen->getOferta()->getNombre(); ?></p>
+                                                    <hr>
+                                                <?php }else{  ?>
+                                                <strong><i class="fas fa-hamburger"></i> Producto</strong>
+                                                <p class="text-muted"><?= $DataImagen->getProducto()->getNombre(); ?></p>
+                                                <hr>
+                                                <?php } ?>
+                                                <strong><i class="fas fa-check"></i> Estado</strong>
+                                                <p class="text-muted"><?= $DataImagen->getEstado() ?></p>
+                                                </p>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="row info-box">
+                                                    <div class="col-12">
+                                                        <h4>Foto Producto</h4>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <?php if (!empty($DataImagen->getOferta())) {?>
+                                                            <?php if(!empty($DataImagen->getRuta())){ ?>
+                                                                <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/ofertas/<?= $DataImagen->getRuta(); ?>' alt="Foto Producto">
+                                                            <?php }
+                                                        }else{?>
+                                                            <?php if(!empty($DataImagen->getRuta())){ ?>
+                                                                <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/productos/<?= $DataImagen->getRuta(); ?>' alt="Foto Producto">
+                                                            <?php }
+                                                         } ?>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -96,8 +126,7 @@ $pluralModel = $nameModel . 's';
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $Datapago->getId(); ?>"
-                                                   class="btn btn-primary float-right"
+                                                <a role="button" href="edit.php?id=<?= $DataImagen->getId(); ?>" class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>
                                                 </a>
@@ -116,10 +145,10 @@ $pluralModel = $nameModel . 's';
                                 <?php }
                             } ?>
                         </div>
-                        <!-- /.card -->
                     </div>
                 </div>
             </div>
+            <!-- /.card -->
         </section>
         <!-- /.content -->
     </div>

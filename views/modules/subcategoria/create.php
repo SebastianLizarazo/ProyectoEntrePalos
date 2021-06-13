@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 $nameModel = "SubCategoria"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
-$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
+$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,7 +53,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
                                             data-source="create.php" data-source-selector="#card-refresh-content"
@@ -85,6 +85,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     <label for="CategoriaProducto" class="col-sm-2 col-form-label">CategoriaProducto</label>
                                                     <div class="col-sm-10">
                                                         <select required id="CategoriaProducto" name="CategoriaProducto" class="custom-select">
+                                                            <option value="">Seleccione</option>
                                                             <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
                                                             <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
                                                             <option <?= ( !empty($frmSession['CategoriaProducto']) && $frmSession['CategoriaProducto'] == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
@@ -95,6 +96,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="estado" name="estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
                                                                 <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                             </select>

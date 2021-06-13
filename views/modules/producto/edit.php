@@ -4,14 +4,16 @@ require_once("../../partials/check_login.php");
 require("../../../app/Controllers/ProductosController.php");
 
 
+use App\Controllers\MarcasController;
 use App\Controllers\ProductosController;
+use App\Controllers\SubCategoriasController;
 use App\Models\GeneralFunctions;
 use App\Models\Productos;
 
 
 $nameModel = "Producto";
 $pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -81,7 +83,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
-                                            <div class="row">
+                                            <input id="id" name="id" value="<?= $DataProducto->getId(); ?>" hidden
+                                                   required="required" type="text"><div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
                                                         <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
@@ -93,7 +96,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Tamano" class="col-sm-2 col-form-label">Tamaño</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Tamano" name="Tamano"
+                                                            <input required type="number" max="9999" class="form-control" id="Tamano" name="Tamano"
                                                                    placeholder="Ingrese el tamaño del producto" value="<?= $DataProducto->getTamano() ?>">
                                                         </div>
                                                     </div>
@@ -121,21 +124,21 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="PrecioBase" class="col-sm-2 col-form-label">Precio base</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" step="0.01" class="form-control" id="PrecioBase" name="PrecioBase"
+                                                            <input required type="number" step="0.01" max="999999" class="form-control" id="PrecioBase" name="PrecioBase"
                                                                    placeholder="Ingrese el precio base del producto" value="<?= $DataProducto->getPrecioBase() ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="PrecioUnidadTrabajador" class="col-sm-2 col-form-label">Precio unidad trabajador</label>
                                                         <div class="col-sm-10">
-                                                            <input  required type="number" step="0.01" class="form-control" id="PrecioUnidadTrabajador" name="PrecioUnidadTrabajador"
+                                                            <input  required type="number" step="0.01" max="999999" class="form-control" id="PrecioUnidadTrabajador" name="PrecioUnidadTrabajador"
                                                                     placeholder="Ingrese el precio unidad trabajador" value="<?= $DataProducto->getPrecioUnidadTrabajador() ?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="PrecioUnidadVenta" class="col-sm-2 col-form-label">Precio unidad venta</label>
                                                         <div class="col-sm-10">
-                                                            <input  required type="number" step="0.01" class="form-control" id="PrecioUnidadVenta" name="PrecioUnidadVenta"
+                                                            <input  required type="number" step="0.01" max="999999" class="form-control" id="PrecioUnidadVenta" name="PrecioUnidadVenta"
                                                                     placeholder="Ingrese el precio de venta" value="<?= $DataProducto->getPrecioUnidadVenta() ?>">
                                                         </div>
                                                     </div>
@@ -157,24 +160,40 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Marca_id" class="col-sm-2 col-form-label">Marca id</label>
+                                                        <label for="Marca_id" class="col-sm-2 col-form-label">Marca</label>
                                                         <div class="col-sm-10">
-                                                            <input  required type="number"  class="form-control" id="Marca_id" name="Marca_id"
-                                                                    placeholder="Ingrese el id de la marca" value="<?= $DataProducto->getMarcaId() ?>">
+                                                            <?= MarcasController::selectMarca(
+                                                                array(
+                                                                    'id' => 'Marca_id',
+                                                                    'name' => 'Marca_id',
+                                                                    'defaultValue' => $DataProducto->getMarcaId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activa'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad producto</label>
                                                         <div class="col-sm-10">
-                                                            <input  required type="number" class="form-control" id="CantidadProducto" name="CantidadProducto"
+                                                            <input  required type="number" max="9999" class="form-control" id="CantidadProducto" name="CantidadProducto"
                                                                     placeholder="Ingrese la cantidad del producto" value="<?= $DataProducto->getCantidadProducto() ?>" >
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Subcategoria_id" class="col-sm-2 col-form-label">SubCategoria id</label>
+                                                        <label for="Subcategoria_id" class="col-sm-2 col-form-label">Sub Categoria</label>
                                                         <div class="col-sm-10">
-                                                            <input  required type="number"  class="form-control" id="Subcategoria_id" name="Subcategoria_id"
-                                                                    placeholder="Ingrese la subcategoria" value="<?= $DataProducto->getSubcategoriaId() ?>">
+                                                            <?= SubCategoriasController::selectsubcategoria(
+                                                                array(
+                                                                    'id' => 'Subcategoria_id',
+                                                                    'name' => 'Subcategoria_id',
+                                                                    'defaultValue' => $DataProducto->getSubcategoriaId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

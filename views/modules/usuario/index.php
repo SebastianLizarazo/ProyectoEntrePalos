@@ -90,10 +90,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Telefono</th>
                                                 <th>Dirección</th>
                                                 <th>Email</th>
-                                                <th>Rol</th>
-                                                <th>Estado</th>
-                                                <th>Empresa</th>
-                                                <th>Acciones</th>
+                                                <th data-priority="2">Rol</th>
+                                                <th data-priority="2">Estado</th>
+                                                <th data-priority="2">Empresa</th>
+                                                <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -102,6 +102,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             if (!empty($arrUsuarios))
                                                 /* @var $arrUsuarios Usuarios */
                                                 foreach ($arrUsuarios as $usuario) {
+                                                    if ($usuario->getEstado() == 'Activo'){
                                                     ?>
                                                     <tr>
                                                         <td><?= $usuario->getId(); ?></td>
@@ -132,8 +133,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         </div>
                                                         </td>
                                                     </tr>
-                                                <?php ?>
-                                                <?php } ?>
+                                                <?php }
+                                                        } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
@@ -156,7 +157,14 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto">
+                                    <a role="button" href="restore.php" class="btn btn-primary float-left"
+                                       style="margin-right: 5px;">
+                                        <i class="fas fa-undo-alt"></i>&nbsp;Restaurar <?= $pluralModel ?>
+                                    </a>
+                                </div>
+                            </div>
                             </div>
                             <!-- /.card-footer-->
                         </div>

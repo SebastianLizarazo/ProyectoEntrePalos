@@ -35,12 +35,12 @@ class DetallePedidos extends AbstractDBConnection implements Model
     {
         parent::__construct();
         $this->setId($detallePedido['id']?? null);
-        $this->setFacturaId($detallePedido['Factura_id']?? 0);
-        $this->setProductoId($detallePedido['Producto_id']?? null);
-        $this->setOfertasId($detallePedido['Ofertas_id']?? null);
-        $this->setCantidadProducto($detallePedido['CantidadProducto']?? null);
-        $this->setCantidadOferta($detallePedido['CantidadOferta']?? null);
-        $this->setMesaId($detallePedido['Mesa_id']?? null);
+        $this->setFacturaId($detallePedido['Factura_id'] ?? 0);
+        $this->setProductoId(!empty( $detallePedido['Producto_id']) ? $detallePedido['Producto_id'] : NULL);
+        $this->setOfertasId(!empty($detallePedido['Ofertas_id' ]) ? $detallePedido['Ofertas_id' ] : NULL);
+        $this->setCantidadProducto(!empty($detallePedido['CantidadProducto']) ? $detallePedido['CantidadProducto'] : NULL);
+        $this->setCantidadOferta(!empty($detallePedido['CantidadOferta']) ? $detallePedido['CantidadOferta'] : NULL);
+        $this->setMesaId($detallePedido['Mesa_id']?? 0);
     }
 
     public static function detallePedidoRegistrado(mixed $id, mixed $Factura_id)
@@ -83,7 +83,7 @@ class DetallePedidos extends AbstractDBConnection implements Model
     /**
      * @param int $Factura_id
      */
-    public function setFacturaId(int $Factura_id): void
+    public function setFacturaId (int $Factura_id): void
     {
         $this->Factura_id = $Factura_id;
     }
@@ -255,9 +255,9 @@ class DetallePedidos extends AbstractDBConnection implements Model
         try {
             $arrDetallePedidos = array();
             $tmp = new DetallePedidos();
-
             $tmp->Connect();
             $getrows = $tmp->getRows($query);
+
             $tmp->Disconnect();
 
             if (!empty($getrows)) {

@@ -86,7 +86,13 @@ class Mesas extends AbstractDBConnection implements Model
      */
     public function setNumero(int $Numero): void
     {
-        $this->Numero = $Numero;
+        if(empty($Numero)){
+            $this->Connect();
+            $this->Numero = ($this->countRowsTable('mesa')+1)?? $Numero;
+            $this->Disconnect();
+        }else{
+            $this->Numero = $Numero;
+        }
     }
 
     /**

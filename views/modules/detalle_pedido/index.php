@@ -7,8 +7,8 @@ use App\Controllers\DetallePedidosController;
 use App\Models\GeneralFunctions;
 use App\Models\DetallePedidos;
 
-$nameModel = "Detalle Pedidos";
-$pluralModel = $nameModel.'';
+$nameModel = "Detalle Pedido";
+$pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
@@ -83,14 +83,14 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>Numero</th>
+                                                <th>N°</th>
                                                 <th>Numero de Factura</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
-                                                <th>Cantidad Producto</th>
+                                                <th class="none">Cantidad Producto</th>
                                                 <th>Cantidad Oferta</th>
                                                 <th>Numero de mesa</th>
-                                                <th>Acciones</th>
+                                                <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -102,12 +102,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     ?>
                                                     <tr>
                                                         <td><?= $detallepedido->getId(); ?></td>
-                                                        <td><?= $detallepedido->getFacturaid(); ?></td>
-                                                        <td><?= $detallepedido->getProductoid(); ?></td>
-                                                        <td><?= $detallepedido->getofertasid(); ?></td>
-                                                        <td><?= $detallepedido->getCantidadProducto(); ?></td>
-                                                        <td><?= $detallepedido->getCantidadOferta(); ?></td>
-                                                        <td><?= $detallepedido->getMesaid(); ?></td>
+                                                        <td><?= $detallepedido->getFactura()->getNumero() ?></td>
+                                                        <td><?= $detallepedido->getProducto()?->getNombre() ?? 'Sin Producto'; ?></td>
+                                                        <td><?= $detallepedido->getOferta()?->getNombre() ?? 'Sin oferta'; ?></td>
+                                                        <td><?= $detallepedido->getCantidadProducto() ?? 0; ?></td>
+                                                        <td><?= $detallepedido->getCantidadOferta() ?? 0; ?></td>
+                                                        <td><?= $detallepedido->getMesa()?->getNumero() ?? 'Domicilio'; ?></td>
                                                         <td>
                                                             <div  style="text-align: center;">
                                                             <a href="edit.php?id=<?= $detallepedido->getId(); ?>"
@@ -126,7 +126,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>Numero</th>
+                                                <th>N°</th>
                                                 <th>Numero de Factura</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
@@ -143,7 +143,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+
                             </div>
                             <!-- /.card-footer-->
                         </div>
