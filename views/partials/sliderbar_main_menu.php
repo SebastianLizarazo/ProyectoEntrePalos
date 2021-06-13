@@ -63,6 +63,29 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Imagenes') ? 'menu-open' : '' ?>">
+                        <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Imagenes') ? 'active' : '' ?>">
+                            <i class="nav-icon far fa-images"></i>
+                            <p>
+                                Imagenes
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?= $baseURL ?>/views/modules/imagen/index.php" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Gestionar</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= $baseURL ?>/views/modules/imagen/create.php" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Registrar</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Empresas') ? 'menu-open' : '' ?>">
                         <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Empresas') ? 'active' : '' ?>">
                          <i class="nav-icon fas fa-city"></i>
@@ -109,6 +132,29 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'DetallePedidos') ? 'menu-open' : '' ?>">
+                        <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'DetallePedidos') ? 'active' : '' ?>">
+                            <i class="nav-icon fa fa-table"></i>
+                            <p>
+                                Detalle Pedidos
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?= $baseURL ?>/views/modules/detalle_pedido/index.php" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Gestionar</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= $baseURL ?>/views/modules/detalle_pedido/create.php" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Registrar</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                    <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Productos') ? 'menu-open' : '' ?>">
                         <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Productos') ? 'active' : '' ?>">
                             <i class="nav-icon fas fa-hamburger"></i>
@@ -132,23 +178,46 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Imagenes') ? 'menu-open' : '' ?>">
-                        <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Imagenes') ? 'active' : '' ?>">
-                            <i class="nav-icon far fa-images"></i>
+                    <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Marcas') ? 'menu-open' : '' ?>">
+                        <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Marcas') ? 'active' : '' ?>">
+                            <i class="nav-icon far fa-registered"></i>
                             <p>
-                                Imagenes
+                                Marcas
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?= $baseURL ?>/views/modules/imagen/index.php" class="nav-link">
+                                <a href="<?= $baseURL ?>/views/modules/marca/index.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Gestionar</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?= $baseURL ?>/views/modules/imagen/create.php" class="nav-link">
+                                <a href="<?= $baseURL ?>/views/modules/marca/create.php" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Registrar</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Subcategorias') ? 'menu-open' : '' ?>">
+                        <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Subcategorias') ? 'active' : '' ?>">
+                            <i class="nav-icon fa fa-sitemap"></i>
+                            <p>
+                                Subcategoria
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?= $baseURL ?>/views/modules/subcategoria/index.php" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Gestionar</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= $baseURL ?>/views/modules/subcategoria/create.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Registrar</p>
                                 </a>
@@ -194,29 +263,6 @@
                             </li>
                             <li class="nav-item">
                                 <a href="<?= $baseURL ?>/views/modules/detalle_oferta/create.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Registrar</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'ConsumoTrabajadores') ? 'menu-open' : '' ?>">
-                        <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'ConsumoTrabajadores') ? 'active' : '' ?>">
-                            <i class="nav-icon fas fa-hand-holding-usd"></i>
-                            <p>
-                                Consumo trabajador
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?= $baseURL ?>/views/modules/consumo_trabajador/index.php" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Gestionar</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?= $baseURL ?>/views/modules/consumo_trabajador/create.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Registrar</p>
                                 </a>
@@ -269,75 +315,30 @@
                             </li>
                         </ul>
                     </li>
-                  <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Marcas') ? 'menu-open' : '' ?>">
-                      <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Marcas') ? 'active' : '' ?>">
-                          <i class="nav-icon far fa-registered"></i>
-                          <p>
-                              Marcas
-                              <i class="fas fa-angle-left right"></i>
-                          </p>
-                      </a>
-                      <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                              <a href="<?= $baseURL ?>/views/modules/marca/index.php" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Gestionar</p>
-                              </a>
-                          </li>
-                          <li class="nav-item">
-                              <a href="<?= $baseURL ?>/views/modules/marca/create.php" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Registrar</p>
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'Subcategorias') ? 'menu-open' : '' ?>">
-                      <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'Subcategorias') ? 'active' : '' ?>">
-                          <i class="nav-icon fa fa-sitemap"></i>
-                          <p>
-                              Subcategoria
-                              <i class="fas fa-angle-left right"></i>
-                          </p>
-                      </a>
-                      <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                              <a href="<?= $baseURL ?>/views/modules/subcategoria/index.php" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Gestionar</p>
-                              </a>
-                          </li>
-                          <li class="nav-item">
-                              <a href="<?= $baseURL ?>/views/modules/subcategoria/create.php" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Registrar</p>
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
-                  <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'DetallePedidos') ? 'menu-open' : '' ?>">
-                      <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'DetallePedidos') ? 'active' : '' ?>">
-                          <i class="nav-icon fa fa-table"></i>
-                          <p>
-                              Detalle Pedidos
-                              <i class="fas fa-angle-left right"></i>
-                          </p>
-                      </a>
-                      <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                              <a href="<?= $baseURL ?>/views/modules/detalle_pedido/index.php" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Gestionar</p>
-                              </a>
-                          </li>
-                          <li class="nav-item">
-                              <a href="<?= $baseURL ?>/views/modules/detalle_pedido/create.php" class="nav-link">
-                                  <i class="far fa-circle nav-icon"></i>
-                                  <p>Registrar</p>
-                              </a>
-                          </li>
-                      </ul>
-                  </li>                      
+                    <li class="nav-item has-treeview <?= strpos($_SERVER['REQUEST_URI'],'ConsumoTrabajadores') ? 'menu-open' : '' ?>">
+                        <a href="#" class="nav-link <?= strpos($_SERVER['REQUEST_URI'],'ConsumoTrabajadores') ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-hand-holding-usd"></i>
+                            <p>
+                                Consumo trabajador
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?= $baseURL ?>/views/modules/consumo_trabajador/index.php" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Gestionar</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= $baseURL ?>/views/modules/consumo_trabajador/create.php" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Registrar</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php } ?>
             </ul>
 
         </nav>

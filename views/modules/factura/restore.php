@@ -145,7 +145,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+
                             </div>
                             <!-- /.card-footer-->
                         </div>

@@ -105,11 +105,11 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
+                                                        <label for="Telefono" class="col-sm-2 col-form-label">Teléfono</label>
                                                         <div class="col-sm-10">
                                                             <input required type="number" min="1111111111" max="9999999999" class="form-control" id="Telefono"
                                                                    name="Telefono" value="<?= $DataEmpresa->getTelefono(); ?>"
-                                                                   placeholder="Ingrese el telefono de la empresa">
+                                                                   placeholder="Ingrese el teléfono de la empresa">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -117,13 +117,14 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                         <div class="col-sm-10">
                                                             <input required type="text" class="form-control" id="Direccion"
                                                                    name="Direccion" value="<?= $DataEmpresa->getDireccion(); ?>"
-                                                                   placeholder="Ingrese la direcciopn de la empresa">
+                                                                   placeholder="Ingrese la dirección de la empresa">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Estado" name="Estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ($DataEmpresa->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
                                                                 <option <?= ($DataEmpresa->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                             </select>
