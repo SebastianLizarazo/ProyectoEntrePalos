@@ -136,7 +136,7 @@ class EmpresasController
             /* @var $arrEmpresas Empresas[] */
             foreach ($arrEmpresas as $empresa)
                 if (!EmpresasController::empresaIsInArray($empresa->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($empresa != "") ? (($params['defaultValue'] == $empresa->getId()) ? "selected" : "") : "") . " value='" . $empresa->getId() . "'>" ."La empresa: ". $empresa->getNombre() . " con estado: " . $empresa->getEstado() . "</option>";
+                    $htmlSelect .= "<option " . (($empresa != "") ? (($params['defaultValue'] == $empresa->getId()) ? "selected" : "") : "") . " value='" . $empresa->getId() . "'>". $empresa->getNombre(). " - " . $empresa->getEstado(). "</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

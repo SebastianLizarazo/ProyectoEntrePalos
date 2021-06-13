@@ -3,10 +3,11 @@ require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 require("../../../app/Controllers/PagosController.php");
 
-
+use App\Controllers\UsuariosController;
 use App\Controllers\PagosController;
 use App\Models\GeneralFunctions;
 use App\Models\Pagos;
+use Carbon\Carbon;
 
 
 $nameModel = "Pago";
@@ -86,25 +87,31 @@ $pluralModel = $nameModel.'s';
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Trabajador_id" class="col-sm-2 col-form-label">Trabajador id</label>
+                                                        <label for="Trabajador_id" class="col-sm-2 col-form-label">Trabajador</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Trabajador_id"
-                                                                   name="Trabajador_id" value="<?= $Datapago->getTrabajadorId(); ?>"
-                                                                   placeholder="Ingrese el id del trabajador">
+                                                            <?= UsuariosController::selectUsuario(
+                                                                array(
+                                                                    'id' => 'Trabajador_id',
+                                                                    'name' => 'Trabajador_id',
+                                                                    'defaultValue' =>$Datapago->getTrabajadorId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo' and rol = 'Mesero' or rol = 'Proveedor' or rol = 'Domiciliario' or rol = 'Cocinero'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="date" class="form-control" id="Fecha"
-                                                                   name="Fecha" value="<?= $Datapago->getFecha(); ?>"
-                                                                   placeholder="Ingrese la echa del pago">
+                                                            <input required type="date" max="<?= Carbon::now()->format('Y-m-d')?>" class="col-sm-3 form-control" id="Fecha" name="Fecha"
+                                                                   value="<?= $Datapago->getFecha()->toDateString()?>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="estado" class="col-sm-2 col-form-label">Estado</label>
+                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="estado" name="estado" class="custom-select">
+                                                            <select required id="Estado" name="Estado" class="custom-select">
                                                                 <option <?= ($Datapago->getEstado() == "Pendiente") ? "selected" : ""; ?> value="Pendiente">Pendiente</option>
                                                                 <option <?= ($Datapago->getEstado() == "Saldado") ? "selected" : ""; ?> value="Saldado">Saldado</option>
                                                             </select>

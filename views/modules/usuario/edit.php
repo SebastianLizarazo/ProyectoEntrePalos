@@ -5,6 +5,7 @@ require_once("../../../app/Controllers/UsuariosController.php");
 
 
 use App\Controllers\UsuariosController;
+use App\Controllers\EmpresasController;
 use App\Models\GeneralFunctions;
 use App\Models\Usuarios;
 
@@ -91,7 +92,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Cedula" class="col-sm-2 col-form-label">Cedula</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Cedula"
+                                                            <input required type="number" min="1111111" max="9999999999" class="form-control" id="Cedula"
                                                                    name="Cedula" value="<?= $DataUsuario->getCedula(); ?>"
                                                                    placeholder="Ingrese la cedula del usuario">
                                                         </div>
@@ -115,7 +116,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Telefono"
+                                                            <input required type="number" min="111111111" max="9999999999" class="form-control" id="Telefono"
                                                                    name="Telefono" value="<?= $DataUsuario->getTelefono(); ?>"
                                                                    placeholder="Ingrese el telefono del usuario">
                                                         </div>
@@ -137,11 +138,11 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Contraseña" class="col-sm-2 col-form-label">Contraseña</label>
+                                                        <label for="Contrasena" class="col-sm-2 col-form-label">Contraseña</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="password" class="form-control" id="Contraseña"
-                                                                   name="Contraseña" value="<?= $DataUsuario->getContrasena(); ?>"
-                                                                   placeholder="Ingrese la contraseña del usuario">
+                                                            <input required type="password" minlength="8" class="form-control" id="Contrasena"
+                                                                   name="Contrasena"
+                                                                   placeholder="Ingrese la nueva contraseña del usuario">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -166,11 +167,18 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Empresa" class="col-sm-2 col-form-label">Empresa</label>
+                                                        <label for="Empresa_id" class="col-sm-2 col-form-label">Empresa</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Empresa"
-                                                                   name="Empresa" value="<?= $DataUsuario->getEmpresaId(); ?>"
-                                                                   placeholder="Ingrese el id de la empres">
+                                                            <?= EmpresasController::selectEmpresa(
+                                                                array(
+                                                                    'id' => 'Empresa_id',
+                                                                    'name' => 'Empresa_id',
+                                                                    'defaultValue' =>$DataUsuario->getEmpresaId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -67,9 +67,9 @@ class Usuarios extends AbstractDBConnection implements Model
     }
 
 
-    public static function usuarioRegistrado(mixed $Cedula, mixed $Nombres): bool
+    public static function usuarioRegistrado(mixed $Cedula): bool
     {
-        $usuTmp = Usuarios::search("SELECT * FROM usuario WHERE Cedula = '$Cedula' and Nombres = '$Nombres'");
+        $usuTmp = Usuarios::search("SELECT * FROM usuario WHERE Cedula = '$Cedula'");
         return (!empty($usuTmp) ? true : false);
     }
 

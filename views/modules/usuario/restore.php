@@ -3,9 +3,9 @@ require_once("../../../app/Controllers/UsuariosController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
-use App\Controllers\UsuariosController;
+use App\Controllers\EmpresasController;
 use App\Models\GeneralFunctions;
-use App\Models\Usuarios;
+use App\Models\Empresas;
 
 $nameModel = "Usuario";
 $pluralModel = $nameModel.'s';
@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gestionar | <?= $pluralModel ?></title>
+    <title>Papelera de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -36,7 +36,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Pagina Principal</h1>
+                        <h1>Papelera</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -58,10 +58,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                         <!-- Default box -->
                         <div class="card card-dark">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-trash-restore"></i> &nbsp; Restaurar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                                                class="fas fa-expand"></i></button>
+                                            class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                             data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
@@ -71,16 +71,15 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 <div class="row">
                                     <div class="col-auto mr-auto"></div>
                                     <div class="col-auto">
-                                        <a role="button" href="create.php" class="btn btn-primary float-right"
+                                        <a role="button" href="index.php" class="btn btn-primary float-right"
                                            style="margin-right: 5px;">
-                                            <i class="fas fa-plus"></i> Crear <?= $nameModel ?>
+                                            <i class="fas fa-backward"></i> Volver
                                         </a>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
-                                               style="width:100%;">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
@@ -90,21 +89,21 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Telefono</th>
                                                 <th>Dirección</th>
                                                 <th>Email</th>
-                                                <th data-priority="2">Rol</th>
-                                                <th data-priority="2">Estado</th>
-                                                <th data-priority="2">Empresa</th>
-                                                <th data-priority="1">Acciones</th>
+                                                <th>Rol</th>
+                                                <th>Estado</th>
+                                                <th>Empresa</th>
+                                                <th>Activar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrUsuarios = UsuariosController::getAll();
+                                            $arrUsuarios = \App\Controllers\UsuariosController::getAll();
                                             if (!empty($arrUsuarios))
-                                                /* @var $arrUsuarios Usuarios */
+                                                /* @var $arrUsuarios \App\Models\Usuarios */
                                                 foreach ($arrUsuarios as $usuario) {
-                                                    if ($usuario->getEstado() == 'Activo'){
-                                                    ?>
-                                                    <tr>
+                                                    if ($usuario->getEstado() == 'Inactivo'){
+                                                        ?>
+                                                        <tr>
                                                         <td><?= $usuario->getId(); ?></td>
                                                         <td><?= $usuario->getCedula(); ?></td>
                                                         <td><?= $usuario->getNombres(); ?></td>
@@ -116,25 +115,17 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <td><?= $usuario->getEstado(); ?></td>
                                                         <td><?= $usuario->getEmpresas()->getNombre(); ?></td>
                                                         <td>
-                                                            <div  style="text-align: center;">
-                                                            <a href="edit.php?id=<?= $usuario->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Actualizar"
-                                                               class="btn docs-tooltip btn-primary btn-xs"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="show.php?id=<?= $usuario->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Ver"
-                                                               class="btn docs-tooltip btn-warning btn-xs"><i
-                                                                    class="fa fa-eye"></i></a>
-                                                            <?php ($usuario->getEstado() != "Inactivar")  ?>
-                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $usuario->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Inactivar"
-                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                            class="far fa-trash-alt"></i></a>
-                                                        </div>
-                                                        </td>
-                                                    </tr>
-                                                <?php }
-                                                        } ?>
+                                                                <div style="text-align: center;">
+                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $usuario->getId(); ?>"
+                                                                           type="button" data-toggle="tooltip" title="Restaurar"
+                                                                           class="btn docs-tooltip btn-success btn-xs"><i
+                                                                                class="fas fa-undo-alt"></i></a>
+                                                                    <?php } ?>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <?php
+                                                } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
@@ -148,7 +139,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Rol</th>
                                                 <th>Estado</th>
                                                 <th>Empresa</th>
-                                                <th>Acciones</th>
+                                                <th>Activar</th>
                                             </tr>
                                             </tfoot>
                                         </table>
@@ -157,14 +148,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <div class="col-auto mr-auto"></div>
-                                <div class="col-auto">
-                                    <a role="button" href="restore.php" class="btn btn-primary float-left"
-                                       style="margin-right: 5px;">
-                                        <i class="fas fa-undo-alt"></i>&nbsp;Restaurar <?= $pluralModel ?>
-                                    </a>
-                                </div>
-                            </div>
+                                Pie de Página.
                             </div>
                             <!-- /.card-footer-->
                         </div>
