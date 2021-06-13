@@ -105,6 +105,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? NULL;
                                                         <div class="col-sm-10">
                                                             <?= ProductosController::selectProducto(
                                                                 array (
+                                                                    'isRequired' => false,
                                                                     'id' => 'Producto_id',
                                                                     'name' => 'Producto_id',
                                                                     'defaultValue' => $DataImagen->getProductoId() ?? '',
@@ -120,6 +121,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? NULL;
                                                         <div class="col-sm-10">
                                                             <?= OfertasController::selectOferta(
                                                                 array (
+                                                                    'isRequired' => false,
                                                                     'id' => 'Oferta_id',
                                                                     'name' => 'Oferta_id',
                                                                     'defaultValue' => $DataImagen->getOfertaId(),
@@ -149,21 +151,28 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? NULL;
                                                     <div class="info-box">
                                                         <div class="imageupload panel panel-primary">
                                                             <div class="panel-heading clearfix">
-                                                                <h5 class="panel-title pull-left">Foto de Perfil</h5>
+                                                                <h5 class="panel-title pull-left">Imagen</h5>
                                                             </div>
                                                             <div class="file-tab panel-body">
                                                                 <label class="btn btn-default btn-file">
                                                                     <span>Seleccionar</span>
                                                                     <!-- The file is stored here. -->
-                                                                    <input value="<?= $DataImagen->getRuta(); ?>" type="file" id="foto" name="foto">
+                                                                    <input value="<?= $DataImagen->getRuta(); ?>" type="file" id="Imagen" name="Imagen">
                                                                 </label>
                                                                 <button type="button" class="btn btn-default">Eliminar</button>
                                                             </div>
                                                             <div class="panel-footer">
+                                                            <?php if (!empty($DataImagen->getOferta())){?>
+                                                                <?php if(!empty($DataImagen->getRuta())){?>
+                                                                    <img id="thumbFoto" src="../../public/uploadFiles/photos/ofertas/<?= $DataImagen->getRuta(); ?>"
+                                                                         alt="Sin imagene de " class="thumbnail" style="max-width: 250px; max-height: 250px">
+                                                                <?php } ?>
+                                                            <?php }else{ ?>
                                                                 <?php if(!empty($DataImagen->getRuta())){?>
                                                                     <img id="thumbFoto" src="../../public/uploadFiles/photos/productos/<?= $DataImagen->getRuta(); ?>"
                                                                          alt="Sin imagene de " class="thumbnail" style="max-width: 250px; max-height: 250px">
                                                                 <?php } ?>
+                                                            <?php } ?>
                                                                 <input type="hidden" name="nameFoto" id="nameFoto" value="<?= $DataImagen->getRuta() ?? '' ?>">
                                                             </div>
                                                         </div>

@@ -98,7 +98,7 @@ $modelProducto = NULL;
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrImagenes = array();
+                                            $arrImagenes = Imagenes::getAll();
                                             if (!empty($arrImagenes))
                                             /* @var $arrImagenes Imagenes[] */
                                             foreach ($arrImagenes as $imagen) {
@@ -114,10 +114,12 @@ $modelProducto = NULL;
                                                                       title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/ofertas/<?= $imagen->getRuta(); ?>'>">Imagen
                                                                 </span>
                                                             <?php } ?>
-                                                        <?php }else{ ?>
+                                                        <?php }elseif(!empty($imagen->getProducto())){ ?>
                                                                 <span class="badge badge-info" data-toggle="tooltip" data-html="true"
                                                                       title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/productos/<?= $imagen->getRuta(); ?>'>">Imagen
                                                                 </span>
+                                                        <?php }else{ ?>
+                                                                <span>No hay imagen disponible</span>
                                                         <?php } ?>
                                                     </td>
                                                     <td>

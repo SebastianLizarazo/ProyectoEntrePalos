@@ -95,7 +95,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
                                                             'isRequired' => false,
                                                             'id' => 'Producto_id',
                                                             'name' => 'Producto_id',
-                                                            'defaultValue' => ,
+                                                            'defaultValue' => $frmSession['Producto_id'] ?? '',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Activo'"
                                                         )
@@ -108,9 +108,10 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
                                                 <div class="col-sm-10">
                                                     <?= OfertasController::selectOferta(
                                                         array (
+                                                            'isRequired' => false,
                                                             'id' => 'Oferta_id',
                                                             'name' => 'Oferta_id',
-                                                            'defaultValue' => !empty($_SESSION['idProducto']) ? $_SESSION['idProducto']->getId() : '',
+                                                            'defaultValue' => $frmSession['Oferta_id'] ?? '',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Disponible'"
                                                         )

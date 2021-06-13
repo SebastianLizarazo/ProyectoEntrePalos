@@ -29,15 +29,22 @@ class ImagenesController
      {
          try {
              if (!empty($withFiles)) {
-                 $imagenProducto = $withFiles['Imagen'];
-                 $resultUpload = GeneralFunctions::subirArchivo($imagenProducto, "views/public/uploadFiles/photos/productos/");
-
+                 if (!empty($this->dataImagen['Producto_id'])) {
+                     $imagenProducto = $withFiles['Imagen'];
+                     $resultUpload = GeneralFunctions::subirArchivo($imagenProducto, "views/public/uploadFiles/photos/productos/");
+                 }elseif (!empty($this->dataImagen['Oferta_id'])){
+                     $imagenOferta = $withFiles['Imagen'];
+                     $resultUpload = GeneralFunctions::subirArchivo($imagenOferta, "views/public/uploadFiles/photos/ofertas/");
+                 }else{
+                     GeneralFunctions::logFile('Error de asignación de imagen');
+                     header("Location: ../../views/modules/imagen/create.php?respuesta=error&mensaje=Error de asignación de la imagen");
+                 }
                  if ($resultUpload != false){
                      $this->dataImagen['Ruta'] = $resultUpload;
                      $Imagen = new Imagenes($this->dataImagen);
                      if ($Imagen->insert()){
                          unset($_SESSION['frmCreateImagenes']);
-                         header("Location: ../../views/modules/imagen/index.php?respuesta=success&mensaje=Foto Creada Correctamente");
+                         header("Location: ../../views/modules/imagen/index.php?respuesta=success&mensaje=Imagen Creada Correctamente");
                      }
                  }
              }else{
@@ -55,9 +62,11 @@ class ImagenesController
              if (!empty($withFiles)) {
                  $rutaImagen = $withFiles['Imagen'];
                  if ($rutaImagen['error'] == 0) { //Si la foto se selecciono correctamente
-                     $resultUpload = GeneralFunctions::subirArchivo($rutaImagen, "views/public/uploadFiles/photos/productos/");
+                     $resultUpload = GeneralFunctions::subirArchivo($rutaImagen,
+                         "views/public/uploadFiles/photos/".(!empty($this->dataImagen['Producto_id'])) ? 'productos' : 'ofertas'."/");
                      if ($resultUpload != false) {
-                         GeneralFunctions::eliminarArchivo("views/public/uploadFiles/photos/productos/" . $this->dataImagen['Ruta']);
+                         GeneralFunctions::eliminarArchivo(
+                             "views/public/uploadFiles/photos/".(!empty($this->dataImagen['Producto_id'])) ? 'productos' : 'ofertas'."/" . $this->dataImagen['Ruta']);
                          $this->dataImagen['Ruta'] = $resultUpload;
                      }
                  }
