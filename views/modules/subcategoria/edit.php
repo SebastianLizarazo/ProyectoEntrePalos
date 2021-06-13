@@ -9,9 +9,9 @@ use App\Models\GeneralFunctions;
 use App\Models\Subcategorias;
 
 
-$nameModel = "Subcategoria";
+$nameModel = "SubCategoria";
 $pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
                                             data-source="create.php" data-source-selector="#card-refresh-content"
@@ -100,9 +100,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <label for="CategoriaProducto" class="col-sm-2 col-form-label">CategoriaProducto</label>
                                                         <div class="col-sm-10">
                                                             <select required id="CategoriaProducto" name="CategoriaProducto" class="custom-select">
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
-                                                                <option <?= ( !empty($frmSession['Categoria Producto']) && $frmSession['CategoriaProducto'] == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
+                                                                <option value="">Seleccione</option>
+                                                                <option <?= ( $DataSubcategoria->getCategoriaProducto() == "Comida") ? "selected" : ""; ?> value="Comida">Comida</option>
+                                                                <option <?= ( $DataSubcategoria->getCategoriaProducto() == "Bebida") ? "selected" : ""; ?> value="Bebida">Bebida</option>
+                                                                <option <?= ( $DataSubcategoria->getCategoriaProducto() == "Postre") ? "selected" : ""; ?> value="Postre">Postre</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -112,6 +113,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Estado" name="Estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ($DataSubcategoria->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
                                                                 <option <?= ($DataSubcategoria->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                             </select>

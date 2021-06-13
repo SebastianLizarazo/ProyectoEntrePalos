@@ -5,13 +5,17 @@ require_once("../../../app/Controllers/DetallePedidosController.php");
 
 
 use App\Controllers\DetallePedidosController;
+use App\Controllers\FacturasController;
+use App\Controllers\MesasController;
+use App\Controllers\OfertasController;
+use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
 use App\Models\DetallePedidos;
 
 
-$nameModel = "Detalle Pedidos";
-$pluralModel = $nameModel.'';
-$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$nameModel = "DetallePedido";
+$pluralModel = $nameModel.'s';
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +63,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
 
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
@@ -81,7 +85,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
-                                              action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
+                                              action="../../../app/Controllers/MainController.php?controller=<?= $nameModel ?>&action=edit">
                                             <input id="id" name="id" value="<?= $DataDetallepedido->getId(); ?>" hidden
                                                    required="required" type="text">
                                             <div class="row">
@@ -89,31 +93,53 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Factura_id" class="col-sm-2 col-form-label">Numero de factura</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Factura_id"
-                                                                   name="Nombre" value="<?= $DataDetallepedido->getFacturaId(); ?>"
-                                                                   placeholder="Ingrese el ID de la factura">
+                                                            <?=FacturasController::selectFactura(
+                                                                array(
+                                                                    'id' => 'Factura_id',
+                                                                    'name' => 'Factura_id',
+                                                                    'defaultValue' => '1',
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="Producto_id" class="col-sm-2 col-form-label">Producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Producto_id"
-                                                                   name="Producto_id" value="<?= $DataDetallepedido->getProductoid(); ?>"
-                                                                   placeholder="Ingrese el ID del producto">
+                                                            <?= ProductosController::selectProducto(
+                                                                array(
+                                                                    'isRequired' => false,
+                                                                    'id' => 'Producto_id',
+                                                                    'name' => 'Producto_id',
+                                                                    'defaultValue' => '1',
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="Ofertas_id" class="col-sm-2 col-form-label">Oferta</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Ofertas_id"
-                                                                   name="Ofertas_id" value="<?= $DataDetallepedido->getOfertasid(); ?>"
-                                                                   placeholder="Ingrese el ID de las ofertas">
+                                                            <?= OfertasController::selectOferta(
+                                                                array(
+                                                                    'isRequired' => false,
+                                                                    'id' => 'Ofertas_id',
+                                                                    'name' => 'Ofertas_id',
+                                                                    'defaultValue' => '1',
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Disponible'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad Producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="CantidadProducto"
+                                                            <input  type="text" max="1000" class="form-control" id="CantidadProducto"
                                                                    name="CantidadProducto" value="<?= $DataDetallepedido->getCantidadProducto(); ?>"
                                                                    placeholder="Ingrese la cantidad del producto">
                                                         </div>
@@ -121,8 +147,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="CantidadOferta" class="col-sm-2 col-form-label">Cantidad Oferta</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="CantidadOferta"
-                                                                   name="CantidadOferta" value="<?= $DataDetallepedido->getCantidadProducto(); ?>"
+                                                            <input  type="number" max="500" class="form-control" id="CantidadOferta"
+                                                                   name="CantidadOferta" value="<?= $DataDetallepedido->getCantidadOferta(); ?>"
                                                                    placeholder="Ingrese la cantidad de oferta">
                                                         </div>
                                                     </div>
@@ -130,9 +156,17 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Mesa_id" class="col-sm-2 col-form-label">Numero de mesa</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Mesa_id"
-                                                                   name="Mesa_id" value="<?= $DataDetallepedido->getMesaid(); ?>"
-                                                                   placeholder="Ingrese el ID de la mesa">
+                                                            <?= MesasController::selectMesa(
+                                                                array(
+                                                                    'isRequired' => false,
+                                                                    'id' => 'Mesa_id',
+                                                                    'name' => 'Mesa_id',
+                                                                    'defaultValue' => '1',
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "Ocupacion = 'Disponible'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </div>

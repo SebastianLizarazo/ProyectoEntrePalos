@@ -5,13 +5,14 @@ require_once("../../../app/Controllers/MarcasController.php");
 
 
 use App\Controllers\MarcasController;
+use App\Controllers\UsuariosController;
 use App\Models\GeneralFunctions;
 use App\Models\Marcas;
 
 
 $nameModel = "Marca";
 $pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +60,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
 
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
@@ -105,9 +106,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Proveedor_id" class="col-sm-2 col-form-label">Proveedor</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Proveedor_id"
-                                                                   name="Proveedor_id" value="<?= $DataMarca->getProveedorId(); ?>"
-                                                                   placeholder="Ingrese el id del proveedor">
+                                                            <?= UsuariosController::selectUsuario(
+                                                                array(
+                                                                    'id' => 'Proveedor_id',
+                                                                    'name' => 'Proveedor_id',
+                                                                    'defaultValue' => $DataMarca->getProveedorId(),
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo' and Rol = 'Proveedor'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
                                                     </div>
 
@@ -115,6 +123,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Estado" name="Estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ($DataMarca->getEstado() == "Activa") ? "selected" : ""; ?> value="Activa">Activa</option>
                                                                 <option <?= ($DataMarca->getEstado() == "Inactiva") ? "selected" : ""; ?> value="Inactiva">Inactiva</option>
                                                             </select>

@@ -1,0 +1,470 @@
+[2021-06-09T21:30:15.688492+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T02:30:13.708231+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T02:30:21.898177+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T02:30:24.947596+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T02:31:42.859554+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T02:31:49.508113+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T12:44:27.396811+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:04:12.306492+00:00] General.ERROR: Exception  
+[2021-06-10T16:04:12.307662+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-10T16:04:12.307749+00:00] General.ERROR: Line: 102  
+[2021-06-10T16:04:12.307817+00:00] General.ERROR: Mensaje: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Ocupación' in 'where clause'  
+[2021-06-10T16:04:12.308357+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 102
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 229
+            [function] => getRows
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa WHERE  Ocupación = 'Disponible'
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 124
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa WHERE  Ocupación = 'Disponible'
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\detalle_pedido\edit.php
+            [line] => 159
+            [function] => selectMesa
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => Mesa_id
+                            [name] => Mesa_id
+                            [defaultValue] => 1
+                            [class] => form-control select2bs4 select2-info
+                            [where] => Ocupación = 'Disponible'
+                            [isMultiple] => 
+                            [isRequired] => 1
+                            [arrExcluir] => Array
+                                (
+                                )
+
+                            [request] => html
+                        )
+
+                )
+
+        )
+
+)
+  
+[2021-06-10T16:07:19.907858+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:07:35.818496+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:28:21.118790+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:31:30.693993+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:31:36.178830+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:31:44.765374+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:34:37.420152+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:34:59.212958+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-10T16:36:06.799341+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-11T00:50:21.392037+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-11T00:57:11.413923+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidossController no fue encontrada "} 
+[2021-06-11T01:20:54.099331+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidossController no fue encontrada "} 
+[2021-06-11T01:27:29.973130+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-11T01:32:36.920860+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-11T13:03:42.748956+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidossController no fue encontrada "} 
+[2021-06-11T13:08:09.415338+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\Detalle PedidosController no fue encontrada "} 
+[2021-06-11T13:08:57.458038+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetallePedidossController no fue encontrada "} 
+[2021-06-11T13:33:52.460996+00:00] General.ERROR: Exception  
+[2021-06-11T13:33:52.461541+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-11T13:33:52.461644+00:00] General.ERROR: Line: 128  
+[2021-06-11T13:33:52.461739+00:00] General.ERROR: Mensaje: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'CantidadProducto' at row 1  
+[2021-06-11T13:33:52.461840+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 219
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE detallepedido SET
+            Factura_id = :Factura_id, Producto_id = :Producto_id, Ofertas_id = :Ofertas_id,
+            CantidadProducto = :CantidadProducto, CantidadOferta = :CantidadOferta, 
+            Mesa_id = :Mesa_id WHERE id =:id 
+                    [1] => Array
+                        (
+                            [:id] => 9
+                            [:Factura_id] => 1
+                            [:Producto_id] => 1
+                            [:Ofertas_id] => 4
+                            [:CantidadProducto] => 666666
+                            [:CantidadOferta] => 66
+                            [:Mesa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 245
+            [function] => save
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE detallepedido SET
+            Factura_id = :Factura_id, Producto_id = :Producto_id, Ofertas_id = :Ofertas_id,
+            CantidadProducto = :CantidadProducto, CantidadOferta = :CantidadOferta, 
+            Mesa_id = :Mesa_id WHERE id =:id 
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\DetallePedidosController.php
+            [line] => 50
+            [function] => update
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => edit
+            [class] => App\Controllers\DetallePedidosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-11T13:34:26.061897+00:00] General.ERROR: Exception  
+[2021-06-11T13:34:26.062171+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-11T13:34:26.062233+00:00] General.ERROR: Line: 128  
+[2021-06-11T13:34:26.062287+00:00] General.ERROR: Mensaje: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'CantidadProducto' at row 1  
+[2021-06-11T13:34:26.062346+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 219
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE detallepedido SET
+            Factura_id = :Factura_id, Producto_id = :Producto_id, Ofertas_id = :Ofertas_id,
+            CantidadProducto = :CantidadProducto, CantidadOferta = :CantidadOferta, 
+            Mesa_id = :Mesa_id WHERE id =:id 
+                    [1] => Array
+                        (
+                            [:id] => 9
+                            [:Factura_id] => 1
+                            [:Producto_id] => 1
+                            [:Ofertas_id] => 2
+                            [:CantidadProducto] => 77777
+                            [:CantidadOferta] => 10
+                            [:Mesa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 245
+            [function] => save
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE detallepedido SET
+            Factura_id = :Factura_id, Producto_id = :Producto_id, Ofertas_id = :Ofertas_id,
+            CantidadProducto = :CantidadProducto, CantidadOferta = :CantidadOferta, 
+            Mesa_id = :Mesa_id WHERE id =:id 
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\DetallePedidosController.php
+            [line] => 50
+            [function] => update
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => edit
+            [class] => App\Controllers\DetallePedidosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-12T15:25:05.200129+00:00] General.ERROR: Exception  
+[2021-06-12T15:25:05.201400+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-12T15:25:05.201478+00:00] General.ERROR: Line: 128  
+[2021-06-12T15:25:05.201541+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`detallepedido`, CONSTRAINT `fk_DetallePedido_Ofertas1` FOREIGN KEY (`Ofertas_id`) REFERENCES `oferta` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-12T15:25:05.201614+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 219
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO detallepedido VALUES (
+              :id, :Factura_id, :Producto_id, :Ofertas_id, :CantidadProducto,
+              :CantidadOferta, :Mesa_id )
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Factura_id] => 1
+                            [:Producto_id] => 1
+                            [:Ofertas_id] => 0
+                            [:CantidadProducto] => 8
+                            [:CantidadOferta] => 1
+                            [:Mesa_id] => 3
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 230
+            [function] => save
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO detallepedido VALUES (
+              :id, :Factura_id, :Producto_id, :Ofertas_id, :CantidadProducto,
+              :CantidadOferta, :Mesa_id )
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\DetallePedidosController.php
+            [line] => 34
+            [function] => insert
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\DetallePedidosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-12T15:27:54.448963+00:00] General.ERROR: Exception  
+[2021-06-12T15:27:54.449402+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-12T15:27:54.449485+00:00] General.ERROR: Line: 128  
+[2021-06-12T15:27:54.449545+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`detallepedido`, CONSTRAINT `fk_DetallePedido_Ofertas1` FOREIGN KEY (`Ofertas_id`) REFERENCES `oferta` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-12T15:27:54.449645+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 219
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO detallepedido VALUES (
+              :id, :Factura_id, :Producto_id, :Ofertas_id, :CantidadProducto,
+              :CantidadOferta, :Mesa_id )
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Factura_id] => 1
+                            [:Producto_id] => 1
+                            [:Ofertas_id] => 0
+                            [:CantidadProducto] => 8
+                            [:CantidadOferta] => 1
+                            [:Mesa_id] => 3
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 230
+            [function] => save
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO detallepedido VALUES (
+              :id, :Factura_id, :Producto_id, :Ofertas_id, :CantidadProducto,
+              :CantidadOferta, :Mesa_id )
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\DetallePedidosController.php
+            [line] => 34
+            [function] => insert
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\DetallePedidosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

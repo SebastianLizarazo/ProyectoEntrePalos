@@ -164,10 +164,9 @@ class FacturasController
             /* @var $arrFacturas Facturas[] */
             foreach ($arrFacturas as $factura)
                 if (!FacturasController::facturaIsInArray($factura->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($factura != "") ? (($params['defaultValue'] == $factura->getId()) ? "selected" : "") : "") . " value='" . $factura->getId() . "'>".
-                                                "La factura numero: " . $factura->getNumero() .
-                                                " de " . $factura->getFecha() .
-                                                " Está ".$factura->getEstado().
+                    $htmlSelect .= "<option " . (($factura != "") ? (($params['defaultValue'] == $factura->getId()) ? "selected" : "") : "") . " value='" . $factura->getId() . "'>"
+                                                 . $factura->getNumero();
+
                                     "</option>";
         }
         $htmlSelect .= "</select>";

@@ -140,7 +140,7 @@ class ProductosController
             /* @var $arrProductos Productos[] */
             foreach ($arrProductos as $producto)
                 if (!ProductosController::productoIsInArray($producto->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($producto != "") ? (($params['defaultValue'] == $producto->getId()) ? "selected" : "") : "") . " value='" . $producto->getId() . "'>" ."El producto: ". $producto->getNombre() . " Ref: " . $producto->getReferencia() . "</option>";
+                    $htmlSelect .= "<option " . (($producto != "") ? (($params['defaultValue'] == $producto->getId()) ? "selected" : "") : "") . " value='" . $producto->getId() . "'>" . $producto->getNombre(). "</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

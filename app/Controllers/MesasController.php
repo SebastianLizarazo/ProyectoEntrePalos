@@ -128,7 +128,7 @@ class MesasController
             /* @var $arrMesas Mesas[] */
             foreach ($arrMesas as $mesa)
                 if (!MesasController::mesaIsInArray($mesa->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($mesa != "") ? (($params['defaultValue'] == $mesa->getId()) ? "selected" : "") : "") . " value='" . $mesa->getId() . "'>" ."La mesa numero: ". $mesa->getNumero() . " con capacidad: " . $mesa->getCapacidad() . "</option>";
+                    $htmlSelect .= "<option " . (($mesa != "") ? (($params['defaultValue'] == $mesa->getId()) ? "selected" : "") : "") . " value='" . $mesa->getId() . "'>" . $mesa->getNumero() . "</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

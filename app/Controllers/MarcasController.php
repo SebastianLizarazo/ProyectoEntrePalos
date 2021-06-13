@@ -27,7 +27,7 @@ class MarcasController
             if (!empty($this->dataMarca['Nombre']) && !empty($this->dataMarca['Descripcion']) && !Marcas::marcaRegistrada($this->dataMarca['Nombre'], $this->dataMarca['Descripcion'])) {
                 $Marca = new Marcas($this->dataMarca);
                 if ($Marca->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmCreateMarcas']);
                     header("Location: ../../views/modules/marca/index.php?respuesta=success&mensaje=Marca Registrada");
                 }
             } else {
@@ -37,15 +37,15 @@ class MarcasController
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
-    static public function activate(int $id)
+    static public function restaurar(int $id)
     {
         try {
             $ObjMarca = Marcas::searchForId($id);
             $ObjMarca->setEstado("Activa");
             if ($ObjMarca->update()) {
-                header("Location: ../../views/modules/marca/index.php");
+                header("Location: ../../views/modules/marca/restore.php?respuesta=success&mensaje=Marca restaurada");
             } else {
-                header("Location: ../../views/modules/marca/index.php?respuesta=error&mensaje=Error al guardar");
+                header("Location: ../../views/modules/marca/restore.php?respuesta=error&mensaje=Error al guardar");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
@@ -58,7 +58,7 @@ class MarcasController
             $ObjMarca = Marcas::searchForId($id);
             $ObjMarca->setEstado("Inactiva");
             if ($ObjMarca->update()) {
-                header("Location: ../../views/modules/marca/index.php");
+                header("Location: ../../views/modules/marca/index.php?respuesta=success&mensaje=Marca inactivada");
             } else {
                 header("Location: ../../views/modules/marca/index.php?respuesta=error&mensaje=Error al guardar");
             }
@@ -71,7 +71,7 @@ class MarcasController
         try {
             $mca = new Marcas($this->dataMarca);
             if ($mca->update()) {
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmEditMarcas']);
             }
             header("Location: ../../views/modules/marca/show.php?id=" . $mca->getId() . "&respuesta=success&mensaje=Marca Actualizada");
         } catch (\Exception $e) {
