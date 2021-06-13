@@ -129,12 +129,12 @@ static public function activate(int $id)
             /* @var $arrSubCategoria SubCategorias[] */
             foreach ($arrSubCategoria as $subcategoria)
                 if (!SubCategoriascontroller::subcategoriaIsInArray($subcategoria->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($subcategoria != "") ? (($params['defaultValue'] == $subcategoria->getId()) ? "selected" : "") : "") . " value='" . $subcategoria->getId() . "'>" ."La subcategoria numero: ". $subcategoria->getNombre() . " Con nombre " . $subcategoria->getCategoriaProducto() . "</option>";
+                    $htmlSelect .= "<option " . (($subcategoria != "") ? (($params['defaultValue'] == $subcategoria->getId()) ? "selected" : "") : "") . " value='" . $subcategoria->getId() . "'>". $subcategoria->getNombre() . " - " . $subcategoria->getCategoriaProducto() . "</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;
     }
-    private static function SubCategoriascontroller($idSubCategorias, $ArrSubcategorias): ?bool
+    private static function subcategoriaIsInArray($idSubCategorias, $ArrSubcategorias): ?bool
     {
         if (count($ArrSubcategorias) > 0) {
             foreach ($ArrSubcategorias as $subcategoria) {

@@ -1,23 +1,23 @@
 <?php
 require("../../partials/routes.php");
 require_once("../../partials/check_login.php");
-require("../../../app/Controllers/MesasController.php");
+require("../../../app/Controllers/DetalleOfertasController.php");
 
 
-use App\Controllers\MesasController;
+use App\Controllers\DetalleOfertasController;
 use App\Models\GeneralFunctions;
-use App\Models\Mesas;
+use App\Models\DetalleOfertas;
 
 
-$nameModel = "Mesa";
+$nameModel = "Detalle oferta";
 $pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar | <?= $nameModel ?></title>
+    <title><?= $_ENV['TITLE_SITE']  ?> | Editar <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -59,8 +59,11 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
+                                            data-source="create.php" data-source-selector="#card-refresh-content"
+                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -72,51 +75,41 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                 <p>
                                 <?php
 
-                                $DataMesa = MesasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataMesa Mesas */
-                                if (!empty($DataMesa)) {
+                                $DataDetalleO = DetalleOfertasController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataDetalleO DetalleOfertas */
+                                if (!empty($DataDetalleO)) {
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
                                         <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
                                               name="frmEdit<?= $nameModel ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
-                                            <input id="id" name="id" value="<?= $DataMesa->getId(); ?>" hidden
+                                            <input id="id" name="id" value="<?= $DataDetalleO->getId(); ?>" hidden
                                                    required="required" type="text">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group row">
-                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero de mesa</label>
+                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero del producto</label>
                                                         <div class="col-sm-10">
                                                             <input required type="number" class="form-control" id="Numero"
-                                                                   name="Numero" value="<?= $DataMesa->getNumero(); ?>"
-                                                                   placeholder="Ingrese el numero de la mesa">
+                                                                   name="Numero" value="<?= $DataDetalleO->getProductoId(); ?>"
+                                                                   placeholder="Ingrese el numero del producto">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Ubicacion" class="col-sm-2 col-form-label">Ubicación</label>
+                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero de la oferta</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Ubicacion"
-                                                                   name="Ubicacion" value="<?= $DataMesa->getUbicacion(); ?>"
-                                                                   placeholder="Ingrese la ubicación de la mesa">
+                                                            <input required type="number" class="form-control" id="Numero"
+                                                                   name="Numero" value="<?= $DataDetalleO->getOfertaId(); ?>"
+                                                                   placeholder="Ingrese el numero de la oferta">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Capacidad" class="col-sm-2 col-form-label">Capacidad</label>
+                                                        <label for="Cantidad" class="col-sm-2 col-form-label">Cantidad de producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Capacidad"
-                                                                   name="Capacidad" value="<?= $DataMesa->getCapacidad(); ?>"
-                                                                   placeholder="Ingrese la capacidad de la mesa">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="Ocupacion" class="col-sm-2 col-form-label">Ocupación</label>
-                                                        <div class="col-sm-10">
-                                                            <select required id="Ocupacion" name="Ocupacion" class="custom-select">
-                                                                <option value="">Seleccione</option>
-                                                                <option <?= ($DataMesa->getOcupacion() == "disponible") ? "selected" : ""; ?> value="disponible">disponible</option>
-                                                                <option <?= ($DataMesa->getOcupacion() == "ocupada") ? "selected" : ""; ?> value="ocupada">ocupada</option>
-                                                            </select>
+                                                            <input required type="text" class="form-control" id="Cantidad"
+                                                                   name="Cantidad" value="<?= $DataDetalleO->getCantidadProducto(); ?>"
+                                                                   placeholder="Ingrese la cantidad de producto">
                                                         </div>
                                                     </div>
                                                 </div>

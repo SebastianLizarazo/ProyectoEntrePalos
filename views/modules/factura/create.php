@@ -14,7 +14,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Crear <?= $nameModel ?></title>
+    <title>Crear | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -55,7 +55,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -72,13 +72,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                       <div class="row">
                                           <div class="col-sm-12">
                                                 <div class="form-group row">
-                                                    <label for="Numero" class="col-sm-2 col-form-label">Numero</label>
-                                                    <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="Numero" name="Numero"
-                                                               placeholder="Ingrese el numero de la factura" value="<?= $frmSession['Numero'] ?? '' ?>">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
                                                     <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label>
                                                     <div class="col-sm-10">
                                                         <input required type="date" max="<?= Carbon::now()->format('Y-m-d')?>" class="col-sm-3 form-control" id="Fecha" name="Fecha"
@@ -88,7 +81,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 <div class="form-group row">
                                                     <label for="IVA" class="col-sm-2 col-form-label">IVA</label>
                                                     <div class="col-sm-10">
-                                                        <input type="number" step="0.01" class="form-control" id="IVA" name="IVA"
+                                                        <input required type="number" step="0.01" class="form-control" id="IVA" name="IVA"
                                                                placeholder="IVA" value="<?= $frmSession['IVA'] ?? '0.19' ?>">
                                                     </div>
                                                 </div>
@@ -106,10 +99,18 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="Mesero_id" class="col-sm-2 col-form-label">Mesero id</label>
+                                                    <label for="Mesero_id" class="col-sm-2 col-form-label">Mesero</label>
                                                     <div class="col-sm-10">
-                                                        <input type="number" step="0.01" class="form-control" id="Mesero_id" name="Mesero_id"
-                                                                placeholder="Ingrese el id del mesero" value="<?= $frmSession['Mesero_id'] ?? '' ?>">
+                                                        <?= UsuariosController::selectUsuario(
+                                                            array(
+                                                                'id' => 'Mesero_id',
+                                                                'name' => 'Mesero_id',
+                                                                'defaultValue' => (!empty($frmSession['Mesero_id']))? $frmSession['Mesero_id']:'',
+                                                                'class' => 'form-control select2bs4 select2-info',
+                                                                'where' => "estado = 'Activo' and rol = 'Mesero'"
+                                                            )
+                                                        )
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -117,9 +118,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     <div class="col-sm-10">
                                                         <select required name="Estado" id="Estado" class="custom-select">
                                                             <option value="">Seleccione</option>
-                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Pendiente") ? "selected" : ""; ?>value="Pendiente">Pendiente</option>
-                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Paga") ? "selected" : ""; ?>value="Paga">Paga</option>
-                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Cancelada") ? "selected" : ""; ?>value="Cancelada">Cancelada</option>
+                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Pendiente") ? "selected" : ""; ?> value="Pendiente">Pendiente</option>
+                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Paga") ? "selected" : ""; ?> value="Paga">Paga</option>
+                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Cancelada") ? "selected" : ""; ?> value="Cancelada">Cancelada</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -128,8 +129,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                     <div class="col-sm-10">
                                                         <select required name="TipoPedido" id="TipoPedido" class="custom-select">
                                                             <option value="">Seleccione</option>
-                                                            <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Mesa") ? "selected" : ""; ?>value="Mesa">Mesa</option>
-                                                            <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Domicilio") ? "selected" : ""; ?>value="Domicilio">Domicilio</option>
+                                                            <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Mesa") ? "selected" : ""; ?> value="Mesa">Mesa</option>
+                                                            <option <?= ( !empty($frmSession['TipoPedido']) && $frmSession['TipoPedido'] == "Domicilio") ? "selected" : ""; ?> value="Domicilio">Domicilio</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -156,6 +157,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
 </div>
 <!-- ./wrapper -->
 <?php require('../../partials/scripts.php'); ?>
+
 </body>
 </html>
 

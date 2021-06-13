@@ -4,14 +4,17 @@ require_once("../../partials/check_login.php");
 require_once("../../../app/Controllers/EmpresasController.php");
 
 
+use App\Controllers\DepartamentosController;
 use App\Controllers\EmpresasController;
+use App\Controllers\MunicipiosController;
 use App\Models\GeneralFunctions;
 use App\Models\Empresas;
 
 
+
 $nameModel = "Empresa";
 $pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +62,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -104,7 +107,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Telefono"
+                                                            <input required type="number" min="1111111111" max="9999999999" class="form-control" id="Telefono"
                                                                    name="Telefono" value="<?= $DataEmpresa->getTelefono(); ?>"
                                                                    placeholder="Ingrese el telefono de la empresa">
                                                         </div>
@@ -127,12 +130,32 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Municipio_id" class="col-sm-2 col-form-label">Municipio_id</label>
-                                                        <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Municipio_id"
-                                                                   name="Municipio_id" value="<?= $DataEmpresa->getMunicipioid(); ?>"
-                                                                   placeholder="Ingrese el id del municipio">
+                                                        <label for="departamento_id" class="col-sm-2 col-form-label">Departamentos</label>
+                                                        <div class="col-sm-5">
+                                                            <?= DepartamentosController::selectDepartamentos(
+                                                                array(
+                                                                    'id' => 'departamento_id',
+                                                                    'name' => 'departamento_id',
+                                                                    'defaultValue' => $DataEmpresa->getMunicipio()->getDepartamento()->getId(), //Boyacá
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Activo'"
+                                                                )
+                                                            )
+                                                            ?>
                                                         </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="Municipio_id" class="col-sm-2 col-form-label">Municipios</label>
+                                                            <div class="col-sm-5 ">
+                                                                <?= MunicipiosController::selectMunicipios(array (
+                                                                    'id' => 'Municipio_id',
+                                                                    'name' => 'Municipio_id',
+                                                                    'defaultValue' => (!empty($DataEmpresa)) ? $DataEmpresa->getMunicipioid(): '',
+                                                                    'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "departamento_id = ".$DataEmpresa->getMunicipio()->getDepartamento()->getId().
+                                                                    " and estado = 'Activo'"))
+                                                                ?>
+                                                            </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -169,6 +192,26 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
 </div>
 <!-- ./wrapper -->
 <?php require('../../partials/scripts.php'); ?>
-
+<script>
+    $(function() {
+        $('#departamento_id').on('change', function() {
+            $.post("../../../app/Controllers/MainController.php?controller=Municipios&action=selectMunicipios", {
+                isMultiple: false,
+                isRequired: true,
+                id: "Municipio_id",
+                nombre: "Municipio_id",
+                defaultValue: "",
+                class: "form-control select2bs4 select2-info",
+                where: "departamento_id = "+$('#departamento_id').val()+" and estado = 'Activo'",
+                request: 'ajax'
+            }, function(e) {
+                if (e)
+                    console.log(e);
+                $("#Municipio_id").html(e).select2({ height: '100px'});
+            });
+        });
+        $('.btn-file span').html('Seleccionar');
+    });
+</script>
 </body>
 </html>

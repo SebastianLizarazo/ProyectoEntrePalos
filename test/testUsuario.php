@@ -110,6 +110,7 @@ $objectUsuario3= new Usuarios($arrUsuario3);
 //}
 
 
+
 // Cambio de contraseñas
 //$Usr1 = Usuarios::searchForId(1);
 //$Usr1->setContrasena('123456789');

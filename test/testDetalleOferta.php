@@ -6,7 +6,7 @@ use App\Models\Productos;
 
 $arrDetOferta1 = [
     'Producto_id'=> 1,
-    'Oferta_id'=> 3,
+    'Oferta_id'=> 1,
     'CantidadProducto'=> 2,
 ];
 $arrDetOferta2 = [
@@ -21,12 +21,12 @@ $arrDetOferta3 = [
 
 ];
 
-//$objDetOferta1= new DetalleOfertas($arrDetOferta1);
-//$objDetOferta1->insert();
+$objDetOferta1= new DetalleOfertas($arrDetOferta1);
+$objDetOferta1->insert();
 //var_dump($objDetOferta1);
 
-//$objDetOferta2= new DetalleOfertas($arrDetOferta2);
-//$objDetOferta2->insert();
+$objDetOferta2= new DetalleOfertas($arrDetOferta2);
+$objDetOferta2->insert();
 //var_dump($objDetOferta2);
 
 //$objDetOferta3= new DetalleOfertas($arrDetOferta3);
@@ -63,9 +63,9 @@ $arrDetOferta3 = [
 //}
 
 //Prueba Detalle oferta - Producto
-$pruebDetalleOft = DetalleOfertas::searchForId(1);
-print_r($pruebDetalleOft->getProducto());
+//$pruebDetalleOft = DetalleOfertas::searchForId(1);
+//print_r($pruebDetalleOft->getProducto());
 
-$pruebProdDetalleOft = Productos::searchForId(2);
-print_r($pruebProdDetalleOft->getDetalleOfertasProducto());
+//$pruebProdDetalleOft = Productos::searchForId(2);
+//print_r($pruebProdDetalleOft->getDetalleOfertasProducto());
 

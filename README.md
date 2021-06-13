@@ -1,4 +1,4 @@
-Entre Palos by @davidfelipe12, @BladimirE, @SebastianLizarazo, @K20022021, @Didier-qw, @SantiagoH7
+Entre Palos by @davidfelipe12, @BladimirE, @SebastianLizarazo, @K20022021
 Sistema de Control de Inventarios y administración de ventas.
 
 Descripción

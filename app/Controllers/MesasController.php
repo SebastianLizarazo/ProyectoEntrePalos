@@ -21,15 +21,11 @@ class MesasController
     public function create()
     {
         try {
-            if (!empty($this->dataMesa['Numero']) && !Mesas::mesaRegistrada($this->dataMesa['Numero'])) {
                 $Mesa = new Mesas($this->dataMesa);
                 if ($Mesa->insert()) {
-                    unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmCreateMesas']);
                     header("Location: ../../views/modules/mesa/index.php?respuesta=success&mensaje=Mesa Registrada");
                 }
-            } else {
-                header("Location: ../../views/modules/mesa/create.php?respuesta=error&mensaje=Mesa ya registrada");
-            }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
@@ -39,7 +35,7 @@ class MesasController
         try {
             $msa = new Mesas($this->dataMesa);
             if($msa->update()){
-                unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmEditMesas']);
             }
             header("Location: ../../views/modules/mesa/show.php?id=" . $msa->getId() . "&respuesta=success&mensaje=Mesa Actualizada");
         } catch (\Exception $e) {

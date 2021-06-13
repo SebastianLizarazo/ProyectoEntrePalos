@@ -1,15 +1,14 @@
 <?php
-require_once("../../../app/Controllers/OfertasController.php");
+require_once("../../../app/Controllers/ConsumoTrabajadoresController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
-
-use App\Controllers\OfertasController;
+use App\Controllers\ConsumoTrabajadoresController;
 use App\Models\GeneralFunctions;
+use Carbon\Carbon;
 
-
-$nameModel = "Oferta";
-$pluralModel = $nameModel.'s';
+$nameModel = "Consumo trabajador";
+$pluralModel = $nameModel.'es';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
@@ -82,56 +81,52 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                     <div class="col">
                                         <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
                                                style="width:100%;">
+                                            <thead>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Nombre</th>
-                                                <th>Descripcion</th>
-                                                <th>Precio de unidad venta oferta</th>
-                                                <th>Estado</th>
+                                                <th>Numero de pago</th>
+                                                <th>Producto</th>
+                                                <th>Cantidad roducto</th>
+                                                <th>Descripción</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrOfertas = OfertasController::getAll();
-                                            if (!empty($arrOfertas))
-                                            /* @var $arrOfertas \App\Models\Ofertas */
-                                            foreach ($arrOfertas as $oferta) {
+                                            $arrConsumoT = ConsumoTrabajadoresController::getAll();
+                                            if (!empty($arrConsumoT))
+                                            /* @var $arrConsumoT \App\Models\ConsumoTrabajadores */
+                                            foreach ($arrConsumoT as $consumotrabajador) {
                                                 ?>
                                                 <tr>
 
-                                                    <td><?= $oferta->getId(); ?></td>
-                                                    <td><?= $oferta->getNombre(); ?></td>
-                                                    <td><?= $oferta->getDescripcion(); ?></td>
-                                                    <td><?= $oferta->getPrecioUnidadVentaOferta(); ?></td>
-                                                        <td><?= $oferta->getEstado(); ?></td>
+                                                    <td><?= $consumotrabajador->getId(); ?></td>
+                                                    <td><?= $consumotrabajador->getPagoId(); ?></td>
+                                                    <td><?= $consumotrabajador->getProducto()->getNombre() ; ?></td>
+                                                    <td><?= $consumotrabajador->getCantidadProducto(); ?></td>
+                                                    <td><?= $consumotrabajador->getDescripcion(); ?></td>
                                                     <td>
                                                         <div  style="text-align: center;">
-                                                        <a href="edit.php?id=<?= $oferta->getId(); ?>"
+                                                        <a href="edit.php?id=<?= $consumotrabajador->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
                                                            class="btn docs-tooltip btn-primary btn-xs"><i
                                                                     class="fa fa-edit"></i></a>
-                                                        <a href="show.php?id=<?= $oferta->getId(); ?>"
+                                                        <a href="show.php?id=<?= $consumotrabajador->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $oferta->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Deshabilitar"
-                                                               class="btn docs-tooltip btn-danger btn-xs">
-                                                                <i class="fas fa-trash-alt"></i></a>
-                                                         </div>
-                                                     </td>
+                                                    </div>
+                                                    </td>
                                                 </tr>
                                             <?php } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Nombre</th>
-                                                <th>Descripcion</th>
-                                                <th>Precio de unidad venta oferta</th>
-                                                <th>Estado</th>
+                                                <th>Numero de pago</th>
+                                                <th>Producto</th>
+                                                <th>Cantidad roducto</th>
+                                                <th>Descripción</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </tfoot>

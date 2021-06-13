@@ -1,21 +1,20 @@
 <?php
-require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
-require("../../../app/Controllers/OfertasController.php");
+require_once("../../../app/Controllers/ConsumoTrabajadoresController.php");
+require_once("../../partials/routes.php");
+require_once("../../partials/check_login.php");
 
-use App\Controllers\MesasController;
-use App\Controllers\OfertasController;
+use App\Controllers\ConsumoTrabajadoresController;
 use App\Models\GeneralFunctions;
-use App\Models\Mesas;
+use Carbon\Carbon;
 
-$nameModel = "Oferta";
+$nameModel = "Consumo trabajador";
 $pluralModel = $nameModel . 's';
-//$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
+$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Datos de la | <?= $nameModel ?></title>
+    <title>Datos del | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -33,7 +32,7 @@ $pluralModel = $nameModel . 's';
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Información de la <?= $nameModel ?></h1>
+                        <h1>Información del <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -58,13 +57,13 @@ $pluralModel = $nameModel . 's';
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $DataOferta = OfertasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataOferta \App\Models\Ofertas */
-                                if (!empty($DataOferta)) {
+                                $DataConsumoT = ConsumoTrabajadoresController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataConsumoT \App\Models\ConsumoTrabajadores */
+                                if (!empty($DataConsumoT)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la oferta numero <?= $DataOferta->getId() ?></h3>
+                                            del consumo de trabajador numero <?= $DataConsumoT->getId() ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
                                                     data-source="show.php" data-source-selector="#card-refresh-content"
@@ -83,17 +82,17 @@ $pluralModel = $nameModel . 's';
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-signature"></i>&nbsp;Nombre</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getNombre() ?></p>
+                                                    <strong><i class="nav-icon fas fa-dollar-sign"></i>&nbsp; Numero de pago</strong>
+                                                        <p class="text-muted"><?= $DataConsumoT->getPagoId() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-file-alt"></i>&nbsp;Descripción</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getDescripcion() ?></p>
+                                                    <strong><i class="fas fa-hamburger"></i>&nbsp;Nombre del producto</strong>
+                                                        <p class="text-muted"><?= $DataConsumoT->getProducto()->getNombre() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-piggy-bank"></i>&nbsp;Precio por unidad venta oferta</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getPrecioUnidadVentaOferta() ?></p>
+                                                    <strong><i class="fas fa-hamburger"></i>&nbsp;Cantidad Producto</strong>
+                                                        <p class="text-muted"><?= $DataConsumoT->getCantidadProducto() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-check"></i>&nbsp;Estado</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getEstado() ?></p>
+                                                    <strong><i class="fas fa-file-alt"></i>&nbsp;Descripcion</strong>
+                                                        <p class="text-muted"><?= $DataConsumoT->getDescripcion() ?></p>
                                                 </p>
                                             </div>
                                         </div>
@@ -107,7 +106,7 @@ $pluralModel = $nameModel . 's';
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $DataOferta->getId(); ?>"
+                                                <a role="button" href="edit.php?id=<?= $DataConsumoT->getId(); ?>"
                                                    class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>

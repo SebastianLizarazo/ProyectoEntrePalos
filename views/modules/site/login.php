@@ -10,11 +10,8 @@ require_once("../../partials/routes.php");
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition login-page">
-
+<div style="height: 200px;"></div>
 <div class="login-box">
-    <div class="login-logo">
-        <a href="login.php"><b>Entre Palos</b></a>
-    </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">

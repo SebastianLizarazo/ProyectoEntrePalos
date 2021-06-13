@@ -1,21 +1,21 @@
 <?php
 require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
-require("../../../app/Controllers/OfertasController.php");
+require_once("../../partials/check_login.php");
+require("../../../app/Controllers/ImagenesController.php");
 
-use App\Controllers\MesasController;
-use App\Controllers\OfertasController;
+use App\Controllers\ImagenesController;
+use App\Controllers\ProductosController;
+use App\Models\Imagenes;
 use App\Models\GeneralFunctions;
-use App\Models\Mesas;
 
-$nameModel = "Oferta";
-$pluralModel = $nameModel . 's';
-//$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
+$nameModel = "Imagen";
+$pluralModel = $nameModel.'es';
+$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Datos de la | <?= $nameModel ?></title>
+    <title>Datos del | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -33,12 +33,11 @@ $pluralModel = $nameModel . 's';
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Información de la <?= $nameModel ?></h1>
+                        <h1>Informacion del <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a
-                                        href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
+                            <li class="breadcrumb-item"><a href="<?= $baseURL; ?>/views/"><?= $_ENV['ALIASE_SITE'] ?></a></li>
                             <li class="breadcrumb-item"><a href="index.php"><?= $pluralModel ?></a></li>
                             <li class="breadcrumb-item active">Ver</li>
                         </ol>
@@ -58,43 +57,63 @@ $pluralModel = $nameModel . 's';
                         <!-- Horizontal Form -->
                         <div class="card card-green">
                             <?php if (!empty($_GET["id"]) && isset($_GET["id"])) {
-                                $DataOferta = OfertasController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataOferta \App\Models\Ofertas */
-                                if (!empty($DataOferta)) {
+                                $DataImagen = ImagenesController::searchForID(["id" => $_GET["id"]]);
+                                /* @var $DataImagen Imagenes */
+                                if (!empty($DataImagen)) {
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            de la oferta numero <?= $DataOferta->getId() ?></h3>
+                                            de <?= $DataImagen->getNombre() ?? '' ?></h3>
                                         <div class="card-tools">
-                                            <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                                    data-source="show.php" data-source-selector="#card-refresh-content"
-                                                    data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                         class="fas fa-expand"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                                     data-toggle="tooltip" title="Collapse">
                                                 <i class="fas fa-minus"></i></button>
-                                            <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                                    data-toggle="tooltip" title="Remove">
-                                                <i class="fas fa-times"></i></button>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-signature"></i>&nbsp;Nombre</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getNombre() ?></p>
-                                                <hr>
-                                                    <strong><i class="fas fa-file-alt"></i>&nbsp;Descripción</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getDescripcion() ?></p>
-                                                <hr>
-                                                    <strong><i class="fas fa-piggy-bank"></i>&nbsp;Precio por unidad venta oferta</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getPrecioUnidadVentaOferta() ?></p>
-                                                <hr>
-                                                    <strong><i class="fas fa-check"></i>&nbsp;Estado</strong>
-                                                        <p class="text-muted"><?= $DataOferta->getEstado() ?></p>
+                                                <strong><i class="fas fa-signature"></i> Nombre</strong>
+                                                <p class="text-muted">
+                                                    <?= $DataImagen->getNombre() ?>
                                                 </p>
+                                                <hr>
+                                                <strong><i class="fas fa-align-justify mr-1"></i> Descripción</strong>
+                                                <p class="text-muted"><?= $DataImagen->getDescripcion() ?></p>
+                                                <hr>
+                                                <?php if (!empty($DataImagen->getOferta())) {?>
+                                                <strong><i class="fas fa-piggy-bank"></i> Oferta</strong>
+                                                    <p class="text-muted"><?= $DataImagen->getOferta()->getNombre(); ?></p>
+                                                    <hr>
+                                                <?php }else{  ?>
+                                                <strong><i class="fas fa-hamburger"></i> Producto</strong>
+                                                <p class="text-muted"><?= $DataImagen->getProducto()->getNombre(); ?></p>
+                                                <hr>
+                                                <?php } ?>
+                                                <strong><i class="fas fa-check"></i> Estado</strong>
+                                                <p class="text-muted"><?= $DataImagen->getEstado() ?></p>
+                                                </p>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="row info-box">
+                                                    <div class="col-12">
+                                                        <h4>Foto Producto</h4>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <?php if (!empty($DataImagen->getOferta())) {?>
+                                                            <?php if(!empty($DataImagen->getRuta())){ ?>
+                                                                <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/ofertas/<?= $DataImagen->getRuta(); ?>' alt="Foto Producto">
+                                                            <?php }
+                                                        }else{?>
+                                                            <?php if(!empty($DataImagen->getRuta())){ ?>
+                                                                <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/productos/<?= $DataImagen->getRuta(); ?>' alt="Foto Producto">
+                                                            <?php }
+                                                         } ?>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -107,8 +126,7 @@ $pluralModel = $nameModel . 's';
                                                 </a>
                                             </div>
                                             <div class="col-auto">
-                                                <a role="button" href="edit.php?id=<?= $DataOferta->getId(); ?>"
-                                                   class="btn btn-primary float-right"
+                                                <a role="button" href="edit.php?id=<?= $DataImagen->getId(); ?>" class="btn btn-primary float-right"
                                                    style="margin-right: 5px;">
                                                     <i class="fas fa-edit"></i> Editar <?= $nameModel ?>
                                                 </a>
@@ -127,10 +145,10 @@ $pluralModel = $nameModel . 's';
                                 <?php }
                             } ?>
                         </div>
-                        <!-- /.card -->
                     </div>
                 </div>
             </div>
+            <!-- /.card -->
         </section>
         <!-- /.content -->
     </div>

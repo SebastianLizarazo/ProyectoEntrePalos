@@ -22,19 +22,18 @@ class EmpresasController
 
     }
 
-
-
     public function create()
     {
         try {
-            if (!empty($this->dataEmpresa['Id']) && !empty($this->dataEmpresa['NIT']) && !Empresas::empresaRegistrada($this->dataEmpresa['Id'], $this->dataEmpresa['NIT'])) {
+            if (!empty($this->dataEmpresa['Nombre']) && !empty($this->dataEmpresa['NIT']) && !empty($this->dataEmpresa['Telefono'])
+                    && !Empresas::empresaRegistrada($this->dataEmpresa['Nombre'], $this->dataEmpresa['NIT'],$this->dataEmpresa['Telefono'])) {
                 $Empresa = new Empresas($this->dataEmpresa);
                 if ($Empresa->insert()) {
-                    unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmCreateEmpresas']);
                     header("Location: ../../views/modules/empresa/index.php?respuesta=success&mensaje=Empresa Registrada");
                 }
             } else {
-                header("Location: ../../views/modules/empresa/create.php?respuesta=error&mensaje=Empresa ya registrada");
+                header("Location: ../../views/modules/empresa/create.php?respuesta=error&mensaje=Ya existe una empresa con este nombre, NIT o telefono");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
@@ -45,7 +44,7 @@ class EmpresasController
         try {
             $Empresa = new Empresas($this->dataEmpresa);
             if($Empresa->update()){
-                unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmEditEmpresas']);
             }
             header("Location: ../../views/modules/empresa/show.php?id=" . $Empresa->getId() . "&respuesta=success&mensaje=empresa Actualizada");
         } catch (\Exception $e) {
@@ -86,7 +85,7 @@ class EmpresasController
             $ObjEmpresa = Empresas::searchForId($id);
             $ObjEmpresa->setEstado("Inactivo");
             if ($ObjEmpresa->update()) {
-                header("Location: ../../views/modules/empresa/index.php");
+                header("Location: ../../views/modules/empresa/index.php?respuesta=success&mensaje=Empresa inhabilitado");
             } else {
                 header("Location: ../../views/modules/empresa/index.php?respuesta=error&mensaje=Error al guardar");
             }
@@ -101,7 +100,7 @@ class EmpresasController
             $ObjEmpresa = Empresas::searchForId($id);
             $ObjEmpresa->setEstado("Activo");
             if ($ObjEmpresa->update()) {
-                header("Location: ../../views/modules/empresa/restore.php");
+                header("Location: ../../views/modules/empresa/restore.php?respuesta=success&mensaje=Empresa restaurada");
             } else {
                 header("Location: ../../views/modules/empresa/restore.php?respuesta=error&mensaje=Error al guardar");
             }

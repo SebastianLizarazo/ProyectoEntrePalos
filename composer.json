@@ -30,18 +30,6 @@
       "email": "beslava@misena.edu.co",
       "homepage": "http://www.sena.edu.co",
       "role": "Developer"
-    },
-    {
-      "name": "Willian Santiago Hernández Cristancho",
-      "email": "wshernandezc@misena.edu.co",
-      "homepage": "http://www.sena.edu.co",
-      "role": "Developer"
-    },
-    {
-      "name": "Didier Dario Acero Diaz",
-      "email": "ddacero6@misena.edu.co",
-      "homepage": "http://www.sena.edu.co",
-      "role": "Developer"
     }
   ],
   "require":{

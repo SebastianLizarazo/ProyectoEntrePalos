@@ -1,11 +1,13 @@
 <?php
+require_once("../../../app/Controllers/ConsumoTrabajadoresController.php");
 require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 
+use App\Controllers\ConsumoTrabajadoresController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
-$nameModel = "Mesa"; //Nombre del Modelo
+$nameModel = "Consumo trabajador"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
@@ -30,7 +32,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Crear una nueva <?= $nameModel ?></h1>
+                        <h1>Crear un nuevo <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -53,7 +55,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información de la <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
                                             data-source="create.php" data-source-selector="#card-refresh-content"
@@ -75,35 +77,33 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                       <div class="row">
                                           <div class="col-sm-12">
                                                 <div class="form-group row">
-                                                    <label for="Numero" class="col-sm-2 col-form-label">Numero de mesa</label>
+                                                    <label for="PagoId" class="col-sm-2 col-form-label">Numero de pago</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="Numero" name="Numero"
-                                                               placeholder="Ingrese el numero de mesa" value="<?= $frmSession['Numero'] ?? '' ?>">
+                                                        <input required type="number" class="form-control" id="PagoId" name="PagoId"
+                                                               placeholder="Ingrese el numero del pago" value="<?= $frmSession['PagoId'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="Ubicacion" class="col-sm-2 col-form-label">Ubicacion Mesa</label>
+                                                    <label for="ProductoId" class="col-sm-2 col-form-label">Numero de producto</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="text" class="form-control" id="Ubicacion" name="Ubicacion"
-                                                               placeholder="Ingrese la ubicacion de la mesa" value="<?= $frmSession['Ubicacion'] ?? '' ?>">
+                                                        <input required type="number" class="form-control" id="ProductoId" name="ProductoId"
+                                                               placeholder="Ingrese el numero del producto" value="<?= $frmSession['ProductoId'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="Capacidad" class="col-sm-2 col-form-label">Capacidad de mesa</label>
+                                                    <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad del producto</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="Capacidad" name="Capacidad"
-                                                               placeholder="Ingrese el la capacidad de la mesa" value="<?= $frmSession['Capacidad'] ?? '' ?>">
+                                                        <input required type="number" class="form-control" id="CantidadProducto" name="CantidadProducto"
+                                                               placeholder="Ingrese la cantidad del producto" value="<?= $frmSession['CantidadProducto'] ?? '' ?>">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="Ocupacion" class="col-sm-2 col-form-label">Ocupacion</label>
-                                                    <div class="col-sm-10">
-                                                        <select required id="Ocupacion" name="Ocupacion" class="custom-select">
-                                                            <option <?= ( !empty($frmSession['Ocupacion']) && $frmSession['Ocupacion'] == "Disponible") ? "selected" : ""; ?> value="Disponible">Disponible</option>
-                                                            <option <?= ( !empty($frmSession['Ocupacion']) && $frmSession['Ocupacion'] == "Ocupada") ? "selected" : ""; ?> value="Ocupada">Ocupada</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
+                                              <div class="form-group row">
+                                                  <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
+                                                  <div class="col-sm-10">
+                                                      <input required type="text" class="form-control" id="Descripcion" name="Descripcion"
+                                                             placeholder="Ingrese una descripcion" value="<?= $frmSession['Descripcion'] ?? '' ?>">
+                                                  </div>
+                                              </div>
                                           </div>
                                       </div>
                                     <hr>
