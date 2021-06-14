@@ -7,7 +7,7 @@ use App\Controllers\DetalleOfertasController;
 use App\Models\GeneralFunctions;
 use App\Models\DetalleOfertas;
 
-$nameModel = "Detalle oferta";
+$nameModel = "DetalleOferta";
 $pluralModel = $nameModel . 's';
 $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>

@@ -6,9 +6,9 @@ require_once("../../partials/check_login.php");
 use App\Controllers\ConsumoTrabajadoresController;
 use App\Models\ConsumoTrabajadores;
 use App\Models\GeneralFunctions;
-use Carbon\Carbon;
 
-$nameModel = "Consumo trabajador";
+
+$nameModel = "ConsumoTrabajador";
 $pluralModel = $nameModel.'es';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
@@ -88,7 +88,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Trabajador</th>
                                                 <th>Producto</th>
                                                 <th>Cantidad producto</th>
-                                                <th class="none">Descripción</th>
+                                                <th class="none">Descripción:</th>
                                                 <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
@@ -102,8 +102,9 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <tr>
 
                                                     <td><?= $consumotrabajador->getId(); ?></td>
-                                                    <td><?= $consumotrabajador->getPagos()->getTrabajador()->getNombres(); ?></td>
-                                                    <td><?= $consumotrabajador->getProducto()->getNombre() ; ?></td>
+                                                    <td><?= $consumotrabajador->getPagos()->getTrabajador()->getNombres().' '.
+                                                            $consumotrabajador->getPagos()->getTrabajador()->getApellidos(); ?></td>
+                                                    <td><?= $consumotrabajador->getProducto()->getNombre(); ?></td>
                                                     <td><?= $consumotrabajador->getCantidadProducto(); ?></td>
                                                     <td><?= $consumotrabajador->getDescripcion(); ?></td>
                                                     <td>
@@ -137,7 +138,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+
                             </div>
                             <!-- /.card-footer-->
                         </div>

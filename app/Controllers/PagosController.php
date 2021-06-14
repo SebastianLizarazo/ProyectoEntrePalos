@@ -31,7 +31,7 @@ class PagosController
             if (!empty($this->datapagos['Trabajador_id']) && !empty($this->datapagos['Fecha']) && !Pagos::pagoRegistrado($this->datapagos['Trabajador_id'], $this->datapagos['Fecha'])) {
                 $pago = new Pagos($this->datapagos);
                 if ($pago->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmCreatePagos']);
                     header("Location: ../../views/modules/pago/index.php?respuesta=success&mensaje=Pago Registrado");
                 }
             } else {
@@ -73,9 +73,8 @@ class PagosController
     {
         try {
             $pgs = new Pagos($this->datapagos);
-            //var_dump($pgs);die();
             if($pgs->update()){
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmEditPagos']);
             }
             header("Location: ../../views/modules/pago/show.php?id=" . $pgs->getId() . "&respuesta=success&mensaje=Pago Actualizado");
         } catch (\Exception $e) {
@@ -136,7 +135,8 @@ class PagosController
             /* @var $arrPago Pagos[] */
             foreach ($arrPago as $pago)
                 if (!Pagoscontroller::pagoIsInArray($pago->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($pago != "") ? (($params['defaultValue'] == $pago->getId()) ? "selected" : "") : "") . " value='" . $pago->getId() . "'>" ."El pago numero: ". $pago->getId() . " Del trabajador: " . $pago->getTrabajador()->getNombres() . "</option>";
+                    $htmlSelect .= "<option " . (($pago != "") ? (($params['defaultValue'] == $pago->getId()) ? "selected" : "") : "") . " value='" . $pago->getId() . "'>" ."El pago numero: ". $pago->getId() . " Del trabajador: " . $pago->getTrabajador()->getNombres().
+                        " Fecha: ".$pago->getFecha()->format('Y-m-d')."</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

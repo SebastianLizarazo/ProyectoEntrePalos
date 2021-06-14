@@ -94,7 +94,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                             (array (
                                                                     'id' => 'Producto_id',
                                                                     'name' => 'Producto_id',
-                                                                    'defaultValue' => (!empty($frmSession['producto_id'])) ? $frmSession['producto_id'] : '',
+                                                                    'defaultValue' =>  $DataDetalleO->getProductoId(),
                                                                     'class' => 'form-control select2bs4 select2-info',
                                                                     'where' => "estado = 'Activo'"
                                                                 )
@@ -109,7 +109,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                             (array (
                                                                     'id' => 'Oferta_id',
                                                                     'name' => 'Oferta_id',
-                                                                    'defaultValue' => (!empty($frmSession['oferta_id'])) ? $frmSession['oferta_id'] : '',
+                                                                    'defaultValue' => $DataDetalleO->getOfertaId(),
                                                                     'class' => 'form-control select2bs4 select2-info',
                                                                     'where' => "estado = 'Disponible'"
                                                                 )
@@ -118,10 +118,10 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Cantidad" class="col-sm-2 col-form-label">Cantidad de producto</label>
+                                                        <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad de producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Cantidad"
-                                                                   name="Cantidad" value="<?= $DataDetalleO->getCantidadProducto(); ?>"
+                                                            <input required type="number" max="50" class="form-control" id="CantidadProducto"
+                                                                   name="CantidadProducto" value="<?= $DataDetalleO->getCantidadProducto(); ?>"
                                                                    placeholder="Ingrese la cantidad de producto">
                                                         </div>
                                                     </div>

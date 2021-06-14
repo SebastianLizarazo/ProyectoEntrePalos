@@ -9,7 +9,7 @@ use App\Models\Pagos;
 
 $nameModel = "Pago";
 $pluralModel = $nameModel . 's';
-//$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
+$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,7 +80,7 @@ $pluralModel = $nameModel . 's';
                                                         <p class="text-muted"><?= $Datapago->getTrabajador()->getNombres() ?> <?= $Datapago->getTrabajador()->getApellidos() ?></p>
                                                 <hr>
                                                     <strong><i class="fas fa-calendar-day"></i>&nbsp; Fecha</strong>
-                                                        <p class="text-muted"><?= $Datapago->getFecha() ?></p>
+                                                        <p class="text-muted"><?= $Datapago->getFecha()->format('Y-m-d') ?></p>
                                                 <hr>
                                                     <strong><i class="fas fa-check"></i></i>&nbsp; Estado</strong>
                                                         <p class="text-muted"><?= $Datapago->getEstado() ?></p>

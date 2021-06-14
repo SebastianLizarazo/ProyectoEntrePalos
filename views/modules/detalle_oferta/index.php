@@ -7,7 +7,7 @@ use App\Controllers\DetalleOfertasController;
 use App\Models\GeneralFunctions;
 use App\Models\DetalleOfertas;
 
-$nameModel = "Detalle oferta";
+$nameModel = "DetalleOferta";
 $pluralModel = $nameModel.'s';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
@@ -84,7 +84,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Numero de producto</th>
+                                                <th>Producto</th>
                                                 <th>Oferta</th>
                                                 <th data-priority="2">Cantidad de producto</th>
                                                 <th data-priority="1">Acciones</th>
@@ -122,7 +122,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Numero de producto</th>
+                                                <th>Producto</th>
                                                 <th>Oferta</th>
                                                 <th>Cantidad de producto</th>
                                                 <th>Acciones</th>
@@ -134,7 +134,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+
                             </div>
                             <!-- /.card-footer-->
                         </div>

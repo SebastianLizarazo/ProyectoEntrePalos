@@ -8,7 +8,7 @@ use App\Controllers\UsuariosController;
 
 $nameModel = "Pago"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
-$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
+$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +54,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -77,7 +77,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                             array(
                                                                 'id' => 'Trabajador_id',
                                                                 'name' => 'Trabajador_id',
-                                                                'defaultValue' =>'', //Boyacá
+                                                                'defaultValue' => $frmSession['Trabajador_id'] ?? '',
                                                                 'class' => 'form-control select2bs4 select2-info',
                                                                 'where' => "estado = 'Activo' and rol = 'Mesero' or rol = 'Proveedor' or rol = 'Domiciliario' or rol = 'Cocinero'"
                                                             )
@@ -88,14 +88,15 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (fr
                                                 <div class="form-group row">
                                                     <label for="Fecha" class="col-sm-2 col-form-label">Fecha</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="date" class="form-control" id="Fecha" name="Fecha"
-                                                               placeholder="Ingrese la fecha del pago" value="<?= $frmSession['Nombre'] ?? '' ?>">
+                                                        <input required type="date" class="col-sm-3 form-control" id="Fecha" name="Fecha"
+                                                                value="<?= $frmSession['Fecha'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                                     <div class="form-group row">
                                                         <label for="estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="estado" name="estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Pendiente") ? "selected" : ""; ?> value="Pendiente">Pendiente</option>
                                                                 <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Saldado") ? "selected" : ""; ?> value="Saldado">Saldado</option>
                                                             </select>

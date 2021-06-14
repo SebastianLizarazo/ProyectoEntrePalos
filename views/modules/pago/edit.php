@@ -12,7 +12,7 @@ use Carbon\Carbon;
 
 $nameModel = "Pago";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -60,7 +60,7 @@ $pluralModel = $nameModel.'s';
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
@@ -112,6 +112,7 @@ $pluralModel = $nameModel.'s';
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Estado" name="Estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ($Datapago->getEstado() == "Pendiente") ? "selected" : ""; ?> value="Pendiente">Pendiente</option>
                                                                 <option <?= ($Datapago->getEstado() == "Saldado") ? "selected" : ""; ?> value="Saldado">Saldado</option>
                                                             </select>

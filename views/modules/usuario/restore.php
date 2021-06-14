@@ -87,12 +87,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Nombres</th>
                                                 <th>Apellidos</th>
                                                 <th>Telefono</th>
-                                                <th>Dirección</th>
-                                                <th>Email</th>
+                                                <th class="none">Dirección:</th>
+                                                <th class="none">Email:</th>
                                                 <th>Rol</th>
-                                                <th>Estado</th>
+                                                <th class="none">Estado:</th>
                                                 <th>Empresa</th>
-                                                <th>Activar</th>
+                                                <th data-priority="1">Restaurar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -136,10 +136,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Telefono</th>
                                                 <th>Dirección</th>
                                                 <th>Email</th>
-                                                <th>Rol</th>
-                                                <th>Estado</th>
-                                                <th>Empresa</th>
-                                                <th>Activar</th>
+                                                <th data-priority="2">Rol</th>
+                                                <th data-priority="2">Estado</th>
+                                                <th data-priority="2">Empresa</th>
+                                                <th data-priority="1">Restaurar</th>
                                             </tr>
                                             </tfoot>
                                         </table>
@@ -148,7 +148,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+
                             </div>
                             <!-- /.card-footer-->
                         </div>

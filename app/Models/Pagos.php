@@ -116,13 +116,13 @@ class Pagos extends AbstractDBConnection implements Model
     }
     public function getConsumoTrabajadoresPago(): ?array
     {
-        //if (!empty($this-> ConsumoTrabajadoresPago)) {
+        if (!empty($this-> ConsumoTrabajadoresPago)) {
         $this-> ConsumoTrabajadoresPago = ConsumoTrabajadores::search(
             "SELECT * FROM consumotrabajador WHERE Pago_id = ".$this->getId()
         );
         return ($this->ConsumoTrabajadoresPago)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
 
     protected function save(string $query): ?bool

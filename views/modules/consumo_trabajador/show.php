@@ -7,8 +7,8 @@ use App\Controllers\ConsumoTrabajadoresController;
 use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
-$nameModel = "Consumo trabajador";
-$pluralModel = $nameModel . 's';
+$nameModel = "ConsumoTrabajador";
+$pluralModel = $nameModel . 'es';
 $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
@@ -63,7 +63,9 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                     ?>
                                     <div class="card-header">
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
-                                            del consumo de trabajador numero <?= $DataConsumoT->getId() ?></h3>
+                                            del consumo de trabajador numero <?= $DataConsumoT->getId() ?> del trabajador
+                                            <?= $DataConsumoT->getPagos()->getTrabajador()->getNombres().' '.
+                                            $DataConsumoT->getPagos()->getTrabajador()->getApellidos() ?></h3>
                                         <div class="card-tools">
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                         class="fas fa-expand"></i></button>
@@ -79,13 +81,13 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                     <strong><i class="nav-icon fas fa-dollar-sign"></i>&nbsp; Numero de pago</strong>
                                                         <p class="text-muted"><?= $DataConsumoT->getPagoId() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-hamburger"></i>&nbsp;Nombre del producto</strong>
+                                                    <strong><i class="fas fa-hamburger"></i>&nbsp;Producto</strong>
                                                         <p class="text-muted"><?= $DataConsumoT->getProducto()->getNombre() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-hamburger"></i>&nbsp;Cantidad Producto</strong>
+                                                    <strong><i class="fas fa-sort-numeric-up-alt"></i>&nbsp;Cantidad Producto</strong>
                                                         <p class="text-muted"><?= $DataConsumoT->getCantidadProducto() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-file-alt"></i>&nbsp;Descripcion</strong>
+                                                    <strong><i class="fas fa-file-alt"></i>&nbsp;Descripción</strong>
                                                         <p class="text-muted"><?= $DataConsumoT->getDescripcion() ?></p>
                                                 </p>
                                             </div>

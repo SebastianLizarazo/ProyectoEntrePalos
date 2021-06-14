@@ -6,8 +6,8 @@ require_once("../../partials/check_login.php");
 use App\Controllers\ConsumoTrabajadoresController;
 use App\Controllers\PagosController;
 use App\Controllers\ProductosController;
+use App\Models\ConsumoTrabajadores;
 use App\Models\GeneralFunctions;
-use Carbon\Carbon;
 
 
 $nameModel = "ConsumoTrabajador";
@@ -74,7 +74,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                 <?php
 
                                 $DataConsumoT = ConsumoTrabajadoresController::searchForID(["id" => $_GET["id"]]);
-                                /* @var $DataConsumoT \App\Models\ConsumoTrabajadores */
+                                /* @var $DataConsumoT ConsumoTrabajadores */
                                 if (!empty($DataConsumoT)) {
                                     ?>
                                     <!-- form start -->
@@ -119,17 +119,17 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad de producto</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="CantidadProducto"
+                                                            <input required type="number"  max="50" class="form-control" id="CantidadProducto"
                                                                    name="CantidadProducto" value="<?= $DataConsumoT->getCantidadProducto(); ?>"
                                                                    placeholder="Ingrese la cantidad de producto">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
+                                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
                                                         <div class="col-sm-10">
                                                             <input required type="text" class="form-control" id="Descripcion"
                                                                    name="Descripcion" value="<?= $DataConsumoT->getDescripcion(); ?>"
-                                                                   placeholder="Ingrese descripcion">
+                                                                   placeholder="Ingrese descripción">
                                                         </div>
                                                     </div>
                                                 </div>

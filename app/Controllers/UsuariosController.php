@@ -32,14 +32,16 @@ class UsuariosController
     public function create()
     {
         try {
-            if (!empty($this->dataUsuario['Cedula']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'])) {
+            if (!empty($this->dataUsuario['Cedula']) && !empty($this->dataUsuario['Contrasena']) && !empty($this->dataUsuario['Email']) &&
+                !empty($this->dataUsuario['Telefono']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'],$this->dataUsuario['Contrasena']
+                ,$this->dataUsuario['Email'],$this->dataUsuario['Telefono'])) {
                 $Usuario = new Usuarios($this->dataUsuario);
                 if ($Usuario->insert()) {
-                    unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmCreateUsuarios']);
                     header("Location: ../../views/modules/usuario/index.php?respuesta=success&mensaje=Usuario Registrado");
                 }
             } else {
-                header("Location: ../../views/modules/usuario/create.php?respuesta=error&mensaje=Usuario ya registrado");
+                header("Location: ../../views/modules/usuario/create.php?respuesta=error&mensaje=Ya existe un usuario con esta Cedula, Contraseña, Email o Telefono");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
@@ -79,9 +81,9 @@ class UsuariosController
         try {
             $Usuario = new Usuarios($this->dataUsuario);
             if($Usuario->update()){
-                unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmEditUsuarios']);
             }
-            header("Location: ../../views/modules/usuario/show.php?id=" . $Usuario->getId() . "&respuesta=success&mensaje=usuario Actualizado");
+            header("Location: ../../views/modules/usuario/show.php?id=" . $Usuario->getId() . "&respuesta=success&mensaje=Usuario Actualizado");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }

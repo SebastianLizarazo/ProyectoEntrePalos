@@ -24,7 +24,7 @@ class DetalleOfertasController
             if (!empty($this->datadetalleOferta['Producto_id']) && !empty($this->datadetalleOferta['Oferta_id']) && !DetalleOfertas::DetalleOfertaRegistrada($this->datadetalleOferta['Producto_id'], $this->datadetalleOferta['Oferta_id'])) {
                 $DetalleOferta = new DetalleOfertas($this->datadetalleOferta);
                 if ($DetalleOferta->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
+                    unset($_SESSION['frmCreateDetalleOfertas']);
                     header("Location: ../../views/modules/detalle_oferta/index.php?respuesta=success&mensaje=Detalle Oferta Registrada");
                 }
             } else {
@@ -39,7 +39,7 @@ class DetalleOfertasController
         try {
             $dtlofta = new DetalleOfertas($this->datadetalleOferta);
             if($dtlofta->update()){
-                //unset($_SESSION['frmUsuarios']);
+                unset($_SESSION['frmEditDetalleOfertas']);
             }
             header("Location: ../../views/modules/detalle_oferta/show.php?id=" . $dtlofta->getId() . "&respuesta=success&mensaje=Detalle Oferta Actualizada");
         } catch (\Exception $e) {

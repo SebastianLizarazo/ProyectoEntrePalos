@@ -7,10 +7,10 @@ use App\Controllers\ConsumoTrabajadoresController;
 use App\Controllers\PagosController;
 use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
-use Carbon\Carbon;
 
-$nameModel = "ConsumoTrabajadores"; //Nombre del Modelo
-$pluralModel = $nameModel.'s'; //Nombre del modelo en plural
+
+$nameModel = "ConsumoTrabajador"; //Nombre del Modelo
+$pluralModel = $nameModel.'es'; //Nombre del modelo en plural
 $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
@@ -70,7 +70,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                             <!-- form start -->
                                 <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
                                       name="frmCreate<?= $nameModel ?>"
-                                      action="../../../app/Controllers/MainController.php?controller=<?= $nameModel ?>&action=create">
+                                      action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
 
 
                                       <div class="row">
@@ -82,7 +82,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                                         (array (
                                                                 'id' => 'Pago_id',
                                                                 'name' => 'Pago_id',
-                                                                'defaultValue' => (!empty($frmSession['pago_id'])) ? $frmSession['pago_id'] : '',
+                                                                'defaultValue' => (!empty($frmSession['Pago_id'])) ? $frmSession['Pago_id'] : '',
                                                                 'class' => 'form-control select2bs4 select2-info',
                                                                 'where' => "estado = 'Pendiente'"
                                                             )
@@ -97,7 +97,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                                         (array (
                                                                 'id' => 'Producto_id',
                                                                 'name' => 'Producto_id',
-                                                                'defaultValue' => (!empty($frmSession['producto_id'])) ? $frmSession['producto_id'] : '',
+                                                                'defaultValue' => (!empty($frmSession['Producto_id'])) ? $frmSession['Producto_id'] : '',
                                                                 'class' => 'form-control select2bs4 select2-info',
                                                                 'where' => "estado = 'Activo'"
                                                             )
@@ -108,15 +108,15 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                                 <div class="form-group row">
                                                     <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad del producto</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" class="form-control" id="CantidadProducto" name="CantidadProducto"
-                                                               placeholder="Ingrese la cantidad del producto" value="<?= $frmSession['CantidadProducto'] ?? '' ?>">
+                                                        <input required type="number" max="50" class="form-control" id="CantidadProducto" name="CantidadProducto"
+                                                               placeholder="Ingrese la cantidad de producto" value="<?= $frmSession['CantidadProducto'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                               <div class="form-group row">
-                                                  <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
+                                                  <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
                                                   <div class="col-sm-10">
                                                       <input required type="text" class="form-control" id="Descripcion" name="Descripcion"
-                                                             placeholder="Ingrese una descripcion" value="<?= $frmSession['Descripcion'] ?? '' ?>">
+                                                             placeholder="Ingrese una descripción" value="<?= $frmSession['Descripcion'] ?? '' ?>">
                                                   </div>
                                               </div>
                                           </div>

@@ -1,15 +1,16 @@
 <?php
 require_once("../../../app/Controllers/PagosController.php");
 require_once("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 
 use App\Controllers\PagosController;
 use App\Models\GeneralFunctions;
 use App\Models\Pagos;
+use Carbon\Carbon;
 
 $nameModel = "Pago";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
@@ -92,7 +93,7 @@ $pluralModel = $nameModel.'s';
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrPago = \App\Controllers\PagosController::getAll();
+                                            $arrPago = PagosController::getAll();
                                             if (!empty($arrPago))
                                             /* @var $arrPago Pagos */
                                             foreach ($arrPago as $pago) {
@@ -101,7 +102,7 @@ $pluralModel = $nameModel.'s';
                                                 <tr>
                                                     <td><?= $pago->getId(); ?></td>
                                                     <td><?= $pago->getTrabajador()->getNombres(); ?> <?= $pago->getTrabajador()->getApellidos(); ?> </td>
-                                                    <td><?= $pago->getFecha(); ?></td>
+                                                    <td><?= $pago->getFecha()->format('Y-m-d'); ?></td>
                                                     <td><span class="badge badge-<?= $pago->getEstado() == "Saldado" ? "success" : "danger" ?>">
                                                             <?= $pago->getEstado() ?>
                                                     <td>
@@ -146,7 +147,7 @@ $pluralModel = $nameModel.'s';
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+
                             </div>
                             <!-- /.card-footer-->
                         </div>

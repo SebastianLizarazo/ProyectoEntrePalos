@@ -60,7 +60,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información de la <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
@@ -95,17 +95,17 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
+                                                        <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
                                                         <div class="col-sm-10">
                                                             <input required type="text" class="form-control" id="Descripcion"
                                                                    name="Descripcion" value="<?= $DataOferta->getDescripcion(); ?>"
-                                                                   placeholder="Ingrese la descripcion de la oferta">
+                                                                   placeholder="Ingrese la descripción de la oferta">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="PrecioUnidadVentaOferta" class="col-sm-2 col-form-label">Precio Unidad Venta Oferta</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="PrecioUnidadVentaOferta"
+                                                            <input required type="number" max="9999999" min="50" class="form-control" id="PrecioUnidadVentaOferta"
                                                                    name="PrecioUnidadVentaOferta" value="<?= $DataOferta->getPrecioUnidadVentaOferta(); ?>"
                                                                    placeholder="Ingrese el precio unidad venta oferta">
                                                         </div>
@@ -114,6 +114,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Estado" name="Estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ($DataOferta->getEstado() == "Disponible") ? "selected" : ""; ?> value="Disponible">Disponible</option>
                                                                 <option <?= ($DataOferta->getEstado() == "No disponible") ? "selected" : ""; ?> value="No disponible">No Disponible</option>
                                                             </select>

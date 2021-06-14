@@ -4,11 +4,11 @@
 
 use App\Controllers\OfertasController;
 use App\Models\GeneralFunctions;
-use Carbon\Carbon;
 
-    $nameModel = "Oferta"; //Nombre del Modelo
-    $pluralModel = $nameModel.'s';
-    $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
+
+$nameModel = "Oferta"; //Nombre del Modelo
+$pluralModel = $nameModel.'s';
+$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
 
 ?>
 <!DOCTYPE html>
@@ -81,16 +81,16 @@ use Carbon\Carbon;
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion Oferta</label>
+                                                    <label for="Descripcion" class="col-sm-2 col-form-label">Descripción Oferta</label>
                                                     <div class="col-sm-10">
                                                         <input required type="text" class="form-control" id="Descripcion" name="Descripcion"
-                                                               placeholder="Ingrese la descripcion de la oferta" value="<?= $frmSession['Descripcion'] ?? '' ?>">
+                                                               placeholder="Ingrese la descripción de la oferta" value="<?= $frmSession['Descripcion'] ?? '' ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="PrecioUnidadVentaOferta" class="col-sm-2 col-form-label">Precio unidad venta en oferta</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" max="9999999" min="1111111" class="form-control" id="PrecioUnidadVentaOferta" name="PrecioUnidadVentaOferta"
+                                                        <input required type="number" max="9999999" min="50" class="form-control" id="PrecioUnidadVentaOferta" name="PrecioUnidadVentaOferta"
                                                                placeholder="Ingrese el precio unidad venta oferta" value="<?= $frmSession['PrecioUnidadVentaOferta'] ?? '' ?>">
                                                     </div>
                                                 </div>
@@ -98,8 +98,9 @@ use Carbon\Carbon;
                                                     <label for="Estado" class="col-sm-2 col-form-label">Estado Oferta</label>
                                                     <div class="col-sm-10">
                                                         <select required id="Estado" name="Estado" class="custom-select">
+                                                            <option value="">Seleccione</option>
                                                             <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Disponible") ? "selected" : ""; ?> value="Disponible">Disponible</option>
-                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Ocupada") ? "selected" : ""; ?> value="Ocupada">Ocupada</option>
+                                                            <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "No disponible") ? "selected" : ""; ?> value="No disponible">No disponible</option>
                                                         </select>
                                                     </div>
                                                 </div>

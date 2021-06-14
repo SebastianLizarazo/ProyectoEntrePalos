@@ -31,7 +31,7 @@ class FacturasController
         try {
                 $Factura = new Facturas($this->dataFactura);
                 if ($Factura->insert()) {
-                    unset($_SESSION['frmFacturas']);
+                    unset($_SESSION['frmCreateFacturas']);
                     header("Location: ../../views/modules/factura/index.php?respuesta=success&mensaje=Factura Registrada");
                 }
         } catch (\Exception $e) {
@@ -43,7 +43,7 @@ class FacturasController
         try {
             $fta = new Facturas($this->dataFactura);
             if($fta->update()){
-                unset($_SESSION['frmFacturas']);
+                unset($_SESSION['frmEditFacturas']);
             }
             header("Location: ../../views/modules/factura/show.php?id=" . $fta->getId() . "&respuesta=success&mensaje=Factura Actualizada");
         } catch (\Exception $e) {

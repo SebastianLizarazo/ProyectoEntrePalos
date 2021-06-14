@@ -7,9 +7,8 @@ use App\Controllers\DetalleOfertasController;
 use App\Controllers\OfertasController;
 use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
-use Carbon\Carbon;
 
-$nameModel = "DetalleOfertas"; //Nombre del Modelo
+$nameModel = "DetalleOferta"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
 $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
@@ -70,7 +69,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                             <!-- form start -->
                                 <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
                                       name="frmCreate<?= $nameModel ?>"
-                                      action="../../../app/Controllers/MainController.php?controller=<?= $nameModel ?>&action=create">
+                                      action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
 
 
                                       <div class="row">
@@ -108,7 +107,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                               <div class="form-group row">
                                                   <label for="CantidadProducto" class="col-sm-2 col-form-label">Cantidad de producto</label>
                                                   <div class="col-sm-10">
-                                                      <input required type="number" class="form-control" id="CantidadProducto" name="CantidadProducto"
+                                                      <input required type="number" max="50" class="form-control" id="CantidadProducto" name="CantidadProducto"
                                                              placeholder="Ingrese la cantidad de producto" value="<?= $frmSession['CantidadProducto'] ?? '' ?>">
                                                   </div>
                                               </div>

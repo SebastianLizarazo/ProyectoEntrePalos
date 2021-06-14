@@ -79,13 +79,14 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
+                                               style="width:100%;">
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
                                                 <th>Nombre</th>
-                                                <th>Descripcion</th>
-                                                <th>Precio de unidad venta oferta</th>
+                                                <th>Descripción</th>
+                                                <th>Precio de unidad venta</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -121,8 +122,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tr>
                                                 <th>N°</th>
                                                 <th>Nombre</th>
-                                                <th>Descripcion</th>
-                                                <th>Precio de unidad venta oferta</th>
+                                                <th>Descripción</th>
+                                                <th>Precio de unidad venta</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>

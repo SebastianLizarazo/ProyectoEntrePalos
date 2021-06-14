@@ -12,7 +12,7 @@ use App\Models\Usuarios;
 
 $nameModel = "Usuario";
 $pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frm'.$pluralModel] ?? null;
+$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -60,11 +60,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i>&nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i>&nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="create.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -122,17 +119,17 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Direccion" class="col-sm-2 col-form-label">Direccion</label>
+                                                        <label for="Direccion" class="col-sm-2 col-form-label">Dirección</label>
                                                         <div class="col-sm-10">
                                                             <input required type="text" class="form-control" id="Direccion"
                                                                    name="Direccion" value="<?= $DataUsuario->getDireccion(); ?>"
-                                                                   placeholder="Ingrese la direcciopn del usuario">
+                                                                   placeholder="Ingrese la dirección del usuario">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label for="Email" class="col-sm-2 col-form-label">Email</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="text" class="form-control" id="Email"
+                                                            <input required type="email" class="form-control" id="Email"
                                                                    name="Email" value="<?= $DataUsuario->getEmail(); ?>"
                                                                    placeholder="Ingrese el email del usuario">
                                                         </div>
@@ -149,11 +146,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <label for="Rol" class="col-sm-2 col-form-label">Rol</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Rol" name="Rol" class="custom-select">
-                                                                <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Administrador") ? "selected" : ""; ?> value="Administrador">Administrador</option>
-                                                                <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Proveedor") ? "selected" : ""; ?> value="Proveedor">Proveedor</option>
-                                                                <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Cliente") ? "selected" : ""; ?> value="Cliente">Cliente</option>
-                                                                <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Mesero") ? "selected" : ""; ?> value="Mesero">Mesero</option>
-                                                                <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Domiciliario") ? "selected" : ""; ?> value="Domiciliario">Domiciliario</option>
+                                                                <option value="">Seleccione</option>
+                                                                <option <?= ( $DataUsuario->getRol()  == "Administrador") ? "selected" : ""; ?> value="Administrador">Administrador</option>
+                                                                <option <?= ( $DataUsuario->getRol() == "Proveedor") ? "selected" : ""; ?> value="Proveedor">Proveedor</option>
+                                                                <option <?= ( $DataUsuario->getRol() == "Cliente") ? "selected" : ""; ?> value="Cliente">Cliente</option>
+                                                                <option <?= ( $DataUsuario->getRol() == "Mesero") ? "selected" : ""; ?> value="Mesero">Mesero</option>
+                                                                <option <?= ( $DataUsuario->getRol() == "Domiciliario") ? "selected" : ""; ?> value="Domiciliario">Domiciliario</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -161,6 +159,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? null;
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
                                                             <select required id="Estado" name="Estado" class="custom-select">
+                                                                <option value="">Seleccione</option>
                                                                 <option <?= ($DataUsuario->getEstado() == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
                                                                 <option <?= ($DataUsuario->getEstado() == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                             </select>

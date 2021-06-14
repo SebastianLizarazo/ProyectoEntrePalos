@@ -10,7 +10,7 @@ use Carbon\Carbon;
 
 $nameModel = "Usuario"; //Nombre del Modelo
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
+$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,7 +56,7 @@ $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
                         <!-- Horizontal Form -->
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-box"></i> &nbsp; Información del <?= $nameModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Información del <?= $nameModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                             class="fas fa-expand"></i></button>
@@ -97,21 +97,21 @@ $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
                                             <div class="form-group row">
                                                 <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" min="111111111" max="9999999999" class="form-control" id="Telefono" name="Telefono"
+                                                    <input required type="number" min="1111111111" max="9999999999" class="form-control" id="Telefono" name="Telefono"
                                                            placeholder="Ingrese el telefono del usuario" value="<?= $frmSession['Telefono'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="Direccion" class="col-sm-2 col-form-label">Direccion</label>
+                                                <label for="Direccion" class="col-sm-2 col-form-label">Dirección</label>
                                                 <div class="col-sm-10">
                                                     <input required type="text" class="form-control" id="Direccion" name="Direccion"
-                                                           placeholder="Ingrese la direccion del usuario" value="<?= $frmSession['Direccion'] ?? '' ?>">
+                                                           placeholder="Ingrese la dirección del usuario" value="<?= $frmSession['Direccion'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="Email" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="text" class="form-control" id="Email" name="Email"
+                                                    <input required type="email" class="form-control" id="Email" name="Email"
                                                            placeholder="Ingrese la Email del usuario" value="<?= $frmSession['Email'] ?? '' ?>">
                                                 </div>
                                             </div>
@@ -126,6 +126,7 @@ $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
                                                 <label for="Rol" class="col-sm-2 col-form-label">Rol</label>
                                                 <div class="col-sm-10">
                                                     <select required id="Rol" name="Rol" class="custom-select">
+                                                        <option value="">Seleccione</option>
                                                         <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Administrador") ? "selected" : ""; ?> value="Administrador">Administrador</option>
                                                         <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Proveedor") ? "selected" : ""; ?> value="Proveedor">Proveedor</option>
                                                         <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Cliente") ? "selected" : ""; ?> value="Cliente">Cliente</option>
@@ -138,6 +139,7 @@ D                                                    </select>
                                                 <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                 <div class="col-sm-10">
                                                     <select required id="Estado" name="Estado" class="custom-select">
+                                                        <option value="">Seleccione</option>
                                                         <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
                                                         <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                     </select>

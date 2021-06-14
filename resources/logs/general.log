@@ -190,3 +190,6 @@
 
 )
   
+[2021-06-13T20:07:41.145187+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetalleOfertaController no fue encontrada "} 
+[2021-06-13T20:09:53.124793+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetalleOfertaController no fue encontrada "} 
+[2021-06-14T14:27:17.703628+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\ConsumoTrabajadorController no fue encontrada "} 
