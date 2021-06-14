@@ -116,15 +116,15 @@ class ImagenesController
          return null;
      }
 
-     static public function activate(int $id)
+     static public function restore(int $id)
      {
          try {
              $ObjImagen = Imagenes::searchForId($id);
              $ObjImagen->setEstado("Activo");
              if ($ObjImagen->update()) {
-                 header("Location: ../../views/modules/imagen/index.php");
+                 header("Location: ../../views/modules/imagen/restore.php?respuesta=success&mensaje=Imagen restaurada");
              } else {
-                 header("Location: ../../views/modules/imagen/index.php?respuesta=error&mensaje=Error al guardar");
+                 header("Location: ../../views/modules/imagen/restore.php?respuesta=error&mensaje=Error al restaurar");
              }
          } catch (\Exception $e) {
              GeneralFunctions::logFile('Exception',$e, 'error');
@@ -137,7 +137,7 @@ class ImagenesController
             $ObjImagen = Imagenes::searchForId($id);
             $ObjImagen->setEstado("Inactivo");
             if ($ObjImagen->update()) {
-                header("Location: ../../views/modules/imagen/index.php");
+                header("Location: ../../views/modules/imagen/index.php?respuesta=success&mensaje=Imagen inactivada");
             } else {
                 header("Location: ../../views/modules/imagen/index.php?respuesta=error&mensaje=Error al guardar");
             }

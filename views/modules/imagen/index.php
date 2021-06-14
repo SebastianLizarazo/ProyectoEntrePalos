@@ -62,7 +62,7 @@ $modelProducto = NULL;
                         <!-- Default box -->
                         <div class="card card-dark">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?> <?= !empty($_SESSION['idProducto']) ? 'de '.$_SESSION['idProducto']->getNombre() : '' ?></h3>
+                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
@@ -102,6 +102,7 @@ $modelProducto = NULL;
                                             if (!empty($arrImagenes))
                                             /* @var $arrImagenes Imagenes[] */
                                             foreach ($arrImagenes as $imagen) {
+                                                if ($imagen->getEstado() == 'Activo'){
                                                 ?>
                                                 <tr>
                                                     <td><?= $imagen->getId(); ?></td>
@@ -115,9 +116,11 @@ $modelProducto = NULL;
                                                                 </span>
                                                             <?php } ?>
                                                         <?php }elseif(!empty($imagen->getProducto())){ ?>
+                                                            <?php if(!empty($imagen->getRuta())){ ?>
                                                                 <span class="badge badge-info" data-toggle="tooltip" data-html="true"
                                                                       title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/productos/<?= $imagen->getRuta(); ?>'>">Imagen
                                                                 </span>
+                                                            <?php } ?>
                                                         <?php }else{ ?>
                                                                 <span>No hay imagen disponible</span>
                                                         <?php } ?>
@@ -150,7 +153,8 @@ $modelProducto = NULL;
                                                         <?php } ?>
                                                     </td>
                                                 </tr>
-                                            <?php } ?>
+                                            <?php }
+                                            }?>
 
                                             </tbody>
                                             <tfoot>
@@ -171,7 +175,13 @@ $modelProducto = NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+                                <div class="col-auto mr-auto"></div>
+                                <div class="col-auto">
+                                    <a role="button" href="restore.php" class="btn btn-primary float-left"
+                                       style="margin-right: 5px;">
+                                        <i class="fas fa-undo-alt"></i>&nbsp;Restaurar <?= $pluralModel ?>
+                                    </a>
+                                </div>
                             </div>
                             <!-- /.card-footer-->
                         </div>

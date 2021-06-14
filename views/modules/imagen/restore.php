@@ -1,16 +1,19 @@
 <?php
-require_once("../../../app/Controllers/OfertasController.php");
+require_once("../../../app/Controllers/UsuariosController.php");
 require_once("../../partials/routes.php");
 require_once("../../partials/check_login.php");
 
-use App\Controllers\OfertasController;
-use App\Models\GeneralFunctions;
+use App\Controllers\ImagenesController;
+use App\Controllers\ProductosController;
 use App\Models\Imagenes;
-use App\Models\Ofertas;
+use App\Models\GeneralFunctions;
 
-$nameModel = "Oferta";
-$pluralModel = $nameModel.'s';
+$nameModel = "Imagen";
+$pluralModel = $nameModel.'es';
 $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+$modelProducto = NULL;
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,7 +65,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 <h3 class="card-title"><i class="fas fa-trash-restore"></i> &nbsp; Restaurar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                                            class="fas fa-expand"></i></button>
+                                                class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                             data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
@@ -80,70 +83,76 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
-                                               style="width:100%;">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Nombre</th>
+                                                <th>Nombres</th>
                                                 <th>Descripción</th>
-                                                <th>Precio de unidad venta</th>
+                                                <th>Ruta</th>
                                                 <th>Estado</th>
-                                                <th class="none">Imagen:</th>
-                                                <th>Acciones</th>
+                                                <th>Producto</th>
+                                                <th>Oferta</th>
+                                                <th>Restaurar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrOfertas = OfertasController::getAll();
-                                            if (!empty($arrOfertas))
-                                                /* @var $arrOfertas Ofertas */
-                                                foreach ($arrOfertas as $oferta) {
-                                                    if ($oferta->getEstado() == 'No disponible'){
-                                                        ?>
-                                                        <tr>
-                                                        <td><?= $oferta->getId(); ?></td>
-                                                        <td><?= $oferta->getNombre(); ?></td>
-                                                        <td><?= $oferta->getDescripcion(); ?></td>
-                                                        <td><?= $oferta->getPrecioUnidadVentaOferta(); ?></td>
-                                                        <td><?= $oferta->getEstado(); ?></td>
+                                            $arrImagenes = Imagenes::getAll();
+                                            if (!empty($arrImagenes))
+                                                /* @var $arrImagenes Imagenes[] */
+                                                foreach ($arrImagenes as $imagen) {
+                                                    if ($imagen->getEstado() == 'Inactivo'){
+                                                    ?>
+                                                    <tr>
+                                                        <td><?= $imagen->getId(); ?></td>
+                                                        <td><?= !empty($imagen->getNombre()) ? $imagen->getNombre() : 'Sin Nombre' ?></td>
+                                                        <td><?= !empty($imagen->getDescripcion()) ? $imagen->getDescripcion() : 'Sin descripción' ?></td>
                                                         <td>
-                                                            <?php if(!empty($oferta->getImagenOferta())){
-                                                                $arrImg = $oferta->getImagenOferta();
-                                                                /* @var  $arrImg Imagenes  */
-                                                                foreach ($arrImg as $img){
-                                                                    if(!empty($img->getRuta())){ ?>
-                                                                        <span class="badge badge-info" data-toggle="tooltip" data-html="true"
-                                                                              title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/ofertas/<?= $img->getRuta(); ?>'>">Imagen
-                                                                        </span>
-                                                                    <?php }
-                                                                }
-                                                            }else{ ?>
+                                                            <?php if (!empty($imagen->getOferta())){?>
+                                                                <?php if(!empty($imagen->getRuta())){ ?>
+                                                                    <span class="badge badge-info" data-toggle="tooltip" data-html="true"
+                                                                          title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/ofertas/<?= $imagen->getRuta(); ?>'>">Imagen
+                                                                </span>
+                                                                <?php } ?>
+                                                            <?php }elseif(!empty($imagen->getProducto())){ ?>
+                                                                <?php if(!empty($imagen->getRuta())){ ?>
+                                                                    <span class="badge badge-info" data-toggle="tooltip" data-html="true"
+                                                                          title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/productos/<?= $imagen->getRuta(); ?>'>">Imagen
+                                                                </span>
+                                                                <?php } ?>
+                                                            <?php }else{ ?>
                                                                 <span>No hay imagen disponible</span>
                                                             <?php } ?>
                                                         </td>
-                                                            <td>
-                                                                <div style="text-align: center;">
-                                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restaurar&id=<?= $oferta->getId(); ?>"
-                                                                           type="button" data-toggle="tooltip" title="Restaurar"
-                                                                           class="btn docs-tooltip btn-success btn-xs"><i
-                                                                                class="fas fa-undo-alt"></i></a>
-                                                                    <?php } ?>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <?php
-                                                } ?>
+                                                        <td>
+                                                            <?= $imagen->getEstado() ?>
+                                                        </td>
+                                                        <td><?= !empty($imagen->getProducto()) ? $imagen->getProducto()->getNombre() : 'No hay producto' ?></td>
+                                                        <td><?= !empty($imagen->getOferta()) ? $imagen->getOferta()->getNombre() : 'No hay oferta' ?></td>
+                                                        <td>
+                                                            <div style="text-align: center;">
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=restore&id=<?= $imagen->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Restaurar"
+                                                                   class="btn docs-tooltip btn-success btn-xs"><i
+                                                                            class="fas fa-undo-alt"></i></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                <?php }
+                                            }?>
+
                                             </tbody>
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
-                                                <th>Nombre</th>
+                                                <th>Nombres</th>
                                                 <th>Descripción</th>
-                                                <th>Precio de unidad venta</th>
+                                                <th>Ruta</th>
                                                 <th>Estado</th>
-                                                <th class="none">Imagen:</th>
-                                                <th>Acciones</th>
+                                                <th>Producto</th>
+                                                <th>Oferta</th>
+                                                <th>Restaurar</th>
                                             </tr>
                                             </tfoot>
                                         </table>
@@ -152,6 +161,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
+
                             </div>
                             <!-- /.card-footer-->
                         </div>
@@ -170,6 +180,5 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 <?php require('../../partials/scripts.php'); ?>
 <!-- Scripts requeridos para las datatables -->
 <?php require('../../partials/datatables_scripts.php'); ?>
-
 </body>
 </html>

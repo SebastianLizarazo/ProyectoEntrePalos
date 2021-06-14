@@ -6,6 +6,8 @@ require_once("../../partials/check_login.php");
 
 use App\Controllers\OfertasController;
 use App\Models\GeneralFunctions;
+use App\Models\Imagenes;
+use App\Models\Ofertas;
 
 
 $nameModel = "Oferta";
@@ -89,6 +91,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Descripción</th>
                                                 <th data-priority="2">Precio de unidad venta</th>
                                                 <th data-priority="2">Estado</th>
+                                                <th class="none">Imagen:</th>
                                                 <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
@@ -96,7 +99,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <?php
                                             $arrOfertas = OfertasController::getAll();
                                             if (!empty($arrOfertas))
-                                            /* @var $arrOfertas \App\Models\Ofertas */
+                                            /* @var $arrOfertas Ofertas */
                                             foreach ($arrOfertas as $oferta) {
                                             if ($oferta->getEstado() == 'Disponible'){
                                                 ?>
@@ -107,6 +110,21 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     <td><?= $oferta->getPrecioUnidadVentaOferta(); ?></td>
                                                         <td><?= $oferta->getEstado(); ?></td>
                                                     <td>
+                                                        <?php if(!empty($oferta->getImagenOferta())){
+                                                            $arrImg = $oferta->getImagenOferta();
+                                                            /* @var  $arrImg Imagenes  */
+                                                            foreach ($arrImg as $img){
+                                                                if(!empty($img->getRuta())){ ?>
+                                                                    <span class="badge badge-info" data-toggle="tooltip" data-html="true"
+                                                                          title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/ofertas/<?= $img->getRuta(); ?>'>">Imagen
+                                                                        </span>
+                                                                <?php }
+                                                            }
+                                                        }else{ ?>
+                                                            <span>No hay imagen disponible</span>
+                                                        <?php } ?>
+                                                    </td>
+                                                    <td>
                                                         <div  style="text-align: center;">
                                                         <a href="edit.php?id=<?= $oferta->getId(); ?>"
                                                            type="button" data-toggle="tooltip" title="Actualizar"
@@ -116,11 +134,16 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $oferta->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Deshabilitar"
-                                                               class="btn docs-tooltip btn-danger btn-xs">
-                                                                <i class="fas fa-trash-alt"></i></a>
+                                                        <?php if (!empty($oferta->getImagenOferta())){?>
+                                                           <a href="../imagen/show.php?id=<?= $oferta->getId(); ?>"
+                                                           type="button" data-toggle="tooltip" title="Gestionar imagen"
+                                                           class="btn docs-tooltip btn-success btn-xs"><i
+                                                                     class="far fa-images"></i></a>
+                                                        <?php }?>
+                                                        <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $oferta->getId(); ?>"
+                                                           type="button" data-toggle="tooltip" title="Deshabilitar"
+                                                           class="btn docs-tooltip btn-danger btn-xs">
+                                                           <i class="fas fa-trash-alt"></i></a>
                                                          </div>
                                                      </td>
                                                 </tr>
@@ -133,6 +156,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Descripción</th>
                                                 <th>Precio de unidad venta</th>
                                                 <th>Estado</th>
+                                                <th class="none">Imagen:</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </tfoot>

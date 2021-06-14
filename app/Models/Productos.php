@@ -307,13 +307,12 @@ class Productos extends AbstractDBConnection implements Model
     }
     public function getImagenProductos(): ?array
     {
-        if (!empty($this->ImagenProductos)) {
+        if (empty($this->ImagenProductos)) {
         $this->ImagenProductos = Imagenes::search(
             "SELECT * FROM imagen WHERE Producto_id = ".$this->getId()
         );
-        return ($this->ImagenProductos)?? null;
         }
-        return null;
+        return ($this->ImagenProductos)?? null;
     }
     public function getDetalleOfertasProducto(): ?array
     {
@@ -321,9 +320,9 @@ class Productos extends AbstractDBConnection implements Model
         $this-> DetalleOfertasProducto = Productos::search(
             "SELECT * FROM detalleoferta WHERE Producto_id = ".$this->getId()
         );
-        return ($this->DetalleOfertasProducto)?? null;
         }
-        return null;
+        return ($this->DetalleOfertasProducto)?? null;
+
     }
     public function getDetallePedidoProductos(): ?array
     {

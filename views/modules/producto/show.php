@@ -5,6 +5,7 @@ require("../../../app/Controllers/ProductosController.php");
 
 use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
+use App\Models\Imagenes;
 use App\Models\Productos;
 
 $nameModel = "Producto";
@@ -112,6 +113,26 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                     <strong><i class="fas fa-check"></i>&nbsp;Estado</strong>
                                                         <p class="text-muted"><?= $DataProducto->getEstado() ?></p>
                                                 </p>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="row info-box">
+                                                    <div class="col-12">
+                                                        <h4>Foto Producto</h4>
+                                                    </div>
+                                                    <div class="col-12">
+                                                            <?php if(!empty($DataProducto->getImagenProductos())){
+                                                                    $arrImg = $DataProducto->getImagenProductos();
+                                                                    /* @var  $arrImg Imagenes  */
+                                                                    foreach ($arrImg as $img){
+                                                                         if(!empty($img->getRuta())){  ?>
+                                                                             <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/ofertas/<?= $img->getRuta(); ?>' alt="Foto Producto">
+                                                                         <?php }
+                                                                    }
+                                                            }else{ ?>
+                                                                    <span>No hay imagen disponible</span>
+                                                            <?php } ?>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

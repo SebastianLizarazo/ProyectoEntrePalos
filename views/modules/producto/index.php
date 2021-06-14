@@ -5,6 +5,7 @@ require_once("../../partials/check_login.php");
 
 use App\Controllers\ProductosController;
 use App\Models\GeneralFunctions;
+use App\Models\Imagenes;
 use App\Models\Productos;
 
 
@@ -96,7 +97,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th class="none">Marca:</th>
                                                 <th>Cantidad</th>
                                                 <th class="none">Sub categoria:</th>
-                                                <th>Estado</th>
+                                                <th class="none">Imagen:</th>
+                                                <th class="none">Estado:</th>
                                                 <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
@@ -121,6 +123,21 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <td><?= $producto->getMarca()->getNombre(); ?></td>
                                                         <td><?= $producto->getCantidadProducto(); ?></td>
                                                         <td><?= $producto->getSubcategoria()->getNombre(); ?></td>
+                                                        <td>
+                                                             <?php if(!empty($producto->getImagenProductos())){
+                                                                    $arrImg = $producto->getImagenProductos();
+                                                                    /* @var  $arrImg Imagenes  */
+                                                                     foreach ($arrImg as $img){
+                                                                         if(!empty($img->getRuta())){ ?>
+                                                                        <span class="badge badge-info" data-toggle="tooltip" data-html="true"
+                                                                              title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/productos/<?= $img->getRuta(); ?>'>">Imagen
+                                                                        </span>
+                                                                        <?php }
+                                                                     }
+                                                                }else{ ?>
+                                                                 <span>No hay imagen disponible</span>
+                                                             <?php } ?>
+                                                        </td>
                                                         <td><?= $producto->getEstado(); ?></td>
                                                         <td>
                                                             <div  style="text-align: center;">
@@ -163,6 +180,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Marca</th>
                                                 <th>Cantidad</th>
                                                 <th>Sub categoria</th>
+                                                <th>Imagen</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>

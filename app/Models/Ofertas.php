@@ -132,35 +132,34 @@ class Ofertas extends AbstractDBConnection implements Model
 
     public function getDetalleOfertasOferta(): ?array
     {
-        //if (!empty($this-> DetalleOfertasOferta)) {
+        if (!empty($this->DetalleOfertasOferta)) {
         $this-> DetalleOfertasOferta = DetalleOfertas::search(
             "SELECT * FROM detalleoferta WHERE oferta_id = ".$this->getId()
         );
         return ($this->DetalleOfertasOferta)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
 
     public function getDetallePedidoOferta(): ?array
     {
-        //if (!empty($this-> DetallePedidoOferta)) {
+        if (!empty($this-> DetallePedidoOferta)) {
         $this-> DetallePedidoOferta = DetallePedidos::search(
             "SELECT * FROM detallepedido WHERE Ofertas_id = ".$this->getId()
         );
         return ($this->DetallePedidoOferta)?? null;
-        //}
-        //return null;
+        }
+        return null;
     }
 
     public function getImagenOferta(): ?array
     {
-        //if (!empty($this-> ImagenOferta)) {
+        if (empty($this->ImagenOferta)) {
         $this-> ImagenOferta = Imagenes::search(
             "SELECT * FROM imagen WHERE oferta_id = ".$this->getId()
         );
+        }
         return ($this->ImagenOferta)?? null;
-        //}
-        //return null;
     }
 
     /**
