@@ -88,7 +88,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? NULL;
                                                     <div class="form-group row">
                                                         <label for="nombres" class="col-sm-2 col-form-label">Nombres</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control" id="Nombre"
+                                                            <input required type="text" class="form-control" id="Nombre"
                                                                    name="Nombre" value="<?= $DataImagen->getNombre(); ?>"
                                                                    placeholder="Ingrese el nombre">
                                                         </div>
@@ -96,7 +96,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? NULL;
                                                     <div class="form-group row">
                                                         <label for="Descripcion" class="col-sm-2 col-form-label">Descripción</label>
                                                         <div class="col-sm-10">
-                                                    <textarea class="form-control" id="Descripcion" name="Descripcion" rows="4"
+                                                    <textarea required class="form-control" id="Descripcion" name="Descripcion" rows="4"
                                                               placeholder="Ingrese una descripción"><?= $DataImagen->getDescripcion()?></textarea>
                                                         </div>
                                                     </div>
@@ -135,7 +135,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? NULL;
                                                     <div class="form-group row">
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
-                                                            <select id="Estado" name="Estado" class="custom-select">
+                                                            <select required id="Estado" name="Estado" class="custom-select">
                                                                 <option value="">Seleccione</option>
                                                                 <option <?= ($DataImagen->getEstado() == "Activo") ? "selected" : ""; ?>
                                                                         value="Activo">Activo

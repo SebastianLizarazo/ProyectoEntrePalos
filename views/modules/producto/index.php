@@ -86,6 +86,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
+                                                <th>Imagen</th>
                                                 <th>Nombre</th>
                                                 <th>Tamaño</th>
                                                 <th>Referencia tamaño</th>
@@ -95,9 +96,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Precio venta</th>
                                                 <th class="none">Presentación:</th>
                                                 <th class="none">Marca:</th>
-                                                <th>Cantidad</th>
+                                                <th class="none">Cantidad:</th>
                                                 <th class="none">Sub categoria:</th>
-                                                <th class="none">Imagen:</th>
                                                 <th class="none">Estado:</th>
                                                 <th data-priority="1">Acciones</th>
                                             </tr>
@@ -112,6 +112,23 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     ?>
                                                     <tr>
                                                         <td><?= $producto->getId(); ?></td>
+                                                        <td>
+                                                            <?php if(!empty($producto->getImagenProductos())){
+                                                                $arrImg = $producto->getImagenProductos();
+                                                                /* @var  $arrImg Imagenes  */
+                                                                foreach ($arrImg as $img){
+                                                                    if(!empty($img->getRuta()) && $img->getEstado() == 'Activo'){ ?>
+                                                                        <span class="badge badge-info" data-toggle="tooltip" data-html="true"
+                                                                              title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/productos/<?= $img->getRuta(); ?>'>">Imagen
+                                                                        </span>
+                                                                    <?php }else{ ?>
+                                                                        <span>No hay imagen disponible</span>
+                                                                    <?php }
+                                                                }
+                                                            }else{ ?>
+                                                                <span>No hay imagen disponible</span>
+                                                            <?php } ?>
+                                                        </td>
                                                         <td><?= $producto->getNombre(); ?></td>
                                                         <td><?= $producto->getTamano(); ?></td>
                                                         <td><?= $producto->getReferenciaTamano(); ?></td>
@@ -123,23 +140,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <td><?= $producto->getMarca()->getNombre(); ?></td>
                                                         <td><?= $producto->getCantidadProducto(); ?></td>
                                                         <td><?= $producto->getSubcategoria()->getNombre(); ?></td>
-                                                        <td>
-                                                             <?php if(!empty($producto->getImagenProductos())){
-                                                                    $arrImg = $producto->getImagenProductos();
-                                                                    /* @var  $arrImg Imagenes  */
-                                                                     foreach ($arrImg as $img){
-                                                                         if(!empty($img->getRuta()) && $img->getEstado() == 'Activo'){ ?>
-                                                                        <span class="badge badge-info" data-toggle="tooltip" data-html="true"
-                                                                              title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/productos/<?= $img->getRuta(); ?>'>">Imagen
-                                                                        </span>
-                                                                        <?php }else{ ?>
-                                                                             <span>No hay imagen disponible</span>
-                                                                        <?php }
-                                                                     }
-                                                                }else{ ?>
-                                                                 <span>No hay imagen disponible</span>
-                                                             <?php } ?>
-                                                        </td>
                                                         <td><?= $producto->getEstado(); ?></td>
                                                         <td>
                                                             <div  style="text-align: center;">
@@ -177,6 +177,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
+                                                <th>Imagen</th>
                                                 <th>Nombre</th>
                                                 <th>Tamaño</th>
                                                 <th>Referencia tamaño</th>
@@ -188,7 +189,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Marca</th>
                                                 <th>Cantidad</th>
                                                 <th>Sub categoria</th>
-                                                <th>Imagen</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>

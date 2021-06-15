@@ -85,6 +85,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
+                                                <th>Imagen</th>
                                                 <th>Nombre</th>
                                                 <th>Tamaño</th>
                                                 <th>Referencia tamaño</th>
@@ -94,9 +95,8 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Precio venta</th>
                                                 <th class="none">Presentación:</th>
                                                 <th class="none">Marca:</th>
-                                                <th>Cantidad</th>
+                                                <th class="none">Cantidad</th>
                                                 <th class="none">Sub categoria:</th>
-                                                <th class="none">Imagen:</th>
                                                 <th>Estado</th>
                                                 <th data-priority="1">Restaurar</th>
                                             </tr>
@@ -111,17 +111,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         ?>
                                                         <tr>
                                                             <td><?= $producto->getId(); ?></td>
-                                                            <td><?= $producto->getNombre(); ?></td>
-                                                            <td><?= $producto->getTamano(); ?></td>
-                                                            <td><?= $producto->getReferenciaTamano(); ?></td>
-                                                            <td><?= $producto->getReferencia(); ?></td>
-                                                            <td><?= $producto->getPrecioBase(); ?></td>
-                                                            <td><?= $producto->getPrecioUnidadTrabajador(); ?></td>
-                                                            <td><?= $producto->getPrecioUnidadVenta(); ?></td>
-                                                            <td><?= $producto->getPresentacionProducto(); ?></td>
-                                                            <td><?= $producto->getMarca()->getNombre(); ?></td>
-                                                            <td><?= $producto->getCantidadProducto(); ?></td>
-                                                            <td><?= $producto->getSubcategoria()->getNombre(); ?></td>
                                                             <td>
                                                                 <?php if(!empty($producto->getImagenProductos())){
                                                                     $arrImg = $producto->getImagenProductos();
@@ -139,6 +128,17 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                     <span>No hay imagen disponible</span>
                                                                 <?php } ?>
                                                             </td>
+                                                            <td><?= $producto->getNombre(); ?></td>
+                                                            <td><?= $producto->getTamano(); ?></td>
+                                                            <td><?= $producto->getReferenciaTamano(); ?></td>
+                                                            <td><?= $producto->getReferencia(); ?></td>
+                                                            <td><?= $producto->getPrecioBase(); ?></td>
+                                                            <td><?= $producto->getPrecioUnidadTrabajador(); ?></td>
+                                                            <td><?= $producto->getPrecioUnidadVenta(); ?></td>
+                                                            <td><?= $producto->getPresentacionProducto(); ?></td>
+                                                            <td><?= $producto->getMarca()->getNombre(); ?></td>
+                                                            <td><?= $producto->getCantidadProducto(); ?></td>
+                                                            <td><?= $producto->getSubcategoria()->getNombre(); ?></td>
                                                             <td><?= $producto->getEstado(); ?></td>
                                                             <td>
                                                                 <div style="text-align: center;">
@@ -156,6 +156,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
+                                                <th>Imagen</th>
                                                 <th>Nombre</th>
                                                 <th>Tamaño</th>
                                                 <th>Referencia tamaño</th>
@@ -167,7 +168,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Marca</th>
                                                 <th>Cantidad</th>
                                                 <th>Sub categoria</th>
-                                                <th>Imagen</th>
                                                 <th>Estado</th>
                                                 <th>Restaurar</th>
                                             </tr>

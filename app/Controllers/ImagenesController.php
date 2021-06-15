@@ -19,7 +19,7 @@ class ImagenesController
         $this->dataImagen['id'] = $_FORM['id']?? null;
         $this->dataImagen['Nombre'] = $_FORM['Nombre']?? '';
         $this->dataImagen['Descripcion'] = $_FORM['Descripcion']?? '';
-        $this->dataImagen['Ruta'] = $_FORM['Ruta']?? '';
+        $this->dataImagen['Ruta'] = $_FORM['nameFoto']?? '';
         $this->dataImagen['Estado'] = $_FORM['Estado']?? 'Activo';
         $this->dataImagen['Producto_id'] = $_FORM['Producto_id']?? null;
         $this->dataImagen['Oferta_id'] = $_FORM['Oferta_id']?? null;
@@ -63,10 +63,10 @@ class ImagenesController
                  $rutaImagen = $withFiles['Imagen'];
                  if ($rutaImagen['error'] == 0) { //Si la foto se selecciono correctamente
                      $resultUpload = GeneralFunctions::subirArchivo($rutaImagen,
-                         "views/public/uploadFiles/photos/".(!empty($this->dataImagen['Producto_id'])) ? 'productos' : 'ofertas'."/");
+                         "views/public/uploadFiles/photos/".((!empty($this->dataImagen['Producto_id'])) ? 'productos' : 'ofertas')."/");
                      if ($resultUpload != false) {
                          GeneralFunctions::eliminarArchivo(
-                             "views/public/uploadFiles/photos/".(!empty($this->dataImagen['Producto_id'])) ? 'productos' : 'ofertas'."/" . $this->dataImagen['Ruta']);
+                             "views/public/uploadFiles/photos/".((!empty($this->dataImagen['Producto_id'])) ? 'productos' : 'ofertas')."/" . $this->dataImagen['Ruta']);
                          $this->dataImagen['Ruta'] = $resultUpload;
                      }
                  }

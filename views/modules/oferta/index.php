@@ -87,11 +87,11 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
+                                                <th>Imagen</th>
                                                 <th>Nombre</th>
-                                                <th>Descripción</th>
-                                                <th data-priority="2">Precio de unidad venta</th>
-                                                <th data-priority="2">Estado</th>
-                                                <th class="none">Imagen:</th>
+                                                <th class="none">Descripción:</th>
+                                                <th>Precio de unidad venta</th>
+                                                <th>Estado</th>
                                                 <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
@@ -105,10 +105,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 ?>
                                                 <tr>
                                                     <td><?= $oferta->getId(); ?></td>
-                                                    <td><?= $oferta->getNombre(); ?></td>
-                                                    <td><?= $oferta->getDescripcion(); ?></td>
-                                                    <td><?= $oferta->getPrecioUnidadVentaOferta(); ?></td>
-                                                        <td><?= $oferta->getEstado(); ?></td>
                                                     <td>
                                                         <?php if(!empty($oferta->getImagenOferta())){
                                                             $arrImg = $oferta->getImagenOferta();
@@ -126,6 +122,10 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             <span>No hay imagen disponible</span>
                                                         <?php } ?>
                                                     </td>
+                                                    <td><?= $oferta->getNombre(); ?></td>
+                                                    <td><?= $oferta->getDescripcion(); ?></td>
+                                                    <td><?= $oferta->getPrecioUnidadVentaOferta(); ?></td>
+                                                    <td><?= $oferta->getEstado(); ?></td>
                                                     <td>
                                                         <div  style="text-align: center;">
                                                         <a href="edit.php?id=<?= $oferta->getId(); ?>"
@@ -160,11 +160,11 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             <tfoot>
                                             <tr>
                                                 <th>N°</th>
+                                                <th>Imagen</th>
                                                 <th>Nombre</th>
                                                 <th>Descripción</th>
                                                 <th>Precio de unidad venta</th>
                                                 <th>Estado</th>
-                                                <th class="none">Imagen:</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </tfoot>

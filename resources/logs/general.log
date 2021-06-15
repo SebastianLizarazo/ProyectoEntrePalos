@@ -193,3 +193,308 @@
 [2021-06-13T20:07:41.145187+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetalleOfertaController no fue encontrada "} 
 [2021-06-13T20:09:53.124793+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\DetalleOfertaController no fue encontrada "} 
 [2021-06-14T14:27:17.703628+00:00] General.ERROR: Clase no encontrada {"descripcion":"La clase App\\Controllers\\ConsumoTrabajadorController no fue encontrada "} 
+[2021-06-15T13:14:53.686025+00:00] General.ERROR: Archivo No Eliminado ["El archivo no fue encontrado en la ruta: C:\\laragon\\www\\ProyectoEntrePalos\\app\\Models/../../views/public/uploadFiles/photos/productos/13-Jun-13-HypeBeast.jpeg","error"] 
+[2021-06-15T13:26:09.137460+00:00] General.ERROR: Exception  
+[2021-06-15T13:26:09.202469+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-15T13:26:09.203364+00:00] General.ERROR: Line: 128  
+[2021-06-15T13:26:09.204475+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-06-15T13:26:09.205264+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 204
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Imagen oferta
+                            [:Descripcion] => dasdas dw dqwdas
+                            [:Ruta] => 13-Jun-08-GuitarraFliyinV.jpg
+                            [:Estado] => 
+                            [:Producto_id] => 
+                            [:Oferta_id] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 215
+            [function] => save
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\ImagenesController.php
+            [line] => 45
+            [function] => insert
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 27
+            [function] => create
+            [class] => App\Controllers\ImagenesController
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [Imagen] => Array
+                                (
+                                    [name] => GuitarraFliyinV.jpg
+                                    [type] => image/jpeg
+                                    [tmp_name] => C:\Users\acer\AppData\Local\Temp\php3264.tmp
+                                    [error] => 0
+                                    [size] => 29007
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+  
+[2021-06-15T13:27:07.467198+00:00] General.ERROR: Exception  
+[2021-06-15T13:27:07.469178+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-15T13:27:07.469389+00:00] General.ERROR: Line: 128  
+[2021-06-15T13:27:07.469566+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-06-15T13:27:07.469764+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 204
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Imagen oferta Six pack 2x1
+                            [:Descripcion] => dasdas dw dqwdas
+                            [:Ruta] => 13-Jun-07-GuitarraFliyinV.jpg
+                            [:Estado] => 
+                            [:Producto_id] => 
+                            [:Oferta_id] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 215
+            [function] => save
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\ImagenesController.php
+            [line] => 45
+            [function] => insert
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 27
+            [function] => create
+            [class] => App\Controllers\ImagenesController
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [Imagen] => Array
+                                (
+                                    [name] => GuitarraFliyinV.jpg
+                                    [type] => image/jpeg
+                                    [tmp_name] => C:\Users\acer\AppData\Local\Temp\php188E.tmp
+                                    [error] => 0
+                                    [size] => 29007
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+  
+[2021-06-15T13:28:28.255592+00:00] General.ERROR: Exception  
+[2021-06-15T13:28:28.257967+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-15T13:28:28.258190+00:00] General.ERROR: Line: 128  
+[2021-06-15T13:28:28.258370+00:00] General.ERROR: Mensaje: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'Estado' at row 1  
+[2021-06-15T13:28:28.258572+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 204
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => Imagen oferta Six pack 2x1
+                            [:Descripcion] => dasdas dw dqwdas
+                            [:Ruta] => 13-Jun-28-GuitarraFliyinV.jpg
+                            [:Estado] => 
+                            [:Producto_id] => 
+                            [:Oferta_id] => 2
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Imagenes.php
+            [line] => 215
+            [function] => save
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO imagen VALUES (
+           :id,:Nombre,:Descripcion,:Ruta,:Estado,:Producto_id,:Oferta_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\ImagenesController.php
+            [line] => 45
+            [function] => insert
+            [class] => App\Models\Imagenes
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 27
+            [function] => create
+            [class] => App\Controllers\ImagenesController
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => Array
+                        (
+                            [Imagen] => Array
+                                (
+                                    [name] => GuitarraFliyinV.jpg
+                                    [type] => image/jpeg
+                                    [tmp_name] => C:\Users\acer\AppData\Local\Temp\php53FD.tmp
+                                    [error] => 0
+                                    [size] => 29007
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+  
+[2021-06-15T13:57:49.851120+00:00] General.ERROR: Archivo No Eliminado ["El archivo no fue encontrado en la ruta: C:\\laragon\\www\\ProyectoEntrePalos\\app\\Models/../../views/public/uploadFiles/photos/ofertas/13-Jun-58-GuitarraFliyinV.jpg","error"] 
