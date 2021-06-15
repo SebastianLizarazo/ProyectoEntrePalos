@@ -117,15 +117,17 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                             <div class="col-sm-2">
                                                 <div class="row info-box">
                                                     <div class="col-12">
-                                                        <h4>Foto Producto</h4>
+                                                        <h4>Imagen Producto</h4>
                                                     </div>
                                                     <div class="col-12">
                                                             <?php if(!empty($DataProducto->getImagenProductos())){
                                                                     $arrImg = $DataProducto->getImagenProductos();
                                                                     /* @var  $arrImg Imagenes  */
                                                                     foreach ($arrImg as $img){
-                                                                         if(!empty($img->getRuta())){  ?>
-                                                                             <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/ofertas/<?= $img->getRuta(); ?>' alt="Foto Producto">
+                                                                         if(!empty($img->getRuta()) && $img->getEstado() == 'Activo'){  ?>
+                                                                             <img class='img-thumbnail rounded' src='../../public/uploadFiles/photos/productos/<?= $img->getRuta(); ?>' alt="Imagen Producto">
+                                                                         <?php }else{ ?>
+                                                                             <span>No hay imagen disponible</span>
                                                                          <?php }
                                                                     }
                                                             }else{ ?>

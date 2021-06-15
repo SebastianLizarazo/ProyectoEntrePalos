@@ -128,10 +128,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                     $arrImg = $producto->getImagenProductos();
                                                                     /* @var  $arrImg Imagenes  */
                                                                      foreach ($arrImg as $img){
-                                                                         if(!empty($img->getRuta())){ ?>
+                                                                         if(!empty($img->getRuta()) && $img->getEstado() == 'Activo'){ ?>
                                                                         <span class="badge badge-info" data-toggle="tooltip" data-html="true"
                                                                               title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/productos/<?= $img->getRuta(); ?>'>">Imagen
                                                                         </span>
+                                                                        <?php }else{ ?>
+                                                                             <span>No hay imagen disponible</span>
                                                                         <?php }
                                                                      }
                                                                 }else{ ?>
@@ -149,12 +151,18 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                    type="button" data-toggle="tooltip" title="Ver"
                                                                    class="btn docs-tooltip btn-warning btn-xs"><i
                                                                             class="fa fa-eye"></i></a>
-                                                                <?php if (!empty($producto->getImagenProductos())){?>
-                                                                <a href="../imagen/show.php?id=<?= $producto->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Gestionar imagen"
-                                                                   class="btn docs-tooltip btn-success btn-xs"><i
-                                                                            class="far fa-images"></i></a>
-                                                                <?php }?>
+                                                                <?php if (!empty($producto->getImagenProductos())){
+                                                                        $arrImg = $producto->getImagenProductos();
+                                                                        /* @var  $arrImg Imagenes  */
+                                                                        foreach ($arrImg as $img){
+                                                                            if ($img->getEstado() == 'Activo'){?>
+                                                                                <a href="../imagen/show.php?id=<?= $img->getId() ; ?>"
+                                                                                   type="button" data-toggle="tooltip" title="Gestionar imagen"
+                                                                                   class="btn docs-tooltip btn-success btn-xs"><i
+                                                                                            class="far fa-images"></i></a>
+                                                                  <?php     }
+                                                                        }
+                                                                } ?>
                                                                 <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $producto->getId(); ?>"
                                                                    type="button" data-toggle="tooltip" title="Inactivar"
                                                                    class="btn docs-tooltip btn-danger btn-xs"><i

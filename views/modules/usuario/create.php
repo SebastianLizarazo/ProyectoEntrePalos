@@ -97,7 +97,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                             <div class="form-group row">
                                                 <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="number" min="1111111111" max="9999999999" class="form-control" id="Telefono" name="Telefono"
+                                                    <input type="number" min="1111111111" max="9999999999" class="form-control" id="Telefono" name="Telefono"
                                                            placeholder="Ingrese el telefono del usuario" value="<?= $frmSession['Telefono'] ?? '' ?>">
                                                 </div>
                                             </div>
@@ -111,14 +111,14 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                             <div class="form-group row">
                                                 <label for="Email" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="email" class="form-control" id="Email" name="Email"
+                                                    <input type="email" class="form-control" id="Email" name="Email"
                                                            placeholder="Ingrese la Email del usuario" value="<?= $frmSession['Email'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="Direccion" class="col-sm-2 col-form-label">Contraseña</label>
                                                 <div class="col-sm-10">
-                                                    <input required type="password" minlength="8" class="form-control" id="Contrasena" name="Contrasena"
+                                                    <input type="password" minlength="8" class="form-control" id="Contrasena" name="Contrasena"
                                                            placeholder="Ingrese la Contraseña del usuario" value="<?= $frmSession['Contrasena'] ?? '' ?>">
                                                 </div>
                                             </div>

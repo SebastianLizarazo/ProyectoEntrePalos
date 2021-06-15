@@ -83,7 +83,8 @@ $modelProducto = NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
+                                               style="width:100%;">
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
@@ -93,7 +94,7 @@ $modelProducto = NULL;
                                                 <th>Estado</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
-                                                <th>Restaurar</th>
+                                                <th data-priority="1">Restaurar</th>
                                             </tr>
                                             </thead>
                                             <tbody>

@@ -83,7 +83,8 @@ $modelProducto = NULL;
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
+                                               style="width:100%;">
                                             <thead>
                                             <tr>
                                                 <th>N°</th>
@@ -93,7 +94,7 @@ $modelProducto = NULL;
                                                 <th>Estado</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
-                                                <th>Acciones</th>
+                                                <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -139,18 +140,11 @@ $modelProducto = NULL;
                                                            type="button" data-toggle="tooltip" title="Ver"
                                                            class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                        <?php if ($imagen->getEstado() != "Activo") { ?>
-                                                            <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=activate&id=<?= $imagen->getId(); ?>"
-                                                               type="button" data-toggle="tooltip" title="Activar"
-                                                               class="btn docs-tooltip btn-success btn-xs"><i
-                                                                        class="fa fa-check-square"></i></a>
-                                                        <?php } else { ?>
-                                                            <a type="button"
-                                                               href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $imagen->getId(); ?>"
-                                                               data-toggle="tooltip" title="Inactivar"
-                                                               class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                        class="fa fa-times-circle"></i></a>
-                                                        <?php } ?>
+                                                        <a type="button"
+                                                           href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $imagen->getId(); ?>"
+                                                           data-toggle="tooltip" title="Inactivar"
+                                                           class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                    class="far fa-trash-alt"></i></a>
                                                     </td>
                                                 </tr>
                                             <?php }

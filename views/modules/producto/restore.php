@@ -127,10 +127,12 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                     $arrImg = $producto->getImagenProductos();
                                                                     /* @var  $arrImg Imagenes  */
                                                                     foreach ($arrImg as $img){
-                                                                        if(!empty($img->getRuta())){ ?>
+                                                                        if(!empty($img->getRuta()) && $img->getEstado() == 'Activo'){ ?>
                                                                             <span class="badge badge-info" data-toggle="tooltip" data-html="true"
                                                                                   title="<img class='img-thumbnail' src='../../public/uploadFiles/photos/productos/<?= $img->getRuta(); ?>'>">Imagen
                                                                         </span>
+                                                                        <?php }else{ ?>
+                                                                            <span>No hay imagen disponible</span>
                                                                         <?php }
                                                                     }
                                                                 }else{ ?>
