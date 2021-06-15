@@ -9,7 +9,6 @@ use App\Models\Imagenes;
 use App\Models\DetalleOfertas;
 
 $arrProducto1= [
-
     'Nombre'=> 'Coca cola cero',
     'Tamano'=> '750',
     'ReferenciaTamano'=> 'ml',
@@ -54,9 +53,12 @@ $arrProducto2= [
     'Estado'=> 'Activo',
 ];
 
-//$producto1= new Productos($arrProducto1);
-//var_dump($producto1);
+//$producto1= new Productos($arrProducto3);
 //$producto1->insert();
+//$miProducto = Productos::searchForId(1);
+
+//$producto1->setNombre("Nuevo Nombre");
+//var_dump(Productos::isChangeModel($miProducto,$miProducto->getId()));
 
 //$producto2= new Productos($arrProducto2);
 //var_dump($producto2);

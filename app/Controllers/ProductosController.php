@@ -47,14 +47,14 @@ class ProductosController
     public function edit()
     {
         try {
-            if (!empty($this->dataProducto['Referencia']) && !Productos::productoRegistrado($this->dataProducto['Referencia'])) {
+            if (!Productos::productoRegistrado($this->dataProducto['Referencia'], $this->dataProducto['id']) ) {
                 $prd = new Productos($this->dataProducto);
                 if($prd->update()){
                     unset($_SESSION['frmEditProductos']);
                 }
                 header("Location: ../../views/modules/producto/show.php?id=" . $prd->getId() . "&respuesta=success&mensaje=Producto Actualizado");
             } else {
-                header("Location: ../../views/modules/producto/create.php?respuesta=error&mensaje=La referencia de este producto ya existe");
+                header("Location: ../../views/modules/producto/edit.php?id=" . $this->dataProducto['id'] . "&respuesta=error&mensaje=La referencia de este producto ya existe");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');

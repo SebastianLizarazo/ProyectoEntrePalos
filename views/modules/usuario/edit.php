@@ -121,7 +121,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Direccion" class="col-sm-2 col-form-label">Dirección</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control" id="Direccion"
+                                                            <input required type="text" class="form-control" id="Direccion"
                                                                    name="Direccion" value="<?= $DataUsuario->getDireccion(); ?>"
                                                                    placeholder="Ingrese la dirección del usuario">
                                                         </div>
