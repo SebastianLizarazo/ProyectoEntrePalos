@@ -22,6 +22,7 @@ class Facturas extends AbstractDBConnection implements Model
     private  int $Mesero_id;
     private  string $Estado;
     private  string $TipoPedido;
+    private float $Total;
 
     /* Relaciones*/
     private ?array $DetallePedidoFactura;
@@ -50,9 +51,10 @@ class Facturas extends AbstractDBConnection implements Model
         $this->setTipoPedido( $factura['TipoPedido']?? '');
     }
 
-    public static function facturaRegistrada(mixed $Numero)
+    public static function facturaRegistrada(mixed $Numero, int $idExcluir = null): bool
     {
-        $ftaTmp = Facturas::search("SELECT * FROM Factura WHERE  Numero = '$Numero'");
+        $query = "SELECT * FROM Factura WHERE  Numero = '$Numero'".(empty($idExcluir) ? '' : "AND id != $idExcluir");
+        $ftaTmp = Facturas::search($query);
         return (!empty($ftaTmp)? true :false);
     }
 
@@ -208,16 +210,35 @@ class Facturas extends AbstractDBConnection implements Model
 
     public function getDetallePedidoFactura(): ?array
     {
-        //if (!empty($this-> DetallePedidoFactura)) {
-        $this-> DetallePedidoFactura = DetallePedidos::search(
-            "SELECT * FROM detallepedido WHERE factura_id = ".$this->getId()
-        );
-        return ($this->DetallePedidoFactura)?? null;
-        //}
-        //return null;
+        if (!empty($this->getId())) {
+            $this-> DetallePedidoFactura = DetallePedidos::search(
+                "SELECT * FROM detallepedido WHERE factura_id = ".$this->getId()
+            );
+            return ($this->DetallePedidoFactura)?? null;
+        }
+        return null;
     }
 
-
+    /**
+     * @return float
+     */
+    public function getTotal(): float
+    {
+        $arrdetalles = $this->getDetallePedidoFactura();
+        $this->Total = 0;
+        if(is_array($arrdetalles)){
+            /* @var $arrdetalles DetallePedidos */
+            foreach ($arrdetalles as $detalle){
+                if($detalle->getProducto() != null){
+                    $this->Total += ($detalle->getProducto()->getPrecioUnidadVenta() * $detalle->getCantidadProducto());
+                }
+                if($detalle->getOferta() != null){
+                    $this->Total += ($detalle->getOferta()->getPrecioUnidadVentaOferta() * $detalle->getCantidadOferta());
+                }
+            }
+        }
+        return $this->Total;
+    }
 
     protected function save(string $query): ?bool
     {

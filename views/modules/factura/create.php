@@ -79,13 +79,6 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="IVA" class="col-sm-2 col-form-label">IVA</label>
-                                                    <div class="col-sm-10">
-                                                        <input required type="number" step="0.01" class="form-control" id="IVA" name="IVA"
-                                                               placeholder="IVA" value="<?= $frmSession['IVA'] ?? '0.19' ?>">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
                                                     <label for="MedioPago" class="col-sm-2 col-form-label">Medio de pago</label>
                                                     <div class="col-sm-10">
                                                         <select required id="MedioPago" name="MedioPago" class="custom-select">

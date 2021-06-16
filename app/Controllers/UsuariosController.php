@@ -79,11 +79,16 @@ class UsuariosController
     public function edit()
     {
         try {
-            $Usuario = new Usuarios($this->dataUsuario);
-            if($Usuario->update()){
-                unset($_SESSION['frmEditUsuarios']);
+            if (!Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'],$this->dataUsuario['Contrasena']
+                    ,$this->dataUsuario['Email'],$this->dataUsuario['Telefono'],$this->dataUsuario['id'])) {
+                $Usuario = new Usuarios($this->dataUsuario);
+                if($Usuario->update()){
+                    unset($_SESSION['frmEditUsuarios']);
+                }
+                header("Location: ../../views/modules/usuario/show.php?id=" . $Usuario->getId() . "&respuesta=success&mensaje=Usuario Actualizado");
+            } else {
+                header("Location: ../../views/modules/usuario/edit.php?id=" . $this->dataUsuario['id'] . "&respuesta=error&mensaje=Ya existe un usuario con esta Cedula, Contraseña, Email o Telefono");
             }
-            header("Location: ../../views/modules/usuario/show.php?id=" . $Usuario->getId() . "&respuesta=success&mensaje=Usuario Actualizado");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }

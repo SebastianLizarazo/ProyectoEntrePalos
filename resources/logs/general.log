@@ -498,3 +498,91 @@
 )
   
 [2021-06-15T13:57:49.851120+00:00] General.ERROR: Archivo No Eliminado ["El archivo no fue encontrado en la ruta: C:\\laragon\\www\\ProyectoEntrePalos\\app\\Models/../../views/public/uploadFiles/photos/ofertas/13-Jun-58-GuitarraFliyinV.jpg","error"] 
+[2021-06-15T19:36:35.921172+00:00] General.ERROR: Exception  
+[2021-06-15T19:36:35.927856+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-15T19:36:35.928328+00:00] General.ERROR: Line: 128  
+[2021-06-15T19:36:35.928697+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2399288345' for key 'Telefono_UNIQUE'  
+[2021-06-15T19:36:35.929961+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 205
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => adidas	
+                            [:NIT] => 33312
+                            [:Telefono] => 2399288345
+                            [:Direccion] => feffeefefefefd---rgrrgrrrgr
+                            [:Estado] => Activo
+                            [:Municipio_id] => 15176
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 215
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\EmpresasController.php
+            [line] => 31
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 29
+            [function] => create
+            [class] => App\Controllers\EmpresasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

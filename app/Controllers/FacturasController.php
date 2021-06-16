@@ -41,11 +41,15 @@ class FacturasController
     public function edit()
     {
         try {
-            $fta = new Facturas($this->dataFactura);
-            if($fta->update()){
-                unset($_SESSION['frmEditFacturas']);
+            if (!Facturas::facturaRegistrada($this->dataFactura['Numero'],$this->dataFactura['id'])) {
+                $fta = new Facturas($this->dataFactura);
+                if($fta->update()){
+                    unset($_SESSION['frmEditFacturas']);
+                }
+                header("Location: ../../views/modules/factura/show.php?id=" . $fta->getId() . "&respuesta=success&mensaje=Factura Actualizada");
+            } else {
+                header("Location: ../../views/modules/factura/edit.php?id=" . $this->dataFactura['id'] . "&respuesta=error&mensaje=Ya existe una factura con este numero");
             }
-            header("Location: ../../views/modules/factura/show.php?id=" . $fta->getId() . "&respuesta=success&mensaje=Factura Actualizada");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }

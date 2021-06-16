@@ -86,7 +86,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>N°</th>
                                                 <th>Numero</th>
                                                 <th>Fecha</th>
-                                                <th>IVA</th>
                                                 <th>Medio de pago:</th>
                                                 <th data-priority="2">Mesero</th>
                                                 <th data-priority="2">Estado</th>
@@ -105,8 +104,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     <tr>
                                                         <td><?= $factura->getId(); ?></td>
                                                         <td><?= $factura->getNumero(); ?></td>
-                                                        <td><?= $factura->getFecha(); ?></td>
-                                                        <td><?= $factura->getIVA(); ?></td>
+                                                        <td><?= $factura->getFecha()->format('Y-m-d'); ?></td>
                                                         <td><?= $factura->getMedioPago(); ?></td>
                                                         <td><?= $factura->getMesero()->getNombres() ?></td>
                                                         <td><span class="badge badge-<?= $factura->getEstado() == "Paga" ? "success" : "primary" ?>">
@@ -156,7 +154,6 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>N°</th>
                                                 <th>Numero</th>
                                                 <th>Fecha</th>
-                                                <th>IVA</th>
                                                 <th>Medio de pago</th>
                                                 <th>Mesero</th>
                                                 <th>Estado</th>

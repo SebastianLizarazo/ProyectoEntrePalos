@@ -30,10 +30,28 @@ class DetallePedidosController
     public function create()
     {
         try {
-            $DetallePedido = new DetallePedidos($this->dataDetallePedido);
-            if ($DetallePedido->insert()) {
-                unset($_SESSION['frmCreateDetallePedidos']);
-                header("Location: ../../views/modules/detalle_pedido/index.php?respuesta=success&mensaje=Detalle pedido registrado");
+            if (!empty($this->dataDetallePedido['Producto_id']) && !empty($this->dataDetallePedido['Ofertas_id']))
+            {
+                header("Location: ../../views/modules/detalle_pedido/create.php?respuesta=warning&mensaje=Solo se puede ingrersar un producto o una oferta");
+
+            }elseif(empty($this->dataDetallePedido['Producto_id']) && empty($this->dataDetallePedido['Ofertas_id']))
+            {
+                    header("Location: ../../views/modules/detalle_pedido/create.php?respuesta=warning&mensaje=Se tiene que seleccionar una oferta o un producto");
+            }else{
+                if (!empty($this->dataDetallePedido['CantidadProducto']) && !empty($this->dataDetallePedido['CantidadOferta']) ||
+                    !empty($this->dataDetallePedido['Producto_id']) && empty($this->dataDetallePedido['CantidadProducto']) ||
+                    !empty($this->dataDetallePedido['Ofertas_id']) && empty($this->dataDetallePedido['CantidadOferta']))
+                {
+                    header("Location: ../../views/modules/detalle_pedido/create.php?respuesta=warning&mensaje=Se debe seleccionar la cantidad correspondiente al item que se selecciono");
+
+                }else{
+
+                    $DetallePedido = new DetallePedidos($this->dataDetallePedido);
+                    if ($DetallePedido->insert()) {
+                        unset($_SESSION['frmCreateDetallePedido']);
+                        header("Location: ../../views/modules/detalle_pedido/index.php?respuesta=success&mensaje=Detalle pedido registrado");
+                    }
+                }
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
@@ -43,11 +61,27 @@ class DetallePedidosController
     public function edit()
     {
         try {
-            $dto = new DetallePedidos($this->dataDetallePedido);
-            if($dto->update()){
-                unset($_SESSION['frmEditDetallePedidos']);
+            if (!empty($this->dataDetallePedido['Producto_id']) && !empty($this->dataDetallePedido['Ofertas_id']))
+            {
+                header("Location: ../../views/modules/detalle_pedido/edit.php?id=" . $this->dataDetallePedido['id'] . "&respuesta=warning&mensaje=Solo se puede ingrersar un producto o una oferta");
+
+            }elseif(empty($this->dataDetallePedido['Producto_id']) && empty($this->dataDetallePedido['Ofertas_id']))
+            {
+                header("Location: ../../views/modules/detalle_pedido/edit.php?id=" . $this->dataDetallePedido['id'] . "&respuesta=warning&mensaje=Se tiene que seleccionar una oferta o un producto");
+            }else{
+                if (!empty($this->dataDetallePedido['CantidadProducto']) && !empty($this->dataDetallePedido['CantidadOferta']) ||
+                    !empty($this->dataDetallePedido['Producto_id']) && empty($this->dataDetallePedido['CantidadProducto']) ||
+                    !empty($this->dataDetallePedido['Ofertas_id']) && empty($this->dataDetallePedido['CantidadOferta']))
+                {
+                    header("Location: ../../views/modules/detalle_pedido/edit.php?id=" . $this->dataDetallePedido['id'] . "&respuesta=warning&mensaje=Se debe seleccionar la cantidad correspondiente al item que se selecciono");
+                }else{
+                    $dto = new DetallePedidos($this->dataDetallePedido);
+                    if($dto->update()){
+                        unset($_SESSION['frmEditDetallePedido']);
+                    }
+                    header("Location: ../../views/modules/detalle_pedido/show.php?id=" . $dto->getId() . "&respuesta=success&mensaje=Detalle pedido Actualizado");
+                }
             }
-            header("Location: ../../views/modules/detalle_pedido/show.php?id=" . $dto->getId() . "&respuesta=success&mensaje=Detalle pedido Actualizado");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }

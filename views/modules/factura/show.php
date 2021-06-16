@@ -82,9 +82,6 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                     <strong><i class="far fa-calendar-alt"></i>&nbsp;Fecha</strong>
                                                         <p class="text-muted"><?= $DataFactura->getFecha() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-percentage"></i>&nbsp;IVA</strong>
-                                                        <p class="text-muted"><?= $DataFactura->getIVA() ?></p>
-                                                <hr>
                                                     <strong><i class="far fa-credit-card"></i>&nbsp;Medio de pago</strong>
                                                         <p class="text-muted"><?= $DataFactura->getMedioPago() ?></p>
                                                 <hr>
@@ -96,6 +93,10 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                 <hr>
                                                     <strong><i class="fas fa-utensils"></i>&nbsp;Tipo pedido</strong>
                                                         <p class="text-muted"><?= $DataFactura->getTipoPedido() ?></p>
+                                                </p>
+                                                <hr>
+                                                    <strong><i class="fas fa-utensils"></i>&nbsp;Total Factura</strong>
+                                                        <p class="text-muted"><?= $DataFactura->getTotal() ?></p>
                                                 </p>
                                             </div>
                                         </div>

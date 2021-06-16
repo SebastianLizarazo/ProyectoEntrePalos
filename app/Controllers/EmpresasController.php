@@ -42,11 +42,16 @@ class EmpresasController
     public function edit()
     {
         try {
-            $Empresa = new Empresas($this->dataEmpresa);
-            if($Empresa->update()){
-                unset($_SESSION['frmEditEmpresas']);
+            if (!Empresas::empresaRegistrada($this->dataEmpresa['Nombre'], $this->dataEmpresa['NIT'], $this->dataEmpresa['Telefono'],
+                $this->dataEmpresa['id'])) {
+                $emp = new Empresas($this->dataEmpresa);
+                if($emp->update()){
+                    unset($_SESSION['frmEditEmpresas']);
+                }
+                header("Location: ../../views/modules/empresa/show.php?id=" . $emp->getId() . "&respuesta=success&mensaje=Empresa Actualizada");
+            } else {
+                header("Location: ../../views/modules/empresa/edit.php?id=" . $this->dataEmpresa['id'] . "&respuesta=error&mensaje=Ya existe una empresa con este nombre, NIT o telefono");
             }
-            header("Location: ../../views/modules/empresa/show.php?id=" . $Empresa->getId() . "&respuesta=success&mensaje=empresa Actualizada");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }
