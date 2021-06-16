@@ -26,14 +26,14 @@ class OfertasController
     public function create()
     {
         try {
-            if (!empty($this->dataOferta['Nombre']) && !empty($this->dataOferta['Descripcion']) && !Ofertas::ofertaRegistrada($this->dataOferta['Nombre'], $this->dataOferta['Descripcion'])) {
+            if (!empty($this->dataOferta['Nombre'])&& !Ofertas::ofertaRegistrada($this->dataOferta['Nombre'])){
                 $Oferta = new Ofertas($this->dataOferta);
                 if ($Oferta->insert()) {
                     unset($_SESSION['frmCreateOfertas']);
                     header("Location: ../../views/modules/oferta/index.php?respuesta=success&mensaje=Oferta Registrada");
                 }
             } else {
-                header("Location: ../../views/modules/oferta/create.php?respuesta=error&mensaje=Oferta ya registrada");
+                header("Location: ../../views/modules/oferta/create.php?respuesta=error&mensaje=Ya existe una oferta con este nombre");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
@@ -42,11 +42,15 @@ class OfertasController
     public function edit()
     {
         try {
-            $ofta = new Ofertas($this->dataOferta);
-            if($ofta->update()){
-                unset($_SESSION['frmEditOfertas']);
+            if (!Ofertas::ofertaRegistrada($this->dataOferta['Nombre'], $this->dataOferta['id'])) {
+                $ofta = new Ofertas($this->dataOferta);
+                if ($ofta->update()) {
+                    unset($_SESSION['frmEditOfertas']);
+                }
+                header("Location: ../../views/modules/oferta/show.php?id=" . $ofta->getId() . "&respuesta=success&mensaje=Oferta Actualizada");
+            }else{
+                header("Location: ../../views/modules/oferta/edit.php?id=" . $this->dataOferta['id'] . "&respuesta=error&mensaje=Ya existe una oferta con este nombre");
             }
-            header("Location: ../../views/modules/oferta/show.php?id=" . $ofta->getId() . "&respuesta=success&mensaje=Oferta Actualizada");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }

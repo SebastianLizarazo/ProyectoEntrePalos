@@ -78,8 +78,11 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="nav-icon fas fa-dollar-sign"></i>&nbsp; Numero de pago</strong>
-                                                        <p class="text-muted"><?= $DataConsumoT->getPagoId() ?></p>
+                                                    <strong><i class="nav-icon fas fa-dollar-sign"></i>&nbsp;Pago</strong>
+                                                        <p class="text-muted"><?= 'El pago numero '.$DataConsumoT->getPagoId()
+                                                        .' de '.$DataConsumoT->getPagos()->getTrabajador()->getNombres().' '.
+                                                        $DataConsumoT->getPagos()->getTrabajador()->getApellidos() .' - '.
+                                                        $DataConsumoT->getPagos()->getFecha()->format('Y-m-d') ?></p>
                                                 <hr>
                                                     <strong><i class="fas fa-hamburger"></i>&nbsp;Producto</strong>
                                                         <p class="text-muted"><?= $DataConsumoT->getProducto()->getNombre() ?></p>

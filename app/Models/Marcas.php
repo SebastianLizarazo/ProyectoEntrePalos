@@ -31,9 +31,10 @@ class Marcas extends AbstractDBConnection implements Model
         $this->setProveedorid($marca['Proveedor_id']??0);
         $this->setEstado($marca['Estado']??'Activa' );
     }
-    public static function marcaRegistrada (mixed $Nombre, mixed $id): bool
+    public static function marcaRegistrada (mixed $Nombre, int $idExcluir = null): bool
     {
-        $marTmp = Marcas::search("SELECT * FROM marca WHERE Nombre = '$Nombre' and id = '$id'");
+        $query = "SELECT * FROM marca WHERE Nombre = '$Nombre' ".(empty($idExcluir) ? '' : "AND id != $idExcluir");
+        $marTmp = Marcas::search($query);
         return (!empty($marTmp) ? true : false);
     }
 

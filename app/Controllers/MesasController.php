@@ -21,11 +21,11 @@ class MesasController
     public function create()
     {
         try {
-                $Mesa = new Mesas($this->dataMesa);
-                if ($Mesa->insert()) {
-                    unset($_SESSION['frmCreateMesas']);
-                    header("Location: ../../views/modules/mesa/index.php?respuesta=success&mensaje=Mesa Registrada");
-                }
+            $Mesa = new Mesas($this->dataMesa);
+            if ($Mesa->insert()) {
+                unset($_SESSION['frmCreateMesas']);
+                header("Location: ../../views/modules/mesa/index.php?respuesta=success&mensaje=Mesa Registrada");
+            }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
@@ -33,11 +33,15 @@ class MesasController
     public function edit()
     {
         try {
-            $msa = new Mesas($this->dataMesa);
-            if($msa->update()){
-                unset($_SESSION['frmEditMesas']);
+            if (!Mesas::mesaRegistrada($this->dataMesa['Numero'], $this->dataMesa['id'])) {
+                $msa = new Mesas($this->dataMesa);
+                if ($msa->update()) {
+                    unset($_SESSION['frmEditMesas']);
+                }
+                header("Location: ../../views/modules/mesa/show.php?id=" . $msa->getId() . "&respuesta=success&mensaje=Mesa Actualizada");
+            }else{
+                header("Location: ../../views/modules/mesa/edit.php?id=" . $this->dataMesa['id'] . "&respuesta=error&mensaje=Ya existe una mesa con este numero");
             }
-            header("Location: ../../views/modules/mesa/show.php?id=" . $msa->getId() . "&respuesta=success&mensaje=Mesa Actualizada");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }

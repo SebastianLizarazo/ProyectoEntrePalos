@@ -104,7 +104,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Capacidad" class="col-sm-2 col-form-label">Capacidad</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" class="form-control" id="Capacidad"
+                                                            <input required type="number" max="20" class="form-control" id="Capacidad"
                                                                    name="Capacidad" value="<?= $DataMesa->getCapacidad(); ?>"
                                                                    placeholder="Ingrese la capacidad de la mesa">
                                                         </div>

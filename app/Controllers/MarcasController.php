@@ -24,19 +24,37 @@ class MarcasController
     public function create()
     {
         try {
-            if (!empty($this->dataMarca['Nombre']) && !empty($this->dataMarca['Descripcion']) && !Marcas::marcaRegistrada($this->dataMarca['Nombre'], $this->dataMarca['Descripcion'])) {
+            if (!empty($this->dataMarca['Nombre']) && !Marcas::marcaRegistrada($this->dataMarca['Nombre'])) {
                 $Marca = new Marcas($this->dataMarca);
                 if ($Marca->insert()) {
                     unset($_SESSION['frmCreateMarcas']);
                     header("Location: ../../views/modules/marca/index.php?respuesta=success&mensaje=Marca Registrada");
                 }
             } else {
-                header("Location: ../../views/modules/marca/create.php?respuesta=error&mensaje=Marca ya registrada");
+                header("Location: ../../views/modules/marca/create.php?respuesta=error&mensaje=Ya existe una marca con este nombre");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
+
+    public function edit()
+    {
+        try {
+            if (!Marcas::marcaRegistrada($this->dataMarca['Nombre'], $this->dataMarca['id'])) {
+                $mca = new Marcas($this->dataMarca);
+                if ($mca->update()) {
+                    unset($_SESSION['frmEditMarcas']);
+                }
+                header("Location: ../../views/modules/marca/show.php?id=" . $mca->getId() . "&respuesta=success&mensaje=Marca Actualizada");
+            }else{
+                header("Location: ../../views/modules/marca/edit.php?id=" . $this->dataMarca['id'] . "&respuesta=error&mensaje=Ya existe una marca con este nombre");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception', $e, 'error');
+        }
+    }
+
     static public function restaurar(int $id)
     {
         try {
@@ -64,18 +82,6 @@ class MarcasController
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
-        }
-    }
-    public function edit()
-    {
-        try {
-            $mca = new Marcas($this->dataMarca);
-            if ($mca->update()) {
-                unset($_SESSION['frmEditMarcas']);
-            }
-            header("Location: ../../views/modules/marca/show.php?id=" . $mca->getId() . "&respuesta=success&mensaje=Marca Actualizada");
-        } catch (\Exception $e) {
-            GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
 

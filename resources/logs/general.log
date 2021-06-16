@@ -586,3 +586,91 @@
 
 )
   
+[2021-06-16T20:33:51.073704+00:00] General.ERROR: Exception  
+[2021-06-16T20:33:51.078303+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-16T20:33:51.078648+00:00] General.ERROR: Line: 128  
+[2021-06-16T20:33:51.078911+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2399288345' for key 'Telefono_UNIQUE'  
+[2021-06-16T20:33:51.079738+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 214
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                    [1] => Array
+                        (
+                            [:id] => 0
+                            [:Nombre] => adidas		
+                            [:NIT] => mm87659579
+                            [:Telefono] => 2399288345
+                            [:Direccion] => ghfujhgsurisgh jdfh sndfjnsjrnwpñereijww
+                            [:Estado] => Activo
+                            [:Municipio_id] => 68020
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Empresas.php
+            [line] => 224
+            [function] => save
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO empresa VALUES (
+            :id,:Nombre,:NIT,:Telefono,:Direccion,:Estado,:Municipio_id)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\EmpresasController.php
+            [line] => 31
+            [function] => insert
+            [class] => App\Models\Empresas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 32
+            [function] => create
+            [class] => App\Controllers\EmpresasController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

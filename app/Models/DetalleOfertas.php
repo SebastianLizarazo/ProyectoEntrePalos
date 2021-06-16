@@ -35,9 +35,10 @@ class DetalleOfertas extends AbstractDBConnection implements Model
         $this->setCantidadProducto($detalleOferta['CantidadProducto']??0) ;
     }
 
-    public static function detalleOfertaRegistrada(mixed $Producto_id, mixed $Oferta_id): bool
+    public static function detalleOfertaRegistrada(mixed $Producto_id, mixed $Oferta_id, int $idExcluir = null): bool
     {
-        $msaTmp = DetalleOfertas::search("SELECT * FROM detalleoferta WHERE Producto_id = '$Producto_id' and Oferta_id = '$Oferta_id'");
+        $query = "SELECT * FROM detalleoferta WHERE Producto_id = '$Producto_id' and Oferta_id = '$Oferta_id' ".(empty($idExcluir) ? '' : "AND id != $idExcluir");
+        $msaTmp = DetalleOfertas::search($query);
         return (!empty($msaTmp) ? true : false);
     }
 

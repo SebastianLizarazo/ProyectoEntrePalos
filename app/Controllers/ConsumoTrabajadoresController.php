@@ -28,14 +28,15 @@ class ConsumoTrabajadoresController
     public function create()
     {
         try {
-            if (!empty($this->dataConsumoTrabajador['CantidadProducto']) && !empty($this->dataConsumoTrabajador['Descripcion']) && !ConsumoTrabajadores::consumoTrabajadorRegistrada($this->dataConsumoTrabajador['CantidadProducto'], $this->dataConsumoTrabajador['Descripcion'])) {
-                $ConsumoTrabajador = new ConsumoTrabajadores($this->dataConsumoTrabajador);
-                if ($ConsumoTrabajador->insert()) {
-                    unset($_SESSION['frmCreateConsumoTrabajadores']);
-                    header("Location: ../../views/modules/consumo_trabajador/index.php?respuesta=success&mensaje=Consumo Trabajador Registrado");
-                }
+            if (!empty($this->dataConsumoTrabajador['Pago_id']) && !empty($this->dataConsumoTrabajador['Producto_id']) &&
+                !ConsumoTrabajadores::consumoTrabajadorRegistrada($this->dataConsumoTrabajador['Pago_id'], $this->dataConsumoTrabajador['Producto_id'])){
+                    $ConsumoTrabajador = new ConsumoTrabajadores($this->dataConsumoTrabajador);
+                    if ($ConsumoTrabajador->insert()) {
+                        unset($_SESSION['frmCreateConsumoTrabajadores']);
+                        header("Location: ../../views/modules/consumo_trabajador/index.php?respuesta=success&mensaje=Consumo Trabajador Registrado");
+                    }
             } else {
-                header("Location: ../../views/modules/consumo_trabajador/create.php?respuesta=error&mensaje=Consumo Trabajador ya registrado");
+                header("Location: ../../views/modules/consumo_trabajador/create.php?respuesta=error&mensaje=Ya existe un consumo trabajador con este pago y producto");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
@@ -44,11 +45,16 @@ class ConsumoTrabajadoresController
     public function edit()
     {
         try {
-            $consumotbj = new ConsumoTrabajadores($this->dataConsumoTrabajador);
-            if($consumotbj->update()){
-                unset($_SESSION['frmEditConsumoTrabajadores']);
+            if (!ConsumoTrabajadores::consumoTrabajadorRegistrada($this->dataConsumoTrabajador['Pago_id'], $this->dataConsumoTrabajador['Producto_id'],
+                $this->dataConsumoTrabajador['id'])){
+                $consumotbj = new ConsumoTrabajadores($this->dataConsumoTrabajador);
+                if ($consumotbj->update()) {
+                    unset($_SESSION['frmEditConsumoTrabajadores']);
+                }
+                header("Location: ../../views/modules/consumo_trabajador/show.php?id=" . $consumotbj->getId() . "&respuesta=success&mensaje=Consumo Trabajdor Actualizado");
+            }else{
+                header("Location: ../../views/modules/consumo_trabajador/edit.php?id=" . $this->dataConsumoTrabajador['id'] . "&respuesta=error&mensaje=Ya existe un consumo trabajador con este pago y producto");
             }
-            header("Location: ../../views/modules/consumo_trabajador/show.php?id=" . $consumotbj->getId() . "&respuesta=success&mensaje=Consumo Trabajdor Actualizado");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }

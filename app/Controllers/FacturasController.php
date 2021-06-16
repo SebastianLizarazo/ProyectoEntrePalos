@@ -29,11 +29,11 @@ class FacturasController
 
     public function create(){
         try {
-                $Factura = new Facturas($this->dataFactura);
-                if ($Factura->insert()) {
-                    unset($_SESSION['frmCreateFacturas']);
-                    header("Location: ../../views/modules/factura/index.php?respuesta=success&mensaje=Factura Registrada");
-                }
+            $Factura = new Facturas($this->dataFactura);
+            if ($Factura->insert()) {
+                unset($_SESSION['frmCreateFacturas']);
+                header("Location: ../../views/modules/factura/index.php?respuesta=success&mensaje=Factura Registrada");
+            }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }

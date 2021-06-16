@@ -28,7 +28,7 @@ class DetalleOfertasController
                     header("Location: ../../views/modules/detalle_oferta/index.php?respuesta=success&mensaje=Detalle Oferta Registrada");
                 }
             } else {
-                header("Location: ../../views/modules/detalle_oferta/create.php?respuesta=error&mensaje=Detalle Oferta ya registrada");
+                header("Location: ../../views/modules/detalle_oferta/create.php?respuesta=error&mensaje=Ya existe un detalle oferta con este producto y oferta");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
@@ -37,11 +37,16 @@ class DetalleOfertasController
     public function edit()
     {
         try {
-            $dtlofta = new DetalleOfertas($this->datadetalleOferta);
-            if($dtlofta->update()){
-                unset($_SESSION['frmEditDetalleOfertas']);
+            if (!DetalleOfertas::DetalleOfertaRegistrada($this->datadetalleOferta['Producto_id'], $this->datadetalleOferta['Oferta_id'],
+                $this->datadetalleOferta['id'])){
+                $dtlofta = new DetalleOfertas($this->datadetalleOferta);
+                if ($dtlofta->update()) {
+                    unset($_SESSION['frmEditDetalleOfertas']);
+                }
+                header("Location: ../../views/modules/detalle_oferta/show.php?id=" . $dtlofta->getId() . "&respuesta=success&mensaje=Detalle Oferta Actualizada");
+            }else{
+                header("Location: ../../views/modules/detalle_oferta/edit.php?id=" . $this->datadetalleOferta['id'] . "&respuesta=error&mensaje=Ya existe un detalle oferta con este producto y oferta");
             }
-            header("Location: ../../views/modules/detalle_oferta/show.php?id=" . $dtlofta->getId() . "&respuesta=success&mensaje=Detalle Oferta Actualizada");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }

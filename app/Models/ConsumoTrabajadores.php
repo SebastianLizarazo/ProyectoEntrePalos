@@ -36,10 +36,21 @@ class ConsumoTrabajadores extends AbstractDBConnection implements Model
         $this->setCantidadProducto($consumoTrabajador['CantidadProducto']??0) ;
         $this->setDescripcion($consumoTrabajador['Descripcion']??'');
     }
-    public static function consumoTrabajadorRegistrada(mixed $CantidadProducto, mixed $Descripcion): bool
+    public static function consumoTrabajadorRegistrada(int $Pago_id, int $Producto_id, int $idExcluir = null): bool
     {
-        $consumotbjTmp = ConsumoTrabajadores::search("SELECT * FROM consumotrabajador WHERE CantidadProducto = '$CantidadProducto' and Descripcion = '$Descripcion'");
-        return (!empty($consumotbjTmp)) ? true : false;
+        $query = "SELECT * FROM consumotrabajador WHERE Pago_id = '$Pago_id' and Producto_id = '$Producto_id'";
+        $arrCmtr = ConsumoTrabajadores::search($query);
+        if (!empty($arrCmtr) && is_array($arrCmtr)){
+            if(count($arrCmtr) > 1){
+                return true;
+            }elseif($arrCmtr[0]->getId() != $idExcluir){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
     }
 
     public function __destruct()

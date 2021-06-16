@@ -36,10 +36,11 @@ class Ofertas extends AbstractDBConnection implements Model
 
     }
 
-    public static function ofertaRegistrada(mixed $Nombre, mixed $Descripcion)
+    public static function ofertaRegistrada(mixed $Nombre,int $idExcluir = null)
     {
-            $oftTmp = Ofertas::search("SELECT * FROM oferta WHERE Nombre = '$Nombre' and Descripcion = '$Descripcion'");
-            return (!empty($oftTmp)) ? true : false;
+        $query = "SELECT * FROM oferta WHERE Nombre = '$Nombre' ".(empty($idExcluir) ? '' : "AND id != $idExcluir");
+        $oftTmp = Ofertas::search($query);
+        return (!empty($oftTmp)) ? true : false;
     }
 
     public function __destruct()
