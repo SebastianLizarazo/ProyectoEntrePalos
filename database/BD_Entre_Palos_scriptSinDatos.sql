@@ -3,10 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 03-06-2021 a las 14:24:25
+-- Tiempo de generación: 17-06-2021 a las 13:45:52
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 8.0.3
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -20,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bdentrepalos`
 --
-CREATE DATABASE IF NOT EXISTS `bdentrepalos` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `bdentrepalos`;
 
 -- --------------------------------------------------------
 
@@ -42,9 +41,9 @@ CREATE TABLE `consumotrabajador` (
 --
 
 INSERT INTO `consumotrabajador` (`id`, `Pago_id`, `Producto_id`, `CantidadProducto`, `Descripcion`) VALUES
-(1, 1, 3, 5, 'El trabajador consumio una botella de agua'),
-(2, 2, 2, 20, 'El trabajador consumio fritos y jugos'),
-(3, 3, 1, 7, 'El trabajador consumio un hamburguesa extra grande');
+(1, 1, 1, 22, 'djdjjdskskskwmwmmww rfr r'),
+(2, 1, 5, 12, 'efefefefe vfgdrg seirgsidfhgpsrhg suidfg'),
+(3, 6, 5, 33, '2fvvvvvv');
 
 -- --------------------------------------------------------
 
@@ -119,9 +118,12 @@ CREATE TABLE `detalleoferta` (
 --
 
 INSERT INTO `detalleoferta` (`id`, `Producto_id`, `Oferta_id`, `CantidadProducto`) VALUES
-(1, 1, 3, 2),
-(2, 2, 2, 3),
-(3, 3, 1, 15);
+(1, 1, 2, 24),
+(2, 3, 1, 33),
+(3, 2, 3, 2),
+(4, 1, 2, 12),
+(5, 5, 2, 32),
+(6, 5, 3, 11);
 
 -- --------------------------------------------------------
 
@@ -144,10 +146,13 @@ CREATE TABLE `detallepedido` (
 --
 
 INSERT INTO `detallepedido` (`id`, `Factura_id`, `Producto_id`, `Ofertas_id`, `CantidadProducto`, `CantidadOferta`, `Mesa_id`) VALUES
-(1, 1, 2, 1, 4, 7, 1),
-(2, 1, 1, 2, 5, 2, 2),
-(3, 4, 3, 3, 0, 5, 1),
-(4, 2, 3, 1, 7, 0, NULL);
+(1, 1, 1, NULL, 3, NULL, 1),
+(2, 2, NULL, 1, NULL, 3, 3),
+(3, 1, 1, NULL, 3, NULL, 1),
+(4, 1, 2, NULL, 1, NULL, 1),
+(5, 3, 2, NULL, 1, NULL, 4),
+(6, 1, 2, NULL, 7, NULL, 5),
+(7, 3, 6, NULL, 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -170,9 +175,26 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id`, `Nombre`, `NIT`, `Telefono`, `Direccion`, `Estado`, `Municipio_id`) VALUES
-(1, 'Entre Palos', 'nt887639876', 3119856728, 'Av coyote 12-56', 'Activo', 5031),
-(2, 'pool', 'mm8765567', 3207651298, 'Av el dorado 89-33', 'Activo', 5031),
-(3, 'HepicGeims', 'mm8765957', 3207654898, 'Av el Jhony 89-33', 'Activo', 15759);
+(1, 'rrrrrrrrtsassgfs', 'ff fvfvsasv a a', 2343434342, 'vbrrgrgr', 'Activo', 17388),
+(2, 'adidas', 'mm87659579', 2399288345, 'Av el dorado sssss89-333', 'Activo', 5031),
+(3, 'HepicGeims', 'mm8765957', 3207654894, 'Av el Jhony 89-33', 'Activo', 41298),
+(4, 'Argos', '32ed32d', 1213456457, 'dssasss2ygftf', 'Activo', 15001),
+(5, 'Holcim 3.0', '23', 1234356789, 'ww3sd', 'Activo', 15047),
+(6, 'Terpel', '23j2h2j3hjh', 3323232323, 'edudud333r4', 'Activo', 15114),
+(7, 'Naik', '22-qwqw', 3333232525, 'edududssss', 'Activo', 13030),
+(8, 'Manolin corporation', '332992jkke4e', 3213261141, 'Av el dorado 89-333', 'Activo', 15051),
+(13, 'Manolin corp', '1234ititi', 3213251123, 'Av el dorado 89-333', 'Activo', 15212),
+(14, 'Entiti', '454453fgfffff', 3423423411, 'Av-fofof-dldldss', 'Activo', 15226),
+(15, 'Reele', '333djfsdjhdhd ddj', 3214567749, 'Av el dorado 89-333', 'Activo', 15131),
+(16, 'Nike', '44k55-55', 1234567890, 'erhweifhqwaef3332', 'Activo', 17513),
+(17, 'dididi', 'sdjssjjssj', 1111111111, 'ieeieiieei', 'Activo', 54344),
+(18, 'rgegegssfvsrs s ', 'hhhhhhhh', 3452342534, 'gssssssssssssss', 'Activo', 15047),
+(19, 'popopiopiklj', 'ik89k8k', 9999999989, 't4t45t45t45t5', 'Activo', 13030),
+(20, '5t45t45t45', '54t45t4t54t', 5555555555, '55t5t5t5t', 'Activo', 17042),
+(21, 'Starbucks', '3e3e333e', 3324256775, 'ddvcsdfasdfasdfadfas', 'Activo', 15051),
+(22, 'IBM', '1234-55', 3029430291, ' apapapapapapas dwdwdwkskq dqdq wdq', 'Activo', 15232),
+(24, 'amazon', '443r43rrrrreress', 3411112112, 'tptptptptptptptptptpt', 'Activo', 97889),
+(25, 'juaj', '32ed4234342342', 3243245672, 'rkrkrkrkrfofovo fvkdrfovsodvdf', 'Activo', 15087);
 
 -- --------------------------------------------------------
 
@@ -196,10 +218,10 @@ CREATE TABLE `factura` (
 --
 
 INSERT INTO `factura` (`id`, `Numero`, `Fecha`, `IVA`, `MedioPago`, `Mesero_id`, `Estado`, `TipoPedido`) VALUES
-(1, 1, '2021-05-12', '0.19', 'Efectivo', 1, 'Pendiente', 'Mesa'),
-(2, 2, '2020-11-03', '0.19', 'Ahorro a la mano', 3, 'Cancelada', 'Domicilio'),
-(3, 3, '2019-07-23', '0.19', 'Daviplata', 1, 'Paga', 'Domicilio'),
-(4, 4, '2021-07-22', '0.19', 'Datafono', 3, 'Paga', 'Mesa');
+(1, 1, '2021-06-04', '0.19', 'Datafono', 3, 'Paga', 'Mesa'),
+(2, 2, '2021-06-05', '0.19', 'Datafono', 3, 'Cancelada', 'Mesa'),
+(3, 3, '2021-06-14', '0.19', 'Efectivo', 8, 'Pendiente', 'Mesa'),
+(4, 4, '2018-01-15', '0.19', 'Ahorro a la mano', 4, 'Pendiente', 'Domicilio');
 
 -- --------------------------------------------------------
 
@@ -222,10 +244,10 @@ CREATE TABLE `imagen` (
 --
 
 INSERT INTO `imagen` (`id`, `Nombre`, `Descripcion`, `Ruta`, `Estado`, `Producto_id`, `Oferta_id`) VALUES
-(1, 'Imagen Hamburguesa 1', 'Foto simple del producto hamburguesa doble', 'c:proyecto/imagenes/imagen1.png', 'Activo', 1, 2),
-(2, 'Imagen Hamburguesa 2', 'Foto simple del producto hamburguesa triple', 'c:proyecto/imagenes/imagen2.png', 'Activo', 3, 1),
-(3, 'Imagen Alitas BBQ 1', 'Foto simple del producto alitas BBQ medianas', 'c:proyecto/imagenes/imagen3.png', 'Activo', 2, 1),
-(4, 'Imagen Gaseosa Coca Cola', 'Foto de la gaseosa Coca Cola en baso de vidrio', 'c:proyecto/imagenes/imagen4.png', 'Inactivo', 2, 2);
+(1, 'Imagen producto cerveza', 'erwerqewrq', '13-Jun-32-batman-4k-1.jpg', 'Activo', 1, NULL),
+(2, 'Imagen oferta Six pack 2x1', 'dasdasdasddsadas', '13-Jun-49-VansStyle.jpg', 'Activo', NULL, 2),
+(3, 'Imagen producto Hamburguesa', 'efwfdff dvbfgerger gerg e', '14-Jun-15-nike-air-jordan-1-shoes-near-chain-link-fence.jpg', 'Activo', 2, NULL),
+(4, 'Imagen oferta Combo entre palos', 'dfsdfdffeefefefefefe', '14-Jun-18-HypeBeast.jpeg', 'Activo', NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -246,9 +268,13 @@ CREATE TABLE `marca` (
 --
 
 INSERT INTO `marca` (`id`, `Nombre`, `Descripcion`, `Proveedor_id`, `Estado`) VALUES
-(1, 'panzote', 'Pan', 3, 'Inactiva'),
-(2, 'Campollo', 'Pollo', 1, 'Inactiva'),
-(3, 'Campollo', 'Alitas', 1, 'Activa');
+(1, 'uuuuu', 'yyyyy', 2, 'Activa'),
+(2, 'Campollo', 'Pollo', 1, 'Activa'),
+(3, 'Campollo', 'Alitas', 1, 'Inactiva'),
+(4, 'Alpina', 'Leche entera y deslactozada', 2, 'Activa'),
+(5, 'Zenu', 'Jamon', 2, 'Inactiva'),
+(6, 'Aguila', 'Cerveza', 2, 'Activa'),
+(7, 'Pepsi', 'Marca de gaseosa super famosa sdhjfjhs', 2, 'Activa');
 
 -- --------------------------------------------------------
 
@@ -269,8 +295,15 @@ CREATE TABLE `mesa` (
 --
 
 INSERT INTO `mesa` (`id`, `Numero`, `Ubicacion`, `Capacidad`, `Ocupacion`) VALUES
-(1, 1, 'Ventana 1', 5, 'disponible'),
-(2, 2, 'Primer piso', 8, 'disponible');
+(1, 1, 'Pasillo', 54, 'disponible'),
+(2, 2, 'casa 2', 5, 'ocupada'),
+(3, 3, 'Centro', 3, 'disponible'),
+(4, 4, 'Balcon 3', 5, 'disponible'),
+(5, 5, 'Terrasa', 12, 'disponible'),
+(6, 6, 'Segundo piso', 122, 'disponible'),
+(7, 7, 'Terrasa', 7, 'ocupada'),
+(8, 8, 'euerudfheuidhaoe', 6, 'disponible'),
+(9, 9, 'Casa 2', 20, 'disponible');
 
 -- --------------------------------------------------------
 
@@ -1438,9 +1471,10 @@ CREATE TABLE `oferta` (
 --
 
 INSERT INTO `oferta` (`id`, `Nombre`, `Descripcion`, `PrecioUnidadVentaOferta`, `Estado`) VALUES
-(1, 'Mega combo', 'Llego para ser uno de las mejores combos', 50000, 'No disponible'),
-(2, 'Combo EntreHamburg', 'La especialidad de la casa, en este combo', 35000, 'Disponible'),
-(3, 'Six Pack', 'Suave', 20000, 'Disponible');
+(1, 'Alitas xtreme', 'Un combo de dos porciones de alitas', 35000, 'Disponible'),
+(2, 'Six pack 2x1', 'Dos six pack de cualquier cerveza por el precio de uno', 12000, 'Disponible'),
+(3, 'Combo Entre Palos', 'Dos hamburguesas con papas y gaseosa', 30000, 'Disponible'),
+(4, 'Combo taparterias', 'Combo de dos hamburguesas dobles', 45000, 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -1452,6 +1486,7 @@ CREATE TABLE `pago` (
                         `id` smallint(5) UNSIGNED NOT NULL,
                         `Trabajador_id` tinyint(3) UNSIGNED NOT NULL,
                         `Fecha` date NOT NULL,
+                        `ValorPago` int(11) NOT NULL,
                         `Estado` enum('Pendiente','Saldado') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1459,10 +1494,16 @@ CREATE TABLE `pago` (
 -- Volcado de datos para la tabla `pago`
 --
 
-INSERT INTO `pago` (`id`, `Trabajador_id`, `Fecha`, `Estado`) VALUES
-(1, 2, '2021-03-02', 'Pendiente'),
-(2, 1, '2021-01-05', 'Saldado'),
-(3, 3, '2021-12-05', 'Pendiente');
+INSERT INTO `pago` (`id`, `Trabajador_id`, `Fecha`, `ValorPago`, `Estado`) VALUES
+(1, 3, '2002-03-22', 0, 'Pendiente'),
+(2, 2, '2021-01-01', 0, 'Pendiente'),
+(3, 3, '2021-12-05', 0, 'Saldado'),
+(4, 3, '2017-05-23', 0, 'Pendiente'),
+(5, 2, '2017-03-23', 0, 'Pendiente'),
+(6, 2, '2021-06-04', 0, 'Pendiente'),
+(7, 2, '2021-06-03', 0, 'Pendiente'),
+(8, 2, '2021-06-05', 0, 'Saldado'),
+(9, 2, '2018-05-14', 0, 'Saldado');
 
 -- --------------------------------------------------------
 
@@ -1491,9 +1532,12 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id`, `Nombre`, `Tamano`, `ReferenciaTamano`, `Referencia`, `PrecioBase`, `PrecioUnidadTrabajador`, `PrecioUnidadVenta`, `PresentacionProducto`, `Marca_id`, `CantidadProducto`, `Subcategoria_id`, `Estado`) VALUES
-(1, 'Coca cola cero', 750, 'ml', '001-Dk', 1700, 1900, 2200, 'Botella vidrio', 3, 88, 2, 'Activo'),
-(2, 'Hamburguesa doble', 400, 'gr', '023-DN', 13000, 15000, 17000, 'Predeterminado', 2, 13, 1, 'Activo'),
-(3, 'Hamburguesa triple', 900, 'gr', '033-DN', 19000, 21000, 23000, 'Predeterminado', 1, 32, 1, 'Activo');
+(1, 'Cerveza ligth cerodsdasda', 300, 'ml', '34-efe', 1000, 1500, 2000, 'Lata', 6, 12, 5, 'Activo'),
+(2, 'Hamburguesa', 400, 'gr', '43-232', 15000, 16000, 17000, 'Predeterminado', 2, 7, 2, 'Activo'),
+(3, 'Alitas BBQ', 200, 'gr', 'eoeoeo-2020220', 20000, 21000, 22000, 'Predeterminado', 2, 77, 2, 'Activo'),
+(4, 'Coca cola cero', 750, 'ml', '001-Dk', 1700, 1900, 2200, 'Botella vidrio', 4, 88, 2, 'Activo'),
+(5, 'Hamburguesa doble', 400, 'gr', '023-DN', 13000, 15000, 17000, 'Predeterminado', 2, 13, 1, 'Activo'),
+(6, 'Hamburguesa triple', 900, 'gr', '033-DN', 19000, 21000, 23000, 'Predeterminado', 1, 32, 1, 'Activo');
 
 -- --------------------------------------------------------
 
@@ -1513,9 +1557,14 @@ CREATE TABLE `subcategoria` (
 --
 
 INSERT INTO `subcategoria` (`id`, `Nombre`, `CategoriaProducto`, `Estado`) VALUES
-(1, 'Hamburguesa', 'Comida', 'Inactivo'),
-(2, 'Pepsi', 'Bebida', 'Activo'),
-(3, 'Helado', 'Postre', 'Activo');
+(1, 'Platos a la carta', 'Comida', 'Inactivo'),
+(2, 'Comida rapida', 'Comida', 'Activo'),
+(3, 'Helado', 'Postre', 'Activo'),
+(4, 'Bebida caliente', 'Bebida', 'Activo'),
+(5, 'Bebida alcoholica', 'Bebida', 'Activo'),
+(6, 'Bebida natural', 'Bebida', 'Activo'),
+(7, 'Dulce de limon', 'Postre', 'Activo'),
+(8, 'Desayunos', 'Comida', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -1542,9 +1591,15 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `Cedula`, `Nombres`, `Apellidos`, `Telefono`, `Direccion`, `Email`, `Contrasena`, `Rol`, `Estado`, `Empresa_id`) VALUES
-(1, 1193088983, 'David Felipe', 'Diaz Vargas', 3132307498, 'Av coyote 12-56', 'entrepalospoderoso@gmail.com', '$2y$10$FjBypCq8zXl0QxEvy1xTveT2Mbjk6TgIZ79XJHBvJwQyl9dY98J2.', 'Mesero', 'Activo', 1),
-(2, 1198648983, 'Sebastian Eduardo', 'Molano Diaz', 3136307498, 'Av currucui 12-56', 'entrepalosproso@gmail.com', '$2y$10$LppudzIGSgilGxf1UTOXweCFiSrZNUovH7SaKWe/9.w3a/.3uYnNe', 'Proveedor', 'Activo', 1),
-(3, 1193094783, 'Bladimir Alejandro', 'Rojas Pinilla', 3197807498, 'calle 72-56', 'listopalospoderoso@gmail.com', '$2y$10$NycpejWeM874DK13KamXGOU5kLxtz72EQOFw7yrF9QmkhOVv/YgS.', 'Mesero', 'Activo', 1);
+(1, 1193088983, 'David Felipe', 'Diaz Vargas', 3132307498, 'Av coyote 12-56', 'entrepalospoderoso@gmail.com', '$2y$10$npLFEI57XqW6VNakCjb92.zSt1fAjAyrcMFanmPkW4UY33MWXaJHO', 'Administrador', 'Activo', 1),
+(2, 1198648983, 'Sebastian Eduardo', 'Molano Diaz', 3136307498, 'Av currucui 12-56', 'entrepalosproso@gmail.com', '$2y$10$Ssn7zxdVvsDK/7YK9nwxYubpSRTjQlCMGuvHwloZIoEmwqYbb3jA6', 'Proveedor', 'Activo', 1),
+(3, 1193094783, 'Bladimir Alejandro', 'Rojas Pinilla', 3197807498, 'calle 72-56', 'listopalospoderoso@gmail.com', '$2y$10$0/XRlq/uBDI8DDINfRDInOAwwxJu18WzNzUE3mGWIRI6/xtWv6Dbm', 'Mesero', 'Activo', 1),
+(4, 1122212221, 'Isidro', 'Ramirez', 1212112221, '22d2dd2d2d', 'sdasdas@sjsjjs.com', '$2y$10$6MRCCjxTtSBO4u58YVo8JelHGkk5yCWEDDfc6zUcniJAyy/FJOzAy', 'Mesero', 'Activo', 13),
+(5, 9842342343, 'Feney', 'Estu', 8656789078, 'gsgsgsgeceecec', 'corr@dsjdjd.co', '$2y$10$iEUp9rs8eAWE6GsVPjJtAetNwRlAjE9MEV8ClHi.Cv5jjbd49OUN2', 'Cliente', 'Activo', 5),
+(6, 3333333, 'Estebanrrrr', 'Ericzenrrrr', 3434343433, 'abcdfdfdfdf', 'cccc@gmail.com', '$2y$10$cLRy1SOn71qDLZ9rI3YRUeIiEw24L5GMXmX4H2r3fcDBRoMizKKzu', 'Cliente', 'Activo', 4),
+(7, 3234234324, 'ggregergrerg', 'rgergerg', 4242342343, 'rgergre', 'rgerg@fdsfd.co', '$2y$10$jdihXpA/XdkY3TBnENzJ/O82vxsy1qOcORto8mDkFVl0KmM/1Kniq', 'Administrador', 'Activo', 3),
+(8, 112345646, 'Carlos', 'Azaustre', 2314567389, 'rtgr gtrhbntyntyjr', 'grgttttttt@dfjkdkfjerk', '$2y$10$1EDsm2bVuCBM/ZSE9jaOFOYa/uy5qUV6zegPjhdT/RgCY7bb6fK8O', 'Mesero', 'Activo', 4),
+(9, 34367689, 'Arnol', 'Duque', 3424567894, 'grgrrghthththteffefefrgefgr', 'dddfsss@ffee.nom', '$2y$10$JpQ0tVnA1U6IA5DBMj4it.UOla/VcFHI/xi2z/hKiva8xsGNLcm9.', 'Cliente', 'Activo', 5);
 
 --
 -- Índices para tablas volcadas
@@ -1703,19 +1758,19 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT de la tabla `detalleoferta`
 --
 ALTER TABLE `detalleoferta`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `detallepedido`
 --
 ALTER TABLE `detallepedido`
-    MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+    MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-    MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `factura`
@@ -1733,13 +1788,13 @@ ALTER TABLE `imagen`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `mesa`
 --
 ALTER TABLE `mesa`
-    MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+    MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `municipio`
@@ -1751,31 +1806,31 @@ ALTER TABLE `municipio`
 -- AUTO_INCREMENT de la tabla `oferta`
 --
 ALTER TABLE `oferta`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `pago`
 --
 ALTER TABLE `pago`
-    MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `subcategoria`
 --
 ALTER TABLE `subcategoria`
-    MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-    MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+    MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas
@@ -1853,6 +1908,7 @@ ALTER TABLE `producto`
 --
 ALTER TABLE `usuario`
     ADD CONSTRAINT `fk_Usuario_Empresa1` FOREIGN KEY (`Empresa_id`) REFERENCES `empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

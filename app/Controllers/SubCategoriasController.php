@@ -20,33 +20,51 @@ class SubCategoriasController
     public function create()
     {
         try {
-            if (!empty($this->datasubcategoria['Nombre']) && !empty($this->datasubcategoria['CategoriaProducto']) && !SubCategorias::subCategoriaRegistrada($this->datasubcategoria['Nombre'], $this->datasubcategoria['CategoriaProducto'])) {
+            if (!empty($this->datasubcategoria['Nombre']) && !SubCategorias::subCategoriaRegistrada($this->datasubcategoria['Nombre'])) {
                 $subcategoria = new SubCategorias($this->datasubcategoria);
                 if ($subcategoria->insert()) {
-                    unset($_SESSION['frmCreateSubCategorias']);
+                    unset($_SESSION['frmCreateSubCategoria']);
                     header("Location: ../../views/modules/subcategoria/index.php?respuesta=success&mensaje=subcategoria Registrada");
                 }
             } else {
-                header("Location: ../../views/modules/subcategoria/create.php?respuesta=error&mensaje=subcategoria ya registrada");
+                header("Location: ../../views/modules/subcategoria/create.php?respuesta=error&mensaje=Ya existe una subcategoria con este nombre");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
-static public function restaurar(int $id)
-{
-    try {
-        $Objsubcategoria = SubCategorias::searchForId($id);
-        $Objsubcategoria->setEstado("Activo");
-        if ($Objsubcategoria->update()) {
-            header("Location: ../../views/modules/subcategoria/restore.php?respuesta=success&mensaje=Subcategoria restaurada");
-        } else {
-            header("Location: ../../views/modules/subcategoria/restore.php?respuesta=error&mensaje=Error al guardar");
+
+    public function edit()
+    {
+        try {
+            if (!SubCategorias::subCategoriaRegistrada($this->datasubcategoria['Nombre'], $this->datasubcategoria['id'])) {
+                $sbc = new SubCategorias ($this->datasubcategoria);
+                if ($sbc->update()) {
+                    unset($_SESSION['frmEditSubCategoria']);
+                }
+                header("Location: ../../views/modules/subcategoria/show.php?id=" . $sbc->getId() . "&respuesta=success&mensaje=SubCategoria Actualizada");
+            }else{
+                header("Location: ../../views/modules/subcategoria/edit.php?id=" . $this->datasubcategoria['id'] . "&respuesta=error&mensaje=Ya existe una subcategoria con este nombre");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
         }
-    } catch (\Exception $e) {
-        GeneralFunctions::logFile('Exception',$e, 'error');
     }
-}
+
+    static public function restaurar(int $id)
+    {
+        try {
+            $Objsubcategoria = SubCategorias::searchForId($id);
+            $Objsubcategoria->setEstado("Activo");
+            if ($Objsubcategoria->update()) {
+                header("Location: ../../views/modules/subcategoria/restore.php?respuesta=success&mensaje=Subcategoria restaurada");
+            } else {
+                header("Location: ../../views/modules/subcategoria/restore.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
 
     static public function inactivate(int $id)
     {
@@ -62,18 +80,7 @@ static public function restaurar(int $id)
             GeneralFunctions::logFile('Exception',$e, 'error');
         }
     }
-    public function edit()
-    {
-        try {
-            $sbc = new SubCategorias ($this->datasubcategoria);
-            if($sbc->update()){
-                unset($_SESSION['frmEditSubCategorias']);
-            }
-            header("Location: ../../views/modules/subcategoria/show.php?id=" . $sbc->getId() . "&respuesta=success&mensaje=SubCategoria Actualizada");
-        } catch (\Exception $e) {
-            GeneralFunctions::logFile('Exception',$e, 'error');
-        }
-    }
+
     static public function searchForID(array $data)
     {
         try {

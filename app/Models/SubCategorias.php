@@ -27,9 +27,10 @@ class SubCategorias extends AbstractDBConnection implements Model
         $this->setCategoriaProducto($SubCategoria['CategoriaProducto']??'Comida');
         $this->setEstado($SubCategoria['Estado']?? 'Activo') ;
     }
-    public static function subCategoriaRegistrada (mixed $Nombre, mixed $id): bool
+    public static function subCategoriaRegistrada (mixed $Nombre,int $idExcluir = null): bool
     {
-        $sbcTmp = SubCategorias::search("SELECT * FROM subcategoria WHERE Nombre = '$Nombre' and id = '$id'");
+        $query = "SELECT * FROM subcategoria WHERE Nombre = '$Nombre' ".(empty($idExcluir) ? '' : "AND id != $idExcluir");
+        $sbcTmp = SubCategorias::search($query);
         return (!empty($sbcTmp) ? true : false);
     }
     public function __destruct()

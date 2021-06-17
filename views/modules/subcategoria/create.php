@@ -6,8 +6,9 @@ use App\Models\GeneralFunctions;
 use Carbon\Carbon;
 
 $nameModel = "SubCategoria"; //Nombre del Modelo
+$nameForm = 'frmCreate'.$nameModel;
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
-$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
+$frmSession = $_SESSION[$nameForm]?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,8 +65,8 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                             <!-- /.card-header -->
                             <div class="card-body">
                             <!-- form start -->
-                                <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
-                                      name="frmCreate<?= $nameModel ?>"
+                                <form class="form-horizontal" method="post" id="<?= $nameForm ?>"
+                                      name="<?= $nameForm ?>"
                                       action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
 
 
@@ -102,7 +103,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                           </div>
                                       </div>
                                     <hr>
-                                    <button type="submit" class="btn btn-info">Enviar</button>
+                                    <button id="frmName" name="frmName" value="<?= $nameForm ?>" type="submit" class="btn btn-info">Enviar</button>
                                     <a href="index.php" role="button" class="btn btn-default float-right">Cancelar</a>
                                 </form>
                             </div>

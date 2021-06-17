@@ -7,8 +7,9 @@ use App\Models\GeneralFunctions;
 
 
 $nameModel = "Oferta"; //Nombre del Modelo
+$nameForm = 'frmCreate'.$nameModel;
 $pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
+$frmSession = $_SESSION[$nameForm]?? NULL;
 
 ?>
 <!DOCTYPE html>
@@ -66,8 +67,8 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
                             <!-- /.card-header -->
                             <div class="card-body">
                             <!-- form start -->
-                                <form class="form-horizontal" method="post" id="frmCreate<?= $nameModel ?>"
-                                      name="frmCreate<?= $nameModel ?>"
+                                <form class="form-horizontal" method="post" id="<?= $nameForm ?>"
+                                      name="<?= $nameForm ?>"
                                       action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
 
 
@@ -107,7 +108,7 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL;
                                           </div>
                                       </div>
                                     <hr>
-                                    <button type="submit" class="btn btn-info">Enviar</button>
+                                    <button id="frmName" name="frmName" value="<?= $nameForm ?>" type="submit" class="btn btn-info">Enviar</button>
                                     <a href="index.php" role="button" class="btn btn-default float-right">Cancelar</a>
                                 </form>
                             </div>

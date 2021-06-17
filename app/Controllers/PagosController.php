@@ -29,7 +29,7 @@ class PagosController
             if (!empty($this->datapagos['Trabajador_id']) && !empty($this->datapagos['Fecha']) && !Pagos::pagoRegistrado($this->datapagos['Trabajador_id'], $this->datapagos['Fecha'])) {
                 $pago = new Pagos($this->datapagos);
                 if ($pago->insert()) {
-                    unset($_SESSION['frmCreatePagos']);
+                    unset($_SESSION['frmCreatePago']);
                     header("Location: ../../views/modules/pago/index.php?respuesta=success&mensaje=Pago Registrado");
                 }
             } else {
@@ -46,7 +46,7 @@ class PagosController
             if (!Pagos::pagoRegistrado($this->datapagos['Trabajador_id'], $this->datapagos['Fecha'],$this->datapagos['id'])) {
                 $pgs = new Pagos($this->datapagos);
                 if ($pgs->update()) {
-                    unset($_SESSION['frmEditPagos']);
+                    unset($_SESSION['frmEditPago']);
                 }
                 header("Location: ../../views/modules/pago/show.php?id=" . $pgs->getId() . "&respuesta=success&mensaje=Pago Actualizado");
             }else{

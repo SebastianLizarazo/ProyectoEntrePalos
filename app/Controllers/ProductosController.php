@@ -34,7 +34,7 @@ class ProductosController
             if (!empty($this->dataProducto['Referencia']) && !Productos::productoRegistrado($this->dataProducto['Referencia'])) {
                 $Producto = new Productos($this->dataProducto);
                 if ($Producto->insert()) {
-                    unset($_SESSION['frmCreateProductos']);
+                    unset($_SESSION['frmCreateProducto']);
                     header("Location: ../../views/modules/producto/index.php?respuesta=success&mensaje=Producto Registrado");
                 }
             } else {
@@ -50,7 +50,7 @@ class ProductosController
             if (!Productos::productoRegistrado($this->dataProducto['Referencia'], $this->dataProducto['id']) ) {
                 $prd = new Productos($this->dataProducto);
                 if($prd->update()){
-                    unset($_SESSION['frmEditProductos']);
+                    unset($_SESSION['frmEditProducto']);
                 }
                 header("Location: ../../views/modules/producto/show.php?id=" . $prd->getId() . "&respuesta=success&mensaje=Producto Actualizado");
             } else {

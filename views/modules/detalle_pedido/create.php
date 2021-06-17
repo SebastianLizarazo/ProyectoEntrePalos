@@ -14,7 +14,7 @@ use Carbon\Carbon;
 $nameModel = "DetallePedido"; //Nombre del Modelo
 $nameForm = 'frmCreate'.$nameModel;
 $pluralModel = $nameModel.'s'; //Nombre del modelo en plural
-$frmSession = $_SESSION[$pluralModel] ?? NULL; //Nombre del formulario (frmUsuarios)
+$frmSession = $_SESSION[$nameForm] ?? NULL; //Nombre del formulario (frmUsuarios)
 ?>
 <!DOCTYPE html>
 <html>

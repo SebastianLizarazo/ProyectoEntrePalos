@@ -23,7 +23,7 @@ class MesasController
         try {
             $Mesa = new Mesas($this->dataMesa);
             if ($Mesa->insert()) {
-                unset($_SESSION['frmCreateMesas']);
+                unset($_SESSION['frmCreateMesa']);
                 header("Location: ../../views/modules/mesa/index.php?respuesta=success&mensaje=Mesa Registrada");
             }
         } catch (\Exception $e) {
@@ -36,7 +36,7 @@ class MesasController
             if (!Mesas::mesaRegistrada($this->dataMesa['Numero'], $this->dataMesa['id'])) {
                 $msa = new Mesas($this->dataMesa);
                 if ($msa->update()) {
-                    unset($_SESSION['frmEditMesas']);
+                    unset($_SESSION['frmEditMesa']);
                 }
                 header("Location: ../../views/modules/mesa/show.php?id=" . $msa->getId() . "&respuesta=success&mensaje=Mesa Actualizada");
             }else{

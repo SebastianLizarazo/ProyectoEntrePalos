@@ -32,7 +32,7 @@ class ConsumoTrabajadoresController
                 !ConsumoTrabajadores::consumoTrabajadorRegistrada($this->dataConsumoTrabajador['Pago_id'], $this->dataConsumoTrabajador['Producto_id'])){
                     $ConsumoTrabajador = new ConsumoTrabajadores($this->dataConsumoTrabajador);
                     if ($ConsumoTrabajador->insert()) {
-                        unset($_SESSION['frmCreateConsumoTrabajadores']);
+                        unset($_SESSION['frmCreateConsumoTrabajador']);
                         header("Location: ../../views/modules/consumo_trabajador/index.php?respuesta=success&mensaje=Consumo Trabajador Registrado");
                     }
             } else {
@@ -49,7 +49,7 @@ class ConsumoTrabajadoresController
                 $this->dataConsumoTrabajador['id'])){
                 $consumotbj = new ConsumoTrabajadores($this->dataConsumoTrabajador);
                 if ($consumotbj->update()) {
-                    unset($_SESSION['frmEditConsumoTrabajadores']);
+                    unset($_SESSION['frmEditConsumoTrabajador']);
                 }
                 header("Location: ../../views/modules/consumo_trabajador/show.php?id=" . $consumotbj->getId() . "&respuesta=success&mensaje=Consumo Trabajdor Actualizado");
             }else{

@@ -98,7 +98,7 @@ $frmSession = $_SESSION[$nameForm] ?? null;
                                                                 array(
                                                                     'id' => 'Factura_id',
                                                                     'name' => 'Factura_id',
-                                                                    'defaultValue' => '1',
+                                                                    'defaultValue' => $DataDetallepedido->getFacturaId(),
                                                                     'class' => 'form-control select2bs4 select2-info',
                                                                 )
                                                             )
@@ -113,7 +113,7 @@ $frmSession = $_SESSION[$nameForm] ?? null;
                                                                     'isRequired' => false,
                                                                     'id' => 'Producto_id',
                                                                     'name' => 'Producto_id',
-                                                                    'defaultValue' => '1',
+                                                                    'defaultValue' => $DataDetallepedido->getProductoId(),
                                                                     'class' => 'form-control select2bs4 select2-info',
                                                                     'where' => "estado = 'Activo'"
                                                                 )
@@ -129,7 +129,7 @@ $frmSession = $_SESSION[$nameForm] ?? null;
                                                                     'isRequired' => false,
                                                                     'id' => 'Ofertas_id',
                                                                     'name' => 'Ofertas_id',
-                                                                    'defaultValue' => '1',
+                                                                    'defaultValue' => $DataDetallepedido->getOfertasId(),
                                                                     'class' => 'form-control select2bs4 select2-info',
                                                                     'where' => "estado = 'Disponible'"
                                                                 )
@@ -161,7 +161,7 @@ $frmSession = $_SESSION[$nameForm] ?? null;
                                                                 array(
                                                                     'id' => 'Mesa_id',
                                                                     'name' => 'Mesa_id',
-                                                                    'defaultValue' => '1',
+                                                                    'defaultValue' =>  $DataDetallepedido->getMesaId(),
                                                                     'class' => 'form-control select2bs4 select2-info',
                                                                     'where' => "Ocupacion = 'Disponible'"
                                                                 )

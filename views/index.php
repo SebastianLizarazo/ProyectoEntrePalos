@@ -39,7 +39,9 @@ require("partials/routes.php"); ?>
 
         <!-- Main content -->
         <section class="content">
+           <div>
 
+           </div>
 
 
         </section>

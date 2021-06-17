@@ -32,19 +32,37 @@ class UsuariosController
     public function create()
     {
         try {
-            if (!empty($this->dataUsuario['Cedula']) && !empty($this->dataUsuario['Contrasena']) && !empty($this->dataUsuario['Email']) &&
-                !empty($this->dataUsuario['Telefono']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'],$this->dataUsuario['Contrasena']
+            if (!empty($this->dataUsuario['Cedula']) && !empty($this->dataUsuario['Email']) &&
+                !empty($this->dataUsuario['Telefono']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula']
                 ,$this->dataUsuario['Email'],$this->dataUsuario['Telefono'])) {
                 $Usuario = new Usuarios($this->dataUsuario);
                 if ($Usuario->insert()) {
-                    unset($_SESSION['frmCreateUsuarios']);
+                    unset($_SESSION['frmCreateUsuario']);
                     header("Location: ../../views/modules/usuario/index.php?respuesta=success&mensaje=Usuario Registrado");
                 }
             } else {
-                header("Location: ../../views/modules/usuario/create.php?respuesta=error&mensaje=Ya existe un usuario con esta Cedula, Contraseña, Email o Telefono");
+                header("Location: ../../views/modules/usuario/create.php?respuesta=error&mensaje=Ya existe un usuario con esta Cedula, Email o Telefono");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
+        }
+    }
+
+    public function edit()
+    {
+        try {
+            if (!Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'],$this->dataUsuario['Email'],
+                $this->dataUsuario['Telefono'],$this->dataUsuario['id'])) {
+                    $Usuario = new Usuarios($this->dataUsuario);
+                    if($Usuario->update()){
+                        unset($_SESSION['frmEditUsuario']);
+                    }
+                    header("Location: ../../views/modules/usuario/show.php?id=" . $Usuario->getId() . "&respuesta=success&mensaje=Usuario Actualizado");
+            } else {
+                    header("Location: ../../views/modules/usuario/edit.php?id=" . $this->dataUsuario['id'] . "&respuesta=error&mensaje=Ya existe un usuario con esta Cedula, Email o Telefono");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
         }
     }
 
@@ -76,23 +94,7 @@ class UsuariosController
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
-    public function edit()
-    {
-        try {
-            if (!Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula'],$this->dataUsuario['Contrasena']
-                    ,$this->dataUsuario['Email'],$this->dataUsuario['Telefono'],$this->dataUsuario['id'])) {
-                $Usuario = new Usuarios($this->dataUsuario);
-                if($Usuario->update()){
-                    unset($_SESSION['frmEditUsuarios']);
-                }
-                header("Location: ../../views/modules/usuario/show.php?id=" . $Usuario->getId() . "&respuesta=success&mensaje=Usuario Actualizado");
-            } else {
-                header("Location: ../../views/modules/usuario/edit.php?id=" . $this->dataUsuario['id'] . "&respuesta=error&mensaje=Ya existe un usuario con esta Cedula, Contraseña, Email o Telefono");
-            }
-        } catch (\Exception $e) {
-            GeneralFunctions::logFile('Exception',$e, 'error');
-        }
-    }
+
     static public function searchForID(array $data)
     {
         try {

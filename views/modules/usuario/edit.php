@@ -11,8 +11,9 @@ use App\Models\Usuarios;
 
 
 $nameModel = "Usuario";
+$nameForm = 'frmEdit'.$nameModel;
 $pluralModel = $nameModel.'s';
-$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
+$frmSession = $_SESSION[$nameForm] ?? null;
 
 ?>
 <!DOCTYPE html>
@@ -79,8 +80,8 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                     ?>
                                     <!-- form start -->
                                     <div class="card-body">
-                                        <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
-                                              name="frmEdit<?= $nameModel ?>"
+                                        <form class="form-horizontal" enctype="multipart/form-data" method="post" id="<?= $nameForm ?>"
+                                              name="<?= $nameForm ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
                                             <input id="id" name="id" value="<?= $DataUsuario->getId(); ?>" hidden
                                                    required="required" type="text">
@@ -183,7 +184,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? null;
                                                 </div>
                                             </div>
                                             <hr>
-                                            <button type="submit" class="btn btn-info">Enviar</button>
+                                            <button id="frmName" name="frmName" value="<?= $nameForm ?>" type="submit" class="btn btn-info">Enviar</button>
                                             <a href="index.php" role="button" class="btn btn-default float-right">Cancelar</a>
                                         </form>
                                     </div>

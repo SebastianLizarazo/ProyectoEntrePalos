@@ -27,7 +27,7 @@ class MarcasController
             if (!empty($this->dataMarca['Nombre']) && !Marcas::marcaRegistrada($this->dataMarca['Nombre'])) {
                 $Marca = new Marcas($this->dataMarca);
                 if ($Marca->insert()) {
-                    unset($_SESSION['frmCreateMarcas']);
+                    unset($_SESSION['frmCreateMarca']);
                     header("Location: ../../views/modules/marca/index.php?respuesta=success&mensaje=Marca Registrada");
                 }
             } else {
@@ -44,7 +44,7 @@ class MarcasController
             if (!Marcas::marcaRegistrada($this->dataMarca['Nombre'], $this->dataMarca['id'])) {
                 $mca = new Marcas($this->dataMarca);
                 if ($mca->update()) {
-                    unset($_SESSION['frmEditMarcas']);
+                    unset($_SESSION['frmEditMarca']);
                 }
                 header("Location: ../../views/modules/marca/show.php?id=" . $mca->getId() . "&respuesta=success&mensaje=Marca Actualizada");
             }else{

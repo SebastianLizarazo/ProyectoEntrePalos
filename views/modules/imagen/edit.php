@@ -11,8 +11,9 @@ use App\Models\GeneralFunctions;
 
 
 $nameModel = "Imagen";
+$nameForm = 'frmEdit'.$nameModel;
 $pluralModel = $nameModel.'es';
-$frmSession = $_SESSION['frmEdit'.$pluralModel] ?? NULL;
+$frmSession = $_SESSION[$nameForm] ?? NULL;
 
 ?>
 <!DOCTYPE html>
@@ -78,8 +79,8 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? NULL;
                                     ?>
                                     <div class="card-body">
                                         <!-- form start -->
-                                        <form class="form-horizontal" enctype="multipart/form-data" method="post" id="frmEdit<?= $nameModel ?>"
-                                              name="frmEdit<?= $nameModel ?>"
+                                        <form class="form-horizontal" enctype="multipart/form-data" method="post" id="<?= $nameForm ?>"
+                                              name="<?= $nameForm ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
                                             <div class="row">
                                                 <div class="col-sm-10">
@@ -180,7 +181,7 @@ $frmSession = $_SESSION['frmEdit'.$pluralModel] ?? NULL;
                                                 </div>
                                             </div>
                                             <hr>
-                                            <button type="submit" class="btn btn-info">Enviar</button>
+                                            <button id="frmName" name="frmName" value="<?= $nameForm ?>" type="submit" class="btn btn-info">Enviar</button>
                                             <a href="index.php" role="button" class="btn btn-default float-right">Cancelar</a>
                                         </form>
                                     </div>
