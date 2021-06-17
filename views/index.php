@@ -25,7 +25,7 @@ require("partials/routes.php"); ?>
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Pagina Principal</h1>
+                        <h1>Inicio</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -39,10 +39,27 @@ require("partials/routes.php"); ?>
 
         <!-- Main content -->
         <section class="content">
-           <div>
-
-           </div>
-
+            <div class="row">
+                <div class="col-12 col-sm-10 col-lg-8 mx-auto">
+                    <img class="card-img-top" src="../views/public/img/Entre-palos-inicio.jpeg"
+                         alt="Entre palos inicio">
+                    <div class="bg-white p-5 shadow rounded">
+                        <div class=" m-auto">
+                            <h1 class="mb-0">¿Qué quieres hacer hoy?</h1>
+                        </div>
+                            <div class="d-flex justify-content-between align-items-center mt-5">
+                                <div class="btn-group btn-group-sm m-auto">
+                                    <a href="<?= $baseURL ?>/views/modules/producto/index.php" class="btn btn-success">
+                                        <strong> Gestionar productos </strong>
+                                    </a>
+                                    <a href="<?= $baseURL ?>/views/modules/usuario/index.php" class="btn btn-primary">
+                                        <strong> Gestionar usuarios </strong>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
 
         </section>
         <!-- /.content -->
