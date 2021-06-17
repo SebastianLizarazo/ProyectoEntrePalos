@@ -87,6 +87,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>N°</th>
                                                 <th>Trabajador</th>
                                                 <th>Fecha</th>
+                                                <th>Valor</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -103,6 +104,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                     <td><?= $pago->getId(); ?></td>
                                                     <td><?= $pago->getTrabajador()->getNombres(); ?> <?= $pago->getTrabajador()->getApellidos(); ?> </td>
                                                     <td><?= $pago->getFecha()->format('Y-m-d'); ?></td>
+                                                    <td><?= $pago->getValorPago()?? 'No hay valor' ?></td>
                                                     <td><span class="badge badge-<?= $pago->getEstado() == "Saldado" ? "success" : "danger" ?>">
                                                             <?= $pago->getEstado() ?>
                                                     <td>
@@ -137,6 +139,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>N°</th>
                                                 <th>Trabajador </th>
                                                 <th>Fecha</th>
+                                                <th>Valor</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>

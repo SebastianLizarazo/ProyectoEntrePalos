@@ -18,12 +18,10 @@ class PagosController
         $this->datapagos['id'] = $_FORM['id'] ?? NULL;
         $this->datapagos['Trabajador_id'] = $_FORM['Trabajador_id'] ?? NULL;
         $this->datapagos['Fecha'] = !empty($_FORM['Fecha']) ? Carbon::parse($_FORM['Fecha']) : new Carbon();
+        $this->datapagos['ValorPago'] = $_FORM['ValorPago'] ?? NULL;
         $this->datapagos['Estado'] = $_FORM['Estado'] ?? 'Pendiente';
     }
 
-    private static function pagoIsInArray(?int $getId, mixed $arrExcluir)
-    {
-    }
 
     public function create()
     {
@@ -35,12 +33,30 @@ class PagosController
                     header("Location: ../../views/modules/pago/index.php?respuesta=success&mensaje=Pago Registrado");
                 }
             } else {
-                header("Location: ../../views/modules/pago/create.php?respuesta=error&mensaje=Pago ya registrado");
+                header("Location: ../../views/modules/pago/create.php?respuesta=error&mensaje=Ya existe un pago con este trabajador y esta fecha a la vez");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
+
+    public function edit()
+    {
+        try {
+            if (!Pagos::pagoRegistrado($this->datapagos['Trabajador_id'], $this->datapagos['Fecha'],$this->datapagos['id'])) {
+                $pgs = new Pagos($this->datapagos);
+                if ($pgs->update()) {
+                    unset($_SESSION['frmEditPagos']);
+                }
+                header("Location: ../../views/modules/pago/show.php?id=" . $pgs->getId() . "&respuesta=success&mensaje=Pago Actualizado");
+            }else{
+                header("Location: ../../views/modules/pago/edit.php?id=" . $this->datapagos['id'] . "&respuesta=error&mensaje=Ya existe un pago con este trabajador y esta fecha a la vez");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+
     static public function activate(int $id)
     {
         try {
@@ -55,7 +71,8 @@ class PagosController
             GeneralFunctions::logFile('Exception', $e, 'error');
         }
     }
-        static public function inactivate(int $id)
+
+    static public function inactivate(int $id)
     {
         try {
             $Objpago = Pagos::searchForId($id);
@@ -69,18 +86,7 @@ class PagosController
             GeneralFunctions::logFile('Exception',$e, 'error');
         }
     }
-    public function edit()
-    {
-        try {
-            $pgs = new Pagos($this->datapagos);
-            if($pgs->update()){
-                unset($_SESSION['frmEditPagos']);
-            }
-            header("Location: ../../views/modules/pago/show.php?id=" . $pgs->getId() . "&respuesta=success&mensaje=Pago Actualizado");
-        } catch (\Exception $e) {
-            GeneralFunctions::logFile('Exception',$e, 'error');
-        }
-    }
+
     static public function searchForID(array $data)
     {
         try {
@@ -141,7 +147,7 @@ class PagosController
         $htmlSelect .= "</select>";
         return $htmlSelect;
     }
-    private static function Pagoscontroller($idPagos, $ArrPagos): ?bool
+    private static function pagoIsInArray(int $idPagos, mixed $ArrPagos): ?bool
     {
         if (count($ArrPagos) > 0) {
             foreach ($ArrPagos as $pago) {

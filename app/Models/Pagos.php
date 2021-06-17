@@ -16,6 +16,7 @@ class Pagos extends AbstractDBConnection implements Model
     private ?int $id;
     private int $Trabajador_id;
     private Carbon $Fecha;
+    private int $ValorPago;
     private string $Estado;
 
     /* Relaciones */
@@ -29,11 +30,13 @@ class Pagos extends AbstractDBConnection implements Model
         $this->setTrabajadorId($Pago['Trabajador_id']?? 0);
         $this->setFecha(!empty($Pago['Fecha']) ?
             Carbon::parse($Pago['Fecha']) : new Carbon());
+        $this->setValorPago($Pago['ValorPago']?? 0);
         $this->setEstado($Pago['Estado']?? 'Pendiente') ;
     }
-    public static function pagoRegistrado(mixed $Trabajador_id, mixed $id): bool
+    public static function pagoRegistrado(int $Trabajador_id, Carbon $Fecha, int $idExcluir = null): bool
     {
-        $pgoTmp = Pagos::search("SELECT * FROM pago WHERE Trabajador_id = '$Trabajador_id' and id = '$id'");
+        $query = "SELECT * FROM pago WHERE Trabajador_id = '$Trabajador_id' and Fecha = '$Fecha' ".(empty($idExcluir) ? '' : "AND id != $idExcluir");
+        $pgoTmp = Pagos::search($query);
         return (!empty($pgoTmp) ? true : false);
     }
     public function __destruct()
@@ -68,9 +71,9 @@ class Pagos extends AbstractDBConnection implements Model
     }
 
     /**
-     * @param int|null $Trabajador_id
+     * @param int $Trabajador_id
      */
-    public function setTrabajadorId(?int $Trabajador_id): void
+    public function setTrabajadorId(int $Trabajador_id): void
     {
         $this->Trabajador_id = $Trabajador_id;
     }
@@ -89,6 +92,22 @@ class Pagos extends AbstractDBConnection implements Model
     public function setFecha(Carbon $Fecha): void
     {
         $this->Fecha = $Fecha;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getValorPago(): ?int
+    {
+        return $this->ValorPago;
+    }
+
+    /**
+     * @param int $ValorPago
+     */
+    public function setValorPago(int $ValorPago): void
+    {
+        $this->ValorPago = $ValorPago;
     }
 
     /**
@@ -131,6 +150,7 @@ class Pagos extends AbstractDBConnection implements Model
             ':id' =>    $this->getId(),
             ':Trabajador_id' =>   $this->getTrabajadorId(),
             ':Fecha' =>   $this->getFecha()->toDateString(),
+            ':ValorPago' =>   $this->getValorPago(),
             ':Estado' =>   $this->getEstado(),
         ];
         $this->Connect();
@@ -141,7 +161,7 @@ class Pagos extends AbstractDBConnection implements Model
     public function insert(): ?bool
     {
         $query = "INSERT INTO pago VALUES (
-            :id,:Trabajador_id,:Fecha,:Estado)";
+            :id,:Trabajador_id,:Fecha,:ValorPago,:Estado)";
         if ($this->save($query)) {
             $idpago = $this->getLastId('pago');
             $this->setId($idpago);
@@ -153,7 +173,7 @@ class Pagos extends AbstractDBConnection implements Model
     public function update(): ?bool
     {
         $query = "UPDATE pago SET 
-            Trabajador_id = :Trabajador_id,  Fecha= :Fecha, Estado = :Estado
+            Trabajador_id = :Trabajador_id,  Fecha= :Fecha, ValorPago = :ValorPago, Estado = :Estado
             WHERE id = :id";
         return $this->save($query);
     }
@@ -217,6 +237,7 @@ class Pagos extends AbstractDBConnection implements Model
             'id' => $this->getId(),
             'Trabajador_id' =>$this->getTrabajadorId(),
             'Fecha' =>$this->getFecha()->toDateString(),
+            'ValorPago' =>$this->getValorPago(),
             'Estado' =>$this->getEstado(),
         ];
     }

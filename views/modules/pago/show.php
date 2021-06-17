@@ -82,6 +82,9 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                     <strong><i class="fas fa-calendar-day"></i>&nbsp; Fecha</strong>
                                                         <p class="text-muted"><?= $Datapago->getFecha()->format('Y-m-d') ?></p>
                                                 <hr>
+                                                    <strong><i class="fas fa-money-bill-wave"></i>&nbsp;Valor</strong>
+                                                        <p class="text-muted"><?= $Datapago->getValorPago() ?></p>
+                                                <hr>
                                                     <strong><i class="fas fa-check"></i></i>&nbsp; Estado</strong>
                                                         <p class="text-muted"><?= $Datapago->getEstado() ?></p>
                                             </div>

@@ -92,6 +92,13 @@ $frmSession = $_SESSION['frmCreate'.$pluralModel] ?? NULL; //Nombre del formular
                                                                 value="<?= $frmSession['Fecha'] ?? '' ?>">
                                                     </div>
                                                 </div>
+                                                <div class="form-group row">
+                                                    <label for="ValorPago" class="col-sm-2 col-form-label">Valor</label>
+                                                    <div class="col-sm-10">
+                                                        <input required type="number" min="111111" max="9999999" class="col-sm-3 form-control" id="ValorPago" name="ValorPago"
+                                                                value="<?= $frmSession['ValorPago'] ?? '' ?>">
+                                                    </div>
+                                                </div>
                                                     <div class="form-group row">
                                                         <label for="estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
