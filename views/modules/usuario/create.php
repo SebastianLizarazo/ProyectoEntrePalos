@@ -77,21 +77,21 @@ $frmSession = $_SESSION[$nameForm]?? NULL; //Nombre del formulario (frmUsuarios)
                                                 <label for="Cedula" class="col-sm-2 col-form-label">Cedula</label>
                                                 <div class="col-sm-10">
                                                     <input required type="number" min="1111111" max="9999999999" class="form-control" id="Cedula" name="Cedula"
-                                                           placeholder="Ingrese la cedula del usuario" value="<?= $frmSession['Nombre'] ?? '' ?>">
+                                                           placeholder="Ingrese la cedula del usuario" value="<?= $frmSession['Cedula'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="Nombres" class="col-sm-2 col-form-label">Nombres</label>
                                                 <div class="col-sm-10">
                                                     <input required type="text" class="form-control" id="Nombres" name="Nombres"
-                                                           placeholder="Ingrese los nombres del usuario" value="<?= $frmSession['NIT'] ?? '' ?>">
+                                                           placeholder="Ingrese los nombres del usuario" value="<?= $frmSession['Nombres'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="Apellidos" class="col-sm-2 col-form-label">Apellidos</label>
                                                 <div class="col-sm-10">
                                                     <input required type="text" class="form-control" id="Apellidos" name="Apellidos"
-                                                           placeholder="Ingrese los apellidos del usuario" value="<?= $frmSession['NIT'] ?? '' ?>">
+                                                           placeholder="Ingrese los apellidos del usuario" value="<?= $frmSession['Apellidos'] ?? '' ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -111,7 +111,7 @@ $frmSession = $_SESSION[$nameForm]?? NULL; //Nombre del formulario (frmUsuarios)
                                             <div class="form-group row">
                                                 <label for="Email" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="Email" name="Email"
+                                                    <input required type="email" class="form-control" id="Email" name="Email"
                                                            placeholder="Ingrese la Email del usuario" value="<?= $frmSession['Email'] ?? '' ?>">
                                                 </div>
                                             </div>
@@ -152,7 +152,7 @@ D                                                    </select>
                                                         array(
                                                             'id' => 'Empresa_id',
                                                             'name' => 'Empresa_id',
-                                                            'defaultValue' => '', //Boyacá
+                                                            'defaultValue' => $frmSession['Empresa_id']?? '',
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Activo'"
                                                         )

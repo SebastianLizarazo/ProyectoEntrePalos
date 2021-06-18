@@ -32,7 +32,7 @@ class UsuariosController
     public function create()
     {
         try {
-            if (!empty($this->dataUsuario['Cedula']) && !empty($this->dataUsuario['Email']) &&
+            if (!empty($this->dataUsuario['Cedula']) &&
                 !empty($this->dataUsuario['Telefono']) && !Usuarios::UsuarioRegistrado($this->dataUsuario['Cedula']
                 ,$this->dataUsuario['Email'],$this->dataUsuario['Telefono'])) {
                 $Usuario = new Usuarios($this->dataUsuario);

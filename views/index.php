@@ -39,8 +39,8 @@ require("partials/routes.php"); ?>
 
         <!-- Main content -->
         <section class="content">
-            <div class="row">
-                <div class="col-12 col-sm-10 col-lg-8 mx-auto">
+            <div class="row ">
+                <div class="col-12 col-sm-10 col-lg-8 mx-auto mb-5">
                     <img class="card-img-top" src="../views/public/img/Entre-palos-inicio.jpeg"
                          alt="Entre palos inicio">
                     <div class="bg-white p-5 shadow rounded">

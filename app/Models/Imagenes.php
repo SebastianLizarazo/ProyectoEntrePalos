@@ -44,9 +44,10 @@ class Imagenes extends AbstractDBConnection implements Model
         $this->setOfertaId(!empty($imagen['Oferta_id']) ? $imagen['Oferta_id']: null);
     }
 
-    public static function imagenRegistrada(string $Nombre, string $Ruta): bool
+    public static function imagenRegistrada(string $Nombre, string $Ruta,int $idExcluir = null ): bool
     {
-        $imgTmp = Imagenes::search("SELECT * FROM imagen WHERE Nombre = '$Nombre' and Ruta = '$Ruta'");
+        $query = "SELECT * FROM imagen WHERE Nombre = '$Nombre' and Ruta = '$Ruta' ".(empty($idExcluir) ? '' : "AND id != $idExcluir");
+        $imgTmp = Imagenes::search($query);
         return (!empty($imgTmp)? true : false);
     }
 

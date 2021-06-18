@@ -16,14 +16,11 @@
             </div>
             <div class="info">
                 <a href="<?= $baseURL ?>/views/modules/usuario/show.php?id=<?= $_SESSION['UserInSession']['id']?>" class="d-block">
-                    <?= $_SESSION['UserInSession']['Nombres'] ?? "Invitado" ?>
-                </a>
-                <a href="<?= $baseURL ?>/views/modules/usuario/show.php?id=<?= $_SESSION['UserInSession']['id'] ?>" class="d-block">
-                    <?= $_SESSION['UserInSession']['Rol'] ?? "Invitado" ?>
+                    <?= $_SESSION['UserInSession']['Nombres'] ?? "Invitado" ?><br>
+                    <span><?= $_SESSION['UserInSession']['Rol'] ?? "Invitado" ?></span>
                 </a>
             </div>
         </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">

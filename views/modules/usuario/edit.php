@@ -130,7 +130,7 @@ $frmSession = $_SESSION[$nameForm] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Email" class="col-sm-2 col-form-label">Email</label>
                                                         <div class="col-sm-10">
-                                                            <input type="email" class="form-control" id="Email"
+                                                            <input required type="email" class="form-control" id="Email"
                                                                    name="Email" value="<?= $DataUsuario->getEmail(); ?>"
                                                                    placeholder="Ingrese el email del usuario">
                                                         </div>

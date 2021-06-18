@@ -763,3 +763,2021 @@
 
 )
   
+[2021-06-18T10:42:33.994503+00:00] General.ERROR: Exception  
+[2021-06-18T10:42:33.996596+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T10:42:33.996904+00:00] General.ERROR: Line: 128  
+[2021-06-18T10:42:33.997127+00:00] General.ERROR: Mensaje: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Contrasena' in 'field list'  
+[2021-06-18T10:42:33.997343+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 329
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Cedula =:Cedula, Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => $2y$10$DrZc6Z3p1.JdHll3grqf8OAQB2A9VOAw3qd/ln2nIZHQKXEQ0gB.O
+                            [:Rol] => Administrador
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 352
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Cedula =:Cedula, Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 132
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T10:47:01.184736+00:00] General.ERROR: Exception  
+[2021-06-18T10:47:01.186577+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T10:47:01.186890+00:00] General.ERROR: Line: 128  
+[2021-06-18T10:47:01.187152+00:00] General.ERROR: Mensaje: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'Contrasena' at row 1  
+[2021-06-18T10:47:01.187450+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 329
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Cedula =:Cedula, Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                    [1] => Array
+                        (
+                            [:id] => 1
+                            [:Cedula] => 1193088983
+                            [:Nombres] => David Felipe
+                            [:Apellidos] => Diaz Vargas
+                            [:Telefono] => 3132307498
+                            [:Direccion] => Av coyote 12-56
+                            [:Email] => entrepalospoderoso@gmail.com
+                            [:Contrasena] => $2y$10$VmhJX1vdUreZd4k7tQ6eM..lOZ8Atvd/OWJWUWNQ8dRSzDBs6jcF2
+                            [:Rol] => Administrador
+                            [:Estado] => Activo
+                            [:Empresa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Usuarios.php
+            [line] => 352
+            [function] => save
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => UPDATE usuario SET 
+            Cedula =:Cedula, Nombres = :Nombres, Apellidos = :Apellidos, Telefono = :Telefono, Direccion = :Direccion, Email = :Email, 
+            Contrasena = :Contrasena, Rol = :Rol, Estado = :Estado, Empresa_id = :Empresa_id WHERE id = :id
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\test\testUsuario.php
+            [line] => 132
+            [function] => update
+            [class] => App\Models\Usuarios
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T12:31:41.352105+00:00] General.ERROR: Exception  
+[2021-06-18T12:31:41.354093+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T12:31:41.354197+00:00] General.ERROR: Line: 44  
+[2021-06-18T12:31:41.354316+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T12:31:41.354407+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 91
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T12:31:41.375755+00:00] General.ERROR: Exception  
+[2021-06-18T12:31:41.376065+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T12:31:41.376163+00:00] General.ERROR: Line: 44  
+[2021-06-18T12:31:41.376249+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T12:31:41.376340+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 196
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 92
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mesa
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [7] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:23:23.788232+00:00] General.ERROR: Exception  
+[2021-06-18T13:23:23.790726+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:23:23.790833+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:23:23.790943+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:23:23.791043+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 91
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:23:23.793845+00:00] General.ERROR: Exception  
+[2021-06-18T13:23:23.794275+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:23:23.794446+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:23:23.794621+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:23:23.794798+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 196
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 92
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mesa
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [7] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:23:54.406899+00:00] General.ERROR: Exception  
+[2021-06-18T13:23:54.407384+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:23:54.407470+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:23:54.407542+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:23:54.407631+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 91
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:23:54.410684+00:00] General.ERROR: Exception  
+[2021-06-18T13:23:54.411022+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:23:54.411108+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:23:54.411181+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:23:54.411261+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 196
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 92
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mesa
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [7] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:26:27.784142+00:00] General.ERROR: Exception  
+[2021-06-18T13:26:27.785473+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:26:27.785631+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:26:27.785765+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:26:27.785907+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 91
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:26:27.816057+00:00] General.ERROR: Exception  
+[2021-06-18T13:26:27.816947+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:26:27.817119+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:26:27.817261+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:26:27.817415+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 196
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 92
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mesa
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [7] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:27:27.808209+00:00] General.ERROR: Exception  
+[2021-06-18T13:27:27.809191+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:27:27.809390+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:27:27.809571+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:27:27.809771+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 91
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:27:27.817323+00:00] General.ERROR: Exception  
+[2021-06-18T13:27:27.817681+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:27:27.817820+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:27:27.817937+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:27:27.818093+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 196
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 92
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mesa
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [7] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:30:28.799832+00:00] General.ERROR: Exception  
+[2021-06-18T13:30:28.801135+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:30:28.801235+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:30:28.801313+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:30:28.801435+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 91
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:30:28.805972+00:00] General.ERROR: Exception  
+[2021-06-18T13:30:28.806292+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:30:28.806378+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:30:28.806446+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:30:28.806523+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 196
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 92
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mesa
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [7] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:30:50.960057+00:00] General.ERROR: Exception  
+[2021-06-18T13:30:50.961029+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:30:50.961132+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:30:50.961222+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:30:50.961338+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 91
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T13:30:50.965592+00:00] General.ERROR: Exception  
+[2021-06-18T13:30:50.966120+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T13:30:50.966296+00:00] General.ERROR: Line: 44  
+[2021-06-18T13:30:50.966432+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T13:30:50.966608+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 196
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 92
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mesa
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [7] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T19:38:42.834328+00:00] General.ERROR: Exception  
+[2021-06-18T19:38:42.837448+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T19:38:42.837840+00:00] General.ERROR: Line: 44  
+[2021-06-18T19:38:42.838145+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T19:38:42.838458+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 91
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
+[2021-06-18T19:38:42.849625+00:00] General.ERROR: Exception  
+[2021-06-18T19:38:42.850207+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-18T19:38:42.850389+00:00] General.ERROR: Line: 44  
+[2021-06-18T19:38:42.850614+00:00] General.ERROR: Mensaje: SQLSTATE[HY000] [1049] Unknown database 'bdentrepalos'  
+[2021-06-18T19:38:42.850784+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 44
+            [function] => __construct
+            [class] => PDO
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mysql:host=127.0.0.1;port=3306;dbname=bdentrepalos;charset=utf8
+                    [1] => EntrePalos
+                    [2] => 12345
+                    [3] => Array
+                        (
+                            [1002] => SET NAMES utf8
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 196
+            [function] => Connect
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 92
+            [function] => countRowsTable
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => mesa
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 39
+            [function] => setNumero
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 233
+            [function] => __construct
+            [class] => App\Models\Mesas
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [5] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\Mesas.php
+            [line] => 281
+            [function] => search
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                    [0] => SELECT * FROM mesa
+                )
+
+        )
+
+    [6] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MesasController.php
+            [line] => 66
+            [function] => getAll
+            [class] => App\Models\Mesas
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+    [7] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\views\modules\mesa\index.php
+            [line] => 96
+            [function] => getAll
+            [class] => App\Controllers\MesasController
+            [type] => ::
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  
