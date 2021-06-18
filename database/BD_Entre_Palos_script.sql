@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bdentrepalos`
 --
-CREATE DATABASE bdentrepalos;
+CREATE DATABASE IF NOT EXISTS bdentrepalos;
 use bdentrepalos;
 
 
