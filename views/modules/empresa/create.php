@@ -133,7 +133,7 @@ $frmSession = $_SESSION[$nameForm] ?? NULL; //Nombre del formulario (frmUsuarios
                                                     <?= MunicipiosController::selectMunicipios(array (
                                                         'id' => 'Municipio_id',
                                                         'name' => 'Municipio_id',
-                                                        'defaultValue' => (!empty($frmSession['municipio_id'])) ? $frmSession['municipio_id'] : '',
+                                                        'defaultValue' => (!empty($frmSession['Municipio_id'])) ? $frmSession['Municipio_id'] : '',
                                                         'class' => 'form-control select2bs4 select2-info',
                                                         'where' => "departamento_id = 15 and estado = 'Activo'"))
                                                     ?>
