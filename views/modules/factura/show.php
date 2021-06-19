@@ -80,7 +80,7 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                                         <p class="text-muted"><?= $DataFactura->getNumero() ?></p>
                                                 <hr>
                                                     <strong><i class="far fa-calendar-alt"></i>&nbsp;Fecha</strong>
-                                                        <p class="text-muted"><?= $DataFactura->getFecha() ?></p>
+                                                        <p class="text-muted"><?= $DataFactura->getFecha()->format('Y-m-d') ?></p>
                                                 <hr>
                                                     <strong><i class="far fa-credit-card"></i>&nbsp;Medio de pago</strong>
                                                         <p class="text-muted"><?= $DataFactura->getMedioPago() ?></p>

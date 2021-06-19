@@ -93,10 +93,10 @@ $frmSession = $_SESSION[$nameForm]?? NULL; //Nombre del formulario (frmUsuarios)
                                                     <div class="form-group row">
                                                         <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="estado" name="estado" class="custom-select">
+                                                            <select required id="Estado" name="Estado" class="custom-select">
                                                                 <option value="">Seleccione</option>
-                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
-                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
+                                                                <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Activo") ? "selected" : ""; ?> value="Activo">Activo</option>
+                                                                <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Inactivo") ? "selected" : ""; ?> value="Inactivo">Inactivo</option>
                                                             </select>
                                                         </div>
                                                     </div>

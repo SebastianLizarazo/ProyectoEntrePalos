@@ -112,8 +112,8 @@ $frmSession = $_SESSION[$nameForm] ?? null;
                                                     <div class="form-group row">
                                                         <label for="ValorPago" class="col-sm-2 col-form-label">Valor</label>
                                                         <div class="col-sm-10">
-                                                            <input required type="number" min="111111" max="9999999" class="col-sm-3 form-control" id="ValorPago" name="ValorPago"
-                                                                   value="<?= $Datapago->getValorPago() ?>">
+                                                            <input required type="number" min="11111" max="9999999" class="col-sm-3 form-control" id="ValorPago" name="ValorPago"
+                                                                   value="<?= $Datapago->getValorPago() ?>" placeholder="Ingrese el valor del pago">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

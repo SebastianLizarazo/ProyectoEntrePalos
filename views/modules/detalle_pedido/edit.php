@@ -100,6 +100,7 @@ $frmSession = $_SESSION[$nameForm] ?? null;
                                                                     'name' => 'Factura_id',
                                                                     'defaultValue' => $DataDetallepedido->getFacturaId(),
                                                                     'class' => 'form-control select2bs4 select2-info',
+                                                                    'where' => "estado = 'Pendiente'"
                                                                 )
                                                             )
                                                             ?>

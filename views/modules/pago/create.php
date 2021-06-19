@@ -96,17 +96,17 @@ $frmSession = $_SESSION[$nameForm]?? NULL; //Nombre del formulario (frmUsuarios)
                                                 <div class="form-group row">
                                                     <label for="ValorPago" class="col-sm-2 col-form-label">Valor</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" min="111111" max="9999999" class="col-sm-3 form-control" id="ValorPago" name="ValorPago"
-                                                                value="<?= $frmSession['ValorPago'] ?? '' ?>">
+                                                        <input required type="number" min="11111" max="9999999" class="col-sm-3 form-control" id="ValorPago" name="ValorPago"
+                                                                value="<?= $frmSession['ValorPago'] ?? '' ?>" placeholder="Ingrese el valor del pago">
                                                     </div>
                                                 </div>
                                                     <div class="form-group row">
-                                                        <label for="estado" class="col-sm-2 col-form-label">Estado</label>
+                                                        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
                                                         <div class="col-sm-10">
-                                                            <select required id="estado" name="estado" class="custom-select">
+                                                            <select required id="Estado" name="Estado" class="custom-select">
                                                                 <option value="">Seleccione</option>
-                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Pendiente") ? "selected" : ""; ?> value="Pendiente">Pendiente</option>
-                                                                <option <?= ( !empty($frmSession['estado']) && $frmSession['estado'] == "Saldado") ? "selected" : ""; ?> value="Saldado">Saldado</option>
+                                                                <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Pendiente") ? "selected" : ""; ?> value="Pendiente">Pendiente</option>
+                                                                <option <?= ( !empty($frmSession['Estado']) && $frmSession['Estado'] == "Saldado") ? "selected" : ""; ?> value="Saldado">Saldado</option>
                                                             </select>
                                                         </div>
                                                     </div>

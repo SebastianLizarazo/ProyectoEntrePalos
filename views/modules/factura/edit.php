@@ -124,7 +124,7 @@ $frmSession = $_SESSION[$nameForm]?? null;
                                                                     'name' => 'Mesero_id',
                                                                     'defaultValue' => $DataFactura->getMeseroId(),
                                                                     'class' => 'form-control select2bs4 select2-info',
-                                                                    'where' => "estado = 'Activo' and rol = 'Mesero'"
+                                                                    'where' => "estado = 'Activo' and rol = 'Mesero' or estado = 'Activo' and rol = 'Domiciliario'"
                                                                 )
                                                             )
                                                             ?>
