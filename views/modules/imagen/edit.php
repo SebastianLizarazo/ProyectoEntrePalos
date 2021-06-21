@@ -83,7 +83,7 @@ $frmSession = $_SESSION[$nameForm] ?? NULL;
                                               name="<?= $nameForm ?>"
                                               action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=edit">
                                             <div class="row">
-                                                <div class="col-sm-10">
+                                                <div class="col-sm-12 col-lg-8">
                                                     <input id="id" name="id" value="<?= $DataImagen->getId(); ?>"
                                                            hidden required="required" type="text">
                                                     <div class="form-group row">
@@ -148,19 +148,21 @@ $frmSession = $_SESSION[$nameForm] ?? NULL;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-2">
+                                                <div class="col-sm-12 col-lg-4">
                                                     <div class="info-box">
-                                                        <div class="imageupload panel panel-primary">
+                                                        <div class="imageupload panel panel-primary ml-2">
                                                             <div class="panel-heading clearfix">
                                                                 <h5 class="panel-title pull-left">Imagen</h5>
                                                             </div>
                                                             <div class="file-tab panel-body">
-                                                                <label class="btn btn-default btn-file">
-                                                                    <span>Seleccionar</span>
-                                                                    <!-- The file is stored here. -->
-                                                                    <input value="<?= $DataImagen->getRuta(); ?>" type="file" id="Imagen" name="Imagen">
-                                                                </label>
-                                                                <button type="button" class="btn btn-default">Eliminar</button>
+                                                                <div class="row">
+                                                                    <label class="btn btn-default btn-file">
+                                                                        <span>Seleccionar</span>
+                                                                        <!-- The file is stored here. -->
+                                                                        <input value="<?= $DataImagen->getRuta(); ?>" type="file" id="Imagen" name="Imagen">
+                                                                    </label>
+                                                                    <button type="button" class="btn btn-default">Eliminar</button>
+                                                                </div>
                                                             </div>
                                                             <div class="panel-footer">
                                                             <?php if (!empty($DataImagen->getOferta())){?>

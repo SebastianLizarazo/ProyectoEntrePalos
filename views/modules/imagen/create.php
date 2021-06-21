@@ -73,7 +73,7 @@ $frmSession = $_SESSION[$nameForm] ?? NULL;
                                       name="<?= $nameForm ?>"
                                       action="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=create">
                                     <div class="row">
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-12 col-lg-8">
                                             <div class="form-group row">
                                                 <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                                                 <div class="col-sm-10">
@@ -135,19 +135,21 @@ $frmSession = $_SESSION[$nameForm] ?? NULL;
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-12 col-lg-4">
                                             <div class="info-box">
-                                                <div class="imageupload panel panel-primary">
+                                                <div class="imageupload panel panel-primary ml-2">
                                                     <div class="panel-heading clearfix">
                                                         <h5 class="panel-title pull-left">Seleccionar foto:</h5>
                                                     </div>
                                                     <div class="file-tab panel-body">
-                                                        <label class="btn btn-default btn-file">
-                                                            <span>Seleccionar</span>
-                                                            <!-- The file is stored here. -->
-                                                            <input required type="file" id="Imagen" name="Imagen">
-                                                        </label>
-                                                        <button type="button" class="btn btn-default">Eliminar</button>
+                                                        <div class="row">
+                                                            <label class="btn btn-default btn-file">
+                                                                <span>Seleccionar</span>
+                                                                <!-- The file is stored here. -->
+                                                                <input required type="file" id="Imagen" name="Imagen">
+                                                            </label>
+                                                            <button type="button" class="btn btn-default">Eliminar</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

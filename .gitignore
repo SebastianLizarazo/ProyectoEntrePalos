@@ -4,7 +4,6 @@ composer.phar
 /vendor/
 /node_modules/
 /bin/
-/views/public/uploadFiles/photos/
 .package-lock.json
 .composer.lock
 # IntelliJ project files

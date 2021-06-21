@@ -7,18 +7,25 @@
              class="brand-image img-circle elevation-3"
              style="opacity: .8">
         <span class="brand-text font-weight-light"><?= $_ENV['ALIASE_SITE'] ?></span>
+    </a>
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
+        <div class="user-panel mt-3 d-flex">
+            <div class="image align-middle">
                 <img src="<?= $baseURL ?>/views/public/img/user.png" class="img-circle elevation-2" alt="User Image">
             </div>
-            <div class="info">
-                <a href="<?= $baseURL ?>/views/modules/usuario/show.php?id=<?= $_SESSION['UserInSession']['id']?>" class="d-block">
-                    <?= $_SESSION['UserInSession']['Nombres'] ?? "Invitado" ?><br>
-                    <span><?= $_SESSION['UserInSession']['Rol'] ?? "Invitado" ?></span>
-                </a>
+            <div class="d-flex flex-column">
+                <div class="info"  style="padding-bottom: 0px; !important;">
+                    <a href="<?= "$baseURL/views/modules/usuario/show.php?id=" .$_SESSION['UserInSession']['id']?>" class="d-block">
+                        <?= $_SESSION['UserInSession']['Nombres'] ?>
+                    </a>
+                </div>
+                <div class="info"  style="padding-top: 0px; !important;">
+                    <a href="#" class="d-block">
+                        <?= $_SESSION['UserInSession']['Rol'] ?>
+                    </a>
+                </div>
             </div>
         </div>
         <!-- Sidebar Menu -->
