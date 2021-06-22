@@ -21,14 +21,10 @@ class MesasController
     public function create()
     {
         try {
-            if (!empty($this->dataMesa['id']) && !empty($this->dataMesa['Numero']) && !Mesas::mesaRegistrada($this->dataMesa['id'], $this->dataMesa['Numero'])) {
-                $Mesa = new Mesas($this->dataMesa);
-                if ($Mesa->insert()) {
-                    //unset($_SESSION['frmUsuarios']);
-                    header("Location: ../../views/modules/mesa/index.php?respuesta=success&mensaje=Mesa Registrada");
-                }
-            } else {
-                header("Location: ../../views/modules/mesa/create.php?respuesta=error&mensaje=Mesa ya registrada");
+            $Mesa = new Mesas($this->dataMesa);
+            if ($Mesa->insert()) {
+                unset($_SESSION['frmCreateMesa']);
+                header("Location: ../../views/modules/mesa/index.php?respuesta=success&mensaje=Mesa Registrada");
             }
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e, 'error');
@@ -37,11 +33,15 @@ class MesasController
     public function edit()
     {
         try {
-            $msa = new Mesas($this->dataMesa);
-            if($msa->update()){
-                //unset($_SESSION['frmUsuarios']);
+            if (!Mesas::mesaRegistrada($this->dataMesa['Numero'], $this->dataMesa['id'])) {
+                $msa = new Mesas($this->dataMesa);
+                if ($msa->update()) {
+                    unset($_SESSION['frmEditMesa']);
+                }
+                header("Location: ../../views/modules/mesa/show.php?id=" . $msa->getId() . "&respuesta=success&mensaje=Mesa Actualizada");
+            }else{
+                header("Location: ../../views/modules/mesa/edit.php?id=" . $this->dataMesa['id'] . "&respuesta=error&mensaje=Ya existe una mesa con este numero");
             }
-            header("Location: ../../views/modules/mesa/show.php?id=" . $msa->getId() . "&respuesta=success&mensaje=Mesa Actualizada");
         } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception',$e, 'error');
         }
@@ -74,6 +74,37 @@ class MesasController
         }
         return null;
     }
+
+    static public function ocupar(int $id)
+    {
+        try {
+            $ObjMesa = Mesas::searchForId($id);
+            $ObjMesa->setOcupacion("ocupada");
+            if ($ObjMesa->update()) {
+                header("Location: ../../views/modules/mesa/index.php");
+            } else {
+                header("Location: ../../views/modules/mesa/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+
+    static public function liberar(int $id)
+    {
+        try {
+            $ObjMesa = Mesas::searchForId($id);
+            $ObjMesa->setOcupacion("Disponible");
+            if ($ObjMesa->update()) {
+                header("Location: ../../views/modules/mesa/index.php");
+            } else {
+                header("Location: ../../views/modules/mesa/index.php?respuesta=error&mensaje=Error al guardar");
+            }
+        } catch (\Exception $e) {
+            GeneralFunctions::logFile('Exception',$e, 'error');
+        }
+    }
+
     static public function selectMesa(array $params = []) {
 
         //Parametros de Configuracion
@@ -97,11 +128,12 @@ class MesasController
 
         $htmlSelect = "<select " . (($params['isMultiple']) ? "multiple" : "") . " " . (($params['isRequired']) ? "required" : "") . " id= '" . $params['id'] . "' name='" . $params['name'] . "' class='" . $params['class'] . "' style='width: 100%;'>";
         $htmlSelect .= "<option value='' >Seleccione</option>";
+        $htmlSelect .= "<option value='' >Domicilio</option>";
         if (is_array($arrMesas) && count($arrMesas) > 0) {
             /* @var $arrMesas Mesas[] */
             foreach ($arrMesas as $mesa)
                 if (!MesasController::mesaIsInArray($mesa->getId(), $params['arrExcluir']))
-                    $htmlSelect .= "<option " . (($mesa != "") ? (($params['defaultValue'] == $mesa->getId()) ? "selected" : "") : "") . " value='" . $mesa->getId() . "'>" ."La mesa numero: ". $mesa->getNumero() . " con capacidad: " . $mesa->getCapacidad() . "</option>";
+                    $htmlSelect .= "<option " . (($mesa != "") ? (($params['defaultValue'] == $mesa->getId()) ? "selected" : "") : "") . " value='" . $mesa->getId() . "'>" . $mesa->getNumero() . "</option>";
         }
         $htmlSelect .= "</select>";
         return $htmlSelect;

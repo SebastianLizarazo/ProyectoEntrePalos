@@ -1,7 +1,7 @@
 <?php
 require_once("../../../app/Controllers/MesasController.php");
 require_once("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 
 use App\Controllers\MesasController;
 use App\Models\GeneralFunctions;
@@ -9,12 +9,12 @@ use App\Models\Mesas;
 
 $nameModel = "Mesa";
 $pluralModel = $nameModel.'s';
-//$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
+$frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Gestión de <?= $pluralModel ?></title>
+    <title>Gestión de | <?= $pluralModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= $adminlteURL ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
@@ -58,19 +58,13 @@ $pluralModel = $nameModel.'s';
                         <!-- Default box -->
                         <div class="card card-dark">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-user"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
+                                <h3 class="card-title"><i class="fas fa-search"></i> &nbsp; Gestionar <?= $pluralModel ?></h3>
                                 <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                            data-source="index.php" data-source-selector="#card-refresh-content"
-                                            data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                 class="fas fa-expand"></i></button>
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                             data-toggle="tooltip" title="Collapse">
                                         <i class="fas fa-minus"></i></button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                            data-toggle="tooltip" title="Remove">
-                                        <i class="fas fa-times"></i></button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -85,12 +79,13 @@ $pluralModel = $nameModel.'s';
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped">
+                                        <table id="tbl<?= $pluralModel ?>" class="datatable table table-bordered table-striped display responsive nowrap"
+                                               style="width:100%;">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Numero</th>
-                                                <th>Ubicacion</th>
+                                                <th>Ubicación</th>
                                                 <th>Capacidad</th>
                                                 <th>Ocupación</th>
                                                 <th>Acciones</th>
@@ -108,25 +103,41 @@ $pluralModel = $nameModel.'s';
                                                     <td><?= $mesa->getNumero(); ?></td>
                                                     <td><?= $mesa->getUbicacion(); ?></td>
                                                     <td><?= $mesa->getCapacidad(); ?></td>
-                                                    <td><?= $mesa->getOcupacion(); ?></td>
+                                                    <td><span class="badge badge-<?= $mesa->getOcupacion() == "ocupada" ?  "danger" : "success"?>">
+                                                            <?= $mesa->getOcupacion() ?>
+                                                        </span>
+                                                    </td>
                                                     <td>
-                                                        <a href="edit.php?id=<?= $mesa->getId(); ?>"
-                                                           type="button" data-toggle="tooltip" title="Actualizar"
-                                                           class="btn docs-tooltip btn-primary btn-xs"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                        <a href="show.php?id=<?= $mesa->getId(); ?>"
-                                                           type="button" data-toggle="tooltip" title="Ver"
-                                                           class="btn docs-tooltip btn-warning btn-xs"><i
-                                                                    class="fa fa-eye"></i></a>
+                                                        <div style="text-align: center;">
+                                                            <a href="edit.php?id=<?= $mesa->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Actualizar"
+                                                               class="btn docs-tooltip btn-primary btn-xs"><i
+                                                                        class="fa fa-edit"></i></a>
+                                                            <a href="show.php?id=<?= $mesa->getId(); ?>"
+                                                               type="button" data-toggle="tooltip" title="Ver"
+                                                               class="btn docs-tooltip btn-warning btn-xs"><i
+                                                                        class="fa fa-eye"></i></a>
+                                                            <?php if ($mesa->getOcupacion() != "disponible") { ?>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=liberar&id=<?= $mesa->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Liberar"
+                                                                   class="btn docs-tooltip btn-success btn-xs"><i
+                                                                            class="fas fa-lock-open"></i></a>
+                                                            <?php } else { ?>
+                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=ocupar&id=<?= $mesa->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Ocupar"
+                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                            class="fas fa-lock"></i></a>
+                                                            <?php } ?>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
                                             </tbody>
                                             <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>N°</th>
                                                 <th>Numero</th>
-                                                <th>Ubicacion</th>
+                                                <th>Ubicación</th>
                                                 <th>Capacidad</th>
                                                 <th>Ocupación</th>
                                                 <th>Acciones</th>
@@ -138,7 +149,7 @@ $pluralModel = $nameModel.'s';
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                Pie de Página.
+
                             </div>
                             <!-- /.card-footer-->
                         </div>

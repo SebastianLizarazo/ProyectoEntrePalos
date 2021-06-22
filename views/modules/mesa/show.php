@@ -1,6 +1,6 @@
 <?php
 require("../../partials/routes.php");
-//require_once("../../partials/check_login.php");
+require_once("../../partials/check_login.php");
 require("../../../app/Controllers/MesasController.php");
 
 use App\Controllers\MesasController;
@@ -9,12 +9,12 @@ use App\Models\Mesas;
 
 $nameModel = "Mesa";
 $pluralModel = $nameModel . 's';
-//$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
+$frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $_ENV['TITLE_SITE'] ?> | Datos del <?= $nameModel ?></title>
+    <title>Datos de la | <?= $nameModel ?></title>
     <?php require("../../partials/head_imports.php"); ?>
 </head>
 <body class="hold-transition sidebar-mini">
@@ -32,7 +32,7 @@ $pluralModel = $nameModel . 's';
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Informacion del <?= $nameModel ?></h1>
+                        <h1>Información de la <?= $nameModel ?></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -65,33 +65,27 @@ $pluralModel = $nameModel . 's';
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
                                             de la mesa numero <?= $DataMesa->getNumero() ?></h3>
                                         <div class="card-tools">
-                                            <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                                    data-source="show.php" data-source-selector="#card-refresh-content"
-                                                    data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                         class="fas fa-expand"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
                                                     data-toggle="tooltip" title="Collapse">
                                                 <i class="fas fa-minus"></i></button>
-                                            <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                                    data-toggle="tooltip" title="Remove">
-                                                <i class="fas fa-times"></i></button>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-10">
                                                 <p>
-                                                    <strong><i class="fas fa-list-ol mr-1"></i>Numero</strong>
+                                                    <strong><i class="fas fa-list-ol mr-1"></i>&nbsp;Numero</strong>
                                                         <p class="text-muted"><?= $DataMesa->getNumero() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i>Ubicacion</strong>
+                                                    <strong><i class="fas fa-map-marked-alt"></i>&nbsp;Ubicación</strong>
                                                         <p class="text-muted"><?= $DataMesa->getUbicacion() ?></p>
                                                 <hr>
-                                                    <strong><i class="fas fa-phone mr-1"></i> Capacidad</strong>
+                                                    <strong><i class="fas fa-chair"></i>&nbsp;Capacidad</strong>
                                                         <p class="text-muted"><?= $DataMesa->getCapacidad() ?></p>
                                                 <hr>
-                                                    <strong><i class="far fa-file-alt mr-1"></i>Ocupacion</strong>
+                                                    <strong><i class="fas fa-thumbs-up"></i>&nbsp;Ocupación</strong>
                                                         <p class="text-muted"><?= $DataMesa->getOcupacion() ?></p>
                                                 </p>
                                             </div>

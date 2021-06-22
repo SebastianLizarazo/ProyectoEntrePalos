@@ -1,5 +1,8 @@
-<?php require("partials/routes.php"); ?>
-<?php $baseURL = $baseURL ?? ""; //require("partials/check_login.php"); ?>
+<?php use App\Controllers\ImagenesController;
+use App\Models\Imagenes;
+
+require("partials/routes.php"); ?>
+<?php $baseURL = $baseURL ?? ""; require("partials/check_login.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -22,7 +25,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Pagina Principal</h1>
+                        <h1>Inicio</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -36,29 +39,28 @@
 
         <!-- Main content -->
         <section class="content">
-
-            <!-- Default box -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Título Modulo</h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fas fa-minus"></i></button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fas fa-times"></i></button>
+            <div class="row ">
+                <div class="col-12 col-sm-10 col-lg-8 mx-auto mb-5">
+                    <img class="card-img-top" src="../views/public/img/Entre-palos-inicio.jpeg"
+                         alt="Entre palos inicio">
+                    <div class="bg-white p-5 shadow rounded">
+                        <div class=" m-auto">
+                            <h1 class="mb-0">¿Qué quieres hacer hoy?</h1>
+                        </div>
+                            <div class="d-flex justify-content-between align-items-center mt-5">
+                                <div class="btn-group btn-group-sm m-auto">
+                                    <a href="<?= $baseURL ?>/views/modules/producto/index.php" class="btn btn-success">
+                                        <strong> Gestionar productos </strong>
+                                    </a>
+                                    <a href="<?= $baseURL ?>/views/modules/usuario/index.php" class="btn btn-primary">
+                                        <strong> Gestionar usuarios </strong>
+                                    </a>
+                                </div>
+                            </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    Contenido del modulo
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    Pie de Página.
-                </div>
-                <!-- /.card-footer-->
             </div>
-            <!-- /.card -->
+
         </section>
         <!-- /.content -->
     </div>

@@ -3,9 +3,9 @@
 
 namespace App\Models;
 
-require ("AbstractDBConnection.php");//Importamos la clase padre
-require (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
-require(__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
+require_once ("AbstractDBConnection.php");//Importamos la clase padre
+require_once (__DIR__."\..\Interfaces\Model.php");//Importamos la interfaz Model por ahora
+require_once (__DIR__ .'/../../vendor/autoload.php');//Importamos todas las clases de vendor por ahora
 
 use App\Interfaces\Model;
 use App\Models\AbstractDBConnection;
@@ -40,10 +40,12 @@ class Mesas extends AbstractDBConnection implements Model
         $this->setOcupacion($mesa['Ocupacion']??'disponible' );
     }
 
-    public static function mesaRegistrada(mixed $Numero, mixed $Capacidad): bool
+    public static function mesaRegistrada(mixed $Numero, int $idExcluir = null): bool
     {
-        $msaTmp = Mesas::search("SELECT * FROM mesa WHERE Numero = '$Numero' and Capacidad = '$Capacidad'");
-        return (!empty($msaTmp)) ? true : false;
+        $query = "SELECT * FROM mesa WHERE Numero = '$Numero' ".(empty($idExcluir) ? '' : "AND id != $idExcluir");
+        $msaTmp = Mesas::search($query);
+        return (!empty($msaTmp) ? true : false);
+
     }
 
     public function __destruct()
@@ -84,7 +86,13 @@ class Mesas extends AbstractDBConnection implements Model
      */
     public function setNumero(int $Numero): void
     {
-        $this->Numero = $Numero;
+        if(empty($Numero)){
+            $this->Connect();
+            $this->Numero = ($this->countRowsTable('mesa')+1)?? $Numero;
+            $this->Disconnect();
+        }else{
+            $this->Numero = $Numero;
+        }
     }
 
     /**
@@ -135,6 +143,17 @@ class Mesas extends AbstractDBConnection implements Model
         $this->Ocupacion = $Ocupacion;
     }
 
+    public function getDetallesPedidoMesa(): ?array
+    {
+        if (!empty($this->DetallesPedidoMesa)) {
+        $this->DetallesPedidoMesa = DetallePedidos::search(
+            "SELECT * FROM detallepedido WHERE Mesa_id =".$this->getId()//preguntar si esta bien el uso del getIdfv
+        );
+        return ($this->DetallesPedidoMesa)?? null;
+        }
+        return null;
+    }
+
     /**
      * @param string $query
      * @return bool|null
@@ -168,7 +187,6 @@ class Mesas extends AbstractDBConnection implements Model
     {
         $query = "INSERT INTO Mesa VALUES (
             :id,:Numero,:Ubicacion,:Capacidad,:Ocupacion)";
-        //return $this->save($query);
         if ($this->save($query)) {
             $idMesa = $this->getLastId('mesa');
             $this->setId($idMesa);//Aca cambiamos el Id del objeto por el ultimo Id de la tabla mesa
@@ -202,7 +220,8 @@ class Mesas extends AbstractDBConnection implements Model
      * que se puede pasar de activo a inactivo de resto no se aconseja utilizar
      * el delete o hay que pensar muy bien como utilizarlo
      */
-    function deleted()
+    
+    public function deleted(): ?bool
     {
 
     }
@@ -226,7 +245,7 @@ class Mesas extends AbstractDBConnection implements Model
                 return $arrMesas;
             }
             return null;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             GeneralFunctions::logFile('Exception', $e);
         }
         return null;
