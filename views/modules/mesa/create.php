@@ -80,7 +80,7 @@ $frmSession = $_SESSION[$nameForm]?? NULL; //Nombre del formulario (frmUsuarios)
                                                 <div class="form-group row">
                                                     <label for="Capacidad" class="col-sm-2 col-form-label">Capacidad</label>
                                                     <div class="col-sm-10">
-                                                        <input required type="number" max="20" class="form-control" id="Capacidad" name="Capacidad"
+                                                        <input required type="number" max="4" class="form-control" id="Capacidad" name="Capacidad"
                                                                placeholder="Ingrese el la capacidad de la mesa" value="<?= $frmSession['Capacidad'] ?? '' ?>">
                                                     </div>
                                                 </div>

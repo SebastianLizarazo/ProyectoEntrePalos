@@ -90,7 +90,7 @@ class EmpresasController
             $ObjEmpresa = Empresas::searchForId($id);
             $ObjEmpresa->setEstado("Inactivo");
             if ($ObjEmpresa->update()) {
-                header("Location: ../../views/modules/empresa/index.php?respuesta=success&mensaje=Empresa inhabilitado");
+                header("Location: ../../views/modules/empresa/index.php?respuesta=success&mensaje=Empresa inhabilitada");
             } else {
                 header("Location: ../../views/modules/empresa/index.php?respuesta=error&mensaje=Error al guardar");
             }
