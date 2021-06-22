@@ -138,7 +138,7 @@ $frmSession = $_SESSION[$nameForm] ?? null;
                                                     <div class="form-group row">
                                                         <label for="Contrasena" class="col-sm-2 col-form-label">Contraseña</label>
                                                         <div class="col-sm-10">
-                                                            <input type="password" minlength="8" class="form-control" id="Contrasena"
+                                                            <input required type="password" minlength="8" class="form-control" id="Contrasena"
                                                                    name="Contrasena"
                                                                    placeholder="Ingrese la nueva contraseña del usuario">
                                                         </div>

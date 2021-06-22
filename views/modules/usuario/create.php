@@ -118,7 +118,7 @@ $frmSession = $_SESSION[$nameForm]?? NULL; //Nombre del formulario (frmUsuarios)
                                             <div class="form-group row">
                                                 <label for="Direccion" class="col-sm-2 col-form-label">Contraseña</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" minlength="8" class="form-control" id="Contrasena" name="Contrasena"
+                                                    <input required type="password" minlength="8" class="form-control" id="Contrasena" name="Contrasena"
                                                            placeholder="Ingrese la Contraseña del usuario" value="<?= $frmSession['Contrasena'] ?? '' ?>">
                                                 </div>
                                             </div>
