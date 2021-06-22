@@ -104,7 +104,7 @@ $frmSession = $_SESSION[$nameForm] ?? null;
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label for="Numero" class="col-sm-2 col-form-label">Numero de la oferta</label>
+                                                        <label for="Numero" class="col-sm-2 col-form-label">Oferta</label>
                                                         <div class="col-sm-10">
                                                             <?= OfertasController::selectOferta
                                                             (array (

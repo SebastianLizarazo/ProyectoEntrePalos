@@ -130,6 +130,7 @@ $frmSession = $_SESSION[$nameForm]?? NULL; //Nombre del formulario (frmUsuarios)
                                                         <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Administrador") ? "selected" : ""; ?> value="Administrador">Administrador</option>
                                                         <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Proveedor") ? "selected" : ""; ?> value="Proveedor">Proveedor</option>
                                                         <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Cliente") ? "selected" : ""; ?> value="Cliente">Cliente</option>
+                                                        <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Cocinero") ? "selected" : ""; ?> value="Cocinero">Cocinero</option>
                                                         <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Mesero") ? "selected" : ""; ?> value="Mesero">Mesero</option>
                                                         <option <?= ( !empty($frmSession['Rol']) && $frmSession['Rol'] == "Domiciliario") ? "selected" : ""; ?> value="Domiciliario">Domiciliario</option>
 D                                                    </select>

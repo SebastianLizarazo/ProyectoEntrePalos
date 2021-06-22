@@ -151,6 +151,7 @@ $frmSession = $_SESSION[$nameForm] ?? null;
                                                                 <option <?= ( $DataUsuario->getRol()  == "Administrador") ? "selected" : ""; ?> value="Administrador">Administrador</option>
                                                                 <option <?= ( $DataUsuario->getRol() == "Proveedor") ? "selected" : ""; ?> value="Proveedor">Proveedor</option>
                                                                 <option <?= ( $DataUsuario->getRol() == "Cliente") ? "selected" : ""; ?> value="Cliente">Cliente</option>
+                                                                <option <?= ( $DataUsuario->getRol() == "Cocinero") ? "selected" : ""; ?> value="Cocinero">Cocinero</option>
                                                                 <option <?= ( $DataUsuario->getRol() == "Mesero") ? "selected" : ""; ?> value="Mesero">Mesero</option>
                                                                 <option <?= ( $DataUsuario->getRol() == "Domiciliario") ? "selected" : ""; ?> value="Domiciliario">Domiciliario</option>
                                                             </select>

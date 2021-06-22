@@ -90,7 +90,7 @@ $modelProducto = NULL;
                                                 <th>N°</th>
                                                 <th>Nombres</th>
                                                 <th class="none">Descripción:</th>
-                                                <th>Ruta</th>
+                                                <th>Imagen</th>
                                                 <th>Estado</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
@@ -156,7 +156,7 @@ $modelProducto = NULL;
                                                 <th>N°</th>
                                                 <th>Nombres</th>
                                                 <th>Descripción</th>
-                                                <th>Ruta</th>
+                                                <th>Imagen</th>
                                                 <th>Estado</th>
                                                 <th>Producto</th>
                                                 <th>Oferta</th>
