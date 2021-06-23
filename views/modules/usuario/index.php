@@ -125,11 +125,13 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                                type="button" data-toggle="tooltip" title="Ver"
                                                                class="btn docs-tooltip btn-warning btn-xs"><i
                                                                     class="fa fa-eye"></i></a>
-                                                            <?php ($usuario->getEstado() != "Inactivar")  ?>
-                                                                <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $usuario->getId(); ?>"
-                                                                   type="button" data-toggle="tooltip" title="Inactivar"
-                                                                   class="btn docs-tooltip btn-danger btn-xs"><i
-                                                                            class="far fa-trash-alt"></i></a>
+                                                            <?php ($usuario->getEstado() != "Inactivar");
+                                                                if ($usuario->getRol() != "Administrador"){?>
+                                                                    <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=inactivate&id=<?= $usuario->getId(); ?>"
+                                                                       type="button" data-toggle="tooltip" title="Inactivar"
+                                                                       class="btn docs-tooltip btn-danger btn-xs"><i
+                                                                                class="far fa-trash-alt"></i></a>
+                                                                <?php } ?>
                                                         </div>
                                                         </td>
                                                     </tr>

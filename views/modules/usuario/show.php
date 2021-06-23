@@ -65,9 +65,6 @@ $frmSession = $_SESSION['frm' . $pluralModel] ?? NULL;
                                         <h3 class="card-title"><i class="fas fa-info"></i> &nbsp; Ver Información
                                             del usuario numero <?= $DataEmpresa->getId() ?></h3>
                                         <div class="card-tools">
-                                            <button type="button" class="btn btn-tool" data-card-widget="card-refresh"
-                                                    data-source="show.php" data-source-selector="#card-refresh-content"
-                                                    data-load-on-init="false"><i class="fas fa-sync-alt"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
                                                     class="fas fa-expand"></i></button>
                                             <button type="button" class="btn btn-tool" data-card-widget="collapse"
