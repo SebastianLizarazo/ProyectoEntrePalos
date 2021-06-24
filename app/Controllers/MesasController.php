@@ -33,6 +33,9 @@ class MesasController
     public function edit()
     {
         try {
+            $oldMesa = Mesas::searchForId($this->dataMesa['id']);
+            $this->dataMesa['Numero'] = $oldMesa->getNumero();
+            unset($oldMesa);
             if (!Mesas::mesaRegistrada($this->dataMesa['Numero'], $this->dataMesa['id'])) {
                 $msa = new Mesas($this->dataMesa);
                 if ($msa->update()) {

@@ -41,6 +41,10 @@ class FacturasController
     public function edit()
     {
         try {
+            $oldFactura = Facturas::searchForId($this->dataFactura['id']);
+            $this->dataFactura['Numero'] = $oldFactura->getNumero();
+            unset($oldFactura);
+
             if (!Facturas::facturaRegistrada($this->dataFactura['Numero'],$this->dataFactura['id'])) {
                 $fta = new Facturas($this->dataFactura);
                 if($fta->update()){

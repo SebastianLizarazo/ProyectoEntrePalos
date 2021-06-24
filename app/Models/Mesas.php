@@ -76,9 +76,9 @@ class Mesas extends AbstractDBConnection implements Model
     /**
      * @return int
      */
-    public function getNumero(): int
+    public function getNumero(): ?int
     {
-        return $this->Numero;
+        return $this->Numero ?? NULL;
     }
 
     /**
@@ -86,9 +86,10 @@ class Mesas extends AbstractDBConnection implements Model
      */
     public function setNumero(int $Numero): void
     {
-        if(empty($Numero)){
+        if(empty($Numero)  && empty($this->getNumero())){
             $this->Connect();
-            $this->Numero = ($this->countRowsTable('mesa')+1)?? $Numero;
+            $tmpNumero = ($this->getRow('select Numero from mesa ORDER BY Numero desc limit 1')['Numero'] ?? 0);
+            $this->Numero = ($tmpNumero+1)?? $Numero;
             $this->Disconnect();
         }else{
             $this->Numero = $Numero;

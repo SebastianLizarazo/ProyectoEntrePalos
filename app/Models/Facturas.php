@@ -85,9 +85,9 @@ class Facturas extends AbstractDBConnection implements Model
     /**
      * @return int
      */
-    public function getNumero(): int
+    public function getNumero(): ?int
     {
-        return $this->Numero;
+        return $this->Numero ?? NULL;
     }
 
     /**
@@ -95,9 +95,10 @@ class Facturas extends AbstractDBConnection implements Model
      */
     public function setNumero(int $Numero): void
     {
-        if(empty($Numero)){
+        if(empty($Numero) && empty($this->getNumero())){
             $this->Connect();
-            $this->Numero = ($this->countRowsTable('factura')+1)?? $Numero;
+            $tmpfActura = ($this->getRow('select Numero from factura ORDER BY Numero desc limit 1')['Numero'] ?? 0);
+            $this->Numero = ($tmpfActura+1) ?? $Numero;
             $this->Disconnect();
         }else{
             $this->Numero = $Numero;
