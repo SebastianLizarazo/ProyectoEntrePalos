@@ -90,6 +90,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th data-priority="2">Mesero</th>
                                                 <th data-priority="2">Estado</th>
                                                 <th data-priority="2">Tipo de pedido</th>
+                                                <th data-priority="2">Total</th>
                                                 <th data-priority="1">Acciones</th>
                                             </tr>
                                             </thead>
@@ -112,6 +113,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             </span>
                                                         </td>
                                                         <td><?= $factura->getTipoPedido(); ?></td>
+                                                        <td><?= $factura->getTotal(); ?></td>
                                                         <td>
                                                             <div  style="text-align: center;">
                                                                 <?php if ($factura->getEstado() == "Pendiente") { ?>
@@ -158,6 +160,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Mesero</th>
                                                 <th>Estado</th>
                                                 <th>Tipo de pedido</th>
+                                                <th>Total</th>
                                                 <th>Acciones</th>
                                             </tr>
                                             </tfoot>

@@ -90,6 +90,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Mesero</th>
                                                 <th>Estado</th>
                                                 <th>Tipo de pedido</th>
+                                                <th data-priority="2">Total</th>
                                                 <th data-priority="1">Cambiar estado</th>
                                             </tr>
                                             </thead>
@@ -109,6 +110,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                             <td><?= $factura->getMesero()->getNombres(); ?></td>
                                                             <td><?= $factura->getEstado(); ?></td>
                                                             <td><?= $factura->getTipoPedido(); ?></td>
+                                                            <td><?= $factura->getTotal(); ?></td>
                                                             <td>
                                                                 <div style="text-align: center;">
                                                                     <?php if ($factura->getEstado() == "Cancelada") { ?>
@@ -133,6 +135,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                 <th>Mesero</th>
                                                 <th>Estado</th>
                                                 <th>Tipo de pedido</th>
+                                                <th>Total</th>
                                                 <th>Cambiar estado</th>
                                             </tr>
                                             </tfoot>
