@@ -71,7 +71,7 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                 <div class="row">
                                     <div class="col-auto mr-auto"></div>
                                     <div class="col-auto">
-                                        <a role="button" href="create.php" class="btn btn-primary float-right"
+                                        <a role="button" href="create.php<?= (!empty($_GET['idFactura'])) ? '?idFactura='.$_GET['idFactura'] : '' ?>" class="btn btn-primary float-right"
                                            style="margin-right: 5px;">
                                             <i class="fas fa-plus"></i> Crear <?= $nameModel ?>
                                         </a>
@@ -95,7 +95,11 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $arrDetallepedidos = DetallePedidosController::getAll();
+                                            if(!empty($_GET['idFactura'])) {
+                                                $arrDetallepedidos = DetallePedidos::search('SELECT * FROM detallepedido where Factura_id = '.$_GET['idFactura']);
+                                            }else{
+                                                $arrDetallepedidos = DetallePedidosController::getAll();
+                                            }
                                             if (!empty($arrDetallepedidos))
                                                 /* @var $arrDetallepedidos DetallePedidos */
                                                 foreach ($arrDetallepedidos as $detallepedido) {

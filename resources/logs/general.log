@@ -3806,3 +3806,93 @@
 
 )
   
+[2021-06-28T13:20:12.593735+00:00] General.ERROR: Exception  
+[2021-06-28T13:20:12.595969+00:00] General.ERROR: Archivo: C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php  
+[2021-06-28T13:20:12.596150+00:00] General.ERROR: Line: 128  
+[2021-06-28T13:20:12.596286+00:00] General.ERROR: Mensaje: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bdentrepalos`.`detallepedido`, CONSTRAINT `fk_DetallePedido_Factura1` FOREIGN KEY (`Factura_id`) REFERENCES `factura` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)  
+[2021-06-28T13:20:12.596376+00:00] General.ERROR: Array
+(
+    [0] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\AbstractDBConnection.php
+            [line] => 128
+            [function] => execute
+            [class] => PDOStatement
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 214
+            [function] => insertRow
+            [class] => App\Models\AbstractDBConnection
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO detallepedido VALUES (
+              :id, :Factura_id, :Producto_id, :Ofertas_id, :CantidadProducto,
+              :CantidadOferta, :Mesa_id )
+                    [1] => Array
+                        (
+                            [:id] => 
+                            [:Factura_id] => 0
+                            [:Producto_id] => 1
+                            [:Ofertas_id] => 
+                            [:CantidadProducto] => 12
+                            [:CantidadOferta] => 
+                            [:Mesa_id] => 1
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Models\DetallePedidos.php
+            [line] => 225
+            [function] => save
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                    [0] => INSERT INTO detallepedido VALUES (
+              :id, :Factura_id, :Producto_id, :Ofertas_id, :CantidadProducto,
+              :CantidadOferta, :Mesa_id )
+                )
+
+        )
+
+    [3] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\DetallePedidosController.php
+            [line] => 50
+            [function] => insert
+            [class] => App\Models\DetallePedidos
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [file] => C:\laragon\www\ProyectoEntrePalos\app\Controllers\MainController.php
+            [line] => 32
+            [function] => create
+            [class] => App\Controllers\DetallePedidosController
+            [type] => ->
+            [args] => Array
+                (
+                )
+
+        )
+
+)
+  

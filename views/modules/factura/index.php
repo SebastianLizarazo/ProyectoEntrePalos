@@ -116,6 +116,15 @@ $frmSession = $_SESSION['frm'.$pluralModel] ?? NULL;
                                                         <td><?= $factura->getTotal(); ?></td>
                                                         <td>
                                                             <div  style="text-align: center;">
+                                                                <a href="../detalle_pedido/index.php?idFactura=<?= $factura->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Gestionar Pedido"
+                                                                   class="btn docs-tooltip btn-success btn-xs"><i
+                                                                            class="fa fa-edit"></i></a>
+                                                                <a href="../detalle_pedido/create.php?idFactura=<?= $factura->getId(); ?>"
+                                                                   type="button" data-toggle="tooltip" title="Agregar Producto"
+                                                                   class="btn docs-tooltip btn-bitbucket btn-xs"><i
+                                                                            class="fa fa-plus-square"></i></a>
+
                                                                 <?php if ($factura->getEstado() == "Pendiente") { ?>
                                                                     <a href="../../../app/Controllers/MainController.php?controller=<?= $pluralModel ?>&action=statusPaga&id=<?= $factura->getId(); ?>"
                                                                        type="button" data-toggle="tooltip" title="Pagada"

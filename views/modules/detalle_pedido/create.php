@@ -86,7 +86,7 @@ $frmSession = $_SESSION[$nameForm] ?? NULL; //Nombre del formulario (frmUsuarios
                                                         array(
                                                             'id' => 'Factura_id',
                                                             'name' => 'Factura_id',
-                                                            'defaultValue' => $frmSession['Factura_id'] ?? '',
+                                                            'defaultValue' => (!empty($_GET['idFactura'])) ? $_GET['idFactura'] : ($frmSession['Factura_id'] ?? ''),
                                                             'class' => 'form-control select2bs4 select2-info',
                                                             'where' => "estado = 'Pendiente'"
                                                         )

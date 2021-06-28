@@ -166,7 +166,7 @@ class FacturasController
             $arrFacturas = Facturas::getAll();
         }
 
-        $htmlSelect = "<select " . (($params['isMultiple']) ? "multiple" : "") . " " . (($params['isRequired']) ? "required" : "") . " id= '" . $params['id'] . "' name='" . $params['name'] . "' class='" . $params['class'] . "' style='width: 100%;'>";
+        $htmlSelect = "<select " . (($params['isMultiple']) ? "multiple" : "") . " " . (($params['isRequired']) ? "required" : "") . " id= '" . $params['id'] . "' name='" . $params['name'] . "' class='" . $params['class'] . "' style='width: 100%;' >";
         $htmlSelect .= "<option value='' >Seleccione</option>";
         if (is_array($arrFacturas) && count($arrFacturas) > 0) {
             /* @var $arrFacturas Facturas[] */
